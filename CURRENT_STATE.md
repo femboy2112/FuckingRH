@@ -12,6 +12,83 @@ The central update of 2026-10-05 is that the finite-to-Archimedean map should no
 
 ---
 
+## 0. Dominant reduction discovered during consolidation
+
+The broad closure problem remains valid, but there is a much more surgical RH-equivalent target already in the literature.
+
+Suzuki defines an explicit even function \(\Psi(t)\) entirely from prime powers plus the Archimedean completion. For \(t\ge0\),
+
+\[
+\begin{aligned}
+\Psi(t)
+={}&4(e^{t/2}+e^{-t/2}-2)
+-\sum_{n\le e^t}\frac{\Lambda(n)}{\sqrt n}(t-\log n)\\
+&+\frac t2\left[\frac{\Gamma'}{\Gamma}\!\left(\frac14\right)-\log\pi\right]
++\frac14\left(C-e^{-t/2}\Phi(e^{-2t},2,1/4)\right),
+\end{aligned}
+\]
+
+with \(C=\Phi(1,2,1/4)=\pi^2+8G\).
+
+Suzuki's Theorem 1.7 gives the exact equivalence
+
+\[
+\boxed{\mathrm{RH}\iff \Psi(t)\ge0\quad\forall t\in\mathbb R.}
+\]
+
+Even more importantly for the current frame, if
+
+\[
+R_t(x)=2^{-1/2}\mathbf 1_{[-t/2,t/2]}(x),
+\qquad
+\Delta_t=R_t*\widetilde R_t=\frac12(t-|x|)_+,
+\]
+
+then
+
+\[
+\widehat{\Delta_t}(z)=\frac{1-\cos(zt)}{z^2}
+\]
+
+and Suzuki proves
+
+\[
+\boxed{\Psi(t)=W(\Delta_t)=W(R_t*\widetilde R_t).}
+\]
+
+Thus an RH-equivalent family is literally a one-parameter family of rectangular-window convolution squares whose Fourier side is sinc-squared.
+
+Writing \(g=-\Psi\),
+
+\[
+G_g(t,u)=\Psi(t)+\Psi(u)-\Psi(t-u),
+\]
+
+and Suzuki proves
+
+\[
+\mathrm{RH}\iff G_g\succeq0
+\]
+
+globally (equivalently \(g\) is a Kreĭn screw function). Nakamura-Suzuki use the same \(g_\zeta=-\Psi\) and prove
+
+\[
+\boxed{
+\mathrm{RH}
+\iff
+e^{-\Psi(t)}
+\text{ is an infinitely divisible characteristic function}.
+}
+\]
+
+This unifies the Weil, sinc/convolution, Brownian-covariance, and Lévy routes at one explicit arithmetic object.
+
+**Current first target:** prove \(\Psi(t)\ge0\) for all \(t\ge0\) directly from its prime/Archimedean formula, without importing zero locations or an RH-equivalent error estimate under another name.
+
+See \`docs/SCREW_SINC_LEVY_UNIFICATION.md\`.
+
+---
+
 ## 1. Canonical RH object
 
 Use
