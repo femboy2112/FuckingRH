@@ -69,7 +69,7 @@ def psi_suzuki(
             return mp.mpf("0")
 
         n_max = int(mp.floor(mp.e**tt))
-        evs = list(events) if events is not None else prime_power_events_up_to(n_max)
+        evs = sorted(events, key=lambda e: e.n) if events is not None else prime_power_events_up_to(n_max)
 
         prime_ramp = mp.mpf("0")
         for event in evs:
@@ -96,15 +96,21 @@ def psi_suzuki(
 
 def screw_kernel(t: float, u: float, *, dps: int = 50) -> mp.mpf:
     """Krein screw kernel G_g for g=-Psi."""
-    return (
-        psi_suzuki(t, dps=dps)
-        + psi_suzuki(u, dps=dps)
-        - psi_suzuki(t - u, dps=dps)
-    )
+    with mp.workdps(dps):
+        tt, uu = mp.mpf(t), mp.mpf(u)
+        return (
+            psi_suzuki(tt, dps=dps)
+            + psi_suzuki(uu, dps=dps)
+            - psi_suzuki(tt - uu, dps=dps)
+        )
 
 
 def active_horizon(t: float | mp.mpf) -> int:
-    """Largest integer visible to Suzuki's moving prime wavefront at |t|."""
+    """Floating-point horizon; rounded log(q) need not fall on the exact event.
+
+    For certification use integer event indices and interval arithmetic, not
+    floor(exp(log(q))) or a tolerance that silently changes the input time.
+    """
     return int(mp.floor(mp.e**abs(mp.mpf(t))))
 
 
@@ -115,12 +121,11 @@ def main() -> None:
     parser.add_argument("--events", action="store_true")
     args = parser.parse_args()
 
-    ts = [mp.mpf(x) for x in args.t] if args.t else [
-        mp.mpf("0"), mp.mpf("0.1"), mp.mpf("0.5"), mp.log(2),
-        mp.mpf("1"), mp.mpf("2"), mp.mpf("3"), mp.mpf("5"),
-    ]
-
     with mp.workdps(args.dps):
+        ts = [mp.mpf(x) for x in args.t] if args.t else [
+            mp.mpf("0"), mp.mpf("0.1"), mp.mpf("0.5"), mp.log(2),
+            mp.mpf("1"), mp.mpf("2"), mp.mpf("3"), mp.mpf("5"),
+        ]
         max_t = max(abs(t) for t in ts)
         evs = prime_power_events_up_to(active_horizon(max_t))
         for t in ts:
