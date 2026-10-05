@@ -89,6 +89,63 @@ At infinity,
 
 So the familiar \(\log p\) weights are literally first-order tangent data of the finite-place branches leaving the trivial valuation.
 
+## 3.5 Critical half-density twist
+
+For RH, the most relevant basepoint is not the untwisted local character by itself but the critical-line-centered family
+
+\[
+\chi^{(1/2)}_{v,z}(x)
+=
+|x|_v^{1/2+z}
+=
+|x|_v^{1/2}\chi_{v,z}(x).
+\]
+
+The deformation factor satisfies
+
+\[
+\chi_{v,0}(x)=1,
+\]
+
+while the first derivative of the full twisted character is
+
+\[
+\partial_z
+\chi^{(1/2)}_{v,z}(x)\big|_{z=0}
+=
+|x|_v^{1/2}\log|x|_v.
+\]
+
+For a finite prime-power element \(p^k\),
+
+\[
+|p^k|_p^{1/2}\log|p^k|_p
+=
+-p^{-k/2}k\log p.
+\]
+
+After the standard prime-power bookkeeping, this is exactly the source of the critical weights \(p^{-k/2}\log p\) appearing in Suzuki's event measure.
+
+Globally,
+
+\[
+\prod_v |x|_v^{1/2}=1
+\]
+
+by the product formula. Therefore the critical half-density is itself globally balanced, and the \(z=0\) deformation direction is again a global unit direction.
+
+This makes the critical line geometrically natural in the present frame:
+
+\[
+\boxed{
+\text{global half-density balance}
++
+\text{unit-centered character deformation}.
+}
+\]
+
+A future Gram/jet construction should probably be built from this \(1/2\)-twisted family rather than from the untwisted \(s=0\) family alone.
+
 ## 4. Product formula as tangent conservation
 
 For \(x\in\mathbb Q^\times\),
