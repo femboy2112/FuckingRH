@@ -2,6 +2,37 @@
 
 This file contains only sources re-checked during the 2026-10-05 consolidation. It is not a complete bibliography.
 
+## Primary scalar / screw / sinc gate
+
+### Masatoshi Suzuki — Aspects of the screw function corresponding to the Riemann zeta-function
+- JLMS 108 (2023), 1448–1487; DOI: 10.1112/jlms.12785; arXiv:2206.03682
+- https://doi.org/10.1112/jlms.12785
+- Verified claims:
+  - explicit prime/Archimedean function \(\Psi(t)\), Eq. (1.1);
+  - \(\int_0^\infty\Psi(t)e^{izt}dt=-z^{-2}(\xi'/\xi)(1/2-iz)\);
+  - RH iff \(g=-\Psi\) is a Kreĭn screw function (Theorem 1.2);
+  - RH iff \(\Psi(t)\ge0\) for every real \(t\) (Theorem 1.7);
+  - \(\Psi(t)=W(\Delta_t)\) for triangular \(\Delta_t=R_t*\widetilde R_t\), whose Fourier transform is \((1-\cos zt)/z^2\) (Section 3.4).
+- Use here: **canonical shortest proof endpoint and exact sinc/convolution bridge.**
+
+### Nakamura–Suzuki — On infinitely divisible distributions related to the Riemann hypothesis
+- arXiv:2306.08317; Statistics & Probability Letters 2023
+- https://arxiv.org/abs/2306.08317
+- Verified claim: with \(g_\zeta=-\Psi\), RH iff \(e^{g_\zeta(t)}=e^{-\Psi(t)}\) is an infinitely divisible characteristic function; under RH the Lévy measure is an explicit weighted atomic measure on the zero ordinates.
+- Use here: exact Lévy-Khintchine / conditional-negative-type proof endpoint.
+
+## External 2026 checkpoint lead — not independently accepted
+
+### Rainer Andreas Mittermeier — prime-power checkpoint / tail preprints
+- Zenodo records including 21979497, 21979513, 22076071 (August 2026).
+- Claimed results include:
+  - strict convexity between prime-power event times after the initial range;
+  - one constrained minimum per interval;
+  - directed-rounding positivity certification through \(q=10^{10}\);
+  - reduction of the infinite tail to a smoothed von-Mangoldt reserve inequality.
+- **Repository status:** UNVERIFIED EXTERNAL LEAD. These are recent preprints, not adopted results. Astra should independently reconstruct every lemma before using it.
+- Use here: potentially valuable because it attacks exactly the deterministic prime-wavefront reserve process isolated independently in this repository.
+
 ## Core positivity / semilocal operator line
 
 ### Connes–Consani — Weil positivity and Trace formula, the archimedean place
