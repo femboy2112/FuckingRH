@@ -22,7 +22,7 @@ Legend:
 | C09 | Positive Fourier-self-dual local data plus functional equation forces RH. | REFUTED | Explicit positive self-dual Gaussian mixture has an off-line Mellin multiplier. | None. |
 | C10 | Normalized Euler products for \(\sigma>1\) define a pure-jump infinitely-divisible law on log scale. | DISCLOSED | Lévy-Khintchine expansion of \(\zeta(\sigma+it)/\zeta(\sigma)\). | Align normalization with RH-equivalent Nakamura-Suzuki exponent. |
 | C11 | Differentiating the Lévy exponent exposes von-Mangoldt/\(\log p\) weights. | DISCLOSED | \(-\zeta'/\zeta\) prime-power series. | None. |
-| C12 | Finite critical-cutoff prime convolutions Gaussianize after centering/scaling. | CORROBORATED | Standard triangular-array CLT with PNT-sized moments; proof should be made fully explicit in repo. | Write Lyapunov/Lindeberg proof with explicit error scale. |
+| C12 | Finite critical-cutoff prime convolutions Gaussianize after centering/scaling. | DISCLOSED | Full Lyapunov/PNT proof in research/astra_round_001/CONVOLUTION_RESIDUAL_AUDIT.md; no RH error estimate. | Canonical Gaussian quotient is now refuted as the target (C38). |
 | C13 | The resulting Gaussian is canonically Tate's \(e^{-\pi x^2}\), not merely a Gaussian after affine normalization. | CONJECTURED | Shape is forced by CLT; canonical local normalization/representation equivalence is still owed. | Construct explicit unitary normalization intertwining additive character/Fourier conventions. |
 | C14 | Ordinary CLT is sufficient for RH. | REFUTED | CLT discards higher cumulant/phase residual; positive Gaussian bulk is not the Weil sign. | Work mod-Gaussian/operator residual instead. |
 | C15 | Squared Archimedean weight \(W(a)^2\) contains necessary cross-prime couplings. | DISCLOSED algebraically | Expansion has \(2a_pa_q\log p\log q\). | Identify those cross terms in a known heat/Weil/prolate kernel exactly. |
@@ -62,3 +62,25 @@ Preferred proof endpoints, in order of directness:
 4. **Absolute-Hodge:** independent arithmetic surface/square geometry whose intersection positivity is exactly the Weil form.
 
 A proof may use more than one route, but they must remain independent enough to triangulate the closure step.
+
+
+## Astra round 001 — checked results
+
+No claim below says RH is proved. "New" means proved in this repository this round, not an external priority claim. Full proofs and boundaries: `research/astra_round_001/ROUND_RESULT.md`.
+
+| ID | Claim | Status | Scope / evidence | Next verdict-changing probe |
+|---|---|---|---|---|
+| C37 | For distinct positive a_j, Psi + sum c_j (abs(t)-a_j)_+ + b t^2 is CND iff RH, all c_j=0, and b>=0. | DISCLOSED | Finite-event rigidity theorem, GRAM_LEVY_ATTEMPT Theorem 4; root and adversarial proof audits. | Any new Gram construction must distinguish every nonzero finite event mutation. |
+| C38 | The canonical geometric-prime Gaussian quotient can converge, after scalar rescaling and unit-phase repair, to exp(-Psi). | REFUTED | Its modulus exceeds one away from zero; every characteristic-function limit is a point mass. CONVOLUTION_RESIDUAL_AUDIT R1–R4. | Specify a different nonlocal arithmetic construction. |
+| C39 | A finite prime-event truncation retaining all exact Archimedean terms is a global CND approximant. | REFUTED | Exponential growth contradicts CND quadratic growth, even after a Gaussian correction. | Supply and prove a different tail completion. |
+| C40 | Literal prime-event ramps are independent PSD kernel increments. | REFUTED | Exact 2-by-2 matrix has eigenvalues of both signs for either ramp sign. | Prove coupled arithmetic cancellation. |
+| C41 | The exact event system has plastic-constant curvature transition and one constrained minimum per later interval. | DISCLOSED | EVENT_DYNAMICS; independently derived, with interval implementation and initial cusp handled. | Global reserve inequality remains unpaid. |
+| C42 | The conjugate reserve H_j-A*(S_j) is monotone at the true prime events. | REFUTED | Certified decrease from prefix 4 to prefix 5. | Prove a nonmonotone global lower bound instead. |
+| C43 | Every actual prime-power prefix satisfies H_j>=A*(S_j). | UNVERIFIED | Exactly RH-equivalent after the initial range; no novelty in naming it. | Uniform arithmetic credit-versus-Bregman-debit theorem. |
+| C44 | The local implementation certifies Psi>0 through log(101). | DISCLOSED, FINITE | Arb 200-bit initial certificate plus 35 intervals; evidence retained. | No finite-to-infinite inference permitted. |
+| C45 | External Mittermeier Part 3 v3 (75) and page-20 upper-edge display are exactly normalized. | REFUTED | Missing -h(u), with h(u)>0, in (75); upper-edge coefficient 2 should be 4 for positive ordinates. Main pinned bound survives. | Use corrected formulas in future tail work. |
+| C46 | The external positivity run through 10^10 was reproduced here. | UNVERIFIED | Only the exact event count and bounded code/method audit were reproduced; full sign run not executed. | Rebuild and independently check full directed run if needed. |
+| C47 | Positive Levy approximants with uniformly bounded first absolute moments can converge to Psi. | REFUTED | Origin t log(1/t)/2 cusp contradicts the uniform linear bound. | Permit heavy tails and prove exact closure. |
+| C48 | Any positive increase in one event weight preserves global scalar positivity. | REFUTED | Scalar rigidity lemma: positivity would imply RH and bounded Psi, contradicted by the subtracted ramp. | A proposed invariant must use mutation-sensitive exact arithmetic. |
+
+The umbrella C22/C26 constructions remain unverified. Their literal finite-cutoff and canonical Gaussian-quotient implementations are now refuted; this does not rule out every possible arithmetic Levy or Gram construction.
