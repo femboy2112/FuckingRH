@@ -1,0 +1,652 @@
+# CURRENT STATE — 2026-10-05
+
+## Verdict
+
+The Riemann Hypothesis is OPEN.
+
+This repository does not treat a compelling analogy, numerical agreement, Fourier self-duality, a finite self-adjoint approximation, or a Gaussian limit as a proof. The current program has isolated a much sharper proof obligation:
+
+> Construct a sequence/family of finite, arithmetic, manifestly positive or self-adjoint objects whose exact closure is the completed Weil/Xi object, and prove the closure strongly enough that positivity/real-rootedness survives the limit.
+
+The central update of 2026-10-05 is that the finite-to-Archimedean map should not be modeled as an independent pointwise map at each prime. The better carrier is an aggregate convolution/Lévy process on logarithmic scale, with the Archimedean Gaussian emerging as a normalized bulk limit and the RH-bearing information living in the residual and in the exact finite-window closure.
+
+---
+
+## 1. Canonical RH object
+
+Use
+
+\[
+\xi(s)=\frac12 s(s-1)\pi^{-s/2}\Gamma(s/2)\zeta(s),
+\qquad
+\Xi(t)=\xi\!\left(\frac12+it\right).
+\]
+
+RH is equivalent to all zeros of \(\Xi(t)\) being real.
+
+Equivalently, in centered coordinate \(z=s-\tfrac12\), every nontrivial zero mode has no exponential growth/decay in logarithmic scale:
+
+\[
+e^{(\rho-\frac12)u}=e^{(\beta-\frac12)u}e^{i\gamma u},
+\]
+
+and RH is \(\beta=\tfrac12\) for every nontrivial zero.
+
+This is only a reformulation. The proof-bearing object is Weil positivity / an independently constructed self-adjoint realization.
+
+---
+
+## 2. Weil positivity is the authoritative proof gate
+
+The durable target is Weil's criterion: the completed explicit-formula quadratic form must be nonnegative on every admissible convolution square.
+
+In a fixed convention, the form decomposes into:
+
+1. pole/completion terms;
+2. the Archimedean Gamma/digamma term;
+3. a prime-power term weighted by the von Mangoldt function \(\Lambda(n)\).
+
+Off-line zero pairs generate indefinite signature blocks. In the finite function-field control, the analogous Weil form has negative index exactly counting off-circle reciprocal/conjugate orbits. That is why positivity is not cosmetic: it is the sign equivalent of zero localization.
+
+Legacy dossiers in \`archive/\` contain the convention-by-convention formulas, calibrated numerical checks, signature decompositions, q-clock/Witt deformations, moment/Hankel probes, prolate experiments, and no-go results.
+
+Current rule: no candidate construction counts as RH progress unless it is mapped explicitly into the exact completed Weil form or into an equivalent real-zero/infinite-divisibility criterion.
+
+---
+
+## 3. Multiplicative scale is the common local coordinate
+
+For every place \(v\), put
+
+\[
+u_v(x)=-\log |x|_v.
+\]
+
+Then
+
+\[
+u_v(xy)=u_v(x)+u_v(y),
+\qquad
+|x|_v^s=e^{-s u_v(x)}.
+\]
+
+Multiplicative Haar measure is the invariant measure:
+
+\[
+d^\times x = \frac{dx}{|x|}
+\]
+
+at the real place, so on \(\mathbb R_{>0}\),
+
+\[
+d^\times x=d(\log x).
+\]
+
+Thus a Tate local zeta integral is a Mellin transform in \(x\), equivalently a Laplace transform in logarithmic radius \(u\).
+
+At a finite prime \(p\),
+
+\[
+u_p(\mathbb Q_p^\times)=(\log p)\mathbb Z.
+\]
+
+At the Archimedean place,
+
+\[
+u_\infty(\mathbb R^\times)=\mathbb R.
+\]
+
+This is the exact discrete-scale versus continuous-scale distinction.
+
+---
+
+## 4. Canonical finite and Archimedean local vacua
+
+At \(p\), the standard Bruhat-Schwartz vector is
+
+\[
+\phi_p=\mathbf 1_{\mathbb Z_p}.
+\]
+
+At infinity, the standard vector is
+
+\[
+\phi_\infty(x)=e^{-\pi x^2}.
+\]
+
+With self-dual additive Haar measures and compatible additive characters,
+
+\[
+\mathcal F_p\mathbf 1_{\mathbb Z_p}=\mathbf 1_{\mathbb Z_p},
+\qquad
+\mathcal F_\infty e^{-\pi x^2}=e^{-\pi x^2}.
+\]
+
+Their local Mellin integrals give
+
+\[
+L_p(s)=\frac1{1-p^{-s}},
+\qquad
+L_\infty(s)=\pi^{-s/2}\Gamma(s/2).
+\]
+
+Additive characters are the common object underneath ordinary trigonometry:
+
+\[
+\psi_\infty(x)=e^{2\pi i x}
+\]
+
+and its \(p\)-adic analogue \(\psi_p\). Quadratic phases \(\psi_v(ax^2)\), Gauss sums/integrals, the Weil representation, and the Gaussian are therefore the correct common harmonic-analysis layer; raw \(\sin,\cos,\tan\) are derived coordinates, not the invariant primitive.
+
+---
+
+## 5. Exact one-prime transport — useful but not global
+
+For the radial \(p\)-adic balls
+
+\[
+B_m=\mathbf 1_{p^m\mathbb Z_p},
+\]
+
+define
+
+\[
+T_pB_m(x)=e^{-\pi p^{2m}x^2}.
+\]
+
+Then, with standard normalizations,
+
+\[
+\mathcal F_p B_m=p^{-m}B_{-m},
+\qquad
+\mathcal F_\infty T_pB_m=p^{-m}T_pB_{-m},
+\]
+
+so
+
+\[
+T_p\mathcal F_p=\mathcal F_\infty T_p
+\]
+
+on the finite radial span.
+
+Its normalized local Mellin transforms also share the scale factor \(p^{-ms}\).
+
+For one prime this map is positivity preserving and admits an explicit positive shell-kernel representation.
+
+### Global obstruction
+
+The naive simultaneous prescription
+
+\[
+\mathbf 1_{r\widehat{\mathbb Z}}\mapsto e^{-\pi r^2x^2}
+\]
+
+cannot be a positive linear map. For two distinct primes \(p,q\),
+
+\[
+\mathbf 1_{\widehat{\mathbb Z}}
+-\mathbf 1_{p\widehat{\mathbb Z}}
+-\mathbf 1_{q\widehat{\mathbb Z}}
++\mathbf 1_{pq\widehat{\mathbb Z}}
+\ge0,
+\]
+
+but its Gaussian image has expansion
+
+\[
+g(x)-g(px)-g(qx)+g(pqx)
+=
+-\pi(p^2-1)(q^2-1)x^2+O(x^4),
+\]
+
+hence is negative near \(x=0\).
+
+Status: REFUTED as a positive global pointwise transport.
+
+The failure teaches the important structural lesson: independent prime coordinates cannot be collapsed onto one scalar Gaussian scale without cross-prime information.
+
+---
+
+## 6. Arithmetic periodization repairs positivity — but only to theta/functional equation
+
+Define
+
+\[
+\mathcal A f(x)=\sum_{r\in\mathbb Q}f(r_{\rm fin})e^{-\pi x^2r^2}.
+\]
+
+For \(f\ge0\), \(\mathcal A f\ge0\).
+
+Because
+
+\[
+\mathbb Q\cap\widehat{\mathbb Z}=\mathbb Z,
+\]
+
+the finite integrality constraints become theta sums. For example, the two-prime inclusion-exclusion becomes a sum over integers coprime to \(6\), hence stays nonnegative.
+
+Poisson summation then yields theta inversion and the completed zeta functional equation.
+
+Status: DISCLOSED repair of the mixed-prime positivity failure.
+
+Boundary: theta positivity and the functional equation do not imply RH.
+
+---
+
+## 7. Positive Fourier self-duality is not enough
+
+A positive, even, normalized, Fourier-self-dual Gaussian mixture can have a Mellin multiplier with explicit zeros off the critical line.
+
+Therefore the package
+
+\[
+\text{positive local vector}
++\text{Fourier self-duality}
++\text{functional equation}
+\]
+
+does not force critical-line zeros.
+
+Status: REFUTED shortcut.
+
+Implication: the missing ingredient is not merely local Fourier symmetry. It is global Weil positivity / self-adjoint spectral closure with the exact arithmetic residual.
+
+---
+
+## 8. Prime powers form a Lévy process on logarithmic scale
+
+For \(\sigma>1\),
+
+\[
+\frac{\zeta(\sigma+it)}{\zeta(\sigma)}
+\]
+
+is the characteristic function of an infinitely divisible distribution. Its Lévy exponent is
+
+\[
+\log\frac{\zeta(\sigma+it)}{\zeta(\sigma)}
+=
+\sum_p\sum_{r\ge1}
+\frac{p^{-r\sigma}}{r}
+\left(e^{-itr\log p}-1\right).
+\]
+
+Thus the jumps occur at
+
+\[
+r\log p
+\]
+
+with positive weights \(p^{-r\sigma}/r\).
+
+Differentiating in the damping variable removes the repetition denominator:
+
+\[
+-\partial_\sigma\log\zeta(\sigma+it)
+=
+\sum_{p,r\ge1}
+(\log p)p^{-r(\sigma+it)}.
+\]
+
+This is the von-Mangoldt / logarithmic-derivative prime-power spectrum.
+
+This is the strongest current common language for:
+
+- Euler products,
+- convolution,
+- prime powers,
+- logarithmic weighting,
+- \(-\zeta'/\zeta\),
+- and Brownian/Gaussian scaling limits.
+
+---
+
+## 9. The aggregate finite places can Gaussianize
+
+For a finite cutoff \(X\), define independent geometric variables
+
+\[
+K_p\sim{\rm Geom}(p^{-1/2}),\qquad p\le X,
+\]
+
+with
+
+\[
+\Pr(K_p=k)=(1-p^{-1/2})p^{-k/2}.
+\]
+
+Set
+
+\[
+S_X=\sum_{p\le X}K_p\log p.
+\]
+
+Then
+
+\[
+m_X=\mathbb E S_X
+=
+\sum_{p\le X}\frac{\log p}{\sqrt p-1}
+\sim2\sqrt X,
+\]
+
+and
+
+\[
+V_X={\rm Var}(S_X)
+=
+\sum_{p\le X}
+(\log p)^2
+\frac{p^{-1/2}}{(1-p^{-1/2})^2}
+\sim2\sqrt X\log X.
+\]
+
+Standard PNT estimates give a Lyapunov ratio tending to zero, of scale
+
+\[
+O\!\left(X^{-1/4}\sqrt{\log X}\right).
+\]
+
+Hence the centered/normalized finite-prime convolution has a Gaussian limit.
+
+This is a bona fide realization of the statement:
+
+> the Archimedean Gaussian shape can emerge as a normalized convolutional limit of aggregate finite-place data.
+
+But ordinary CLT is not RH. It keeps the second cumulant and destroys the higher residual structure.
+
+The RH-bearing target is therefore not Gaussian convergence alone, but a controlled residual after the universal Gaussian is factored out — a mod-Gaussian / operator-level closure problem.
+
+---
+
+## 10. Why the square is load-bearing
+
+For a finite valuation vector \(a=(a_p)\), the Archimedean log-weight is
+
+\[
+W(a)=\sum_pa_p\log p=\log n.
+\]
+
+Then
+
+\[
+W(a)^2
+=
+\sum_pa_p^2(\log p)^2
++
+2\sum_{p<q}a_pa_q\log p\log q.
+\]
+
+The square creates all-to-all cross-prime couplings.
+
+This is exactly the information lost by independent primewise Gaussianization.
+
+It is also the natural variable in heat/Gaussian deformations of zeta-like Dirichlet series.
+
+---
+
+## 11. de Bruijn-Newman is an exact heat-flow phase boundary
+
+The de Bruijn-Newman family has the form
+
+\[
+H_t(z)=\int_0^\infty e^{t u^2}\Phi(u)\cos(zu)\,du,
+\]
+
+and satisfies a heat-type evolution in the spectral coordinate.
+
+There is a finite constant \(\Lambda\) such that all zeros are real exactly for \(t\ge\Lambda\).
+
+RH is equivalent to \(\Lambda\le0\). Rodgers-Tao proved \(\Lambda\ge0\). Therefore
+
+\[
+\boxed{\mathrm{RH}\iff\Lambda=0.}
+\]
+
+If RH is true, the classical zeta object lies exactly on the phase boundary between real-rooted and non-real-rooted heat-flow regimes.
+
+This is the mathematically precise version of the "wavefront" intuition. No quantum-mechanical interpretation is required.
+
+---
+
+## 12. Borwein sinc integrals identify the correct small-number mechanism
+
+Products of sinc functions are characteristic functions of sums of bounded uniform random variables.
+
+If
+
+\[
+X_k\sim{\rm Unif}[-a_k,a_k],
+\]
+
+then
+
+\[
+\prod_k{\rm sinc}(a_kt)
+\]
+
+is the characteristic function of \(\sum_kX_k\).
+
+The celebrated Borwein plateau occurs because convolution support has not yet reached the boundary of the first flat density:
+
+\[
+\sum_{k\ge1}a_k\le a_0
+\]
+
+implies an exact constant integral. Once support crosses the boundary, the equality breaks, often by an initially tiny correction.
+
+This gives a precise "law of small numbers" mechanism:
+
+> low-complexity configurations can obey an exact apparent law because their generated support has not yet reached the boundary that can distinguish the global system.
+
+This is a probe-gap, not evidence that the finite law extrapolates globally.
+
+---
+
+## 13. RH has an exact arithmetic wavefront
+
+Let a logarithmic test function be supported in
+
+\[
+[-L,L].
+\]
+
+Its autocorrelation is supported in \([-2L,2L]\). Therefore the prime-power side of the explicit formula can only see
+
+\[
+\log n\le2L,
+\qquad
+n\le e^{2L}.
+\]
+
+Thus the finite arithmetic information horizon is
+
+\[
+\boxed{X(L)=e^{2L}.}
+\]
+
+This matches the cutoff in the Connes-Consani-Moscovici spectral-triple program, where the interval parameter \(\lambda=e^L\) uses Euler products over
+
+\[
+p\le\lambda^2=e^{2L}.
+\]
+
+Recent compact-window work identifies a corresponding spectral density scale
+
+\[
+T^*(L)=2\pi e^{2L}.
+\]
+
+The finite window is therefore a genuine time-bandwidth / Paley-Wiener information horizon.
+
+Preferred terminology: arithmetic wavefront.
+
+Do not call it literal quantum wavefunction collapse unless a concrete quantum model is separately supplied.
+
+---
+
+## 14. Current independent spectral route
+
+Connes-Consani-Moscovici construct self-adjoint finite operators from Euler products over primes \(p\le\lambda^2\). Their spectra numerically track low zeta zeros with high accuracy.
+
+Connes-van Suijlekom prove a real-zero theorem of the following form: if a real convolution/distribution kernel defines a lower-bounded self-adjoint operator on a finite interval, with a simple isolated lowest eigenvalue and even ground state \(\xi\), then the Fourier transform \(\widehat\xi\) has only real zeros.
+
+The missing step in the zeta spectral-triple route is a rigorous limiting theorem showing that the normalized spectral determinants / ground states converge to the Riemann \(\Xi\) object strongly enough for Hurwitz/real-rootedness to survive.
+
+This is an independently discovered version of our closure wall.
+
+---
+
+## 15. Suzuki screw-function route
+
+Suzuki's screw-function program converts the distributional Weil form into continuous-kernel / Hilbert-space data and constructs finite-interval self-adjoint problems.
+
+The 2026 formulation conjectures a limiting self-adjoint operator whose eigenvalues are the zero ordinates.
+
+This again localizes the problem at:
+
+\[
+\text{finite self-adjoint systems}
+\longrightarrow
+\text{global zeta spectrum}.
+\]
+
+The limit, not finite self-adjointness, is the proof wall.
+
+---
+
+## 16. Infinite-divisibility equivalent target
+
+Nakamura-Suzuki construct an explicit function whose exponential is the characteristic function of an infinitely divisible probability distribution if and only if RH holds.
+
+This offers a second closure target:
+
+> Produce the RH-equivalent exponent as a limit of manifestly Lévy-Khintchine exponents with positive Lévy measures, in a topology preserving infinite divisibility.
+
+This route fits the aggregate-prime convolution frame exceptionally well and should be developed in parallel with the spectral-determinant route.
+
+---
+
+## 17. Function-field control: what a successful proof looks like
+
+For curves over finite fields, the analogous RH is finite-dimensional and solved.
+
+The Weil quadratic form can be written as a Gram/intersection matrix on \(C\times C\). The Hodge index theorem supplies positivity independently of the zeros.
+
+SmartAlgebra's RH bridge reproduces this rung-by-rung and shows exactly what fails for \(\operatorname{Spec}\mathbb Z\):
+
+- no verified square host carrying the required Gram/intersection identity and Hodge-index positivity;
+- the number-field test space is infinite-dimensional;
+- finite restrictions do not a priori decide the global sign;
+- a common closable form core / dense passage is required.
+
+This remains the cleanest geometric control for what "independent positivity" means.
+
+---
+
+## 18. Older programs retained, not promoted
+
+The archive contains substantial prior work on:
+
+- absolute/Arakelov surface and \(\mathbb F_1\) geometry;
+- Frobenius-flow / prime-orbit models with periods \(\log p\);
+- Archimedean Gamma density;
+- q-clocks, Witt/necklace and multiset deformations;
+- secondary-zeta moments;
+- Hankel/Jacobi and Stieltjes/Hausdorff criteria;
+- resolvents, KMS/Bost-Connes, finite shifts;
+- prolate/Sonin localization;
+- hyperbolic-tent and Nicolas-type packets;
+- Fisher/heat formulations;
+- finite-band communications/Mellin/Mobius experiments.
+
+These are not discarded. They are classified as alternate instruments or supporting probes.
+
+Current dominance criterion: a route is promoted only if it directly attacks the closure/positivity wall without assuming the zero location it is meant to prove.
+
+---
+
+## 19. The load-bearing conjecture
+
+### Prime-Wavefront Closure Theorem (PWCT) — CONJECTURED
+
+There should exist finite-window arithmetic objects \(A_L\), constructed without using the unknown zero locations, satisfying all of:
+
+1. \(A_L\) is self-adjoint / produces a positive quadratic form by construction.
+2. Its arithmetic input is exactly the prime-power data visible inside the wavefront \(n\le e^{2L}\).
+3. Its bulk finite-place convolution has a canonical Gaussian/heat normalization.
+4. The residual after removing that Gaussian remains controlled; ordinary CLT loss is not allowed.
+5. The corresponding determinant, ground-state Fourier transform, or Weil form matches the exact completed zeta object up to an explicitly controlled residual.
+6. The residual tends to zero in a topology strong enough to preserve real-rootedness or Weil positivity.
+7. No step defines positivity, the operator, or the residual by using zeta zeros.
+
+Two concrete variants:
+
+### PWCT-Spectral
+
+Construct entire real-rooted \(D_L(z)\), from self-adjoint arithmetic operators, and prove
+
+\[
+D_L(z)\to C\,\Xi(z)
+\]
+
+locally uniformly on \(\mathbb C\), with \(C\ne0\). Hurwitz then forces all zeros of \(\Xi\) to be real.
+
+### PWCT-Weil
+
+For every \(L\), prove the exact compressed Weil form \(Q_L\ge0\), and prove a common-core / lower-semicontinuous exhaustion
+
+\[
+Q_L\to Q
+\]
+
+that preserves nonnegativity. Weil's criterion then yields RH.
+
+A third probabilistic variant is the Nakamura-Suzuki infinite-divisibility closure.
+
+---
+
+## 20. The central technical danger
+
+The compact-window positivity margin becomes extraordinarily small as \(L\) grows. Therefore an approximate factorization with merely polynomial/exponential error is unlikely to suffice.
+
+The ideal object is an exact identity, exact positive factorization, monotone comparison, or structural operator theorem.
+
+If only an asymptotic residual is available, it must be compared against the actual shrinking spectral gap/ground-state margin, not against a fixed norm.
+
+This is where many otherwise beautiful approximations die.
+
+---
+
+## 21. Immediate proof program
+
+1. Normalize one convention for the exact Weil form and fix the log-window parameter \(L\).
+2. Build the finite prime-power Lévy/convolution process using exactly the same cutoff \(n\le e^{2L}\).
+3. Factor its universal Gaussian second-cumulant part.
+4. Preserve the residual as an operator/kernel, not only a scalar characteristic-function error.
+5. Compare that residual to the finite-window screw/prolate/Weil operator.
+6. Search first for an exact Schur-complement, convolution, periodization, or rank-one identity.
+7. If exact identification fails, prove a signed operator inequality with residual dominated by the finite-window positivity margin.
+8. Independently attempt the spectral-determinant convergence and the infinite-divisibility closure.
+9. Use hostile controls: synthetic off-line zeros, Gaussian-mixture false friends, mixed-prime positivity obstruction, phase randomization, omitted prime powers, and Archimedean-term mutation.
+10. Only after a closure theorem survives all controls may the repo contain the phrase "proof of RH" without a qualifier.
+
+---
+
+## Claim status summary
+
+- Weil positivity equivalent to RH: DISCLOSED / classical.
+- Product formula and log-prime Archimedean weighting: DISCLOSED.
+- Tate local finite/Archimedean dictionary: DISCLOSED.
+- One-prime Fourier/Mellin transport: DISCLOSED on its declared radial span.
+- Positive global pointwise Gaussian transport: REFUTED.
+- Theta periodization repair: DISCLOSED; insufficient for RH.
+- Positive self-duality implies RH: REFUTED.
+- Prime-power Lévy representation for \(\sigma>1\): DISCLOSED / classical.
+- Critical finite-cutoff prime convolution Gaussianizes: CORROBORATED; formal proof should be written cleanly in-repo.
+- Gaussian bulk equals Tate's Archimedean vector canonically: CONJECTURED; normalization/representation bridge still owed.
+- Arithmetic wavefront \(X(L)=e^{2L}\): DISCLOSED once the support convention is fixed.
+- Spectral wavefront / Landau-Widom profile: CORROBORATED by 2026 compact-window work.
+- de Bruijn-Newman phase boundary: DISCLOSED / classical; RH iff \(\Lambda=0\) after Rodgers-Tao.
+- PWCT closure theorem: UNVERIFIED and currently load-bearing.
