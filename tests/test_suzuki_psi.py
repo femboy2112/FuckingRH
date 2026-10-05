@@ -1,5 +1,6 @@
 import importlib.util
 from pathlib import Path
+import sys
 import unittest
 import mpmath as mp
 
@@ -7,6 +8,7 @@ MODULE = Path(__file__).resolve().parents[1] / "scripts" / "suzuki_psi.py"
 spec = importlib.util.spec_from_file_location("suzuki_psi", MODULE)
 m = importlib.util.module_from_spec(spec)
 assert spec.loader is not None
+sys.modules[spec.name] = m
 spec.loader.exec_module(m)
 
 
