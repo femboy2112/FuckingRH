@@ -2,13 +2,28 @@
 
 Research repository for a proof-first attack on the Riemann Hypothesis.
 
-**Status:** RH remains open. This repository is deliberately organized to distinguish:
-- classical/exact identities,
-- verified finite computations and controls,
-- conjectural bridges,
-- refuted/no-go routes,
-- and the single load-bearing closure/positivity theorem a genuine proof must discharge.
+**Status:** RH remains open. This repository distinguishes exact identities, verified controls, conjectural bridges, refuted shortcuts, and the load-bearing theorem still owed.
 
-The current program combines Weil positivity, Tate/Fourier-Mellin local structure, finite-to-Archimedean transport, prime-power convolution/Lévy structure, compact-window wavefronts, prolate/sinc concentration, and self-adjoint spectral approximants.
+## Start here
 
-Substantial consolidation work lives on the research branch rather than being silently asserted on `main`.
+1. [CURRENT_STATE.md](CURRENT_STATE.md) — canonical governing frame.
+2. [docs/SCREW_SINC_LEVY_UNIFICATION.md](docs/SCREW_SINC_LEVY_UNIFICATION.md) — **current shortest RH-equivalent attack surface**: Suzuki's explicit prime-wavefront function, sinc/triangle convolution squares, screw-kernel positivity, and infinite divisibility.
+3. [CLAIM_LEDGER.md](CLAIM_LEDGER.md) — what is proved, corroborated, conjectured, unverified, dark, or refuted.
+4. [docs/NEGATIVE_CONTROLS.md](docs/NEGATIVE_CONTROLS.md) — attractive dead ends that have already failed.
+5. [PROVENANCE_MAP.md](PROVENANCE_MAP.md) — where the archived conversation and cross-repo material came from.
+6. [docs/LITERATURE_CURRENT_2026-10-05.md](docs/LITERATURE_CURRENT_2026-10-05.md) — refreshed current literature map.
+7. [research/2026-10-05/FOURIER_MELLIN_TRANSPORT_PROBE.md](research/2026-10-05/FOURIER_MELLIN_TRANSPORT_PROBE.md) — exact finite/Archimedean transport probe and its two-prime obstruction.
+
+## Current dominant reduction
+
+Masatoshi Suzuki gives an explicit even function \(\Psi(t)\), defined directly from prime powers plus the Archimedean completion, for which
+
+\[
+\boxed{\mathrm{RH}\iff \Psi(t)\ge0\quad\forall t\in\mathbb R.}
+\]
+
+Moreover \(\Psi(t)=W(R_t*\widetilde R_t)\), where \(R_t\) is a rectangular window; its Fourier transform is a sinc. Writing \(g=-\Psi\), RH is also equivalent to global positivity of the Kreĭn screw kernel and, by Nakamura–Suzuki, to \(e^{-\Psi}\) being an infinitely divisible characteristic function.
+
+That is the first object to attack. The broader Weil/prolate/adelic/absolute-geometry programs remain in the repo as independent routes and controls.
+
+Substantial consolidation work lives on branch `aletheia/rh-consolidation-2026-10-05`; `main` is intentionally minimal until the research branch is reviewed.
