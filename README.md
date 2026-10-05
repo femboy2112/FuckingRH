@@ -27,3 +27,7 @@ Moreover \(\Psi(t)=W(R_t*\widetilde R_t)\), where \(R_t\) is a rectangular windo
 That is the first object to attack. The broader Weil/prolate/adelic/absolute-geometry programs remain in the repo as independent routes and controls.
 
 Substantial consolidation work lives on branch `aletheia/rh-consolidation-2026-10-05`; `main` is intentionally minimal until the research branch is reviewed.
+
+## Astra proof attempt 001
+
+[Round result](research/astra_round_001/ROUND_RESULT.md): **RH remains open**. The round proves finite-event rigidity, rules out the canonical geometric-prime Gaussian residual, and reconstructs the event/tail obligation with certified controls. See the [proof attempt](research/astra_round_001/PROOF_ATTEMPT_001.md) for the first unpaid lemma.

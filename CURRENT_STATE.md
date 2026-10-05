@@ -1,5 +1,9 @@
 # CURRENT STATE — 2026-10-05
 
+## Round 001 update
+
+The research branch `astra/psi-wavefront-proof-001` proves finite-event rigidity and refutes the canonical geometric-prime Gaussian-quotient closure. It does not prove RH. The exact remaining arithmetic target is `H_j >= A*(S_j)` for every prime-power prefix; this is an equivalent reformulation, not a proved reduction. See [ROUND_RESULT](research/astra_round_001/ROUND_RESULT.md) and [the dependency DAG](research/astra_round_001/THEOREM_DEPENDENCY_DAG.md). The historical frame below remains context, with these new no-go results constraining its candidate constructions.
+
 ## Verdict
 
 The Riemann Hypothesis is OPEN.
