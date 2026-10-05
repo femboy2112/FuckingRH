@@ -42,6 +42,14 @@ Legend:
 | C29 | Lambert \(W\) is naturally relevant to prime-rank ↔ Archimedean-mass inversion. | DISCLOSED asymptotically | \(M_N\sim N\log N\Rightarrow N\sim M/W(M)\). | Useful coordinate tool; not currently proof-bearing. |
 | C30 | A literal quantum wavefunction-collapse interpretation is required. | UNVERIFIED / unnecessary | Wavefront has rigorous Paley-Wiener/time-bandwidth meaning without quantum ontology. | Only promote if a defined Hilbert dynamics adds a new theorem. |
 
+
+| C31 | Suzuki's explicit prime/Archimedean function \(\Psi(t)\) satisfies RH iff \(\Psi(t)\ge0\) for every real \(t\). | DISCLOSED | Suzuki, JLMS 2023, Theorem 1.7. | This is now the shortest scalar proof endpoint. |
+| C32 | \(\Psi(t)=W(R_t*\widetilde R_t)\) for a rectangular window \(R_t\), so the RH-equivalent family is a sinc-squared/triangular convolution-square family. | DISCLOSED | Suzuki §3.4, eqs. (3.9)–(3.11). | Normalize conventions and implement an independent evaluator. |
+| C33 | Writing \(g=-\Psi\), RH iff the screw kernel \(G_g(t,u)=\Psi(t)+\Psi(u)-\Psi(t-u)\) is globally PSD. | DISCLOSED | Suzuki Theorem 1.2 plus screw-kernel definition. | Seek arithmetic-only Gram/negative-type factorization. |
+| C34 | Nakamura-Suzuki's \(g_\zeta\) is the same \(g=-\Psi\), and RH iff \(e^{-\Psi}\) is an infinitely divisible characteristic function. | DISCLOSED | Nakamura-Suzuki Theorem 1.1. | Construct positive finite Lévy approximants converging to this exact exponent. |
+| C35 | The Brownian covariance intuition has an exact kernel analogue: for variogram \(c|t|\), half the screw kernel is \(c\min(t,u)\). | DISCLOSED algebraically | Standard covariance/negative-type identity. | Use as structural guide only; do not infer RH. |
+| C36 | The explicit \(\Psi\) is a deterministic reserve process whose prime-power events occur exactly at \(t=\log p^k\) and whose prime contribution is a sum of ramps \((t-\log n)_+\). | DISCLOSED | Immediate from Suzuki's prime formula. | Search for a global reserve/convolution invariant controlling every event interval. |
+
 ## Dominant route
 
 Current dominant route is **closure of finite positive/self-adjoint arithmetic systems**, not pointwise local smoothing.
