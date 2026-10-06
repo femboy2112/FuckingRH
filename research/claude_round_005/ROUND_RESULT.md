@@ -26,3 +26,10 @@ The carry machine reproduces Round-004 exactly: local layer = clean carry filter
 = same bulk+analytic renormalization vs the indefinite imaginary-frequency pole (C91), reached now via
 the Cuntz/braid carry curvature. Shared-DC and quotient-filtration escapes both closed. Remaining probe:
 carry-curvature carre-du-champ (does it = the von-Mangoldt/Suzuki event measure?) and self-sieve causality.
+
+## VERDICT (round close)
+Outcome (2): the central new hope (shared-DC telescoping) is killed by an exact no-go (C98), and the
+wall is confirmed intrinsic (= Round-004 C91 / Weil positivity of the Cuntz/braid carry trace). Net new
+positives: the local factor is now a literal carry-response filter (C96), SUCC=carrier+carry (C95),
+carry=Cuntz/braid (C97), and the von-Mangoldt measure = carre-du-champ of carry curvature locally (C99).
+RH STILL OPEN.
