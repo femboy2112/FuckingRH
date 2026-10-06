@@ -1,0 +1,31 @@
+{
+  "retrieved_utc_date": "2026-10-06",
+  "sources": [
+    {
+      "author": "Terence Tao",
+      "title": "254A, Notes 1: Elementary multiplicative number theory",
+      "url": "https://terrytao.wordpress.com/2014/11/23/254a-notes-1-elementary-multiplicative-number-theory/",
+      "date": "2014-11-23",
+      "read_scope": "Dirichlet convolution, equations (35), (44); hyperbola equations (54)-(56), Remark 41; Mobius inversion (60). Primary author exposition.",
+      "application": "Classical attribution and cross-check of independently derived finite factor counting and Dirichlet-series rearrangement. No RH reduction imported.",
+      "web_refs": ["turn72view0", "turn81view0", "turn81view1"]
+    },
+    {
+      "author": "Terence Tao",
+      "title": "Erdos' divisor bound",
+      "url": "https://terrytao.wordpress.com/2011/07/23/erdos-divisor-bound/",
+      "date": "2011-07-23",
+      "read_scope": "Divisor pairing around sqrt(n) and square correction; primary author exposition.",
+      "application": "Independent provenance check that square-root factor pairing is classical, not a novelty claim.",
+      "web_refs": ["turn72view1"]
+    }
+  ],
+  "local_sources_read": [
+    "research/aletheia_2026-10-06/FACTOR_SQUARE_MOVING_WINDOW.md",
+    "scripts/factor_square_moving_window.py",
+    "research/claude_round_004/MOBIUS_FERMIONIC_COMPLEX.md",
+    "research/claude_round_004/IRREDUCIBLE_NONCOMMUTATIVE_CORE.md",
+    "CLAIM_LEDGER.md C87-C89"
+  ],
+  "scope": "All newly claimed operator identities have direct proofs and exact tests. No source is used to claim cone geometry forces the analytic half-density, or that the stated locality obstruction excludes arbitrary nonlocal couplings."
+}
