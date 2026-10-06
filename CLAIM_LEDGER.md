@@ -22,9 +22,9 @@ Legend:
 | C09 | Positive Fourier-self-dual local data plus functional equation forces RH. | REFUTED | Explicit positive self-dual Gaussian mixture has an off-line Mellin multiplier. | None. |
 | C10 | Normalized Euler products for \(\sigma>1\) define a pure-jump infinitely-divisible law on log scale. | DISCLOSED | Lévy-Khintchine expansion of \(\zeta(\sigma+it)/\zeta(\sigma)\). | Align normalization with RH-equivalent Nakamura-Suzuki exponent. |
 | C11 | Differentiating the Lévy exponent exposes von-Mangoldt/\(\log p\) weights. | DISCLOSED | \(-\zeta'/\zeta\) prime-power series. | None. |
-| C12 | Finite critical-cutoff prime convolutions Gaussianize after centering/scaling. | CORROBORATED | Standard triangular-array CLT with PNT-sized moments; proof should be made fully explicit in repo. | Write Lyapunov/Lindeberg proof with explicit error scale. |
+| C12 | Finite critical-cutoff prime convolutions Gaussianize after centering/scaling. | DISCLOSED | Full Lyapunov/PNT proof in research/astra_round_001/CONVOLUTION_RESIDUAL_AUDIT.md; no RH error estimate. | Canonical Gaussian quotient is now refuted as the target (C38). |
 | C13 | The resulting Gaussian is canonically Tate's \(e^{-\pi x^2}\), not merely a Gaussian after affine normalization. | CONJECTURED | Shape is forced by CLT; canonical local normalization/representation equivalence is still owed. | Construct explicit unitary normalization intertwining additive character/Fourier conventions. |
-| C14 | Ordinary CLT is sufficient for RH. | REFUTED | CLT discards higher cumulant/phase residual; positive Gaussian bulk is not the Weil sign. | Work mod-Gaussian/operator residual instead. |
+| C14 | Ordinary CLT is sufficient for RH. | REFUTED | CLT discards higher cumulant/phase residual; positive Gaussian bulk is not the Weil sign. | Canonical Gaussian quotient is refuted (C38); specify a different exact construction. |
 | C15 | Squared Archimedean weight \(W(a)^2\) contains necessary cross-prime couplings. | DISCLOSED algebraically | Expansion has \(2a_pa_q\log p\log q\). | Identify those cross terms in a known heat/Weil/prolate kernel exactly. |
 | C16 | Borwein sinc plateaus are a support-threshold/convolution phenomenon. | DISCLOSED | Fourier inversion of bounded uniform sums; exact support condition. | Translate threshold mechanism into a theorem about Weil-window activation. |
 | C17 | A log-window \([-L,L]\) has arithmetic horizon \(n\le e^{2L}\). | DISCLOSED once convention fixed | Autocorrelation support doubles to \([-2L,2L]\). | Keep the support convention fixed across every script/paper. |
@@ -52,7 +52,11 @@ Legend:
 
 ## Dominant route
 
-Current dominant route is **closure of finite positive/self-adjoint arithmetic systems**, not pointwise local smoothing.
+The active Round002 target is exact recovery-reserve payment through
+service transport or coupled prime-tower completion. The Gaussian quotient,
+uncompensated martingale/Bernstein marginals, and the named fixed-capital
+repairs are refuted. The older independent closure endpoints below remain
+unverified alternatives; their listing supplies no missing positivity arrow.
 
 Preferred proof endpoints, in order of directness:
 
@@ -62,3 +66,49 @@ Preferred proof endpoints, in order of directness:
 4. **Absolute-Hodge:** independent arithmetic surface/square geometry whose intersection positivity is exactly the Weil form.
 
 A proof may use more than one route, but they must remain independent enough to triangulate the closure step.
+
+
+## Astra round 001 — checked results
+
+No claim below says RH is proved. "New" means proved in this repository this round, not an external priority claim. Full proofs and boundaries: `research/astra_round_001/ROUND_RESULT.md`.
+
+| ID | Claim | Status | Scope / evidence | Next verdict-changing probe |
+|---|---|---|---|---|
+| C37 | For distinct positive a_j, Psi + sum c_j (abs(t)-a_j)_+ + b t^2 is CND iff RH, all c_j=0, and b>=0. | DISCLOSED | Finite-event rigidity theorem, GRAM_LEVY_ATTEMPT Theorem 4; root and adversarial proof audits. | Any new Gram construction must distinguish every nonzero finite event mutation. |
+| C38 | The canonical geometric-prime Gaussian quotient can converge, after scalar rescaling and unit-phase repair, to exp(-Psi). | REFUTED | Its modulus exceeds one away from zero; every characteristic-function limit is a point mass. CONVOLUTION_RESIDUAL_AUDIT R1–R4. | Specify a different nonlocal arithmetic construction. |
+| C39 | A finite prime-event truncation retaining all exact Archimedean terms is a global CND approximant. | REFUTED | Exponential growth contradicts CND quadratic growth, even after a Gaussian correction. | Supply and prove a different tail completion. |
+| C40 | Literal prime-event ramps are independent PSD kernel increments. | REFUTED | Exact 2-by-2 matrix has eigenvalues of both signs for either ramp sign. | Prove coupled arithmetic cancellation. |
+| C41 | The exact event system has plastic-constant curvature transition and one constrained minimum per later interval. | DISCLOSED | EVENT_DYNAMICS; independently derived, with interval implementation and initial cusp handled. | Global reserve inequality remains unpaid. |
+| C42 | The conjugate reserve H_j-A*(S_j) is monotone at the true prime events. | REFUTED | Certified decrease from prefix 4 to prefix 5. | Prove a nonmonotone global lower bound instead. |
+| C43 | Every actual prime-power prefix satisfies H_j>=A*(S_j). | UNVERIFIED | Exactly RH-equivalent after the initial range; no novelty in naming it. | Uniform arithmetic credit-versus-Bregman-debit theorem. |
+| C44 | The local implementation certifies Psi>0 through log(101). | DISCLOSED, FINITE | Arb 200-bit initial certificate plus 35 intervals; evidence retained. | No finite-to-infinite inference permitted. |
+| C45 | External Mittermeier Part 3 v3 (75) and page-20 upper-edge display are exactly normalized. | REFUTED | Missing -h(u), with h(u)>0, in (75); upper-edge coefficient 2 should be 4 for positive ordinates. Main pinned bound survives. | Use corrected formulas in future tail work. |
+| C46 | The external positivity run through 10^10 was reproduced here. | UNVERIFIED | Only the exact event count and bounded code/method audit were reproduced; full sign run not executed. | Rebuild and independently check full directed run if needed. |
+| C47 | Positive Levy approximants with uniformly bounded first absolute moments can converge to Psi. | REFUTED | Origin t log(1/t)/2 cusp contradicts the uniform linear bound. | Permit heavy tails and prove exact closure. |
+| C48 | Any positive increase in one event weight preserves global scalar positivity. | REFUTED | Scalar rigidity lemma: positivity would imply RH and bounded Psi, contradicted by the subtracted ramp. | A proposed invariant must use mutation-sensitive exact arithmetic. |
+
+The umbrella C22/C26 constructions remain unverified. Their literal finite-cutoff and canonical Gaussian-quotient implementations are now refuted; this does not rule out every possible arithmetic Levy or Gram construction.
+
+
+## Astra round 002 — audited results
+
+All proofs, finite boundaries, and the first unpaid lemma are in
+`research/astra_round_002/`. No claim below proves RH or weakens a Round001
+no-go theorem. Newly proved here does not assert external novelty.
+
+| ID | Claim | Status | Scope / evidence | Next verdict-changing probe |
+|---|---|---|---|---|
+| C49 | Service curvature pushes to Lebesgue mass, and the reserve has the exact boundary-corrected transport-area identity. | PROVED-IN-REPO | SERVICE_CLOCK_TRANSPORT; clamp is not concave, tangent extension costs sigma0²/(2c0). | Arithmetic payment, not another change of coordinates. |
+| C50 | Exact actual prefix laws admit a universal uncompensated stochastic order or exact martingale coupling. | REFUTED | Earliest witnesses q2; reverse increasing-convex order first fails q4; Arb and full strike-extremum argument. | Specify and price a compensation. |
+| C51 | Minimal Winfinity repair into increasing-concave order equals the maximal lower-quantile mean deficit. | NEW LEMMA PROVED THIS ROUND | Independent variational characterization; translation attains it; finite prime endpoint formula. | Optimize nonuniform repair cost, not merely its distance. |
+| C52 | Initial capital pays all one-sided or translated order-repair costs. | REFUTED | One-sided W1 at q5, Lipschitz translation at q7, exact translation at q13; actual reserves remain positive. | Minimal nonuniform upward repair at the same radius. |
+| C53 | Every recovered episode has ordered transport, with physical W1 cost exactly its drawdown. | NEW LEMMA PROVED THIS ROUND | Incoming backlog balances mass; strict service-mean mismatch excludes martingales; cost fixed by marginals. | Prove D<=E arithmetically for every episode. |
+| C54 | A positive weighted-binomial barycentric kernel automatically reproduces actual prime masses. | REFUTED | Constructed TP2 kernel meets positivity/barycenters but not prescribed marginal; sharp grid criterion and two-node obstruction. | Prove independent compensated marginal inequalities. |
+| C55 | Either sign of the exact workload can persist forever. | REFUTED | Direct two-sided Landau reconstruction, exact completed logarithmic-derivative transform; no PNT or ordinate input. | Recurrence supplies no reserve floor. |
+| C56 | Part4's released branch ledger alone rigorously gives B-O strict recoveries. | REFUTED | Valid derivative-enclosure counterexample exposes missing left upper-sign guard; positivity certificate unaffected. | Rerun with both derivative signs certified if counts are needed. |
+| C57 | Each full prime tower has a positive capped-distance Gram block after linear correction Mp abs(t). | NEW LEMMA PROVED THIS ROUND | Explicit interval Hilbert space and finite positive Levy density; Mp=log p/(sqrt p-1) is sharp for the actual prime sign. | Couple the exact Archimedean debit without assuming positivity. |
+| C58 | Independent positive tower summation directly gives Psi or an integrable service marginal. | REFUTED | Sum Mp diverges; even one full tower has infinite first service moment. | A nonlocal compensated construction is still required. |
+| C59 | Normalized repaired tower sums converge locally uniformly to abs(t). | NEW LEMMA PROVED THIS ROUND | Exact identity D_X=M_X abs(t)-P on each eventual fixed window; P/M_X vanishes. | This Cauchy closure does not retain the RH residual. |
+| C60 | Every actual recovered episode's fixed transport cost is at most its incoming reserve. | UNVERIFIED | Precisely Jq<=Cq, still RH-equivalent; no claimed strict reduction. | One independent arithmetic-sensitive payment theorem. |
+| C61 | The original-entry height-optimized pinned constructor certifies every recovery witness beyond 10^10. | REFUTED | Actual entry x=10,275,204,761, recovery witness q=10,381,395,137; slack [-0.28808 +/- 0.00000562], all admissible heights; true reserve positive. | A different arithmetic upper bound or genuinely different anchor scheme. |
+| C62 | Fixed-anchor pinned excess Jhat-J is nondecreasing along consecutive events. | NEW LEMMA PROVED THIS ROUND | Clipping cap rises; added interval equals exact load; together with decreasing active V, failure persists to recovery. | Cannot rescue the same episode by waiting for recovery. |

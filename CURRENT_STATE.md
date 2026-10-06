@@ -1,5 +1,28 @@
 # CURRENT STATE — 2026-10-05
 
+## Round 002 update
+
+RH is not proved. Round 002 starts directly from frozen Round-001 commit
+`77ba6793be220c2fb5c2f0a6c250c54774acb9ea` on
+`astra/prime-transport-martingale-002`; neither PR #2 nor main was merged.
+
+The service clock has been normalized with its nonzero initial boundary.
+Actual-prime counterexamples exclude uncompensated stochastic orders and
+exact martingale/Bernstein marginals. Two independent fixed-capital transport
+repairs also fail. Recovered episodes do have an ordered transport, but its
+cost is exactly the still-unpaid drawdown. Parts 4–5's terminal theorem survives
+audit; their certificate-to-recovery-count inference has a missing sign guard.
+The original-entry pinned constructor fails at a certified recovery witness
+q=10,381,395,137 beyond the published finite base, for every admissible height.
+Prime-power towers give a positive Gram block after a sharp linear repair,
+whose sum over primes diverges; they do not yet give a positive completion.
+
+See [ROUND_RESULT](research/astra_round_002/ROUND_RESULT.md),
+[PROOF_ATTEMPT_002](research/astra_round_002/PROOF_ATTEMPT_002.md), and
+[the frozen parent result](research/astra_round_001/ROUND_RESULT.md).
+The current exact obstruction is payment of every recovered episode's
+transport cost from its incoming Suzuki reserve. This remains RH-equivalent.
+
 ## Verdict
 
 The Riemann Hypothesis is OPEN.
@@ -8,7 +31,12 @@ This repository does not treat a compelling analogy, numerical agreement, Fourie
 
 > Construct a sequence/family of finite, arithmetic, manifestly positive or self-adjoint objects whose exact closure is the completed Weil/Xi object, and prove the closure strongly enough that positivity/real-rootedness survives the limit.
 
-The central update of 2026-10-05 is that the finite-to-Archimedean map should not be modeled as an independent pointwise map at each prime. The better carrier is an aggregate convolution/Lévy process on logarithmic scale, with the Archimedean Gaussian emerging as a normalized bulk limit and the RH-bearing information living in the residual and in the exact finite-window closure.
+The consolidation's aggregate Gaussian-residual proposal is no longer the
+immediate program. Round 001 proved that its canonical Gaussian quotient
+cannot have the desired characteristic-function limit, even with scalar
+rescaling and phase correction. Any nonlocal operator construction must be
+specified independently; a Gaussian limit does not supply it. Round 002 tests
+exact service transport and prime-power tower blocks against the reserve.
 
 ---
 
@@ -433,7 +461,9 @@ This is a bona fide realization of the statement:
 
 But ordinary CLT is not RH. It keeps the second cumulant and destroys the higher residual structure.
 
-The RH-bearing target is therefore not Gaussian convergence alone, but a controlled residual after the universal Gaussian is factored out — a mod-Gaussian / operator-level closure problem.
+The CLT is a proved control, not a candidate positivity certificate. The
+canonical Gaussian-divided residual is REFUTED as a route to exp(-Psi)
+(Round001, C38). An unspecified operator residual is not a replacement proof.
 
 ---
 
@@ -601,7 +631,9 @@ This offers a second closure target:
 
 > Produce the RH-equivalent exponent as a limit of manifestly Lévy-Khintchine exponents with positive Lévy measures, in a topology preserving infinite divisibility.
 
-This route fits the aggregate-prime convolution frame exceptionally well and should be developed in parallel with the spectral-determinant route.
+This remains an equivalent endpoint. Exact-completion finite cutoffs,
+independent event increments, and the canonical Gaussian quotient are
+refuted implementations. No positive arithmetic completion is known here.
 
 ---
 
@@ -644,7 +676,7 @@ Current dominance criterion: a route is promoted only if it directly attacks the
 
 ---
 
-## 19. The load-bearing conjecture
+## 19. Historical umbrella conjecture: unverified alternatives
 
 ### Prime-Wavefront Closure Theorem (PWCT) — CONJECTURED
 
@@ -652,8 +684,8 @@ There should exist finite-window arithmetic objects \(A_L\), constructed without
 
 1. \(A_L\) is self-adjoint / produces a positive quadratic form by construction.
 2. Its arithmetic input is exactly the prime-power data visible inside the wavefront \(n\le e^{2L}\).
-3. Its bulk finite-place convolution has a canonical Gaussian/heat normalization.
-4. The residual after removing that Gaussian remains controlled; ordinary CLT loss is not allowed.
+3. Any proposed bulk normalization is specified and proved compatible with the exact target.
+4. Its positive closure is established independently; the refuted canonical Gaussian quotient is excluded.
 5. The corresponding determinant, ground-state Fourier transform, or Weil form matches the exact completed zeta object up to an explicitly controlled residual.
 6. The residual tends to zero in a topology strong enough to preserve real-rootedness or Weil positivity.
 7. No step defines positivity, the operator, or the residual by using zeta zeros.
@@ -696,18 +728,30 @@ This is where many otherwise beautiful approximations die.
 
 ---
 
-## 21. Immediate proof program
+## 21. Immediate proof obligation after Round 002
 
-1. Normalize one convention for the exact Weil form and fix the log-window parameter \(L\).
-2. Build the finite prime-power Lévy/convolution process using exactly the same cutoff \(n\le e^{2L}\).
-3. Factor its universal Gaussian second-cumulant part.
-4. Preserve the residual as an operator/kernel, not only a scalar characteristic-function error.
-5. Compare that residual to the finite-window screw/prolate/Weil operator.
-6. Search first for an exact Schur-complement, convolution, periodization, or rank-one identity.
-7. If exact identification fails, prove a signed operator inequality with residual dominated by the finite-window positivity margin.
-8. Independently attempt the spectral-determinant convergence and the infinite-divisibility closure.
-9. Use hostile controls: synthetic off-line zeros, Gaussian-mixture false friends, mixed-prime positivity obstruction, phase randomization, omitted prime powers, and Archimedean-term mutation.
-10. Only after a closure theorem survives all controls may the repo contain the phrase "proof of RH" without a qualifier.
+For each recovered episode, form its balanced prime-arrival measure alpha
+(including its incoming backlog) and flat Archimedean service measure lambda.
+The exact ordered transport cost is
+
+\[
+D=\int T\,d\lambda-\int T\,d\alpha,
+\qquad E=\Psi(\text{entry}),\qquad E-D=C_q-J_q.
+\]
+
+The remaining theorem is `D<=E` for every actual episode. Ordered coupling
+exists automatically, while martingale coupling of these marginals is
+impossible; changing the coupling cannot lower this marginal cost. The
+fixed-capital prefix repairs fail at actual small primes. Prime towers provide
+positive local capped-distance blocks but require divergent linear
+compensation. An arithmetic-sensitive comparison paying those exact costs is
+still absent. No finite certificate, workload recurrence theorem, or transport
+identity is being promoted to the missing sign theorem.
+
+The next bounded discriminator and the status of the pinned-tail constructor
+are recorded in `research/astra_round_002/ROUND_RESULT.md`. All Round001
+no-go theorems remain in force. Spectral/adelic/intersection alternatives
+remain unverified, with no new closure arrow supplied by this round.
 
 ---
 
@@ -721,9 +765,9 @@ This is where many otherwise beautiful approximations die.
 - Theta periodization repair: DISCLOSED; insufficient for RH.
 - Positive self-duality implies RH: REFUTED.
 - Prime-power Lévy representation for \(\sigma>1\): DISCLOSED / classical.
-- Critical finite-cutoff prime convolution Gaussianizes: CORROBORATED; formal proof should be written cleanly in-repo.
+- Critical finite-cutoff prime convolution Gaussianizes: PROVED-IN-REPO in Round001; its canonical Gaussian quotient is REFUTED.
 - Gaussian bulk equals Tate's Archimedean vector canonically: CONJECTURED; normalization/representation bridge still owed.
 - Arithmetic wavefront \(X(L)=e^{2L}\): DISCLOSED once the support convention is fixed.
 - Spectral wavefront / Landau-Widom profile: CORROBORATED by 2026 compact-window work.
 - de Bruijn-Newman phase boundary: DISCLOSED / classical; RH iff \(\Lambda=0\) after Rodgers-Tao.
-- PWCT closure theorem: UNVERIFIED and currently load-bearing.
+- PWCT closure theorem: UNVERIFIED umbrella; exact scalar reserve payment remains the immediate obstruction.

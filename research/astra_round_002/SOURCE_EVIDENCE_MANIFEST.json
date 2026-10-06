@@ -1,0 +1,86 @@
+{
+  "retrieved_utc_date": "2026-10-05",
+  "base_commit": "77ba6793be220c2fb5c2f0a6c250c54774acb9ea",
+  "sources": [
+    {
+      "scratch_filename": "part4v1.pdf",
+      "url": "https://zenodo.org/records/22076079/files/260823_Mittermeier_RH_Recovery_Witnesses_Part4_v1.pdf",
+      "role": "Part4 v1 primary manuscript",
+      "bytes": 545839,
+      "sha256": "903d84da9f1c66aca1159a97f8c568a0431f704615ac44f62e88c636c66accbf"
+    },
+    {
+      "scratch_filename": "part4v1.zip",
+      "url": "https://zenodo.org/records/22076079/files/260826_Mittermeier_Prime_Power_Checkpoint_Reproducibility_Part4_v1.zip",
+      "role": "Part4 v1 original reproduction bundle",
+      "bytes": 4416151,
+      "sha256": "8f405ecd9a4b3af38a64546b0641b45c977dd22e63cf253b25688ba96abd1074"
+    },
+    {
+      "scratch_filename": "part5v1.pdf",
+      "url": "https://zenodo.org/records/22076088/files/260823_Mittermeier_RH_Deep_Episodes_Part5_v1.pdf",
+      "role": "Part5 v1 primary manuscript",
+      "bytes": 592505,
+      "sha256": "30668cdd8a6aeefe16e0d1fbfc76a9e41bcf85f53b1da07c53f5e04cd1f0c279"
+    },
+    {
+      "scratch_filename": "part5v1.zip",
+      "url": "https://zenodo.org/records/22076088/files/260826_Mittermeier_Prime_Power_Checkpoint_Reproducibility_Part5_v1.zip",
+      "role": "Part5 v1 original reproduction bundle",
+      "bytes": 4402684,
+      "sha256": "7c5bbdd9413af8d0787eb4edc85fadb515876e52dfe498f1a997248b92149c56"
+    },
+    {
+      "scratch_filename": "part2v4.zip",
+      "url": "https://zenodo.org/records/22076060/files/260826_Mittermeier_Prime_Power_Checkpoint_Reproducibility_Part2_v4.zip",
+      "role": "Latest inherited certificate implementation",
+      "bytes": 45398,
+      "sha256": "9db8ae126d566b3cf7961494937d9a5c6368848ab01dde5662cb3e5ef9c738d8"
+    },
+    {
+      "scratch_filename": "suzuki_chebyshev.pdf",
+      "url": "https://arxiv.org/pdf/2411.07436v3",
+      "role": "Primary sign-oscillation and Landau reference",
+      "bytes": 424544,
+      "sha256": "ccd4d8f2909e05a97ce0c110d47aa09abe49bcb2909389f786159c7af0f3fd8a"
+    },
+    {
+      "scratch_filename": "suzuki_screw.pdf",
+      "url": "https://arxiv.org/pdf/2206.03682v4",
+      "role": "Primary transform and Theorem11.1 eventual positivity reference",
+      "bytes": 433447,
+      "sha256": "eabccec3c2bfee2eb12077181b564e508270f80698f4a8c64ccf105b30119f41"
+    }
+  ],
+  "bundle_manifest_verification": [
+    {
+      "bundle": "part4v1_bundle",
+      "matched_file_count": 32,
+      "missing": [],
+      "hash_mismatches": []
+    },
+    {
+      "bundle": "part5v1_bundle",
+      "matched_file_count": 29,
+      "missing": [],
+      "hash_mismatches": []
+    }
+  ],
+  "source_code_evidence": {
+    "path_in_part2v4_bundle": "src/ppc_certify.c",
+    "sha256": "f6ac6046d793729890dc315a9ebcf07faa3ac717253adb79a32e6ddbba86827d",
+    "identical_to_part2_v3": true,
+    "affected_function": "close_previous_interval",
+    "missing_guard": "No left derivative upper enclosure is checked before counting a non-overlap drawdown branch as a strict recovery."
+  },
+  "inherited_certificate_sha256": "913ffbfc62660bf819a4803f39011ecfc3fdc9a1eae22dc17cc46edc50b4aa7d",
+  "tests_run": [
+    "python -m unittest tests/test_source_audit_round002.py"
+  ],
+  "not_run": [
+    "Full 1e10 MPFR sign certificate",
+    "2e9 episode scan",
+    "Zero-driven random-phase simulations"
+  ],
+  "note": "No zero-ordinate input file was used in the independent lemmas or tests. PDF and zip bytes remain fetchable at pinned URLs; checksums make content changes detectable."
+}

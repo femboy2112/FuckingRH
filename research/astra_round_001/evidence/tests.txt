@@ -1,0 +1,40 @@
+test_capacity_balance_formal (test_checkpoint_audit.CheckpointAudit.test_capacity_balance_formal) ... ok
+test_curvature_from_slope (test_checkpoint_audit.CheckpointAudit.test_curvature_from_slope) ... ok
+test_eq75_exact_missing_residual (test_checkpoint_audit.CheckpointAudit.test_eq75_exact_missing_residual) ... ok
+test_positive_kernel_primitive (test_checkpoint_audit.CheckpointAudit.test_positive_kernel_primitive) ... ok
+test_arbitrary_finite_window_can_hide_negative_tail (test_convolution_controls.ConvolutionControls.test_arbitrary_finite_window_can_hide_negative_tail) ... ok
+test_borwein_support_contact_and_published_post_contact_value (test_convolution_controls.ConvolutionControls.test_borwein_support_contact_and_published_post_contact_value) ... ok
+test_functional_symmetry_does_not_exclude_negative_tent_sum (test_convolution_controls.ConvolutionControls.test_functional_symmetry_does_not_exclude_negative_tent_sum) ... ok
+test_gaussian_residual_fails_two_point_psd_with_interval_certificate (test_convolution_controls.ConvolutionControls.test_gaussian_residual_fails_two_point_psd_with_interval_certificate) ... ok
+test_selfdual_mixture_multiplier_exact_offline_roots_and_reflection (test_convolution_controls.ConvolutionControls.test_selfdual_mixture_multiplier_exact_offline_roots_and_reflection) ... ok
+test_sign_phases_preserve_variance_but_change_third_cumulant (test_convolution_controls.ConvolutionControls.test_sign_phases_preserve_variance_but_change_third_cumulant) ... ok
+test_two_prime_transport_false_friend (test_convolution_controls.ConvolutionControls.test_two_prime_transport_false_friend) ... ok
+test_uniform_sum_cdf_recovers_independent_triangle_geometry (test_convolution_controls.ConvolutionControls.test_uniform_sum_cdf_recovers_independent_triangle_geometry) ... ok
+test_curvature_identity_exact (test_event_dynamics.EventDynamicsTests.test_curvature_identity_exact) ... ok
+test_derivatives_against_lerch (test_event_dynamics.EventDynamicsTests.test_derivatives_against_lerch) ... ok
+test_distribution_jump_and_continuity (test_event_dynamics.EventDynamicsTests.test_distribution_jump_and_continuity) ... ok
+test_event_gamma_and_planted_tail_mutations (test_event_dynamics.EventDynamicsTests.test_event_gamma_and_planted_tail_mutations) ... ok
+test_event_recurrence (test_event_dynamics.EventDynamicsTests.test_event_recurrence) ... ok
+test_healthy_interval_endpoint_trichotomy (test_event_dynamics.EventDynamicsTests.test_healthy_interval_endpoint_trichotomy) ... ok
+test_independent_archimedean_series_and_formula (test_event_dynamics.EventDynamicsTests.test_independent_archimedean_series_and_formula) ... ok
+test_initial_and_interval_certification (test_event_dynamics.EventDynamicsTests.test_initial_and_interval_certification) ... ok
+test_monotone_fenchel_reserve_is_false (test_event_dynamics.EventDynamicsTests.test_monotone_fenchel_reserve_is_false) ... ok
+test_tent_transform_and_convolution_exact (test_event_dynamics.EventDynamicsTests.test_tent_transform_and_convolution_exact) ... ok
+test_anchoring_and_zero_sum_form_have_opposite_signs (test_gram_levy_obstructions.GramLevyObstructionTests.test_anchoring_and_zero_sum_form_have_opposite_signs) ... ok
+test_cosine_polynomial_has_positive_mean_square (test_gram_levy_obstructions.GramLevyObstructionTests.test_cosine_polynomial_has_positive_mean_square) ... ok
+test_doubling_kernel_detects_superquadratic_step (test_gram_levy_obstructions.GramLevyObstructionTests.test_doubling_kernel_detects_superquadratic_step) ... ok
+test_each_sign_of_one_event_has_an_exact_indefinite_kernel (test_gram_levy_obstructions.GramLevyObstructionTests.test_each_sign_of_one_event_has_an_exact_indefinite_kernel) ... ok
+test_gaussian_division_can_destroy_characteristic_property (test_gram_levy_obstructions.GramLevyObstructionTests.test_gaussian_division_can_destroy_characteristic_property) ... ok
+test_nonnegative_ramp_is_not_cnd (test_gram_levy_obstructions.GramLevyObstructionTests.test_nonnegative_ramp_is_not_cnd) ... ok
+test_signed_levy_ramp_identity_in_physical_coordinate (test_gram_levy_obstructions.GramLevyObstructionTests.test_signed_levy_ramp_identity_in_physical_coordinate) ... ok
+test_zero_sum_cnd_witness_for_each_sign (test_gram_levy_obstructions.GramLevyObstructionTests.test_zero_sum_cnd_witness_for_each_sign) ... ok
+test_formula_regression_values (test_suzuki_psi.SuzukiPsiBaselineTests.test_formula_regression_values) ... ok
+test_origin_and_evenness (test_suzuki_psi.SuzukiPsiBaselineTests.test_origin_and_evenness) ... ok
+test_screw_precision_is_preserved (test_suzuki_psi.SuzukiPsiBaselineTests.test_screw_precision_is_preserved) ... ok
+test_unsorted_event_input (test_suzuki_psi.SuzukiPsiBaselineTests.test_unsorted_event_input) ... ok
+test_wavefront (test_suzuki_psi.SuzukiPsiBaselineTests.test_wavefront) ... ok
+
+----------------------------------------------------------------------
+Ran 35 tests in 3.706s
+
+OK

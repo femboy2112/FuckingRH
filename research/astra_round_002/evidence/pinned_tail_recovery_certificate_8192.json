@@ -1,0 +1,53 @@
+{
+  "x": 10275204761,
+  "q": 10381395137,
+  "T": 10000000,
+  "branch": "crossing",
+  "Wx": "[202730.6834737 +/- 4.52e-8]",
+  "Lx": "[4268149.267532 +/- 8.76e-7]",
+  "Wq": "[203775.5779334 +/- 6.08e-8]",
+  "Lq": "[4292242.593212 +/- 8.85e-7]",
+  "anchor_value": "[0.03321 +/- 1.25e-6]",
+  "terminal_value": "[0.031213 +/- 9.46e-7]",
+  "anchor_workload": "[0.0002253 +/- 6.17e-8]",
+  "terminal_workload": "[0.0008369 +/- 5.29e-8]",
+  "true_cost": "[5.36898 +/- 5.58e-6]",
+  "pinned_upper_cost": "[5.688272 +/- 4.25e-7]",
+  "frozen_reserve": "[0.031213 +/- 9.46e-7]",
+  "slack": "[-0.28808 +/- 5.62e-6]",
+  "slack_negative_certified": true,
+  "height_derivative_margin": "[4.4604736801465688192668037119088476196 +/- 9.01e-38]",
+  "all_admissible_heights_minimized_at_T": true,
+  "prefix_prime_counts": {
+    "10275204760": 466995514,
+    "10275204761": 466995515,
+    "10320015703": 468940423,
+    "10381395137": 471600819
+  },
+  "prefix_higher_power_counts": {
+    "10275204760": 10202,
+    "10275204761": 10202,
+    "10320015703": 10223,
+    "10381395137": 10251
+  },
+  "episode_continuity_verified": true,
+  "rh_proved": false,
+  "anchor_pre_event_workload": "[-2.2e-6 +/- 4.96e-8]",
+  "anchor_entry_certified": true,
+  "next_event": 10381395223,
+  "next_event_base": 10381395223,
+  "pre_next_workload": "[-7.2e-6 +/- 2.55e-8]",
+  "strict_recovery_witness_certified": true,
+  "episode_certificate": {
+    "verified": true,
+    "checked_blocks": 51852,
+    "refined_blocks": 332,
+    "refined_events": 29691,
+    "minimum_certified_workload_lower_bound": "[1.8120167840366433865419076553263707177e-6 +/- 1.78e-44]"
+  },
+  "precision_bits": 128,
+  "taylor_divisor": 8192,
+  "moment_blocks": 171619,
+  "moment_sha256": "cd4fa6ff2d88fe629ec8d9a4fda7ec0b41b825dbbc7d1d87e373e39d65b43a39",
+  "sieve_cpp_sha256": "57a342b686cfc70af09450af33bbc92190b8de19e12b05e7fa1f3439c8acd421"
+}
