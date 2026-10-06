@@ -1,0 +1,186 @@
+{
+  "algorithm": "sha256",
+  "excludes": "This manifest itself; inherited files are pinned by the exact parent commit.",
+  "files": {
+    "CLAIM_LEDGER.md": {
+      "sha256": "de01c5dbfbf48ca1183b8bf28bd13099633feb91ec7b002bfdd594f6a72be438",
+      "bytes": 23027
+    },
+    "CURRENT_STATE.md": {
+      "sha256": "d6093942fda14eaae3013bb9ea933eca49e636f0e3619d681ae8d51d863e608c",
+      "bytes": 25114
+    },
+    "requirements.txt": {
+      "sha256": "0f18a8aa20def7ce6d5ea0f4e09a755e6f99dd23b61eeba25e11dcb3a6e6e229",
+      "bytes": 53
+    },
+    "research/astra_round_003/ADELIC_COMPUTATION_GROUPOID_COMPARISON.md": {
+      "sha256": "bcd3784d2046fb712e9b926c8de6757fff807df22a1cb964e5fc76bbf5fb0292",
+      "bytes": 13883
+    },
+    "research/astra_round_003/COMPLEXITY_CREST_ATLAS.md": {
+      "sha256": "cf0f2faa58a6ec16aa302ad3218aba65ae00e2a7accee051da3606c3f74b0ee2",
+      "bytes": 9787
+    },
+    "research/astra_round_003/COMPOSITE_TO_PRIMITIVE_PROJECTION.md": {
+      "sha256": "38687a3ef9c60259dab6094875f61198e331a519cfaaaf9cb1327c0d3290ebb4",
+      "bytes": 5599
+    },
+    "research/astra_round_003/COMPUTATION_GROUPOID_CONTROL.md": {
+      "sha256": "7a6a4c2de42d5c5716ae155f8a32635776845ecc4fb94d3b2c5195944ac85d94",
+      "bytes": 4498
+    },
+    "research/astra_round_003/CREST_TO_CND_BRIDGE.md": {
+      "sha256": "3467e5f08c78a0be544a1f62c397c3f146f8b68c4d627e6609af2392ec0e4f97",
+      "bytes": 6942
+    },
+    "research/astra_round_003/FINITE_GRID_LIFT_COST.md": {
+      "sha256": "d17bbfe73b295d30ffffa88fbfcde7d19c90374d8f49f20bd480db80eea98191",
+      "bytes": 7554
+    },
+    "research/astra_round_003/HOLE_CONTRACT.md": {
+      "sha256": "a729b01c54307ea67f789ef3b1fd927118e001177a19929b7fb909dd4a3c88d3",
+      "bytes": 3461
+    },
+    "research/astra_round_003/HOSTILE_CONTROLS.md": {
+      "sha256": "55d31a5240f6f22b99bc4f8f0da059f0389491c049407da8c6d11f8b75a0ae95",
+      "bytes": 4309
+    },
+    "research/astra_round_003/OLD_MONOID_MARTINGALE_DILATION.md": {
+      "sha256": "56f1b63c7201cd6e6f47e83320768d45b37e209b6c6c0891a2a2da8c76d8399b",
+      "bytes": 4841
+    },
+    "research/astra_round_003/PRIME_TOWER_MOMENT_CONE.md": {
+      "sha256": "96a8e89264195e3f7a9a125fb032131f7a077987104439f44dd1f169a91ef087",
+      "bytes": 9306
+    },
+    "research/astra_round_003/PROOF_ATTEMPT_003.md": {
+      "sha256": "1c9e9325375241464c97c1d88a804c9555f65529b1395c5ccb3f31c217a99828",
+      "bytes": 5601
+    },
+    "research/astra_round_003/ROUND_RESULT.md": {
+      "sha256": "2a0dd80892a555757247dc10cb07495c9ce08a1d9ccbe030787bab5912a6b98b",
+      "bytes": 6504
+    },
+    "research/astra_round_003/SOURCE_MANIFEST.json": {
+      "sha256": "afec76d6966807227504b888dca1b031efa26fd00eea0dd4325e121550cc3c78",
+      "bytes": 3235
+    },
+    "research/astra_round_003/SUCCESSOR_OPERATIONAL_GEOMETRY.md": {
+      "sha256": "15a173858ebe9909d0b032212f8ee904c5bee4946f108a2889dcf2ce75995eba",
+      "bytes": 6447
+    },
+    "research/astra_round_003/THEOREM_DEPENDENCY_DAG.md": {
+      "sha256": "c748fc34ad9135c0655d67474a0d8b055f234d3415f912ee6c626091be9b0e0f",
+      "bytes": 4787
+    },
+    "research/astra_round_003/TRIANGULATION_ROUNDS.md": {
+      "sha256": "b45102752aa88cd82b40c7c3bbccfcaa6e1df798fec2af6d1021d1483d06f72b",
+      "bytes": 5026
+    },
+    "research/astra_round_003/evidence/baseline_tests.txt": {
+      "sha256": "7ca5ecee8649e3a0c583c65f38dc1ec247b98e3d8f8436df6d8bebf7bde9bfc6",
+      "bytes": 11842
+    },
+    "research/astra_round_003/evidence/crest_atlas.json": {
+      "sha256": "075febc4ef9d1cabd0accc06e7a7b77bfae44658075625aae6a388adefd7d539",
+      "bytes": 1852907
+    },
+    "research/astra_round_003/evidence/crest_protocol.json": {
+      "sha256": "d8502e6500079fde4494c423c65301ee0ff00655259111ac90fb1e8542d106f6",
+      "bytes": 1570
+    },
+    "research/astra_round_003/evidence/environment.json": {
+      "sha256": "610702e485dfb50a061a529882e2f556298ee5b17d0716493e813db8031e011c",
+      "bytes": 650
+    },
+    "research/astra_round_003/evidence/grid_lift_certificates.json": {
+      "sha256": "a80f55ffa07ad1c01d908240f4d257142653ea8f718f69c1d5e9360a557c9daa",
+      "bytes": 12445
+    },
+    "research/astra_round_003/evidence/hostile_certificates.json": {
+      "sha256": "0c5b1d08ce107dc78f782d74fb22ea4604f2cbd6e93124fdbf720434d0915b45",
+      "bytes": 3873
+    },
+    "research/astra_round_003/evidence/moment_cone.json": {
+      "sha256": "db81ef8b4801da57f24a3f3974dbf9913d90508782fe7714dd1e0b803cb5fb1d",
+      "bytes": 25408
+    },
+    "research/astra_round_003/evidence/successor_frontiers.json": {
+      "sha256": "1be90b87177f9cfd04214e3226acb9608b343a45e0caaddacb220490d834d879",
+      "bytes": 261450
+    },
+    "research/astra_round_003/evidence/tests.txt": {
+      "sha256": "4fe26c5e56ac90ee2c34dae8874750908a6cfe99d81c90d08eb5ee30a017662f",
+      "bytes": 19698
+    },
+    "research/astra_round_003/reviews/MOMENT_ADVERSARY.md": {
+      "sha256": "4b15a7219665d3ea6092eb035b28fa7e9fca75b385b767d6805299e813dcdbb4",
+      "bytes": 21518
+    },
+    "research/astra_round_003/reviews/ROOT_PROOF_AUDIT.md": {
+      "sha256": "9472c5fd45af222099eb4edb1229820694aa139f8bf05350b79994e2e2db2c7a",
+      "bytes": 8876
+    },
+    "research/astra_round_003/reviews/adelic_sources.json": {
+      "sha256": "5ab161112acf3e6d9b4887912573381d02dd22237dd0fa53e3e1c581eba83e05",
+      "bytes": 4066
+    },
+    "research/astra_round_003/reviews/complexity_sources.json": {
+      "sha256": "7bec6f35aafaaa92f882213ce6fd21232c31689938e42455914f12043d201dca",
+      "bytes": 1988
+    },
+    "scripts/complexity_crest_atlas.py": {
+      "sha256": "10d834e35b6e3dd926b0f3eae8ebda0e32d246efb61be1f2d383a5cf295a4abb",
+      "bytes": 12663
+    },
+    "scripts/finite_grid_lift.py": {
+      "sha256": "46573b4888821f4fd5c8326d0b2e111a56c87fdc8774a696160027e800d2a5f3",
+      "bytes": 10166
+    },
+    "scripts/prime_moment_cone.py": {
+      "sha256": "f3ceaf23f798fcdc8ec1aac241f55bb7dff44ae659403370f4ed2445441bd92f",
+      "bytes": 2097
+    },
+    "scripts/primitive_projection.py": {
+      "sha256": "8e2180e497a22954a3a6c10435e580392772e31d5a8442e42444863098a21261",
+      "bytes": 1770
+    },
+    "scripts/round003_controls.py": {
+      "sha256": "e7fee7872a49ce619684bea70f704097162c53d6679bad00037931f00159b4e4",
+      "bytes": 1885
+    },
+    "scripts/successor_geometry.py": {
+      "sha256": "82e6559702f5246c4bfdb9b45539df63ca0f55dd9dcc57dcb53f3cea112c1d4b",
+      "bytes": 5513
+    },
+    "tests/test_complexity_crest_atlas.py": {
+      "sha256": "e936482364b51167866ec8f68113f42069b178d9eb463d98b1e7acc630dbb7d8",
+      "bytes": 5608
+    },
+    "tests/test_finite_grid_lift.py": {
+      "sha256": "3f7e760ed38df822863c13aa8963ba57e68c6386215433da3a75c5190ce827e5",
+      "bytes": 4043
+    },
+    "tests/test_primitive_projection.py": {
+      "sha256": "89c5cbcdd085617dd3701524fe704254581c5fcc010a6ebbf259bef3affbb908",
+      "bytes": 2334
+    },
+    "tests/test_r3_adelic.py": {
+      "sha256": "546310f6d31db5f14e7cbb7136598b3b3309003d9136f86bcf6d2c9ed936448d",
+      "bytes": 3143
+    },
+    "tests/test_r3_moment_adversary.py": {
+      "sha256": "8e7f0deeafd4f5200eed8fde16680b9c02f1b3e73ac84dc5e46ab6f57f296b3c",
+      "bytes": 7309
+    },
+    "tests/test_round003_hostile.py": {
+      "sha256": "6d783448683aec35cb94e2003f7edf73c478d78ca324da1cb4a03fb3bd6a8271",
+      "bytes": 2686
+    },
+    "tests/test_successor_geometry.py": {
+      "sha256": "3cc65b3176c89aef832b046c9382f27739b2b88a0606942fe23c6888b11f85f0",
+      "bytes": 2735
+    }
+  }
+}

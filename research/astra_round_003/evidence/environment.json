@@ -1,0 +1,20 @@
+{
+  "parent": "da0526716f330ca69df985cdf0c3112082ab1dfc",
+  "parent_tree": "a39a224b498a4afcf344fa0d74053a87af2efb04",
+  "branch": "astra/complexity-crests-primitive-003",
+  "remote": "https://github.com/femboy2112/FuckingRH.git",
+  "baseline_tests": 78,
+  "baseline_passed": true,
+  "baseline_clean": true,
+  "python": "3.12.14",
+  "packages": {
+    "mpmath": "1.3.0",
+    "python-flint": "0.9.0",
+    "sympy": "1.14.0",
+    "numpy": "2.3.5"
+  },
+  "pinned_round002_gzip_sha256_verified": "f1d0f70dacd3dce8b9b2145fc06dd9258fb1499e67c900470cce75c10872ccac",
+  "round002_large_sieve_rerun": false,
+  "final_tests": 128,
+  "final_tests_passed": true
+}

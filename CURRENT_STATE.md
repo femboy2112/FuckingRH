@@ -1,4 +1,38 @@
-# CURRENT STATE — 2026-10-05
+# CURRENT STATE — 2026-10-06
+
+## Round 003 update
+
+RH is not proved. Round 003 starts directly from
+`da0526716f330ca69df985cdf0c3112082ab1dfc` on
+`astra/complexity-crests-primitive-003`. No branch was merged; the inherited
+Round001/002 and Aletheia research dossiers are unchanged.
+
+The positive old-state tower proposal now has exact obstructions. Common
+barycentric mixtures cannot match two tower levels, including the full
+logarithmic weight. Even without a barycenter constraint, three equally
+spaced positive tower moments force support at the missing prime itself.
+An explicit dual excludes the closed old-integer moment cone. Ordinary
+Dirichlet logarithm and derivative preserve old-monoid support and cannot
+create the missing prime-power sector.
+
+Old-state midpoint saturation and its critical-scale mean remain valid;
+some single amplitudes can be matched. These facts do not supply an exact
+tower Gram representation. The actual adelic radical also does not remove
+the common Brownian repair while preserving the pairing: it acts on test
+representatives, whereas the repair changes the trace functional.
+
+Finite size-adjusted integer-complexity separation survives the declared
+controls, but is unchanged by prime-weight mutations. Thirteen certified
+actual-prime grids have zero lift; a planted negative tail prevents any
+infinite inference. All 128 tests pass, including the 78 inherited tests.
+
+The next concrete probe is an explicit one-prime-plus-infinity compressed
+Gram pullback with its full metric correction. The surviving all-horizon
+requirement is still an arithmetic Gram construction with a uniformly
+bounded Brownian lift; it remains RH-equivalent, not a strict reduction.
+See [ROUND_RESULT](research/astra_round_003/ROUND_RESULT.md),
+[PROOF_ATTEMPT_003](research/astra_round_003/PROOF_ATTEMPT_003.md), and
+[the theorem DAG](research/astra_round_003/THEOREM_DEPENDENCY_DAG.md).
 
 ## Round 002 update
 
@@ -35,8 +69,10 @@ The consolidation's aggregate Gaussian-residual proposal is no longer the
 immediate program. Round 001 proved that its canonical Gaussian quotient
 cannot have the desired characteristic-function limit, even with scalar
 rescaling and phase correction. Any nonlocal operator construction must be
-specified independently; a Gaussian limit does not supply it. Round 002 tests
-exact service transport and prime-power tower blocks against the reserve.
+specified independently; a Gaussian limit does not supply it. Round 002
+excludes the named uncompensated service transports. Round 003 excludes
+common positive old-state moment reconstruction and the ordinary primitive
+projection as ways to pay the coupled prime-tower Brownian debt.
 
 ---
 

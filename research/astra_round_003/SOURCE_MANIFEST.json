@@ -1,0 +1,60 @@
+{
+  "retrieval_date_utc": "2026-10-06",
+  "frozen_parent": "da0526716f330ca69df985cdf0c3112082ab1dfc",
+  "scope": "Sources support only the stated definitions, formulas and estimates. They are not evidence for RH or for the unconstructed positive operator.",
+  "inherited_sources": "Round001/002 and the seven parent Aletheia notes are retained unchanged. Their theorem status is audited in the Round003 reports; inheritance is not blanket endorsement.",
+  "detailed_manifests": [
+    "reviews/adelic_sources.json",
+    "reviews/complexity_sources.json"
+  ],
+  "additional_primary_sources": [
+    {
+      "title": "Explicit improvements of the Brun-Titchmarsh theorem for arbitrary intervals",
+      "author": "Tomohiro Yamada",
+      "url": "https://arxiv.org/pdf/2312.16090v1",
+      "read_scope": "Theorem 2, PDF p.3; its coprime progression bound specialized to the classical O(y/log y) interval estimate.",
+      "used_for": "The stronger optional singular deleted-radius asymptotic. The leading retained mean is proved using ordinary PNT and rearrangement."
+    },
+    {
+      "title": "DLMF Section 27.4: Euler Products and Dirichlet Series",
+      "url": "https://dlmf.nist.gov/27.4",
+      "read_scope": "Euler product and logarithmic derivative identities.",
+      "used_for": "Analytic coefficient identities in Re(s)>1; the old-support obstruction is also proved formally in the repository."
+    },
+    {
+      "title": "On the complexity of numerical analysis",
+      "authors": "Allender et al.",
+      "url": "https://eccc.weizmann.ac.il/report/2005/037/",
+      "read_scope": "Primary report abstract and straight-line program formulation.",
+      "used_for": "Distinguishing reusable arithmetic circuits from formula-tree and decompressed successor costs. No complexity classification is used to prove an RH sign."
+    },
+    {
+      "title": "A machine-independent theory of the complexity of recursive functions",
+      "author": "Manuel Blum",
+      "url": "https://doi.org/10.1145/321386.321395",
+      "read_scope": "Original DOI full text not retrieved; no theorem is inherited from an unread proof.",
+      "status": "Bibliographic locator only; axioms verified in the separate author primary source below."
+    },
+    {
+      "title": "On the Size of Machines",
+      "author": "Manuel Blum",
+      "url": "https://www.cs.cornell.edu/courses/cs6110/2015sp/docs/Blum-Size-Theorem.pdf",
+      "read_scope": "Information and Control 11 (1967), section 3 p.261: partial-domain and recursive cost-relation axioms.",
+      "used_for": "Axiomatic distinction between partial program semantics and cost; no speedup or machine-size theorem used."
+    }
+  ],
+  "evidence_scope": {
+    "baseline_tests": 78,
+    "final_tests": 128,
+    "all_passed": true,
+    "integer_complexity_limit": 512,
+    "exact_addition_chain_limit": 128,
+    "successor_pareto_limit": 64,
+    "actual_certified_grids": 13,
+    "largest_grid_horizon": "log(4096)",
+    "largest_grid_points": 32,
+    "pinned_round002_large_sieve_rerun": false
+  },
+  "audit_independence": "Same-model bounded reviewers are supplementary algebra/source/code checks, not independent empirical replication.",
+  "content_hash_manifest": "evidence/SHA256SUMS.json"
+}
