@@ -1,0 +1,102 @@
+{
+  "audit_date": "2026-10-06",
+  "parent_commit": "d3e29723fcf9df107fc55a75716e5255898c1b53",
+  "source_policy": "Primary sources opened directly; render used where extraction corrupted; no inherited abstract substitutes for theorem scope.",
+  "sources": [
+    {
+      "id": "lagarias1999",
+      "title": "On a positivity property of the Riemann xi-function",
+      "author": "Jeffrey C. Lagarias",
+      "url": "https://websites.umich.edu/~lagarias/doc/positivity.pdf",
+      "publication": "Acta Arithmetica 89 (1999), 217\u2013234",
+      "doi": "10.4064/aa-89-3-217-234",
+      "verified_scope": [
+        "Introduction (1.4)\u2013(1.5): positive-real logarithmic derivative criterion",
+        "Author PDF pages 1 and 4 rendered because extraction corrupted"
+      ],
+      "retrieval": "Full PDF in search tool; shell download returned HTTP 403; no local hash claimed"
+    },
+    {
+      "id": "lagarias2005erratum",
+      "title": "Correction to: On a positivity property of the Riemann xi-function",
+      "author": "Jeffrey C. Lagarias",
+      "url": "https://www.impan.pl/shop/en/publication/transaction/download/product/81942",
+      "publication": "Acta Arithmetica 116 (2005), 293\u2013294",
+      "doi": "10.4064/aa116-3-5",
+      "verified_scope": [
+        "Full two-page erratum text read",
+        "Page 293 rendered",
+        "Lemma 3.1 and sign in (3.8), not the logarithmic derivative criterion"
+      ],
+      "retrieval": "Full PDF in search tool; no local hash claimed"
+    },
+    {
+      "id": "conreyli1998v1",
+      "title": "A note on some positivity conditions related to zeta- and L-functions",
+      "authors": [
+        "J. B. Conrey",
+        "Xian-Jin Li"
+      ],
+      "url": "https://arxiv.org/pdf/math/9812166",
+      "version": "math/9812166v1, 3 December 1998",
+      "publication": "IMRN 2000, no.18, 929\u2013940",
+      "verified_scope": [
+        "Theorems 1\u20132, pages 2\u20135",
+        "Positive Hilbert norm definition, page 1",
+        "Section 3.1, equations (3.1)\u2013(3.4), pages 6\u20137",
+        "Sarnak remark, page 9",
+        "Rendered pages 2 and 7"
+      ],
+      "pdf_sha256": "bdb68ede69e41939be0c2b740cbe1955da8b24940e30eb8c8f4554878dfb4568",
+      "retrieval": "PDF downloaded independently and opened through search tool"
+    },
+    {
+      "id": "dlmf-digamma-asymptotic",
+      "title": "DLMF 5.11.2",
+      "url": "https://dlmf.nist.gov/5.11.E2",
+      "verified_scope": [
+        "Digamma asymptotic used only at fixed positive real part and large imaginary part"
+      ],
+      "retrieval": "Official NIST page opened"
+    }
+  ],
+  "certificates": {
+    "precision_decimal_digits": 70,
+    "method": "python-flint Arb interval arithmetic; no zero ordinates",
+    "xi_ratio_at_1_plus_282i_real": "[-0.00013195729337208344071313530228861814154963724691709897494206550641 +/- 4.46e-69]",
+    "xi_log_derivative_at_1_plus_282i_real": "[1.668130058691010767587399959001146675673250627637397924671824666018492 +/- 4.39e-70]",
+    "half_digamma_at_s_2": "[-0.2886078324507664303032560450412012155210796679699617994028836174424339 +/- 4.49e-71]",
+    "specific_finite_completion_P_200_s_51_over_100": "[-0.5384110930086436120958202229483005008749301928498172871042181760865 +/- 5.47e-68]",
+    "specific_finite_completion_P_200_boundary_s_1_over_2": "[-0.5681258648667183411435103961909230852756468803470600380968447794526 +/- 1.77e-68]",
+    "pole_kernel_inertias_positive_negative": {
+      "1": [
+        1,
+        0
+      ],
+      "2": [
+        1,
+        1
+      ],
+      "3": [
+        1,
+        2
+      ],
+      "4": [
+        1,
+        3
+      ],
+      "5": [
+        1,
+        4
+      ],
+      "6": [
+        1,
+        5
+      ]
+    },
+    "scope": "Scalar counterexamples and exact finite inertia controls; universal statements are proved in PARENT_AUDIT.md."
+  },
+  "test_command": "python -m unittest tests.test_round007_parent_audit -v",
+  "observed_test_result": "7 tests passed",
+  "scope": "No passivity construction attempted; frozen parent dossiers unchanged; no RH inference from finite signs."
+}
