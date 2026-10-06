@@ -1,5 +1,32 @@
 # CURRENT STATE — 2026-10-06
 
+## Consolidated state (main, 2026-10-06)
+
+RH is not proved. All research lineages (astra 001–003, aletheia, claude 004–006) are now merged onto
+`main`; `CLAIM_LEDGER.md` is unified to rows C01–C111, and `README.md` is the program overview.
+
+**The single wall, now agreed by every lineage.** Local per-prime objects are exactly positive (repaired
+Euler tower `D_p` is CND; local source filter `B_p` is an exact carry resolvent), but the required
+corrections diverge when summed (`Σ_p M_p=∞`), and only the Archimedean completion can renormalize them.
+No current theorem performs that **global prime–Archimedean cancellation while preserving positivity**. In
+passivity coordinates (Round 006): `RH ⟺ ∃ a positive-definite arithmetic state metric with Euler-region
+limit Cayley[ξ'/ξ] ⟺ Re{ξ(s)/ξ(s+1)} ≥ 0 on Re s>1/2`.
+
+**What Round 006 settled.** The Schur–Vitali reduction (C104) is proved and non-circular: contractivity on
+all of `H_{1/2}` plus Euler-region convergence ⟹ RH. The impedance/Laplace completion is killed
+unconditionally (obstruction theorem; `inf Re F_P→−∞`), the fixed-index Krein escape is closed, and the
+colligation / history-before-quotient escapes are closed by the parent-independence lemma (the obstruction
+is a property of `ξ`, Conrey–Li/Sarnak).
+
+**The seam (the one open door).** The unit-basepoint 1/2-twisted place-character **second-jet Gram**: build
+the global coupled object from `χ^{(1/2)}_{v,z}(x)=|x|_v^{1/2+z}` at the unit basepoint, where the
+product formula `∏_v|x|_v^{1/2}=1` makes the first-jet (divergent) corrections cancel *globally before*
+positivity is formed, with cross-prime coupling carried by the second jets, targeting kernel `K_Ψ`. This
+is UNVERIFIED (the UBRPCT). See `research/aletheia_2026-10-05/CURRENT_MISSING_THEOREM.md`,
+`PLACE_CHARACTER_UNIT_BASEPOINT.md`, `CND_PROOF_SEAM.md`, `research/claude_round_006/PROOF_ATTEMPT_006.md`.
+
+The astra-era round notes below are preserved as historical state.
+
 ## Round 003 update
 
 RH is not proved. Round 003 starts directly from
