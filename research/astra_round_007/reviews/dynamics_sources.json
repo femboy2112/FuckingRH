@@ -1,0 +1,57 @@
+{
+  "sources": [
+    {
+      "id": "ruelle1976",
+      "authors": "David Ruelle",
+      "title": "Zeta-functions for expanding maps and Anosov flows",
+      "year": "1976",
+      "url": "https://www.ihes.fr/~ruelle/PUBLICATIONS/%5B45%5D.pdf",
+      "location": "Inventiones Mathematicae 34, 231-242",
+      "retrieved_utc": "2026-10-06",
+      "sha256": "a48105428d3c9eff681e7b017614976a0aec02ff2911f89f5484243a3d26652e",
+      "bytes": 509977,
+      "inspected_scope": "Theorems 1-3, pp.232-240; nuclear exterior-form trace/determinant derivation pp.234-236. Text extracted locally; web PDF also read.",
+      "role_and_boundary": "Applies to finite holomorphic contracting-branch systems / compact analytic expanding or Anosov dynamics under stated hypotheses. These hypotheses are not supplied by the countable jet shift."
+    },
+    {
+      "id": "ruelle1994",
+      "authors": "David Ruelle",
+      "title": "Dynamical zeta functions for maps of the interval",
+      "year": "1994",
+      "url": "https://www.ihes.fr/~ruelle/PUBLICATIONS/%5B109%5D.pdf",
+      "location": "Bulletin AMS 30, 212-214",
+      "retrieved_utc": "2026-10-06",
+      "sha256": "61ee701790720dd917f200d8bf1f32790ebf32a7e3504cf8cfceb32ba2bd4449",
+      "bytes": 283887,
+      "inspected_scope": "Entire three-page research announcement; interval transfer definition, generating partition theorem and representative periodic-point modification.",
+      "role_and_boundary": "Its actual transfer operator sums preimages; its zeta sums fixed points. Not a theorem identifying first returns to a section with closed orbits."
+    },
+    {
+      "id": "connes1994",
+      "authors": "Alain Connes",
+      "title": "Noncommutative Geometry",
+      "year": "1994",
+      "url": "https://alainconnes.org/wp-content/uploads/book94bigpdf.pdf",
+      "location": "Chapter V, Section 11 beta, pp.529-531",
+      "retrieved_utc": "2026-10-06",
+      "sha256": "21f7f4d78f5a6dc2214c0bcefecc101d6f45a912520191e93753bc1f7cba5794",
+      "bytes": 4252242,
+      "inspected_scope": "Lemma 6, Propositions 7-8; basis/Fock/height/thermal formulas. Pages 529-530 rendered; p530 visually inspected. Only this source scope is audited, not the entire book.",
+      "role_and_boundary": "Established multiplicative/Fock realization. p530 visibly prints T^s and (ST)^s in an Re(s)>1 Euler formula, inconsistent with T e_p=p e_p. Correct signs are -s, confirmed directly and by exp(-beta H) on p531."
+    },
+    {
+      "id": "bostconnes1995",
+      "authors": "Jean-Benoit Bost and Alain Connes",
+      "title": "Hecke algebras, type III factors and phase transitions with spontaneous symmetry breaking in number theory",
+      "year": "1995",
+      "url": "https://alainconnes.org/wp-content/uploads/bostconnesscan.pdf",
+      "location": "Selecta Mathematica 1, 411-457",
+      "retrieved_utc": "2026-10-06",
+      "sha256": "376e00d06bef1be27769f0f1c186010a6e6ad354608c3a273b0b3ae6479c1815",
+      "bytes": 28057024,
+      "inspected_scope": "Retrieved 47-page image scan only. Full text not audited; no theorem from this scan used.",
+      "role_and_boundary": "Source discovery / provenance only; web open exceeded response-size limit, direct authenticated-free HTTP retrieval succeeded with ordinary browser user agent."
+    }
+  ],
+  "proof_provenance": "RT1/RT2 and the finite recurrence independently derived in the repository; primary sources used for hypothesis/novelty boundaries, not as authority for the no-go."
+}
