@@ -1,0 +1,5 @@
+Defaulting to user installation because normal site-packages is not writeable
+Requirement already satisfied: mpmath>=1.3 in /root/.local/lib/python3.12/site-packages (from -r requirements.txt (line 1)) (1.3.0)
+Requirement already satisfied: python-flint>=0.9 in /root/.local/lib/python3.12/site-packages (from -r requirements.txt (line 2)) (0.9.0)
+Requirement already satisfied: sympy>=1.14 in /root/.local/lib/python3.12/site-packages (from -r requirements.txt (line 3)) (1.14.0)
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
