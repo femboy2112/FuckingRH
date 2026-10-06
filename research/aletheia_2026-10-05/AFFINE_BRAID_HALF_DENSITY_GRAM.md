@@ -326,6 +326,47 @@ closed form.
 
 ---
 
+## 10. Triangulation with the gcd/LCM metric geometry (same-day cross-check)
+
+The companion file [`SUCC_FUCC_METRIC_GEOMETRY.md`](SUCC_FUCC_METRIC_GEOMETRY.md) reaches the same
+coupling from the **KMS-functional / Nica-projection** side. The two derivations lock together
+exactly, and the fit sharpens the C07 guardrail.
+
+**(a) Their metric kernel is my factorized (commutative) Gram.** Their §5 defines the canonical
+multiplicative kernel
+\[
+K_F(a,b)=\frac{\gcd(a,b)}{\sqrt{ab}}=\prod_p p^{-\frac12|v_p(a)-v_p(b)|},\qquad K_F=e^{-d_F/2},\quad d_F(a,b)=\log\frac{\operatorname{lcm}(a,b)}{\gcd(a,b)}.
+\]
+This is **precisely** the tensor product over primes of the per-prime AR(1) chains
+\(\langle\varphi_{p,k},\varphi_{p,\ell}\rangle=p^{-|k-\ell|/2}\) from §2 — i.e. the *factorized*
+Gram of my §5, the one in which **all cross terms vanish**. So their "canonical FUCC metric" and my
+"commutative/diagonal picture" are the same object, written multiplicatively (gcd/√(ab)) vs.
+place-by-place (∏ p^{−½|Δv_p|}).
+
+**(b) Guardrail — this kernel's positivity is RH-inert.** \(K_F\succeq0\) is automatic: it is a
+tensor product of CND \(\ell^1\) chains (Schoenberg), with **no** cross-prime coupling. By the exact
+lesson of C07, a factorized/independent-prime positive kernel cannot carry the Weil sign. (Its
+*extremal/spectral* behaviour — Gál-type GCD sums — does connect to large values of \(\zeta\) on the
+critical line, but its *positive-definiteness* does not.) **Therefore RH does not live in \(K_F\).**
+It lives in the non-factorized affine cross terms:
+- *multiplicative face* (this file, §5): \(V_p^\*V_q\), the prime-swap hops in the number basis;
+- *additive face* (their §2): the CRT residue kernel
+  \(e_{r,a}e_{s,b}=e_{x,\operatorname{lcm}(a,b)}\),
+  \(\ \phi_{1/2}(e_{r,a}e_{s,b})=\mathbf 1_{r\equiv s\,(\gcd(a,b))}\,\operatorname{lcm}(a,b)^{-1/2}\).
+
+Both faces exist **only** because `succ` and `fucc` fail to commute (the braid of §1); both carry the
+\(\beta=\tfrac12\) half-density signature; and both vanish identically under the factorization that
+produces \(K_F\). This is the precise, triangulated statement of "don't diagonalize too early."
+
+**(c) `succ`-unitarity caveat.** §2 here only forces *dilation* (`fucc`) unitarity via the
+square-root module. Their §1 supplies the matching fact for `succ`: the bare BC\(_{1/2}\) marginal is
+not translation-invariant, and `succ` is recovered as a unitary only in the GNS representation of the
+enlarged **affine** KMS state (their Laca–Raeburn argument). Consistent with the original program
+note that the light-cone object is a *bundle* \(\mathcal H_0\to\mathcal H_1\to\cdots\) over successor
+time, not one flat Hilbert space with a unitary `succ`.
+
+---
+
 ## Appendix — numerical verification
 
 Script: `scripts/affine_braid_gram_check.py` (double precision + `mpmath` reference). Selected
