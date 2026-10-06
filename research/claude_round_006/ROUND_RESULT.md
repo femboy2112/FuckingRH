@@ -36,8 +36,18 @@ ordinates and without assuming strip convergence, RH follows.
 > cutoff-dependent boundary `A_{inf,P}` [solvable — Euler–Maclaurin counterterm, ckpt8], and **(2)** make
 > the pole-cancelled finite `F_P` positive-real on `H_{1/2}` [the real wall]. (2) is where Conrey–Li/
 > Sarnak bite: the `ξ(s)/ξ(s+1)` phase (dense `log ζ`) forces `Re<0` in the strip unless the coupling
-> dodges it. Next: build the finite coupled Schur-complement with explicit `A_{inf,P}` (ckpt8) and test
-> (2) directly.
+> dodges it.
+>
+> **[after ckpt 8]** Sub-problem (1) solved (Euler–Maclaurin boundary cancels the `s=1` pole; `F_P`
+> holomorphic on `H_{1/2}`, `→xi'/xi` on `Re s>1`). Sub-problem (2) FAILS, measured and unconditional:
+> `F_P` is not positive-real on `H_{1/2}` — `max|Re F_P| ~ P^{1-σ} → ∞` near the critical line, and the
+> Pontryagin index `κ_P` (excursion count) grows with `P` (108→362). So the Laplace/source-response
+> completion class is dead for Schur-Vitali (P), AND the finite-`κ` Krein escape (§19) is closed. **The
+> wall is now:** the only surviving route to (P) is a finite **unitary/passive colligation** whose
+> transfer function is `≤1` by construction (positive-definite state metric + dissipative generator from
+> the arithmetic), NOT by completing the impedance — exactly the de Branges-space positivity that
+> Conrey–Li/Sarnak show FAILS for ζ. Next: ckpt9 pins whether the coupled (SUCC-braided) colligation can
+> supply a positive metric, or whether the index necessarily diverges (= the obstruction theorem).
 
 ## Checkpoint log
 
@@ -78,6 +88,12 @@ ordinates and without assuming strip convergence, RH follows.
    `F_P` has an `s=1` pole for every finite `P` (emergent only as `P→∞`) ⇒ finite completion needs a
    cutoff-dependent boundary `A_{inf,P}`. Reduces to (1) pole cancellation [solvable] + (2) positive-
    realness of the pole-cancelled finite object [the wall].
+8. **[done]** Finite completion + Schur complement (FINITE_COMPLETION.md, ckpt8, ledger C106). Crack-or-
+   die → die (for this class). Euler–Maclaurin boundary solves (1); but (2) fails unconditionally:
+   `F_P` not positive-real on `H_{1/2}`, `max|Re F_P|~P^{1-σ}→∞` near the line, Pontryagin index `κ_P`
+   diverges (108→362). Independent-ray star Schur complement = sum of `m_p` (no cross terms). Kills the
+   Laplace/source-response completion for (P); closes the finite-`κ` Krein escape. Passivity must be
+   structural (unitary colligation), not from completing the impedance.
 
 ## Net ledger additions this round
 
@@ -85,6 +101,8 @@ ordinates and without assuming strip convergence, RH follows.
 - C103: one-port/direct-sum class is RH-inert for positivity (rigorous no-go).
 - C104: Schur–Vitali continuation theorem (the round's central reduction; conditional on (P)).
 - C105: Archimedean port = passive Γ-channel + single κ=1 pole at s=1; finite completion needs A_{inf,P}.
+- C106: Laplace/source-response finite completion F_P not positive-real on H_{1/2} (unconditional); index
+  κ_P diverges. Kills that class for (P); closes the finite-κ Krein escape.
 
 ## What would count as a crack (from the directive §24)
 
