@@ -543,3 +543,175 @@ The same \(|t|\) direction has two exact probabilistic roles:
 Thus changing the finite lift \(c\) adds or removes a universal Brownian/Cauchy continuum background. Under RH the distinguished Suzuki lift \(c=0\) is purely atomic on zero ordinates; positive \(c\) adds a continuous universal background.
 
 This makes the quotient interpretation precise without falsely calling \(|t|\) itself a radical of the screw kernel.
+
+
+## 17. Suzuki's shifted family is the canonical deformation toward the Euler-product region
+
+Suzuki already defines, for real \(\omega\),
+
+\[
+\Psi_\omega(t)
+=
+e^{-\omega t}\Psi(t)
++
+2\omega\int_0^t e^{-\omega u}\Psi(u)\,du
++
+\omega^2\int_0^t(t-u)e^{-\omega u}\Psi(u)\,du
+\]
+
+for \(t>0\), extended evenly, and proves
+
+\[
+\int_0^\infty\Psi_\omega(t)e^{izt}\,dt
+=
+-\frac1{z^2}\frac{\xi'}{\xi}
+\left(\frac12+\omega-iz\right).
+\]
+
+Thus the deformation parameter used above is exactly
+
+\[
+\sigma=\frac12+\omega.
+\]
+
+The prime-power term in the shifted explicit formula has weights
+
+\[
+\Lambda(n)n^{-1/2-\omega}
+=
+\Lambda(n)n^{-\sigma},
+\]
+
+so the \(h_{p,\sigma}\) blocks above are the finite-place tower components of Suzuki's canonical shifted family.
+
+Suzuki's Theorem 11.1 states that zero-freeness in
+
+\[
+\Re s>\frac12+\omega
+\]
+
+is equivalent to eventual nonnegativity of \(\Psi_\omega\). In particular \(\Psi_\omega\ge0\) is unconditional for \(\omega\ge1/2\), because this reaches the classical zero-free half-plane \(\Re s>1\).
+
+Therefore the route
+
+\[
+\sigma>1\longrightarrow\sigma=\frac12
+\]
+
+is not an invented interpolation; it is the natural Suzuki zero-free deformation.
+
+## 18. The shifted family is a semigroup and damps the Weil accelerant
+
+Let \(T_\omega\) denote the integral operator defining \(\Psi_\omega=T_\omega\Psi\). In Laplace variable \(p\),
+
+\[
+\mathcal L[T_\omega f](p)
+=
+\left(\frac{p+\omega}{p}\right)^2
+\mathcal L[f](p+\omega).
+\]
+
+Hence
+
+\[
+\boxed{T_\eta T_\omega=T_{\eta+\omega}.}
+\]
+
+Moreover, direct differentiation gives, on \(t>0\) and distributionally across the event atoms,
+
+\[
+\boxed{
+\Psi_\omega''(t)=e^{-\omega t}\Psi''(t).
+}
+\]
+
+Equivalently, if \(W=\Psi''\) is the Weil accelerant distribution,
+
+\[
+W_\omega(t)=e^{-\omega|t|}W(t).
+\]
+
+Fourier transformation turns multiplication by \(e^{-\omega|t|}\) into convolution with the Poisson/Cauchy kernel
+
+\[
+P_\omega(x)=\frac1\pi\frac{\omega}{\omega^2+x^2}
+\]
+
+up to the fixed Fourier convention.
+
+Thus Suzuki's horizontal shift is exactly a **Poisson smoothing semigroup on the spectral/Weil distribution**.
+
+This gives a precise phase-boundary interpretation:
+
+- for sufficiently large \(\omega\) (in particular \(\omega\ge1/2\)), the smoothed object is unconditionally positive;
+- RH asks whether the boundary object at \(\omega=0\) is already positive;
+- general Poisson smoothing can hide signed boundary mass, so positivity at \(\omega=1/2\) alone cannot be inverted without additional arithmetic structure.
+
+The common \(|t|\) repair has Cauchy Lévy density \(1/(\pi x^2)\), so the Brownian/Cauchy mode and the Suzuki shift semigroup are not merely verbal analogies; they occupy adjacent pieces of the same harmonic-analysis geometry.
+
+## 19. Scalar scattering cancellation is too coarse
+
+If the local factors are denoted \(\gamma_v(s)\) and
+
+\[
+\rho_v(s)=\frac{\gamma_v(s)}{\gamma_v(1-s)},
+\]
+
+then formally, after completed analytic continuation,
+
+\[
+\prod_v\rho_v(s)
+=
+\frac{\Lambda(s)}{\Lambda(1-s)}
+=
+1
+\]
+
+by the functional equation.
+
+Therefore a proof architecture that merely multiplies all scalar local scattering ratios together destroys the RH-bearing information: the global scalar ratio is identically trivial.
+
+The nontrivial information must survive in an **operator, compressed, cohomological, groupoid, or primitive quotient object**. This is exactly why the quasi-inner/Sonin construction studies off-diagonal compressed multiplication operators rather than only the scalar product of local ratios, and why the adelic trace formula passes to primitive cohomology.
+
+This is a useful no-go constraint on the present route: the local scattering-phase identity for \(D_p\) is a building block, but a scalar product of those phases cannot itself encode RH.
+
+## 20. Scattering translation interpretation of the sharp repair
+
+Let
+
+\[
+P_p(s)
+=
+\frac{i}{2}\partial_s
+\log\rho_p\left(\frac12+is\right).
+\]
+
+Then
+
+\[
+P_p(0)=M_p,
+\qquad
+M_p-P_p(s)\ge0.
+\]
+
+Define the linearly phase-renormalized inverse scattering ratio
+
+\[
+\widetilde\rho_p(s)
+=
+e^{-2iM_ps}\rho_p(1/2+is)^{-1}.
+\]
+
+Then
+
+\[
+\boxed{
+\frac{i}{2}\partial_s\log\widetilde\rho_p(s)
+=
+M_p-P_p(s)\ge0.
+}
+\]
+
+Thus the sharp tower repair is equivalent to removing the zero-frequency local scattering delay by a linear phase. A linear phase is a translation in the Fourier-conjugate logarithmic coordinate.
+
+This gives a second interpretation of the common \(|t|\) mode: it is the variogram/Lévy shadow of a common translation/scattering-origin freedom. Whether this freedom is precisely implemented by the adelic primitive radical remains an open bridge.
