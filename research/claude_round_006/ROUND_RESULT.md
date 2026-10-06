@@ -27,8 +27,17 @@ ordinates and without assuming strip convergence, RH follows.
 > the Archimedean completion (the only pieces not a function of any single `p^s`) produce a finite
 > object that is structurally passive on `Re s>1/2`?* The Archimedean port is the suspect load-bearing
 > piece, and the Schur/Vitali limit lemma is the mechanism that would close the deal IF such a family
-> exists. Next: prove the limit lemma (ckpt6), then build the Archimedean port (ckpt7) and the coupled
-> Schur complement (ckpt8), where the round cracks or dies.
+> exists.
+>
+> **[after ckpt 7]** The wall is now SHARP and split in two. The Archimedean port (C105) is realizable:
+> a genuinely passive Γ-channel (resolvent of `D_Γ=2N`, poles at the trivial zeros outside `H_{1/2}`)
+> plus a pole part whose only `H_{1/2}` singularity is the SINGLE pole at `s=1` (one negative square,
+> `κ=1`). So the finite-completion problem reduces to **(1)** cancel the `s=1` pole at finite `P` with a
+> cutoff-dependent boundary `A_{inf,P}` [solvable — Euler–Maclaurin counterterm, ckpt8], and **(2)** make
+> the pole-cancelled finite `F_P` positive-real on `H_{1/2}` [the real wall]. (2) is where Conrey–Li/
+> Sarnak bite: the `ξ(s)/ξ(s+1)` phase (dense `log ζ`) forces `Re<0` in the strip unless the coupling
+> dodges it. Next: build the finite coupled Schur-complement with explicit `A_{inf,P}` (ckpt8) and test
+> (2) directly.
 
 ## Checkpoint log
 
@@ -63,12 +72,19 @@ ordinates and without assuming strip convergence, RH follows.
    Literature locked (Lagarias/Hinkkanen criterion; 2005 correction; de Branges positivity; Conrey–Li +
    Sarnak show the natural de Branges-space positivity FAILS for ζ — a direct obstruction to the obvious
    realization of (P)).
+7. **[done]** Archimedean source port (ARCHIMEDEAN_SOURCE_PORT.md, ckpt7, ledger C105). `A_inf` =
+   passive Γ-channel (regularized resolvent of `D_Γ=2N`, poles at trivial zeros, outside `H_{1/2}`) +
+   pole part whose only `H_{1/2}` pole is the single one at `s=1` (one negative square, κ=1). Finite
+   `F_P` has an `s=1` pole for every finite `P` (emergent only as `P→∞`) ⇒ finite completion needs a
+   cutoff-dependent boundary `A_{inf,P}`. Reduces to (1) pole cancellation [solvable] + (2) positive-
+   realness of the pole-cancelled finite object [the wall].
 
 ## Net ledger additions this round
 
 - C100/C101/C102: scope corrections (meta).
 - C103: one-port/direct-sum class is RH-inert for positivity (rigorous no-go).
 - C104: Schur–Vitali continuation theorem (the round's central reduction; conditional on (P)).
+- C105: Archimedean port = passive Γ-channel + single κ=1 pole at s=1; finite completion needs A_{inf,P}.
 
 ## What would count as a crack (from the directive §24)
 
