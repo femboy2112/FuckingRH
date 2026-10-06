@@ -816,42 +816,29 @@ The endpoint \(\omega=0\) is RH.
 
 The quotient idea admits a finite-window formulation that avoids constructing the full infinite positive object at once.
 
-For \(L>0\), define the finite-window lift cost
+For \(L>0\), call a coefficient \(c\ge0\) **feasible at wavefront \(L\)** if
 
 \[
-c_L^*
-=
-\inf\left\{
-c\in\mathbb R:
 K_{\Psi+c|\cdot|}(s,u)\succeq0
-\text{ for every finite set }s,u\in[0,L]
-\right\},
 \]
 
-with \(c_L^*=+\infty\) if no such finite coefficient exists.
+for every finite set of times in \([0,L]\).
 
-Because enlarging the window only adds constraints,
-
-\[
-c_L^*
-\]
-
-is nondecreasing in \(L\).
-
-Then:
+Then the following compact-lift criterion is exact:
 
 \[
 \boxed{
 \mathrm{RH}
 \iff
-\sup_{L>0}c_L^*<\infty.
+\exists C<\infty\ \forall L>0\ \exists c_L\in[0,C]
+\text{ feasible at }L.
 }
 \]
 
 Proof:
 
-- If RH holds, \(K_\Psi\succeq0\) globally, so \(c=0\) is feasible on every window.
-- Conversely, suppose a sequence \(L_n\to\infty\) admits feasible \(c_n\) with \(|c_n|\le C\). Pass to a subsequence \(c_n\to c\). For any fixed finite set of times, all points lie in \([0,L_n]\) for large \(n\), and the corresponding Gram matrices
+- If RH holds, \(K_\Psi\succeq0\) globally, so choose \(c_L=0\) for every \(L\).
+- Conversely, suppose \(L_n\to\infty\) and choose feasible \(c_n\in[0,C]\). Compactness of \([0,C]\) gives a subsequence \(c_n\to c\in[0,C]\). For any fixed finite set of times, all points lie in \([0,L_n]\) for large \(n\), and the corresponding Gram matrices
   \[
   K_{\Psi+c_n|\cdot|}
   \]
@@ -861,13 +848,13 @@ Proof:
   \]
   on every finite set. Hence \(\Psi+c|t|\) is globally CND. Linear-gauge rigidity then forces RH.
 
-Therefore if RH is false, every finite-wavefront positivity repair of this form must have unbounded common-mode cost as the wavefront expands.
+Therefore if RH is false, **no uniformly bounded nonnegative common-mode lift can make every expanding finite wavefront positive**.
 
 This is a concrete finite-to-infinite discriminator:
 
-> It is enough to construct exact finite-wavefront positive/primitive objects whose induced \(|t|\)-lift coefficients remain uniformly bounded.
+> It is enough to construct exact finite-wavefront positive/primitive objects whose induced \(|t|\)-lift coefficients remain in one fixed compact interval \([0,C]\).
 
-The coefficient need not be zero at finite cutoff, and the finite objects need not converge in a preselected gauge. Boundedness plus local matrix closure suffices.
+The coefficient need not be zero at finite cutoff, and the finite objects need not converge in a preselected gauge. Compact boundedness plus local matrix closure suffices.
 
 This criterion is especially compatible with the arithmetic wavefront: a compact tent/window sees only finitely many nontrivial prime-tower classes modulo the common mode.
 
