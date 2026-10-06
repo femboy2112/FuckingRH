@@ -38,10 +38,20 @@ ordinates and without assuming strip convergence, RH follows.
 2. **[done]** Scope corrections (SCOPE_CORRECTIONS.md, ledger C100/C101/C102): C98 refutes only the
    shared-DC mechanism (not all algebraic renorm); C99 carré gives the *weighted/repaired* local energy
    (not raw Λ); birth-order kernel-invariance does *not* kill history-space factorizations.
+3. **[done]** Source-ray incidence + event-weight factorization (SOURCE_RAY_INCIDENCE.md, ckpt3).
+   Operator-level (not just scalar): `E^*E=I_ray` exact; `W_beta|n>=Lambda(n)n^{-beta}|n>`;
+   `B_beta^*B_beta=W_beta` exact (`<1e-15`). Non-circular factorization of the DIAGONAL event weight —
+   not of `K_Psi`.
+4. **[done]** Source correlation = log-derivative (SOURCE_CORRELATION_LOG_DERIVATIVE.md, ckpt4).
+   `J_sigma^* e^{itH} J_sigma = -zeta'/zeta(sigma-it)|Omega><Omega|` exact for Re s>1. KEY CATEGORY
+   FINDING: this is a rank-1 AUTOCORRELATION, positive-DEFINITE in `t` (Bochner), which is NOT
+   positive-REAL in `s` — numerics show `Re(-zeta'/zeta)<0` at (2,1.3),(1.5,2),(3,5). The two
+   positivities are different theorems; bridging them is the round.
 
 ## Net ledger additions this round
 
 - C100/C101/C102: scope corrections (meta).
+- (pending C103+: source layer, correlation category, passivity classification.)
 
 ## What would count as a crack (from the directive §24)
 
