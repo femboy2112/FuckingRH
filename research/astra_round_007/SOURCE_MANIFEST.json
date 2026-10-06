@@ -1,0 +1,227 @@
+{
+  "retrieved_utc": "2026-10-06",
+  "policy": "Primary-source statements are limited to the inspected sections. Classical identities are not claimed as new. Independent operator proofs are in the linked theorem notes.",
+  "main_square_sources": [
+    {
+      "title": "The screw function of the Riemann zeta-function and the Riemann hypothesis",
+      "author": "Masatoshi Suzuki",
+      "url": "https://arxiv.org/pdf/2206.03682v4",
+      "inspected": "Sections 3.2 and 3.4, equation (5.15), RH/Weil and screw criteria; exact prime/Archimedean convention compared to repository implementation.",
+      "role": "Primary RH-equivalence and arithmetic functional; no zero spectrum used to construct an operator.",
+      "retrieval": "PDF read through web retrieval; no local-file hash asserted."
+    },
+    {
+      "title": "NIST DLMF 5.9.16",
+      "url": "https://dlmf.nist.gov/5.9.E16",
+      "inspected": "Digamma integral; differences at 1/4+iv/2 and 1/4, change of variables to 2u.",
+      "role": "Exact positive Gamma difference density; positivity and integrability independently derived.",
+      "retrieval": "Official equation/web page read; no byte-stable webpage hash asserted."
+    }
+  ],
+  "review_manifests": {
+    "parent_sources.json": {
+      "audit_date": "2026-10-06",
+      "parent_commit": "d3e29723fcf9df107fc55a75716e5255898c1b53",
+      "source_policy": "Primary sources opened directly; render used where extraction corrupted; no inherited abstract substitutes for theorem scope.",
+      "sources": [
+        {
+          "id": "lagarias1999",
+          "title": "On a positivity property of the Riemann xi-function",
+          "author": "Jeffrey C. Lagarias",
+          "url": "https://websites.umich.edu/~lagarias/doc/positivity.pdf",
+          "publication": "Acta Arithmetica 89 (1999), 217–234",
+          "doi": "10.4064/aa-89-3-217-234",
+          "verified_scope": [
+            "Introduction (1.4)–(1.5): positive-real logarithmic derivative criterion",
+            "Author PDF pages 1 and 4 rendered because extraction corrupted"
+          ],
+          "retrieval": "Full PDF in search tool; shell download returned HTTP 403; no local hash claimed"
+        },
+        {
+          "id": "lagarias2005erratum",
+          "title": "Correction to: On a positivity property of the Riemann xi-function",
+          "author": "Jeffrey C. Lagarias",
+          "url": "https://www.impan.pl/shop/en/publication/transaction/download/product/81942",
+          "publication": "Acta Arithmetica 116 (2005), 293–294",
+          "doi": "10.4064/aa116-3-5",
+          "verified_scope": [
+            "Full two-page erratum text read",
+            "Page 293 rendered",
+            "Lemma 3.1 and sign in (3.8), not the logarithmic derivative criterion"
+          ],
+          "retrieval": "Full PDF in search tool; no local hash claimed"
+        },
+        {
+          "id": "conreyli1998v1",
+          "title": "A note on some positivity conditions related to zeta- and L-functions",
+          "authors": [
+            "J. B. Conrey",
+            "Xian-Jin Li"
+          ],
+          "url": "https://arxiv.org/pdf/math/9812166",
+          "version": "math/9812166v1, 3 December 1998",
+          "publication": "IMRN 2000, no.18, 929–940",
+          "verified_scope": [
+            "Theorems 1–2, pages 2–5",
+            "Positive Hilbert norm definition, page 1",
+            "Section 3.1, equations (3.1)–(3.4), pages 6–7",
+            "Sarnak remark, page 9",
+            "Rendered pages 2 and 7"
+          ],
+          "pdf_sha256": "bdb68ede69e41939be0c2b740cbe1955da8b24940e30eb8c8f4554878dfb4568",
+          "retrieval": "PDF downloaded independently and opened through search tool"
+        },
+        {
+          "id": "dlmf-digamma-asymptotic",
+          "title": "DLMF 5.11.2",
+          "url": "https://dlmf.nist.gov/5.11.E2",
+          "verified_scope": [
+            "Digamma asymptotic used only at fixed positive real part and large imaginary part"
+          ],
+          "retrieval": "Official NIST page opened"
+        }
+      ],
+      "certificates": {
+        "precision_decimal_digits": 70,
+        "method": "python-flint Arb interval arithmetic; no zero ordinates",
+        "xi_ratio_at_1_plus_282i_real": "[-0.00013195729337208344071313530228861814154963724691709897494206550641 +/- 4.46e-69]",
+        "xi_log_derivative_at_1_plus_282i_real": "[1.668130058691010767587399959001146675673250627637397924671824666018492 +/- 4.39e-70]",
+        "half_digamma_at_s_2": "[-0.2886078324507664303032560450412012155210796679699617994028836174424339 +/- 4.49e-71]",
+        "specific_finite_completion_P_200_s_51_over_100": "[-0.5384110930086436120958202229483005008749301928498172871042181760865 +/- 5.47e-68]",
+        "specific_finite_completion_P_200_boundary_s_1_over_2": "[-0.5681258648667183411435103961909230852756468803470600380968447794526 +/- 1.77e-68]",
+        "pole_kernel_inertias_positive_negative": {
+          "1": [
+            1,
+            0
+          ],
+          "2": [
+            1,
+            1
+          ],
+          "3": [
+            1,
+            2
+          ],
+          "4": [
+            1,
+            3
+          ],
+          "5": [
+            1,
+            4
+          ],
+          "6": [
+            1,
+            5
+          ]
+        },
+        "scope": "Scalar counterexamples and exact finite inertia controls; universal statements are proved in PARENT_AUDIT.md."
+      },
+      "test_command": "python -m unittest tests.test_round007_parent_audit -v",
+      "observed_test_result": "7 tests passed",
+      "scope": "No passivity construction attempted; frozen parent dossiers unchanged; no RH inference from finite signs."
+    },
+    "factor_sources.json": {
+      "retrieved_utc_date": "2026-10-06",
+      "sources": [
+        {
+          "author": "Terence Tao",
+          "title": "254A, Notes 1: Elementary multiplicative number theory",
+          "url": "https://terrytao.wordpress.com/2014/11/23/254a-notes-1-elementary-multiplicative-number-theory/",
+          "date": "2014-11-23",
+          "read_scope": "Dirichlet convolution, equations (35), (44); hyperbola equations (54)-(56), Remark 41; Mobius inversion (60). Primary author exposition.",
+          "application": "Classical attribution and cross-check of independently derived finite factor counting and Dirichlet-series rearrangement. No RH reduction imported.",
+          "web_refs": [
+            "turn72view0",
+            "turn81view0",
+            "turn81view1"
+          ]
+        },
+        {
+          "author": "Terence Tao",
+          "title": "Erdos' divisor bound",
+          "url": "https://terrytao.wordpress.com/2011/07/23/erdos-divisor-bound/",
+          "date": "2011-07-23",
+          "read_scope": "Divisor pairing around sqrt(n) and square correction; primary author exposition.",
+          "application": "Independent provenance check that square-root factor pairing is classical, not a novelty claim.",
+          "web_refs": [
+            "turn72view1"
+          ]
+        }
+      ],
+      "local_sources_read": [
+        "research/aletheia_2026-10-06/FACTOR_SQUARE_MOVING_WINDOW.md",
+        "scripts/factor_square_moving_window.py",
+        "research/claude_round_004/MOBIUS_FERMIONIC_COMPLEX.md",
+        "research/claude_round_004/IRREDUCIBLE_NONCOMMUTATIVE_CORE.md",
+        "CLAIM_LEDGER.md C87-C89"
+      ],
+      "scope": "All newly claimed operator identities have direct proofs and exact tests. No source is used to claim cone geometry forces the analytic half-density, or that the stated locality obstruction excludes arbitrary nonlocal couplings."
+    },
+    "dynamics_sources.json": {
+      "sources": [
+        {
+          "id": "ruelle1976",
+          "authors": "David Ruelle",
+          "title": "Zeta-functions for expanding maps and Anosov flows",
+          "year": "1976",
+          "url": "https://www.ihes.fr/~ruelle/PUBLICATIONS/%5B45%5D.pdf",
+          "location": "Inventiones Mathematicae 34, 231-242",
+          "retrieved_utc": "2026-10-06",
+          "sha256": "a48105428d3c9eff681e7b017614976a0aec02ff2911f89f5484243a3d26652e",
+          "bytes": 509977,
+          "inspected_scope": "Theorems 1-3, pp.232-240; nuclear exterior-form trace/determinant derivation pp.234-236. Text extracted locally; web PDF also read.",
+          "role_and_boundary": "Applies to finite holomorphic contracting-branch systems / compact analytic expanding or Anosov dynamics under stated hypotheses. These hypotheses are not supplied by the countable jet shift."
+        },
+        {
+          "id": "ruelle1994",
+          "authors": "David Ruelle",
+          "title": "Dynamical zeta functions for maps of the interval",
+          "year": "1994",
+          "url": "https://www.ihes.fr/~ruelle/PUBLICATIONS/%5B109%5D.pdf",
+          "location": "Bulletin AMS 30, 212-214",
+          "retrieved_utc": "2026-10-06",
+          "sha256": "61ee701790720dd917f200d8bf1f32790ebf32a7e3504cf8cfceb32ba2bd4449",
+          "bytes": 283887,
+          "inspected_scope": "Entire three-page research announcement; interval transfer definition, generating partition theorem and representative periodic-point modification.",
+          "role_and_boundary": "Its actual transfer operator sums preimages; its zeta sums fixed points. Not a theorem identifying first returns to a section with closed orbits."
+        },
+        {
+          "id": "connes1994",
+          "authors": "Alain Connes",
+          "title": "Noncommutative Geometry",
+          "year": "1994",
+          "url": "https://alainconnes.org/wp-content/uploads/book94bigpdf.pdf",
+          "location": "Chapter V, Section 11 beta, pp.529-531",
+          "retrieved_utc": "2026-10-06",
+          "sha256": "21f7f4d78f5a6dc2214c0bcefecc101d6f45a912520191e93753bc1f7cba5794",
+          "bytes": 4252242,
+          "inspected_scope": "Lemma 6, Propositions 7-8; basis/Fock/height/thermal formulas. Pages 529-530 rendered; p530 visually inspected. Only this source scope is audited, not the entire book.",
+          "role_and_boundary": "Established multiplicative/Fock realization. p530 visibly prints T^s and (ST)^s in an Re(s)>1 Euler formula, inconsistent with T e_p=p e_p. Correct signs are -s, confirmed directly and by exp(-beta H) on p531."
+        },
+        {
+          "id": "bostconnes1995",
+          "authors": "Jean-Benoit Bost and Alain Connes",
+          "title": "Hecke algebras, type III factors and phase transitions with spontaneous symmetry breaking in number theory",
+          "year": "1995",
+          "url": "https://alainconnes.org/wp-content/uploads/bostconnesscan.pdf",
+          "location": "Selecta Mathematica 1, 411-457",
+          "retrieved_utc": "2026-10-06",
+          "sha256": "376e00d06bef1be27769f0f1c186010a6e6ad354608c3a273b0b3ae6479c1815",
+          "bytes": 28057024,
+          "inspected_scope": "Retrieved 47-page image scan only. Full text not audited; no theorem from this scan used.",
+          "role_and_boundary": "Source discovery / provenance only; web open exceeded response-size limit, direct authenticated-free HTTP retrieval succeeded with ordinary browser user agent."
+        }
+      ],
+      "proof_provenance": "RT1/RT2 and the finite recurrence independently derived in the repository; primary sources used for hypothesis/novelty boundaries, not as authority for the no-go."
+    }
+  },
+  "root_cross_checks": [
+    "Suzuki v4 exact explicit-formula convention",
+    "DLMF 5.9 digamma integral",
+    "Conrey–Li primary PDF: positive Hilbert metric versus additional translation form",
+    "Ruelle 1976 actual compact expanding/Anosov and nuclear-branch hypotheses",
+    "Connes rendered p.530: multiplicative Fock, height, multiplication shifts; printed positive-exponent typo independently observed",
+    "Tao author notes (54)–(56), Remark41: classical hyperbola geometry"
+  ]
+}
