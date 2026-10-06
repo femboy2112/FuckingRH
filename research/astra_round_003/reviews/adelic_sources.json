@@ -1,0 +1,127 @@
+{
+  "retrieval_date_utc": "2026-10-06",
+  "source_root_transient": "/workspace/scratch/3dd748c50ed3/r3_adelic_sources",
+  "sources": [
+    {
+      "id": "ccm_weil",
+      "authors": "Alain Connes, Caterina Consani, Matilde Marcolli",
+      "title": "The Weil proof and the geometry of the adeles class space",
+      "version": "math/0703392v1",
+      "url": "https://arxiv.org/pdf/math/0703392v1",
+      "download_url": "https://arxiv.org/pdf/math/0703392",
+      "sha256": "88c4e34577e5107f8be2dc8488a71976b94a4efb5ea03f93e9f7d60681c41dee",
+      "bytes": 657051,
+      "pdf_pages": 61,
+      "exact_theorem_pdf_pages": {
+        "Definition 4.14.": [
+          23
+        ],
+        "Lemma 4.17.": [
+          25
+        ],
+        "Proposition 6.2.": [
+          29
+        ],
+        "Proposition 6.4.": [
+          29
+        ],
+        "Definition 7.1.": [
+          30
+        ]
+      },
+      "rendered_and_inspected_pdf_pages": [
+        29
+      ],
+      "short_verbatim_locator": {
+        "page": 29,
+        "text": "The trace pairing"
+      },
+      "scope": "Relevant theorem statements, definitions and normalization formulas inspected in the primary PDF; selected proofs checked; no abstract-only reliance."
+    },
+    {
+      "id": "cc_quasi",
+      "authors": "Alain Connes, Caterina Consani",
+      "title": "Quasi-inner functions and local factors",
+      "version": "2008.10974v1",
+      "url": "https://arxiv.org/pdf/2008.10974v1",
+      "download_url": "https://arxiv.org/pdf/2008.10974",
+      "sha256": "c2f116d90e93600909449cb89983e02feea2ed950bf4ad6d91cb6c7cac7e1141",
+      "bytes": 542946,
+      "pdf_pages": 25,
+      "exact_theorem_pdf_pages": {
+        "Fact 3.6.": [
+          13
+        ],
+        "Theorem 4.8.": [
+          22
+        ],
+        "Definition 5.2.": [
+          23
+        ],
+        "Theorem 5.3.": [
+          23
+        ]
+      },
+      "rendered_and_inspected_pdf_pages": [
+        23
+      ],
+      "short_verbatim_locator": {
+        "page": 23,
+        "text": "defines an injective linear map"
+      },
+      "scope": "Relevant theorem statements, definitions and normalization formulas inspected in the primary PDF; selected proofs checked; no abstract-only reliance."
+    },
+    {
+      "id": "ccm_prolate",
+      "authors": "Alain Connes, Caterina Consani, Henri Moscovici",
+      "title": "Zeta zeros and prolate wave operators",
+      "version": "2310.18423v2",
+      "url": "https://arxiv.org/pdf/2310.18423v2",
+      "download_url": "https://arxiv.org/pdf/2310.18423",
+      "sha256": "8bc197642ee9ca4f2393b6cbfd3db292be6a315ce76ad61bfb845d9fedb47f2e",
+      "bytes": 421402,
+      "pdf_pages": 30,
+      "exact_theorem_pdf_pages": {
+        "Proposition 4.6.": [
+          21
+        ],
+        "Proposition 4.7.": [
+          22
+        ],
+        "Theorem 4.6.": [
+          23
+        ]
+      },
+      "rendered_and_inspected_pdf_pages": [
+        23
+      ],
+      "short_verbatim_locator": {
+        "page": 23,
+        "text": "a hilbertian isomorphism"
+      },
+      "scope": "Relevant theorem statements, definitions and normalization formulas inspected in the primary PDF; selected proofs checked; no abstract-only reliance."
+    },
+    {
+      "id": "suzuki_shift",
+      "authors": "Masatoshi Suzuki",
+      "title": "Aspects of the screw function corresponding to the Riemann zeta-function",
+      "version": "2206.03682v4",
+      "url": "https://arxiv.org/pdf/2206.03682v4",
+      "download_url": "https://arxiv.org/pdf/2206.03682",
+      "sha256": "eabccec3c2bfee2eb12077181b564e508270f80698f4a8c64ccf105b30119f41",
+      "bytes": 433447,
+      "pdf_pages": 32,
+      "exact_theorem_pdf_pages": {
+        "Theorem 11.1.": [
+          30
+        ]
+      },
+      "rendered_and_inspected_pdf_pages": [],
+      "short_verbatim_locator": {
+        "page": 30,
+        "text": "belongs to the class"
+      },
+      "scope": "Relevant theorem statements, definitions and normalization formulas inspected in the primary PDF; selected proofs checked; no abstract-only reliance."
+    }
+  ]
+}
