@@ -715,3 +715,98 @@ M_p-P_p(s)\ge0.
 Thus the sharp tower repair is equivalent to removing the zero-frequency local scattering delay by a linear phase. A linear phase is a translation in the Fourier-conjugate logarithmic coordinate.
 
 This gives a second interpretation of the common \(|t|\) mode: it is the variogram/Lévy shadow of a common translation/scattering-origin freedom. Whether this freedom is precisely implemented by the adelic primitive radical remains an open bridge.
+
+
+## 21. Minimal CND lift cost
+
+For an even function/class \(F\) define
+
+\[
+c_*(F)
+=
+\inf\{c\in\mathbb R:\ F+c|t|\text{ is CND}\},
+\]
+
+with \(c_*(F)=+\infty\) if no finite lift exists.
+
+For the uncompleted prime ramp at parameter \(\sigma>1\),
+
+\[
+P_\sigma(t)
+=
+\sum_{p,k}
+(\log p)p^{-k\sigma}(|t|-k\log p)_+,
+\]
+
+one has the exact theorem
+
+\[
+\boxed{
+c_*(-P_\sigma)
+=
+\sum_{p,k}(\log p)p^{-k\sigma}
+=
+-\frac{\zeta'}{\zeta}(\sigma).
+}
+\]
+
+Proof:
+
+- the coefficient on the right produces
+  \[
+  -\frac{\zeta'}{\zeta}(\sigma)|t|-P_\sigma(t)
+  =
+  \sum_pD_{p,\sigma}(t),
+  \]
+  which is CND;
+- if \(c<-\zeta'/\zeta(\sigma)\), then as \(|t|\to\infty\), finite first-moment convergence gives
+  \[
+  c|t|-P_\sigma(t)
+  =
+  \left(c+\frac{\zeta'}{\zeta}(\sigma)\right)|t|+O(1),
+  \]
+  which tends to \(-\infty\), impossible for a normalized CND function.
+
+Therefore the minimal positive-lift cost diverges as
+
+\[
+c_*(-P_\sigma)\to+\infty
+\qquad(\sigma\downarrow1).
+\]
+
+For the completed critical Suzuki object, linear-gauge rigidity gives
+
+\[
+\boxed{
+c_*(\Psi)
+=
+\begin{cases}
+0,&\mathrm{RH},\\
++\infty,&\neg\mathrm{RH}.
+\end{cases}
+}
+\]
+
+Hence RH can be phrased as an exact renormalization statement:
+
+> Does the completed adelic/primitive geometry turn the infinite local CND-lift cost generated at the Euler-product boundary into zero cost at the critical half-density?
+
+The analytically continued scalar coefficient alone does **not** accomplish this: it reaches the finite negative value \(B\), whereas a CND lift requires nonnegative continuous Lévy background. The missing operation must therefore be genuinely global/operator/primitive, not scalar analytic continuation of \(c_*\).
+
+## 22. Relation to the completed Suzuki shift
+
+Writing \(\sigma=1/2+\omega\), Suzuki's \(\Psi_\omega\) is the completed version of exactly this deformation.
+
+The finite-prime local lift cost is explicit for \(\omega>1/2\):
+
+\[
+c_*(-P_{1/2+\omega})
+=
+-\frac{\zeta'}{\zeta}\left(\frac12+\omega\right).
+\]
+
+At \(\omega=1/2\) it diverges as the Euler-product pole is approached. Nevertheless the **completed** \(\Psi_\omega\) is unconditionally nonnegative in the zero-free region \(\omega\ge1/2\).
+
+This is direct evidence that completion is not a small correction to the local lift cost; it changes the positivity problem before the pole is crossed.
+
+The endpoint \(\omega=0\) is RH.
