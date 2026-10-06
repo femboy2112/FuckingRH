@@ -1,0 +1,36 @@
+{
+  "bits": 180,
+  "exact_carrier_dimension": 12,
+  "coherent_cross_nonzero_entries": 8,
+  "residual_certificates": [
+    {
+      "N": 4,
+      "events": 3,
+      "negative_bulk_coefficient": "[-8.3141569444492860377368668876324503487805734889412654 +/- 6.71e-53]",
+      "negative_rayleigh": "[-0.0909615626827728183845630728708318085603205262298906 +/- 3.54e-53]",
+      "all_25_kernel_identities_enclosed": true
+    },
+    {
+      "N": 16,
+      "events": 10,
+      "negative_bulk_coefficient": "[-15.662525805646026112598924967677692077188064231382690 +/- 5.05e-52]",
+      "negative_rayleigh": "[-1.483723671822976090816123692470840062016054126734883 +/- 5.51e-52]",
+      "all_25_kernel_identities_enclosed": true
+    },
+    {
+      "N": 64,
+      "events": 27,
+      "negative_bulk_coefficient": "[-32.043149294865917763172630387914639377949324637297720 +/- 9.21e-52]",
+      "negative_rayleigh": "[-11.67256025069301161520311923798491150541709558457356 +/- 4.13e-51]",
+      "all_25_kernel_identities_enclosed": true
+    },
+    {
+      "N": 256,
+      "events": 70,
+      "negative_bulk_coefficient": "[-63.65856535503219742112116654297422642306710372627970 +/- 4.61e-51]",
+      "negative_rayleigh": "[-65.8744470062860183457628661023047484067735004560777 +/- 5.74e-50]",
+      "all_25_kernel_identities_enclosed": true
+    }
+  ],
+  "scope": "finite enclosure of exact analytic residual; no RH or target-PSD assertion"
+}
