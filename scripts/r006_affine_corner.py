@@ -198,6 +198,31 @@ check("9. naked V_2*V_3 = coprime shuffle m->3m/2 on even m (factorized, GCD-typ
       all(images[n] == 3 * n // 2 for n in support))
 
 # ========================================================================================
+# 10. CUNTZ / LACA-RAEBURN ax+b RELATIONS and the EXCLUDE-0 boundary defect.
+#     Our (S,V_p) satisfy the ax+b-semigroup relations (T1 braid, T3) but BREAK Nica
+#     covariance (T4) by a rank-one boundary term -- the fingerprint of compressing onto
+#     {1,2,3,...} (deleting the dilation fixed point 0) rather than the standard {0,1,2,...}.
+# ========================================================================================
+def braidT1(p):
+    core = slice(0, N // p - 2)
+    return np.allclose((V(p) @ S)[core, core], (np.linalg.matrix_power(S, p) @ V(p))[core, core])
+check("10a. V_p S = S^p V_p  (affine braid = Laca-Raeburn T1 = Cuntz s_n u = u^n s_n)",
+      all(braidT1(p) for p in [2, 3, 5]))
+def T3(p, q):
+    core = slice(0, N // max(p, q) - 2)
+    return np.allclose((Vt(p) @ V(q))[core, core], (V(q) @ Vt(p))[core, core])
+check("10b. V_p* V_q = V_q V_p*  (p != q)  (Laca-Raeburn T3)",
+      all(T3(p, q) for (p, q) in [(2, 3), (2, 5), (3, 5)]))
+def nica_defect(p):
+    lhs = St @ V(p) - np.linalg.matrix_power(S, p - 1) @ V(p) @ St    # S*V_p - S^{p-1}V_p S*
+    want = np.outer(e(p - 2), e(0))                                    # |p-1><1|  (index p-2)
+    core = slice(0, N - 20)
+    return np.linalg.norm((lhs - want)[core, core])
+check("10c. S*V_p - S^{p-1}V_p S* = |p-1><1|  (EXCLUDE-0 Nica defect; (T4) fails rank-one)",
+      all(nica_defect(p) < 1e-12 for p in [2, 3, 5, 7]),
+      "our rep = ax+b algebra EXCEPT this boundary term; |1> = BC vacuum fused with additive floor")
+
+# ========================================================================================
 # REPORT
 # ========================================================================================
 print("=" * 94)
