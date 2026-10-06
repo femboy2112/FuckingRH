@@ -259,6 +259,63 @@ If strict positivity is needed, isolate the nondegeneracy argument.
 
 If no such finite passive approximants can exist in a declared natural class, prove that obstruction and identify the next smallest class.
 
+
+
+## Stronger limit shortcut: Schur normal-family / Vitali route
+
+There is a potentially cleaner theorem architecture than proving local-uniform convergence to \(\xi'/\xi\) directly on the whole critical half-plane.
+
+Fix \(a>0\) and define the Cayley transform of a completed source response:
+
+\[
+\Theta_a(s)
+=
+\frac{F(s)-a}{F(s)+a}.
+\]
+
+If \(F_X\) is positive-real on
+
+\[
+H_{1/2}:=\{s:\Re s>1/2\},
+\]
+
+then
+
+\[
+|\Theta_{a,X}(s)|\le1
+\]
+
+there. Thus \(\{\Theta_{a,X}\}\) is automatically a normal, locally bounded family.
+
+Now suppose one can prove only the **easy Euler-side convergence**
+
+\[
+\Theta_{a,X}(s)
+\longrightarrow
+\frac{\xi'(s)/\xi(s)-a}{\xi'(s)/\xi(s)+a}
+\qquad
+(\Re s>1),
+\]
+
+where the Euler product/log-derivative is absolutely convergent and no RH input is needed.
+
+Because the \(\Theta_{a,X}\) are uniformly bounded holomorphic functions on the larger connected domain \(H_{1/2}\), Vitali/Montel gives a holomorphic limit on all of \(H_{1/2}\), uniquely determined by its values on the open subset \(\Re s>1\).
+
+Consequently the Cayley inverse gives a positive-real holomorphic continuation of \(\xi'/\xi\) to \(H_{1/2}\). A pole of \(\xi'/\xi\) there would contradict holomorphy, so \(\xi\) has no zero with \(\Re s>1/2\). By the functional equation, RH follows.
+
+This means a Round006 proof does **not** necessarily need to estimate the critical-strip limit directly.
+
+A potentially sufficient route is:
+
+1. construct finite arithmetic source systems with Schur transfer functions \(\Theta_X\) on \(H_{1/2}\);
+2. prove \(|\Theta_X|\le1\) structurally for every finite \(X\);
+3. prove convergence only in the safe Euler region \(\Re s>1\);
+4. let normal-family compactness perform the continuation.
+
+This is still a hard theorem: producing the uniformly contractive finite systems on \(H_{1/2}\) is essentially where the RH content must enter. But it isolates the limit step very sharply and prevents accidental circular assumptions about convergence across possible zeta zeros.
+
+Do **not** write "assume \(F_X\to\xi'/\xi\) on \(H_{1/2}\)" as a premise; that convergence would already force a zero-free half-plane and therefore smuggle in the goal.
+
 ## Slogan
 
 \[
