@@ -810,3 +810,87 @@ At \(\omega=1/2\) it diverges as the Euler-product pole is approached. Neverthel
 This is direct evidence that completion is not a small correction to the local lift cost; it changes the positivity problem before the pole is crossed.
 
 The endpoint \(\omega=0\) is RH.
+
+
+## 23. Uniform finite-wavefront lift criterion
+
+The quotient idea admits a finite-window formulation that avoids constructing the full infinite positive object at once.
+
+For \(L>0\), define the finite-window lift cost
+
+\[
+c_L^*
+=
+\inf\left\{
+c\in\mathbb R:
+K_{\Psi+c|\cdot|}(s,u)\succeq0
+\text{ for every finite set }s,u\in[0,L]
+\right\},
+\]
+
+with \(c_L^*=+\infty\) if no such finite coefficient exists.
+
+Because enlarging the window only adds constraints,
+
+\[
+c_L^*
+\]
+
+is nondecreasing in \(L\).
+
+Then:
+
+\[
+\boxed{
+\mathrm{RH}
+\iff
+\sup_{L>0}c_L^*<\infty.
+}
+\]
+
+Proof:
+
+- If RH holds, \(K_\Psi\succeq0\) globally, so \(c=0\) is feasible on every window.
+- Conversely, suppose a sequence \(L_n\to\infty\) admits feasible \(c_n\) with \(|c_n|\le C\). Pass to a subsequence \(c_n\to c\). For any fixed finite set of times, all points lie in \([0,L_n]\) for large \(n\), and the corresponding Gram matrices
+  \[
+  K_{\Psi+c_n|\cdot|}
+  \]
+  are PSD. Entrywise convergence and closedness of the PSD cone give
+  \[
+  K_{\Psi+c|\cdot|}\succeq0
+  \]
+  on every finite set. Hence \(\Psi+c|t|\) is globally CND. Linear-gauge rigidity then forces RH.
+
+Therefore if RH is false, every finite-wavefront positivity repair of this form must have unbounded common-mode cost as the wavefront expands.
+
+This is a concrete finite-to-infinite discriminator:
+
+> It is enough to construct exact finite-wavefront positive/primitive objects whose induced \(|t|\)-lift coefficients remain uniformly bounded.
+
+The coefficient need not be zero at finite cutoff, and the finite objects need not converge in a preselected gauge. Boundedness plus local matrix closure suffices.
+
+This criterion is especially compatible with the arithmetic wavefront: a compact tent/window sees only finitely many nontrivial prime-tower classes modulo the common mode.
+
+## 24. Practical next theorem for the adelic route
+
+A usable intermediate theorem would therefore be:
+
+### Uniform Primitive Lift Theorem — UNVERIFIED
+
+For every wavefront \(L\), construct from the semilocal adelic quotient involving exactly the visible finite places and the Archimedean place a manifestly positive Gram/trace object which, on Suzuki's tent family, equals
+
+\[
+K_{\Psi+c_L|\cdot|}
+\]
+
+for some real \(c_L\), with
+
+\[
+\sup_L|c_L|<\infty.
+\]
+
+No identification \(c_L=0\) is required.
+
+This theorem alone would imply RH by the previous section.
+
+The natural first test is the one-prime-plus-infinity semilocal system, then two primes plus infinity, before attempting the full wavefront. The coefficient \(c_L\) must be extracted from the actual operator/radical normalization rather than fitted to force positivity.
