@@ -334,3 +334,212 @@ The high-value new question is therefore:
 If yes, the supposedly divergent subtraction may be pure gauge, and each prime tower would enter the primitive quotient through a positive representative.
 
 That does not yet prove RH. It gives a sharply defined theorem whose proof would materially change the problem.
+
+
+## 13. Exact analytic continuation of the total repair coefficient
+
+For \(\Re s>1\),
+
+\[
+-\frac{\zeta'}{\zeta}(s)
+=
+\sum_{n\ge2}\frac{\Lambda(n)}{n^s}
+=
+\sum_p\sum_{k\ge1}\frac{\log p}{p^{ks}}
+=
+\sum_p\frac{\log p}{p^s-1}.
+\]
+
+Thus the \(s\)-deformed sharp tower repair coefficient is
+
+\[
+M_p(s)=\frac{\log p}{p^s-1},
+\]
+
+and at the critical half-density its literal local value is \(M_p(1/2)=M_p\).
+
+The positive sum \(\sum_p M_p(1/2)\) diverges. However its canonical analytic continuation through the logarithmic derivative is finite because \(\zeta(1/2)\ne0\):
+
+\[
+\operatorname{AC}_{s\to1/2}\sum_pM_p(s)
+=
+-\frac{\zeta'}{\zeta}\left(\frac12\right).
+\]
+
+The completed functional equation for
+
+\[
+\xi(s)=\frac12s(s-1)\pi^{-s/2}\Gamma(s/2)\zeta(s)
+\]
+
+gives \(\xi'(1/2)=0\), while the derivatives of \(s(s-1)\) cancel at \(1/2\). Therefore
+
+\[
+\boxed{
+-\frac{\zeta'}{\zeta}\left(\frac12\right)
+=
+\frac12\left[
+\psi\left(\frac14\right)-\log\pi
+\right].
+}
+\]
+
+But this is **exactly the linear Archimedean coefficient** \(B\) in Suzuki's smooth term:
+
+\[
+A(t)=\cdots +Bt+\cdots,
+\qquad
+B=\frac12\left[\psi\left(\frac14\right)-\log\pi\right].
+\]
+
+Numerically,
+
+\[
+B\approx -2.6860917096128327911.
+\]
+
+Hence:
+
+\[
+\boxed{
+\text{Suzuki's Archimedean linear coefficient}
+=
+\text{analytic continuation of the total sharp prime-tower repair tax}.
+}
+\]
+
+This is an exact identity, not an asymptotic analogy.
+
+It does **not** justify termwise analytic continuation of positive CND sums or preserve positivity by itself. Indeed the continued total coefficient is negative although every literal \(M_p(1/2)\) is positive. The identity instead identifies precisely where the required global renormalization is already encoded in the completed zeta formula.
+
+## 14. A one-parameter positive family above the Euler-product line
+
+For \(\sigma>1\), define
+
+\[
+h_{p,\sigma}(t)
+=
+(\log p)\sum_{k\ge1}p^{-k\sigma}(|t|-k\log p)_+,
+\]
+
+\[
+M_p(\sigma)=\frac{\log p}{p^\sigma-1},
+\qquad
+D_{p,\sigma}(t)=M_p(\sigma)|t|-h_{p,\sigma}(t).
+\]
+
+The same interval-Gram proof as at \(\sigma=1/2\) shows every \(D_{p,\sigma}\) is CND. Since
+
+\[
+\sum_pM_p(\sigma)<\infty\qquad(\sigma>1),
+\]
+
+the global sum
+
+\[
+D_\sigma(t)=\sum_pD_{p,\sigma}(t)
+\]
+
+is manifestly CND there.
+
+For fixed \(t\), only finitely many prime powers enter the ramp part, so
+
+\[
+D_\sigma(t)
+=
+-\frac{\zeta'}{\zeta}(\sigma)|t|
+-
+\sum_{p^k\le e^{|t|}}
+(\log p)p^{-k\sigma}(|t|-k\log p).
+\]
+
+Thus, modulo the common direction \(|t|\), the class of \(D_\sigma\) is an entire finite-sum function of \(\sigma\), while the only Euler-product pole at \(\sigma=1\) lies in the common \(|t|\) direction.
+
+This supplies a precise deformation:
+
+\[
+\text{manifest CND for }\sigma>1
+\longrightarrow
+\text{critical half-density }\sigma=\frac12.
+\]
+
+Positivity is **not known** to analytically continue across \(\sigma=1\). Establishing an operator/quotient formulation in which the common-mode singularity is removed while positivity survives would be a genuine proof step.
+
+## 15. Linear-gauge rigidity: quotienting by \(|t|\) is logically safe if a finite positive lift exists
+
+Define the class of \(\Psi\) modulo the common mode \(\mathbb R|t|\). Say that the class has a **finite CND lift** if there exists a finite real constant \(c\) such that
+
+\[
+F_c(t)=\Psi(t)+c|t|
+\]
+
+is CND.
+
+Then
+
+\[
+\boxed{
+\mathrm{RH}
+\iff
+\exists c\in\mathbb R:
+\Psi+c|t|\text{ is CND}.
+}
+\]
+
+Proof:
+
+- RH implies \(\Psi\) is CND, so \(c=0\) works.
+- Conversely, if \(F_c\) is CND, every continuous normalized CND function on \(\mathbb R\) has at-most-quadratic growth. Therefore
+  \[
+  \Psi(t)=F_c(t)-c|t|=O(1+t^2).
+  \]
+  Round 001's transform lemma then forces RH: polynomial growth makes the Suzuki transform holomorphic throughout the upper half-plane, excluding zeros of \(\xi\) to the right of \(1/2\), and functional symmetry finishes.
+
+There is a sharper rigidity statement:
+
+\[
+\boxed{
+\Psi+c|t|\text{ is CND}
+\iff
+\mathrm{RH}\text{ and }c\ge0.
+}
+\]
+
+Under RH, \(\Psi\) has a purely atomic positive Lévy measure on the real zero ordinates, while
+
+\[
+|t|
+=
+\int_{\mathbb R}(1-\cos(tx))\frac{dx}{\pi x^2}.
+\]
+
+Thus \(c\ge0\) is sufficient. If \(c<0\), uniqueness of the Lévy–Khintchine decomposition would give a negative absolutely continuous density \(c/(\pi x^2)\) away from the atomic zero measure, impossible for a CND function.
+
+This resolves an important conceptual issue:
+
+- \(|t|\) is **not** a null direction of Suzuki's screw kernel;
+- nevertheless, producing **any finite CND lift of the completed class modulo \(|t|\)** is already equivalent to RH.
+
+Therefore a primitive/radical construction need not recover the exact lift \(c=0\) immediately. It is enough to prove that the completed adelic class admits some finite positive lift.
+
+## 16. Brownian/Cauchy meaning of the common mode
+
+The same \(|t|\) direction has two exact probabilistic roles:
+
+1. as a variogram,
+   \[
+   K_{|t|}(s,u)=|s|+|u|-|s-u|=2\min(s,u)
+   \]
+   for \(s,u\ge0\), the Brownian covariance kernel;
+2. as a Lévy exponent,
+   \[
+   e^{-c|t|}
+   \]
+   is the characteristic function of a symmetric Cauchy law, with Lévy density
+   \[
+   \frac{c}{\pi x^2}\,dx.
+   \]
+
+Thus changing the finite lift \(c\) adds or removes a universal Brownian/Cauchy continuum background. Under RH the distinguished Suzuki lift \(c=0\) is purely atomic on zero ordinates; positive \(c\) adds a continuous universal background.
+
+This makes the quotient interpretation precise without falsely calling \(|t|\) itself a radical of the screw kernel.
