@@ -10,8 +10,11 @@ The global problem is now crisp: sum_{p<=e^L} sigma_p(xi) diverges pointwise on 
 (~2 sqrt(e^L)); it must renormalize against the pole (a positive atom at IMAGINARY xi=i/2) to the
 finite positive zero-measure sum_gamma delta/gamma^2. RH = renormalized real-axis measure >= 0,
 uniformly in L (slack-free). No multiplicative/commutative construction reaches this: all are
-factorized/RH-inert. The surviving seams are (a) the noncommutative affine Dirac/BC triple, and
-(b) a quantitative collapse-rate theorem rad(E_L) <= C e^{-cL}.
+factorized/RH-inert. The surviving seams are (a) the noncommutative affine Dirac/BC triple / non-diagonal transfer
+operator (Berry-Keating/Connes), and (b) a quantitative collapse-rate theorem rad(E_L) <= C e^{-cL}.
+Multiple independent routes (Pascal, binomial, Hodge, pre-statistical S_r sectors, affine CRT,
+Archimedean) now ALL funnel to this same Berry-Keating/Weil wall -- strong evidence that the wall
+is intrinsic, not an artifact of any one construction.
 
 ## Checkpoints landed this round (each committed+pushed)
 1. Integrated FUCC_IS_PASCAL + PSD_BOUNDARY_CONTINUITY_AUDIT; corrected C84 to the shrinking-window
@@ -22,6 +25,10 @@ factorized/RH-inert. The surviving seams are (a) the noncommutative affine Dirac
    factorizes (cross block = commutator = 0) -> RH-inert (no-go).
 5. Exact closed-form local operator squares B_p (sigma_p>=0 verified); M_p forced; global residual
    sharpened to real-axis renormalization vs the imaginary-frequency pole atom.
+7. Pre-statistical exchange (addendum): ONE diagonal parent A(s)=diag(p^{-s}) gives zeta/1-zeta/
+   Mobius/Lambda as four shadows; Pauli exclusion = mu(n)=0 on non-squarefree; ALL S_r/Schur sectors
+   of the diagonal parent are symmetric functions of prime zetas = commutative = RH-inert (extends
+   C89 to full representation content). Escape = non-diagonal braided/transfer operator (Berry-Keating).
 6. Completed shift vs finite-only tilt are different deformations (exponential {0} vs shrinking
    window rad ~ e^{-0.85 T}); affine CRT schematic Gram NOT PSD at beta=1/2 (caution).
 
