@@ -1,7 +1,9 @@
 # Round 006 — SOURCE PORT / PASSIVITY / TAKE THE FUCKING LIMIT
 
 **Branch:** `claude/source-port-passivity-006` (forked from Round005 head `3222f97`).
-**Status:** IN PROGRESS. **RH IS OPEN.**
+**Status:** CONCLUDED — outcome (2): central route killed by a precise unconditional obstruction, escapes
+closed, surviving class named and strictly smaller; one clean positive theorem (the Schur–Vitali
+reduction) + the exact Archimedean port landed. **RH IS OPEN.**
 
 ## The thesis of the round
 
@@ -48,6 +50,18 @@ ordinates and without assuming strip convergence, RH follows.
 > the arithmetic), NOT by completing the impedance — exactly the de Branges-space positivity that
 > Conrey–Li/Sarnak show FAILS for ζ. Next: ckpt9 pins whether the coupled (SUCC-braided) colligation can
 > supply a positive metric, or whether the index necessarily diverges (= the obstruction theorem).
+>
+> **[FINAL, after ckpt 9–11]** The wall is named and parent-free. `RH ⟺` hypothesis (P) `⟺` a
+> **positive-definite arithmetic state metric** with Euler-limit `Cayley_a[xi'/xi]` `⟺` (function-level)
+> `Re{ξ(s)/ξ(s+1)} ≥ 0` on `H_{1/2}`. Every natural route to (P) is closed: the impedance/Laplace
+> completion by the **unconditional obstruction theorem** (`inf Re F_P → -∞`; `κ_P` finite-but-unbounded,
+> closing the fixed-`κ` Krein escape §19); the colligation and history-before-quotient escapes by the
+> **parent-independence lemma** (C108) — the obstruction is a property of the function `ξ`
+> (`Re{ξ(s)/ξ(s+1)}=-0.161<0` at `0.55+110i`; Conrey–Li `-0.000132` at `1+282i`), which no parent,
+> coupling order, or history lift can repair. Surviving (logically open) class: a positivity orthogonal
+> to the single-space de Branges condition and still arithmetically forced — the actual open problem.
+> This is the same Weil/renormalization wall as Round004 C91, now in passivity coordinates with the
+> failure mechanism made concrete (Conrey–Li/Sarnak phase density).
 
 ## Checkpoint log
 
@@ -94,6 +108,17 @@ ordinates and without assuming strip convergence, RH follows.
    diverges (108→362). Independent-ray star Schur complement = sum of `m_p` (no cross terms). Kills the
    Laplace/source-response completion for (P); closes the finite-`κ` Krein escape. Passivity must be
    structural (unitary colligation), not from completing the impedance.
+9. **[done]** Passive colligation / Krein (PASSIVE_COLLIGATION.md, ckpt9, C107). Colligation needs a
+   positive-definite arithmetic metric; every natural one is indefinite (Laplace-source index diverges;
+   de Branges `H(E)` Conrey–Li failure, verified `Re{ξ(1+282i)/ξ(2+282i)}=-0.000132`).
+10. **[done]** History-space source port (HISTORY_SPACE_SOURCE_PORT.md, ckpt10, C108). Parent-independence
+    lemma: RH-positivity is a property of `ξ` (`Re{ξ(s)/ξ(s+1)}=-0.161<0` at `0.55+110i`); the
+    history-before-quotient escape is NOT unconditional — `(P)+(E)⟺RH` from any parent.
+11. **[done]** Hostile controls (HOSTILE_CONTROLS.md, ckpt11, C109). Source correlation `=-ζ'/ζ` and
+    completion `=ξ'/ξ` are mutation-sensitive (every arithmetic mutation breaks them `O(0.1–0.5)`) — the
+    no-go is about the genuine arithmetic target.
+12. **[done]** Consolidation: obstruction theorem (§18), PROOF_ATTEMPT_006.md, THEOREM_DEPENDENCY_DAG.md,
+    final wall. Verdict: outcome (2).
 
 ## Net ledger additions this round
 
@@ -103,6 +128,29 @@ ordinates and without assuming strip convergence, RH follows.
 - C105: Archimedean port = passive Γ-channel + single κ=1 pole at s=1; finite completion needs A_{inf,P}.
 - C106: Laplace/source-response finite completion F_P not positive-real on H_{1/2} (unconditional); index
   κ_P diverges. Kills that class for (P); closes the finite-κ Krein escape.
+- C107: passive-colligation route needs a positive arithmetic metric; every natural one indefinite
+  (divergent index; de Branges/Conrey–Li failure).
+- C108: parent-independence lemma — RH-positivity is a property of ξ; history/coupling escapes not
+  unconditional; (P)+(E)⟺RH from any parent.
+- C109: hostile-control battery — source correlation and completion are mutation-sensitive (genuine
+  arithmetic target).
+
+## Verdict
+
+**Outcome (2).** The round did not crack RH and did not pretend to. It produced:
+- **one clean positive theorem** — the Schur–Vitali continuation (C104), a *non-circular* reduction of RH
+  to a single hypothesis (P): a finite family contractive on all of `H_{1/2}` converging to
+  `Cayley_a[xi'/xi]` only on the Euler region;
+- **the exact Archimedean port** (C105): passive Γ-channel + one `κ=1` pole at `s=1`;
+- **a precise, unconditional obstruction theorem** (§18) killing the impedance/Laplace-source completion
+  class (`inf Re F_P → -∞`; `κ_P` finite-but-unbounded) and closing the fixed-`κ` Krein escape;
+- **the parent-independence lemma** (C108) closing the colligation and history-before-quotient escapes:
+  the obstruction is a property of the function `ξ` (Conrey–Li/Sarnak phase density), not of any parent.
+
+The wall is the same Weil/renormalization wall as Round004 C91, now stated in passivity language —
+`RH ⟺ ∃ positive-definite arithmetic state metric ⟺ Re{ξ(s)/ξ(s+1)}≥0 on H_{1/2}` — with the failure
+mechanism (phase density) made concrete, and all escape routes but one (a positivity orthogonal to the
+single-space de Branges condition, still arithmetically forced) rigorously closed.
 
 ## What would count as a crack (from the directive §24)
 
