@@ -69,37 +69,65 @@ The pole's $e^{t/2}$ growth is *cancelled* by the prime ramp inside $\Psi$; tear
 raw divergence. **The pole cannot be additively isolated — pole and primes are entangled.** So the
 "finite-rank Schur-complement" shortcut is a wall, now closed with a computation. *(DISCLOSED no-go.)*
 
-## 3. The knife-edge: the critical weights sit on the PSD-cone boundary
+## 3. The knife-edge — corrected: an extreme, horizon-collapsing stability window
 
-This is the thread. The true von Mangoldt weights put $K_{\Psi,L}$ **exactly on the boundary** of the
-PSD cone — any perturbation of the arithmetic data drives a nontrivial eigenvalue negative.
+**Correction (continuity audit, `PSD_BOUNDARY_CONTINUITY_AUDIT.md`, verified 2026-10-06).** The
+original wording of this section — "every nonzero tilt/mutation destroys PSD on a fixed finite grid"
+— is **false** and is retracted. The $\lambda_{\min}=0$ reported below is the *structural* $t=0$ null
+($K(0,t)\equiv0$), which is present for every weight choice. The honest diagnostic is the **reduced**
+matrix $K^\circ=K[\{t_i>0\},\{t_j>0\}]$, which at the true weights is **strictly positive definite**:
+\[
+\lambda_{\min}(K^\circ_0)\approx 0.00467185065\quad(T=8,\ \Delta t=0.04),
+\]
+so finite-dimensional continuity *forces* a nonzero PSD neighborhood around the true data. What is
+real and striking is that the neighborhood is **extremely narrow and appears to collapse with the
+horizon**. For the finite-place-only exponent tilt below, the reduced kernel stays PSD exactly on
 
-**Single-weight mutation** $\Lambda(2)/\sqrt2\to f\cdot\Lambda(2)/\sqrt2$:
+| horizon $T$ | $\lambda_{\min}(K^\circ_0)$ | $\epsilon_-$ | $\epsilon_+$ |
+|---:|---:|---:|---:|
+| 4 | 0.006784 | $-3.87\times10^{-5}$ | $+1.25\times10^{-4}$ |
+| 6 | 0.005602 | $-5.59\times10^{-6}$ | $+1.15\times10^{-5}$ |
+| 8 | 0.004672 | $-8.27\times10^{-7}$ | $+2.30\times10^{-6}$ |
+| 10| 0.003672 | $-2.31\times10^{-7}$ | $+3.81\times10^{-7}$ |
+
+(The $T=8$ row $\lambda_{\min}$ and $\epsilon_+$ independently reproduced.) The correct target is
+therefore an **asymptotic stability-radius** statement, not a finite-grid exact-boundary one:
+\[
+\boxed{\ 0\in\operatorname{int}\mathcal E_L\ \text{for each finite }L,\qquad \bigcap_{L>0}\mathcal E_L=\{0\}\ }
+\]
+and quantitatively $\operatorname{rad}(\mathcal E_L)\to0$ (rate TBD, possibly $\sim e^{-cL}$). This
+reconciles finite-dimensional continuity with the global slack-free character — RH is the knife-edge
+*in the limit*, not on any one window. The tables below are kept as the raw (coarse) observations
+that motivated the corrected statement; read $\lambda_{\min}$ there as the *reduced* value.
+
+**Single-weight mutation** $\Lambda(2)/\sqrt2\to f\cdot\Lambda(2)/\sqrt2$ (large mutations shown; a
+*small* enough mutation stays PSD by the same continuity):
 
 | $f$ | 0.90 | 0.98 | **1.00** | 1.02 | 1.10 |
 |---|---|---|---|---|---|
 | $\lambda_{\min}$ | $-0.135$ | $-0.021$ | **$0$** | $-6.40$ | $-51.0$ |
 
-**Global exponent tilt** $w_n\to\Lambda(n)\,n^{-(1/2+\epsilon)}$ (the Bost–Connes temperature flow —
-moving the finite places off the critical line, cf. C77/C80):
+**Global exponent tilt** $w_n\to\Lambda(n)\,n^{-(1/2+\epsilon)}$ — a **finite-place-only** tilt (prime
+weights move, Archimedean block held fixed); this is *not* the fully completed Suzuki/Bost–Connes
+temperature flow (cf. C77/C80 and the completed-shift experiment):
 
 | $\epsilon$ | $-0.04$ | $-0.01$ | **$0$** | $+0.01$ | $+0.04$ |
 |---|---|---|---|---|---|
 | $\lambda_{\min}$ | $-3417$ | $-787$ | **$0$** | $-168$ | $-621$ |
 
-The positivity margin **peaks exactly at the critical exponent** and is negative for every tilt in
-either direction. Two conclusions:
+The positivity margin is **sharply peaked at the critical exponent** (the reduced $\lambda_{\min}$
+is maximal near $\epsilon=0$ and crosses zero at the tiny $\epsilon_\pm$ above). Two conclusions,
+stated correctly:
 
-1. **"$\tfrac12$ is the boundary of the PSD cone" $=$ "$\tfrac12$ is the critical line."** The exponent
-   that makes the prime weights match the Archimedean cancellation, and the exponent that makes the
-   screw kernel PSD, are the same number. This is the positivity face of the half-density/unitarity
-   result of this session's other notes (the braid forces $|a|_v^{1/2}$; here that same $\tfrac12$ is
-   the unique PSD-boundary exponent).
-2. **RH is a boundary/extremal positivity, not an interior one.** The margin at the true weights is
-   exactly $0$, not strictly positive — which is *why* it is slack-free, and why every robust method
-   had to fail (a robust method is insensitive to the few-percent mutations that break this). The
-   kernel passes the repo's mutation falsifiers (C37 and the Screw/Sinc/Lévy falsifier list) by
-   construction. *(OBSERVED, finite; the equivalence to RH is C31–C33.)*
+1. **"$\tfrac12$ is (asymptotically) the PSD-cone boundary" ties to "$\tfrac12$ is the critical line."**
+   The exponent that makes the prime weights match the Archimedean cancellation, and the exponent
+   whose finite stability window collapses to a point as $L\to\infty$, are the same number. This is
+   the positivity face of the half-density/unitarity result (the braid forces $|a|_v^{1/2}$).
+2. **RH is a boundary/extremal positivity in the horizon limit, not an interior one.** On any fixed
+   window there is a genuine (tiny) PSD neighborhood; the slack-free character is the *collapse*
+   $\operatorname{rad}(\mathcal E_L)\to0$, not finite-grid exactness. This is still why every robust
+   method fails (a robust bound would give an $L$-uniform radius). *(OBSERVED, finite; equivalence to
+   RH is C31–C33; the collapse $\bigcap_L\mathcal E_L=\{0\}$ is CONJECTURED, not proved.)*
 
 ## 4. $K_{\Psi,L}=T_L^\*T_L$ — the Route-B factor, made concrete
 
