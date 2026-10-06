@@ -1,0 +1,13 @@
+{
+  "h": "1/65536",
+  "positive_weil_lower_coefficient": "[1.3544263302109853398292549335538835383248277762694731 +/- 7.53e-53]",
+  "interval_inside_log2_log3": true,
+  "precision_bits": 180,
+  "scope": "For every nonzero smooth f supported in (1,1+h); proof uses disjoint translates.",
+  "polynomial_control": {
+    "average": "0",
+    "norm_square": "1/73751347904170901308495450681608629461651820255085854720",
+    "endpoint_values": "(0, 0)",
+    "endpoint_derivatives": "(0, 0)"
+  }
+}
