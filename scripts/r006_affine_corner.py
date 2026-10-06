@@ -154,9 +154,14 @@ check("7. v_p(n) = max{k:(V_p*)^k|n>!=0}  (inverse-FUCC survival depth = valuati
           for p in [2,3,5] for n in range(1, N + 1)))
 
 # ========================================================================================
-# 8. TOEPLITZ / HARDY REALIZATION of the local carry filter (Round005 C96 upgraded to an
-#    exact compression identity).  B_p = (I-S)(I - p^{-1/2} S)^{-1}  = analytic Toeplitz with
-#    symbol (1-z)/(1-r z), r=p^{-1/2}.  No Hankel correction (analytic symbol).
+# 8. TOEPLITZ / HARDY REALIZATION.  CAUTION (audit S1): there are TWO distinct unilateral shifts,
+#    and the abstract analytic-Toeplitz identity (I-X)(I-rX)^{-1} = T_{(1-z)/(1-rz)} holds for ANY
+#    unilateral shift X (no Hankel correction). WHICH shift matters for the identification:
+#      - S (unit successor, |n>->|n+1>, frequency 1): its defect is |1><1| (the von-Mangoldt route);
+#        its symbol variable is e^{i xi} (consecutive INTEGERS).
+#      - U_p (prime-DEPTH shift on the p-tower, |p^k>->|p^{k+1}>, = V_p restricted to the tower):
+#        its symbol variable is the PRIME CLOCK e^{i(log p)xi}. The Round005 local square sigma_p
+#        lives on THIS clock, so the local carry filter B_p = (I-U_p)(I-p^{-1/2}U_p)^{-1}, NOT (I-S)...
 # ========================================================================================
 def toeplitz_from_symbol_coeffs(c):
     """lower-triangular analytic Toeplitz: (T)_{i,j}=c[i-j] for i>=j."""
@@ -165,23 +170,45 @@ def toeplitz_from_symbol_coeffs(c):
         for j in range(i + 1):
             if i - j < len(c): T[i, j] = c[i - j]
     return T
-def Bp_check(p):
-    r = p**-0.5
-    Bp_resolvent = (I - S) @ np.linalg.inv(I - r * S)    # (I-S)(I-rS)^{-1}
-    # symbol (1-z)Sum r^k z^k = 1 - (1-r) Sum_{k>=1} r^{k-1} z^k
-    c = [1.0] + [-(1 - r) * r**(k - 1) for k in range(1, N)]
-    Bp_toeplitz = toeplitz_from_symbol_coeffs(c)
-    # compare on the safe interior (away from top-window truncation of the resolvent)
-    core = slice(0, N - 20)
-    diff = np.linalg.norm((Bp_resolvent - Bp_toeplitz)[core, core])
-    return diff
-check("8a. B_p=(I-S)(I-p^-1/2 S)^-1 = analytic Toeplitz of (1-z)/(1-p^-1/2 z) (no Hankel corr.)",
-      all(Bp_check(p) < 1e-9 for p in [2,3,5,7]),
-      f"max interior ||resolvent - Toeplitz||={max(Bp_check(p) for p in [2,3,5,7]):.2e}")
-# carry carre-du-champ: (I-S)*(I-S) = 2I - S - S*  (symbol |1-z|^2 = 2-2cos theta)
+def toeplitz_identity_err(X, r, n):
+    """||(I-X)(I-rX)^{-1} - T_{(1-z)/(1-rz)}|| on the interior, for a nilpotent unilateral shift X."""
+    In = np.eye(n)
+    resolvent = (In - X) @ np.linalg.inv(In - r * X)
+    c = [1.0] + [-(1 - r) * r**(k - 1) for k in range(1, n)]
+    T = np.zeros((n, n))
+    for i in range(n):
+        for j in range(i + 1):
+            if i - j < len(c): T[i, j] = c[i - j]
+    core = slice(0, n - 20) if n > 25 else slice(0, max(1, n - 2))
+    return np.linalg.norm((resolvent - T)[core, core])
+# 8a. the ABSTRACT identity, shift-agnostic (illustrated on the unit successor S).
+check("8a. (I-X)(I-rX)^-1 = analytic Toeplitz of (1-z)/(1-rz), NO Hankel corr. [abstract, any shift X]",
+      all(toeplitz_identity_err(S, p**-0.5, N) < 1e-9 for p in [2,3,5,7]),
+      f"illustrated on X=S (unit successor); max interior err={max(toeplitz_identity_err(S,p**-0.5,N) for p in [2,3,5,7]):.2e}")
+# 8b. the LOCAL CARRY FILTER B_p instantiates it at the PRIME-DEPTH shift U_p (symbol = prime clock).
+def depth_shift(p, K):
+    """U_p on the p-tower {p^0,...,p^K}: |p^k>->|p^{k+1}> (a unilateral shift); = V_p on the tower."""
+    d = K + 1; U = np.zeros((d, d))
+    for k in range(K): U[k + 1, k] = 1.0
+    return U
+def Bp_depth_err(p):
+    K = int(np.floor(np.log(N) / np.log(p)))        # depths with p^k <= N
+    return toeplitz_identity_err(depth_shift(p, K), p**-0.5, K + 1)
+check("8b. local B_p = (I-U_p)(I-p^-1/2 U_p)^-1 on the p-DEPTH tower (symbol = prime clock) [Round005 C96]",
+      all(Bp_depth_err(p) < 1e-9 for p in [2,3,5,7]),
+      "U_p = V_p on the tower, NOT the unit successor S; this is the shift whose square is sigma_p")
+# 8c. the two memories are GENUINELY DIFFERENT operators (so the shift label is not cosmetic).
+r2 = 2**-0.5
+memS = np.linalg.inv(I - r2 * S) @ e(0)             # (I - 2^-1/2 S)^-1 |1> : lands on n=1,2,3,4,...
+memV = np.linalg.inv(I - r2 * V(2)) @ e(0)          # (I - 2^-1/2 V_2)^-1 |1>: lands on n=1,2,4,8,...
+check("8c. unit-successor memory != prime-depth memory  (the shift label is load-bearing)",
+      np.linalg.norm(memS - memV) > 0.5,   # both have norm sqrt(2); they agree only through the |2> term
+      f"||(I-rS)^-1|1> - (I-rV_2)^-1|1>|| = {np.linalg.norm(memS-memV):.3f}  (consecutive ints vs powers of 2)")
+# 8d. carry carre-du-champ of the UNIT successor: (I-S)*(I-S) = 2I - S - S* (symbol |1-z|^2) -- the
+#     augmentation-boundary energy on consecutive integers (this one IS the unit S).
 core = slice(1, N - 1)
 D = (I - S)
-check("8b. (I-S)*(I-S) = 2I - S - S*  (symbol |1-z|^2 = 2(1-cos theta))",
+check("8d. (I-S)*(I-S) = 2I - S - S*  (unit-successor augmentation energy, symbol |1-z|^2=2(1-cos))",
       np.allclose((D.T @ D)[core, core], (2*I - S - St)[core, core]))
 
 # ========================================================================================

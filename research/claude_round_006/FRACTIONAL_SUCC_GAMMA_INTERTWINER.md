@@ -43,7 +43,7 @@ On `L²(R)` with `T_t = e^{-itP}`, `(T_t f)(x) = f(x-t)`, `P = -i d/dx`, and dil
 The discrete braid `V_m S = S^m V_m` (our Round004/005 core) is the **lattice shadow** of this continuous
 `ax+b` relation. "FUCC is a change of SUCC resolution" is this `[A,P]=iP`.
 
-## D/G. The decisive conceptual result: group completion ≠ analytic continuation
+## D/G. The central conceptual reading: group completion ≠ analytic continuation
 
 The factorial recursion `Γ(z+1) = z Γ(z)` (verified) is a *weighted-successor* intertwining
 `T_1 Γ = M_z Γ`, and inverse SUCC `Γ(z) = Γ(z+1)/z` extends `Γ` leftward until the poles at `0,-1,-2,…`
@@ -55,7 +55,10 @@ log-convexity** (equivalently Wielandt's boundedness). So:
 > gives the recursion (the Euler/Dirichlet region `Re s > 1`), but the *continuation* into the critical
 > strip requires an additional analytic selection principle that the algebra does not contain.
 
-This is **why** the whole inverse-affine program lands on the Weil wall, stated structurally:
+This is the **structural reading** of why the inverse-affine program lands on the Weil wall — a heuristic
+argument from the `Γ` control, **not** a formal theorem (the sound, formal part is the *negative* claim that
+the algebra alone reproduces `ζ` only in `Re s>1`; "this is why" packages that negative fact as an
+explanation, and should be read as such):
 
 - The completed affine representation reproduces `ζ`/`−ζ'/ζ` **only in `Re s > 1`** (§F below), i.e. exactly
   where the Euler product / Dirichlet series converges = where the semigroup presentation is literal.
@@ -87,7 +90,9 @@ dilation/Mellin:
 
 ## F. Prime clocks as phasors (exact, `Re s > 1` only)
 
-    −ζ'/ζ(σ+it) = Σ_{p,k} (log p) p^{-kσ} e^{-i t k log p}         (verified vs mpmath, σ=1.5, 2.0)
+    −ζ'/ζ(σ+it) = Σ_{p,k} (log p) p^{-kσ} e^{-i t k log p}    (classically exact, Re s>1; the finite
+                                                              prime-cutoff sum matches mpmath to |diff|~6e-3
+                                                              at σ=1.5, ~2e-4 at σ=2.0 — truncation-limited)
 
 The prime-power event `(p,k)` is a phasor of frequency `k log p` and amplitude `(log p)p^{-kσ}`. At
 `σ=1/2` the amplitude becomes the **critical half-density** `(log p)p^{-k/2}` — but the sum **diverges**

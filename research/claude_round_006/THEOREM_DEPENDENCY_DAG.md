@@ -25,7 +25,8 @@ obstruction, `[lit]` = established-literature placement, `[concept]` = conceptua
         |            \     |  = Bost–Connes + Cuntz Q_ℕ  [lit]    |    => RH-INERT (C89, C100)
         |             \    |  H_log = BC Hamiltonian, V_p = μ_p   |
         v              v   |  exclude-0 Nica defect |p-1><1|      |
-   B_p = (I-S)(I-p^-1/2 S)^-1 = analytic Toeplitz  [exact]        |
+   B_p = (I-U_p)(I-p^-1/2 U_p)^-1 = analytic Toeplitz  [exact]    |
+        (U_p = prime-depth shift / prime clock, NOT unit S)       |
    [BILATERAL_SUCC_TOEPLITZ, C100]                                |
         |                                                          |
         v                                                          v

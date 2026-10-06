@@ -21,7 +21,8 @@ successor boundary **before** squaring and completing adelically — yields a no
    not posited.
 3. **Von Mangoldt and `log n` are the boundary transported / the occupancy** (C100): `Λ_op = Σ(log p)
    V_{p^k}E_S V_{p^k}* = diag Λ`; `H_log = Σ(log p)V_{p^k}V_{p^k}* = diag(log n)`; tied by `log n=Σ_{d|n}Λ(d)`.
-4. **The local factor is an exact Hardy compression** (C100): `B_p=(I−S)(I−p^{-1/2}S)^{-1}` = analytic
+4. **The local factor is an exact Hardy compression** (C100): `B_p=(I−U_p)(I−p^{-1/2}U_p)^{-1}`, `U_p` the
+   **prime-depth shift** (prime clock, = `V_p` on the `p`-tower; **not** the unit successor `S`) = analytic
    Toeplitz of `(1−z)/(1−p^{-1/2}z)` — upgrades Round005 C96 from "same symbol" to an operator identity.
 5. **The half-density is Tate self-dual** (C102): `p^{-k/2}=√|p^k|`, `∏_v|q|_v=1`, local unitarity selects
    `1/2` exactly.

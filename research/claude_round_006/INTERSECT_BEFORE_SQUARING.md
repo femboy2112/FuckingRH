@@ -65,22 +65,24 @@ halving.) For `v=|1>` the shared component is the source `|1>` itself (the `k=0`
 > **No-go (C101, strengthened).** The quadratic amplification is **not** an artifact of the uniform
 > boundary; it is intrinsic to *coherent* assembly of any boundaries that share a common component — and
 > every `(I − S^{shift})` boundary shares the identity `I` (equivalently, every sheet's range contains the
-> source `|1>`). The dichotomy is complete:
+> source `|1>`). For the two boundary families tested (uniform `(I−S)`, stratified `(I−S^p)`) the dichotomy
+> is:
 > - assemble with **overlap** (shared `I`) → coherent common mode → **quadratic** divergence `~π(N)²`;
 > - assemble **orthogonally** (direct sum, no cross terms) → the dead order → **linear** bulk divergence
 >   `~π(N)` (C98).
 >
-> Both diverge. The **only** escape is cross terms that interfere **destructively** — `CROSS ≈ −DIAG` with
-> `DIAG` itself tamed — i.e. boundaries whose shared components carry **opposite signs**. No positive,
-> coherent, algebraic assembly produces that.
+> Both diverge. The escape would require cross terms that interfere **destructively** — `CROSS ≈ −DIAG`
+> with `DIAG` itself tamed — i.e. boundaries whose shared components carry **opposite signs**. No positive,
+> coherent, algebraic assembly of these families produces that; we conjecture (not proven here) that no
+> purely algebraic positive assembly does.
 
 The object with exactly that signed structure is the **Weil explicit formula**: the prime terms enter with
 one sign, the Archimedean pole/`Γ`-term with the other, and their destructive interference is the bounded
-`Σ_γ`-side. So "intersect before squaring, done correctly" *is* the Weil distribution — and its positivity
-is RH (C91). This also matches `FRACTIONAL_SUCC_GAMMA_INTERTWINER.md §G`: the cancelling sign is the
-*analytic* `Γ`-sector, not anything the algebraic assembly can supply. The Aletheia note §8's intuition
-("wired, not independently summed") is correct but insufficient: the wiring must be **signed**, not merely
-prime-specific.
+`Σ_γ`-side. So — heuristically — "intersect before squaring, done correctly" should *be* the Weil
+distribution, and its positivity is RH (C91). This matches `FRACTIONAL_SUCC_GAMMA_INTERTWINER.md §G`: the
+cancelling sign is the *analytic* `Γ`-sector, not anything the algebraic assembly supplies. The Aletheia
+note §8's intuition ("wired, not independently summed") is correct but insufficient: the wiring must be
+**signed**, not merely prime-specific.
 
 ## Status
 

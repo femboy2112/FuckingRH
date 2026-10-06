@@ -27,8 +27,9 @@ the deranged-but-true core, and it is RH-inert — a sharp statement of where th
 1. **Rational affine parent + integer corner, exact identities** (C100): braid `D_q T_a D_q^{-1}=T_{qa}`;
    `S,V_p` isometries; `E_S=I−SS*=[S*,S]=|1><1|`; `Λ_op=Σ(log p)V_{p^k}E_S V_{p^k}*=diag Λ`;
    `H_log=Σ(log p)V_{p^k}V_{p^k}*=diag(log n)`; `Π_{p,k}S̃=S^{p^k}Π_{p,k}`; `v_p=`inverse-FUCC survival.
-2. **Local carry filter = exact Hardy/Toeplitz compression** (C100): `B_p=(I−S)(I−p^{-1/2}S)^{-1}` = analytic
-   Toeplitz of `(1−z)/(1−p^{-1/2}z)` (upgrades Round005 C96 to an operator identity).
+2. **Local carry filter = exact Hardy/Toeplitz compression** (C100): `B_p=(I−U_p)(I−p^{-1/2}U_p)^{-1}` with
+   `U_p` the **prime-depth shift** (prime clock `e^{i(log p)ξ}`, = `V_p` on the `p`-tower — *not* the unit
+   successor `S`) = analytic Toeplitz of `(1−z)/(1−p^{-1/2}z)` (upgrades Round005 C96 to an operator identity).
 3. **Intersect-before-squaring no-go** (C101): uniform boundary → `CROSS~+2π(N)²` (quadratic); strengthened —
    the stratified `(I−S^p)` only halves it, still quadratic. Common mode = the identity `I`/source `|1>`.
 4. **Literature interface + honest reframing**: whole construction = BC + Cuntz + Connes/Tate; `H_log`=BC
@@ -36,7 +37,8 @@ the deranged-but-true core, and it is RH-inert — a sharp statement of where th
    verified. Von-Mangoldt "headline" reframed as exposition (RH-inert), not a theorem.
 5. **Fractional SUCC / Gamma intertwiner** (C103): `T_a D_q=D_q T_{a/q}`, `[A,P]=iP`, `Γ`=Archimedean
    Mellin↔Fourier intertwiner (Fresnel at `s=1/2`); **group completion ≠ analytic continuation** (the
-   decisive conceptual result); GL fractional-`ζ` (+ Flammable/Guariglia provenance, RH-inert).
+   central conceptual reading, heuristic not a theorem); GL fractional-`ζ` (+ Flammable/Guariglia
+   provenance, RH-inert).
 6. **Adelic half-density + product formula** (C102): `p^{-k/2}=√|p^k|`=Tate self-dual; `∏_v|q|_v=1`; local
    unitarity selects `1/2` exactly; product formula is modulus-only, does not cancel the bulk.
 7. **Hostile controls** (A–J + M), all decisive; **target architecture + DAG + proof attempt**.
