@@ -1,0 +1,15 @@
+{
+  "parent": "d3e29723fcf9df107fc55a75716e5255898c1b53",
+  "parent_tree": "53c4983d9f85d418ed4d7ac74bc4526c82b0c234",
+  "branch": "astra/stratified-succ-fucc-square-007",
+  "baseline_clean": true,
+  "baseline_tests": 128,
+  "baseline_passed_after_dependency_install": true,
+  "python": "3.12.14",
+  "packages": {
+    "mpmath": "1.3.0",
+    "sympy": "1.14.0",
+    "numpy": "2.3.5",
+    "python-flint": "0.9.0"
+  }
+}
