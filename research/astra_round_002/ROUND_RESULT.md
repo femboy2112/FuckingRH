@@ -90,7 +90,8 @@ divergent-compensation obstruction.
 
 ## Verification and review boundary
 
-The full suite includes all frozen parent controls plus symbolic, rational,
+All **78 tests passed** on the final Round-002 tree. The full suite includes
+all frozen parent controls plus symbolic, rational,
 Arb, independently sieved, and source-ledger tests for this round. Raw outputs
 and environment are retained in `evidence/`; rerun:
 
