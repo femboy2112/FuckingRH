@@ -20,7 +20,7 @@ ordinates and without assuming strip convergence, RH follows.
 
 ## CURRENT WALL  (live — updated every checkpoint)
 
-> **[C100, checkpoint 1]** Integration done; wall inherited from Round004/005 = real-axis
+> **[after ckpt 2]** Wall inherited from Round004/005 = real-axis
 > renormalization positivity of the coupled prime+pole trace (= Weil). Round006 reframes it as:
 > *is the completed finite source response positive-real / passive on `Re s > 1/2`?*
 > First concrete datum already in hand: `-zeta'/zeta` is **NOT** positive-real even on `Re s > 1`
@@ -35,10 +35,13 @@ ordinates and without assuming strip convergence, RH follows.
    `J_sigma^* e^{itH} J_sigma = -zeta'/zeta(sigma-it)|Omega><Omega|` to prime-tail accuracy;
    `m_p(s)=log p/(p^s-1)`; `2^{n-1}` compositions = causal FUCC histories, Pascal-counted, carry law
    `n - s_m(N) = (m-1) sum c_j`, radix-3 carry-free = Fibonacci.
+2. **[done]** Scope corrections (SCOPE_CORRECTIONS.md, ledger C100/C101/C102): C98 refutes only the
+   shared-DC mechanism (not all algebraic renorm); C99 carré gives the *weighted/repaired* local energy
+   (not raw Λ); birth-order kernel-invariance does *not* kill history-space factorizations.
 
 ## Net ledger additions this round
 
-- (pending)
+- C100/C101/C102: scope corrections (meta).
 
 ## What would count as a crack (from the directive §24)
 
