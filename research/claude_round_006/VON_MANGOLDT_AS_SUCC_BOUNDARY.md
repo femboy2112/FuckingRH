@@ -1,7 +1,17 @@
-# Von Mangoldt is the transported successor boundary  (Round006 headline)
+# Von Mangoldt is the transported successor boundary  (clean exposition — it is Bost–Connes)
 
 **Round 006. RH IS OPEN. Reproduce:** `scripts/r006_affine_corner.py` §4 (verified exactly: `max|diag−Λ|=0`,
 off-diagonal `=0`, window N=120, **no zeta zeros used**).
+
+> **PRIORITY / HONESTY (read first).** A primary-source check (`LITERATURE_INTERFACE.md`) establishes that
+> this identity is a **novel framing of a trivial fact**, not a new theorem. The operators here are
+> **Bost–Connes**: `V_p` are the BC multiplicative isometries `μ_p`, `|1>` is the BC vacuum,
+> `H_log = log n` is the BC Hamiltonian, and `Σ(log p)|p^k><p^k|` is just the diagonal von Mangoldt
+> operator — the geometric side of the Connes–Weil explicit formula. The *transport*
+> `V_{p^k}|1><1|V_{p^k}* = |p^k><p^k|` is one line from `V_{p^k}|1>=|p^k>`, holding **only** because we put
+> the additive boundary on the multiplicative unit (the exclude-0 convention, `§3`/`LITERATURE_INTERFACE`).
+> Present what follows as *exposition with explicit priority to BC95 / Cuntz 2008 / Connes 1999* — the
+> clean "what the corner creates" story — and **not** as progress toward RH. It is RH-inert (`§Status`).
 
 ## The identity
 
