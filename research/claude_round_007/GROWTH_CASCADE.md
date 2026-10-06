@@ -26,8 +26,20 @@ critical-line normalization made structural.
 Archimedean drift is `+LIN·t = −2.686…·t`. They cancel. This is the explicit formula's boundary/constant
 balance (the `ĝ(0)+ĝ(1)` terms).
 
-What remains is the **bounded `O(1)` remainder `= Ψ(t)` itself**, with `Ψ(0)=0`, and (Suzuki)
-`RH ⟺ Ψ(t) ≥ 0 ∀t`.
+What remains is `Ψ(t)` itself, with `Ψ(0)=0`, and (Suzuki) `RH ⟺ Ψ(t) ≥ 0 ∀t`.
+
+**Precise scope (no overclaim).** The two cancellations remove exactly the **`β=1` layer** of the growth.
+In explicit-formula terms, a zero/pole at real part `β` contributes to `Ψ` a term of growth rate
+`e^{(β−1/2)t}`; the pole sits at `β=1` (rate `e^{t/2}`) and is cancelled by the prime sum's `β=1` growth —
+this is exactly the **Prime Number Theorem** (no zeros on `Re s=1`), hence Level 1 is unconditional but
+*only* PNT-strength. After it, `Ψ` grows at most like `e^{(Θ−1/2)t}` where `Θ = sup{β : ξ(β+iγ)=0}`. So:
+
+    Ψ bounded  ⟺  Θ = 1/2  ⟺  RH,   and then additionally  Ψ ≥ 0  (Suzuki).
+
+The numerically-observed boundedness (`Ψ≈0.03–0.06` out to `t=14`) is **finite-window** and does not prove
+`Ψ` bounded — a zero at `β=1/2+ε` would add an `e^{εt}` term invisible at small `t` / large `γ`. What the
+cascade *does* prove unconditionally is that the `e^{t/2}` (pole/`β=1`) layer — the source of the
+`Σ_p M_p=∞` divergence — cancels exactly. **That layer is RH-inert; RH lives strictly above it.**
 
 ## Why this reframes the wall (and corrects an over-emphasis)
 
@@ -49,14 +61,14 @@ bounded remainder** `Ψ`, equivalently in the positivity of its **finite** spect
 
 ## The residue (bare RH, honestly)
 
-A bounded CND `Ψ` has `Ψ(t) = ∫(1−cos ξt)\,dσ(ξ)` with `σ` a **finite** positive measure (no `ct²` term,
-since `Ψ` is bounded). The arithmetic/explicit-formula value is `σ = Σ_γ γ^{−2}(δ_γ + δ_{−γ})` — atoms at
-the zeros, total mass `2Σ_γ γ^{−2} < ∞`. So
+The zero-side distribution is `σ = Σ_γ γ^{−2}(δ_γ + δ_{−γ})` (eigen-recovery of the zeros from the
+prime-built kernel is the repo's standing check, `prime_kernel_psd_boundary.py (A)`). `RH ⟺ Ψ ≥ 0 ⟺` `σ`
+is a **positive measure supported on the real `ξ`-axis** `⟺` all zeros real. (Under RH `σ` is a finite
+positive measure, mass `2Σ_γγ^{−2}`; off the line the "atoms" move to complex `ξ`, i.e. `σ` fails to be a
+positive real-axis measure.)
 
-    RH ⟺ Ψ ≥ 0 ⟺ σ ≥ 0 (a positive finite measure) ⟺ every atom sits at a REAL ξ ⟺ all zeros real.
-
-The exponential/imaginary-frequency underbrush (divergence + pole) is cleared **exactly**; what is left is
-the positivity of a finite real-axis measure assembled from the prime oscillations — and that assembly is
+The exponential/`β=1` underbrush (the divergence + the pole) is cleared **exactly and unconditionally**;
+what is left is the positivity of `σ` assembled from the prime oscillations — an assembly that is
 **conditionally/oscillatorily convergent**, which is exactly why no finite-rank or additive-split handle
 survives (probes A/B). This is bare RH: no residual finite structure to leverage was found.
 
