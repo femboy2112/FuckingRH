@@ -56,10 +56,19 @@ ordinates and without assuming strip convergence, RH follows.
    real-axis complete monotonicity, neither transporting to `s`-positivity; raw Cauchy transform diverges
    (`psi(x)~x`). Kills the one-port/direct-sum class; forces coupling + Archimedean completion.
 
+6. **[done]** Schur–Vitali continuation theorem (SCHUR_VITALI_LIMIT.md + LITERATURE_INTERFACE.md,
+   ckpt6, ledger C104). PROVED: contractive-on-all-of-`H_{1/2}` (P) + Euler-region convergence (E) ⇒
+   `xi'/xi` positive-real on `H_{1/2}` ⇒ RH, **non-circularly** (strip convergence concluded, not
+   assumed). Demo confirms the mechanism and that (P) is the essential, non-automatic hypothesis.
+   Literature locked (Lagarias/Hinkkanen criterion; 2005 correction; de Branges positivity; Conrey–Li +
+   Sarnak show the natural de Branges-space positivity FAILS for ζ — a direct obstruction to the obvious
+   realization of (P)).
+
 ## Net ledger additions this round
 
 - C100/C101/C102: scope corrections (meta).
 - C103: one-port/direct-sum class is RH-inert for positivity (rigorous no-go).
+- C104: Schur–Vitali continuation theorem (the round's central reduction; conditional on (P)).
 
 ## What would count as a crack (from the directive §24)
 
