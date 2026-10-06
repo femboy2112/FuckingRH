@@ -22,54 +22,58 @@ No zeta zeros used. RH untouched.
 import numpy as np
 from sympy import primerange, factorint
 
-def Cp_times(v, p, N):
-    """C_p v = (I-S)(I - p^{-1/2} V_p)^{-1} v, exact (V_p nilpotent on the window)."""
+def Cp_times(v, p, N, boundary="uniform"):
+    """C_p v = (boundary)(I - p^{-1/2} V_p)^{-1} v, exact (V_p nilpotent on the window).
+    boundary="uniform":   (I - S)    -- same successor boundary on every sheet (common mode)
+    boundary="stratified":(I - S^p)  -- the sheet's UNIT step shadowed: Pi_{p,1} Stilde = S^p Pi_{p,1}
+    """
     r = p**-0.5
     # (I - r V_p)^{-1} v = sum_{k>=0} r^k V_p^k v ; V_p: |n> -> |p n> (0 if p n > N)
-    acc = v.copy(); term = v.copy(); k = 0
+    acc = v.copy(); term = v.copy()
     while True:
         nt = np.zeros(N)
-        idx = np.nonzero(term)[0]
-        for i in idx:
+        for i in np.nonzero(term)[0]:
             n = i + 1
             if p * n <= N:
                 nt[p * n - 1] += r * term[i]
         if not nt.any(): break
-        acc += nt; term = nt; k += 1
-    # (I - S) acc :  acc - S acc,  S|n> = |n+1>
+        acc += nt; term = nt
+    shift = 1 if boundary == "uniform" else p       # (I - S^shift)
     Sacc = np.zeros(N)
-    Sacc[1:] = acc[:-1]          # shift up; top falls off (truncation)
-    Sacc[N-1] = 0.0 if N-1 >= 0 else 0.0
+    if shift < N:
+        Sacc[shift:] = acc[:N - shift]              # S^shift: |n>->|n+shift>, top falls off
     return acc - Sacc
 
-def energies(v, P_primes, N):
-    cols = [Cp_times(v, p, N) for p in P_primes]
+def energies(v, P_primes, N, boundary):
+    cols = [Cp_times(v, p, N, boundary) for p in P_primes]
     diag = sum(float(c @ c) for c in cols)
     tot_vec = np.sum(cols, axis=0)
     total = float(tot_vec @ tot_vec)
-    cross = total - diag
-    return diag, cross, total
+    return diag, total - diag, total
 
 if __name__ == "__main__":
-    print("INTERSECT BEFORE SQUARING -- does the universal-boundary cross term renormalize the bulk?\n")
-    for vname in ("source |1>", "random unit"):
-        print(f"--- test vector: {vname} ---")
-        print(f"   {'N':>5} {'#primes':>8} {'DIAG':>12} {'CROSS':>12} {'TOTAL':>12} {'CROSS/DIAG':>11} {'DIAG/pi(N)':>11}")
-        rng = np.random.default_rng(0)
-        for N in (60, 120, 240, 480, 960):
-            P = list(primerange(2, N + 1))
-            if vname == "source |1>":
+    print("INTERSECT BEFORE SQUARING -- do the cross terms renormalize the bulk divergence?\n")
+    for boundary in ("uniform", "stratified"):
+        tag = "(I-S)  common mode" if boundary == "uniform" else "(I-S^p)  prime-specific / stratified"
+        print(f"########## boundary = {boundary}:  {tag} ##########")
+        for vname in ("source |1>", "random unit"):
+            print(f"--- test vector: {vname} ---")
+            print(f"   {'N':>5} {'#primes':>8} {'DIAG':>12} {'CROSS':>12} {'TOTAL':>12} {'CROSS/DIAG':>11} {'DIAG/pi(N)':>11}")
+            rng = np.random.default_rng(0)
+            for N in (60, 120, 240, 480, 960):
+                P = list(primerange(2, N + 1))
                 v = np.zeros(N); v[0] = 1.0
-            else:
-                v = rng.standard_normal(N); v /= np.linalg.norm(v)
-            diag, cross, total = energies(v, P, N)
-            print(f"   {N:5d} {len(P):8d} {diag:12.4f} {cross:12.4f} {total:12.4f} "
-                  f"{cross/diag:11.4f} {diag/len(P):11.4f}")
-        print()
+                if vname != "source |1>":
+                    v = rng.standard_normal(N); v /= np.linalg.norm(v)
+                diag, cross, total = energies(v, P, N, boundary)
+                print(f"   {N:5d} {len(P):8d} {diag:12.4f} {cross:12.4f} {total:12.4f} "
+                      f"{cross/diag:11.4f} {diag/len(P):11.4f}")
+            print()
     print("READING:")
-    print(" DIAG grows ~ linearly in #primes (bulk divergence, C91/C98) -> DIAG/pi(N) ~ const.")
-    print(" If CROSS/DIAG -> 0 : cross terms do NOT renormalize the bulk; the divergence returns.")
-    print("   => 'intersect before squaring' with a UNIFORM (common-mode) boundary FAILS to escape")
-    print("      (consistent with C89: the universal boundary is RH-inert; and C98: the bulk")
-    print("       renormalizer is the analytic Archimedean pole, not an algebraic cross term).")
-    print(" If CROSS ~ -DIAG (ratio -> -1): the cross terms cancel the bulk -> would be a crack.")
+    print(" UNIFORM (I-S): CROSS/DIAG GROWS ~pi(N) -> TOTAL diverges QUADRATICALLY. The boundary is a")
+    print("   common mode (identical (I-S)v on every sheet) that adds coherently -- anti-helpful.")
+    print(" STRATIFIED (I-S^p): no common mode (shifts p differ), so CROSS/DIAG stays bounded/small,")
+    print("   but DIAG/pi(N) ~ const persists -> TOTAL still diverges LINEARLY (the genuine bulk, C98).")
+    print(" NET: stratification cures the common-mode artifact but NOT the bulk divergence. No algebraic")
+    print("   boundary wiring cancels the bulk; only the analytic Archimedean pole does (C98/C102). A")
+    print("   true cancellation needs CROSS ~ -DIAG with DIAG itself tamed -- the signed Weil terms, = RH.")

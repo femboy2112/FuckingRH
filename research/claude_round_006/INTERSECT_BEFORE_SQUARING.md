@@ -33,34 +33,54 @@ Measured for the source `|1>` and random unit vectors, horizon `N = 60…960`:
 So "intersect before squaring" with a **uniform** boundary is **strictly worse** than the dead sum: the
 total diverges *quadratically* (`~π(N)²`) instead of linearly.
 
-## Why — and the sharpened requirement it exposes
+## Is it just the uniform boundary? No — the prime-specific (stratified) boundary too
 
-The mechanism is exact. The universal boundary makes `(I−S)v` a **common mode**: for every prime,
+The natural fix is a **prime-specific** boundary: by the stratified identity `Π_{p,1}S̃ = S^p Π_{p,1}`, the
+sheet's unit step shadows to `(I − S^p)`, which differs per prime. Re-running with
+`C_p = (I − S^p)(I − p^{-1/2}V_p)^{-1}`:
 
-    C_p v = (I − S)(I − p^{-1/2}V_p)^{-1} v = (I − S)v + p^{-1/2}(I − S)V_p v + …
+| N | #primes | DIAG | CROSS | CROSS/DIAG (uniform → stratified) |
+|---:|---:|---:|---:|---|
+| 60 | 17 | 37.9 | 277 | 13.9 → **7.3** |
+| 120 | 30 | 64.3 | 875 | 26.6 → **13.6** |
+| 240 | 52 | 109 | 2658 | 48.4 → **24.5** |
+| 480 | 92 | 189 | 8379 | 88.2 → **44.4** |
+| 960 | 162 | 329 | 26090 | 158 → **79.3** |
 
-so the leading term `(I−S)v` is *identical across all sheets*. Assembling before squaring adds these
-π(N) copies **coherently**: `⟨C_p v, C_q v⟩ ≈ ‖(I−S)v‖²` for every pair, hence
-`CROSS ≈ π(N)(π(N)−1)·‖(I−S)v‖²`. For `v=|1>`, `(I−S)|1> = |1>−|2>`, `‖·‖²=2`, matching `2π(N)²` to the digit.
+Stratification only **halves** the coefficient; `CROSS/DIAG` still **grows ~π(N)** and the total still
+diverges quadratically. So prime-specificity alone is *not* the fix.
 
-> **No-go (C101).** A *common-mode* (prime-independent) boundary cannot renormalize the bulk by assembly:
-> the shared boundary adds coherently across the π(N) prime sheets and **amplifies** the divergence from
-> `π(N)` to `π(N)²`. Neither assembly order escapes — the dead sum diverges linearly, the dressed
-> intersect-first diverges quadratically.
+## Why — the common mode is the identity, and it is unavoidable for any `(I−S^{shift})`
 
-This *sharpens*, rather than contradicts, the earlier controls. C89 (any commuting-`V_p` object is
-RH-inert) and the Aletheia note §7 (the universal composition/augmentation boundary is RH-inert by itself)
-said the uniform boundary carries no RH content. The experiment shows the stronger fact: it is actively
-*anti-helpful* when assembled, because it is coherent. The Aletheia note §8 anticipated the fix in words —
-*"the self-sieving carry network determines how the different history variables `X_p` are wired rather than
-independently summed"* — and this experiment turns that into a concrete, measurable **requirement**:
+The mechanism is exact and robust. Any boundary of the form `(I − S^{shift})` contains the **identity**
+`I`, and the identity is shared by every sheet:
 
-> **The RH-bearing boundary wiring must be prime-SPECIFIC and sign-structured, producing cross terms whose
-> signs cancel the bulk — not a universal boundary that adds in phase.** The only object in this program
-> with exactly that signed-cross-term structure is the Weil explicit formula: its prime×prime and
-> prime×Archimedean cross terms carry the signs. So "intersect before squaring" done *correctly* is the
-> Weil distribution, and its positivity is RH (C91). The uniform-boundary assembly is the naive version,
-> and it fails loudly.
+    C_p v = (I − S^{shift_p})(I − p^{-1/2}V_p)^{-1} v = v − S^{shift_p}v + (higher V_p terms),
+
+so every `C_p v` carries the same leading `v`. Assembling before squaring adds these coherently:
+`⟨C_p v, C_q v⟩ ⊇ ‖v‖²` for every pair, hence `CROSS ⊇ π(N)(π(N)−1)·‖v‖²`. (Uniform `(I−S)` shares *both*
+`v` and `Sv` → coefficient ≈ 2; stratified `(I−S^p)` shares only `v` → coefficient ≈ 1, the observed
+halving.) For `v=|1>` the shared component is the source `|1>` itself (the `k=0` term of every resolvent).
+
+> **No-go (C101, strengthened).** The quadratic amplification is **not** an artifact of the uniform
+> boundary; it is intrinsic to *coherent* assembly of any boundaries that share a common component — and
+> every `(I − S^{shift})` boundary shares the identity `I` (equivalently, every sheet's range contains the
+> source `|1>`). The dichotomy is complete:
+> - assemble with **overlap** (shared `I`) → coherent common mode → **quadratic** divergence `~π(N)²`;
+> - assemble **orthogonally** (direct sum, no cross terms) → the dead order → **linear** bulk divergence
+>   `~π(N)` (C98).
+>
+> Both diverge. The **only** escape is cross terms that interfere **destructively** — `CROSS ≈ −DIAG` with
+> `DIAG` itself tamed — i.e. boundaries whose shared components carry **opposite signs**. No positive,
+> coherent, algebraic assembly produces that.
+
+The object with exactly that signed structure is the **Weil explicit formula**: the prime terms enter with
+one sign, the Archimedean pole/`Γ`-term with the other, and their destructive interference is the bounded
+`Σ_γ`-side. So "intersect before squaring, done correctly" *is* the Weil distribution — and its positivity
+is RH (C91). This also matches `FRACTIONAL_SUCC_GAMMA_INTERTWINER.md §G`: the cancelling sign is the
+*analytic* `Γ`-sector, not anything the algebraic assembly can supply. The Aletheia note §8's intuition
+("wired, not independently summed") is correct but insufficient: the wiring must be **signed**, not merely
+prime-specific.
 
 ## Status
 
