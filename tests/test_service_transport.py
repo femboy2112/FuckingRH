@@ -127,6 +127,19 @@ class ServiceTransportTests(unittest.TestCase):
         cost=lambda pi:sum(w*(T[y]-T[x]) for x,y,w in pi)
         self.assertEqual(cost(pi1),cost(pi2))
 
+    def test_relocation_and_mass_preserving_location_permutation(self):
+        rows=st.states(3);r0,r1=rows;S=r1['S'];H=r1['H']
+        delta=arb('0.1')
+        # Delay one location but retain its exact weight: mass fixed, M rises w*delta.
+        movedH=r0['w']*r0['a']+r1['w']*(r1['a']+delta)
+        self.assertTrue((movedH-H-r1['w']*delta).contains(0))
+        self.assertTrue(movedH>H)
+        # Reassign fixed masses to the two locations, preserving total mass.
+        swappedH=r1['w']*r0['a']+r0['w']*r1['a']
+        self.assertTrue(swappedH<H)
+        self.assertTrue((swappedH-H-(r0['w']-r1['w'])*(r1['a']-r0['a'])).contains(0))
+        self.assertTrue((S-r0['w']-r1['w']).contains(0))
+
     def test_exact_gamma_linear_mutation_keeps_curvature(self):
         t,eta=sp.symbols('t eta');A=sp.Function('A')
         self.assertEqual(sp.diff(A(t)-eta*t,t,2),sp.diff(A(t),t,2))
