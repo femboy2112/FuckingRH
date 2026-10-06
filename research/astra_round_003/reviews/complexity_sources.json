@@ -1,0 +1,32 @@
+{
+  "retrieved_at_utc_date": "2026-10-06",
+  "source_family_warning": "All three papers share an author and are not independent empirical witnesses. Exact algorithms are verified by independently organized finite searches in this repository.",
+  "sources": [
+    {
+      "author": "Harry Altman",
+      "title": "Integer Complexity: Algorithms and Computational Results",
+      "url": "https://arxiv.org/html/1606.03635v2",
+      "version": "arXiv:1606.03635v2, 2017-12-21",
+      "read_scope": "Introduction and Section 2.2",
+      "used_for": ["integer-complexity definition and exhaustive root recurrence", "Selfridge lower bound and powers of three", "published control complexity107=16 and complexity321=18", "distinction between tree expressions and reusable addition-chain intermediates"],
+      "not_used_for": "No asymptotic prime-class separation, RH statement, or current fastest-algorithm claim is inferred."
+    },
+    {
+      "author": "Harry Altman",
+      "title": "Internal Structure of Addition Chains: Well-Ordering",
+      "url": "https://arxiv.org/html/1409.1627v2",
+      "version": "arXiv:1409.1627v2, 2015-08-26",
+      "read_scope": "Introduction and Section 2",
+      "used_for": ["all-previous-pairs addition-chain definition", "binary upper bound and doubling lower bound", "distinction between small steps and real-valued defect", "star chains are a restricted class"],
+      "not_used_for": "Well-ordering of defect values is not treated as a physical wavecrest or RH sign theorem."
+    },
+    {
+      "author": "Harry Altman",
+      "title": "Integer complexity: The integer defect",
+      "url": "https://arxiv.org/abs/1804.07446",
+      "read_scope": "Primary abstract for terminology cross-check only",
+      "used_for": ["Terminological distinction: this atlas uses real defect complexity(n)-3log_3(n), not Altman's separate integer-valued defect D(n)."],
+      "status": "Term cross-check only, no theorem inherited from unread full text."
+    }
+  ]
+}

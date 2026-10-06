@@ -1,0 +1,21 @@
+{
+  "status": "registered before atlas computation in this round",
+  "integer_horizon": 512,
+  "addition_chain_horizon": 128,
+  "primary_feature": "integer complexity minus 3 log(n)/log(3)",
+  "primary_population": "odd integers 9 <= n < 512; prime versus composite",
+  "size_normalization": "subtract feature mean within each dyadic bin, using every eligible integer without labels",
+  "train": "9 <= n < 256",
+  "holdout": "256 <= n < 512",
+  "secondary_chain_train": "9 <= n < 64",
+  "secondary_chain_holdout": "64 <= n < 128",
+  "directional_candidate": "prime complexity defect exceeds size-matched composite defect",
+  "controls": ["labels shuffled within dyadic bins preserving counts", "uniform sparse sets with identical dyadic counts (same null law, not independent evidence)", "nearest-size odd composite matches with replacement", "gap-multiset permutations within dyadic bins", "higher prime powers", "highly composite divisor-record integers"],
+  "random_seed": 20261006,
+  "replicates": 199,
+  "pass": "positive finite held-out primary contrast surviving parity and listed size controls; observational only",
+  "fail": "nonpositive held-out primary contrast or loss of contrast against the declared null controls",
+  "ambiguous": "mixed diagnostic directions, insufficient subgroup size, or normalization-dependent result",
+  "exclusions": "no RH inference, no universal crest claim, no fitted lift constant, no wall-clock cost",
+  "successor_cost": "deferred to independently specified successor machine; not silently inferred from integer complexity"
+}
