@@ -20,13 +20,15 @@ ordinates and without assuming strip convergence, RH follows.
 
 ## CURRENT WALL  (live — updated every checkpoint)
 
-> **[after ckpt 2]** Wall inherited from Round004/005 = real-axis
-> renormalization positivity of the coupled prime+pole trace (= Weil). Round006 reframes it as:
-> *is the completed finite source response positive-real / passive on `Re s > 1/2`?*
-> First concrete datum already in hand: `-zeta'/zeta` is **NOT** positive-real even on `Re s > 1`
-> (`Re(-zeta'/zeta)(1.5 - 2i) = -0.262 < 0`), so per-ray one-ports are **not** passive — passivity, if
-> it exists, must be a property of the COMPLETED, COUPLED system. This is the seed of the §5 no-go and
-> the whole-round question.
+> **[after ckpt 5]** The wall has MOVED to a precise location. It is no longer "the per-ray object is not
+> passive" (that is now a *settled no-go*, C103, rigorous): the one-port/direct-sum class is dead because
+> `s |-> p^s` is exponential/periodic and cannot transport the arithmetic's Cauchy-Herglotz-in-`w`
+> positivity to the `s`-half-plane. **The live wall is now:** *does a GENUINE coupling across rays +
+> the Archimedean completion (the only pieces not a function of any single `p^s`) produce a finite
+> object that is structurally passive on `Re s>1/2`?* The Archimedean port is the suspect load-bearing
+> piece, and the Schur/Vitali limit lemma is the mechanism that would close the deal IF such a family
+> exists. Next: prove the limit lemma (ckpt6), then build the Archimedean port (ckpt7) and the coupled
+> Schur complement (ckpt8), where the round cracks or dies.
 
 ## Checkpoint log
 
@@ -48,10 +50,16 @@ ordinates and without assuming strip convergence, RH follows.
    positive-REAL in `s` — numerics show `Re(-zeta'/zeta)<0` at (2,1.3),(1.5,2),(3,5). The two
    positivities are different theorems; bridging them is the round.
 
+5. **[done]** Branch-transfer passivity classification (BRANCH_TRANSFER_CLASSIFICATION.md, ckpt5,
+   ledger C103). Rigorous no-go: `m_p` not positive-real on any right half-plane (periodicity-in-`s`);
+   `-zeta'/zeta` not positive-real on Re s>1; the arithmetic carries only Cauchy-Herglotz-in-`w` and
+   real-axis complete monotonicity, neither transporting to `s`-positivity; raw Cauchy transform diverges
+   (`psi(x)~x`). Kills the one-port/direct-sum class; forces coupling + Archimedean completion.
+
 ## Net ledger additions this round
 
 - C100/C101/C102: scope corrections (meta).
-- (pending C103+: source layer, correlation category, passivity classification.)
+- C103: one-port/direct-sum class is RH-inert for positivity (rigorous no-go).
 
 ## What would count as a crack (from the directive §24)
 
