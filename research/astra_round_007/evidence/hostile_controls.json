@@ -1,0 +1,197 @@
+{
+  "seed": 20261007,
+  "bits": 180,
+  "scope": "exact identity sensitivity and finite Arb residual witnesses; no mutated PSD claim",
+  "coprime_generators": {
+    "generators": [
+      77,
+      26,
+      15
+    ],
+    "horizon": 256,
+    "events": [
+      15,
+      26,
+      77,
+      225
+    ],
+    "all_composite": true,
+    "first_return_geometry_survives": true,
+    "zeta_prime_event_identity_fails": true
+  },
+  "unit_log_charge": {
+    "at_2_mutant_minus_actual": "[0.21697770945227392854389350028723234863910558813894668 +/- 5.98e-54]",
+    "event_support_unchanged": true
+  },
+  "half_density_tilt": {
+    "theta": "1/3",
+    "at_2_mutant_minus_actual": "[0.06002221006055074855064873099878945575047607328065286 +/- 6.22e-54]",
+    "event_support_unchanged": true
+  },
+  "fake_monoid": {
+    "generators": [
+      2,
+      4
+    ],
+    "collision": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        0
+      ]
+    ],
+    "collision_value": 4,
+    "map": [
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        1
+      ]
+    ],
+    "kernel_vector": [
+      0,
+      0,
+      1,
+      -1
+    ],
+    "rank": 3
+  },
+  "destroyed_factor_swap": {
+    "horizon": 8,
+    "mutation": "multiply normalized factor-lift rows a<b by 2; other rows by 1",
+    "canonical_swap_invariance": true,
+    "mutated_swap_invariance": false,
+    "canonical_compressed_energy_diagonal": [
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "mutated_compressed_energy_diagonal": [
+      "1",
+      "5/2",
+      "5/2",
+      "2",
+      "5/2",
+      "5/2",
+      "5/2",
+      "5/2"
+    ],
+    "mutated_swap_current_energy_diagonal": [
+      "0",
+      "1",
+      "1",
+      "2/3",
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "classification": "identity sensitivity only; no Weil or mutated PSD inference"
+  },
+  "destroyed_carrier_order": {
+    "order": [
+      1,
+      4,
+      3,
+      2,
+      5,
+      6,
+      7,
+      8
+    ],
+    "prime_2_section_hits": [
+      1,
+      4,
+      2,
+      8
+    ],
+    "negative_log_step": "log(3/4)",
+    "valuation_bijection_unchanged": true
+  },
+  "randomized_jet_charge_labels": {
+    "permutation": {
+      "2": 5,
+      "3": 31,
+      "5": 23,
+      "7": 2,
+      "11": 29,
+      "13": 17,
+      "17": 19,
+      "19": 11,
+      "23": 3,
+      "29": 13,
+      "31": 7
+    },
+    "first_changed_prime": 2,
+    "mutant_minus_actual_at_first_change": "[0.64791539004659965289933058186191018878255193895800364 +/- 4.68e-54]",
+    "held_fixed": "SUCC, integer heights, event locations; only log charge labels permuted",
+    "caveat": "A fully transported coordinate relabeling is unitary and is not this mutation."
+  },
+  "independently_completed_towers": {
+    "horizon": 32,
+    "same_prime_heads": [
+      2,
+      3,
+      5,
+      7,
+      11,
+      13,
+      17,
+      19,
+      23,
+      29,
+      31
+    ],
+    "infinite_tower_mass_minus_carrier_mass": "[2.748052426926879817151321948450842601735138227692742 +/- 6.27e-52]",
+    "first_extra_2_tower_event": 64,
+    "independent_finite_tower_recheck_horizon": 1024,
+    "local_repair_energy_change": "extra_mass * abs(t)",
+    "local_residual_change": "-extra_mass * abs(t)",
+    "local_target_unchanged_below_log_N": true
+  },
+  "removed_gamma": {
+    "removed": "gamma_linear*abs(t) + positive_gamma(t); pole and prime terms retained",
+    "test_time": "3*log(2)/2",
+    "actual_minus_mutant": "[-0.8842478314843590816283251257404897893925602732780 +/- 1.16e-50]",
+    "no_gamma_bulk_rayleigh": "[-1.550452780959490621267180522693948777058977692404073 +/- 2.95e-52]"
+  },
+  "negative_residual_witnesses": {
+    "actual": "[-2.009234262146330513093765261015108931794269716801269 +/- 7.09e-52]",
+    "coprime_composites": "[-0.805822186643142168236970977075413333175040610877738 +/- 3.91e-52]",
+    "unit_log_charge": "[-1.442327541610297573214858131452914272664871056247443 +/- 4.90e-52]",
+    "one_third_density": "[-2.794616818166334580484521554413067882495251174696234 +/- 7.32e-52]",
+    "permuted_charge_labels": "[-2.750294130253185761281750743561949222384783999640211 +/- 5.63e-52]"
+  },
+  "braid": {
+    "primes_checked": [
+      2,
+      3,
+      5
+    ],
+    "inputs": 7,
+    "noncommutation": "S V_p != V_p S",
+    "identity": "V_p S = S^p V_p"
+  },
+  "interpretation": "Arithmetic identities are mutation-sensitive. The canonical edge-square bulk mismatch survives these positive event mutations and Gamma removal; that is a class obstruction, not evidence that the mutants satisfy RH positivity."
+}

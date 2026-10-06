@@ -1,5 +1,51 @@
 # CURRENT STATE — 2026-10-06
 
+## Round 007 — current audited frontier
+
+**RH is not proved.** Round007 starts directly from frozen Round006 head
+`d3e29723fcf9df107fc55a75716e5255898c1b53` on
+`astra/stratified-succ-fucc-square-007`. No main merge. The three new side
+branches were integrated; the composition-history files already matched the
+parent exactly. See [integration record](research/astra_round_007/INTEGRATION.md).
+
+The SUCC/FUCC valuation, stratum, first-return, chiral, and factor-cone
+operators are now formalized with boundary terms. The main result is a
+**scoped square obstruction**, not a further RH-equivalent reformulation.
+For the natural prime/Gamma difference square, target minus square is a
+negative scalar identity plus a rank-two pole form. It has an
+infinite-dimensional negative subspace and cannot be repaired by finite-rank
+boundary modes or an orthogonal positive sector. Its exact Suzuki residual
+has at least m-1 negative eigenvalues on every m-point positive time grid.
+This does not say the actual Suzuki kernel is negative.
+
+Three independent restrictions are also proved: factor-label-preserving
+local propagation loses nearest SUCC cross terms; genuine forward trace-class
+jet transfers have determinant 1; and fixed integer-log observations discard
+a common test subspace on which the Weil form is strictly positive. Cone and
+factor-swap symmetry alone do not force half-density. The surviving class
+must retain continuum information and derive genuinely nonlocal coherent
+cross terms. No such exact completed square is constructed this round.
+
+**Parent correction:** Round006's Schur–Vitali theorem and exact source/Gamma
+identities survive. Its shifted-ratio/log-derivative identification,
+passive-Gamma label, and pole-count/negative-index argument do not. The stated
+unrestricted universal-boundary no-go is equivalent to not RH and is not
+proved. A specific finite completion does fail, with an independently proved
+infinite-index obstruction. These corrections do not reopen scalar passivity
+as this round's research program. See [parent audit](research/astra_round_007/PARENT_AUDIT.md).
+
+The next verdict-changing probe is one independently defined continuum,
+nonlocal factor-label-mixing channel, immediately followed by its full
+polarized Weil discrepancy. Naming an operator, assuming a metric, or
+checking finite PSD will not discharge that identity. The Gaussian-residual,
+independent-event, and previously proved scoped no-gos remain retired.
+
+Results: [ROUND_RESULT](research/astra_round_007/ROUND_RESULT.md),
+[PROOF_ATTEMPT_007](research/astra_round_007/PROOF_ATTEMPT_007.md),
+[current wall](research/astra_round_007/CURRENT_WALL.md), and
+[dependency DAG](research/astra_round_007/THEOREM_DEPENDENCY_DAG.md).
+Earlier updates below are historical frontiers, not the current verdict.
+
 ## Round 003 update
 
 RH is not proved. Round 003 starts directly from
