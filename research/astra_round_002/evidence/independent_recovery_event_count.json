@@ -1,0 +1,173 @@
+{
+  "limit": 10381395137,
+  "count": 471611070,
+  "terms": [
+    {
+      "exponent": 1,
+      "floor_root": 10381395137,
+      "prime_count": 471600819
+    },
+    {
+      "exponent": 2,
+      "floor_root": 101889,
+      "prime_count": 9756
+    },
+    {
+      "exponent": 3,
+      "floor_root": 2181,
+      "prime_count": 327
+    },
+    {
+      "exponent": 4,
+      "floor_root": 319,
+      "prime_count": 66
+    },
+    {
+      "exponent": 5,
+      "floor_root": 100,
+      "prime_count": 25
+    },
+    {
+      "exponent": 6,
+      "floor_root": 46,
+      "prime_count": 14
+    },
+    {
+      "exponent": 7,
+      "floor_root": 26,
+      "prime_count": 9
+    },
+    {
+      "exponent": 8,
+      "floor_root": 17,
+      "prime_count": 7
+    },
+    {
+      "exponent": 9,
+      "floor_root": 12,
+      "prime_count": 5
+    },
+    {
+      "exponent": 10,
+      "floor_root": 10,
+      "prime_count": 4
+    },
+    {
+      "exponent": 11,
+      "floor_root": 8,
+      "prime_count": 4
+    },
+    {
+      "exponent": 12,
+      "floor_root": 6,
+      "prime_count": 3
+    },
+    {
+      "exponent": 13,
+      "floor_root": 5,
+      "prime_count": 3
+    },
+    {
+      "exponent": 14,
+      "floor_root": 5,
+      "prime_count": 3
+    },
+    {
+      "exponent": 15,
+      "floor_root": 4,
+      "prime_count": 2
+    },
+    {
+      "exponent": 16,
+      "floor_root": 4,
+      "prime_count": 2
+    },
+    {
+      "exponent": 17,
+      "floor_root": 3,
+      "prime_count": 2
+    },
+    {
+      "exponent": 18,
+      "floor_root": 3,
+      "prime_count": 2
+    },
+    {
+      "exponent": 19,
+      "floor_root": 3,
+      "prime_count": 2
+    },
+    {
+      "exponent": 20,
+      "floor_root": 3,
+      "prime_count": 2
+    },
+    {
+      "exponent": 21,
+      "floor_root": 2,
+      "prime_count": 1
+    },
+    {
+      "exponent": 22,
+      "floor_root": 2,
+      "prime_count": 1
+    },
+    {
+      "exponent": 23,
+      "floor_root": 2,
+      "prime_count": 1
+    },
+    {
+      "exponent": 24,
+      "floor_root": 2,
+      "prime_count": 1
+    },
+    {
+      "exponent": 25,
+      "floor_root": 2,
+      "prime_count": 1
+    },
+    {
+      "exponent": 26,
+      "floor_root": 2,
+      "prime_count": 1
+    },
+    {
+      "exponent": 27,
+      "floor_root": 2,
+      "prime_count": 1
+    },
+    {
+      "exponent": 28,
+      "floor_root": 2,
+      "prime_count": 1
+    },
+    {
+      "exponent": 29,
+      "floor_root": 2,
+      "prime_count": 1
+    },
+    {
+      "exponent": 30,
+      "floor_root": 2,
+      "prime_count": 1
+    },
+    {
+      "exponent": 31,
+      "floor_root": 2,
+      "prime_count": 1
+    },
+    {
+      "exponent": 32,
+      "floor_root": 2,
+      "prime_count": 1
+    },
+    {
+      "exponent": 33,
+      "floor_root": 2,
+      "prime_count": 1
+    }
+  ],
+  "scope": "Exact prime-power enumeration only; no reserve signs computed."
+}
+
