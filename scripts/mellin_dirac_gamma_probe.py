@@ -395,7 +395,10 @@ def main():
     verify_heat_trace_and_trivial_zeros()
     report()
     print()
-    print("Verified common probe kernel for continuous Gamma and discrete prime sources.")\n    print("Verified Laguerre Jacobi spectral realization of the Gamma Dirac comb.")\n    print("Verified Gamma heat trace, Bernoulli UV series, and finite trivial-zero preservation.")\n    print("All Mellin/Dirac/Gamma controls passed.")
+    print("Verified common probe kernel for continuous Gamma and discrete prime sources.")
+    print("Verified Laguerre Jacobi spectral realization of the Gamma Dirac comb.")
+    print("Verified Gamma heat trace, Bernoulli UV series, and finite trivial-zero preservation.")
+    print("All Mellin/Dirac/Gamma controls passed.")
 
 
 if __name__ == "__main__":
