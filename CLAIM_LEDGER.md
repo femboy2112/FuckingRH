@@ -1,3 +1,5 @@
+> **2026-10-07 claim-provenance requirement:** This historical C-number ledger does not include every subsequently divergent branch. The governing source/version/commit/test ledger for the present `audit/claude-critique-provenance-2026-10-07` line is [RH_CLAIM_PROVENANCE_LEDGER.md](research/audits/2026-10-07/RH_CLAIM_PROVENANCE_LEDGER.md), with stable PV and CRIT identifiers. Do not promote a claim merely because a GitHub script exists or a numerical result looks good; execution evidence and a formal proof are different.
+
 # CLAIM LEDGER — 2026-10-06
 
 Legend:
