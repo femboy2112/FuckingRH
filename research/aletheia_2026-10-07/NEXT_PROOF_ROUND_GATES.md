@@ -1,3 +1,5 @@
+> **Updated mathematical baseline:** Tasks 2 and the fixed-horizon reduction portion of Task 3 below are now **proved** by [LOG_EXTENSION_FESHBACH_THEOREM.md](LOG_EXTENSION_FESHBACH_THEOREM.md). The preferred positive operator is not the earlier `P_a=K_a+E_prime+W_+`, but the sharper canonical `P_a=E_{2a}+E_prime`, with `D_a=(V_a+log(2a))I+R_a` bounded. The new min–max bound is uniform in `a`: `lambda_n(P_a)>=0.5[gamma+log(pi*n/2)-Ci(pi*n/2)]`. **Do not spend another round reproving qualitative compactness.** The critical gate is a uniform *arithmetic* lower bound for the finite-rank Feshbach effective matrix `S_a` for **all horizons**. No such sign proof is presently known.
+
 # Next proof round: source-forced completed form, not analogical positivity
 
 **Date:** 2026-10-07  
