@@ -400,3 +400,70 @@ Therefore we have an exact identification across three constructions:
 This is a **consistency closure**, not an independently new proof of a prime positivity property. What is new to the current finite-boundary analysis is the explicit exact Dirichlet chain compression and the resulting sharp gap \(\gamma_p(a)\).
 
 The global obstruction is unchanged: centering/summing these otherwise positive local Weyl channels together with the signed Archimedean/pole completion does **not** automatically preserve positive-realness.
+
+
+---
+
+## Addendum — exact closed finite-ray Fourier symbol
+
+The full positive Fourier symbol of the finite Weil parent is
+
+\[
+F_a(\xi)
+=
+m_{2a}(\xi)
++
+\sum_{p\le e^{2a}}F_{p,a}(\xi).
+\]
+
+Let
+
+\[
+h_p=\log p,\quad
+r_p=p^{-1/2},\quad
+K_p=\left\lfloor\frac{2a}{h_p}\right\rfloor,\quad
+z_p=r_pe^{i\xi h_p}.
+\]
+
+The entire \(p\)-power contribution is the finite geometric expression
+
+\[
+\boxed{
+F_{p,a}(\xi)
+=
+2h_p\left[
+\frac{r_p(1-r_p^{K_p})}{1-r_p}
+-
+\Re\frac{z_p(1-z_p^{K_p})}{1-z_p}
+\right].
+}
+\]
+
+This follows exactly from
+
+\[
+F_{p,a}(\xi)
+=
+2h_p\sum_{k=1}^{K_p}
+r_p^k(1-\cos(kh_p\xi)).
+\]
+
+No prime-power iteration is needed in the frequency evaluation: the entire ray is represented by one rational expression.
+
+In the infinite-depth limit for fixed \(p\),
+
+\[
+\boxed{
+F_{p,\infty}(\xi)
+=
+h_p\left[
+\frac{1+r_p}{1-r_p}
+-
+\frac{1-r_p^2}{1-2r_p\cos(\xi h_p)+r_p^2}
+\right].
+}
+\]
+
+The second fraction is exactly the Poisson/Weyl symbol from the previous addendum.
+
+This provides an exact starting point for the **joint-prime phase-space sublevel problem** in LOG_BATHTUB_PRIME_SHIFT_BOUND.md. It does not turn positivity of the *completed* Weil form into an elementary per-prime fact, because the required signed diagonal/pole/Gamma terms have not vanished.
