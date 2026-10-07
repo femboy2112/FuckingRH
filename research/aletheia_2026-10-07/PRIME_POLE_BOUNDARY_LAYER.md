@@ -1,3 +1,5 @@
+> **2026-10-07 provenance:** Opposite-boundary prime/pole **strong** convergence uses the classical PNT and the exact Suzuki 2026 source; the full-`L²` norm convergence is *refuted*, not assumed. The rapid `η_A=O(e^{-A}poly(A))` rate is RH-equivalent and remains **UNPROVED**. First proof note commit `b18fbdf018a3010c47b46682cc112aa1c6a63a9d`; independent finite prime-mass checks are recorded in [the provenance ledger](../audits/2026-10-07/RH_CLAIM_PROVENANCE_LEDGER.md) (PV-2026-005–007). No peer review claimed.
+
 # Prime–Gamma boundary-layer cancellation: strong convergence, norm obstruction, and the RH rate
 
 **Date:** 2026-10-07  
