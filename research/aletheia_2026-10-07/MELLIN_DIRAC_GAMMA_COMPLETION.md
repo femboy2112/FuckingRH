@@ -1870,3 +1870,241 @@ J_N
 and compare the resulting boundary response with the independent coupling to the diagonal det2 Gamma ladder.
 
 If both constructions induce the same completed finite response after an explicitly derived intertwiner, that would be a materially stronger bridge than numerical agreement with Gamma alone.
+
+
+---
+
+# Appendix B — Heat trace, Bernoulli UV jets, and the spectral-geometry bridge
+
+The common Gamma source has an exact heat-kernel interpretation.
+
+For a vertical line \(\Re s=\sigma\), define
+
+\[
+D_\sigma
+=
+\operatorname{diag}
+(\sigma,\sigma+2,\sigma+4,\ldots).
+\]
+
+Then
+
+\[
+\boxed{
+\operatorname{Tr}e^{-rD_\sigma}
+=
+\sum_{m\ge0}e^{-(\sigma+2m)r}
+=
+\frac{e^{-\sigma r}}{1-e^{-2r}}.
+}
+\]
+
+Therefore
+
+\[
+\boxed{
+dM_{\infty,\sigma}(r)
+=
+\operatorname{Tr}e^{-rD_\sigma}\,dr.
+}
+\]
+
+The continuous Archimedean source is literally the heat trace of the shifted inverse-SUCC Gamma ladder.
+
+At criticality,
+
+\[
+D_{1/2}
+=
+\operatorname{diag}
+\left(
+\frac12,\frac52,\frac92,\ldots
+\right),
+\]
+
+the same free Archimedean operator already used in the phase-locking program.
+
+## B1. Resolvent form
+
+Since
+
+\[
+\int_0^\infty
+e^{-itr}e^{-rD_\sigma}\,dr
+=
+(D_\sigma+it)^{-1},
+\]
+
+we obtain
+
+\[
+\boxed{
+-\partial_\sigma\log G_\sigma(t)
+=
+\operatorname{Tr}
+\left[
+(D_\sigma+it)^{-1}
+-
+D_\sigma^{-1}
+\right].
+}
+\]
+
+Thus the common-source identity can be read equivalently as:
+
+- a continuous log-scale measure;
+- a heat trace;
+- a regularized resolvent difference.
+
+This triangulates the Gamma channel without invoking zeta zeros.
+
+## B2. Determinant from heat trace
+
+The normalized Gamma carrier satisfies
+
+\[
+\boxed{
+\log G_\sigma(t)-itb_\sigma
+=
+\int_0^\infty
+\left(
+e^{-itr}-1+itr
+\right)
+\operatorname{Tr}e^{-rD_\sigma}
+\frac{dr}{r}.
+}
+\]
+
+This is the heat-kernel form of the regularized determinant identity.
+
+So the hierarchy is
+
+\[
+\boxed{
+\text{local heat trace}
+\to
+\text{compensated global integral}
+\to
+\text{Gamma determinant/carrier}.
+}
+\]
+
+This is a sharper version of "Gamma globally does what Dirac localization does locally."
+
+## B3. Bernoulli short-time expansion
+
+Use
+
+\[
+\frac{x e^{ux}}{e^x-1}
+=
+\sum_{n\ge0}
+B_n(u)\frac{x^n}{n!}.
+\]
+
+Since
+
+\[
+\frac{e^{-\sigma r}}{1-e^{-2r}}
+=
+\frac{e^{(2-\sigma)r}}{e^{2r}-1},
+\]
+
+put
+
+\[
+x=2r,
+\qquad
+u=1-\frac{\sigma}{2}.
+\]
+
+Then
+
+\[
+\boxed{
+\operatorname{Tr}e^{-rD_\sigma}
+=
+\frac1{2r}
+\sum_{n\ge0}
+B_n\!\left(1-\frac{\sigma}{2}\right)
+\frac{(2r)^n}{n!}.
+}
+\]
+
+At the critical line,
+
+\[
+\boxed{
+\operatorname{Tr}e^{-rD_{1/2}}
+=
+\frac1{2r}
++\frac14
+-\frac{r}{48}
+-\frac{r^2}{32}
++\frac{7r^3}{11520}
++\cdots.
+}
+\]
+
+Thus the Gamma ultraviolet/local-scale expansion is organized by Bernoulli polynomial jets.
+
+## B4. Collision with the actualization-curvature Bernoulli hierarchy
+
+The preceding actualization-curvature round derived, at linear response,
+
+\[
+\delta\Omega(T,z)
+=
+\sum_{n\ge0}
+\frac{T^n}{n!}
+\operatorname{ad}_{A_0}^{\,n}(\sigma_1)
+\int_0^T
+B_n\!\left(1-\frac AT\right)
+\mu(A)\,dA.
+\]
+
+The Gamma heat trace now gives
+
+\[
+B_n\!\left(1-\frac{\sigma}{2}\right)
+\]
+
+from the same generating function.
+
+This does not prove the two geometries are identical.
+
+It does establish a common algebraic mechanism:
+
+\[
+\boxed{
+\frac{x e^{ux}}{e^x-1}
+}
+\]
+
+simultaneously controls
+
+- chronological/logarithmic transport jets;
+- Gamma heat-kernel ultraviolet coefficients;
+- the regularization that converts local modes into the global Archimedean carrier.
+
+This is a concrete bridge worth testing.
+
+## B5. Spectral-geometry caution and opportunity
+
+In ordinary spectral geometry, small-time heat coefficients can encode geometric invariants such as dimension, volume, boundary data, and curvature for suitable geometric operators.
+
+Here the Gamma operator \(D_\sigma\) is already explicitly known and its coefficients are Bernoulli data, so one must not relabel those coefficients "curvature" by analogy.
+
+The legitimate next question is different:
+
+> After coupling the finite arithmetic conductor system to the finite Gamma operator, do **changes** in the combined heat coefficients agree with the independently defined arithmetic plaquette/Hessian curvature?
+
+That is falsifiable.
+
+A positive answer would join three independently derived objects:
+
+1. actualization holonomy;
+2. det3 Hessian curvature;
+3. completed heat-kernel coefficients.
+
+A negative answer would prevent an unjustified GR analogy from hardening.
