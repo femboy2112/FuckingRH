@@ -16,7 +16,7 @@ from __future__ import annotations
 
 from math import gcd, lcm, log
 from sympy import (
-    I, Matrix, Symbol, symbols, simplify, expand, integrate, cos, sin,
+    I, Matrix, Symbol, symbols, simplify, expand, integrate, cos, sin, exp,
 )
 
 
@@ -127,7 +127,7 @@ def verify_interaction_picture() -> None:
     """Free Dirac transport rotates one actualization pulse through harmonic phase."""
     s1, s2, s3 = pauli()
     z, t = symbols("z t", real=True)
-    Uminus = Matrix([[(-I*z*t).exp(), 0], [0, (I*z*t).exp()]])
+    Uminus = Matrix([[exp(-I*z*t), 0], [0, exp(I*z*t)]])
     Uplus = Uminus.inv()
     rotated = simplify(Uminus * s1 * Uplus)
     target = cos(2*z*t) * s1 + sin(2*z*t) * s2
