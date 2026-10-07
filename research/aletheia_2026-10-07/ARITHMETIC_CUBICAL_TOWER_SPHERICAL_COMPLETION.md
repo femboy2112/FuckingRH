@@ -1,3 +1,5 @@
+> **Provenance / scope correction (2026-10-07):** Divisor boxes admit deterministic gcd retractions, but the normalized Suzuki/Jordan-totient weights `J_{2ω}(d)/L^{2ω}` are **NOT** projectively consistent under those maps: at ω=1/2 the 4→2 pushforward is (1/4,3/4) instead of (1/2,1/2). This is explicitly reproduced in [the imported critical audit](../audits/2026-10-07/CUBE_ATOM_CRITICAL_AUDIT_IMPORTED.md). Do not infer a canonical projective *probability measure* from the deterministic support tower. The finite cubical identities remain valid. See [claim provenance](../audits/2026-10-07/RH_CLAIM_PROVENANCE_LEDGER.md).
+
 # Arithmetic cubical tower, LCM/GCD connections, and spherical completion
 
 **Date:** 2026-10-07  
