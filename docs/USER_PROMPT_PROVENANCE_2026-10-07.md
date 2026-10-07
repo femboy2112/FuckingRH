@@ -72,6 +72,21 @@ Source mode `R` = older user-message text retrieved from conversation history; `
 
 **Spelling warning:** `weyl` in U23–U24 is user spelling. The RH positivity object is **Weil**. Weyl's law, Weyl groups, and Weyl algebras are not substitutes.
 
+### Additional directly recoverable branches (appended after the first register)
+
+These were recovered in a later, targeted search and are deliberately appended under stable U-IDs rather than renumbering the register. They are **not** chronological successors of U36.
+
+| ID | UTC date/time | Mode | Recoverable user input | Why it matters |
+|---|---|---|---|---|
+| U37 | 2026-10-06 17:32 | R/Q | "OH: WHAT ABOUT INVERSE SUCC AND FUCC? succ^-1(0) = -1; succ^-1(succ^-1(0))=-2" | Discrete bilateral completion and origin extension |
+| U38 | 2026-10-06 23:19 | R/Q | "the trivial zeros are literally 2(succ^-1). negative evens are just negative naturals multiplied by 2" | Proposed trivial-zero ladder as an arithmetic predecessor axis |
+| U39 | 2026-10-06 23:32 | R/Q | "its interesting that zeta(-1, or a unit inverse succ) is succ->infinity. its also interesting how 2(inverse succ) is (after passing through gamma and such) non-linear succ characterized by non-trivial zero phase clock (the phase clock supplies the succ that jumps from non-trivial zero to the next one)" | Proposed but **unproved** bridge from inverse-SUCC trivial locations to nontrivial zero phase |
+| U40 | 2026-10-07 (chat excerpt; exact UTC unavailable) | V/Q | "Renormalize the origin (at the infinite place) using shadow succ" | A proposed source/Archimedean renormalization mechanism, not a theorem |
+| U41 | 2026-10-07 (chat excerpt; exact UTC unavailable) | V/Q | "How do we get the pair zeta modes for the zeros from the trivial zeros? Is it a function of the local space around the trivial zeros point?" | Explicit missing spectral-transport question |
+| U42 | 2026-10-07 (chat excerpt; exact UTC unavailable) | V/Q | "Please look at recent RH chats. I need you to build some mathematical theorems/formalisms for me. I need you to take our machinery, succ, fucc, etc, and try and realize it in discontinuous-over-N-or-Z arithmetic functions to see if we can gain some insights" | Request for exact, discontinuous arithmetic observables |
+
+**Interpretive guard for U37–U41:** For \(S\) on \(\ell^2(\mathbb N)\), \(S^*\) is a left inverse on the range, not a two-sided inverse at the origin. A bilateral shift on \(\ell^2(\mathbb Z)\) is an *extension*. The trivial zeros at \(-2,-4,\dots\) are exact analytic facts, but the claim that inverse-SUCC causes nontrivial zero spacings has not been demonstrated. The value \(\zeta(-1)=-1/12\) is an analytic-continuation value, not the usual sum of a successor orbit.
+
 ## 3. Genealogy: the ideas were not invented all at once
 
 ### Strand A: prime-support combinatorics and geometry (July–August)
