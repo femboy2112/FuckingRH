@@ -349,3 +349,54 @@ This is a precise form of the idea that higher actualizations inherit the earlie
 **UNVERIFIED:** a sufficiently sharp collective across-prime estimate or all-horizon positive Weil/Feshbach matrix.
 
 **RH:** OPEN.
+
+
+---
+
+## Addendum — exact identification with the Euler local Weyl/Poisson channel
+
+The matrix
+
+\[
+C_N(r)=(r^{|i-j|})_{1\le i,j\le N}
+\]
+
+is the \(N\)-section of the Toeplitz operator with symbol
+
+\[
+\boxed{
+P_r(\theta)
+=
+\frac{1-r^2}{1-2r\cos\theta+r^2}
+=
+\Re\frac{1+re^{i\theta}}{1-re^{i\theta}}.
+}
+\]
+
+But the existing repository note
+\`research/aletheia_2026-10-06/EULER_AS_CENTERED_WEYL_SUM.md\`
+already identified
+
+\[
+\frac{1+q_p(z)}{1-q_p(z)},
+\qquad
+q_p(z)=p^{-1/2+iz},
+\]
+
+as the prime-local positive-real Weyl response. On the real spectral axis, with \(\theta=z\log p\), its real part is precisely \(P_{p^{-1/2}}(\theta)\).
+
+Therefore we have an exact identification across three constructions:
+
+\[
+\boxed{
+\text{Euler local Cayley/Weyl response}
+=
+\text{Poisson covariance symbol}
+=
+\text{finite prime-depth AR(1) Toeplitz Gram}.
+}
+\]
+
+This is a **consistency closure**, not an independently new proof of a prime positivity property. What is new to the current finite-boundary analysis is the explicit exact Dirichlet chain compression and the resulting sharp gap \(\gamma_p(a)\).
+
+The global obstruction is unchanged: centering/summing these otherwise positive local Weyl channels together with the signed Archimedean/pole completion does **not** automatically preserve positive-realness.
