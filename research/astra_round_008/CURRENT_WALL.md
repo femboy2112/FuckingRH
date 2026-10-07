@@ -28,11 +28,19 @@ Allowing boundary/complement cross terms still requires unbounded gain:
 `2 sqrt(R) A_N ||B_N|| >= sqrt(2 S_N)-O_f(1)`, where `A_N -> 0`.
 This is a sharp scoped obstruction, not a universal transfer no-go.
 
-The next verdict-changing probe is a refinement-compatible inter-event
-interaction that changes the complementary clock metric, then computes its
-complete continuum kernel. It must simultaneously cancel rational-ratio
-atoms and supply the exact bulk, Gamma and pole pairing. The Euclidean-carry
-oscillator is an explicit noncommuting control, but its proved heat trace
-only yields Gaussian clock returns. No such Weil interaction has been found.
+The refinement-compatible carry/physical-oscillator probe has now also been
+executed. An explicit coordinate unitary gives `C_L tensor tau_1` and
+`I tensor Hosc`; their entire generated algebra reduces conductor sectors.
+The heat/innovation trace is exactly a divisibility character trace times
+one Gaussian factor. Real noncommutation does not create cross-conductor
+pairing in this family.
+
+The next verdict-changing probe must add a specified **nonreducing**
+interaction and compute its complete continuum kernel. Test first the
+log(3/2) component and bulk identity coefficient, then every remaining
+Gamma/pole term and convergence. No such Weil interaction has been found.
+
+All 227 tests pass, including the 184 inherited tests. No sign conclusion is
+inferred from these finite checks; the class bounds are analytic theorems.
 
 No broader no-go or RH reduction is inferred. RH remains open.

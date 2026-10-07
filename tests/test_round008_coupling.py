@@ -59,6 +59,15 @@ class CouplingTests(unittest.TestCase):
         from scripts.round008_coupling import refinement_oscillator_checks
         refinement_oscillator_checks()
 
+    def test_innovation_return_trace(self):
+        from scripts.round008_clock import clock,innovation_projector
+        for p,L in [(2,1),(3,2),(2,6)]:
+            M=p*L
+            E=innovation_projector(p,L)
+            C=clock(M)
+            for k in range(-2,2*M+1):
+                self.assertEqual(sp.trace(E*C**k),M*int(k%M==0)-L*int(k%L==0))
+
 
 if __name__ == '__main__':
     unittest.main()
