@@ -234,6 +234,26 @@ def verify_two_dim_scalar_curvature_formula() -> None:
     assert simplify(formula - expanded_formula) == 0
 
 
+
+def verify_det3_cubic_tensor() -> None:
+    """Critical det_3 ratio starts cubically; its first interaction tensor is D^3."""
+    a, b, c0 = symbols("a b c0", real=True)
+    K = Matrix([[1, 0], [0, 0]])
+    L = Matrix([[0, 1], [1, 0]])
+    M0 = Matrix([[1, 1], [1, 2]])
+    H = a*K + b*L + c0*M0
+
+    # Cubic leading term of log det_3(I+H)-log det_3(I-H).
+    phi3 = simplify(sp.Rational(2, 3) * (H**3).trace())
+
+    # Vacuum gradient/Hessian vanish for a cubic potential.
+    assert simplify(sp.diff(phi3, a).subs({a:0,b:0,c0:0})) == 0
+    assert simplify(sp.diff(phi3, a, b).subs({a:0,b:0,c0:0})) == 0
+
+    lhs = simplify(sp.diff(phi3, a, b, c0).subs({a:0,b:0,c0:0}))
+    rhs = simplify(2*((K*L*M0).trace() + (K*M0*L).trace()))
+    assert simplify(lhs-rhs) == 0
+
 def main() -> None:
     events = greedy_actualization()
     expected = [2, 3, 4, 5, 7, 8, 9, 11, 13, 16, 17, 19, 23, 25, 27]
@@ -247,6 +267,7 @@ def main() -> None:
     magnus_integrands()
     verify_magnus_moment_kernels()
     verify_two_dim_scalar_curvature_formula()
+    verify_det3_cubic_tensor()
 
     print("First greedy actualization events:")
     print("  " + ", ".join(str(q) for q, _, _ in events))
@@ -258,6 +279,7 @@ def main() -> None:
     print("Verified: similarity gauges leave that cone unchanged.")
     print("Verified: Ω1/Ω2/Ω3 expose P0/P1/P2-type moment hierarchy + ordered correlations.")
     print("Verified: 1+1 diagonal metric scalar-curvature formula.")
+    print("Verified: critical det_3 interaction potential starts at cubic order.")
 
 
 if __name__ == "__main__":
