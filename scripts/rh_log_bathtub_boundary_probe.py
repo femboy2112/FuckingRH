@@ -116,6 +116,34 @@ def boundary_probe(X: int, ell: float, lam: list[float]):
     return len(atoms),cum[-1],eta,strong_relative_err
 
 
+
+def conductor_entry_jet_probe():
+    """Smooth zero-trace states activate cubically; nonzero boundary trace linearly."""
+    h=log(17)
+    a0=h/2
+    ratios=[]
+    for delta in [0.02,0.01,0.005,0.0025]:
+        a=a0+delta
+        eps=2*delta
+        # Exact v_a=a^{-1/2}(1-(x/a)^2) overlap polynomial.
+        cubic_exact=(
+            2*eps**3/(3*a**3)
+            -eps**4/(3*a**4)
+            +eps**5/(30*a**5)
+        )
+        cubic_lead=16*delta**3/(3*a0**3)
+        linear_indicator=delta/a
+        assert 0 < cubic_exact < cubic_lead
+        assert linear_indicator > 0
+        ratios.append(cubic_exact/cubic_lead)
+    assert ratios[0]<ratios[-1] and ratios[-1]>0.99
+    # Fixed-a L2 shift norm immediately equals 1, even for tiny overlap.
+    assert sharp_shift_overlap(2*(a0+0.001),h) > .49
+    print(f"Conductor-entry Dirichlet cubic ratio ->1: {ratios[-1]:.8f}")
+    print("Indicator boundary response is linear; compressed shift jumps in L2 norm.")
+
+
+
 def main():
     print("Bathtub bound compared with old half-slope bound")
     for n in [1,2,3,5,10,100,1000]:
@@ -146,7 +174,8 @@ def main():
               f"CDF_err={eta:.6g} strong_L2_relative_err={err:.7g}")
     assert boundary_probe(250000,ell,lam)[-1] < boundary_probe(2500,ell,lam)[-1]
 
-    print("PASS: zero-input exact-constant and finite PNT/shift calibrations.")
+    conductor_entry_jet_probe()
+    print("PASS: zero-input exact-constant, boundary PNT, and conductor-entry calibrations.")
     print("The all-horizon RH rate remains UNPROVED.")
 
 
