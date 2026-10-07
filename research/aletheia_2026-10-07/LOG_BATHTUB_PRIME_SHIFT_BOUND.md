@@ -1,3 +1,5 @@
+> **2026-10-07 provenance:** This finite operator application was derived in the GPT-6/user research round from Suzuki arXiv:2606.09096v3 (2.3)–(2.7), Bessel/Ky Fan and the classical Lieb–Loss bathtub principle (Theorem 1.14). First entered in commit `d5867267bf335a865b2bd01a2b80516a455692b1`. Independent finite constant and Toeplitz checks were rerun; no new-priority or peer-review claim, and the resulting lower bound concerns the positive `P_a`, not RH. [Claim ledger PV-2026-003](../audits/2026-10-07/RH_CLAIM_PROVENANCE_LEDGER.md).
+
 # Logarithmic bathtub bound and sharp arithmetic shift gaps
 
 **Date:** 2026-10-07  
