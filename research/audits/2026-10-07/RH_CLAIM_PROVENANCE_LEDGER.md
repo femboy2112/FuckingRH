@@ -247,3 +247,30 @@ Subsequent formal writeups, finite scripts, analytical no-gos, proof sketches an
 For every future **mathematical** commit/PR, start from [the claim template](../../../docs/RESEARCH_PROVENANCE_TEMPLATE.md), retain the primary-source version and commit SHAs, add hostile controls, and update this ledger. The repository [PR checklist](../../../.github/PULL_REQUEST_TEMPLATE.md) enforces this at review time. The finite tests actually run in the current audit are described in [EXECUTION_LOG.md](EXECUTION_LOG.md).
 
 An old claim with no provenance must stay **UNVERIFIED / HISTORICAL**, however attractive the intuition.
+
+
+## P.9 New audit: exact source causality versus Hardy passivity (2026-10-07)
+
+### [PV-2026-010] Arithmetic wavefront support is **already unconditional**
+
+- **External source:** Masatoshi Suzuki, [arXiv:1204.1827v2](https://arxiv.org/html/1204.1827v2) (2.3) (\(h_\omega(x)=0\) for \(x<1\)), (1.9) (\(|\Theta_\omega(t)|=1\) for real \(t\)), Theorem 2.2 (\(L^2\) convolution mapping/innerness), Proposition 1.2 (zero-free strip/all-\(\omega\) innerness).
+- **User hypothesis:** shadow SUCC only propagates after previously encountered support; arithmetic wave is strictly activating.
+- **Derived distinction:** source support-causality and boundary unit modulus are unconditionally known; \(L^2\)-stable causal Hardy invariance for the **same exact completed transfer** is not implied.
+- **Local proof/no-go:** [ACTIVATION_CAUSALITY_HARDY_PASSIVITY.md](ACTIVATION_CAUSALITY_HARDY_PASSIVITY.md), first derivation commit \`e7ad5f3fc80dd69e9913acca2be6e4518a5b52b4\`.
+- **Independent executed controls:** [ACTIVATION_PASSIVITY_EXECUTION.md](ACTIVATION_PASSIVITY_EXECUTION.md): five synthetic controls passed; no CI or peer review claimed.
+- **Status:** Suzuki source-support and meromorphic-inner criteria are *published external theorems*. The causal-but-unstable rational transfer and positive-scalar-allpass pure-delay no-go are *elementary mathematics*. None is a proof of RH.
+
+### [PV-2026-011] Positive scalar causal all-pass implies deterministic delay
+
+- If a finite nonnegative causal measure \(\mu\) has total mass \(1\) and \(|\widehat\mu(\xi)|=1\) at every real frequency, then \(\mu=\delta_\tau\). Proof via independent copies \(X,Y\): the characteristic function of \(X-Y\) is identically \(1\), so \(X=Y\) almost surely and their common law is a point mass.
+- **First repo proof:** \`ACTIVATION_CAUSALITY_HARDY_PASSIVITY.md\` §5, commit \`e7ad5f3fc80dd69e9913acca2be6e4518a5b52b4\`.
+- **Scope:** scalar positive **finite measure** transfer, normalized at zero frequency; it does not exclude nonnegative internal states with signed output, matrix-valued Hilbert systems or quantum/unitary dilations.
+- **Status:** elementary exact no-go against interpreting the completed \(\Theta_\omega\) itself as a positive activation-only scalar impulse response.
+
+### [PV-2026-012] Raw prime activation diverges and exact passivity needs a storage budget
+
+- Exact source-positive raw shift operator \(\mathcal A_X=\sum_{q=p^k\le X}(\Lambda(q)/\sqrt q)\tau_{\log q}\) satisfies \(\|\mathcal A_X\|_{L^2(\mathbb R)\to L^2(\mathbb R)}=\sum_{q\le X}\Lambda(q)/\sqrt q\sim2\sqrt X\) by Fourier multiplier supremum at \(\xi=0\) and the classical PNT.
+- Example of a genuine stable all-pass signal with **activated internal state** but **signed readout**: \(\dot x=-ax+u,\ y=u-2ax,\ E=2a|x|^2\) gives \(\dot E=|u|^2-|y|^2\). This is a standard input/output energy conservation law.
+- **Local proof:** same note §§4, 7–8; independent finite storage controls in \`ACTIVATION_PASSIVITY_EXECUTION.md\`.
+- **RH proof interface:** construct a *source-forced* storage/colligation satisfying the KYP/Lyapunov passivity condition and whose transfer equals \(\Theta_\omega\) on the convergent Euler region for every \(\omega>0\). This is a target, **not established**.
+- **Status:** raw divergence is an unconditional PNT consequence; the completed all-\(\omega\) storage/Hardy theorem is RH-equivalent and **UNVERIFIED**.
