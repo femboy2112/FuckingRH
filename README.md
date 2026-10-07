@@ -1,3 +1,5 @@
+> **Actual RH proof interface:** [The corrected Markov-to-Hardy proof gates](research/audits/2026-10-07/CAUSAL_HARDY_RH_PROOF_GATES.md) show why finite unitary/Markov/Gamma positivity is insufficient and what completed all-ω causal property would prove RH. The [actual execution log](research/audits/2026-10-07/EXECUTION_LOG.md) avoids invented CI claims. Future PRs use the [provenance checklist](.github/PULL_REQUEST_TEMPLATE.md).
+
 > **2026-10-07 research provenance:** The [active claim-by-claim provenance ledger](research/audits/2026-10-07/RH_CLAIM_PROVENANCE_LEDGER.md) distinguishes Suzuki and classical source theorems from assistant-derived finite identities, hostile control results, imported critiques and RH-equivalent unproved statements. It records precise source versions, proof commits, test status and correction history. The [imported cube-atom critical audit](research/audits/2026-10-07/CUBE_ATOM_CRITICAL_AUDIT_IMPORTED.md) is archived with authorship uncertainty stated explicitly. RH remains open.
 
 # FuckingRH
