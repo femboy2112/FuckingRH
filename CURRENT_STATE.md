@@ -1,3 +1,9 @@
+# 2026-10-07 exact zero-extension / compact-resolvent / Feshbach theorem (audit branch)
+
+**RH is OPEN.** See `research/aletheia_2026-10-07/LOG_EXTENSION_FESHBACH_THEOREM.md` and `scripts/rh_zero_extension_feshbach.py` on `audit/rh-proof-bearing-frontier-2026-10-07`. Suzuki's whole finite-interval logarithmic boundary form equals the positive zero-extended finite-range translation square `E_{2a}` minus `log(2a)||v||²`. Thus `Q_W^a=(E_{2a}+E_prime)-D_a` with explicit bounded `D_a`. A Fourier frequency-tail argument proves compact resolvent (spectral discreteness already known in the literature); a time-band-limiting trace and min-max give a quantitative all-a lower bound on ordered positive eigenvalues, `lambda_n>=0.5[gamma+log(pi*n/2)-Ci(pi*n/2)]`. At each fixed `a` the sign of the completed Weil form is exactly the sign of a finite-dimensional low-mode Feshbach matrix. Its nonnegativity for all `a` is **still RH-equivalent and unproved**. Avoid any proof claim or extrapolation from finite tests.
+
+---
+
 ## 2026-10-07 hostile proof-bearing frame audit (separate branch)
 
 **RH is OPEN.** On `audit/rh-proof-bearing-frontier-2026-10-07`, a direct audit of the cubical Gamma/Hodge/Schur proposal established: (1) the positive finite prime-only Gram is UV-bounded, while Suzuki's full finite-interval Weil form is unbounded above; (2) even adding the positive logarithmic Archimedean kinetic energy misses an arbitrarily positive boundary-localized potential and cannot be the raw parent for a positive short; (3) scalar product-formula primitivity does not lift to nontrivial fixed placewise response operators; and (4) finite Hodge positivity survives fake off-axis zero and fake-modulus controls. These are scoped no-gos, not a disproof of all possible completed constructions.
