@@ -1,0 +1,488 @@
+# Central affine holonomy is loop action, not curvature
+
+**Date:** 2026-10-07  
+**Status:** exact normalization/coboundary theorem. No RH assumption.  
+**RH remains open.**
+
+The primitive affine lift associates a positive integer central holonomy
+
+\[
+\kappa(\gamma)
+\]
+
+to a projectively closed word.
+
+This invariant is useful, but a hostile cohomological check shows that it should be interpreted as an additive **loop action/length**, not as intrinsic curvature.
+
+The genuine curvature candidate must therefore come from the noncommuting chronological connection on support cells, not from the scalar central content alone.
+
+---
+
+# 1. Primitive content cocycle
+
+Let \(f,g\) be primitive positive-slope rational-affine maps with matrices
+
+\[
+M_f,
+\qquad
+M_g.
+\]
+
+Primitive reduction of their product gives
+
+\[
+\boxed{
+M_{f\circ g}
+=
+\frac{
+M_fM_g
+}{
+\kappa(f,g)
+},
+}
+\]
+
+where
+
+\[
+\kappa(f,g)\in\mathbb N
+\]
+
+is the positive content removed to restore the primitive representative.
+
+Associativity makes \(\kappa\) a multiplicative 2-cocycle.
+
+---
+
+# 2. Determinant potential
+
+Define
+
+\[
+\boxed{
+\ell(f)
+=
+\frac12\log\det M_f.
+}
+\]
+
+Since
+
+\[
+\det M_{f\circ g}
+=
+\frac{
+\det M_f\det M_g
+}{
+\kappa(f,g)^2
+},
+\]
+
+take logarithms:
+
+\[
+\log\det M_{f\circ g}
+=
+\log\det M_f
++
+\log\det M_g
+-
+2\log\kappa(f,g).
+\]
+
+Therefore
+
+\[
+\boxed{
+\log\kappa(f,g)
+=
+\ell(f)
++
+\ell(g)
+-
+\ell(f\circ g).
+}
+\]
+
+Thus:
+
+\[
+\boxed{
+\log\kappa
+=
+\delta\ell.
+}
+\]
+
+The logarithmic content cocycle is an exact coboundary.
+
+So the primitive central extension is flat at the level of this scalar potential.
+
+---
+
+# 3. Closed-word action
+
+Let
+
+\[
+\gamma=(f_1,\ldots,f_r)
+\]
+
+close projectively:
+
+\[
+f_r\circ\cdots\circ f_1
+=
+\operatorname{id}.
+\]
+
+Repeated use of the coboundary identity telescopes to
+
+\[
+\boxed{
+\log\kappa(\gamma)
+=
+\sum_{j=1}^r\ell(f_j)
+-
+\ell(\operatorname{id}).
+}
+\]
+
+Since
+
+\[
+\ell(\operatorname{id})=0,
+\]
+
+\[
+\boxed{
+\log\kappa(\gamma)
+=
+\sum_j\ell(f_j).
+}
+\]
+
+Thus the logarithmic central holonomy is the accumulated edge action.
+
+For
+
+\[
+f_j(x)=\frac{a_jx+b_j}{c_j},
+\]
+
+\[
+\det M_j=a_jc_j,
+\]
+
+so
+
+\[
+\ell(f_j)
+=
+\frac12
+(\log a_j+\log c_j).
+\]
+
+For a closed identity word,
+
+\[
+\prod_ja_j
+=
+\prod_jc_j
+=
+\kappa(\gamma),
+\]
+
+hence
+
+\[
+\sum_j\ell(f_j)
+=
+\log\kappa(\gamma)
+\]
+
+as required.
+
+---
+
+# 4. The user's loop
+
+For
+
+\[
+4x+1,
+\qquad
+\frac{3x+1}{8},
+\qquad
+\frac{2x-1}{3},
+\]
+
+the determinants of the primitive matrices are
+
+\[
+4,
+\qquad
+24,
+\qquad
+6.
+\]
+
+Therefore
+
+\[
+\sum_j\ell(f_j)
+=
+\frac12\log(4\cdot24\cdot6)
+=
+\frac12\log(576)
+=
+\log24.
+\]
+
+So:
+
+\[
+\boxed{
+\kappa(\gamma)=24
+}
+\]
+
+is exactly the exponential of the accumulated determinant action.
+
+This confirms the holonomy calculation while demoting its interpretation from curvature to length/action.
+
+---
+
+# 5. Canonical prime loops
+
+Use the canonical two-edge loop
+
+\[
+u_p(x)=px+1,
+\]
+
+\[
+d_p(y)=\frac{y-1}{p}.
+\]
+
+The primitive matrices satisfy
+
+\[
+M_{d_p}M_{u_p}=pI.
+\]
+
+Therefore
+
+\[
+\boxed{
+\kappa(\ell_p)=p,
+}
+\]
+
+and the loop action is
+
+\[
+\boxed{
+\mathcal A(\ell_p)
+=
+\log p.
+}
+\]
+
+Concatenate the loop \(k\) times.
+
+Central holonomies multiply:
+
+\[
+\kappa(\ell_p^k)=p^k.
+\]
+
+Actions add:
+
+\[
+\boxed{
+\mathcal A(\ell_p^k)
+=
+k\log p.
+}
+\]
+
+So prime powers are repeated primitive prime loops in exactly the standard closed-orbit sense.
+
+---
+
+# 6. Weighted closed-orbit measure
+
+The first Suzuki/Weil jet assigns the half-density weight
+
+\[
+\frac{\log p}{p^{k/2}}
+\]
+
+to the prime-power event \(p^k\).
+
+Using the loop action
+
+\[
+\mathcal A_{p,k}
+=
+k\log p,
+\]
+
+define the weighted orbit measure
+
+\[
+\boxed{
+d\nu_{\rm loop}(t)
+=
+\sum_{p}
+\sum_{k\ge1}
+\frac{\log p}{p^{k/2}}
+\delta_{k\log p}(dt).
+}
+\]
+
+Its Laplace transform is
+
+\[
+\begin{aligned}
+\int_0^\infty e^{-st}\,d\nu_{\rm loop}(t)
+&=
+\sum_{p,k}
+\frac{\log p}{p^{k/2}}
+e^{-sk\log p}
+\\
+&=
+\sum_{p,k}
+\frac{\log p}{p^{k(s+1/2)}}
+\\
+&=
+\boxed{
+-\frac{\zeta'}{\zeta}
+\left(s+\frac12\right).
+}
+\end{aligned}
+\]
+
+Thus the prime-ray logarithmic derivative is exactly the transform of the canonical closed-loop action spectrum.
+
+No zeta-zero locations are used in this construction.
+
+---
+
+# 7. Dynamical-zeta reading
+
+Formally integrating the logarithmic derivative gives the Euler product
+
+\[
+\boxed{
+\zeta\left(s+\frac12\right)
+=
+\prod_p
+\left(
+1-p^{-(s+1/2)}
+\right)^{-1}.
+}
+\]
+
+In the loop language:
+
+- primitive closed orbits are indexed by primes \(p\);
+- primitive orbit length is
+  \[
+  \log p;
+  \]
+- the \(k\)-fold repeat has length
+  \[
+  k\log p;
+  \]
+- the usual \(1/k\) repetition factor appears when integrating the logarithmic derivative.
+
+So the “loops have weight/energy” intuition has an exact dynamical-zeta realization.
+
+But this does **not** supply a Hilbert--Pólya self-adjoint generator or prove RH.
+
+It is the correct prime-orbit length spectrum.
+
+---
+
+# 8. Why this is not the arithmetic curvature
+
+Because
+
+\[
+\log\kappa=\delta\ell,
+\]
+
+the scalar central holonomy is generated by an exact potential.
+
+It contains no intrinsic curl.
+
+Likewise the bare CRT support product is flat across independent prime directions.
+
+Therefore the term **arithmetic interaction curvature** should be reserved for a failure of path-independence in a genuinely connected transport:
+
+\[
+\boxed{
+F_{p,q}(d)
+=
+U_{q,pd}U_{p,d}
+-
+U_{p,qd}U_{q,d},
+}
+\]
+
+or an equivalent commutator/holonomy defect after chronological carry/history is retained.
+
+The correct conceptual separation is now:
+
+\[
+\boxed{
+\kappa
+=
+\text{loop action / length},
+}
+\]
+
+\[
+\boxed{
+M_\gamma
+=
+\text{phase support},
+}
+\]
+
+\[
+\boxed{
+F
+=
+\text{candidate interaction curvature}.
+}
+\]
+
+These three invariants should not be collapsed.
+
+---
+
+# 9. Consequence for the RH program
+
+The action spectrum already explains the prime-power locations and von-Mangoldt weights.
+
+So it is **not** where the missing positivity lives.
+
+The remaining RH-facing task is still:
+
+1. take the positive local/support loop energies;
+2. retain the chronological noncommuting connection between support faces;
+3. include the Archimedean completion;
+4. prove that the resulting effective physical form is positive.
+
+This note prevents a false shortcut:
+
+\[
+\boxed{
+\text{nontrivial central holonomy by itself is not evidence of arithmetic curvature.}
+}
+\]
+
+Its role is to supply the exact loop-length variable on which the genuine connection acts.
