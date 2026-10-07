@@ -2,6 +2,14 @@
 
 This file records where the current RH program came from. Imported files are preserved verbatim where possible. A copied upstream file is evidence of our prior work/provenance, not an assertion that every sentence remains current.
 
+## User-origin RH language and analogy provenance (2026-10-07)
+
+- [`docs/USER_PROMPT_PROVENANCE_2026-10-07.md`](docs/USER_PROMPT_PROVENANCE_2026-10-07.md) — recoverable user prompt excerpts (U01–U36), timestamped source modes, authorship boundaries, and chronological conceptual genealogy. Distinguishes actual user wording from assistant/agent reconstructions; not a complete certified chat transcript.
+- [`docs/SUCC_FUCC_CONCEPT_ATLAS_2026-10-07.md`](docs/SUCC_FUCC_CONCEPT_ATLAS_2026-10-07.md) — typed mathematical dictionary translating carrier, factor cube, carry clock, wavefront/Dirac, Gamma, shadow, curvature and growing matrices into exact arithmetic/operator objects or explicitly unverified hypotheses.
+- [`docs/SUCC_FUCC_PROBE_LEDGER_2026-10-07.md`](docs/SUCC_FUCC_PROBE_LEDGER_2026-10-07.md) — hypothesis-by-hypothesis falsifiers, controls, and strict transition from analogy to completed Weil/Suzuki proof obligations.
+
+**Source priority / stale-branch warning.** These three files are interpretive provenance and must not supersede `CLAIM_LEDGER.md` or primary literature. The Oct 6 `main` README/CURRENT_STATE snapshot contains Round006 claims *corrected* by [open Round007 PR #5](https://github.com/femboy2112/FuckingRH/pull/5), especially Gamma-passivity, shifted-xi-ratio and negative-index assertions. [Open Round008 PR #6](https://github.com/femboy2112/FuckingRH/pull/6) adds scoped mixed-clock/Gamma coupling and localized-boundary no-gos. Neither PR was merged into this documentation branch. RH remains open.
+
 ## Canonical current layer
 
 - \`CURRENT_STATE.md\` — governing synthesis as of 2026-10-05.
