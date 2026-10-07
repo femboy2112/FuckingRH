@@ -16,7 +16,7 @@ from __future__ import annotations
 
 from math import gcd, lcm, log
 from sympy import (
-    I, Matrix, Symbol, symbols, simplify, expand, integrate, cos, sin, exp,
+    I, Matrix, Symbol, symbols, simplify, expand, integrate, cos, sin, exp, Rational,
 )
 
 
@@ -244,7 +244,7 @@ def verify_det3_cubic_tensor() -> None:
     H = a*K + b*L + c0*M0
 
     # Cubic leading term of log det_3(I+H)-log det_3(I-H).
-    phi3 = simplify(sp.Rational(2, 3) * (H**3).trace())
+    phi3 = simplify(Rational(2, 3) * (H**3).trace())
 
     # Vacuum gradient/Hessian vanish for a cubic potential.
     assert simplify(sp.diff(phi3, a).subs({a:0,b:0,c0:0})) == 0
