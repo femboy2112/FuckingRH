@@ -2641,3 +2641,219 @@ This is another local/global duality already implicit in the classical explicit 
 The point here is not priority.
 
 The point is that both halves of the completed zeta machinery now admit a **delta-atomic reading** compatible with the repository's causal/source language.
+
+
+---
+
+# Appendix F — Delta actualization and fractional Gamma propagation
+
+There is an even more direct delta/Gamma identity at the level of causal propagation.
+
+For \(\alpha>0\), the Riemann--Liouville fractional integral is
+
+\[
+\boxed{
+(I^\alpha f)(t)
+=
+\frac1{\Gamma(\alpha)}
+\int_0^t
+(t-u)^{\alpha-1}f(u)\,du.
+}
+\]
+
+Apply it to a Dirac impulse at the causal origin:
+
+\[
+\boxed{
+I^\alpha\delta_0
+=
+\frac{
+t_+^{\alpha-1}
+}{
+\Gamma(\alpha)
+}.
+}
+\]
+
+Thus Gamma is exactly the normalization turning one local impulse into an order-\(\alpha\) causal response.
+
+At
+
+\[
+\alpha=\frac12,
+\]
+
+\[
+\boxed{
+I^{1/2}\delta_0
+=
+\frac1{\sqrt{\pi t}}
+\qquad(t>0).
+}
+\]
+
+The critical Suzuki seam has
+
+\[
+K_{1/2}(t)
+\sim
+\sqrt2\,t^{-1/2}.
+\]
+
+Therefore its principal birth singularity is
+
+\[
+\boxed{
+K_{1/2}(t)
+\sim
+\sqrt{2\pi}\,
+I^{1/2}\delta_0.
+}
+\]
+
+The exact Suzuki kernel contains additional global/tempered structure, but its local ultraviolet singularity is literally a Gamma-normalized half-order delta response.
+
+## F1. Why Gamma normalization is load-bearing
+
+The Beta-Gamma identity gives
+
+\[
+\boxed{
+I^\alpha I^\beta
+=
+I^{\alpha+\beta}.
+}
+\]
+
+So Gamma is not an arbitrary coefficient.
+
+It is the normalization that makes continuous fractional order additive under composition.
+
+At half order,
+
+\[
+\boxed{
+I^{1/2}I^{1/2}
+=
+I^1.
+}
+\]
+
+This is the exact order-addition law behind the earlier \(45^\circ+45^\circ=90^\circ\) Fourier-phase observation.
+
+## F2. Tempered Gamma kernel
+
+Define
+
+\[
+\boxed{
+g_\alpha(t)
+=
+\frac{
+t^{\alpha-1}e^{-t}
+}{
+\Gamma(\alpha)
+}
+\,1_{t>0}.
+}
+\]
+
+Its Laplace transform is
+
+\[
+\boxed{
+\mathcal L g_\alpha(s)
+=
+(1+s)^{-\alpha}.
+}
+\]
+
+Hence
+
+\[
+\boxed{
+g_\alpha*g_\beta
+=
+g_{\alpha+\beta}.
+}
+\]
+
+The family \(g_\alpha\) is a convolution semigroup, and as
+
+\[
+\alpha\downarrow0,
+\]
+
+\[
+\boxed{
+g_\alpha
+\Rightarrow
+\delta_0
+}
+\]
+
+weakly.
+
+So another exact local/global statement is:
+
+\[
+\boxed{
+\delta_0
+=
+\text{zero-order causal atom},
+}
+\]
+
+\[
+\boxed{
+g_\alpha
+=
+\text{continuous Gamma-normalized actualization of order }\alpha.
+}
+\]
+
+Equivalently, \(g_\alpha\) is the impulse response of the fractional resolvent
+
+\[
+(1+\partial_t)^{-\alpha}.
+\]
+
+This gives a mathematically clean continuous-order model for the user's "dimensional actualization" intuition.
+
+## F3. Critical phase
+
+For the untempered fractional operator, the Fourier multiplier is
+
+\[
+(i\xi)^{-\alpha}.
+\]
+
+Thus the phase is
+
+\[
+-\frac{\pi\alpha}{2}\operatorname{sgn}\xi.
+\]
+
+At \(\alpha=1/2\),
+
+\[
+\boxed{
+\text{phase}=\mp\frac{\pi}{4}.
+}
+\]
+
+Two half-order compositions give a full-order phase
+
+\[
+\boxed{
+\mp\frac{\pi}{2}.
+}
+\]
+
+This is the precise content behind the earlier rotation/orthogonality intuition:
+
+- Gamma enforces fractional-order composition;
+- the complex fractional power supplies the phase rotation;
+- the critical half-order is exactly the \(45^\circ\) building block.
+
+No claim is made that this is physical spatial rotation.
