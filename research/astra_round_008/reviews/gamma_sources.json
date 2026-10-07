@@ -1,0 +1,64 @@
+{
+  "audit_date_utc": "2026-10-07",
+  "auditor": "r8_gamma_audit bounded same-model fork; not an independent truth witness",
+  "source_policy": "Primary formula reference DLMF; all operator, rank, coupling, and scope conclusions derived explicitly in the owned notes.",
+  "sources": [
+    {
+      "url": "https://dlmf.nist.gov/25.11",
+      "equations": ["25.11.1", "25.11.13", "25.11.18"],
+      "retrieval_refs": ["turn88view0", "turn92view0", "turn96view3"],
+      "verified_content": "Hurwitz series; value at zero; derivative at zero. DLMF states the derivative formula for a>0. Complex extension in the notes is by holomorphy, not an unstated source hypothesis.",
+      "applies_to": "Exact derivative of 2^(-w) zeta_H(w,s/2) and determinant normalization."
+    },
+    {
+      "url": "https://dlmf.nist.gov/5.2",
+      "equations": ["5.2.1", "5.2.2"],
+      "retrieval_refs": ["turn88view1", "turn96view2"],
+      "verified_content": "Euler integral Re(s)>0; Gamma simple poles and reciprocal-Gamma zeros; digamma logarithmic derivative and residues.",
+      "applies_to": "Log-coordinate change, exact Mellin normalization, divisor and finite-LTI pole-count audit."
+    },
+    {
+      "url": "https://dlmf.nist.gov/5.9",
+      "equations": ["5.9.16"],
+      "retrieval_refs": ["turn90view1", "turn92view2"],
+      "verified_content": "Convergent digamma difference integral.",
+      "applies_to": "Resolvent-difference formula and positive Gamma difference multiplier; no passive scalar digamma claim."
+    },
+    {
+      "url": "https://dlmf.nist.gov/18.18",
+      "equations": ["18.18.28"],
+      "retrieval_refs": ["turn88view2", "turn92view1"],
+      "verified_content": "Mehler Hermite generating kernel for |z|<1, with Hermite completeness statement on the same page.",
+      "applies_to": "Oscillator heat kernel. Carry/heat trace is derived by completing its Gaussian square, not asserted from the source."
+    },
+    {
+      "url": "https://dlmf.nist.gov/25.4",
+      "equations": ["functional equation and completed xi normalization"],
+      "retrieval_refs": ["turn96view0", "turn99view0", "turn99view1"],
+      "verified_content": "Classical reflection/completion formulas.",
+      "applies_to": "Elementary-divisor audit only, not an independent arithmetic spectral construction."
+    },
+    {
+      "url": "https://dlmf.nist.gov/25.10",
+      "retrieval_refs": ["turn96view1", "turn99view2"],
+      "verified_content": "Trivial-zero locations; no numerical nontrivial zeros used.",
+      "applies_to": "Scope of the local Gamma/trivial-zero divisor cancellation."
+    }
+  ],
+  "imported_side_claim_audit": [
+    {"claim": "Gamma ladder determinant constant", "verdict": "retained exactly"},
+    {"claim": "Rational counting-space affine action extends to continuous real affine action", "verdict": "false without the missing strong-continuity hypothesis"},
+    {"claim": "Real and p-adic half-density amplitudes are identical", "verdict": "false for pointwise amplitudes; equal specified vacuum overlaps proved"},
+    {"claim": "Bilateral log Gamma integral", "verdict": "retained only in Re(s)>0; continuation is a separate step"},
+    {"claim": "Centered chiral square removes Round007 degree debit", "verdict": "false; unitarily equivalent recentering preserves the debit"},
+    {"claim": "Finite small matrix impossible in every interpretation", "verdict": "not claimed; only fixed finite LTI linear realizations are excluded"},
+    {"claim": "Trivial zero and Gamma pole cancellation produces canonical contractible pairs", "verdict": "divisor identity retained, canonical differential unverified"}
+  ],
+  "reproduction": [
+    "python -m unittest tests.test_round008_gamma -v",
+    "python -m scripts.round008_gamma --output research/astra_round_008/evidence/gamma.json"
+  ],
+  "test_count_executed": 10,
+  "tests_exit_code": 0,
+  "uses_zero_ordinates": false
+}
