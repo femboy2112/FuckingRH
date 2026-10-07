@@ -377,6 +377,34 @@ def verify_finite_hybrid_characteristic():
                 # normalized at the origin
                 assert abs(phi_modes_sigma(0, M, sigma) * finite_euler_ratio(P, sigma, 0) - 1) < mp.mpf("1e-60")
 
+
+def trivial_zero_density_digamma(x, eps):
+    """Poisson-smoothed trivial-zero density from reciprocal Gamma log derivative."""
+    s = mp.mpc(x, eps)
+    logder = -mp.mpf("0.5") * mp.digamma(s / 2)
+    return -mp.im(logder) / mp.pi
+
+
+def trivial_zero_density_sum(x, eps, M):
+    x = mp.mpf(x)
+    eps = mp.mpf(eps)
+    return mp.fsum(
+        [
+            eps / (mp.pi * ((x + 2 * m) ** 2 + eps ** 2))
+            for m in range(M)
+        ]
+    )
+
+
+def verify_spectral_delta_microscope():
+    eps = mp.mpf("0.2")
+    for x in [-3, -1, 0, 1]:
+        exact = trivial_zero_density_digamma(x, eps)
+        p1 = trivial_zero_density_sum(x, eps, 200)
+        p2 = trivial_zero_density_sum(x, eps, 1000)
+        assert abs(exact - p2) < abs(exact - p1)
+        assert exact > 0
+
 def report():
     print("Critical Archimedean carrier:")
     print("  phi(t)=pi^{-it/2} Gamma(1/4+it/2)/Gamma(1/4)")
@@ -419,12 +447,14 @@ def main():
     verify_laguerre_jacobi_operator()
     verify_heat_trace_and_trivial_zeros()
     verify_finite_hybrid_characteristic()
+    verify_spectral_delta_microscope()
     report()
     print()
     print("Verified common probe kernel for continuous Gamma and discrete prime sources.")
     print("Verified Laguerre Jacobi spectral realization of the Gamma Dirac comb.")
     print("Verified Gamma heat trace, Bernoulli UV series, and finite trivial-zero preservation.")
     print("Verified finite prime+Gamma hybrid characteristic-function positivity.")
+    print("Verified reciprocal-Gamma Poisson-to-Dirac spectral microscope.")
     print("All Mellin/Dirac/Gamma controls passed.")
 
 
