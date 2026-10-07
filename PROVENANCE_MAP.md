@@ -1,3 +1,13 @@
+## Live 2026-10-07 claim-level provenance (governing this audit branch)
+
+The historical archive map below is preserved. For **current load-bearing mathematical claims**, use [the critical research provenance ledger](research/audits/2026-10-07/RH_CLAIM_PROVENANCE_LEDGER.md), not historical narrative alone. It records exact source versions/equation numbers, original derivation commits, corrected claims, mathematical priority, performed versus unperformed tests, third-party-audit status and open RH gates.
+
+The prior independent critical file `CUBE_ATOM_CRITICAL_AUDIT.md` has been preserved at [CUBE_ATOM_CRITICAL_AUDIT_IMPORTED.md](research/audits/2026-10-07/CUBE_ATOM_CRITICAL_AUDIT_IMPORTED.md), with its user-Library origin and **unverified original author identity** documented. Do not imply that Claude has independently reviewed the newer `LOG_BATHTUB_PRIME_SHIFT_BOUND.md` or `PRIME_POWER_RAY_TOEPLITZ.md`: no such direct critique is present in the examined repo. Claude's older [Round010 audit](research/claude_round_010/AUDIT_010.md) concerns other specified claims.
+
+New claims must follow the [claim provenance contract](research/audits/2026-10-07/RH_CLAIM_PROVENANCE_LEDGER.md#p1-provenance-rules--required-for-any-future-rh-claim) before promotion from conjectural/observed to proved-in-repo. The author shown by GitHub's connected account does not, by itself, establish intellectual authorship or peer review.
+
+---
+
 # PROVENANCE MAP
 
 This file records where the current RH program came from. Imported files are preserved verbatim where possible. A copied upstream file is evidence of our prior work/provenance, not an assertion that every sentence remains current.
