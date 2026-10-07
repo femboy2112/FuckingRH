@@ -271,13 +271,39 @@ More quantitatively, the \(k=1\) term gives
 =\Omega_p(N^{-2}).
 \]
 
-A discrete sine test vector in the fiber matrix, together with the exponentially decaying geometric \(r^k\) tail, gives
+A discrete sine test vector in the maximal fiber gives an **explicit upper bound**. Let
 
 \[
-\gamma_p(a)=O_p(N^{-2})
+v_j=\sqrt{\frac2{N+1}}\sin\frac{\pi j}{N+1},
+\qquad j=1,\dots,N,
 \]
 
-as \(N\to\infty\). Hence
+and extend the chain by zero to \(\mathbb Z\). Then
+
+\[
+\|v-S^k v\|_2
+\le k\|v-Sv\|_2,
+\qquad
+\|v-Sv\|_2^2=2\left(1-\cos\frac{\pi}{N+1}\right).
+\]
+
+Since
+
+\[
+\sum_{k\ge1}k^2r^k=\frac{r(1+r)}{(1-r)^3},
+\]
+
+the sharp Rayleigh infimum obeys
+
+\[
+\boxed{
+\gamma_p(a)\le
+2h\left(1-\cos\frac{\pi}{N+1}\right)
+\frac{r(1+r)}{(1-r)^3}.
+}
+\]
+
+In particular \(\gamma_p(a)=O_p(N^{-2})\) as \(N\to\infty\). Hence
 
 \[
 \boxed{
