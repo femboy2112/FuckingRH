@@ -1,3 +1,5 @@
+> **2026-10-07 wavefront/Hardy reconciliation:** [Activation-only no-go and Suzuki causal support](research/audits/2026-10-07/ACTIVATION_CAUSALITY_HARDY_PASSIVITY.md), [actual finite execution log](research/audits/2026-10-07/ACTIVATION_PASSIVITY_EXECUTION.md), and source-checked claims **PV-2026-010–012** in the [claim provenance ledger](research/audits/2026-10-07/RH_CLAIM_PROVENANCE_LEDGER.md). User-origin intuition and assistant-derived proof are attributed separately; this does not solve RH.
+
 > **Proof-gate reconciliation:** [CAUSAL_HARDY_RH_PROOF_GATES.md](research/audits/2026-10-07/CAUSAL_HARDY_RH_PROOF_GATES.md) separates the exact finite Markov/prime source from Suzuki's RH-strength all-ω Hardy innerness requirement, and prevents the older unitary/Gamma probability analogies from being used as a proof. [EXECUTION_LOG.md](research/audits/2026-10-07/EXECUTION_LOG.md) distinguishes actual finite execution from unexecuted repo/CI scripts. Use [the research claim template](docs/RESEARCH_PROVENANCE_TEMPLATE.md) for new results.
 
 ## Live 2026-10-07 claim-level provenance (governing this audit branch)
