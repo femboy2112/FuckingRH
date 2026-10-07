@@ -1,3 +1,5 @@
+> **Proof-gate reconciliation:** [CAUSAL_HARDY_RH_PROOF_GATES.md](research/audits/2026-10-07/CAUSAL_HARDY_RH_PROOF_GATES.md) separates the exact finite Markov/prime source from Suzuki's RH-strength all-ω Hardy innerness requirement, and prevents the older unitary/Gamma probability analogies from being used as a proof. [EXECUTION_LOG.md](research/audits/2026-10-07/EXECUTION_LOG.md) distinguishes actual finite execution from unexecuted repo/CI scripts. Use [the research claim template](docs/RESEARCH_PROVENANCE_TEMPLATE.md) for new results.
+
 ## Live 2026-10-07 claim-level provenance (governing this audit branch)
 
 The historical archive map below is preserved. For **current load-bearing mathematical claims**, use [the critical research provenance ledger](research/audits/2026-10-07/RH_CLAIM_PROVENANCE_LEDGER.md), not historical narrative alone. It records exact source versions/equation numbers, original derivation commits, corrected claims, mathematical priority, performed versus unperformed tests, third-party-audit status and open RH gates.
