@@ -1,3 +1,5 @@
+> **2026-10-07 quantitative upgrade:** The former 0.5-log eigenvalue lower bound in this note is now superseded by [LOG_BATHTUB_PRIME_SHIFT_BOUND.md](LOG_BATHTUB_PRIME_SHIFT_BOUND.md): `lambda_n(P_a) >= gamma + log(pi*n) - Ci(pi*n) - 1`, improved further by an explicit prime-power-ray Toeplitz floor in [PRIME_POWER_RAY_TOEPLITZ.md](PRIME_POWER_RAY_TOEPLITZ.md). Fixed-horizon Feshbach reduction remains exact; its all-horizon sign is UNVERIFIED.
+
 # Exact zero-extension Weil form, logarithmic spectral gap, and finite-horizon Feshbach theorem
 
 **Date:** 2026-10-07
