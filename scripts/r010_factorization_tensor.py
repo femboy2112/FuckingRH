@@ -19,10 +19,13 @@ This script shows that pattern IS the exact backbone of our machine:
      sign mu(d) = (-1)^{|S|};
  (3) the subset SIZE |S| = the omega-jet order = nu(n) (#distinct primes): the leading omega-power of
      prod(1-p^{-2omega}) is (2 omega)^{nu} prod log p (all primes chosen) -- this is Pillar-1 b_0^{(nu)};
- (4) it is the FLAT (tensor) multiplicative side: the expansion is exact, finite, multilinear = a tensor
-     product over independent prime channels; by UFD the prime log-displacements are independent, so the
-     cross-terms are pure Mobius inclusion-exclusion with NO resonance (Round-008 flatness, combinatorial
-     form). Hence the coupling that can carry RH is NOT inter-prime (flat) but Archimedean.
+ (4) for FIXED n it is a FINITE tensor over the primes p|n (distinct divisors => cross-terms are exact
+     Mobius inclusion-exclusion, nothing to cancel): RH-inert per-n bookkeeping, the combinatorial shadow
+     of Round-008 flatness. SCOPE CAVEAT: the UNRESTRICTED Euler product prod_{all p}(1-p^{-2omega}) =
+     1/zeta(2omega) carries every zero, so this is NOT a claim that the prime side of RH is flat. Its use:
+     each conductor coefficient b_omega(n) is a prime tensor, and the prime ramp P(t) (Part A) is a
+     monotone sign-definite sum with no internal cancellation, so the Psi=A-P positivity obstruction is
+     in the A-P balance -- it does NOT localize RH to the Archimedean term (Conrey-Li 2000).
 
 CREDIT: this is the standard Euler-product / Mobius / inclusion-exclusion structure (Dirichlet
 convolution; the CAR/Bost-Connes tensor-over-primes). RH IS OPEN; nothing here is a proof; no zeta zeros.
@@ -115,15 +118,18 @@ def main():
     direct = sp.expand(sp.prod([1 - P ** (-2 * w) for P in primesupp]))
     print("   prod_{p in {2,3,5}} (1 - p^{-2omega}) expands to 2^3=8 subset terms (signed by mu):")
     print("     ", direct)
-    print("   This is a TENSOR product over primes (each prime an independent 2-state channel).")
-    print("   By UFD the prime log-scales {log p} are Z-independent (Round 008): the cross terms do")
-    print("   not resonate -- they are exact finite inclusion-exclusion, RH-INERT (the flat side).")
-    print("   => In the one-block conductor coupling V, the prime factors are an independent tensor;")
-    print("      the ONLY channel that can carry RH positivity is the Archimedean block (Part A).")
+    print("   For FIXED n this is a FINITE tensor over the primes p|n (distinct divisors d => cross terms")
+    print("   are exact Mobius inclusion-exclusion, nothing to cancel): RH-inert per-n bookkeeping.")
+    print("   SCOPE CAVEAT: the UNRESTRICTED Euler product prod_{all p}(1-p^{-2omega}) = 1/zeta(2omega)")
+    print("   carries EVERY zero -- so 'flat' is per-n finite bookkeeping, NOT a claim that the prime")
+    print("   side of RH is analytically trivial. The analytic content returns on summing over all n.")
+    print("   => Use: each conductor coefficient b_omega(n) factors into a prime tensor. The prime ramp")
+    print("      P(t)=sum Lambda(n)/sqrt n (t-log n) is a monotone sign-definite sum (NOT a tensor), so")
+    print("      the Psi=A-P positivity obstruction is in the A-P balance, not the prime combinatorics.")
 
-    print("\nALL CHECKS PASSED.  The factorization pattern = Euler/Mobius tensor skeleton = the flat")
-    print("multiplicative side (RH-inert). Its role: it factors the prime channels so the attack can")
-    print("isolate the Archimedean coupling. RH remains open. No zeta zeros used.")
+    print("\nALL CHECKS PASSED.  The factorization pattern = Euler/Mobius tensor skeleton: exact FINITE")
+    print("per-n bookkeeping (RH-inert), scope-caveated (full Euler product = 1/zeta(2omega) carries all")
+    print("zeros). It does NOT localize RH to the Archimedean term. RH remains open. No zeta zeros used.")
 
 
 if __name__ == "__main__":

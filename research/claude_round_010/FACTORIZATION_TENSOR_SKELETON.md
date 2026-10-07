@@ -48,20 +48,30 @@ verified for `n=6,12,30`. Choosing *all* `ν` primes at leading order is the pur
 `|S|=ν`, which is Pillar-1's `b_0^{(\nu)}(n)=\nu!\,2^{\nu}\prod\log p/\sqrt n`. So the factorization
 grading, the Möbius grading, and the ω-jet grading are **one and the same**.
 
-## 4. This is the flat (tensor) side — RH-inert — and what it buys the attack
+## 4. This is finite per-`n` tensor bookkeeping — RH-inert — and what it buys the attack
 
-The expansion is a **tensor product over primes**: each prime is an independent 2-state channel
-`{1, −p^{-2\omega}}`, and `\prod_p(1-p^{-2\omega})` is their tensor. By unique factorization the prime
-log-scales `\{\log p\}` are `ℤ`-independent (Round 008), so **the cross-terms do not resonate** — they
-are exact, finite Möbius inclusion–exclusion, carrying no analytic content. This is the combinatorial
-form of the Round-008 flatness theorem: *the multiplicative side is flat.*
+For a **fixed `n`**, `\prod_{p\mid n}(1-p^{-2\omega})` is a **finite tensor** over the primes dividing
+`n`: each such prime is an independent 2-state factor `{1, −p^{-2\omega}}`, and because the finitely many
+squarefree divisors `d\mid\mathrm{rad}(n)` are distinct, the cross-terms are exact Möbius
+inclusion–exclusion with nothing to cancel — RH-inert finite bookkeeping. This is the combinatorial,
+per-`n` shadow of the Round-008 flatness observation.
 
-So the honest answer to "can we exploit the factorization pattern?": **yes, as exact bookkeeping, but it
-is RH-inert.** Its real use is structural — it **factors the one-block conductor coupling `V` into an
-independent tensor of flat prime channels**, which means the only channel that can carry the RH
-positivity is the **Archimedean** block. That isolation is exactly what Part A (the attack on `Ψ≥0`)
-needs: the prime side is a known, flat tensor; the fight is the Archimedean reserve dominating the prime
-impulse train.
+**Crucial caveat (scope).** This flatness is *per-`n` and finite*. The **unrestricted** Euler product
+over *all* primes is
+$$\prod_{p}\big(1-p^{-2\omega}\big)=\frac{1}{\zeta(2\omega)},$$
+which carries **every** nontrivial zero — the exact *opposite* of "no analytic content." So "the
+multiplicative *bookkeeping* is flat" is a statement about each individual finite conductor coefficient,
+**not** a claim that the prime side of RH is analytically trivial. The analytic content reappears the
+instant one sums over all `n` (that sum is `\zeta`).
+
+So the honest answer to "can we exploit the factorization pattern?": **yes, as exact finite
+bookkeeping** — it factors each conductor coefficient `b_ω(n)` into an independent prime tensor. Its use
+for Part A is narrow and precise: the **prime ramp `P(t)` is a monotone sum of nonnegative terms** (it is
+*not* itself a tensor — that is the per-`n` coefficient `b_ω(n)`), with **no internal sign cancellation**.
+So the positivity obstruction in `Ψ=A−P` cannot come from re-organizing the primes; it lives in the
+**`A−P` balance** itself (both grow like `4\sqrt X` and must cancel to a nonnegative remainder — Part A's
+"never split the block"). This does **not** localize RH to the Archimedean term alone: `Ψ≥0` is a *joint*
+`A−P` property, and **Conrey–Li (2000)** refuted the naive de Branges positivity route to such remainders.
 
 ## 5. Ledger
 
@@ -70,11 +80,14 @@ impulse train.
   `\prod(p_ia_i+b_i)=\sum_S(\prod_{S}p_ia_i)(\prod_{\bar S}b_i)` (verified vs hand expansion, `N=2,3`).
   Same structure = `b_\omega(n)=n^{\omega-1/2}\prod(1-p^{-2\omega})=n^{\omega-1/2}\sum_{d|\mathrm{rad}\,n}\mu(d)d^{-2\omega}`
   (verified `n=6,12,30,36`); subset size `|S|` = ω-jet order = `\nu(n)`, leading `(2\omega)^\nu\prod\log p`
-  = `b_0^{(\nu)}` (verified). It is a tensor over independent prime channels; UFD ⟹ cross-terms are
-  non-resonant Möbius inclusion–exclusion = the flat multiplicative side (Round-008 flatness, combinatorial
-  form), RH-inert. Use: factors the conductor coupling `V` into a flat prime tensor, isolating the
-  Archimedean block as the sole RH-bearing channel (feeds Part A). Credit: Euler product / Möbius /
-  Dirichlet convolution / Bost–Connes tensor-over-primes (standard). `scripts/r010_factorization_tensor.py`.
-  No RH progress.
+  = `b_0^{(\nu)}` (verified). For fixed `n` it is a finite tensor over the primes `p|n` (distinct
+  divisors ⟹ non-resonant Möbius inclusion–exclusion), RH-inert per-`n` bookkeeping — **but the
+  unrestricted Euler product `\prod_{\text{all }p}(1-p^{-2\omega})=1/\zeta(2\omega)` carries every zero, so
+  this is NOT a claim that the prime side of RH is flat** (scope caveat). Use: factors each conductor
+  coefficient `b_\omega(n)` into a prime tensor; and the prime ramp `P(t)` is a monotone sign-definite sum
+  (*not* a tensor), so the `Ψ=A−P` positivity obstruction lies in the `A−P` balance, not the prime
+  combinatorics (feeds Part A). Does **not** localize RH to the Archimedean term; Conrey–Li 2000 refuted
+  the de Branges positivity route. Credit: Euler product / Möbius / Dirichlet convolution / Bost–Connes
+  tensor-over-primes (standard). `scripts/r010_factorization_tensor.py`. No RH progress.
 
 RH remains open.
