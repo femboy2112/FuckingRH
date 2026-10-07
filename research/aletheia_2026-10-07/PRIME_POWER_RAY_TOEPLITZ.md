@@ -1,3 +1,5 @@
+> **2026-10-07 provenance:** The AR(1)/Kac–Murdock–Szegő Toeplitz covariance `(r^{|i-j|})` and tridiagonal precision matrix are **classical**, not an RH discovery. This finite Suzuki prime-ray application first entered at `2e18621f6d3e802034f65cc8b937862811dfc58f` and was independently checked numerically for the stated finite cases. Correctly distinguish exact finite gap from the unresolved collective cross-prime/Gamma form. [Claim ledger PV-2026-004](../audits/2026-10-07/RH_CLAIM_PROVENANCE_LEDGER.md).
+
 # Exact prime-power ray compression: AR(1) Toeplitz covariance and tridiagonal inverse
 
 **Date:** 2026-10-07  
