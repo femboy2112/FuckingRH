@@ -251,6 +251,48 @@ B_n(1-\sigma/2)
 
 This is the same Bernoulli generating mechanism appearing independently in the actualization-jet program.
 
+
+
+### 17. Reciprocal-Gamma spectral delta microscope
+
+For
+
+\[
+F(s)=1/\Gamma(s/2),
+\]
+
+\[
+-\frac1\pi\Im\frac{F'}F(x+i0)
+=
+\sum_{m\ge0}\delta(x+2m)
+\]
+
+distributionally. At finite \(\varepsilon\), the right side is the Poisson/Lorentzian-smoothed trivial-zero comb.
+
+### 18. Critical seam as fractional delta response
+
+\[
+I^\alpha\delta_0
+=
+t_+^{\alpha-1}/\Gamma(\alpha).
+\]
+
+Hence
+
+\[
+I^{1/2}\delta_0
+=
+1/\sqrt{\pi t},
+\]
+
+while the critical Suzuki seam satisfies
+
+\[
+K_{1/2}(t)\sim\sqrt2\,t^{-1/2}.
+\]
+
+So the seam's principal singularity is a scaled Gamma-normalized half-order response to one Dirac actualization.
+
 ## Finite positivity theorem
 
 For finite \(P,M\) and every \(\sigma>0\),
