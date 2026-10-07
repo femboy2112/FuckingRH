@@ -755,3 +755,263 @@ But the object deserving the name curvature is
 \]
 
 The next task is to derive that first plaquette holonomy from the existing critical finite system.
+
+
+## 19. Critical det3 as a Hessian-geometry candidate
+
+The critical endpoint already supplies a canonical positive scalar quantity
+
+\[
+m_3(H)
+=
+e^{2\tau_1(H)}
+\frac{\det_3(I+H)}{\det_3(I-H)}
+\]
+
+for a self-adjoint strict contraction \(H\in S_3\).
+
+Remove the linear diagonal counterterm:
+
+\[
+\Phi(H)
+=
+\log m_3(H)-2\tau_1(H).
+\]
+
+Using the definition of the third regularized determinant,
+
+\[
+\boxed{
+\Phi(H)
+=
+\operatorname{Tr}
+\left[
+\log(I+H)-\log(I-H)-2H
+\right].
+}
+\]
+
+For \(\|H\|<1\),
+
+\[
+\boxed{
+\Phi(H)
+=
+2\sum_{r\ge1}
+\frac{\operatorname{Tr}H^{2r+1}}{2r+1}.
+}
+\]
+
+This expansion is well matched to the critical Schatten threshold because the first term is cubic:
+
+\[
+\boxed{
+\Phi(H)
+=
+\frac23\operatorname{Tr}H^3
++
+\frac25\operatorname{Tr}H^5
++\cdots.
+}
+\]
+
+The first-order counterterm is absent from every second and higher derivative, and the quadratic det3 counterterms cancel in the ratio.
+
+Therefore the nonlinear interaction geometry is automatically insensitive to the already-understood linear trace renormalization.
+
+### Vacuum derivative structure
+
+At \(H=0\),
+
+\[
+\boxed{
+D\Phi_0=0,
+\qquad
+D^2\Phi_0=0.
+}
+\]
+
+The first nonzero multilinear tensor is cubic:
+
+\[
+\boxed{
+D^3\Phi_0[K,L,M]
+=
+2\operatorname{Tr}(KLM+KML).
+}
+\]
+
+For self-adjoint directions this is
+
+\[
+4\,\operatorname{Re}\operatorname{Tr}(KLM).
+\]
+
+Thus the first globally regularized interaction tensor at the critical endpoint is third order.
+
+This matches the analytic fact that the finite critical Hankel operator is naturally \(S_3\) but not \(S_2\).
+
+### The first background actualization turns on the Hessian
+
+Let
+
+\[
+H(\theta)
+=
+H_0+\sum_i\theta_iK_i
+\]
+
+be a finite event-coupling family.
+
+Define
+
+\[
+\boxed{
+g_{ij}(\theta)
+=
+\partial_i\partial_j\Phi(H(\theta)).
+}
+\]
+
+Near the vacuum,
+
+\[
+\boxed{
+g_{ij}
+=
+2\operatorname{Tr}
+\left[
+H_0(K_iK_j+K_jK_i)
+\right]
++
+O(\|H_0\|^3).
+}
+\]
+
+So the Hessian metric vanishes at the empty vacuum but is switched on linearly by a nonzero background actualization.
+
+This is a precise mathematical version of:
+
+\[
+\boxed{
+\text{the first domino creates the local geometry through which later dominoes interact.}
+}
+\]
+
+Whether this Hessian is nondegenerate and what signature it has must be checked on the actual arithmetic event directions; it is not assumed positive.
+
+## 20. Why the derivative chain is literally GR-shaped here
+
+Whenever the Hessian matrix
+
+\[
+g_{ij}=\partial_i\partial_j\Phi
+\]
+
+is nondegenerate, it defines a pseudo-Riemannian Hessian metric on event-coupling space.
+
+In affine coupling coordinates, the Levi-Civita Christoffel tensor of the first kind is
+
+\[
+\boxed{
+\Gamma_{ijk}
+=
+\frac12\Phi_{ijk}.
+}
+\]
+
+A classical fact of Hessian geometry is that the Riemann curvature depends only on the inverse Hessian and the **third derivatives** of the potential; the fourth-derivative terms cancel.
+
+Schematically, up to the chosen index/sign convention,
+
+\[
+\boxed{
+R
+\sim
+g^{-1}
+(\Phi^{(3)}\Phi^{(3)}-\Phi^{(3)}\Phi^{(3)}).
+}
+\]
+
+So the chain becomes:
+
+\[
+\boxed{
+\Phi
+\overset{2\text{ derivatives}}{\longrightarrow}
+g
+\overset{3\text{ derivatives}}{\longrightarrow}
+\Gamma
+\overset{\Gamma^2}{\longrightarrow}
+R.
+}
+\]
+
+This is not merely an analogy to polynomial approximation. It is an actual differential-geometric mechanism.
+
+The critical det3 potential is therefore a concrete candidate for the scalar generating function from which a GR-shaped geometry on finite arithmetic event-coupling space could be derived.
+
+### Boundary
+
+The existence of this Hessian geometry does not imply that it is the physically/proof-relevant arithmetic geometry.
+
+The next tests are mandatory:
+
+1. event directions \(K_i\) must be defined canonically from the critical conductor/carry decomposition;
+2. \(g_{ij}\) must be nondegenerate on a meaningful finite sector;
+3. its signature must be characterized;
+4. its curvature must be mutation-sensitive to the genuine arithmetic source;
+5. chronology and Archimedean ablations must change it in the predicted way;
+6. its completed infinite-horizon limit must map to Suzuki/Weil rather than merely producing an interesting finite metric.
+
+If those tests fail, this Hessian geometry is mathematically real but RH-inert.
+
+## 21. Refined conjecture
+
+There are now two complementary curvature candidates:
+
+### Connection curvature
+
+\[
+\mathcal H_{pq}
+=
+T_{q\to p}^{-1}T_{p\to q}.
+\]
+
+This measures order-dependent transport around arithmetic plaquettes.
+
+### Hessian curvature
+
+\[
+g_{ij}
+=
+\partial_i\partial_j\Phi,
+\qquad
+\Phi=\log m_3-2\tau_1.
+\]
+
+This measures the nonlinear susceptibility of the renormalized critical determinant to event actualizations.
+
+The decisive question is whether these are two representations of the same geometry:
+
+\[
+\boxed{
+\text{plaquette holonomy curvature}
+\stackrel{?}{=}
+\text{Levi-Civita curvature of the det3 Hessian potential}
+}
+\]
+
+after the correct finite event coordinates and Archimedean completion are installed.
+
+If yes, the program would have:
+
+- causal cones from the parity Dirac system;
+- a Lorentzian SU(1,1) connection;
+- a scalar generating potential from det3;
+- a metric from second derivatives;
+- a Levi-Civita connection from third derivatives;
+- curvature from loop holonomy;
+- and an independently specified infinite completion target.
+
+That is the first genuinely GR-shaped package produced by the RH machinery rather than imposed on it.
