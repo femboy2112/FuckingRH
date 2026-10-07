@@ -1659,3 +1659,214 @@ The log-Gamma infinite-divisibility and exponential-series representation are es
 At the critical normalization, the two exact source primitives are now in one coordinate system.
 
 That is the real gain of this round.
+
+
+---
+
+# Appendix A — Gamma sum/product operator duality
+
+The finite Dirac-comb construction has a canonical self-adjoint matrix realization.
+
+Let
+
+\[
+a=\frac14,
+\qquad
+\alpha=a-1=-\frac34.
+\]
+
+Consider the orthonormal generalized-Laguerre system for the normalized measure
+
+\[
+\boxed{
+d\mu_a(x)
+=
+\frac{x^{a-1}e^{-x}}{\Gamma(a)}\,dx.
+}
+\]
+
+Multiplication by \(x\) is represented in that orthogonal-polynomial basis by a Jacobi operator \(J_a\).
+
+Its finite \(N\times N\) truncation has diagonal
+
+\[
+\boxed{
+(J_N)_{nn}=2n+a
+}
+\]
+
+and off-diagonal
+
+\[
+\boxed{
+(J_N)_{n,n+1}
+=
+\sqrt{(n+1)(n+a)}.
+}
+\]
+
+For \(a=1/4\),
+
+\[
+(J_N)_{nn}=2n+\frac14,
+\]
+
+\[
+(J_N)_{n,n+1}
+=
+\sqrt{(n+1)(n+\tfrac14)}.
+\]
+
+The eigenvalues of \(J_N\) are exactly the generalized Gauss-Laguerre nodes, and the vacuum spectral weights
+
+\[
+\Gamma(a)|\langle e_0,v_j\rangle|^2
+\]
+
+are exactly the Gauss-Laguerre quadrature weights.
+
+Therefore
+
+\[
+\boxed{
+\langle e_0,J_N^k e_0\rangle
+=
+(a)_k
+=
+\frac{\Gamma(a+k)}{\Gamma(a)}
+}
+\]
+
+for
+
+\[
+k=0,\ldots,2N-1.
+\]
+
+Thus the positive Dirac-comb Gamma approximation is not merely a numerical quadrature. It is the finite spectral measure of a positive self-adjoint tridiagonal operator.
+
+In the infinite spectral representation,
+
+\[
+\boxed{
+\frac{\Gamma(a+z)}{\Gamma(a)}
+=
+\langle e_0,J_a^z e_0\rangle
+}
+\]
+
+whenever the fractional moment exists.
+
+On the other hand, define the diagonal ladder
+
+\[
+D_a
+=
+\operatorname{diag}
+(a,a+1,a+2,\ldots).
+\]
+
+Then the shifted Weierstrass product gives
+
+\[
+\boxed{
+\frac{\Gamma(a+z)}{\Gamma(a)}
+=
+e^{z\psi(a)}
+\det_2(I+zD_a^{-1})^{-1}.
+}
+\]
+
+So the same Gamma ratio has two canonical operator avatars:
+
+\[
+\boxed{
+\text{vacuum fractional moment of a self-adjoint Jacobi operator}
+}
+\]
+
+and
+
+\[
+\boxed{
+\text{inverse regularized determinant of a diagonal mode ladder}.
+}
+\]
+
+At critical normalization \(z=w/2\), the diagonal ladder rescales to
+
+\[
+2D_{1/4}
+=
+\operatorname{diag}
+\left(
+\frac12,\frac52,\frac92,\ldots
+\right),
+\]
+
+which is exactly the free inverse-SUCC Gamma ladder already isolated in the repository.
+
+This is a strong independent triangulation:
+
+- the Jacobi picture is a **sum/moment/spectral-measure** realization;
+- the diagonal picture is a **product/cumulant/regularized-determinant** realization.
+
+A finite Gamma model should ideally be tested in both bases.
+
+## A1. Finite duality test
+
+For finite \(N\), define the Jacobi approximation
+
+\[
+G_N^{\rm Jac}(t)
+=
+\pi^{-it/2}
+\langle e_0,J_N^{it/2}e_0\rangle.
+\]
+
+Define independently the diagonal-mode approximation
+
+\[
+G_N^{\rm det}(t)
+=
+e^{itb}
+\prod_{m=0}^{N-1}
+\frac{e^{it/\lambda_m}}{1+it/\lambda_m}.
+\]
+
+They preserve different exact data at finite \(N\):
+
+### Jacobi model
+
+- positive self-adjoint matrix;
+- positive vacuum spectral measure;
+- ordinary moments exact through degree \(2N-1\).
+
+### det2 model
+
+- exact first \(N\) inverse-Gamma trivial zeros;
+- no real-axis zeros of the Gamma carrier;
+- exact finite unitary scattering phase;
+- spectral cumulants from the inverse-SUCC ladder.
+
+Agreement of these two independent finiteizations as \(N\to\infty\) is a valuable non-RH-specific calibration test.
+
+## A2. Research opportunity
+
+The arithmetic side already has canonical finite conductor matrices.
+
+The Jacobi Gamma model now supplies a canonical finite self-adjoint Archimedean matrix **without invoking the infinite Gamma function as a black box**.
+
+A next finite-system experiment can therefore couple
+
+\[
+\boxed{
+\text{finite arithmetic conductor operator}
+\quad\text{to}\quad
+J_N
+}
+\]
+
+and compare the resulting boundary response with the independent coupling to the diagonal det2 Gamma ladder.
+
+If both constructions induce the same completed finite response after an explicitly derived intertwiner, that would be a materially stronger bridge than numerical agreement with Gamma alone.
