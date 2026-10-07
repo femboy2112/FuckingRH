@@ -106,6 +106,42 @@ def coeff(A, sigma):
     return simplify((sigma * A).trace() / 2)
 
 
+def verify_su11_transport() -> None:
+    """The parity transfer generator is sigma3-skew-Hermitian: SU(1,1)-type."""
+    s1, s2, s3 = pauli()
+    z, mu = symbols("z mu", real=True)
+    M = I*z*s3 + mu*s1
+    assert simplify(M.conjugate().T*s3 + s3*M) == Matrix.zeros(2)
+    assert simplify(M.trace()) == 0
+
+
+def support_height(n: int) -> int:
+    """Least X such that n divides lcm(1,...,X)."""
+    x = n
+    best = 1
+    p = 2
+    while p*p <= x:
+        if x % p == 0:
+            pk = 1
+            while x % p == 0:
+                x //= p
+                pk *= p
+            best = max(best, pk)
+        p += 1
+    if x > 1:
+        best = max(best, x)
+    return best
+
+
+def verify_support_event_lag(N: int = 500) -> None:
+    """support time <= event time, equality iff n is a prime power."""
+    for n in range(2, N+1):
+        h = support_height(n)
+        assert h <= n
+        equal = (h == n)
+        assert equal == (prime_power_base(n) is not None)
+
+
 def verify_principal_cone() -> None:
     """Mass and similarity gauges do not alter the characteristic cone."""
     s1, s2, s3 = pauli()
@@ -204,6 +240,8 @@ def main() -> None:
     assert [q for q, _, _ in events[:len(expected)]] == expected
 
     verify_flat_refinement()
+    verify_su11_transport()
+    verify_support_event_lag()
     verify_principal_cone()
     verify_interaction_picture()
     magnus_integrands()
@@ -214,6 +252,8 @@ def main() -> None:
     print("  " + ", ".join(str(q) for q, _, _ in events))
     print("Verified: least-unsupported evolution fires prime powers only.")
     print("Verified: bare LCM refinement plaquettes are flat.")
+    print("Verified: parity transfer is SU(1,1)-type (sigma3 metric preserving).")
+    print("Verified: support time equals event time iff n is a prime power.")
     print("Verified: Suzuki parity principal cone is xi_A^2-xi_X^2=0.")
     print("Verified: similarity gauges leave that cone unchanged.")
     print("Verified: Ω1/Ω2/Ω3 expose P0/P1/P2-type moment hierarchy + ordered correlations.")
