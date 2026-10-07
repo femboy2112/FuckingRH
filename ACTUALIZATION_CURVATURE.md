@@ -354,3 +354,404 @@ F_{pq}
 \]
 
 This is the precise mathematical location for "the first actualization changes how the next one acts."
+
+
+## 9. Exact retarded influence of one event
+
+The critical driven Suzuki realization has
+
+\[
+u(t)=\sum_{n\ge1}\frac{\varphi(n)}n\,\delta(t-\log n),
+\]
+
+\[
+\dot x_0=u,
+\qquad
+\dot x_m=-2mx_m+u.
+\]
+
+An event \(n\) contributes for \(t\ge\log n\)
+
+\[
+\boxed{
+\delta x_0^{(n)}(t)=\frac{\varphi(n)}n
+}
+\]
+
+and
+
+\[
+\boxed{
+\delta x_m^{(n)}(t)
+=
+\frac{\varphi(n)}n
+e^{-2m(t-\log n)}.
+}
+\]
+
+Thus every actualization leaves one persistent memory component plus a tower of decaying memories.
+
+Its scalar response is
+
+\[
+\delta y_n(t)
+=
+\frac{\varphi(n)}nK_{1/2}(t-\log n).
+\]
+
+This is an exact mode-by-mode answer to how strongly an early domino remains in the future state.
+
+## 10. Harmonic undertones and polynomial jets
+
+Remove free propagation by writing
+
+\[
+V(A)=e^{izA\sigma_3}W(A).
+\]
+
+Then
+
+\[
+\partial_AW
+=
+\mu(A)
+e^{-izA\sigma_3}\sigma_1e^{izA\sigma_3}
+W.
+\]
+
+Exactly,
+
+\[
+\boxed{
+e^{-izA\sigma_3}\sigma_1e^{izA\sigma_3}
+=
+\cos(2zA)\sigma_1+\sin(2zA)\sigma_2.
+}
+\]
+
+Therefore first-order response is controlled by
+
+\[
+\boxed{
+\widehat\mu_T(z)
+=
+\int_0^T\mu(A)e^{2izA}\,dA.
+}
+\]
+
+Its Taylor derivatives are
+
+\[
+\boxed{
+\widehat\mu_T^{(k)}(0)
+=
+(2i)^k\int_0^T A^k\mu(A)\,dA.
+}
+\]
+
+So the derivative chain is literally the polynomial moment chain of the finite actualization field.
+
+On a finite interval, all moments determine a finite signed measure uniquely because polynomials are dense in continuous functions.
+
+Hence
+
+\[
+\boxed{
+\text{the complete finite jet tower reconstructs the finite actualization profile.}
+}
+\]
+
+The difficult step is not finite reconstruction. It is the completed \(T\to\infty\) limit.
+
+## 11. Magnus hierarchy: moments plus connected history
+
+Write
+
+\[
+T(T,z)=e^{\Omega(T,z)}.
+\]
+
+The first term is
+
+\[
+\Omega_1
+=
+izT\sigma_3
++
+\sigma_1\int_0^T\mu(A)\,dA.
+\]
+
+The basic commutator is
+
+\[
+\boxed{
+[M(A_1),M(A_2)]
+=
+2z(\mu(A_1)-\mu(A_2))\sigma_2.
+}
+\]
+
+Therefore
+
+\[
+\boxed{
+\Omega_2
+=
+z\sigma_2
+\int_0^T(2A-T)\mu(A)\,dA.
+}
+\]
+
+The linear-in-\(\mu\) part of the next level is
+
+\[
+\boxed{
+\Omega_3^{\rm lin}
+=
+-\frac{z^2T^2}{3}\sigma_1
+\int_0^T
+P_2\!\left(\frac{2A}{T}-1\right)
+\mu(A)\,dA.
+}
+\]
+
+The remaining third-order contribution contains genuine ordered quadratic history.
+
+So successive levels separate
+
+\[
+\text{one-point polynomial jets}
+\]
+
+from
+
+\[
+\text{connected chronological interactions}.
+\]
+
+This is the operator analogue of the distinction between moments and cumulants.
+
+## 12. Bernoulli-polynomial jet theorem
+
+Introduce a bookkeeping parameter:
+
+\[
+M_\varepsilon(A)=A_0+\varepsilon A_1(A),
+\]
+
+with
+
+\[
+A_0=iz\sigma_3,
+\qquad
+A_1(A)=\mu(A)\sigma_1.
+\]
+
+Let
+
+\[
+\Omega_\varepsilon(T)=\log T_\varepsilon(T).
+\]
+
+Linearizing the logarithm of the transfer around the free connection gives
+
+\[
+\delta\Omega
+=
+\frac{\operatorname{ad}_{TA_0}}
+{1-e^{-\operatorname{ad}_{TA_0}}}
+\int_0^T
+e^{-A\operatorname{ad}_{A_0}}
+A_1(A)\,dA.
+\]
+
+Using the Bernoulli-polynomial generating function
+
+\[
+\frac{x e^{(1-s)x}}{e^x-1}
+=
+\sum_{n\ge0}B_n(1-s)\frac{x^n}{n!},
+\]
+
+one obtains
+
+\[
+\boxed{
+\delta\Omega(T,z)
+=
+\sum_{n\ge0}
+\frac{T^n}{n!}
+\operatorname{ad}_{A_0}^{\,n}(\sigma_1)
+\int_0^T
+B_n\!\left(1-\frac AT\right)\mu(A)\,dA.
+}
+\]
+
+This is the exact finite-horizon realization of the first/second/third/... polynomial-derivative intuition at linear response.
+
+The first levels are constant, centered-linear, and centered-quadratic polynomial probes of the actualization field.
+
+The usual local-invertibility and branch caveats for the matrix logarithm apply.
+
+## 13. What "geodesic" can mean here
+
+The bare support lattice already has a path-independent logarithmic distance.
+
+The greedy prime-power actualization path is therefore best described as a canonical causal geodesic selected by the smallest unresolved horizon, not as a unique shortest path.
+
+A stronger geodesic principle becomes meaningful only after a dressed state metric is derived.
+
+If each new physical constraint is imposed by orthogonal least-change projection, then local minimal motion is exact.
+
+If those physical projections fail to commute, neighboring minimal paths separate.
+
+That separation is the discrete analogue of geodesic deviation.
+
+For a state \(v\), define
+
+\[
+v_{pq}
+=
+T_q(\alpha+e_p)T_p(\alpha)v,
+\]
+
+\[
+v_{qp}
+=
+T_p(\alpha+e_q)T_q(\alpha)v.
+\]
+
+Then
+
+\[
+\boxed{
+D_{pq}(\alpha;v)
+=
+v_{pq}-v_{qp}
+}
+\]
+
+is the finite path-deviation probe.
+
+Bare CRT gives \(D_{pq}=0\).
+
+Any nonzero value must survive gauge, chronology, and completion controls before it is interpreted as arithmetic curvature.
+
+## 14. GR-shaped interpretation that survives audit
+
+The defensible chain is
+
+\[
+\boxed{
+\text{causal support order}
+\to
+\text{local connection jets}
+\to
+\text{nested history commutators}
+\to
+\text{plaquette holonomy}
+\to
+\text{completed infinite curvature}.
+}
+\]
+
+This is structurally reminiscent of causal-set and Regge/discrete-holonomy ideas: finite causal cells first, loop curvature second, continuum reconstruction afterward.
+
+No physical equivalence is asserted.
+
+A \(1+1\) metric may only be introduced after the same arithmetic transport independently determines both the characteristic frame and a volume/conformal factor. The present flat Suzuki cone does not yet provide that full metric.
+
+## 15. Infinite actualization target
+
+Earlier rounds prove that the naked critical prime bulk diverges and requires signed Archimedean completion.
+
+Therefore the correct global object cannot be a raw pointwise sum.
+
+It must be a completed limit such as
+
+\[
+\boxed{
+\mathscr R_\infty
+=
+\lim_{X\to\infty}
+\mathscr R_X^{\rm comp}
+}
+\]
+
+in a declared topology.
+
+Possible proof-bearing choices include:
+
+- weak/distributional convergence of matrix coefficients;
+- strong-resolvent convergence of derived connection operators;
+- kernel convergence strong enough to preserve the RH-relevant sign.
+
+The ambitious target is an exact identification with the Suzuki/Weil kernel or quadratic form.
+
+That identification is currently UNVERIFIED.
+
+## 16. Next discriminating probe
+
+For a small support state \(\alpha\) and two prime directions \(p,q\):
+
+1. construct the actual finite dressed edge transports from the critical carry/Hankel machinery;
+2. compare \(p\to q\) with \(q\to p\);
+3. verify bare pullback is exactly flat;
+4. test whether physical dressing gives nontrivial plaquette holonomy;
+5. project the residual into exact-conductor sectors;
+6. ablate chronology and the Archimedean channel;
+7. compare any surviving signed residual with the Suzuki critical carry term and Dirac mass.
+
+This is the first probe that can establish whether the curvature language is load-bearing.
+
+## 17. Claim ledger
+
+**DISCLOSED**
+
+- actualization/divisibility lattice;
+- support-height formula;
+- support/event lag and prime-power equality criterion;
+- minimal prime-power domino theorem;
+- von-Mangoldt greedy birth law;
+- bare logarithmic path-independence;
+- bare-flat LCM plaquettes;
+- flat Suzuki principal cone;
+- scalar-mass/similarity no-go for cone bending;
+- SU(1,1)-type parity transfer;
+- exact retarded event influence;
+- finite-horizon moment completeness;
+- first Magnus moment kernels;
+- Bernoulli-polynomial linear-response formula.
+
+**CONJECTURED / UNVERIFIED**
+
+- nonzero dressed arithmetic plaquette holonomy;
+- a multidirectional connection whose pullback is the critical Suzuki connection;
+- completed finite curvature converging to Suzuki/Weil;
+- a canonical metric or zweibein emerging from the same arithmetic transport.
+
+**BLOCKED shortcuts**
+
+- bare support growth as curvature;
+- bare CRT synchronization as curvature;
+- scalar \(\mu(A)\) alone curving the light cone;
+- calling one-dimensional path ordering a curvature two-form;
+- imposing a GR metric by analogy rather than derivation.
+
+## 18. House result
+
+The first domino sets the support clock.
+
+The derivative chain reconstructs the finite actualization field.
+
+Path ordering converts variation in that field into connected higher-order history.
+
+But the object deserving the name curvature is
+
+\[
+\boxed{
+\text{failure of dressed transports in independent arithmetic directions to close around a loop.}
+}
+\]
+
+The next task is to derive that first plaquette holonomy from the existing critical finite system.
