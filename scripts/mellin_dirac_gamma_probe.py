@@ -191,6 +191,41 @@ def loggamma_jet_quadrature(N: int = 5):
 
 
 
+
+def laguerre_jacobi(N: int):
+    """Jacobi matrix for normalized Gamma(1/4,1) spectral measure."""
+    alpha = A - 1
+    J = mp.matrix(N)
+    for n in range(N):
+        J[n, n] = 2 * n + alpha + 1
+        if n < N - 1:
+            off = mp.sqrt((n + 1) * (n + alpha + 1))
+            J[n, n + 1] = off
+            J[n + 1, n] = off
+    return J
+
+
+def verify_laguerre_jacobi_operator(N: int = 6):
+    """Gauss-Laguerre Dirac atoms are exactly the spectral measure of J_N."""
+    J = laguerre_jacobi(N)
+    evals, Q = mp.eigsy(J)
+    X, W = mp.gauss_quadrature(N, "glaguerre", alpha=A - 1)
+
+    for j in range(N):
+        assert abs(evals[j] - X[j]) < mp.mpf("1e-65")
+        spectral_weight = mp.gamma(A) * Q[0, j] ** 2
+        assert abs(spectral_weight - W[j]) < mp.mpf("1e-65")
+
+    # Normalized vacuum moments are exact through degree 2N-1.
+    e0 = mp.matrix(N, 1)
+    e0[0] = 1
+    power = mp.eye(N)
+    for k in range(2 * N):
+        moment = (e0.T * power * e0)[0]
+        exact = mp.rf(A, k)
+        assert abs(moment - exact) < mp.mpf("1e-55")
+        power = power * J
+
 def gamma_source_integral(sigma, t):
     """Continuous Archimedean source in common log-scale coordinates."""
     sigma = mp.mpf(sigma)
@@ -307,9 +342,10 @@ def main():
     verify_gauss_laguerre_atoms()
     loggamma_jet_quadrature()
     verify_common_source_kernel()
+    verify_laguerre_jacobi_operator()
     report()
     print()
-    print("Verified common probe kernel for continuous Gamma and discrete prime sources.")\n    print("All Mellin/Dirac/Gamma controls passed.")
+    print("Verified common probe kernel for continuous Gamma and discrete prime sources.")\n    print("Verified Laguerre Jacobi spectral realization of the Gamma Dirac comb.")\n    print("All Mellin/Dirac/Gamma controls passed.")
 
 
 if __name__ == "__main__":
