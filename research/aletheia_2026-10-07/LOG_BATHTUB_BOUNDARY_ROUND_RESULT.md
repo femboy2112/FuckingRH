@@ -162,7 +162,7 @@ For positive scalar continuum shifts compressed to an interval,
 \boxed{T_hT_k=T_{h+k}=T_kT_h.}
 \]
 
-Curvature cannot arise from reordering these forward shifts. Mixed adjoint commutators are boundary-supported partial shifts at ratio displacement \(k-h\). When \(h=\log p^j\), \(k=\log q^r\), those are forbidden extra \(\log(q^r/p^j)\) scalar atoms; any physical observation of the internal curvature must eliminate them.
+Curvature cannot arise from reordering these forward shifts. Mixed adjoint commutators are boundary-supported partial shifts at ratio displacement \(k-h\). When \(h=\log p^j\), \(k=\log q^r\) with **distinct prime bases** \(p\ne q\), those are forbidden extra \(\log(q^r/p^j)\) scalar atoms; same-prime ratios may already be allowed, but their weights still need checking; any physical observation of the internal curvature must eliminate them.
 
 This constraint is scoped to bare continuum shifts and does not kill residue-dressed SUCC commutators.
 
