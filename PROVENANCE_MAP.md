@@ -9,7 +9,7 @@ This file records where the current RH program came from. Imported files are pre
 - [`docs/SUCC_FUCC_PROBE_LEDGER_2026-10-07.md`](docs/SUCC_FUCC_PROBE_LEDGER_2026-10-07.md) — hypothesis-by-hypothesis falsifiers, controls, and strict transition from analogy to completed Weil/Suzuki proof obligations.
 - [`docs/RH_LINEAGE_SOURCE_INDEPENDENCE_2026-10-07.md`](docs/RH_LINEAGE_SOURCE_INDEPENDENCE_2026-10-07.md) — user/agent/primary-source lineage graph, duplicate-source and independence checks, and mandatory Round006→Round007 corrigendum.
 
-**Source priority / stale-branch warning.** These three files are interpretive provenance and must not supersede `CLAIM_LEDGER.md` or primary literature. The Oct 6 `main` README/CURRENT_STATE snapshot contains Round006 claims *corrected* by [open Round007 PR #5](https://github.com/femboy2112/FuckingRH/pull/5), especially Gamma-passivity, shifted-xi-ratio and negative-index assertions. [Open Round008 PR #6](https://github.com/femboy2112/FuckingRH/pull/6) adds scoped mixed-clock/Gamma coupling and localized-boundary no-gos. Neither PR was merged into this documentation branch. RH remains open.
+**Source priority / stale-branch warning.** These four files are interpretive provenance and must not supersede `CLAIM_LEDGER.md` or primary literature. The Oct 6 `main` README/CURRENT_STATE snapshot contains Round006 claims *corrected* by [open Round007 PR #5](https://github.com/femboy2112/FuckingRH/pull/5), especially Gamma-passivity, shifted-xi-ratio and negative-index assertions. [Open Round008 PR #6](https://github.com/femboy2112/FuckingRH/pull/6) adds scoped mixed-clock/Gamma coupling and localized-boundary no-gos. Neither PR was merged into this documentation branch. RH remains open.
 
 ## Canonical current layer
 
