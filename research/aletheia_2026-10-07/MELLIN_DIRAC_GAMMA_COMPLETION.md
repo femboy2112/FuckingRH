@@ -2108,3 +2108,232 @@ A positive answer would join three independently derived objects:
 3. completed heat-kernel coefficients.
 
 A negative answer would prevent an unjustified GR analogy from hardening.
+
+
+---
+
+# Appendix C — Finite hybrid positivity and the infinite-limit obstruction
+
+The Mellin-Dirac/Gamma picture gives a clean finite probabilistic model.
+
+Fix:
+
+- a vertical parameter \(\sigma>0\);
+- a finite prime set \(p\le P\);
+- a finite Archimedean mode count \(M\).
+
+Let
+
+\[
+\lambda_m(\sigma)=\sigma+2m.
+\]
+
+Define independent random variables
+
+\[
+E_m\sim\operatorname{Exp}(\lambda_m),
+\]
+
+and
+
+\[
+K_p\sim\operatorname{Geom}(p^{-\sigma})
+\]
+
+with
+
+\[
+\Pr(K_p=k)
+=
+(1-p^{-\sigma})p^{-k\sigma},
+\qquad
+k\ge0.
+\]
+
+Put
+
+\[
+b_\sigma
+=
+\frac12
+\left(
+\psi(\sigma/2)-\log\pi
+\right).
+\]
+
+Define the finite hybrid variable
+
+\[
+\boxed{
+Y_{P,M,\sigma}
+=
+b_\sigma
++
+\sum_{m=0}^{M-1}
+\left(
+\frac1{\lambda_m}-E_m
+\right)
+-
+\sum_{p\le P}
+K_p\log p.
+}
+\]
+
+Then its characteristic function is
+
+\[
+\boxed{
+C_{P,M,\sigma}(t)
+=
+e^{itb_\sigma}
+\prod_{m=0}^{M-1}
+\frac{
+e^{it/\lambda_m}
+}{
+1+it/\lambda_m
+}
+\prod_{p\le P}
+\frac{
+1-p^{-\sigma}
+}{
+1-p^{-\sigma-it}
+}.
+}
+\]
+
+Therefore:
+
+\[
+\boxed{
+C_{P,M,\sigma}
+\text{ is positive definite for every finite }P,M\text{ and every }\sigma>0.
+}
+\]
+
+This is a manifestly positive finite completion of the local prime and Gamma factors.
+
+It uses no zeta zeros.
+
+## C1. Safe infinite limit
+
+For \(\sigma>1\), the prime contribution converges absolutely in the standard Euler/Lévy sense as \(P\to\infty\).
+
+The Gamma contribution converges as \(M\to\infty\) for every \(\sigma>0\).
+
+Thus in the Euler half-plane the joint finite positive laws have a straightforward infinite probabilistic limit.
+
+## C2. Critical half-density obstruction
+
+At
+
+\[
+\sigma=\frac12,
+\]
+
+the prime geometric variables have
+
+\[
+\mathbb E K_p
+=
+\frac{p^{-1/2}}{1-p^{-1/2}}
+=
+\frac1{\sqrt p-1},
+\]
+
+and
+
+\[
+\operatorname{Var}K_p
+=
+\frac{p^{-1/2}}{(1-p^{-1/2})^2}.
+\]
+
+Hence the prime log-scale component has
+
+\[
+\boxed{
+\mathbb E
+\sum_{p\le P}
+K_p\log p
+=
+\sum_{p\le P}
+\frac{\log p}{\sqrt p-1}
+\sim
+2\sqrt P,
+}
+\]
+
+and
+
+\[
+\boxed{
+\operatorname{Var}
+\sum_{p\le P}
+K_p\log p
+=
+\sum_{p\le P}
+(\log p)^2
+\frac{p^{-1/2}}{(1-p^{-1/2})^2}
+\sim
+2\sqrt P\log P.
+}
+\]
+
+These are exactly the critical aggregate-prime divergences already isolated earlier in the repository.
+
+By contrast, the full Gamma random variable has finite cumulants at \(\sigma=1/2\):
+
+\[
+\kappa_n
+=
+(-1)^n(n-1)!
+\sum_m
+(2m+\tfrac12)^{-n},
+\qquad
+n\ge2.
+\]
+
+Therefore the positive Gamma probability sector does **not** cancel the critical prime bulk.
+
+This is a decisive control.
+
+## C3. Consequence
+
+The statement
+
+> every finite prime/Gamma system is positive
+
+does not lower the RH wall.
+
+At critical half-density,
+
+\[
+\boxed{
+\text{finite positivity}
+\not\Rightarrow
+\text{positive/tight infinite completion}.
+}
+\]
+
+The proof-bearing structure must still include the signed pole/boundary/Archimedean renormalization identified in Rounds 004--006.
+
+The present framework makes the obstruction especially transparent:
+
+\[
+\boxed{
+\text{the curvature/nontrivial geometry can only enter in the completed infinite actualization limit, not in bare finite positivity}.
+}
+\]
+
+This supports the user's "global curvature as the limit of actualization" intuition while sharply delimiting what it would have to mean.
+
+## C4. Hostile control for future claims
+
+Any proposed RH argument based on the finite hybrid characteristic function must survive the following:
+
+1. keep \(P,M\) finite: positivity is automatic and RH-inert;
+2. send \(M\to\infty\) at fixed \(P\): still RH-inert;
+3. send \(P\to\infty\) at \(\sigma=1/2\): the naked positive law fails through bulk divergence;
+4. only a separately derived completed/renormalized limit can carry RH content.
+
+This should be treated as a permanent anti-cheat rule for the Mellin-Dirac program.
