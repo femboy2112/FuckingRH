@@ -190,6 +190,84 @@ def loggamma_jet_quadrature(N: int = 5):
     return nodes, weights
 
 
+
+def gamma_source_integral(sigma, t):
+    """Continuous Archimedean source in common log-scale coordinates."""
+    sigma = mp.mpf(sigma)
+    t = mp.mpf(t)
+
+    def integrand(r):
+        return (
+            mp.expm1(-1j * t * r)
+            * mp.e ** (-sigma * r)
+            / (-mp.expm1(-2 * r))
+        )
+
+    return mp.quad(integrand, [0, 1, mp.inf])
+
+
+def gamma_source_exact(sigma, t):
+    a = mp.mpf(sigma) / 2
+    return -mp.mpf("0.5") * (mp.digamma(a + 0.5j * t) - mp.digamma(a))
+
+
+def primes_up_to(N):
+    out = []
+    for n in range(2, N + 1):
+        ok = True
+        d = 2
+        while d * d <= n:
+            if n % d == 0:
+                ok = False
+                break
+            d += 1
+        if ok:
+            out.append(n)
+    return out
+
+
+def prime_source_finite(P, sigma, t):
+    """Finite-prime Dirac source: sum_{p<=P,k>=1} log p p^-ksigma (e^-it klogp-1)."""
+    sigma = mp.mpf(sigma)
+    t = mp.mpf(t)
+    total = 0j
+    for p in primes_up_to(P):
+        lp = mp.log(p)
+        rs = mp.power(p, -sigma)
+        rt = mp.power(p, -(sigma + 1j * t))
+        total += lp * (rt / (1 - rt) - rs / (1 - rs))
+    return total
+
+
+def finite_euler_ratio(P, sigma, t):
+    sigma = mp.mpf(sigma)
+    t = mp.mpf(t)
+    z = 1 + 0j
+    for p in primes_up_to(P):
+        z *= (1 - mp.power(p, -sigma)) / (1 - mp.power(p, -(sigma + 1j * t)))
+    return z
+
+
+def verify_common_source_kernel():
+    # Gamma source identity, including the critical sigma=1/2 line.
+    for sigma in [mp.mpf("0.5"), mp.mpf("1.25"), 2]:
+        for t in [mp.mpf("0.2"), 1, 2]:
+            lhs = gamma_source_integral(sigma, t)
+            rhs = gamma_source_exact(sigma, t)
+            assert abs(lhs - rhs) < mp.mpf("1e-35")
+
+    # Finite Euler product: analytic derivative equals the discrete Dirac-source sum.
+    for P in [7, 19, 43]:
+        for sigma in [mp.mpf("1.25"), 2]:
+            for t in [mp.mpf("0.3"), 1]:
+                h = mp.mpf("1e-20")
+                deriv = -(
+                    mp.log(finite_euler_ratio(P, sigma + h, t))
+                    - mp.log(finite_euler_ratio(P, sigma - h, t))
+                ) / (2 * h)
+                source = prime_source_finite(P, sigma, t)
+                assert abs(deriv - source) < mp.mpf("1e-25")
+
 def report():
     print("Critical Archimedean carrier:")
     print("  phi(t)=pi^{-it/2} Gamma(1/4+it/2)/Gamma(1/4)")
@@ -228,9 +306,10 @@ def main():
     verify_mode_convergence()
     verify_gauss_laguerre_atoms()
     loggamma_jet_quadrature()
+    verify_common_source_kernel()
     report()
     print()
-    print("All Mellin/Dirac/Gamma controls passed.")
+    print("Verified common probe kernel for continuous Gamma and discrete prime sources.")\n    print("All Mellin/Dirac/Gamma controls passed.")
 
 
 if __name__ == "__main__":
