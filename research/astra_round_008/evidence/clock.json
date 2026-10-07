@@ -1,0 +1,259 @@
+{
+  "method": "Exact rational matrices, cyclotomic polynomial remainders, and modular exponent intertwiners",
+  "scope": "Finite fixtures verify proved identities; no claim about RH or infinite positivity",
+  "cases": [
+    {
+      "p": 2,
+      "L": 1,
+      "n": 2,
+      "k": 1,
+      "M": 1,
+      "innovation_dimension": 1,
+      "conductors": [
+        2
+      ],
+      "charpoly": "z + 1",
+      "per_digit_conductor_counts": [
+        {
+          "r": 1,
+          "d": 1,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "p": 3,
+      "L": 1,
+      "n": 3,
+      "k": 1,
+      "M": 1,
+      "innovation_dimension": 2,
+      "conductors": [
+        3
+      ],
+      "charpoly": "z**2 + z + 1",
+      "per_digit_conductor_counts": [
+        {
+          "r": 1,
+          "d": 1,
+          "count": 1
+        },
+        {
+          "r": 2,
+          "d": 1,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "p": 2,
+      "L": 3,
+      "n": 6,
+      "k": 1,
+      "M": 3,
+      "innovation_dimension": 3,
+      "conductors": [
+        2,
+        6
+      ],
+      "charpoly": "z**3 + 1",
+      "per_digit_conductor_counts": [
+        {
+          "r": 1,
+          "d": 1,
+          "count": 1
+        },
+        {
+          "r": 1,
+          "d": 3,
+          "count": 2
+        }
+      ]
+    },
+    {
+      "p": 2,
+      "L": 6,
+      "n": 12,
+      "k": 2,
+      "M": 3,
+      "innovation_dimension": 6,
+      "conductors": [
+        4,
+        12
+      ],
+      "charpoly": "z**6 + 1",
+      "per_digit_conductor_counts": [
+        {
+          "r": 1,
+          "d": 1,
+          "count": 2
+        },
+        {
+          "r": 1,
+          "d": 3,
+          "count": 4
+        }
+      ]
+    },
+    {
+      "p": 3,
+      "L": 4,
+      "n": 12,
+      "k": 1,
+      "M": 4,
+      "innovation_dimension": 8,
+      "conductors": [
+        3,
+        6,
+        12
+      ],
+      "charpoly": "z**8 + z**4 + 1",
+      "per_digit_conductor_counts": [
+        {
+          "r": 1,
+          "d": 1,
+          "count": 1
+        },
+        {
+          "r": 1,
+          "d": 2,
+          "count": 1
+        },
+        {
+          "r": 1,
+          "d": 4,
+          "count": 2
+        },
+        {
+          "r": 2,
+          "d": 1,
+          "count": 1
+        },
+        {
+          "r": 2,
+          "d": 2,
+          "count": 1
+        },
+        {
+          "r": 2,
+          "d": 4,
+          "count": 2
+        }
+      ]
+    },
+    {
+      "p": 3,
+      "L": 6,
+      "n": 18,
+      "k": 2,
+      "M": 2,
+      "innovation_dimension": 12,
+      "conductors": [
+        9,
+        18
+      ],
+      "charpoly": "z**12 + z**6 + 1",
+      "per_digit_conductor_counts": [
+        {
+          "r": 1,
+          "d": 1,
+          "count": 3
+        },
+        {
+          "r": 1,
+          "d": 2,
+          "count": 3
+        },
+        {
+          "r": 2,
+          "d": 1,
+          "count": 3
+        },
+        {
+          "r": 2,
+          "d": 2,
+          "count": 3
+        }
+      ]
+    },
+    {
+      "p": 5,
+      "L": 2,
+      "n": 10,
+      "k": 1,
+      "M": 2,
+      "innovation_dimension": 8,
+      "conductors": [
+        5,
+        10
+      ],
+      "charpoly": "z**8 + z**6 + z**4 + z**2 + 1",
+      "per_digit_conductor_counts": [
+        {
+          "r": 1,
+          "d": 1,
+          "count": 1
+        },
+        {
+          "r": 1,
+          "d": 2,
+          "count": 1
+        },
+        {
+          "r": 2,
+          "d": 1,
+          "count": 1
+        },
+        {
+          "r": 2,
+          "d": 2,
+          "count": 1
+        },
+        {
+          "r": 3,
+          "d": 1,
+          "count": 1
+        },
+        {
+          "r": 3,
+          "d": 2,
+          "count": 1
+        },
+        {
+          "r": 4,
+          "d": 1,
+          "count": 1
+        },
+        {
+          "r": 4,
+          "d": 2,
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "mutations": {
+    "raw_count_embedding_isometry": false,
+    "raw_count_gram_idempotent": false,
+    "absolute_mobius_projector_idempotent": false,
+    "pure_prime_only_missing_dimension": 6,
+    "omit_carry_permutation_identity": false,
+    "phase_seed": 8008,
+    "phase_signs": [
+      -1,
+      -1,
+      -1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      -1,
+      1,
+      -1
+    ],
+    "phase_mutation_preserves_charpoly": true,
+    "phase_mutation_preserves_old_subspace": false
+  }
+}

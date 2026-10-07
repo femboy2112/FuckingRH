@@ -1,0 +1,26 @@
+{
+  "parent": "8da6cf92d276961356497486048163f0aff08233",
+  "parent_tree": "c848f76902fc2905709f3ee6701f0af51f1dfef3",
+  "branch": "astra/lcm-cyclotomic-gamma-008",
+  "remote": "https://github.com/femboy2112/FuckingRH.git",
+  "initial_worktree_clean": true,
+  "baseline_tests": 184,
+  "baseline_reproduced_after_installing_declared_dependencies": true,
+  "initial_runtime_missing": [
+    "mpmath",
+    "sympy",
+    "flint"
+  ],
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "packages": {
+    "mpmath": "1.3.0",
+    "sympy": "1.14.0",
+    "numpy": "2.3.5",
+    "python-flint": "0.9.0"
+  },
+  "brief_sha256": "f504e03a3e5d2ec3131c4e8936747a41f9645ad57a9465ae8d045d0a46fb308b",
+  "side_heads": {
+    "clock": "a8f05a721ae43797f784968cd9641576948bda73",
+    "affine": "c6a8a101603c19bd1938f8b601c63ffb8a1abaa2"
+  }
+}

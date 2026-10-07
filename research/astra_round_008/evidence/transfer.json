@@ -1,0 +1,39 @@
+{
+  "method": "exact rational identities and Arb enclosure with analytic infinite tail",
+  "boundary": {
+    "lengths": [
+      1,
+      2,
+      3,
+      5
+    ],
+    "refinement_rational_degrees": {
+      "2": 2,
+      "3": 3,
+      "4": 4,
+      "5": 5,
+      "7": 7
+    }
+  },
+  "mutations": {
+    "q3_full_minus_local": "x**4 - x",
+    "composite_refinements": [
+      6,
+      3,
+      6
+    ],
+    "random_seed": 8008,
+    "spectral_exponent_mutation_changes_local_factor": true,
+    "order23_at_s2": "33215/26244",
+    "order32_at_s2": "5915/5184",
+    "forward_determinant": "1"
+  },
+  "global_at_s2": {
+    "prefix_N7": "[1.2659316084003724873262946989788145614797237031 +/- 2.17e-47]",
+    "log_tail_upper": "[1.36396630650381753622936633985597414133732100e-253 +/- 6.76e-298]",
+    "infinite_product_upper": "[1.2659316084003724873262946989788145614797237031 +/- 2.17e-47]",
+    "zeta2": "[1.6449340668482264364724151666460251892189499012 +/- 1.08e-47]",
+    "certified_strictly_less": true
+  },
+  "scope": "product mismatch is certified for the infinite grouped product; not an RH sign test"
+}

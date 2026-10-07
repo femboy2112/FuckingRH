@@ -1,6 +1,49 @@
-# CURRENT STATE — 2026-10-06
+# CURRENT STATE — 2026-10-07
 
-## Round 007 — current audited frontier
+## Round 008 — current audited frontier
+
+**RH is not proved.** Round008 starts directly from frozen Round007 head
+`8da6cf92d276961356497486048163f0aff08233` on
+`astra/lcm-cyclotomic-gamma-008`. The clock and bilateral side branches were
+audited without merging their ancestry. All 184 inherited tests and 43 new
+tests pass: **227 total**. See the [round result](research/astra_round_008/ROUND_RESULT.md).
+
+The main result is a quantitative **localized clock/Gamma coupling
+obstruction**. For the specified full-innovation continuum lift, the event
+amplitude visible at each normalized clock coordinate tends to zero.
+Positive repairs through a fixed number of such sites with unchanged
+complement cannot remove the divergent Weil degree debit. Even with
+boundary/complement cross terms, the required gain must diverge at least
+as specified in [the exact theorem](research/astra_round_008/WEIL_PUSHFORWARD.md).
+This includes a genuine shared-origin Gamma heat square whose full cross
+terms were derived; it also produces forbidden prime-ratio translation
+atoms. It is not a universal no-go for arbitrary nonlocal interactions.
+
+The next escape was actually tested. A refinement-compatible carry and
+physical-coordinate oscillator exists, with an explicit unitary conjugacy
+and exact heat trace. Its generated algebra nevertheless reduces every
+conductor sector, so noncommutation alone does not supply cross-event
+pairings. See [the compatible control](research/astra_round_008/REFINEMENT_CARRY_OSCILLATOR.md).
+
+Other important corrections: the full mixed-conductor birth-charge
+determinant is **not** the local Euler product; the infinite clock direct
+sum is noncompact; full refinement is a degree-p rational map but admits
+an exact scalar nonlinear state. Finite Fourier requires the dual refinement
+map and a real dilation. Balanced continuum sampling and vector theta
+completion work, but give no completed Weil-positive square.
+
+The next verdict-changing probe is one specified nonreducing interaction
+in the compatible family, tested first on its log(3/2) translation component
+and bulk identity coefficient. The complete continuum prime/Gamma/pole
+pairing remains unpaid. No finite positivity, small-state formula, classical
+functional equation, or resurrected Gaussian-residual/passivity shortcut
+discharges it. See [proof attempt](research/astra_round_008/PROOF_ATTEMPT_008.md),
+[current wall](research/astra_round_008/CURRENT_WALL.md), and
+[dependency DAG](research/astra_round_008/THEOREM_DEPENDENCY_DAG.md).
+
+Earlier sections are preserved as historical frontiers.
+
+## Round 007 — frozen parent frontier
 
 **RH is not proved.** Round007 starts directly from frozen Round006 head
 `d3e29723fcf9df107fc55a75716e5255898c1b53` on
