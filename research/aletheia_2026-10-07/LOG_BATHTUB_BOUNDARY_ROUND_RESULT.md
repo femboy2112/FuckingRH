@@ -1,3 +1,5 @@
+> **2026-10-07 critical review:** The log-eigenvalue bound, prime-ray AR(1)/KMS identities and PNT source limits are finite/operator-theoretic results; none proves the all-`a` completed Weil sign or Suzuki `Θ_ω` Hardy innerness for all ω>0. [CAUSAL_HARDY_RH_PROOF_GATES.md](../audits/2026-10-07/CAUSAL_HARDY_RH_PROOF_GATES.md) and [the source/agent/test provenance ledger](../audits/2026-10-07/RH_CLAIM_PROVENANCE_LEDGER.md) are the current interpretation. The older cube projective-probability and unitary-Markov analogies are explicitly refuted.
+
 # Round result — logarithmic spectrum, prime towers, and boundary actualization
 
 **Date:** 2026-10-07  
