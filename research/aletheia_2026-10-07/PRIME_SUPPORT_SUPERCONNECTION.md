@@ -1,5 +1,7 @@
 # Prime-support superconnection: a global cubical Dirac/Hodge parent for the Suzuki-Weil edge energy
 
+> **2026-10-07 proof-bearing audit:** The finite supercharge and its positive shorted Gram are valid algebraically, but the prime-only degree-zero Gram is bounded on L2 and therefore **cannot equal the full localized Weil form**, which has logarithmically unbounded Archimedean high-frequency energy. See [the exact UV and boundary no-go theorems](RH_PROOF_BEARING_FRAME_AUDIT.md). The claimed completed pushforward remains UNVERIFIED; finite positivity is not RH progress.
+
 **Date:** 2026-10-07  
 **Status:** exact finite-dimensional operator architecture and exact two-direction Schur theorem. Multi-prime numerical probes are finite controls. The completed Weil/Suzuki pushforward identity is **UNVERIFIED**.  
 **RH remains open.**
