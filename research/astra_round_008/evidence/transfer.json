@@ -18,10 +18,12 @@
   "mutations": {
     "q3_full_minus_local": "x**4 - x",
     "composite_refinements": [
-      4,
+      6,
       3,
       6
     ],
+    "random_seed": 8008,
+    "spectral_exponent_mutation_changes_local_factor": true,
     "order23_at_s2": "33215/26244",
     "order32_at_s2": "5915/5184",
     "forward_determinant": "1"

@@ -1,0 +1,91 @@
+{
+  "method": "exact compression/translation kernels; Arb arithmetic amplitudes",
+  "exact_heat": {
+    "horizon": 4,
+    "clock_length": 12,
+    "modes": 3,
+    "finite_geometric_kappa": "35/243",
+    "origin_noncommutes": true
+  },
+  "mutations": {
+    "ratio_3_over_2": "-b0*b1*k",
+    "fake_composite_collision": "g01 + g23",
+    "deleting_3_removes_ratio_atom": true,
+    "half_density_mutation_changes_target_atom": true,
+    "log_charge_mutation_changes_target_atom": true,
+    "positive_cross_block_counterexample": [
+      "1",
+      "-7",
+      "-7",
+      "49"
+    ],
+    "common_isometry_preserves_innovation_orthogonality": true
+  },
+  "refinement_oscillator": {
+    "refinements": [
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    "covariant_oscillator_intertwines": true,
+    "carry_intertwines": true,
+    "physical_coordinate_translation_per_step": 1
+  },
+  "actual_prime_ratio_atom_N3": "[-0.043999765470888546473767039207786223466507855139 +/- 9.25e-49]",
+  "amplitudes": [
+    {
+      "N": 3,
+      "events": 2,
+      "clock_bits": 3,
+      "A": "[0.93608527898747157048752884741457328704620875072 +/- 6.50e-48]",
+      "S": "[1.1244131723318375730433386343622657458452670515 +/- 2.71e-47]",
+      "loss_bound_one_site": "[3.5050225981482099365157207034051499452130034435 +/- 3.41e-47]"
+    },
+    {
+      "N": 10,
+      "events": 7,
+      "clock_bits": 12,
+      "A": "[1.2118352235561907590760049092184363394636047257 +/- 5.17e-47]",
+      "S": "[3.5375028142662490436625749204946235497230001427 +/- 2.64e-47]",
+      "loss_bound_one_site": "[5.8741784362059313376806701068207186063519816861 +/- 7.74e-47]"
+    },
+    {
+      "N": 100,
+      "events": 35,
+      "clock_bits": 136,
+      "A": "[0.75597946574716018794794949902295818878139386336 +/- 3.79e-48]",
+      "S": "[16.896201344213685908156672227336384615423481733 +/- 3.54e-46]",
+      "loss_bound_one_site": "[2.2860198105254469754665158667648125134254481500 +/- 2.63e-47]"
+    },
+    {
+      "N": 1000,
+      "events": 193,
+      "clock_bits": 1438,
+      "A": "[0.48269836879155568306736335456661151103756480713 +/- 5.67e-48]",
+      "S": "[60.5077564678519069198023779215061941688135773 +/- 2.16e-44]",
+      "loss_bound_one_site": "[0.93199086093611478968817380008343051442608618786 +/- 8.14e-48]"
+    },
+    {
+      "N": 10000,
+      "events": 1280,
+      "clock_bits": 14447,
+      "A": "[0.30670237540064234062193428026319916959288999894 +/- 6.11e-48]",
+      "S": "[197.466052692565588933943937053669173909160211 +/- 2.19e-43]",
+      "loss_bound_one_site": "[0.37626538830558615979650690720119852781145761170 +/- 6.30e-48]"
+    }
+  ],
+  "scope": "finite amplitudes calibrate the universal analytic vanishing theorem; no monotonicity extrapolation"
+}

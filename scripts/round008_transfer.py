@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import random
 from pathlib import Path
 import sympy as sp
 from flint import arb, ctx
@@ -107,7 +108,9 @@ def controls():
     # General nested composite refinements retain the clock identity: it is
     # harmonic algebra, not a test that singles out the prime schedule.
     length, product = 1, sp.Integer(1)
-    for ratio in [4, 3, 6]:
+    rng = random.Random(8008)
+    random_ratios = [rng.randint(2,6) for _ in range(3)]
+    for ratio in random_ratios:
         product *= full_factor(x, ratio, length)
         length *= ratio
     assert sp.cancel(product-(1-x**length)/(1-x)) == 0
@@ -120,7 +123,11 @@ def controls():
     for i in range(4):
         F[i+1, i] = 1
     assert (sp.eye(5)-z*F).det() == 1
-    return {'q3_full_minus_local': str(x**4-x), 'composite_refinements': [4,3,6],
+    # Spectral exponent is a real change: one Euler factor at alpha=2
+    # cannot be identified with alpha=1 at s=2.
+    assert 1/(1-sp.Rational(1,2)**4) != 1/(1-sp.Rational(1,2)**2)
+    return {'q3_full_minus_local': str(x**4-x), 'composite_refinements': random_ratios,
+            'random_seed': 8008, 'spectral_exponent_mutation_changes_local_factor':True,
             'order23_at_s2': str(order23), 'order32_at_s2': str(order32),
             'forward_determinant': '1'}
 
