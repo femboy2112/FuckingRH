@@ -352,6 +352,31 @@ def verify_heat_trace_and_trivial_zeros():
     for j in range(M):
         assert abs(inverse_gamma_mode_model(-2 * j, M)) < mp.mpf("1e-60")
 
+
+def phi_modes_sigma(t, M, sigma):
+    sigma = mp.mpf(sigma)
+    a = sigma / 2
+    drift = (mp.digamma(a) - LOG_PI) / 2
+    z = 1j * mp.mpf(t)
+    out = mp.e ** (drift * z)
+    for m in range(M):
+        l = sigma + 2 * m
+        out *= mp.e ** (z / l) / (1 + z / l)
+    return out
+
+
+def verify_finite_hybrid_characteristic():
+    """Finite prime + Gamma model stays a genuine characteristic function."""
+    for sigma in [mp.mpf("0.5"), mp.mpf("0.75"), mp.mpf("1.25")]:
+        for P in [7, 19, 43]:
+            for M in [4, 16]:
+                for j in range(51):
+                    t = mp.mpf(j) / 10
+                    z = phi_modes_sigma(t, M, sigma) * finite_euler_ratio(P, sigma, t)
+                    assert abs(z) <= 1 + mp.mpf("1e-60")
+                # normalized at the origin
+                assert abs(phi_modes_sigma(0, M, sigma) * finite_euler_ratio(P, sigma, 0) - 1) < mp.mpf("1e-60")
+
 def report():
     print("Critical Archimedean carrier:")
     print("  phi(t)=pi^{-it/2} Gamma(1/4+it/2)/Gamma(1/4)")
@@ -393,11 +418,13 @@ def main():
     verify_common_source_kernel()
     verify_laguerre_jacobi_operator()
     verify_heat_trace_and_trivial_zeros()
+    verify_finite_hybrid_characteristic()
     report()
     print()
     print("Verified common probe kernel for continuous Gamma and discrete prime sources.")
     print("Verified Laguerre Jacobi spectral realization of the Gamma Dirac comb.")
     print("Verified Gamma heat trace, Bernoulli UV series, and finite trivial-zero preservation.")
+    print("Verified finite prime+Gamma hybrid characteristic-function positivity.")
     print("All Mellin/Dirac/Gamma controls passed.")
 
 
