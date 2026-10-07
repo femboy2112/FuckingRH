@@ -1,3 +1,5 @@
+> **Provenance / important distinction (2026-10-07):** The Gram–Schmidt identity `1-p^{-2ω}=||η_{p,ω}||²` and its finite tensor-product factorization are correct **at fixed ω and finite conductor support**, but they do not define a coherent unitary Markov process or a gcd-projective conductor probability measure across LCM levels. That incorrect extrapolation is refuted by [the imported critical audit](../audits/2026-10-07/CUBE_ATOM_CRITICAL_AUDIT_IMPORTED.md). For a causal stochastic realization use fresh independent exponential birth clocks or a specified open-system generator, and separately prove the Hardy/Archimedean coupling. See [claim provenance](../audits/2026-10-07/RH_CLAIM_PROVENANCE_LEDGER.md).
+
 # Suzuki conductor weights as positive support-cell innovation volumes
 
 **Date:** 2026-10-07  
