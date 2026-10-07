@@ -40,7 +40,6 @@ def check_boundary_modulus():
         stable = (s - a) / (s + a)
         assert isclose(abs(unstable), 1, abs_tol=1e-12)
         assert isclose(abs(stable), 1, abs_tol=1e-12)
-    assert (1 + 1) / (1 - 1) if False else True
     print("PASS: stable and unstable transfers both have unit boundary magnitude.")
 
 
