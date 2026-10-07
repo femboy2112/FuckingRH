@@ -1,3 +1,5 @@
+> **2026-10-07 stronger theorem (supersedes the provisional Section 4 positive-part split and the compact-resolvent assumption in Section 9):** See [LOG_EXTENSION_FESHBACH_THEOREM.md](LOG_EXTENSION_FESHBACH_THEOREM.md). The *entire* Suzuki logarithmic boundary term is absorbed by the canonical zero-extension square: `L_a=E_{2a}-log(2a)||v||²`. Therefore `Q_W^a=(E_{2a}+E_prime)-D_a` with bounded `D_a`. The source-derived positive form has compact resolvent **with an explicit uniform lower eigenvalue bound** `lambda_n >= 1/2 [gamma+log(pi*n/2)-Ci(pi*n/2)]`. At every fixed horizon, an exact finite-dimensional Feshbach matrix controls the sign. This recovers already-known spectral discreteness constructively; the all-horizon matrix positivity remains RH-equivalent and UNVERIFIED.
+
 # RH proof-bearing frame audit: four obstructions and an exact corrected completion form
 
 **Date:** 2026-10-07  
