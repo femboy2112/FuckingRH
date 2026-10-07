@@ -1,3 +1,5 @@
+> **Provenance / causal limitation (2026-10-07):** The finite Gamma phase products are unitary *phase factors*, not unitary stochastic/Markov conductor refinements. In the two-state toy model, repeating the same 45° rotation twice gives occupation 1, whereas fresh Markov births require 1/2; smooth fixed-space unitary activation cannot have a first-order probability birth without an environmental/singular mechanism. The independent audit is archived at [CUBE_ATOM_CRITICAL_AUDIT_IMPORTED.md](../audits/2026-10-07/CUBE_ATOM_CRITICAL_AUDIT_IMPORTED.md). No Gamma rotation or inverse-Gamma finite truncation by itself proves Hardy invariance or RH. See [provenance](../audits/2026-10-07/RH_CLAIM_PROVENANCE_LEDGER.md).
+
 # Gamma as a coherent cascade of finite rotations along the arithmetic height axis
 
 **Date:** 2026-10-07  
