@@ -31,7 +31,9 @@ CREDIT: Suzuki 2023 (JLMS 108, Thm 1.2/1.7); Nakamura-Suzuki (infinite divisibil
 Neumann 1941 (CND); Weil 1952, Bombieri 2000 (quadratic form); Connes 1999; Lax-Phillips 1976,
 Faddeev-Pavlov 1972 (literal light cone / finite propagation); Burnol (conductor operator, propagator);
 Berry-Keating 1999 and Sierra 2014 (Dirac/Rindler light-cone Hamiltonian). "Causality <=> RH" (adelic
-Lax-Phillips) is a PROGRAM, not a theorem.  RH IS OPEN.
+Lax-Phillips) is a PROGRAM, not a theorem. Conrey-Li 2000 refuted the naive de Branges positivity
+route; NO de Branges positivity is claimed here (the finite screw-PSD / min-Psi>0 results are
+diagnostics, not evidence). RH IS OPEN.
 """
 
 import os

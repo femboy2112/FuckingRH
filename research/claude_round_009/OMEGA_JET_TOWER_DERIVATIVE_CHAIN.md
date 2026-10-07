@@ -27,8 +27,13 @@ state" is the question of the **first derivative** `dB_\omega/d\omega|_0`.
 $$\boxed{\ \frac{d}{d\omega}B_\omega(s)\Big|_{0}=-2\,\frac{\xi'}{\xi}\!\left(s+\tfrac12\right)\ }$$
 
 verified to machine precision (`|diff| ≲ 10^{-15}` at `s=1.5, 2+i, 1.2+0.8i`). This is the **velocity
-vector** of the inner curve at the flat base point — and it is exactly the **Weil/Lagarias generator**:
-`−2 ξ'/ξ(s+½)` is the object whose positive-realness (Herglotz-ness of `−Ξ'/Ξ`) is equivalent to RH.
+vector** of the inner curve at the flat base point — and it is exactly the **Weil/Lagarias** object (the
+inner-function / de Branges–space machinery under `Θ_ω, B_ω` is de Branges 1968 / Krein; see Pillar 2).
+The honest, sign-correct positivity statement: RH `⟺` `−Ξ'/Ξ` is **Herglotz** (`Im>0` in the upper
+half-plane) — equivalently `+ξ'/ξ(s+½)`, i.e. `−½` times this velocity, is a positive-real function on
+`Re s>0`. (`−2 ξ'/ξ(s+½)` itself has *negative* real part in the right half-plane, so it is not itself
+positive-real; the positive object is its `−½` multiple.) **Conrey–Li (2000) refuted** the naive de
+Branges positivity program built on such criteria, so this equivalence is *not* a proof route.
 So "the first actualization" = the first jet = the Weil tangent. On the Dirichlet side, the arithmetic
 coefficients expose the same velocity as von Mangoldt:
 
@@ -64,7 +69,7 @@ integers that need that many prime interactions.
 `B_ω` is a **curve in the space of scattering functions** starting at the flat identity `B_0=1`. Its
 **velocity** is the Weil generator `−2ξ'/ξ(s+½)`; its higher jets (`ν≥2`, the two- and three-prime
 conductors) are the **acceleration / curvature** terms. Pillar 2 integrates this velocity into the
-actual **geodesic flow** (the canonical system) and asks what the `ω→0⁺` / `a→∞` limit — the user's
+canonical system, **read as a geodesic flow**, and asks what the `ω→0⁺` / `a→∞` limit — the user's
 "actualization to infinity" — does to the accumulated curvature. Here we have only fixed the *initial
 tangent*: the first actualization is the Weil tangent, and that is the object whose positivity is RH
 (open).

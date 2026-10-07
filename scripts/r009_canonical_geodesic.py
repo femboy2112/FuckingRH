@@ -24,9 +24,10 @@ The honest realization (every object is standard / already in the repo; see CRED
 
  (3) The FUCC metric geodesic (aletheia SUCC_FUCC_METRIC_GEOMETRY.md) and the canonical geodesic share
      one log-scale clock (proper time = log scale) and one event set (prime powers), related by the
-     omega-jet (Pillar 1): the Weil weight 2 Lambda(n)/sqrt(n) = b_0'(n) is the VELOCITY (first jet) of
-     the conductor weight b_{1/2}(n)=phi(n)/n. So the Weil/FUCC geodesic is the first-jet linearization
-     of the full conductor/canonical geodesic.
+     omega-jet (Pillar 1): the Weil weight 2 Lambda(n)/sqrt(n) = b_0'(n) is the omega=0 VELOCITY (first
+     jet) and the conductor weight b_{1/2}(n)=phi(n)/n is the omega=1/2 VALUE of the SAME family b_omega.
+     They are two samples of one flow (NOT a linearization/tangent relation: the omega=0 tangent line
+     extrapolated to omega=1/2 gives Lambda/sqrt n, neither 2Lambda/sqrt n nor phi/n).
 
  (4) "Global curvature = limit of actualization" = the a->infinity accumulation log m_3(a) and the
      Weyl-disk limit m_infinity = -Xi'/Xi (SU11). We compute the renormalized accumulated det_3
@@ -95,7 +96,7 @@ def main():
 
     banner("3. FUCC metric geodesic and canonical geodesic share one clock; related by the omega-jet")
     # conductor weight at omega=1/2 is phi(n)/n;  Weil weight (first jet) is 2 Lambda(n)/sqrt(n)
-    print("   n : b_{1/2}(n)=phi(n)/n (conductor weight) | 2Lambda/sqrt n (Weil=first jet velocity)")
+    print("   n : b_{1/2}(n)=phi(n)/n (omega=1/2 VALUE) | 2Lambda/sqrt n (omega=0 VELOCITY) -- same family b_omega")
     for n in [2, 3, 4, 5, 6, 8, 9, 12]:
         phin = int(sp.totient(n))
         b_half = phin / n
@@ -123,8 +124,8 @@ def main():
         L_prev = L
     print(f"   d_F(L_{{N-1}},L_N) == Lambda(N) for N=2..17: {'OK' if ok else 'FAIL'}")
     assert ok
-    print("   => Weil/FUCC geodesic (weight 2Lambda/sqrt n) = first-jet linearization of the")
-    print("      conductor/canonical geodesic (weight phi(n)/n). Same log clock, same prime events.")
+    print("   => Weil weight (omega=0 velocity) and conductor weight (omega=1/2 value) are two samples of")
+    print("      the SAME family b_omega -- one log clock, one prime-event set; NOT a linearization relation.")
 
     banner("4. Global curvature = limit of actualization: renormalized det_3 holonomy vs a (omega=1/2)")
     print("   log m_3(a) = 2 tau_1(a) + sum_j [ log((1+lam_j)/(1-lam_j)) - 2 lam_j ];  the sum is the")

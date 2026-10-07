@@ -59,7 +59,7 @@ has a clean causal signature (verified with **freely-chosen** `r,γ` — *not* z
   a *negative direction* in the Weil form.
 
 So **RH `⟺` every zero is null (on the light cone), where the Weil/reflection form is PSD**; moving a
-zero off-line is a timelike boost that breaks positivity. This is the literal light cone of
+zero off-line is a timelike boost that breaks positivity. This matches the light-cone structure of
 Lax–Phillips scattering (finite propagation speed; **Lax–Phillips 1976**, **Faddeev–Pavlov 1972**) and
 of Sierra's Rindler-spacetime Dirac zeta model (**Sierra 2014**); it is the same `|z|=μ` Dirac mass
 shell of Pillar 2, and the same `α=β−1/2` rapidity of the frontier's `CRITICAL_LIGHTCONE_GAIN.md`.
@@ -69,7 +69,7 @@ shell of Pillar 2, and the same `α=β−1/2` rapidity of the frontier's `CRITIC
 These three faces are **one standard RH-equivalent** seen three ways (reflection positivity / screw /
 light cone). Credit: Suzuki 2023 (Thm 1.2/1.7); Schoenberg–von Neumann 1941 (CND); Nakamura–Suzuki
 (infinite divisibility); Weil 1952 and Bombieri 2000 (the quadratic form); Connes 1999 (trace-formula
-positivity); **Lax–Phillips 1976**, Faddeev–Pavlov 1972 (the literal light cone); Burnol (propagator /
+positivity); **Lax–Phillips 1976**, Faddeev–Pavlov 1972 (the light cone / finite propagation speed); Burnol (propagator /
 conductor operator); Berry–Keating 1999 and **Sierra 2014** (Dirac/Rindler light-cone Hamiltonian). The
 GR picture is **real but is a dictionary, not a mechanism**: "**causality `⟺` RH**" (adelic
 Lax–Phillips) is a *program*, not a theorem, and the positivity it would need is the open wall

@@ -7,11 +7,11 @@ like polynomial approximation and chains of first/second/third order derivatives
 omega-jet of Suzuki's inner family, already proven in aletheia OMEGA_ZERO_CONDUCTOR_JET.md; here we
 re-verify it and give the differential-geometric reading: the jet is the Taylor expansion of the inner
 curve B_omega off the flat base point B_0 = 1, the FIRST jet is the velocity = the Weil generator
--(xi'/xi)(s+1/2), and the stratification by nu(n) = #distinct primes IS the Taylor order.
+-2(xi'/xi)(s+1/2), and the stratification by nu(n) = #distinct primes IS the Taylor order.
 
 CREDIT (standard / prior art, NOT invented here): Suzuki 2012 (RIMS B34) builds the canonical system
 for Theta_omega; the jet stratification is aletheia OMEGA_ZERO_CONDUCTOR_JET.md; the Weil generator
--(xi'/xi) is the Lagarias/Weil object. RH IS OPEN; nothing here is a proof. No zeta zeros are used as
+-2(xi'/xi) is the Lagarias/Weil object. RH IS OPEN; nothing here is a proof. No zeta zeros are used as
 input (xi, xi'/xi are evaluated as meromorphic functions, not fed zero ordinates).
 """
 
@@ -116,7 +116,7 @@ def main():
                  2: "two-prime conductors", 3: "three-prime conductors"}[j]
         print(f"   O(omega^{j}):  {label}\n              members<=60: {members}")
     print("\nGR reading: B_omega is a curve off the flat base B_0=1; the first jet is the VELOCITY")
-    print("(= Weil generator -(xi'/xi)(s+1/2)); higher jets (nu>=2) are the acceleration/curvature.")
+    print("(= Weil generator -2(xi'/xi)(s+1/2)); higher jets (nu>=2) are the acceleration/curvature.")
     print("\nALL CHECKS PASSED.  RH-inert (standard jet of Suzuki's family; credit Suzuki 2012, OMEGA_ZERO).")
     print("RH remains open.  No zeta zeros used as input.")
 

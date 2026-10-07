@@ -47,11 +47,11 @@ $$\boxed{\ \operatorname{eig}G(z)=\pm\sqrt{\mu^2-z^2}\ }$$
 
 (verified): `|z|<μ` → real eigenvalues = **hyperbolic boost = geodesic**; `|z|=μ` → null (parabolic)
 = the **light cone / mass shell**; `|z|>μ` → imaginary eigenvalues = **elliptic rotation = spectral
-oscillation**. This is a *literal* 1+1 Dirac dispersion (the same mass-shell structure as Sierra's
+oscillation**. This is a 1+1 Dirac dispersion (the analogue of the mass-shell structure in Sierra's
 Rindler-spacetime Dirac zeta model, **Sierra 2014** — credited), with null characteristics `A±X=const`
 (`CRITICAL_PARITY_DIRAC §5`) as the light cone, and it matches the frontier's boost rapidity
 `α=β−1/2` from an off-line zero (`CRITICAL_LIGHTCONE_GAIN.md`): an off-line zero is a timelike
-(`|z|<μ`, amplifying) mode, RH ⇔ all modes null/on-cone.
+(`|z|<μ`, amplifying) mode, and *in this dictionary* RH corresponds to all modes being null/on-cone.
 
 ## 3. The FUCC geodesic and the canonical geodesic: one clock, two weights, joined by the jet
 
@@ -61,18 +61,23 @@ the **LCM worldline** `d_F(L_{N-1},L_N)=\Lambda(N)` and proper time `\log N` (ve
 `d_F=\Lambda(N)` for `N=2..17`). The scout flagged that *nobody had joined* this to the SU(1,1)
 canonical flow. The join is the **ω-jet** (Pillar 1):
 
-- conductor weight (canonical geometry, at `ω=1/2`): `b_{1/2}(n)=\varphi(n)/n` (verified `=\prod_{p|n}(1-1/p)`);
-- Weil weight (FUCC geometry): `2\Lambda(n)/\sqrt n = b_0'(n)` — the **velocity / first jet** of the
-  conductor weight.
+- conductor weight (canonical geometry): `b_{1/2}(n)=\varphi(n)/n` — the **value at `ω=1/2`** of the
+  family `b_ω` (verified `=\prod_{p|n}(1-1/p)`);
+- Weil weight (FUCC geometry): `2\Lambda(n)/\sqrt n = b_0'(n)` — the **`ω`-velocity (first jet) at `ω=0`**
+  of the *same* family `b_ω`.
 
-So the two geometries share **one log-scale clock** (proper time = `\log` scale) and **one event set**
-(prime powers), and
+So the two geometries are **two readings of one one-parameter family `b_ω`** — the `ω=0` derivative and
+the `ω=1/2` value — sharing **one log-scale clock** (proper time = `\log` scale) and **one event set**
+(prime powers). They are **not** in a linearization/tangent relation: the `ω=0` tangent line extrapolated
+to `ω=1/2` gives `\Lambda(n)/\sqrt n`, which is *neither* `2\Lambda/\sqrt n` *nor* `\varphi(n)/n` (e.g.
+`n=2`: `0.49` vs `0.50`; `n=6`: `0` vs `0.33`). The honest join is:
 
-> **the Weil/FUCC geodesic is the first-ω-jet linearization of the full conductor/canonical geodesic.**
+> **the Weil/FUCC weight and the conductor/canonical weight are the `ω=0` velocity and the `ω=1/2` value
+> of the same family `b_ω` — two samples of one flow, not one a linearization of the other.**
 
-This is the user's "the first domino sets the geodesic, forces the next": the *first jet* (Weil/von
-Mangoldt, Pillar 1) is the tangent to the *full* canonical geodesic; the higher jets (two-, three-prime
-conductors) are its curvature.
+This matches the user's "the first domino sets the next" only in the weak sense that the first jet
+(Weil/von Mangoldt, Pillar 1) is the *initial tangent* of the `b_ω` flow; the `ω=1/2` endpoint (the
+conductor weight) is a different sample of that same flow, not its tangent.
 
 ## 4. "Global curvature = the limit of actualization"
 
