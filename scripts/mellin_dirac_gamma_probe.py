@@ -303,6 +303,55 @@ def verify_common_source_kernel():
                 source = prime_source_finite(P, sigma, t)
                 assert abs(deriv - source) < mp.mpf("1e-25")
 
+
+def heat_trace(r, sigma=mp.mpf("0.5")):
+    r = mp.mpf(r)
+    sigma = mp.mpf(sigma)
+    return mp.e ** (-sigma * r) / (1 - mp.e ** (-2 * r))
+
+
+def heat_trace_modes(r, M, sigma=mp.mpf("0.5")):
+    r = mp.mpf(r)
+    sigma = mp.mpf(sigma)
+    return mp.fsum([mp.e ** (-(sigma + 2 * m) * r) for m in range(M)])
+
+
+def inverse_gamma_mode_model(s, M):
+    """Finite reciprocal normalized Gamma product around s0=1/2."""
+    s = mp.mpc(s)
+    w = s - mp.mpf("0.5")
+    out = mp.e ** (-DRIFT * w)
+    for m in range(M):
+        l = lam(m)
+        out *= (1 + w / l) * mp.e ** (-w / l)
+    return out
+
+
+def verify_heat_trace_and_trivial_zeros():
+    for r0 in [mp.mpf("0.01"), mp.mpf("0.1"), 1]:
+        exact = heat_trace(r0)
+        for M in [2, 5, 12]:
+            approx = heat_trace_modes(r0, M)
+            exact_tail = mp.e ** (-(mp.mpf("0.5") + 2 * M) * r0) / (1 - mp.e ** (-2 * r0))
+            assert abs((exact - approx) - exact_tail) < mp.mpf("1e-65")
+
+    # Bernoulli short-time generator.
+    rr = mp.mpf("0.001")
+    partial = mp.fsum(
+        [
+            mp.bernpoly(n, mp.mpf("0.75"))
+            * (2 * rr) ** n
+            / mp.factorial(n)
+            for n in range(12)
+        ]
+    ) / (2 * rr)
+    assert abs(partial - heat_trace(rr)) < mp.mpf("1e-25")
+
+    # M spectral modes preserve the first M reciprocal-Gamma trivial zeros.
+    M = 8
+    for j in range(M):
+        assert abs(inverse_gamma_mode_model(-2 * j, M)) < mp.mpf("1e-60")
+
 def report():
     print("Critical Archimedean carrier:")
     print("  phi(t)=pi^{-it/2} Gamma(1/4+it/2)/Gamma(1/4)")
@@ -343,9 +392,10 @@ def main():
     loggamma_jet_quadrature()
     verify_common_source_kernel()
     verify_laguerre_jacobi_operator()
+    verify_heat_trace_and_trivial_zeros()
     report()
     print()
-    print("Verified common probe kernel for continuous Gamma and discrete prime sources.")\n    print("Verified Laguerre Jacobi spectral realization of the Gamma Dirac comb.")\n    print("All Mellin/Dirac/Gamma controls passed.")
+    print("Verified common probe kernel for continuous Gamma and discrete prime sources.")\n    print("Verified Laguerre Jacobi spectral realization of the Gamma Dirac comb.")\n    print("Verified Gamma heat trace, Bernoulli UV series, and finite trivial-zero preservation.")\n    print("All Mellin/Dirac/Gamma controls passed.")
 
 
 if __name__ == "__main__":
