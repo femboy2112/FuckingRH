@@ -1,5 +1,7 @@
 # Cubical shorting theorem: the physical Schur complement is a conditional innovation variance
 
+> **2026-10-07 proof-bearing audit:** Conditional-variance/Schur positivity is automatic, not the missing RH theorem. With only prime edges the parent is UV-bounded and cannot equal Weil; even adding the bare logarithmic difference energy fails operator order near the interval boundary. The exact repaired decomposition must include the positive part of Suzuki's boundary log potential in the raw block. See [proof-bearing frame audit](RH_PROOF_BEARING_FRAME_AUDIT.md).
+
 **Date:** 2026-10-07  
 **Status:** exact Hilbert-space linear algebra applied to the prime-support superconnection. No RH assumption. The identification with the Weil quadratic form is an explicit theorem target, not a claimed result.  
 **RH remains open.**
