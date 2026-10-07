@@ -1,3 +1,5 @@
+> **Provenance / hard analytic boundary (2026-10-07):** Mellin delta identities, Gamma-characteristic-function representations and finite quadrature do **not** establish bounded Hardy multiplier properties of the complete Suzuki `Θ_ω`. In particular `M[(1-x)g](s)=M[g](s)-M[g](s+1)`, so removing the Gamma kernel's local singularity alters the transfer. A real-line unimodular multiplier may still have an upper-half-plane pole. These are explicit counterexamples in [the critical audit](../audits/2026-10-07/CUBE_ATOM_CRITICAL_AUDIT_IMPORTED.md). The source-level RH gate remains Suzuki's innerness/contraction criterion. See [claim provenance](../audits/2026-10-07/RH_CLAIM_PROVENANCE_LEDGER.md).
+
 # Dirac--Mellin localization of Gamma: finite primes are atomic scale measures, infinity is their continuous completion
 
 **Date:** 2026-10-07  
