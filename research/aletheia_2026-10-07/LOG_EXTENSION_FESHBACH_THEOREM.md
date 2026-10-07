@@ -441,3 +441,43 @@ The explicit bound shows why compactness alone is not enough: \(\|D_a\|\) drives
 **UNVERIFIED:** an all-horizon positive bound for the finite effective \(\mathscr S_a\), and a uniform arithmetic mechanism to provide it.
 
 **RH:** OPEN.
+
+
+---
+
+## Addendum: unconditional finite negative-index bound
+
+Because \(D_a\) is bounded self-adjoint, the min–max principle also gives for the full localized Weil operator
+
+\[
+\boxed{
+\lambda_n(Q_W^a)
+\ge
+\lambda_n(\mathbf P_a)-\|D_a\|
+\ge
+\frac12\left[
+\gamma+\log\frac{\pi n}{2}
+-\operatorname{Ci}\!\left(\frac{\pi n}{2}\right)
+\right]-\|D_a\|.
+}
+\]
+
+In particular, set \(b_a=\|D_a\|\). For \(n\ge2\), the elementary bound \(|\operatorname{Ci}(\pi n/2)|<1\) gives
+
+\[
+\lambda_n(Q_W^a)
+\ge
+\frac12\left[\gamma+\log(\pi n/2)-1\right]-b_a.
+\]
+
+Consequently every eigenvalue with index
+
+\[
+\boxed{
+n>\max\left\{1,\frac2\pi e^{2b_a+1-\gamma}\right\}
+}
+\]
+
+is strictly positive, and thus the nonpositive Morse index is finite with an explicit source-computable upper bound. This is **unconditional**, holds for every finite \(a\), and is distinct from (far weaker than) the RH assertion that the negative index is **zero**.
+
+The coefficient \(b_a\) generally grows with the cutoff. This result is not a uniform finite-rank RH certificate as \(a\to\infty\).
