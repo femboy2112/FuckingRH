@@ -1,3 +1,13 @@
+## 2026-10-07 hostile proof-bearing frame audit (separate branch)
+
+**RH is OPEN.** On `audit/rh-proof-bearing-frontier-2026-10-07`, a direct audit of the cubical Gamma/Hodge/Schur proposal established: (1) the positive finite prime-only Gram is UV-bounded, while Suzuki's full finite-interval Weil form is unbounded above; (2) even adding the positive logarithmic Archimedean kinetic energy misses an arbitrarily positive boundary-localized potential and cannot be the raw parent for a positive short; (3) scalar product-formula primitivity does not lift to nontrivial fixed placewise response operators; and (4) finite Hodge positivity survives fake off-axis zero and fake-modulus controls. These are scoped no-gos, not a disproof of all possible completed constructions.
+
+The exact corrected decomposition is `Q_W^a = P_a - D_a`: `P_a` is the positive log-kernel kinetic + prime difference squares + positive boundary log potential; `D_a` is a bounded explicit self-adjoint correction containing the remaining boundary potential, smooth remainder and finite counterterm. See `research/aletheia_2026-10-07/RH_PROOF_BEARING_FRAME_AUDIT.md` and `scripts/rh_proof_frame_audit.py`.
+
+Next proof-bearing gates: establish quantitative spectral bounds/compactness for `P_a` in exact Suzuki normalization; build a canonical all-horizon estimate of the bounded correction rather than assume a positive completion; verify the full physical prime-power-only atom selection and the Suzuki `omega -> 0` passivity requirement. No step here proves RH.
+
+---
+
 # CURRENT STATE — 2026-10-06
 
 ## Round 003 update
