@@ -140,13 +140,13 @@ k_{\rm shift}-h
 }
 \]
 
-When \(r/q\) is a nontrivial rational ratio, this is a **forbidden extra scalar delta displacement** in the exact Weil formula, which has arithmetic atoms only at
+When \(q=p^j\) and \(r=\ell^k\) have **distinct prime bases** \(p\ne\ell\), the ratio \(r/q\) is not an integral prime power, and its logarithm is a **forbidden extra scalar delta displacement** in the exact Weil formula, whose arithmetic atoms are only at
 
 \[
 \pm\log(p^j).
 \]
 
-Therefore if a completed cubical/Dirac parent uses mixed shift commutators as internal curvature, its physical scalar observation map must **not** push the ratio-frequency defect forward as a new Weil atomic line.
+For **the same prime base**, the ratio of two depths may be \(p^{k-j}\), so the corresponding displacement can be an already-permitted prime-power line (or zero). The same-prime sector must be checked for correct weights rather than killed automatically. For **different prime bases**, if a completed cubical/Dirac parent uses mixed shift commutators as internal curvature, its physical scalar observation map must **not** push the ratio-frequency defect forward as a new Weil atomic line.
 
 This does not mean the commutator must vanish internally. It means its observation/renormalization must be compatible with the prime-power support of the true explicit formula.
 
