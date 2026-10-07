@@ -1,0 +1,46 @@
+{
+  "retrieved_utc_date": "2026-10-07",
+  "scope": "Finite Fourier normalization, real lattice Poisson, Gaussian theta, and Tate context. No positivity theorem imported.",
+  "sources": [
+    {
+      "author": "Andre Weil",
+      "title": "Fonction zeta et distributions",
+      "year": 1966,
+      "type": "primary author paper",
+      "url": "https://www.numdam.org/item/SB_1964-1966__9__523_0.pdf",
+      "inspected": "Extracted text of sections 1-2, pp.525-530; screenshots requested for PDF pages 3 and 8 but interface returned placeholders, not inspectable image bytes.",
+      "supports": "Self-dual Haar normalization, real Gamma distributions, and rational-diagonal global Poisson continuation in the actual adelic Schwartz-Bruhat space.",
+      "does_not_support": "RH, positivity of a new square, or compatibility of the naive finite LCM pullback and endomorphism DFT.",
+      "retrieval_refs": ["turn94view0", "turn95view0", "turn95view1", "turn97view0", "turn97view1"]
+    },
+    {
+      "author": "Lior Silberman",
+      "title": "Fourier Series and the Poisson Summation Formula (notes for Math 613)",
+      "type": "author-hosted mathematical notes",
+      "url": "https://personal.math.ubc.ca/~lior/teaching/1011/613D_F10/Fourier%2BPoissonSum.pdf",
+      "inspected": "Section 3, Exercise 13, PDF page 3; text inspected. Final displayed sum loses a Fourier hat in extraction, so the exact formulas in this round are derived independently from periodization Fourier coefficients.",
+      "supports": "Lattice duality and covolume normalization for sufficiently decaying functions; our stated domain is Schwartz.",
+      "retrieval_refs": ["turn89view2", "turn93view2", "turn97view3"]
+    },
+    {
+      "author": "NIST DLMF",
+      "title": "20.7.32, theta modular transformation",
+      "type": "official reference",
+      "url": "https://dlmf.nist.gov/20.7.E32",
+      "inspected": "Exact rendered text of 20.7.32 and square-root convention above 20.7.30.",
+      "supports": "L=1 theta inversion with tau=it, z=0; t positive removes branch ambiguity.",
+      "retrieval_refs": ["turn89view0", "turn93view1", "turn93view3"]
+    },
+    {
+      "author": "Stephen S. Kudla",
+      "title": "Tate's Thesis, in An Introduction to the Langlands Program",
+      "type": "authored exposition, not Tate's original thesis",
+      "url": "https://platoeinsyu.github.io/assets/pdf/Articles/Tate/TatesThesis.pdf",
+      "inspected": "PDF pages 13-19: self-dual measure, local Fourier transform and global continuation statement; extracted text only.",
+      "supports": "Additional normalization and provenance check only; no theorem rests on an unread extracted formula.",
+      "retrieval_refs": ["turn93view0", "turn94view1", "turn94view2", "turn97view2"]
+    }
+  ],
+  "tate_original_status": "Original thesis itself not retrieved; Weil's original paper provides the primary Tate-Iwasawa rederivation context. The finite formulas, intertwiners, theta relation, and vector Mellin continuation are proved explicitly in the round notes.",
+  "independence": "All computations and derivations are by the same-model subtask, not an independent truth witness. Root review remains separate. Sources corroborate classical inputs only."
+}
