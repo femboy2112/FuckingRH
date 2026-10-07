@@ -456,3 +456,150 @@ Numerical results are calibration, not proof of the infinite/source-rate claims.
 **UNVERIFIED:** the exponential rate itself; any all-horizon Weil positivity conclusion.
 
 **RH:** OPEN.
+
+
+---
+
+## Addendum — quantitative convergence in the critical log-energy norm
+
+The qualitative compactness argument in Section 5 can be upgraded to an explicit modulus.
+
+Let
+
+\[
+\mathcal D_A=H_A-P,
+\quad
+\eta=\eta_A(\ell),
+\]
+
+and choose a frequency cutoff \(B\ge2/\ell\).
+
+For \(f\in\mathscr V_\ell\), extend \(f\) by zero and let \(q_B\) be its Fourier projection to \([-B,B]\). Define
+
+\[
+f_B=1_{(0,\ell)}q_B.
+\]
+
+### High-frequency tail
+
+Because the positive finite-range multiplier \(m_\ell\) increases with frequency,
+
+\[
+\|f-f_B\|_2
+\le
+\|f_0-q_B\|_{L^2(\mathbb R)}
+\le
+m_\ell(B)^{-1/2}
+E_\ell(f)^{1/2}.
+\]
+
+Since \(\|\mathcal D_A\|_{2\to2}\) is bounded for large \(A\), the error from this tail is at most
+
+\[
+C_\ell m_\ell(B)^{-1/2}\|f\|_{\mathscr V_\ell}.
+\]
+
+### Low-frequency bounded variation
+
+The truncated function \(f_B\) has zero-extension bounded variation and
+
+\[
+\operatorname{Var}(f_B)
+\le
+\int_0^\ell|q_B'(x)|\,dx+|q_B(0)|+|q_B(\ell)|.
+\]
+
+Bernstein/Plancherel and Fourier Cauchy–Schwarz imply
+
+\[
+\operatorname{Var}(f_B)
+\le
+\left(
+\sqrt\ell\,B+
+2\sqrt{B/\pi}
+\right)\|f\|_2.
+\]
+
+Integration by parts against the signed source distribution, whose cumulative discrepancy is bounded by \(\eta\), gives
+
+\[
+\|\mathcal D_A f_B\|_2
+\le
+\sqrt\ell\,\eta
+\left(
+\sqrt\ell\,B+
+2\sqrt{B/\pi}
+\right)\|f\|_2.
+\]
+
+Combining:
+
+\[
+\boxed{
+\|\mathcal D_A\|_{\mathscr V_\ell\to L^2}
+\le
+C_\ell m_\ell(B)^{-1/2}
++
+\sqrt\ell\,\eta_A(\ell)
+\left(
+\sqrt\ell\,B+
+2\sqrt{B/\pi}
+\right)
+}
+\]
+
+for every \(B\ge2/\ell\) and all sufficiently large \(A\).
+
+Setting \(B=\eta_A(\ell)^{-1/2}\) (when \(\eta_A\) is small) and using \(m_\ell(B)\sim\log B\) gives
+
+\[
+\boxed{
+\|\mathcal D_A\|_{\mathscr V_\ell\to L^2}
+=
+O_\ell\!\left(
+\frac1{\sqrt{\log(1/\eta_A(\ell))}}
+\right).
+}
+\]
+
+This is a quantitative manifestation of the weak ultraviolet control inherent in a **logarithmic**, rather than Sobolev-power, energy.
+
+### Unconditional convergence rate from classical PNT
+
+The classical de la Vallée Poussin estimate
+
+\[
+\psi(x)-x
+=
+O(x e^{-c\sqrt{\log x}})
+\]
+
+implies, by Abel summation on the fixed-proportion interval \([Xe^{-2\ell},X]\),
+
+\[
+\boxed{
+\eta_A(\ell)\ll_\ell e^{-c_\ell\sqrt A}
+}
+\]
+
+for some \(c_\ell>0\).
+
+Choosing \(B=e^{c_\ell\sqrt A/2}\) in the preceding bound yields the unconditional quantitative estimate
+
+\[
+\boxed{
+\|H_A-P\|_{\mathscr V_\ell\to L^2}
+=
+O_\ell(A^{-1/4}).
+}
+\]
+
+The bound is generally far too slow to prove RH. In fact it follows from a classical zero-free region near \(\Re s=1\), and would hold without any control approaching the critical line.
+
+### Critical interpretation
+
+- Bare \(L^2\) norm matching is **impossible** (Theorem C).
+- Matching on the natural log-energy ball is **unconditionally true** and even has a quantitative \(A^{-1/4}\) rate.
+- RH requires the exponentially finer source CDF rate \(\eta_A=O(e^{-A}\operatorname{poly}A)\); this is **not** implied by the log-energy operator rate.
+
+This closes a seductive shortcut: compactness/graph-norm convergence alone does not upgrade PNT to RH.
