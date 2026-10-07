@@ -1,5 +1,7 @@
 # Cubical Hodge index: the product formula puts arithmetic log-vectors in the primitive hyperplane
 
+> **2026-10-07 proof-bearing audit:** The scalar product-formula primitive/Hodge theorem is correct, but it does not give a Hilbert-valued primitive response. For the separable ansatz `h_v(q;f) = log|q|_v A_v f`, primitiveness for all rational `q` forces **all `A_p = A_infinity`**, eliminating nontrivial place coupling. A non-factorized source-derived response is required. See [the rigidity theorem and fake-quartet control](RH_PROOF_BEARING_FRAME_AUDIT.md).
+
 **Date:** 2026-10-07  
 **Status:** exact finite algebraic/Hodge theorem for the toric cube \((\mathbf P^1)^m\). This produces a canonical positive primitive metric, but it is not yet identified with the Weil form.  
 **RH remains open.**
