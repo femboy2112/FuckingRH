@@ -1,3 +1,5 @@
+> **Stronger corrected raw-parent theorem (2026-10-07):** [LOG_EXTENSION_FESHBACH_THEOREM.md](LOG_EXTENSION_FESHBACH_THEOREM.md) proves Suzuki's log kinetic **plus boundary potential** equals a single positive zero-extension square minus a finite scalar. The natural positive physical parent is therefore `E_{2a}+E_prime`, not the prime-only degree-zero cube Gram. This parent is source-defined and has explicit log-growing eigenvalue bounds. Remaining low-mode Feshbach positivity is not supplied by the cube and remains RH-equivalent.
+
 # Prime-support superconnection: a global cubical Dirac/Hodge parent for the Suzuki-Weil edge energy
 
 > **2026-10-07 proof-bearing audit:** The finite supercharge and its positive shorted Gram are valid algebraically, but the prime-only degree-zero Gram is bounded on L2 and therefore **cannot equal the full localized Weil form**, which has logarithmically unbounded Archimedean high-frequency energy. See [the exact UV and boundary no-go theorems](RH_PROOF_BEARING_FRAME_AUDIT.md). The claimed completed pushforward remains UNVERIFIED; finite positivity is not RH progress.
