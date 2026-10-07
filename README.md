@@ -1,3 +1,5 @@
+> **2026-10-07 research provenance:** The [active claim-by-claim provenance ledger](research/audits/2026-10-07/RH_CLAIM_PROVENANCE_LEDGER.md) distinguishes Suzuki and classical source theorems from assistant-derived finite identities, hostile control results, imported critiques and RH-equivalent unproved statements. It records precise source versions, proof commits, test status and correction history. The [imported cube-atom critical audit](research/audits/2026-10-07/CUBE_ATOM_CRITICAL_AUDIT_IMPORTED.md) is archived with authorship uncertainty stated explicitly. RH remains open.
+
 # FuckingRH
 
 Research repository for a proof-first attack on the Riemann Hypothesis.
