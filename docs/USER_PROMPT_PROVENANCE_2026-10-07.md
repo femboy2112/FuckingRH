@@ -150,6 +150,7 @@ When actual chat exports become available, replace `R` evidence with immutable t
 - `CLAIM_LEDGER.md` — scope and truth status (never inferred from this document).
 - `docs/SUCC_FUCC_CONCEPT_ATLAS_2026-10-07.md` — typed mathematical dictionary, exact bridges, and mismatch hazards.
 - `docs/SUCC_FUCC_PROBE_LEDGER_2026-10-07.md` — explicit falsifiers and next proof-bearing probes.
+- `docs/RH_LINEAGE_SOURCE_INDEPENDENCE_2026-10-07.md` — source-family genealogy, dependency/independence audit and Round006 corrections.
 - `research/aletheia_2026-10-05/PROFINITE_SUCCESSOR_LIGHTCONE.md` and `SUCCESSOR_LCM_MEMORY.md` — source/clock formalization.
 - `research/aletheia_2026-10-06/FUCC_IS_PASCAL.md` — compositional/binomial translation.
 - `research/astra_round_007/VALUATION_LATTICE_GEOMETRY.md` and `PARENT_AUDIT.md` — faithful valuation lift, gaps, Round006 corrections (**PR #5**, unmerged at writing).
