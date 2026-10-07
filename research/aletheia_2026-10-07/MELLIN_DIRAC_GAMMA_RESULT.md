@@ -303,11 +303,11 @@ Construct a finite completed operator in **both** Gamma bases:
 
 Couple each independently to the same finite conductor/carry arithmetic system.
 
-Then ask whether they produce the same finite completed boundary operator after an explicitly derived intertwiner.
+Then ask whether they produce the same completed **scalar/boundary transfer observable** under an explicitly declared comparison map. Do not require a unitary intertwiner between the Gamma Jacobi operator and the diagonal mode ladder: their infinite spectral types differ (continuous versus pure point), so direct operator equivalence is not the target.
 
 Pass criteria:
 
-- exact or controlled equivalence of the two finite Gamma realizations after coupling;
+- exact or controlled agreement of the two induced boundary/transfer observables after coupling;
 - mutation sensitivity to real prime data;
 - correct signed pole/boundary sector;
 - stable two-parameter \((X,M)\) limit independent of cofinal path;
