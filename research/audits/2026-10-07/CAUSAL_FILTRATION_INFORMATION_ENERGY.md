@@ -270,3 +270,65 @@ Failure of these conditions should be recorded as a mathematical no-go, not an i
 **STILL UNPROVED:** source-derived completed adapted observation with all-\(\omega\) Hardy passivity; Weil positivity; RH.
 
 **Research interpretation:** The user's "conserve causality" intuition genuinely determines the local source/admissibility operator. It does not yet determine the completed scalar readout or its \(L^2\) passivity.
+
+
+---
+
+## 9. Rigidity of finite causal unitaries; unilateral SUCC is an isometry with a boundary defect
+
+A particularly important operator-theoretic correction to the "QM cube" analogy is the distinction between **causal isometry** and **finite time-ordered unitary dynamics**.
+
+### Theorem D (classical triangular-unitary rigidity)
+
+Let \(U\) be an \(N\times N\) complex matrix that is both lower triangular in a chronological basis and unitary:
+
+\[
+U^*U=UU^*=I,\qquad U_{ij}=0\quad(i<j).
+\]
+
+Then \(U\) is diagonal, with diagonal entries of modulus \(1\).
+
+**Proof.** The first row has only \(U_{11}\). Unitarity forces \(|U_{11}|=1\); orthogonality and the norm of the first column force every \(U_{j1}=0\) for \(j>1\). Remove the first row/column and repeat. QED.
+
+Thus **a nontrivial finite-memory causal all-pass system cannot be represented as one finite square lower-triangular unitary on the same input/output timeline.** Additional internal storage, delay/output compression, infinite time, or an enlarged/environmental system is required.
+
+### The unilateral successor is the exact counterpoint
+
+On \(\ell^2(\mathbb N_{\ge1})\),
+
+\[
+S|n\rangle=|n+1\rangle.
+\]
+
+Then
+
+\[
+\boxed{
+S^*S=I,\qquad
+SS^*=I-|1\rangle\langle1|.
+}
+\]
+
+It is **causal and isometric** (no energy amplification) but is **not onto**. The boundary defect is exactly
+
+\[
+\boxed{
+[S^*,S]=|1\rangle\langle1|.
+}
+\]
+
+This is the standard unilateral-shift/Wold-defect construction; the repository's earlier Round006 C100 already used the source \(|1\rangle\langle1|\) and prime-dilation transport. No novelty is claimed for the basic identity.
+
+At encountered event \(n\), the prefix boundary commutator
+
+\[
+[S,P_{n-1}]=|n\rangle\langle n-1|
+\]
+
+is the **translated moving wavefront** version of a one-dimensional defect.
+
+### Crucial limit
+
+An isometric \(S\) does **not** mean that a source-weighted superposition \(\sum_q w_q S_q\) is isometric, and it does **not** mean that the scalar Gamma-completed observable is contractive. The latter requires the correct source-defined readout and global storage law.
+
+This theorem is the precise place where "conserve causality" intersects an actual Hilbert-energy invariant without silently assuming RH.
