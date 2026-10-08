@@ -1,3 +1,5 @@
+> **2026-10-07 hostile correction:** The rank-one SUCC carry defect derived below is **exact for the chosen global mixed-radix section**, but **is not a representation/gauge-invariant arithmetic curvature**. An intrinsic local \(p\)-adic digit can give defect rank \(L/p^{v_p(L)}\) instead. The invariant theorem is the split/nonsplit class of the cyclic extension \(0\to\mathbb Z/p\to\mathbb Z/pL\to\mathbb Z/L\to0\), proved in [INTRINSIC_CARRY_EXTENSION_CLASS.md](INTRINSIC_CARRY_EXTENSION_CLASS.md): new primes split by CRT; higher prime powers carry a nontrivial extension. Both isometric births remain valid; neither gives RH. Do not promote the rank-one formula below without its section hypothesis.
+
 # Fresh-digit isometric actualization and exact rank-one SUCC carry
 
 **Date:** 2026-10-07
