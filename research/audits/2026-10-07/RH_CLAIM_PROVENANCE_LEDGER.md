@@ -231,7 +231,7 @@ with exact prime/Gamma/pole constants, and the genuinely unpaid question is the 
 ## SWS. Completed succ–Weil–Suzuki bridge and exact operator work
 
 **Branch:** `research/succ-weil-suzuki-rigorous-bridge-2026-10-07`. **Parent:** `987a67d891879e966c9e0c7fb533a5dc74f805fd`.  
-**First complete bundle:** SWS_INITIAL_MATH_COMMIT. The original source/priority of each component remains as recorded in the detailed registry.
+**First complete bundle:** [`bb92df1e0d29a5e0b5126d7debb2d7b5e2c8731d`](https://github.com/femboy2112/FuckingRH/commit/bb92df1e0d29a5e0b5126d7debb2d7b5e2c8731d). The original source/priority of each component remains as recorded in the detailed registry.
 
 The [new claim-by-claim registry](../../aletheia_2026-10-07/succ_weil_suzuki/PROVENANCE_AND_CLAIMS.md) provides source versions, earlier proof commits, precise domains and quantifiers, performed versus unperformed computations, and authorship. The [round result](../../aletheia_2026-10-07/succ_weil_suzuki/ROUND_RESULT.md) records actual execution. This extends the present ledger and retains its existing corrections.
 

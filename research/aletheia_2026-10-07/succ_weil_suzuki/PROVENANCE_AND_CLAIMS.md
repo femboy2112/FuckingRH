@@ -22,7 +22,7 @@ The separate user-origin register and concept atlas were inspected at the immuta
 
 Those files distinguish recovered excerpts from paraphrases and assistant formalizations. This bundle does not promote their excerpts to a complete authenticated chat transcript. They are conceptual lineage, not mathematical proof dependencies. Their branch is linked, not merged wholesale into the newer audit parent.
 
-**First appearance of this complete bundle:** the initial mathematical commit on the branch named above. The immediate provenance follow-up pins its exact SHA here after the Git object has been created. Earlier derivations of component identities are recorded below; this field is not a priority claim.
+**First appearance of this complete bundle:** commit [`bb92df1e0d29a5e0b5126d7debb2d7b5e2c8731d`](https://github.com/femboy2112/FuckingRH/commit/bb92df1e0d29a5e0b5126d7debb2d7b5e2c8731d), tree `014585c614569277990b8f08483c360df9989f6a`, on the branch named above. This exact commit contains the full derivations and executed evidence; the immediate follow-up only pins provenance metadata. Earlier derivations of component identities are recorded below; this field is not a priority claim.
 
 ## 2. Primary mathematical sources
 
