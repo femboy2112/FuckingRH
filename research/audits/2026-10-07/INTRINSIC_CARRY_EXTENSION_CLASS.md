@@ -257,3 +257,86 @@ But a cohomology class and a finite isometry **do not imply Hardy innerness** or
 **UNVERIFIED:** a physically/canonically selected observation realizing Suzuki \(\Theta_\omega\) and all-\(\omega\) Hardy passivity.
 
 **RH:** OPEN.
+
+
+---
+
+## 7. Exact flatness of distinct-prime actualization squares
+
+The local \(p\)-adic digit construction also obeys an unexpectedly useful **functorial compatibility law**.
+
+For any finite modulus \(L\), prime \(p\), and \(\omega\ge0\), write the local isometry explicitly as
+
+\[
+(W_{L,p,\omega}f)(r)
+=
+\phi_{p,v_p(L),\omega}(r)\,
+f(r\bmod L),
+\]
+
+where
+
+\[
+\phi_{p,a,\omega}(r)
+=
+p^{-\omega}
++\sqrt{1-p^{-2\omega}}\,
+\exp\!\left(
+\frac{2\pi i}{p}
+\left\lfloor
+\frac{r\bmod p^{a+1}}{p^a}
+\right\rfloor
+\right).
+\]
+
+For **distinct** primes \(p\ne q\),
+
+\[
+v_p(qL)=v_p(L),\qquad
+v_q(pL)=v_q(L).
+\]
+
+Thus both chronological paths \(L\to pL\to pqL\) and \(L\to qL\to pqL\) yield the same final pointwise product of the two prime-local digit factors:
+
+\[
+\begin{aligned}
+(W_{pL,q,\omega}W_{L,p,\omega}f)(r)
+&=
+\phi_{q,v_q(L),\omega}(r)
+\phi_{p,v_p(L),\omega}(r)
+f(r\bmod L)\\
+&=
+\phi_{p,v_p(L),\omega}(r)
+\phi_{q,v_q(L),\omega}(r)
+f(r\bmod L).
+\end{aligned}
+\]
+
+Hence:
+
+### Theorem B — prime-transverse refinement flatness
+
+\[
+\boxed{
+W_{pL,q,\omega}W_{L,p,\omega}
+=
+W_{qL,p,\omega}W_{L,q,\omega}
+\quad(p\ne q).
+}
+\]
+
+The equality is **exact** as maps \(H_L\to H_{pqL}\), for every \(L\ge1\) and \(\omega\ge0\), even if \(p\) or \(q\) already divide \(L\).
+
+This is the appropriately chosen **flat transverse null model**:
+
+- adding distinct prime axes is path-independent under pure local digit refinement;
+- deepening an existing prime axis is governed by a nonsplit cyclic extension and its intrinsic local carry cocycle;
+- any proposed cross-prime curvature in an RH model must come from **additional chronological SUCC/carry/Archimedean observation**, not from an arbitrary choice of mixed-radix section.
+
+The earlier global mixed-radix construction can produce a nonzero \(p,q\) plaquette difference even in the bare source. That difference is **coordinate-choice-dependent**; it is not arithmetic evidence for a physically meaningful curvature.
+
+### Hostile finite check
+
+Seven distinct-prime squares \((L,p,q)\) were independently checked at \(\omega=0.1,0.5,1\); all composition matrices agreed within floating-point precision. This is a calibration of the algebraic identity, not a proof of RH. Actual execution is recorded in \`CAUSAL_FILTRATION_EXECUTION.md\`.
+
+**RH consequence:** none yet. It eliminates a potentially misleading source of spurious curvature and identifies the allowed place where genuinely new noncommutativity must enter.
