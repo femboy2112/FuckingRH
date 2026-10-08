@@ -1,3 +1,5 @@
+> **Classical mathematics provenance:** The cyclic-group cohomology calculation `H²(C_L,A)=A/LA` for a trivial module (A) follows from the standard periodic resolution (e.g. Kenneth S. Brown, *Cohomology of Groups*, Springer, GTM 87, and an explicit discussion at https://mathoverflow.net/questions/236954/group-cohomology-of-the-cyclic-group). Specializing to `A=C_p` yields a nontrivial class iff (p\mid L). Our proof below also establishes the split/non-split criterion directly from elementary congruences, independent of invoking the cohomology formula. This is prior mathematical theory, not an original RH discovery.
+
 # The invariant causal carry: split versus nonsplit prime-digit group extensions
 
 **Date:** 2026-10-07  
