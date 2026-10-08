@@ -1,0 +1,363 @@
+{
+  "claim_status": "finite floating-point controls and observations; no all-space positivity certificate",
+  "generated_utc": "2026-10-07T23:55:16.926382+00:00",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+    "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python"
+  },
+  "source_inputs": {
+    "zero_data_used": false,
+    "random_seed": 2112,
+    "maximum_prime_power": 162751
+  },
+  "normalization": {
+    "Fourier": "hat(v)(u)=integral v(t)exp(i*u*t)dt",
+    "translation_norm": "whole R after zero extension",
+    "D0": 5.3721834192256654,
+    "Gamma_F0": 4.299332288626778
+  },
+  "identity_residuals": {
+    "gamma_quadrature_vs_series": 2.5693426553008436e-11,
+    "square_vs_direct_weil": 1.4015715671389373e-12,
+    "large_scalar_cancellation": 3.383959779057477e-13,
+    "box_vs_suzuki_triangle": 1.0391687510491465e-13,
+    "odd_haar_gamma": 1.7763568394002505e-13,
+    "embedded_box_horizon_identity": 3.552713678800501e-15
+  },
+  "prime_first_jet_max_error": 6.661338147750939e-16,
+  "triangle_max_error": 1.2351231148954867e-15,
+  "finite_clock": {
+    "L": 6,
+    "m": 4,
+    "normalized_haar_isometry_error": 0.0,
+    "braid_max_error": 0.0,
+    "refinement_max_error": 0.0
+  },
+  "local_certificate_exact_rational_controls": {
+    "pi_lower_exceeds_25_over_8": true,
+    "pi_upper_below_1571_over_500": true,
+    "log2_lower_exceeds_277_over_400": true,
+    "log2_upper_below_347_over_500": true,
+    "gamma_upper_below_289_over_500": true,
+    "exp_lower_exceeds_pi_upper_bound": true,
+    "Gamma_first_term_exceeds_3999_over_1000": true,
+    "sinh_rank_bound_below_one_millionth": true,
+    "final_margin_exact_and_above_3_over_100": true
+  },
+  "mutation_controls": {
+    "omit_origin_scalar_error": 5.372183419225668,
+    "compressed_shift_gamma_error": 1.4133651520154762,
+    "omit_triangle_half_error": 0.044007305236851924,
+    "prime_jet_half_error_at_2": 0.49012907173427356,
+    "fake_off_axis_cosine_kernel_value_at_pi": -1.2984363570080228
+  },
+  "checks": {
+    "all_identity_errors_below_1e_minus_8": true,
+    "triangle_error_below_1e_minus_9": true,
+    "prime_jet_error_below_1e_minus_10": true,
+    "clock_errors_below_1e_minus_12": true,
+    "all_positive_mutation_errors_exceed_1e_minus_5": true,
+    "fake_off_axis_control_is_negative": true,
+    "all_nine_exact_rational_controls_pass": true,
+    "local_certificate_not_contradicted_by_finite_Ritz_values": true
+  },
+  "finite_Ritz_scans": [
+    {
+      "A": 0.0078125,
+      "cells": 16,
+      "prime_power_events": 0,
+      "minimum_Q_Ritz_value": 2.702591927848594,
+      "maximum_D_over_P_Ritz_value": 0.6653043816472455,
+      "box_Q": 2.77113597628023,
+      "P_condition_number": 1.478590440009706
+    },
+    {
+      "A": 0.0078125,
+      "cells": 32,
+      "prime_power_events": 0,
+      "minimum_Q_Ritz_value": 2.6987472943795607,
+      "maximum_D_over_P_Ritz_value": 0.6656213031502964,
+      "box_Q": 2.771135976280238,
+      "P_condition_number": 1.5661035141868893
+    },
+    {
+      "A": 0.0078125,
+      "cells": 64,
+      "prime_power_events": 0,
+      "minimum_Q_Ritz_value": 2.6973468312334097,
+      "maximum_D_over_P_Ritz_value": 0.6657368214116359,
+      "box_Q": 2.771135976280238,
+      "P_condition_number": 1.652516885100767
+    },
+    {
+      "A": 0.125,
+      "cells": 16,
+      "prime_power_events": 0,
+      "minimum_Q_Ritz_value": 0.3240208212591833,
+      "maximum_D_over_P_Ritz_value": 0.9431163617771536,
+      "box_Q": 0.4098679702586707,
+      "P_condition_number": 1.6092639296049047
+    },
+    {
+      "A": 0.125,
+      "cells": 32,
+      "prime_power_events": 0,
+      "minimum_Q_Ritz_value": 0.3196252614809607,
+      "maximum_D_over_P_Ritz_value": 0.9438446934162802,
+      "box_Q": 0.4098679702586691,
+      "P_condition_number": 1.733600788562421
+    },
+    {
+      "A": 0.125,
+      "cells": 64,
+      "prime_power_events": 0,
+      "minimum_Q_Ritz_value": 0.31811124074443065,
+      "maximum_D_over_P_Ritz_value": 0.9440958228433637,
+      "box_Q": 0.4098679702586668,
+      "P_condition_number": 1.8562213118488224
+    },
+    {
+      "A": 0.25,
+      "cells": 16,
+      "prime_power_events": 0,
+      "minimum_Q_Ritz_value": 0.041380131499977324,
+      "maximum_D_over_P_Ritz_value": 0.9923562121119954,
+      "box_Q": 0.16065032152834757,
+      "P_condition_number": 1.5652436790221278
+    },
+    {
+      "A": 0.25,
+      "cells": 32,
+      "prime_power_events": 0,
+      "minimum_Q_Ritz_value": 0.03589983954703779,
+      "maximum_D_over_P_Ritz_value": 0.9933618182581047,
+      "box_Q": 0.16065032152834785,
+      "P_condition_number": 1.6963822027439601
+    },
+    {
+      "A": 0.25,
+      "cells": 64,
+      "prime_power_events": 0,
+      "minimum_Q_Ritz_value": 0.03414566534310559,
+      "maximum_D_over_P_Ritz_value": 0.9936841311712659,
+      "box_Q": 0.16065032152834646,
+      "P_condition_number": 1.8255083484711123
+    },
+    {
+      "A": 0.5,
+      "cells": 16,
+      "prime_power_events": 1,
+      "minimum_Q_Ritz_value": 0.010834367047545257,
+      "maximum_D_over_P_Ritz_value": 0.998297360169955,
+      "box_Q": 0.08801461047370698,
+      "P_condition_number": 1.4310548581982239
+    },
+    {
+      "A": 0.5,
+      "cells": 32,
+      "prime_power_events": 1,
+      "minimum_Q_Ritz_value": 0.0037756000209689944,
+      "maximum_D_over_P_Ritz_value": 0.9994059988945752,
+      "box_Q": 0.08801461047370593,
+      "P_condition_number": 1.5353968080436289
+    },
+    {
+      "A": 0.5,
+      "cells": 64,
+      "prime_power_events": 1,
+      "minimum_Q_Ritz_value": 0.0012515860017692935,
+      "maximum_D_over_P_Ritz_value": 0.99980301440871,
+      "box_Q": 0.08801461047370623,
+      "P_condition_number": 1.6196880899166122
+    },
+    {
+      "A": 1.0,
+      "cells": 16,
+      "prime_power_events": 5,
+      "minimum_Q_Ritz_value": 0.0085113419889126,
+      "maximum_D_over_P_Ritz_value": 0.9992423022888776,
+      "box_Q": 0.05334112417185617,
+      "P_condition_number": 1.2363462080196488
+    },
+    {
+      "A": 1.0,
+      "cells": 32,
+      "prime_power_events": 5,
+      "minimum_Q_Ritz_value": 0.0023854215054837096,
+      "maximum_D_over_P_Ritz_value": 0.9997875288500506,
+      "box_Q": 0.05334112417185789,
+      "P_condition_number": 1.2642204413670532
+    },
+    {
+      "A": 1.0,
+      "cells": 64,
+      "prime_power_events": 5,
+      "minimum_Q_Ritz_value": 0.0007501028816776967,
+      "maximum_D_over_P_Ritz_value": 0.9999331780822407,
+      "box_Q": 0.053341124171856436,
+      "P_condition_number": 1.3531050702594631
+    },
+    {
+      "A": 2.0,
+      "cells": 16,
+      "prime_power_events": 24,
+      "minimum_Q_Ritz_value": 0.002990639804195854,
+      "maximum_D_over_P_Ritz_value": 0.9998995028905447,
+      "box_Q": 0.017570465272597466,
+      "P_condition_number": 1.1126791020497537
+    },
+    {
+      "A": 2.0,
+      "cells": 32,
+      "prime_power_events": 24,
+      "minimum_Q_Ritz_value": 0.0016852074310667016,
+      "maximum_D_over_P_Ritz_value": 0.9999433680026948,
+      "box_Q": 0.01757046527259582,
+      "P_condition_number": 1.1346657212710252
+    },
+    {
+      "A": 2.0,
+      "cells": 64,
+      "prime_power_events": 24,
+      "minimum_Q_Ritz_value": 0.000711930345665168,
+      "maximum_D_over_P_Ritz_value": 0.9999760745440521,
+      "box_Q": 0.01757046527259868,
+      "P_condition_number": 1.155757188902717
+    },
+    {
+      "A": 3.0,
+      "cells": 16,
+      "prime_power_events": 98,
+      "minimum_Q_Ritz_value": 0.004123564086521132,
+      "maximum_D_over_P_Ritz_value": 0.9999488180640728,
+      "box_Q": 0.016041074378642897,
+      "P_condition_number": 1.173952096114781
+    },
+    {
+      "A": 3.0,
+      "cells": 32,
+      "prime_power_events": 98,
+      "minimum_Q_Ritz_value": 0.0024988543646643426,
+      "maximum_D_over_P_Ritz_value": 0.9999689834375055,
+      "box_Q": 0.01604107437864206,
+      "P_condition_number": 1.174691893681054
+    },
+    {
+      "A": 3.0,
+      "cells": 64,
+      "prime_power_events": 98,
+      "minimum_Q_Ritz_value": 0.0003937456693898799,
+      "maximum_D_over_P_Ritz_value": 0.9999951125778078,
+      "box_Q": 0.01604107437864441,
+      "P_condition_number": 1.1749968885583364
+    },
+    {
+      "A": 4.0,
+      "cells": 16,
+      "prime_power_events": 465,
+      "minimum_Q_Ritz_value": 0.0022891881978803243,
+      "maximum_D_over_P_Ritz_value": 0.9999895433625458,
+      "box_Q": 0.007737172391709429,
+      "P_condition_number": 1.211529852695493
+    },
+    {
+      "A": 4.0,
+      "cells": 32,
+      "prime_power_events": 465,
+      "minimum_Q_Ritz_value": 0.0015019386650844163,
+      "maximum_D_over_P_Ritz_value": 0.999993139365042,
+      "box_Q": 0.0077371723917169215,
+      "P_condition_number": 1.2126823065834136
+    },
+    {
+      "A": 4.0,
+      "cells": 64,
+      "prime_power_events": 465,
+      "minimum_Q_Ritz_value": 0.0008558208582044535,
+      "maximum_D_over_P_Ritz_value": 0.9999960907246327,
+      "box_Q": 0.007737172391707537,
+      "P_condition_number": 1.2130147014576331
+    },
+    {
+      "A": 6.0,
+      "cells": 16,
+      "prime_power_events": 15040,
+      "minimum_Q_Ritz_value": 0.0017813087194544523,
+      "maximum_D_over_P_Ritz_value": 0.9999988962883004,
+      "box_Q": 0.004871982016329823,
+      "P_condition_number": 1.2395865073937145
+    },
+    {
+      "A": 6.0,
+      "cells": 32,
+      "prime_power_events": 15040,
+      "minimum_Q_Ritz_value": 0.0007493891835679197,
+      "maximum_D_over_P_Ritz_value": 0.9999995356727724,
+      "box_Q": 0.0048719820164624655,
+      "P_condition_number": 1.241814273434245
+    },
+    {
+      "A": 6.0,
+      "cells": 64,
+      "prime_power_events": 15040,
+      "minimum_Q_Ritz_value": 0.0003023173110840512,
+      "maximum_D_over_P_Ritz_value": 0.9999998126818469,
+      "box_Q": 0.004871982016510712,
+      "P_condition_number": 1.2423805818655862
+    }
+  ],
+  "fixed_box_horizon_observation": [
+    {
+      "A": 0.25,
+      "Q_fixed_box": 0.16065032152834743,
+      "Q_from_larger_interval_matrix": 0.16065032152834743,
+      "D_over_P_fixed_box": 0.9709641877822893,
+      "P_fixed_box": 5.532833740754013
+    },
+    {
+      "A": 0.5,
+      "Q_fixed_box": 0.16065032152834743,
+      "Q_from_larger_interval_matrix": 0.16065032152834743,
+      "D_over_P_fixed_box": 0.9753342461024526,
+      "P_fixed_box": 6.51309188422256
+    },
+    {
+      "A": 1.0,
+      "Q_fixed_box": 0.16065032152834743,
+      "Q_from_larger_interval_matrix": 0.16065032152834743,
+      "D_over_P_fixed_box": 0.9858896742444552,
+      "P_fixed_box": 11.385302105106831
+    },
+    {
+      "A": 2.0,
+      "Q_fixed_box": 0.16065032152834743,
+      "Q_from_larger_interval_matrix": 0.16065032152834743,
+      "D_over_P_fixed_box": 0.9946299756925172,
+      "P_fixed_box": 29.916125575910165
+    },
+    {
+      "A": 4.0,
+      "Q_fixed_box": 0.16065032152834743,
+      "Q_from_larger_interval_matrix": 0.16065032152834743,
+      "D_over_P_fixed_box": 0.9992667060354108,
+      "P_fixed_box": 219.08038151971843
+    },
+    {
+      "A": 6.0,
+      "Q_fixed_box": 0.16065032152834743,
+      "Q_from_larger_interval_matrix": 0.16065032152834743,
+      "D_over_P_fixed_box": 0.9999004697021845,
+      "P_fixed_box": 1614.0846059391747
+    }
+  ],
+  "limitations": [
+    "No interval arithmetic: these are observations, not rigorous eigenvalue enclosures.",
+    "Finite Q Ritz minima bound the true infimum from above.",
+    "Finite generalized D/P maxima bound the full compact sign-operator norm from below.",
+    "Near-one ratios alone cannot establish positivity; use the cancelled Q and a justified tail.",
+    "The analytic local positivity theorem is proved in the accompanying note, not by this scan."
+  ]
+}

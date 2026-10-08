@@ -1,0 +1,4 @@
+# Optional dependencies for scripts/rh_succ_weil_suzuki_probe.py only.
+# The repository's other probes have their own requirements.
+numpy>=1.26
+scipy>=1.11

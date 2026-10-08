@@ -1,0 +1,65 @@
+{
+  "scope": "Hash manifest for the exact proof notes, executable source, and saved finite evidence; provenance and repository entry points are separately versioned by Git.",
+  "session_started_utc_date": "2026-10-07",
+  "publication_utc_date": "2026-10-08",
+  "base_commit": "987a67d891879e966c9e0c7fb533a5dc74f805fd",
+  "base_tree": "6d43c4b9426b22e4af487f7ec0da8de63553b8d6",
+  "command": "python scripts/rh_succ_weil_suzuki_probe.py --output research/aletheia_2026-10-07/succ_weil_suzuki/evidence/finite_probe_results.json",
+  "exit_status": 0,
+  "result_generated_utc": "2026-10-07T23:55:16.926382+00:00",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+    "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python"
+  },
+  "all_grouped_checks_pass": true,
+  "finite_Ritz_scan_count": 27,
+  "exact_rational_comparison_count": 9,
+  "hash_algorithm": "sha256",
+  "files": {
+    "research/aletheia_2026-10-07/succ_weil_suzuki/README.md": {
+      "bytes": 25496,
+      "sha256": "437354ec299e90c82b64c8b3d72bde5289350cfa50c103d5e04868152c43d9a4"
+    },
+    "research/aletheia_2026-10-07/succ_weil_suzuki/FULL_SUZUKI_WEIL_TANGENT.md": {
+      "bytes": 21084,
+      "sha256": "a38af00b03ebdf0d8b5603df4f5dc0813ed2c0ea77fad4b8d091223195fcf39b"
+    },
+    "research/aletheia_2026-10-07/succ_weil_suzuki/GAMMA_ENERGY_COMPACT_SIGN_OPERATOR.md": {
+      "bytes": 23457,
+      "sha256": "7b840149bf0081fbcd739b84089af513ceab11ef4c32504ec8780235a8d85fd1"
+    },
+    "research/aletheia_2026-10-07/succ_weil_suzuki/LOCAL_POSITIVITY_CERTIFICATE.md": {
+      "bytes": 13755,
+      "sha256": "8d9443368b72b334144b7a2c9a449d222616883b393410fafcb5c283723ca365"
+    },
+    "research/aletheia_2026-10-07/succ_weil_suzuki/FINITE_CERTIFICATE_INTERFACE.md": {
+      "bytes": 8327,
+      "sha256": "273376b14400731017485f70e28ce8f4106587b4b61b0e18efc8148c07cb56a8"
+    },
+    "research/aletheia_2026-10-07/succ_weil_suzuki/ROUND_RESULT.md": {
+      "bytes": 10621,
+      "sha256": "456f5b121cd79b403acc875fa3ec779cc8ab6395956dc1d0f7183c56c8a58967"
+    },
+    "research/aletheia_2026-10-07/succ_weil_suzuki/requirements-probe.txt": {
+      "bytes": 156,
+      "sha256": "778f0ba2e44f884219ca1d04068ec28c2843a773fb3e586da79d57a3a184c8d1"
+    },
+    "research/aletheia_2026-10-07/succ_weil_suzuki/evidence/finite_probe_results.json": {
+      "bytes": 11746,
+      "sha256": "502c9d32bb1f0032a25e68e06d6b2d7ae5ed6936058ac90c948692e7465b7735"
+    },
+    "scripts/rh_succ_weil_suzuki_probe.py": {
+      "bytes": 17164,
+      "sha256": "ae2cdd5fcdac8b64aee50b9941ea9d28aaa76d28c6079fd56b98126804a405e1"
+    }
+  },
+  "limits": [
+    "No RH proof.",
+    "No interval eigenvalue enclosure.",
+    "No full repository test-suite or CI claim.",
+    "Same-model audits are not external peer review."
+  ]
+}

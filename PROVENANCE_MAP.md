@@ -1,3 +1,9 @@
+## Completed succ–Weil–Suzuki checkpoint, 2026-10-07
+
+The [SWS provenance and claim registry](research/aletheia_2026-10-07/succ_weil_suzuki/PROVENANCE_AND_CLAIMS.md) is the entry point for the new research branch `research/succ-weil-suzuki-rigorous-bridge-2026-10-07`. It pins the audit parent, primary Suzuki versions, earlier successor/conductor/first-jet commits, Round007's exact energy and corrections, and the inherited bathtub method. The user-origin register at commit `05516d54f1618d8fcabbec0e54bc2b53e208429b` is linked as conceptual lineage without treating its excerpts as a complete chat transcript.
+
+User framing, GPT-6 mathematical derivations, external source theorems, same-model checks, numerical observations, and the unproved all-horizon gate are separately attributed. [ROUND_RESULT.md](research/aletheia_2026-10-07/succ_weil_suzuki/ROUND_RESULT.md) records the actual performed work and tests. The prior provenance history below is retained.
+
 ## Live 2026-10-07 claim-level provenance (governing this audit branch)
 
 The historical archive map below is preserved. For **current load-bearing mathematical claims**, use [the critical research provenance ledger](research/audits/2026-10-07/RH_CLAIM_PROVENANCE_LEDGER.md), not historical narrative alone. It records exact source versions/equation numbers, original derivation commits, corrected claims, mathematical priority, performed versus unperformed tests, third-party-audit status and open RH gates.
@@ -133,3 +139,4 @@ The program also explored:
 - unconditional on-line zero density as a partial-progress route.
 
 These remain research directions, not established RH machinery unless a current file promotes them.
+

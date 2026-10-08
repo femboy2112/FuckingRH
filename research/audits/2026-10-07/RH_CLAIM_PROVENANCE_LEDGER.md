@@ -226,3 +226,28 @@ Q_W^a=P_a-D_a
 \]
 
 with exact prime/Gamma/pole constants, and the genuinely unpaid question is the sign of the full, horizon-dependent low-energy effective Feshbach operator. **RH remains open.**
+
+
+## SWS. Completed succ–Weil–Suzuki bridge and exact operator work
+
+**Branch:** `research/succ-weil-suzuki-rigorous-bridge-2026-10-07`. **Parent:** `987a67d891879e966c9e0c7fb533a5dc74f805fd`.  
+**First complete bundle:** SWS_INITIAL_MATH_COMMIT. The original source/priority of each component remains as recorded in the detailed registry.
+
+The [new claim-by-claim registry](../../aletheia_2026-10-07/succ_weil_suzuki/PROVENANCE_AND_CLAIMS.md) provides source versions, earlier proof commits, precise domains and quantifiers, performed versus unperformed computations, and authorship. The [round result](../../aletheia_2026-10-07/succ_weil_suzuki/ROUND_RESULT.md) records actual execution. This extends the present ledger and retains its existing corrections.
+
+| Claim | Exact result and truth state | Boundary |
+|---|---|---|
+| SWS-001 | Synthesized exact path: unilateral arithmetic and LCM events, declared half-density/completion, Weil distribution, triangle/screw kernel, and conductor family | Classical/inherited identities retain source attribution; representation choices are not consequences of a bare analogy |
+| SWS-002 | Full derivative \((\|v\|^2-\|H_{\omega,A}v\|^2)/(2\omega)\to Q_W(v)\), polarized on every fixed compact smooth core | Gamma, both elementary factors, origin scalar, and prime events included; no uniform unit-ball assertion |
+| SWS-003 | Compactness for \(\omega>0\), distance at least one from the zero-parameter reflection, and divergent normalized defect operator norm | Refutes an operator-norm derivative at zero |
+| SWS-004 | Exact Gamma/prime energy minus scalar and odd-rank correction, with even-rank term retained positively | Re-derivation of the credited Round007 energy identity; no claim of first discovery |
+| SWS-005 | Closed form/domain/core, compact resolvent, quantitative Bessel/bathtub and rank-one tail bounds, positive compact \(B_A\), and local sign equivalence | Classical methods applied explicitly; \(\|B_A\|\le1\) is not proved generally |
+| SWS-006 | Old-support cancellation, elementary exponential lower mass growth, quotient limit one, and impossibility of a uniform strict horizon margin | No PNT/RH used; does not exclude non-strict all-horizon domination |
+| SWS-007 | \(Q_W(v)\ge(3/100)\|v\|^2\) for every \(0<A\le1/128\), \(v\in V_A\), with explicit rational bounds | Known small-interval type with a concrete proof; no prime event is active in this range |
+| SWS-008 | Durable finite controls and 27 floating-point compressions passed; nine exact rational comparisons passed | No interval eigenvalue enclosure, full-spectrum or RH certificate; no full repo-suite/CI claim |
+| SWS-009 | Explicit sufficient finite spectral/tail and block/mixed-term certificate, with proof and correct bound directions | Complete certified inputs have not been constructed at arbitrary horizons |
+| SWS-010 | \(D_A\le P_A\) for every \(A>0\), equivalently \(\|B_A\|\le1\) | **Unproved and RH-equivalent** |
+
+The user originated the research framing and authorized repository work. GPT-6 generated the new synthesis, proofs, code, and bounded same-model checks. Commit account attribution is not mathematical authorship; these checks are not external peer review. The current bundle does not re-adopt Round006 passive-Gamma, shifted-ratio/log-derivative, or pole-count/index errors.
+
+

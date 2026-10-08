@@ -1,3 +1,5 @@
+> **Current research checkpoint — succ → full Weil/Suzuki (2026-10-07):** [Start with the complete derivation](research/aletheia_2026-10-07/succ_weil_suzuki/README.md). The bundle proves the full smooth-core Suzuki tangent, gives the exact Gamma/prime form a closed compact-operator realization and quantitative tail, proves an explicit short-interval positivity bound, and rules out a uniform strict horizon margin. [Round result and executed controls](research/aletheia_2026-10-07/succ_weil_suzuki/ROUND_RESULT.md) · [SWS claim/source ledger](research/aletheia_2026-10-07/succ_weil_suzuki/PROVENANCE_AND_CLAIMS.md). The all-horizon domination remains RH-equivalent and unproved.
+
 > **2026-10-07 research provenance:** The [active claim-by-claim provenance ledger](research/audits/2026-10-07/RH_CLAIM_PROVENANCE_LEDGER.md) distinguishes Suzuki and classical source theorems from assistant-derived finite identities, hostile control results, imported critiques and RH-equivalent unproved statements. It records precise source versions, proof commits, test status and correction history. The [imported cube-atom critical audit](research/audits/2026-10-07/CUBE_ATOM_CRITICAL_AUDIT_IMPORTED.md) is archived with authorship uncertainty stated explicitly. RH remains open.
 
 # FuckingRH
@@ -33,3 +35,4 @@ Substantial consolidation work lives on branch `aletheia/rh-consolidation-2026-1
 ## Astra proof attempt 001
 
 [Round result](research/astra_round_001/ROUND_RESULT.md): **RH remains open**. The round proves finite-event rigidity, rules out the canonical geometric-prime Gaussian residual, and reconstructs the event/tail obligation with certified controls. See the [proof attempt](research/astra_round_001/PROOF_ATTEMPT_001.md) for the first unpaid lemma.
+

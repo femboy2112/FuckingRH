@@ -1,3 +1,19 @@
+# 2026-10-07 completed succ–Weil–Suzuki bridge checkpoint
+
+**RH OPEN.** This checkpoint is on `research/succ-weil-suzuki-rigorous-bridge-2026-10-07`, based on the frozen provenance-audit commit `987a67d891879e966c9e0c7fb533a5dc74f805fd`. The earlier checkpoints below remain historical records.
+
+The governing new derivation is [From succ/fucc to the completed Weil form and Suzuki](research/aletheia_2026-10-07/succ_weil_suzuki/README.md). It carries successor/divisibility and LCM events through declared half-density and Gaussian completion, fixes the origin term of the Weil distribution, and proves the **full** finite-Hankel norm-defect tangent on each compact smooth core. Operator-norm differentiation at zero is ruled out explicitly.
+
+The exact Gamma/prime square identity from Round007 is retained and credited. Its natural closed domain and smooth core now lead to a strictly positive compact-resolvent operator \(P_A\) and a positive compact sign operator \(B_A=P_A^{-1/2}D_AP_A^{-1/2}\). The exact local target is \(\|B_A\|\le1\). Quantitative spectral and mixed-block bounds are proved. An explicit unconditional theorem gives \(Q_W(v)\ge0.03\|v\|^2\) for \(0<A\le1/128\) on the whole form domain. This is a known type of small-support positivity with a concrete certificate; it does not reach the prime-interacting regime.
+
+A further exact obstruction shows that increasing the horizon adds the same scalar prime mass to both sides on any fixed old test. Their quotient tends to one regardless of the sign of the unchanged Weil form. Thus a uniform strict contraction margin is impossible, and near-one numerical ratios are not positivity evidence.
+
+**Executed:** 27 finite step-cell scans, independent full-form normalization checks, actual fixed-box embeddings into larger matrices, targeted mutations, and nine exact rational comparisons. These are recorded in [ROUND_RESULT.md](research/aletheia_2026-10-07/succ_weil_suzuki/ROUND_RESULT.md) and its JSON evidence. No all-space eigenvalue certificate or full repository-suite run is claimed.
+
+**Next theorem:** prove a specified extension of the local positivity bound into an interacting prime interval, or satisfy the explicit spectral/tail conditions in [FINITE_CERTIFICATE_INTERFACE.md](research/aletheia_2026-10-07/succ_weil_suzuki/FINITE_CERTIFICATE_INTERFACE.md). The all-horizon inequality remains unproved. Source versions, precursor commits, authorship, and stable claims SWS-001–010 are in [PROVENANCE_AND_CLAIMS.md](research/aletheia_2026-10-07/succ_weil_suzuki/PROVENANCE_AND_CLAIMS.md).
+
+---
+
 # 2026-10-07 provenance / cross-agent critical audit checkpoint
 
 **RH OPEN.** On `audit/claude-critique-provenance-2026-10-07`, the user-requested provenance reconciliation is recorded in `research/audits/2026-10-07/RH_CLAIM_PROVENANCE_LEDGER.md` and `research/audits/2026-10-07/CUBE_ATOM_CRITICAL_AUDIT_IMPORTED.md`. Original user-Library audit metadata, authorship uncertainty, source-version/equation attribution, first-proof commits, reimplementation test evidence and RH-equivalent unknowns are explicit. Earlier nonprojective conductor weights, false coherent-rotation/Markov equivalence and Mellin-shift-preservation shortcuts are retained as refuted. The recent log-bathtub/KMS finite claims survived independent finite numerical checks, but neither those tests nor existing all-horizon arguments have been externally peer reviewed. Hardy invariance / full completed Weil sign is the actual unproved gate. These provenance commitments do **not** establish RH.
@@ -835,3 +851,4 @@ remain unverified, with no new closure arrow supplied by this round.
 - Spectral wavefront / Landau-Widom profile: CORROBORATED by 2026 compact-window work.
 - de Bruijn-Newman phase boundary: DISCLOSED / classical; RH iff \(\Lambda=0\) after Rodgers-Tao.
 - PWCT closure theorem: UNVERIFIED umbrella; exact scalar reserve payment remains the immediate obstruction.
+
