@@ -274,3 +274,43 @@ An old claim with no provenance must stay **UNVERIFIED / HISTORICAL**, however a
 - **Local proof:** same note §§4, 7–8; independent finite storage controls in \`ACTIVATION_PASSIVITY_EXECUTION.md\`.
 - **RH proof interface:** construct a *source-forced* storage/colligation satisfying the KYP/Lyapunov passivity condition and whose transfer equals \(\Theta_\omega\) on the convergent Euler region for every \(\omega>0\). This is a target, **not established**.
 - **Status:** raw divergence is an unconditional PNT consequence; the completed all-\(\omega\) storage/Hardy theorem is RH-equivalent and **UNVERIFIED**.
+
+
+## P.10 Actualization wavefront as a causal filtration (2026-10-07)
+
+### [PV-2026-013] Source weight is computable at the event without future information
+
+- **User-origin insight:** shadow SUCC must operate with information already actualized at each wavefront event.
+- **Exact identity:** for \(L_n=\operatorname{lcm}(1,\ldots,n)\),
+  \(\Lambda(n)=\log(L_n/L_{n-1})=\log[n/\gcd(n,L_{n-1})]\).
+- **Proof lineage:** classical lcm/unique-factorization fact; earlier Round006 C100 gave a related von Mangoldt SUCC boundary-defect formula. This round's formal no-lookahead proof: [CAUSAL_FILTRATION_INFORMATION_ENERGY.md](CAUSAL_FILTRATION_INFORMATION_ENERGY.md) §1, first note commit \`aff6cc2b85823c5b380797da489404b1279d66df\`.
+- **Executed finite controls:** [CAUSAL_FILTRATION_EXECUTION.md](CAUSAL_FILTRATION_EXECUTION.md), \`python /mnt/data/rh_causal_filtration_checks.py\` tested all \(2\le n\le250\). Source copied to \`scripts/rh_causal_filtration_checks.py\` at \`1a74902affb7d525bd8fd7d7b28e146df54b49e6\`.
+- **Status:** classical exact source identity and causal organizational interpretation, **RH-inert** by itself.
+
+### [PV-2026-014] New-information orthogonality and stationary CRT flatness
+
+- \(J:H_L\to H_{L'}\) is an isometric Haar residue pullback, and \(Q=JJ^*\) is the orthogonal old-information projection. Exactly \(\|g\|^2=\|J^*g\|^2+\|(I-Q)g\|^2\).
+- Cyclic SUCC preserves the old-information subspace, so \([S,Q]=0\). This is consistent with earlier profinite/CRT null results in the repo.
+- **Local source:** [CAUSAL_FILTRATION_INFORMATION_ENERGY.md](CAUSAL_FILTRATION_INFORMATION_ENERGY.md) §§2–3; standard conditional expectation/Hilbert projection theory.
+- **Test:** \(\mathbb Z/2\to\mathbb Z/4\) gives old \(2\), innovation \(0.5\), new \(2.5\), and zero SUCC projection commutator.
+- **Status:** standard exact finite-Hilbert identities; *not* a dynamical energy conservation theorem from no-lookahead alone.
+
+### [PV-2026-015] Encountered SUCC has a rank-one birth and a uniformly bounded source injection
+
+- On \(\ell^2(\mathbb N_{\ge1})\), \(S|n\rangle=|n+1\rangle\), \(P_{n-1}\) the encountered prefix projector:
+  \([S,P_{n-1}]=|n\rangle\langle n-1|\).
+- \(D_X=\sum_{q=p^k\le X}\sqrt{\Lambda(q)/\sqrt q}\,[S,P_{q-1}]\) satisfies
+  \(\|D_X\|^2=\max_{q\le X}\Lambda(q)/\sqrt q\le2/e\) exactly.
+- Source correlation \(D_XD_X^*=\sum_{q\le X}(\Lambda(q)/\sqrt q)|q\rangle\langle q|\) equals the half-density diagonal von Mangoldt operator obtained by transporting the primitive SUCC defect along prime dilations in Round006 C100.
+- **Proof:** [CAUSAL_FILTRATION_INFORMATION_ENERGY.md](CAUSAL_FILTRATION_INFORMATION_ENERGY.md) §§4,10; first commit \`aff6cc2b85823c5b380797da489404b1279d66df\`, predecessor Round006 C100.
+- **Finite controls:** 14 prefix commutators; operator norm at \(X=16,100\) and weight max through \(10000\). Execution log linked above.
+- **Limit:** scalar coherent source \(\sum w_q\sim2\sqrt X\) diverges, despite the bounded \(D_X\). No uniform completed Hardy norm follows.
+- **Status:** exact classical/source-operator repackaging, finite verified; **not a new RH proof mechanism by itself**.
+
+### [PV-2026-016] Finite causal-unitary rigidity and causal isometry
+
+- Every finite **lower-triangular unitary** matrix is diagonal (inductive orthogonality proof). The unilateral shift on \(\ell^2(\mathbb N)\) instead satisfies \(S^*S=I\) but \(SS^*=I-|1\rangle\langle1|\): isometric, causal, non-surjective, with one boundary defect.
+- **Source:** standard unilateral shift/Wold operator theory, not novel; [CAUSAL_FILTRATION_INFORMATION_ENERGY.md](CAUSAL_FILTRATION_INFORMATION_ENERGY.md) §9, addendum commit \`3ee4c686b5e62e3479fe28ec194157b0e7338ef1\`.
+- **Status:** classical exact no-go against interpreting a nontrivial finite causal all-pass network as a single finite square unitary. An extended/internal state is mandatory.
+
+**All-ω RH gate:** source-derived completed observation \(\mathcal O_{X,\omega}\) and positive storage passivity, agreeing with Suzuki's \(\Theta_\omega\) in the Euler region and satisfying the Hardy mapping property for every \(\omega>0\). **UNVERIFIED**.
