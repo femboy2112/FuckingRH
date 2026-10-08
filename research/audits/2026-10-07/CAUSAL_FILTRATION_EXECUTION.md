@@ -109,3 +109,23 @@ PASS: exact cocycle class split iff p∤L; local Fourier refinement isometric; c
 The durable counterpart \`scripts/rh_carry_extension_controls.py\` was committed at \`b6583b239d75e306ab840043d33481a224a05a00\`.
 
 **Execution scope:** isolated local Python+NumPy finite tests, not GitHub CI; infinite statements follow their elementary proofs in the companion notes, not extrapolation. None proves all-\(\omega\) Hardy innerness. RH OPEN.
+
+
+---
+
+## Executed independent control — flat distinct-prime refinement squares
+
+The independent helper was extended with exact local \(p\)-adic-digit isometries and executed on seven distinct-prime composition squares:
+
+\`\`\`text
+PASS: distinct-prime refinement square commutes exactly for L=1, p=2, q=3
+PASS: distinct-prime refinement square commutes exactly for L=2, p=2, q=3
+PASS: distinct-prime refinement square commutes exactly for L=3, p=2, q=3
+PASS: distinct-prime refinement square commutes exactly for L=6, p=2, q=3
+PASS: distinct-prime refinement square commutes exactly for L=4, p=2, q=5
+PASS: distinct-prime refinement square commutes exactly for L=6, p=3, q=5
+PASS: distinct-prime refinement square commutes exactly for L=12, p=2, q=3
+All 7 prime-refinement squares are flat (with canonical local digit modes).
+\`\`\`
+
+For each square \(\omega=0.1,0.5,1\) was checked, including cases where a prime already divides \(L\). Companion theorem: \`INTRINSIC_CARRY_EXTENSION_CLASS.md\` §7; corresponding test is now committed in \`scripts/rh_carry_extension_controls.py\` (update commit \`39a4427253e1f9f90da76f191029003b288ce3cc\`). This tests matrices only; the group-theoretic equality is proved symbolically in the note.
