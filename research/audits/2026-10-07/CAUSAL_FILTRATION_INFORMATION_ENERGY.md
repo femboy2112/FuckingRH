@@ -332,3 +332,52 @@ is the **translated moving wavefront** version of a one-dimensional defect.
 An isometric \(S\) does **not** mean that a source-weighted superposition \(\sum_q w_q S_q\) is isometric, and it does **not** mean that the scalar Gamma-completed observable is contractive. The latter requires the correct source-defined readout and global storage law.
 
 This theorem is the precise place where "conserve causality" intersects an actual Hilbert-energy invariant without silently assuming RH.
+
+
+---
+
+## 10. Exact reconciliation with the old integer-corner source (Round006 C100)
+
+Let
+
+\[
+E_S=I-SS^*=|1\rangle\langle1|.
+\]
+
+Let \(V_m\) be multiplicative dilation on \(\ell^2(\mathbb N_{\ge1})\):
+
+\[
+V_m|n\rangle=|mn\rangle.
+\]
+
+The earlier repo Round006 identity states
+
+\[
+\boxed{
+\Lambda_{\mathrm{op}}
+=
+\sum_{p,k\ge1}
+(\log p)\,V_{p^k}E_SV_{p^k}^*
+=
+\sum_{q=p^k}(\log p)|q\rangle\langle q|.
+}
+\]
+
+With the diagonal half-density \(R|n\rangle=n^{-1/2}|n\rangle\), the encountered-boundary injection from §4 satisfies
+
+\[
+\boxed{
+D_XD_X^*
+=
+P_X R\Lambda_{\mathrm{op}}P_X.
+}
+\]
+
+So the same von Mangoldt source has **two source-forced forms**:
+
+1. transported initial SUCC defect \(E_S\) along all prime-power dilation rays;
+2. weighted moving-prefix SUCC boundary commutators at the actual encountered events.
+
+This equality is a useful reconciliation of *stationary source transport* and *moving event causality*. It is **not new priority**, and the source remains a diagonal positive operator until the completed observation couples the different rays.
+
+The exact missing theorem is still to derive a **stable scalar observation** of this source (coupled to Gamma/pole) without postulating all-\(\omega\) Hardy contractivity.
