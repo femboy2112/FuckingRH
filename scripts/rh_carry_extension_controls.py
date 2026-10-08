@@ -67,13 +67,35 @@ def verify_local_padic_refinement(L,p,omega=0.5):
     return rank,float(s[0]/math.sqrt(p))
 
 
+
+def local_isometry(L,p,omega):
+    a=v_p(L,p)
+    power=p**a
+    zeta=np.exp(2j*np.pi/p)
+    W=np.zeros((p*L,L),dtype=complex)
+    for r in range(p*L):
+        digit=(r%(p*power))//power
+        W[r,r%L]=p**(-omega)+math.sqrt(1-p**(-2*omega))*zeta**digit
+    return W
+
+
+def verify_distinct_prime_flatness(L,p,q,omega):
+    assert p!=q
+    lhs=local_isometry(p*L,q,omega)@local_isometry(L,p,omega)
+    rhs=local_isometry(q*L,p,omega)@local_isometry(L,q,omega)
+    assert np.allclose(lhs,rhs,atol=2e-13)
+
 def main():
     for L,p in [(2,3),(3,2),(4,3),(6,5),(2,2),(4,2),(6,2),(6,3),(12,2),(18,3)]:
         verify_carry_cocycle(L,p)
         rank,norm=verify_local_padic_refinement(L,p)
         print(f'L={L:2d}, p={p}: split={p and L%p!=0}, '
               f'local p-adic carry rank={rank}, norm={norm:.8f}')
-    print('PASS: split iff p∤L, nontrivial depth carry, isometric local innovation and rank controls.')
+    for L,p,q in [(1,2,3),(2,2,3),(3,2,3),(6,2,3),(4,2,5),(6,3,5),(12,2,3)]:
+        for omega in (0.1,0.5,1.):
+            verify_distinct_prime_flatness(L,p,q,omega)
+        print(f'flat: L={L}, p={p}, q={q}')
+    print('PASS: split iff p∤L, local p-adic isometric carry and seven exactly flat distinct-prime squares.')
 
 
 if __name__=='__main__':
