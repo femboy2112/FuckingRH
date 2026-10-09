@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "source_zeros_read": false,
+  "g": "(1+cos(pi*x))/2 on |x|<=1; C1 and piecewise smooth, ghat~|xi|^-3",
+  "norm_squared_exact": "3/4",
+  "norm_squared_numerical": 0.7499999999598235,
+  "fourier_tail_cutoff": 150,
+  "mesh_points": 60001,
+  "asymptotic_theorem": "for smooth compact g, gamma_energy = norm² log T + O(1)",
+  "rows": [
+    {
+      "T": 10,
+      "gamma_energy": 0.335190956692959,
+      "gamma_minus_threequarters_logT": -1.3917478630525755,
+      "max_first_four_linear_probe_amplitudes": 0.023672491958991897
+    },
+    {
+      "T": 20,
+      "gamma_energy": 0.8651879306840493,
+      "gamma_minus_threequarters_logT": -1.381611274481444,
+      "max_first_four_linear_probe_amplitudes": 0.0019996163434848916
+    },
+    {
+      "T": 40,
+      "gamma_energy": 1.387458680786801,
+      "gamma_minus_threequarters_logT": -1.3792009097986513,
+      "max_first_four_linear_probe_amplitudes": 0.0001614053924325768
+    },
+    {
+      "T": 80,
+      "gamma_energy": 1.9079143709588338,
+      "gamma_minus_threequarters_logT": -1.3786056050465771,
+      "max_first_four_linear_probe_amplitudes": 0.000021644256417899143
+    },
+    {
+      "T": 160,
+      "gamma_energy": 2.427923139621253,
+      "gamma_minus_threequarters_logT": -1.378457221804117,
+      "max_first_four_linear_probe_amplitudes": 0.0000023077239536545603
+    },
+    {
+      "T": 320,
+      "gamma_energy": 2.9478205932465897,
+      "gamma_minus_threequarters_logT": -1.3784201535987393,
+      "max_first_four_linear_probe_amplitudes": 3.0156641586834666e-7
+    },
+    {
+      "T": 640,
+      "gamma_energy": 3.467690243978181,
+      "gamma_minus_threequarters_logT": -1.3784108882871067,
+      "max_first_four_linear_probe_amplitudes": 3.5976726940793754e-8
+    }
+  ],
+  "scope": "illustration, NOT interval certification or universal sign test"
+}
