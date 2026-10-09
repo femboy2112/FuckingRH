@@ -1,0 +1,227 @@
+{
+  "audit": {
+    "external_peer_review": false,
+    "final_shift_quantifier_correction_applied": true,
+    "main_not_modified_by_this_change": true,
+    "same_model_internal_audits": 3
+  },
+  "base_tree": "0d2b8848319981b7342dae6e2a596a553ef50612",
+  "branch": "research/2026-10-09/reversal-memory-polarization",
+  "claim_prefix": "LAC",
+  "execution": [
+    {
+      "command": "python scripts/gamma_cascade_probe.py --output research/2026-10-09/lossless_arithmetic_circuit/evidence/gamma_cascade_results.json",
+      "exit_code": 0,
+      "key": "gamma",
+      "stdout_file": "research/2026-10-09/lossless_arithmetic_circuit/evidence/probe_stdout.txt"
+    },
+    {
+      "command": "python scripts/boundary_centering_probe.py --output research/2026-10-09/lossless_arithmetic_circuit/evidence/boundary_centering_results.json",
+      "exit_code": 0,
+      "key": "boundary",
+      "stdout_file": "research/2026-10-09/lossless_arithmetic_circuit/evidence/probe_stdout.txt"
+    },
+    {
+      "command": "python scripts/causal_allpass_probe.py --output research/2026-10-09/lossless_arithmetic_circuit/evidence/causal_allpass_results.json",
+      "exit_code": 0,
+      "key": "causality",
+      "stdout_file": "research/2026-10-09/lossless_arithmetic_circuit/evidence/probe_stdout.txt"
+    },
+    {
+      "command": "/workspace/scratch/460bbbdaba61/rh-venv/bin/python scripts/gamma_cascade_high_precision_probe.py --output research/2026-10-09/lossless_arithmetic_circuit/evidence/gamma_cascade_high_precision_results.json",
+      "exit_code": 0,
+      "key": "gamma_high_precision",
+      "stdout_file": "research/2026-10-09/lossless_arithmetic_circuit/evidence/probe_stdout.txt"
+    },
+    {
+      "command": "python scripts/semilocal_weil_delay_probe.py --output research/2026-10-09/lossless_arithmetic_circuit/evidence/semilocal_weil_delay_results.json",
+      "exit_code": 0,
+      "key": "semilocal",
+      "stdout_file": "research/2026-10-09/lossless_arithmetic_circuit/evidence/probe_stdout.txt"
+    }
+  ],
+  "files": [
+    {
+      "bytes": 50290,
+      "git_blob_sha1": "8852d694f65c9ab7215335b2556aa12fb75ad3fd",
+      "parent_git_blob_sha1": "e8754ba554a5c68229a6398bbb59c66510bdd764",
+      "path": "CLAIM_LEDGER.md",
+      "sha256": "80079e1a43fca7285e5cb60be1ae54f248a76aec271dc2cc348e502c1787ff19"
+    },
+    {
+      "bytes": 11483,
+      "git_blob_sha1": "51d038ac42191512603fed1d1f0490444fca3c94",
+      "parent_git_blob_sha1": "f485673d18d3be1b9b6dcd4793294f7bc6dde38d",
+      "path": "README.md",
+      "sha256": "7bc30d27c26d297974fd3d16eb485943a895f5be088846bd27fa58061a0776d8"
+    },
+    {
+      "bytes": 22959,
+      "git_blob_sha1": "0b69ac3c428f8cda8a1635b0703fbf6302405882",
+      "parent_git_blob_sha1": null,
+      "path": "research/2026-10-09/lossless_arithmetic_circuit/BOUNDARY_RESPONSE_AND_CENTERING.md",
+      "sha256": "7174cd59834ff28f9ffe307538545208e4f9435c6f6438097832255051db6a85"
+    },
+    {
+      "bytes": 11760,
+      "git_blob_sha1": "40b6943d68a2c26582a47f1c4248cb81d98d4fcc",
+      "parent_git_blob_sha1": null,
+      "path": "research/2026-10-09/lossless_arithmetic_circuit/CAUSALITY_PASSIVITY_AND_WEIL.md",
+      "sha256": "fc3188dbd15b25ddbd99cb5800730d5165a3cc6e9d0e050bab43cb6ccebe293b"
+    },
+    {
+      "bytes": 13729,
+      "git_blob_sha1": "4349be934796577a55a1155e2432723395f9af55",
+      "parent_git_blob_sha1": null,
+      "path": "research/2026-10-09/lossless_arithmetic_circuit/GAMMA_CASCADE_AND_DELAY.md",
+      "sha256": "f3e3496e7b9f2259fd18d06c38636c60b68da735f5918c125d45be6ca0ab00a7"
+    },
+    {
+      "bytes": 11383,
+      "git_blob_sha1": "6aa91874d17384ed940075ba67ec9e56ec0b7602",
+      "parent_git_blob_sha1": null,
+      "path": "research/2026-10-09/lossless_arithmetic_circuit/PRIME_FILTERS_AND_WEIL_DELAY.md",
+      "sha256": "5c6c578f3db0a00508d2e0355860cf111d472c3f61f2a44a2e4cb94161e17697"
+    },
+    {
+      "bytes": 4985,
+      "git_blob_sha1": "b0a74c5ce49dfd1bf9ae75fdeea51d738c31d7bd",
+      "parent_git_blob_sha1": null,
+      "path": "research/2026-10-09/lossless_arithmetic_circuit/PROBE_CONTRACT.md",
+      "sha256": "cd6542842a27a36a12682e4a5d130e26a39337c748dcfeeea870d3da7793d4e3"
+    },
+    {
+      "bytes": 14013,
+      "git_blob_sha1": "326f48ba67744e15f167c7db3dc195aba295e191",
+      "parent_git_blob_sha1": null,
+      "path": "research/2026-10-09/lossless_arithmetic_circuit/PROVENANCE_AND_CLAIMS.md",
+      "sha256": "481667e0243315a3c76639a95c93442faafa3ca80a9c3705480e894ff10c3586"
+    },
+    {
+      "bytes": 11207,
+      "git_blob_sha1": "f8dde9cfc80ac21d5040cf5fc73f6e085f925efc",
+      "parent_git_blob_sha1": null,
+      "path": "research/2026-10-09/lossless_arithmetic_circuit/README.md",
+      "sha256": "a8a53705e56e0f27edf16d095f6ebb4b7bcf19a54e5cfbe18fe53ce100a26b43"
+    },
+    {
+      "bytes": 7045,
+      "git_blob_sha1": "9a2afa2d15954a6bc81b63fedbfb935fc58aa018",
+      "parent_git_blob_sha1": null,
+      "path": "research/2026-10-09/lossless_arithmetic_circuit/evidence/boundary_centering_results.json",
+      "sha256": "750639d93ba077c16c3a51fcbe0fe42db45a98de70232a8d7ded9f6589003ea6"
+    },
+    {
+      "bytes": 1504,
+      "git_blob_sha1": "c19c3435d3152b82648b6743ee358548948c7f4e",
+      "parent_git_blob_sha1": null,
+      "path": "research/2026-10-09/lossless_arithmetic_circuit/evidence/causal_allpass_results.json",
+      "sha256": "34a5c3a85effad08f0a3f0d2527f3c84ae8b9a894db984fba3a1e908783272eb"
+    },
+    {
+      "bytes": 15840,
+      "git_blob_sha1": "0156942a2e9db42fa37e9160c1a2bb32cae3d60b",
+      "parent_git_blob_sha1": null,
+      "path": "research/2026-10-09/lossless_arithmetic_circuit/evidence/gamma_cascade_high_precision_results.json",
+      "sha256": "a4c685cb049b9f1535b72104cc87ae9fd198df23f6f87ef0715a23b4b0df6687"
+    },
+    {
+      "bytes": 12995,
+      "git_blob_sha1": "65f4dd657b1eadbd79aaffa7d49bf7c853d2a9cf",
+      "parent_git_blob_sha1": null,
+      "path": "research/2026-10-09/lossless_arithmetic_circuit/evidence/gamma_cascade_results.json",
+      "sha256": "ff435efa32607a3d7d2b3c84d811fa81c8e8b8275bf11c4d29be8d2d71899d2b"
+    },
+    {
+      "bytes": 2875,
+      "git_blob_sha1": "a05f2696af59c19995d53782f9e7f8491b8ef325",
+      "parent_git_blob_sha1": null,
+      "path": "research/2026-10-09/lossless_arithmetic_circuit/evidence/probe_stdout.txt",
+      "sha256": "7a667b395af4ecdd61825cbad47bbc329c146f968d96f4c6b4aa4cff8616ee10"
+    },
+    {
+      "bytes": 3834,
+      "git_blob_sha1": "cd5927b8cc6e6bbd30418d44dcd149e3a6ffaa1b",
+      "parent_git_blob_sha1": null,
+      "path": "research/2026-10-09/lossless_arithmetic_circuit/evidence/semilocal_weil_delay_results.json",
+      "sha256": "5bac0e0dd80d40cb56112d0f6938048ac1b452936d769845eb6253f3d95dc536"
+    },
+    {
+      "bytes": 153,
+      "git_blob_sha1": "015897a79009394d81d09aac496bd9b931bbb167",
+      "parent_git_blob_sha1": null,
+      "path": "research/2026-10-09/lossless_arithmetic_circuit/requirements-probes.txt",
+      "sha256": "214f723a24c70912ac57bec8d9ce281cef513306a79b731bd88c38d2fbbfb072"
+    },
+    {
+      "bytes": 5899,
+      "git_blob_sha1": "5c519fd6f65f0932c216652d184d6226db72d95d",
+      "parent_git_blob_sha1": "4fa517e8936ce313dd3e2a5fc79f56dab50c6a96",
+      "path": "research/claude_round_006/PASSIVE_COLLIGATION.md",
+      "sha256": "6af49780ae7b84d0507ffb24149366806f47bea07eb0d9cf76a2938b9c3a46a0"
+    },
+    {
+      "bytes": 13992,
+      "git_blob_sha1": "c8df9b3485945b8aa01eb9beb5c0d4c7d82e6904",
+      "parent_git_blob_sha1": null,
+      "path": "scripts/boundary_centering_probe.py",
+      "sha256": "8c8483815c4f800217a2ad357d34abe6edbfc0bf0748d5bb326c7de56a13235b"
+    },
+    {
+      "bytes": 3780,
+      "git_blob_sha1": "bb89dbda771168b1ad3e0410e306c57dca12432c",
+      "parent_git_blob_sha1": null,
+      "path": "scripts/causal_allpass_probe.py",
+      "sha256": "566d420960bec1fba1bafd37006090f1808b71f3a5a461e56d7ab0896dafd4d1"
+    },
+    {
+      "bytes": 6868,
+      "git_blob_sha1": "8e4080b844ecca4677dfa2a266023a8770b32913",
+      "parent_git_blob_sha1": null,
+      "path": "scripts/gamma_cascade_high_precision_probe.py",
+      "sha256": "6d7d09511ecffc039bb839529d0f882aa9f511e5b1d3953f3119673b309e058d"
+    },
+    {
+      "bytes": 5613,
+      "git_blob_sha1": "ad30baa57b2434ede0ecd2ff31bc8ebb96e9df70",
+      "parent_git_blob_sha1": null,
+      "path": "scripts/gamma_cascade_probe.py",
+      "sha256": "db92115137217f9c44353d551251b0d12018fba7445f147a7bfe12827ebf4bc2"
+    },
+    {
+      "bytes": 9627,
+      "git_blob_sha1": "30dc58f84420adf251b631df2a9d959de76da5a8",
+      "parent_git_blob_sha1": null,
+      "path": "scripts/semilocal_weil_delay_probe.py",
+      "sha256": "ad08da8aa06983cf034b224e6a4034b85b481016351f7a407dc0922255eba341"
+    }
+  ],
+  "limits": [
+    "Analytic identities and scoped counterexamples are proved in the notes.",
+    "Floating probes are not interval enclosures or continuum positivity certificates.",
+    "The Gamma and Fourier analytic tail bounds exclude numerical function/quadrature error.",
+    "The fake primitive clock control was added adaptively, as disclosed.",
+    "Full arithmetic positive completed metric and specified causal Suzuki extension remain open."
+  ],
+  "main_frontier_audited": "344facc9b9eccadcf7fe98af9361b6e7fd3ea737",
+  "main_last_observed": "8505467ea596b0636f73b655c521f50105d8b06e",
+  "manifest_excludes_its_own_hash": true,
+  "parent_commit": "11f9070132c46478fbc6c5de2f8109850ce7d0e7",
+  "repository": "femboy2112/FuckingRH",
+  "rh_proved": false,
+  "runtime": {
+    "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "numpy": "2.3.5",
+    "python": "3.12.14",
+    "scipy": "1.17.0",
+    "supplementary_decimal_precision": 90,
+    "supplementary_mpmath": "1.3.0"
+  },
+  "validation": {
+    "all_new_relative_links_resolve_in_result_tree": true,
+    "all_recorded_programs_exit_zero": true,
+    "all_reports_parse_as_json": true,
+    "new_document_relative_links_checked": 20
+  },
+  "zeta_zeros_used_in_construction_or_new_probes": false
+}

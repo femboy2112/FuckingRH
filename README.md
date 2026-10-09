@@ -9,6 +9,10 @@ organized to keep honest the distinction between what is *proved*, *computed*, *
 and *refuted*, and to name — precisely — the single load-bearing theorem a genuine proof
 still owes.
 
+## Lossless arithmetic circuits and the completed Weil delay — October 9
+
+The [infinite arithmetic circuit checkpoint](research/2026-10-09/lossless_arithmetic_circuit/README.md) constructs the Gamma factor as a renormalized lossless cascade and the prime towers as coherent half-density filters. It identifies their completed delay pairing with the full Weil form, proves an exact correction for centering before boundary elimination, and tests the causal-source identification needed by Suzuki. Four portable probes and a supplementary high-precision control are included. Historical C107–C108/passive-colligation overstatements are corrected. **The source-derived positive completed pairing remains open.**
+
 ## Complete-history reversal and positive polarization — October 9
 
 The [reversal, memory, and polarization checkpoint](research/2026-10-09/reversal_memory_polarization/README.md) develops the teacup/time-reversal axis into exact memory and Green-operator theorems, a positive primitive-erasure obstruction, common Frobenius-history tests, and an explicit unitary environment for the known positive Gamma/prime energy. It derives the precise Connes–Consani/Weil sign and domain comparison and audits the proposed missing-dualizing-sheaf explanation against current primary sources. Proofs, eight reproducible control groups, provenance, and the remaining full-Weil positivity obligation are included.

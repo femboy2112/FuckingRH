@@ -1,0 +1,63 @@
+$ python scripts/gamma_cascade_probe.py --output research/2026-10-09/lossless_arithmetic_circuit/evidence/gamma_cascade_results.json
+{
+  "all_assertions_passed": true,
+  "result_file": "research/2026-10-09/lossless_arithmetic_circuit/evidence/gamma_cascade_results.json",
+  "max_exact_identity_errors": {
+    "gamma_product": 8.257680827425443e-14,
+    "unit_boundary_modulus": 8.659739592076221e-15,
+    "delay_digamma_recurrence": 5.329070518200751e-15
+  },
+  "phase_sign_finite_difference_error": 1.2217808986747514e-09
+}
+
+
+$ python scripts/boundary_centering_probe.py --output research/2026-10-09/lossless_arithmetic_circuit/evidence/boundary_centering_results.json
+PASS: exact colligation, scalar/pole centering, actual Gamma/prime matrices, passive-limit controls
+{"maximum_boundary_residual": 5.676015213396113e-14}
+
+
+$ python scripts/causal_allpass_probe.py --output research/2026-10-09/lossless_arithmetic_circuit/evidence/causal_allpass_results.json
+PASS: stable/unstable all-pass, exact Hardy leakage, quartet poles/Pick sign, connected-source scope
+{"bad_hardy_leakage_norm_squared": {"exact": "1", "decimal": 1.0}, "bad_shift_ratio_norm_squared": {"exact": "761251725/166424237", "decimal": 4.57416382807271}}
+
+
+$ /workspace/scratch/460bbbdaba61/rh-venv/bin/python scripts/gamma_cascade_high_precision_probe.py --output research/2026-10-09/lossless_arithmetic_circuit/evidence/gamma_cascade_high_precision_results.json
+{
+  "all_assertions_passed": true,
+  "result_file": "research/2026-10-09/lossless_arithmetic_circuit/evidence/gamma_cascade_high_precision_results.json",
+  "max_exact_identity_errors": {
+    "gamma_product": "1.75443400288465060324409785769e-91",
+    "unit_boundary_modulus": "1.22727336632443163827394298875e-90",
+    "delay_digamma_recurrence": "4.90909346529772655309577195499e-91"
+  },
+  "gamma_final": {
+    "M": 512,
+    "q": {
+      "re": "2.0",
+      "im": "0.4"
+    },
+    "abs_B_M": "0.000000948910175814047188905443380136",
+    "relative_error": "0.000997554719250105622402413528695",
+    "M_times_relative_error": {
+      "re": "0.500767558852753299664652804184",
+      "im": "0.100475808581711557073637518086"
+    },
+    "predicted_limit_q_over_4": {
+      "re": "0.5",
+      "im": "0.1"
+    }
+  },
+  "delay_final": {
+    "M": 512,
+    "omega": "10.0",
+    "renormalized_delay_error": "-0.000440513404678696240480207011921",
+    "M_times_error": "-0.225542863195492475125865990103",
+    "predicted_limit": "-0.25"
+  }
+}
+
+
+$ python scripts/semilocal_weil_delay_probe.py --output research/2026-10-09/lossless_arithmetic_circuit/evidence/semilocal_weil_delay_results.json
+PASS: spatial Weil / semilocal delay identity, three prime cutoffs, two normalization mutations
+Q_spatial=0.000343555024783448; largest residual=9.89e-11
+Each residual is checked against its stated analytic Fourier-tail bound and numerical quadrature estimate.

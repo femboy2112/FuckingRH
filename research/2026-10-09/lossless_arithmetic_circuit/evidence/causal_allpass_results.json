@@ -1,0 +1,61 @@
+{
+  "status": "all assertions passed",
+  "exact_controls": {
+    "good_allpass_pick_diagonal": {
+      "exact": "2/9",
+      "decimal": 0.2222222222222222
+    },
+    "bad_allpass_pick_diagonal": {
+      "exact": "-2",
+      "decimal": -2.0
+    },
+    "boundary_modulus_checks": [
+      {
+        "frequency": "0",
+        "norm_squared": "1"
+      },
+      {
+        "frequency": "1/3",
+        "norm_squared": "1"
+      },
+      {
+        "frequency": "2",
+        "norm_squared": "1"
+      },
+      {
+        "frequency": "77",
+        "norm_squared": "1"
+      }
+    ],
+    "bad_hardy_leakage_norm_squared": {
+      "exact": "1",
+      "decimal": 1.0
+    },
+    "quartet_a": "1/4",
+    "quartet_gamma": "2",
+    "bad_shift_omega": "1/8",
+    "evaluation_p": {
+      "real": "1/16",
+      "imag": "2"
+    },
+    "bad_shift_ratio_norm_squared": {
+      "exact": "761251725/166424237",
+      "decimal": 4.57416382807271
+    },
+    "good_shift_ratio_norm_squared": {
+      "exact": "3770288973/14851774925",
+      "decimal": 0.25386117094014604
+    },
+    "bad_shift_pick_diagonal": {
+      "exact": "-4758619904/166424237",
+      "decimal": -28.593310624581683
+    },
+    "bad_shift_pole_real_part": "1/8",
+    "poles_uncanceled": true
+  },
+  "floating_diagnostics_only": {
+    "toy_signed_tangent_two_point_value": -0.6248183085827499,
+    "mixed_source_critical_zero_max_residual": 1.164033439826574e-15
+  },
+  "scope": "Finite controls only. Floating diagnostics are not certificates. No RH proof."
+}

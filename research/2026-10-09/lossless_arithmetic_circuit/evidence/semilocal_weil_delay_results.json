@@ -1,0 +1,135 @@
+{
+  "adaptive_phantom_primitive_6_control": {
+    "added_positive_filter_abs_transfer_at_0_4_plus_0_7i": 0.5540128578253571,
+    "baseline_Q": 0.0008295191170684113,
+    "exact_formula_for_subtracted_pairing": "2*log(6)/sqrt(6)*F(log(6))",
+    "mutated_Q": -0.012880744899745748,
+    "narrow_original_test_correlation_at_log6": 0.0,
+    "spatial_quad_error_estimate": 5.4514434242935446e-15,
+    "status": "FLOATING_POINT_DIAGNOSTIC; exact change given by the displayed correlation formula",
+    "subtracted_pairing": 0.01371026401681416,
+    "test_center": 0.15,
+    "test_half_width": 1.1
+  },
+  "claim_scope": "One H1_0 test and three finite prime sets; no global sign or RH certification.",
+  "construction_uses_zeta_zeros": false,
+  "error_policy": "Analytic Fourier-tail bound plus non-certified quadrature error estimates; assertions are numerical diagnostics.",
+  "finite_prime_checks": [
+    {
+      "M_P": 7.67808288798501,
+      "Q_residual": 9.893041941211322e-11,
+      "Q_spectral_truncated": 0.00034355492585302905,
+      "analytic_spectral_tail_bound": 1.3308584636286158e-09,
+      "centered_prime_pairing": -0.23253459449153446,
+      "prime_bound": 13,
+      "prime_bulk_counterterm": 8.189955080517343,
+      "primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13
+      ],
+      "spectral_quad_error_estimate": 4.1848050492740323e-10,
+      "tau_at_zero": 20.728349195195683,
+      "uncentered_prime_energy": 7.957420486025809
+    },
+    {
+      "M_P": 11.055789195916383,
+      "Q_residual": 9.892864305527382e-11,
+      "Q_spectral_truncated": 0.0003435549258548054,
+      "analytic_spectral_tail_bound": 1.5916184309399563e-09,
+      "centered_prime_pairing": -0.23253459449153446,
+      "prime_bound": 29,
+      "prime_bulk_counterterm": 11.792841808977474,
+      "primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29
+      ],
+      "spectral_quad_error_estimate": 4.21552927600685e-10,
+      "tau_at_zero": 27.48376181105843,
+      "uncentered_prime_energy": 11.56030721448594
+    },
+    {
+      "M_P": 20.26159181560017,
+      "Q_residual": 9.891398811134877e-11,
+      "Q_spectral_truncated": 0.00034355492586946035,
+      "analytic_spectral_tail_bound": 2.30230922858173e-09,
+      "centered_prime_pairing": -0.23253459449153624,
+      "prime_bound": 97,
+      "prime_bulk_counterterm": 21.612364603306847,
+      "primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        53,
+        59,
+        61,
+        67,
+        71,
+        73,
+        79,
+        83,
+        89,
+        97
+      ],
+      "spectral_quad_error_estimate": 3.41858956478191e-10,
+      "tau_at_zero": 45.895367050426,
+      "uncentered_prime_energy": 21.37983000881531
+    }
+  ],
+  "runtime": {
+    "numpy": "2.3.5",
+    "python": "3.12.14",
+    "scipy": "1.17.0"
+  },
+  "spatial": {
+    "C": 0.8198614742508674,
+    "Q_spatial": 0.00034355502478344846,
+    "S": 0.12206510316030345,
+    "active_prime_powers": [
+      2,
+      3,
+      4
+    ],
+    "gamma_origin_pairing": -1.0816677455862223,
+    "norm_squared": 0.5333333333333333,
+    "polar_pairing": 1.3145458951025404,
+    "prime_pairing": -0.23253459449153474,
+    "spatial_quad_error_estimate": 4.65581412371667e-15
+  },
+  "status": "PASS",
+  "test": {
+    "center": 0.3,
+    "containing_window_half_width": 1.2,
+    "frequency_cutoff": 4096.0,
+    "half_width": 0.8,
+    "name": "translated_compact_tent"
+  },
+  "wrong_normalization_controls": {
+    "omitting_negative_S_channel_error": 0.029799778819071043,
+    "origin_log4pi_instead_of_logpi_error": 0.7393569925972749,
+    "translation_invariance_residual": 2.220446049250313e-16
+  }
+}

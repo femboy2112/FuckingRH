@@ -1,68 +1,60 @@
-# Passive colligation / Krein–Pontryagin: the positive-metric route and why it is closed (ckpt9)
+# Passive colligations: corrected hypotheses and the arithmetic construction
 
-**Date:** 2026-10-06. **Status:** DISCLOSED (obstruction, measured + literature-anchored). **RH open.**
-**Reproduce:** `scripts/colligation_obstruction.py` (+ `finite_completion_index.py` from ckpt8).
+**Original checkpoint:** 2026-10-06, ckpt9. **Scope correction:** 2026-10-09. **RH remains open.**
 
-ckpt8 showed the *impedance* route (complete the source response, hope it is passive) is dead:
-`F_P` is not positive-real and its Pontryagin index diverges. The directive's remaining hope (§9, §19) is
-the **colligation** route: build a finite unitary/passive system whose **transfer function** `Θ_X` is
-`≤1` by the unitarity of the system — contractive *by construction*, regardless of how wild the impedance
-is. This checkpoint pins exactly what that requires and why the natural realizations are closed.
+The original version is preserved at [11f9070](https://github.com/femboy2112/FuckingRH/blob/11f9070132c46478fbc6c5de2f8109850ce7d0e7/research/claude_round_006/PASSIVE_COLLIGATION.md), blob `4fa517e8936ce313dd3e2a5fc79f56dab50c6a96`. It contains invalid inferences that this revision withdraws. The tested failures of particular source completions remain useful; they do not establish a universal impossibility of arithmetic passive realization.
 
-## What a passive colligation needs
+## 1. State the whole realization contract
 
-A finite colligation `U = [[A,B],[C,D]]` on `(state) ⊕ (port)` has transfer function
-`Θ(λ) = D + C(λ - A)^{-1}B`. `Θ` is a **Schur** function (|Θ|≤1) on the relevant half-plane **iff** the
-colligation is contractive in its state-space metric, i.e. iff that **metric is positive-definite** and
-the generator is dissipative. So:
+For a unitary discrete colligation on state plus port space,
 
-> Hypothesis (P) of Schur–Vitali is available **iff** the arithmetic supplies a **positive-definite**
-> state-space metric with a dissipative generator whose transfer limit is `Cayley_a[xi'/xi]`.
+\[
+U=\begin{pmatrix}A&B\\C&D\end{pmatrix},
+\qquad S(z)=D+zC(I-zA)^{-1}B,
+\]
 
-## The natural metric is indefinite, and not finitely correctable
+the transfer is Schur for `|z|<1`. The equivalent resolvent expression `D+C(lambda-A)^{-1}B` uses `z=1/lambda` and is naturally contractive for `|lambda|>1`. A half-plane transfer requires a specified conversion or a continuous energy-balance identity.
 
-1. **Impedance realization (ckpt8):** the Laplace-source metric is indefinite and its negative index
-   `κ_P → ∞` (excursion count `108→362`). No **fixed finite** Pontryagin index `κ<∞` parent exists for
-   this construction, so the §19 Krein escape (finite negative index, then a positive Schur complement)
-   is **closed** here.
-2. **de Branges realization (Conrey–Li):** the canonical colligation state space for `xi'/xi` is the
-   de Branges space `H(E)`, `E(z)=ξ(1-iz)`, whose structural positivity `Re⟨F, F(·+i)⟩ ≥ 0` would make
-   the colligation passive and **imply RH**. Conrey–Li (IMRN 2000) prove this positivity **fails** for
-   ζ: explicit negative values at the 34th zero and at `w=-282`. So the natural colligation metric is
-   **indefinite**.
+Existence of a suitable conservative realization is equivalent to the Schur property; this does not make every chosen realization conservative or every nonminimal hidden state stable. A positive state metric and a dissipative state generator alone also do not control arbitrary port couplings. For example `A=-1`, `B=C=10`, `D=0` gives `100/(p+1)`, which is not Schur on the right half-plane.
 
-## The obstruction is a property of the FUNCTION ξ, not of the chosen parent
+The precise classical statement is Ball–Biswas–Fang–ter Horst, [Theorem 1.1](https://arxiv.org/pdf/0705.2042). A direct proof in the port/internal block convention, with the prepared-history term retained, is in [the circuit boundary note](../2026-10-09/lossless_arithmetic_circuit/BOUNDARY_RESPONSE_AND_CENTERING.md).
 
-This is the decisive point (it also closes the history-space escape, HISTORY_SPACE_SOURCE_PORT.md). The
-quantity that must be nonnegative — `Re xi'/xi` on `H_{1/2}`, equivalently the positivity of the
-Sarnak/Conrey–Li ratio `Re{ξ(s)/ξ(s+1)}` — is a property of the **function** ξ. No Hilbert-space
-construction, coupling order, or history lift can change whether a fixed function is positive-real.
-Confirmed numerically (`colligation_obstruction.py`):
+## 2. The two zeta positivity conditions are different
 
-- **`Re{ξ(s)/ξ(s+1)} = -0.161 < 0` at `s = 0.55 + 110.3 i`** (strip, `Re s>½`). Sarnak's mechanism
-  (`Im log(ξ(s)/ξ(s+1)) = Im log ζ + O(1)`, `log ζ` dense on `½<Re s<2`) made manifest.
-- **`Re{ξ(1+iτ)/ξ(2+iτ)} = -0.000132 < 0` at `τ = 282`** — reproduces Conrey–Li's published value
-  `-0.000131957` to all shown digits (primary-source cross-check).
+The standard logarithmic-derivative target is positivity of `Re(xi'/xi)` on `Re s>1/2`. The quantity `Re{xi(s)/xi(s+1)}` is a different shifted-ratio condition and must not be substituted for it. The repository's [literature interface](LITERATURE_INTERFACE.md) and [Schur–Vitali note](SCHUR_VITALI_LIMIT.md) fix the logarithmic-derivative target.
 
-## The precise obstruction (feeds the obstruction theorem, PROOF_ATTEMPT_006)
+Conrey–Li prove failure of an additional shifted-function positivity condition for the relevant zeta spaces. Their paper separately defines the positive de Branges Hilbert norm. Failure of the extra pairing does **not** make that Hilbert norm indefinite. See [Conrey–Li, Section 2](https://arxiv.org/pdf/math/9812166).
 
-> **(P) ⟺ RH.** A finite family `{Θ_X}` with (P) [contractive on all of `H_{1/2}`] and (E) [→
-> `Cayley_a[xi'/xi]` on `Re s>1`] exists **iff** RH holds (⇐: take `Θ_X=Cayley_a[xi'/xi]`, Schur iff RH;
-> ⇒: Schur–Vitali, C104). Therefore no **unconditional** construction of such a family can exist, from any
-> parent. The colligation route does not evade this; it only relocates (P) to "positive-definite
-> arithmetic state metric," which — for every natural realization (Laplace-source: divergent index;
-> de Branges `H(E)`: Conrey–Li indefinite) — is **false**, and falsified by a **function-level** fact
-> (the `ξ(s)/ξ(s+1)` phase) that no parent choice can repair.
+Accordingly, the former claim that the measured negative shifted ratio falsifies the RH-equivalent logarithmic-derivative condition is withdrawn. The former claim that every natural colligation metric is thereby indefinite is also withdrawn.
 
-**What is NOT excluded (the honest residue).** A structure function or chain of spaces *not* governed by
-the single-space de Branges positivity, whose passivity is forced by the arithmetic for a reason
-orthogonal to `Re{ξ(s)/ξ(s+1)}≥0`, is not logically excluded by this checkpoint — but constructing one is
-equivalent to proving RH, and nothing in the source/ray/SUCC/Archimedean toolkit so far supplies it.
+## 3. What the conditional Schur–Vitali route says
 
-## Ledger
+Suppose finite source-defined transfers are analytic and uniformly contractive on the full target half-plane, and converge to the prescribed arithmetic transfer in its known convergence half-plane. The normal-family/uniqueness argument can then give the required analytic contractive continuation. This is the useful conditional statement in C104.
 
-New row **C107**: the passive-colligation route needs a positive-definite arithmetic state metric; every
-natural realization is indefinite — the Laplace-source metric has divergent Pontryagin index (ckpt8,
-closes the finite-`κ` Krein escape §19), and the de Branges `H(E)`, `E=ξ(1-iz)` metric fails positivity
-(Conrey–Li, verified `Re{ξ(1+282i)/ξ(2+282i)}=-0.000132`). The obstruction is function-level
-(`Re{ξ(s)/ξ(s+1)}<0` in the strip, confirmed), hence parent-independent; `(P)⟺RH`.
+If the existence of such a family is RH-equivalent, that means an unconditional construction would prove RH. It does **not** imply that no unconditional construction can exist. The sentence drawing that impossibility conclusion in the original checkpoint is withdrawn.
+
+The construction has to supply its positive metric, correct port couplings, arithmetic transfer identity, and limit control without assuming the endpoint sign. A bare equivalence, a square root of an unproved positive target, or a unit-modulus boundary function does not supply them.
+
+## 4. Retained negative evidence has a defined scope
+
+The per-prime Laplace one-port `log p/(p^s-1)` is not positive-real on a right half-plane: at `s=sigma+i pi/log p` its real part is negative. The earlier probes also report finite failures of particular Laplace-source completions and negative shifted-ratio values. Those results reject the displayed constructions or extra inequalities.
+
+They do not by themselves prove that every source/history host is impossible, or that a count of negative real-part excursions is a general theorem about every possible realization's negative index. A claimed infinite-dimensional obstruction needs its own kernel, metric, class, and proof.
+
+## 5. The new circuit checkpoint adds an exact normalization test
+
+The Gamma and prime factors admit explicit lossless-filter descriptions, but the Gamma infinite cascade requires a divergent advance and the true local prime ratio removes one clock of delay. Their positive delay drops produce the known positive components of the Weil form. The full pairing includes the source-prescribed centering and both polar channels.
+
+For `P=[[A,B],[B*,C]]`, `C>kappa I`, and `kappa>=0`,
+
+\[
+\mathfrak S(P-\kappa I)
+=\mathfrak S(P)-\kappa I
+-\kappa B(C-\kappa I)^{-1}C^{-1}B^*.
+\]
+
+Thus reducing the positive network before centering can give the wrong sign. The new note supplies an exact two-node family with positive incorrect boundary value and correct value `-1/4` at every cutoff, plus actual Gamma/prime matrix diagnostics. A rank-one pole correction must also enter the hidden blocks before elimination.
+
+The open arithmetic task is to construct and identify the correctly completed positive boundary/history object, or prove a bounded contractive causal extension of the specified Suzuki source along a sequence of shifts tending to zero. These are precise remaining proof obligations. They remain available research targets; none is declared solved by local passivity.
+
+See [lossless arithmetic circuit](../2026-10-09/lossless_arithmetic_circuit/README.md), especially its claim ledger and the exact Hardy-leakage control. C107–C108 in the main claim ledger are corrected consistently with this note.
