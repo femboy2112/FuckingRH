@@ -128,5 +128,4 @@ def run():
         print(f'CRITICAL limit tau={tau}: normalized mass²={mass:.9f} fixed label norm={fixed:.9f}')
     print('ALL CHECKS PASSED (FINITE / DIRECT QUADRATURE; NOT AN RH CLAIM)')
 
-
 if __name__=='__main__': run()
