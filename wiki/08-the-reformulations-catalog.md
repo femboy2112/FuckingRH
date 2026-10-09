@@ -329,6 +329,18 @@ proofs, where the walls are, so the search can spend itself on the one object th
 ([the joint coercivity](06-state-of-the-program.md)) instead of re-deriving Bost–Connes for the
 twentieth time.
 
+**And the fence is a *surface* — that is the whole shape of the difficulty (R67).** Every object on it
+is finite or kinematic, hence *verifiable*, hence (proved) *sign-blind*: we have unlimited **local**
+access while RH is a single **global** invariant (the all-places Weil positivity) that no finite patch
+of the completed `ξ` determines. It is **not** surface-versus-hidden-interior — `ξ` is all surface,
+fully in view, nothing locked away — it is **local-versus-global on that one visible surface** (the
+structural content of the VK blind spot: `10^{13}` verified zeros certify nothing). Function fields are
+the proof the global invariant *can* be reached directly: there `C×C` is **compact** (finite-dimensional
+Néron–Severi + Riemann–Roch), so the Hodge-index sign is finitely certifiable; `Spec ℤ` has no compact
+host, so its global sign is not — *yet*. The missing compactification (the dualizing / host surface, R64)
+is precisely **what would make the global sign locally checkable** — the object to *build*, not another
+wall to *find*.
+
 ## 8.9 Postscript: the QM / path-integral reading (the canonical illustration of §8.8)
 
 A natural and genuinely beautiful lens, and the cleanest demonstration of §8.8's lesson: read the
