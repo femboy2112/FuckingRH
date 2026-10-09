@@ -192,3 +192,27 @@ The optional executable is scripts/height_tate_uv_control.py (requires SciPy, no
 **Revision:** Replace the hypothesis “the positive complete-history embedding supplies Weil polarity” with: **any viable dualizing trace must be defined on an appropriate unbounded quadratic-form/graph-norm or distributional domain**, must incorporate all archimedean and pole terms, and must derive the primitive Hodge sign independently. Adding a fixed Gaussian wavepacket or a positive height kernel cannot pay this debt.
 
 **Status:** HTR-09 PROVED as a domain obstruction; HTR-10 “unbounded adelic source-derived transfer with exact Weil equality and independent sign” UNVERIFIED.
+
+
+## 9. Fourth bounded hypothesis killed: the actual Gamma operator LEAVES the arithmetic-history range
+
+**Predeclared H4:** The genuine archimedean Weil multiplier A_inf might preserve the dense Tate/history image ran J_tau. Pass: for every source basis vector, A_inf J_tau e_r can be reconstructed from some f in ell²(G) with J_tau f=A_inf J_tau e_r. Fail: a single explicit basis state whose Gamma image has no preimage; this would require a distributional enlargement.
+
+**THEOREM 5 (range non-invariance, proved).** For tau>1 and the normalized Tate seed g_T, let A_inf act on L²(R) as Fourier multiplication by a(t)=Re psi(1/4+it/2)-log pi. Then
+
+$$
+g_T=J_\tau e_1\in\mathrm{Dom}(A_\infty),\qquad
+A_\infty g_T\notin \mathrm{ran}(J_\tau).
+$$
+
+Consequently, no operator B on the original ell²(G), with e_1 in its domain, can satisfy the proposed intertwining A_inf J_tau=J_tau B even on the rational unit. In particular the archimedean correction cannot be realized as an INTERNAL dualizing generator of this discrete weighted-history model.
+
+PROOF: For every f∈ell²(G), Theorem 2 defines the finite complex measure mu_f=sum_r e^{-tau h(r)} f(r)delta_{log r}; its total variation is <=||f||_2 (sum_r e^{-2tau h(r)})^{1/2}. We have hat(J_tau f)(t)=hat g_T(t)hat mu_f(t). The Fourier transform of any finite measure is bounded and continuous. On the other hand g_T is in Dom A_inf because its Gamma Fourier transform decays exponentially, while A_inf(t) grows only as log |t|. If A_inf g_T=J_tau f, cancellation of the nowhere-zero hat g_T gives hat mu_f(t)=A_inf(t) almost everywhere. Both sides are continuous, hence everywhere. But A_inf(t)~log(|t|/(2pi)) diverges to +infinity, contradicting boundedness of the Fourier–Stieltjes transform of mu_f. QED.
+
+More sharply, although A_inf is an UNBOUNDED multiplier on ambient L²(R), the pulled-back form J_tau* A_inf J_tau is bounded on ell²(G) for tau>1. Indeed |A_inf|^{1/2}g_T∈L², and translations commute with its Fourier multiplier, so |A_inf|^{1/2}J_tau is Hilbert-Schmidt with norm square |||A_inf|^{1/2}g_T||² * [2zeta(2tau-1)/zeta(2tau)-1]. The form pullback exists but loses the needed high-frequency unboundedness. Thus no amount of composing the bounded J_tau with this fixed Gamma correction builds the FULL fixed-window Weil form as an ordinary bounded Gram.
+
+**Probe:** scripts/height_tate_range_obstruction.py; mpmath 70-digit real digamma t=0,10,50,100,1000,10000,1000000; a(t) increased from -5.37218 to +11.97763, matching log(t/(2pi)) with final residual -4.17e-14. This is a calibration of the asymptotic, not the proof and not a zero-spectrum diagnostic.
+
+**Verdict:** HTR-12 PROVED range-obstruction within the selected Tate/height embedding. The surviving interpretation is that a real Archimedean dualizing/inversion functor must use a **larger space of distributions, functions with archimedean continuous support, or an adelic module**. Replacing wavepacket profiles or picking a new bounded positive metric repeats the same boundary. Concrete next lamp: a source-derived distributional pushforward with declared domains and an independently derived trace/adjoint, tested against the complete Weil form; no zero input.
+
+This is a mathematical explanation of why an invertible **rational-label** action and the completed **Gamma/pole** action cannot be treated as the same dynamics in the naive Hilbert completion. It does not forbid Connes–Consani's arithmetic-site or a genuine adelic host.
