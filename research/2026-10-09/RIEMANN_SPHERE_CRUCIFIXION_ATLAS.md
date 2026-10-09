@@ -343,6 +343,15 @@ not an easier theorem by definition. The new correlation matrix
 construction is a useful probe only insofar as it distinguishes source
 constructions that scalar sign checks cannot.
 
+**Literature non-novelty warning:** Suzuki's 2023 paper *Li coefficients
+as norms of functions in a model space* (https://arxiv.org/abs/2301.05779)
+already identifies a model-space norm criterion equivalent to RH. This
+means simply obtaining a Li norm representation is NOT a new positive
+arithmetic theorem. Any claimed progress from this atlas must compare
+its parent norm, kernel, analytic domain, and independence of positivity
+against Suzuki's prior construction; the source-native full-Weil
+identification is still the missing step.
+
 ## Reproduction and primary literature
 
 Run:
