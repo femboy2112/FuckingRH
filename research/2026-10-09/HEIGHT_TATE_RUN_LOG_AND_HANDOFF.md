@@ -171,3 +171,27 @@ Actual combined command from locally materialized copies of new files:
 | HTR-18 | UNVERIFIED | Distinguished surface-level dualizing trace and Hodge-index polarization equal complete Q and prove sign |
 
 **Stopping rule:** Further generic positive CND/Lévy/height kernels repeat proved source-blindness; another numerical scan of the same lower bound does not move RH. Needed technology is a genuine source-derived **unbounded** adelic correspondence/dualizing complex with a trace/intersection law and independent Hodge sign. The first discriminating implementation must compare the complete polarized Weil trace in the two-prime interval while enforcing zero connected log6, true χ vs DH and full Γ/pole/negative bulk, before asserting a new theorem.
+
+
+## R-G / H8: exact Gamma reservoir modes and an odd/even source discriminator
+
+PREDICTED before new test: the 1/(1-e^{-2u}) continuum measure should admit a *canonical* geometric tower of exponential modes with lambda_{m,epsilon}=2m+1/2+epsilon. Pass if both parities have positive convergent partial sums with an exact tail bound on new frequencies; failure if wrong parity passed unchanged or any bound failed.
+
+PROVED via geometric series and Tonelli:
+$$
+\Re\psi((1+2\epsilon)/4+it/2)-\psi((1+2\epsilon)/4)
+=2\sum_{m\ge0}\frac{t^2}{(2m+1/2+\epsilon)[(2m+1/2+\epsilon)^2+t^2]}.
+$$
+Tail after M bounded by 2t²/lambda_M³+t²/(2lambda_M²). Positive partial-mode sums converge monotonically to the exact Gamma quadratic form on its domain; every finite truncation is bounded and cannot reproduce UV Γ at arbitrarily high frequency.
+
+FRESH OUT-OF-SAMPLE local probe scripts/gamma_tower_holdout.py with t∈{.731,3.7,17.25}, M∈{16,64,256}, both parities; all 18 residuals positive and below rigorous tail bounds. Example even t17.25 M256 residual .00056834 < bound .00057087; odd t17.25 M256 residual .000566126 < bound .00056864. Wrong parity at t3.7 differs by 3.141536421094 — the archimedean character parity is load-bearing for matching the full formula, not an arbitrary positive environment.
+
+CLAIM HTR-19 PROVED as a classical Gamma partial-fraction identity; HTR-20 REFUTED as inference: source-correct countable Gamma reservoir alone does NOT give Weil polarization and survives fake finite Euler atoms. See GAMMA_DISCRETE_RELAXATION_TOWER.md.
+
+## FINAL HANDOFF / saturation discipline
+
+This session has produced new rigorous scoped mathematics in the chosen fixed-profile rational-height/Tate model: a sharp bound threshold, compact/injective topology obstruction, failed internal Gamma lift, a positive singular Gamma continuum, its parity-correct countable mode tower, exact source-plus-continuum Weil decomposition and failed individual coercivity shortcut. **No claim of unconditional RH sign or of literature-level novelty.**
+
+Next external/proof instrument: choose a cohomological/adelic correspondence source FIRST (e.g. Connes–Consani absolute arithmetic curve + 2026 signed twistor), define its actual dualizing trace including 2-adic extension, prove a complete Q_W identity from the source without zeros on an unbounded graph/distributional domain, THEN separately prove Hodge index; reject immediately if it produces connected impulse n=6 or log(p/q), misses Gamma pole modes/odd parity, uses unallowed |alpha2| or clock, or assumes positive metric.
+
+Do NOT add the Gamma tower as a bounded \`J*J\` surrogate: it is precisely the part that makes the full Q unbounded. Do NOT count the same original user framing, branch #10, and sibling PRs #8/#9/#11 as independent proof witnesses. Keep R64 genus-one finite-field Hodge index as a calibrated *positive control*, D–H as a known functional-equation-but-off-line negative control, and finite arithmetic mutations as structural controls. All work is on this existing non-main branch; no main merge.
