@@ -383,20 +383,98 @@ corrected two hopeful guesses.
   only Gevrey-1 series near `ζ` encode the archimedean place + the functional equation.
 - **Superconductor / prime-circuit reading (R66).** The gloss "the archimedean place is a
   superconductor carrying the prime current, an idealized continuum closing the finite prime circuit"
-  — audited: **wrong on the spectrum, right on the composites.** The zero *spectrum* is
+  — audited: **wrong on the spectrum, right on the gaps.** The zero *spectrum* is
   **gapless-critical** (GUE level repulsion, verified on the first 200 zeros: tiny spacings suppressed
   `~s²`, min `0.32`, no hard gap — §6/R20 fingerprint) — the *opposite* of a superconductor's gap. The
-  "gaps" that matter are the **composites** on the integer line: `−ζ'/ζ` carries **zero current at every
-  composite** (`b(n)=0` off prime powers) — that *is* the Euler product. So "superconducting" `=` empty
-  composite gaps `=` multiplicativity `=` gate 1 (the `n=6` separator, [§6 F1](06-state-of-the-program.md#f--external-sibling-lineage-triangulation-independently-verified));
+  "gaps" that matter are the **non-prime-powers** on the integer line (`6, 10, 12, …` — *not* every
+  composite: `Λ(4)=\log 2>0`, so the prime powers `4, 8, 9, …` carry current; *corrects an R66 phrasing,
+  caught by the `riemann-sphere-crucifixion-atlas` frisk*): `−ζ'/ζ` carries **zero current exactly off the
+  prime powers** (`b(n)=0` at non-prime-powers) — that *is* the Euler product. So "superconducting" `=` empty
+  non-prime-power gaps `=` multiplicativity `=` gate 1 (the `n=6` separator, [§6 F1](06-state-of-the-program.md#f--external-sibling-lineage-triangulation-independently-verified));
   **Davenport–Heilbronn is the lossy circuit** leaking into `n=6` (`b(6)=(1+κ²)\log 6`), and that leakage
-  *is* its off-line zeros. "Closed/completely described" `=` completion to entire `ξ` + the closed Müntz
+  co-occurs with its off-line zeros (Observed in the control; not a proved causal identity). "Closed/completely described" `=` completion to entire `ξ` + the closed Müntz
   lift — which DH also has. Necessary, sign-blind; **global losslessness (all zeros on the line) is the
   fourth gate.** `REFORMULATION→WALL`.
 - **Verdict.** `REFORMULATION→WALL`. The QM reading is the most canonical *statement* of the wall
   (self-adjoint extension of the `xp`/braided generator, closed by the archimedean place) and hands
   over a different toolbox (non-perturbative QFT) aimed at the known Connes–Consani wall — but it adds
   no crack, and it clarifies that the non-perturbative sector is the *obstruction*, not the mechanism.
+
+## 8.10 The crucifixion surface — RH's proof as a feasibility region, and why the sign is a cross-term
+
+Treat "a proof of RH" as a point that must lie in a region cut out by everything this catalogue has
+established. The walls are not scattered dead ends — they are the **faces** of that region, and a
+candidate certificate is admissible only if it lies inside every one.
+
+**Necessary faces — what a proof must do (the gates, [§6 group F](06-state-of-the-program.md)):**
+`G1` reads multiplicativity / empty non-prime-power gaps (Euler product; `b(6)=0` for genuine `χ`, `≠0` for
+DH). `G2` reads no zeros (no scattering-phase / `M_zeros` input; no circularity). `G3` survives the
+mutation controls (fake `n=6`, `|α_p|≠1`, shifted `log p` all crack a factorized surrogate; must use
+real `Λ`/`log p`). `G4` is provably identified with the **full** completed Weil form, with an
+**independently proved sign** and domain/limit control. **`G4` is the open face — the interior.**
+
+**Exclusion faces — what a proof cannot be (each a proved or measured no-go):** not
+factorized / per-prime / direct-sum (RH-inert; survives fake arithmetic, R62); not standalone-positive
+boundary curvature (antiunitary `𝒥[C^*,C]𝒥=−[C^*,C]` ⟹ mirror-symmetric ⟹ PSD iff `0`, R61–62); not the
+functional-equation reflection / time reversal (`R=`parity∘conj is sign-blind; DH has it, R63); not a
+sign read off the coupling algebra `⟨X,{T_{\log p}}⟩` (kinematics; DH's coefficients live in it, R65);
+not a bounded / finite Gram (the full `Q_L` is **unbounded above**, `~\log T`; no bounded object can
+*be* the Weil form — R64 + the `archimedean-dualizing` branch's HTR-09, verified here); not a positive
+object from primes alone (per-prime ⟹ inert; §8.8); not supplied by closedness / completion alone (DH is
+closed, entire, FE-symmetric; R66–67); plus the graveyard ([§8.7](#87-the-graveyard-proved-or-measured-dead--do-not-re-dig)).
+
+**Why the sign is a cross-term, not a sum (the A/B structure).** Write `Q = P − K`: `P` the
+archimedean / continuum term, `K` the finite / prime term. Both are **separately observable** (we measure
+the arch symbol and the prime Gram directly) and both are **unbounded** (`P ~ \log T`). RH is the sign of
+their difference — **not a linear combination** of observing `P` and observing `K`, but a statement about
+their **non-additive interaction**: a razor-thin cancellation in an unbounded form, with no floor. In the
+explicit formula this is a **Fourier/Mellin duality** — the prime side and the zero side are conjugate
+domains, and by the uncertainty principle no single-domain observation localizes both. The truth lives in
+the cross-term, which is precisely why each of `A=P` and `B=K` is visible yet the two cannot be combined
+into one certificate (Aletheia: *a cross-term is non-additivity, not mechanism* — its sign is not read off
+either bearing).
+
+**But non-additive ≠ beyond reach.** The function-field case is the standing disproof of the despair
+reading: there the *same* A/B non-additivity holds — `NS(C×C)` is indefinite, `P − K` is not a sum — yet
+RH is **proved**, because the surface is **compact** and the Hodge index theorem supplies the non-linear
+global sign for free ([§6 R64](06-state-of-the-program.md); the genus-1 witness is the Hasse bound as a
+`2×2` Gram). "Not linearly combinable" does not mean "unprovable"; it means the required theorem is a
+**Hodge-index-type global positivity**, not a linear / SOS certificate — and such theorems exist.
+ℚ's obstruction is specific, and it is *not* a missing Riemann–Roch: arithmetic RR and Serre duality
+**do** exist (Connes–Consani 2023). What is missing is the RH-bearing **self-product** correspondence —
+the second geometric dimension / dualizing host on which the Hodge-index *sign* becomes a theorem — so the
+non-linear invariant is not yet finitely accessible.
+
+**The sphere is spectral, not arithmetic — why "we live on the surface" is not a proof of unreachability.**
+The compact object this catalogue keeps drawing — the Riemann sphere of the completed `ξ`, equator
+`Re s = ½`, Li's criterion as an angular measurement (the `riemann-sphere-crucifixion-atlas` branch,
+frisked and verified here: radial defect `𝒟_n = Σ_ρ(|w_ρ|^{2n}−1) ≥ 0` by the functional-equation
+sum-of-squares `(|w|^n−|w|^{−n})²`, with `𝒟_1 = 0 ⟺ RH`) — is the **spectral** sphere, compactified in
+`s`. Its compactness is real, but it is **not** the arithmetic compactness that carries the sign: the
+radial defect is *defined through the zeros*, so its positivity is a spectral re-expression of RH, not a
+non-circular source method — "one does not prove RH by renaming the defect as energy." So the "we live on
+the surface, a proof needs the interior" reading resolves precisely: the surface we live on is the
+*spectral* sphere; the interior that is missing is a **different** compactness (the arithmetic
+self-product host), whose absence is a missing *construction*, not a proved impossibility. Geometrically
+the sought proof is a **holonomy / trace** statement — the enclosed curvature of the closed prime
+geodesics (`log p`), nonzero and independently signed, is the theorem; the functional-equation loop has
+**zero** holonomy (sign-blind, R63), while the Euler product carries nonzero holonomy, re-derived here as
+the exact two-sector **covariance** `b(6) = 4t(1−t)` (the `operational-observability-wavefront` branch,
+verified here — the "`A`/`B` observationally entangled" intuition made exact: the marginals `a_2, a_3`
+vanish at `t = ½` while the joint `a_6` survives, and the defect *is* the cross-term). And the despair
+inference — "every tool fails the same shape, so RH is formally out of reach" — does not follow: that
+convergence is **non-discriminating** (a hard-but-unbuilt problem and a genuinely independent one produce
+the *same* appearance — every tool circling the one missing sign), the function-field case is the standing
+counterexample (identical circularity, broken by a non-circular external theorem), and RH's `Π₁` type puts
+it in the *wrong* neighborhood for dramatic independence — a `Π₁` statement independent of the axioms is
+forced **true**, not unreachable. Geometric incoherence is **refuted** (Gauss–Bonnet: a global invariant
+*is* surface-intrinsic); the Gödel/independence reading is **coherent but unsupported**.
+
+**The directive.** A near-complete surface means the leverage has moved from mapping faces to
+**constructing the interior** — the compact host / dualizing polarization on which `G4`'s sign becomes a
+theorem, as it is over `𝔽_q`. An object to *build*, not a wall to *find*; it is where the sibling
+lineage's `archimedean-dualizing-reversal` / `even-frobenius` branches are aimed, and it remains open.
+`SURFACE COMPLETE · INTERIOR OPEN`.
 
 ---
 
