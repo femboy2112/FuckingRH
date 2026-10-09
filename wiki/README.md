@@ -41,6 +41,13 @@ Read in order for the full arc, or jump to what you need.
 7. **[Methodology & discipline](07-methodology-and-discipline.md)** — the crucifixion method, the
    epistemic labels, hostile controls, the no-zero-input rule, and calibrated instruments.
 
+### The branches
+
+8. **[The reformulations catalog](08-the-reformulations-catalog.md)** — a map of all ~47
+   experimental branches: every lens the program tried, each as "RH looks like this if you consider
+   X → what you get → the wall," de-duplicated and grouped by the six lenses, with the provenance
+   caveat (one lineage, not independent bearings) and the verdict (zero genuine non-circular content).
+
 ---
 
 > **One-line status.** Every piece of the frame that could be measured has been measured, and ζ

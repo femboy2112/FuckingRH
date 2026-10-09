@@ -117,4 +117,5 @@ consolidation is `CONSOLIDATED_RH_STATE.md`.
 [2 RH-equivalent target](02-the-rh-equivalent-target.md) · [3 Diophantine & semigroup
 frame](03-the-diophantine-semigroup-frame.md) · [4 The symbol & the
 wells](04-the-symbol-and-the-wells.md) · [5 What ζ is, from every side](05-what-is-zeta-here.md) ·
-[6 State of the program](06-state-of-the-program.md)
+[6 State of the program](06-state-of-the-program.md) ·
+[8 The reformulations catalog](08-the-reformulations-catalog.md)

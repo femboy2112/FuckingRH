@@ -42,6 +42,10 @@ The full account of how this program thinks about the problem lives in the
 7. **[Methodology & discipline](wiki/07-methodology-and-discipline.md)** — the crucifixion
    method, epistemic labels, hostile controls, the no-zero-input rule, and calibrated
    instruments.
+8. **[The reformulations catalog](wiki/08-the-reformulations-catalog.md)** — a map of all ~47
+   experimental branches: every lens tried, each as "RH looks like this if you consider X → what
+   you get → the wall," with the provenance caveat and the verdict (zero genuine non-circular
+   content; every per-prime positivity is RH-inert).
 
 ---
 
