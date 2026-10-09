@@ -1,0 +1,141 @@
+{
+  "research_date": "2026-10-09",
+  "scope": "Finite SUCC/FUCC path histories, LCM conductor filtration, probe-relative mixed observables, exact Dirichlet-log source. RH OPEN.",
+  "parent_head": "8505467ea596b0636f73b655c521f50105d8b06e",
+  "execution": {
+    "local_equivalent_probes": "Python private and visible sessions using exact fractions",
+    "committed_script_exactly_run": false,
+    "github_actions_run": false,
+    "repository_test_suite_run": false,
+    "zero_input": false,
+    "stochastic_or_numeric_fit": false
+  },
+  "outcomes": {
+    "conductor_birth": {
+      "theorem": "b(d)=max_{p^k || d} p^k",
+      "independent_extended_test_range": "1..200",
+      "status": "PASS",
+      "exact_clock_births": [
+        {
+          "N": 2,
+          "L": 2,
+          "new_dim": 1
+        },
+        {
+          "N": 3,
+          "L": 6,
+          "new_dim": 4
+        },
+        {
+          "N": 4,
+          "L": 12,
+          "new_dim": 6
+        },
+        {
+          "N": 5,
+          "L": 60,
+          "new_dim": 48
+        },
+        {
+          "N": 6,
+          "L": 60,
+          "new_dim": 0
+        },
+        {
+          "N": 7,
+          "L": 420,
+          "new_dim": 360
+        },
+        {
+          "N": 8,
+          "L": 840,
+          "new_dim": 420
+        }
+      ]
+    },
+    "history": {
+      "short": [
+        2,
+        1,
+        2
+      ],
+      "long": [
+        2,
+        4,
+        2
+      ],
+      "earliest_full_state_horizons": [
+        2,
+        4
+      ],
+      "equal_endpoint_but_different_realization": true,
+      "projection_shadow_identity": "PABP-(PAP)(PBP)=PA(I-P)BP"
+    },
+    "mixed_observable": {
+      "support_modulus": 6,
+      "birth_horizon": 3,
+      "signal_by_residue": [
+        "1/3",
+        "1/6",
+        "-1/6",
+        "-1/3",
+        "-1/6",
+        "1/6"
+      ],
+      "mod2_conditionals": [
+        "0",
+        "0"
+      ],
+      "mod3_conditionals": [
+        "0",
+        "0",
+        "0"
+      ],
+      "squared_norm": "1/18",
+      "snapshot_mixed_expectations": [
+        "-1/18",
+        "+1/18"
+      ],
+      "snapshots_are_SUCC_invariant": false
+    },
+    "source_shadow": [
+      {
+        "n": 4,
+        "pre_arrival": "-1/2",
+        "after": "1/2"
+      },
+      {
+        "n": 6,
+        "pre_arrival": "-1",
+        "after": "0"
+      },
+      {
+        "n": 8,
+        "pre_arrival": "-2/3",
+        "after": "1/3"
+      },
+      {
+        "n": 9,
+        "pre_arrival": "-1/2",
+        "after": "1/2"
+      },
+      {
+        "n": 12,
+        "pre_arrival": "-1",
+        "after": "0"
+      }
+    ],
+    "fake_source_mutation": {
+      "at_n": 6,
+      "delta": "1/7",
+      "connected_after": "1/7"
+    }
+  },
+  "conclusions": {
+    "phase_space_availability_vs_direct_visit": "separate, exact finite theorem",
+    "restricted_marginal_probe_incompleteness": "disclosed within snapshot-state class",
+    "source_sensitive_primitive_vs_mixed": "disclosed finite Dirichlet-log",
+    "RH_positivity": "UNVERIFIED, not derived"
+  },
+  "next_probe": "Construct the operational 2–3–infinity joint observation/trace, prove source-fidelity (no log6 primitive or log(3/2) ratio atom), then compare exact Gamma/pole/prime Weil distribution and its form-domain before claiming any sign."
+}
