@@ -53,11 +53,15 @@ def gaussian_multiply(x, y):
     return (x[0] * y[0] - x[1] * y[1], x[0] * y[1] + x[1] * y[0])
 
 
-def gaussian_real_power(z, n):
+def gaussian_power(z, n):
     out = (Fraction(1), Fraction(0))
     for _ in range(n):
         out = gaussian_multiply(out, z)
-    return out[0]
+    return out
+
+
+def gaussian_real_power(z, n):
+    return gaussian_power(z, n)[0]
 
 
 def cayley_fraction(x, y):
@@ -73,6 +77,24 @@ def li_for_symmetric_quartet(a, n, t=Fraction(1)):
     right = cayley_fraction(Fraction(1, 2) + a, t)
     left = cayley_fraction(Fraction(1, 2) - a, t)
     return Fraction(4) - 2 * (gaussian_real_power(right, n) + gaussian_real_power(left, n))
+
+
+def radial_defect(a, n, t=Fraction(1)):
+    """Sum_{synthetic rho} (|w_rho|^(2n)-1), exact reciprocal pairs."""
+    right = cayley_fraction(Fraction(1, 2) + a, t)
+    left = cayley_fraction(Fraction(1, 2) - a, t)
+    r2_right = right[0] ** 2 + right[1] ** 2
+    r2_left = left[0] ** 2 + left[1] ** 2
+    return 2 * (r2_right ** n + r2_left ** n - 2)
+
+
+def trivial_norm_diagonal(a, n, t=Fraction(1)):
+    """Zero-side sum |1-w_rho^n|^2, PSD even with off-line zeros."""
+    total = Fraction(0)
+    for x in (Fraction(1, 2) + a, Fraction(1, 2) - a):
+        wr, wi = gaussian_power(cayley_fraction(x, t), n)
+        total += 2 * ((1 - wr) ** 2 + wi ** 2)
+    return total
 
 
 def li_cnd_gram(a, dimension, t=Fraction(1)):
@@ -117,6 +139,16 @@ def check_controls():
     assert all_principal_minors_nonnegative(K_on)
     assert K_far.det() < 0 and K_near.det() < 0
 
+    # A zero-side norm is ALWAYS positive, but its equality to 2*Li fails
+    # by an exact reciprocal-pair radial defect; vanishes only on equator.
+    assert radial_defect(Fraction(0), 1) == 0
+    for amplitude in (off, near):
+        for n in (1, 3, 6):
+            assert radial_defect(amplitude, n) > 0
+            assert (trivial_norm_diagonal(amplitude, n)
+                    - 2 * li_for_symmetric_quartet(amplitude, n)
+                    == radial_defect(amplitude, n))
+
     # A finite collection of arbitrary complex jets cannot distinguish a
     # fully on-equator symmetric baseline from a symmetric off-equator model.
     samples = [sp.Integer(0), sp.Integer(1), HALF + sp.I / 3]
@@ -148,6 +180,11 @@ def check_controls():
         "off_line_quartet_a_1_4096": {
             "first_40_li": "strictly positive (exact Fractions)",
             "horizon": horizon,
+        },
+        "radial_defect": {
+            "on_equator": "zero (exact)",
+            "off_equator": "strictly positive (exact)",
+            "identity": "trivial positive norm = 2*Li + radial defect",
         },
         "li_cnd_3x3": {
             "on_line_quartet": "positive semidefinite (all principal minors exact)",
