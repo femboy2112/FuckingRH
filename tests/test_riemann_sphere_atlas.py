@@ -3,7 +3,8 @@ from fractions import Fraction
 import sympy as sp
 from scripts.riemann_sphere_atlas_probe import (
     HALF, S, cayley, check_controls, finite_jet_adversary,
-    li_for_symmetric_quartet, li_cnd_gram, all_principal_minors_nonnegative, reflection_control,
+    li_for_symmetric_quartet, li_cnd_gram, all_principal_minors_nonnegative,
+    radial_defect, trivial_norm_diagonal, reflection_control,
 )
 
 
@@ -28,6 +29,15 @@ def test_cnd_kernel_finite_diagnostic_exact():
     assert all_principal_minors_nonnegative(li_cnd_gram(Fraction(0), 3))
     assert li_cnd_gram(Fraction(1,4), 3).det() < 0
     assert li_cnd_gram(Fraction(1,4096), 3).det() < 0
+
+
+def test_radial_defect_is_precisely_the_missing_norm_identity():
+    assert radial_defect(Fraction(0), 1) == 0
+    for a in (Fraction(1, 4), Fraction(1, 4096)):
+        for n in (1, 3, 6):
+            assert radial_defect(a, n) > 0
+            assert (trivial_norm_diagonal(a, n)
+                    - 2 * li_for_symmetric_quartet(a, n)) == radial_defect(a, n)
 
 
 def test_finite_jet_adversary_exact():
