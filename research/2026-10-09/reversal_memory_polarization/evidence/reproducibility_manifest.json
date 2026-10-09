@@ -1,0 +1,96 @@
+{
+  "created_utc": "2026-10-09T17:40:16.250683+00:00",
+  "repository": "femboy2112/FuckingRH",
+  "base_commit": "f2fe8b3f2e2953061bcc64c51c86521a66e72bcf",
+  "base_tree": "522bff8b8757cb0ecbb2b402d197e8d6dfb3d64c",
+  "branch": "research/2026-10-09/reversal-memory-polarization",
+  "donor": {
+    "commit": "57aec234b790bcc1b3bbf34fba7c21ddcf080a18",
+    "path": "scripts/history_conditioned_reverse_probe.py",
+    "git_blob_sha1": "0f4bf85b1dac7dd0f93e0cd052aa573f3ee157ff",
+    "byte_identical": true
+  },
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "runs": [
+    {
+      "argv": [
+        "python",
+        "research/2026-10-09/reversal_memory_polarization/evidence/donor_history_conditioned_reverse_probe.py"
+      ],
+      "exit_code": 0,
+      "stdout_path": "research/2026-10-09/reversal_memory_polarization/evidence/donor_baseline_stdout.txt"
+    },
+    {
+      "argv": [
+        "python",
+        "scripts/reversal_memory_polarization_probe.py",
+        "--output",
+        "research/2026-10-09/reversal_memory_polarization/evidence/probe_results.json"
+      ],
+      "exit_code": 0,
+      "stdout_path": "research/2026-10-09/reversal_memory_polarization/evidence/probe_stdout.txt"
+    }
+  ],
+  "files": {
+    "README.md": {
+      "bytes": 10769,
+      "sha256": "f21fe03488b4c1e3daeea0803b61da9bbebcfa13054b707a98bcc781d298175d",
+      "git_blob_sha1": "f485673d18d3be1b9b6dcd4793294f7bc6dde38d"
+    },
+    "CLAIM_LEDGER.md": {
+      "bytes": 49671,
+      "sha256": "3d353132e46cd7b4f8d86c0996331b2482a9e0fa4bc29882315d98b989a37cc2",
+      "git_blob_sha1": "e8754ba554a5c68229a6398bbb59c66510bdd764"
+    },
+    "scripts/reversal_memory_polarization_probe.py": {
+      "bytes": 20715,
+      "sha256": "5f2e1f3021f851630d188d943af09cfcea502668a45ffbf210c64cc7b9470058",
+      "git_blob_sha1": "71160b11ffcaa61d0038a66327daa9baf43ed1b7"
+    },
+    "research/2026-10-09/reversal_memory_polarization/DUALITY_WEIL_AND_GREEN.md": {
+      "bytes": 16268,
+      "sha256": "dc2c93193ad74178e5dfc620039ce331f2f928994d0386d7708e567bc3557923",
+      "git_blob_sha1": "e7c2a0edd16552861b690811911419a1a89e6256"
+    },
+    "research/2026-10-09/reversal_memory_polarization/HISTORY_AND_POLARIZATION.md": {
+      "bytes": 22298,
+      "sha256": "5c432a3c3bbd33cfe93eb70ce9e129f4a456bcafeea536c78bb24ad79802890c",
+      "git_blob_sha1": "f80de82f8926d3349f44616367c52d38c2c19871"
+    },
+    "research/2026-10-09/reversal_memory_polarization/PROVENANCE_AND_CLAIMS.md": {
+      "bytes": 11131,
+      "sha256": "ab84bbf35d60062affda78febaa19ecbcce1f16c2c686bc1cb1bc778f0e782d1",
+      "git_blob_sha1": "8073a649cfcd3155fc161c94ce5d26666cce9ed6"
+    },
+    "research/2026-10-09/reversal_memory_polarization/README.md": {
+      "bytes": 11551,
+      "sha256": "f531a5d454a277c34b317adc25a2680d228f401c70fd16cf726cf07c4b4db396",
+      "git_blob_sha1": "7e8079da22fafd6977c3a058b41345da470728e9"
+    },
+    "research/2026-10-09/reversal_memory_polarization/evidence/donor_baseline_stdout.txt": {
+      "bytes": 307,
+      "sha256": "72653b9e10ef85a348fb124210c9f5331c44f709b7d6625f23957bba8f65113c",
+      "git_blob_sha1": "923e821737b4ee942e0631eae99293915fd07b6b"
+    },
+    "research/2026-10-09/reversal_memory_polarization/evidence/donor_history_conditioned_reverse_probe.py": {
+      "bytes": 3403,
+      "sha256": "a39fff89bb49306362456cdee7c27cd737efe130996034894c4b5cd8ab22e17b",
+      "git_blob_sha1": "0f4bf85b1dac7dd0f93e0cd052aa573f3ee157ff"
+    },
+    "research/2026-10-09/reversal_memory_polarization/evidence/probe_results.json": {
+      "bytes": 23476,
+      "sha256": "492ded50427c6c8e54cd32ddc92b914230035bf04a9f6df3e585413f91830361",
+      "git_blob_sha1": "5512ec3b731d1a399ccc817ed9c1010b2152cfcb"
+    },
+    "research/2026-10-09/reversal_memory_polarization/evidence/probe_stdout.txt": {
+      "bytes": 697,
+      "sha256": "6b15a9604ba663e6318f67dbef80403a30072c23ee2c246c62973e65bd85aa20",
+      "git_blob_sha1": "56d3092309d069b00f5e8c9d0efb52978ae69e7c"
+    }
+  },
+  "limits": "Exact finite controls and analytic proofs; numeric integrations are diagnostics, not rigorous enclosures. No RH proof. Manifest excludes its own hash."
+}

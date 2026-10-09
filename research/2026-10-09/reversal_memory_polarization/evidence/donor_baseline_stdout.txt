@@ -1,0 +1,5 @@
+PASS: p-ary half-density, coherent return and dephased loss
+PASS: Bayes reverse is a measure-dependent half-density adjoint
+PASS: forward product vanishes, reverse/forward echo has norm one
+PASS: log(3/2) ratio echo is visible while log(6) is beyond horizon
+ALL TIME-REVERSAL TESTS PASSED; RH REMAINS OPEN.

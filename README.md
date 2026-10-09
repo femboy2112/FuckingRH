@@ -9,6 +9,11 @@ organized to keep honest the distinction between what is *proved*, *computed*, *
 and *refuted*, and to name — precisely — the single load-bearing theorem a genuine proof
 still owes.
 
+## Complete-history reversal and positive polarization — October 9
+
+The [reversal, memory, and polarization checkpoint](research/2026-10-09/reversal_memory_polarization/README.md) develops the teacup/time-reversal axis into exact memory and Green-operator theorems, a positive primitive-erasure obstruction, common Frobenius-history tests, and an explicit unitary environment for the known positive Gamma/prime energy. It derives the precise Connes–Consani/Weil sign and domain comparison and audits the proposed missing-dualizing-sheaf explanation against current primary sources. Proofs, eight reproducible control groups, provenance, and the remaining full-Weil positivity obligation are included.
+
+
 ---
 
 ## Read the framing from the ground up
@@ -159,3 +164,4 @@ RH-equivalent. The one thing missing — and the thing every lineage here has in
 cornered — is the **exact global coercivity that couples the finite prime places to the
 archimedean place and stays positive**. It has a precise name and measured pieces; it does not
 yet have a proof.
+

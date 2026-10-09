@@ -1,0 +1,9 @@
+PASS: exact memory recurrence, coherent return, erasure/phase controls
+PASS: duality+reversal countermodel and positive-polarization control
+PASS: prime2/3 mixed-erasure negative witness and product-kernel positive control
+PASS: nine independently counted finite-field histories and reciprocal forged negative control
+PASS: singular-clock energy diagnostic; full Weil deficit explicitly excluded
+PASS: full Connes-Consani/Weil sign-factor-origin crosswalk diagnostic
+PASS: compact retarded/advanced reconstruction and ordinary-zero-mean mutation
+PASS: unitary history-shift dilation, compression and outgoing-environment energy
+RH REMAINS OPEN; numerical diagnostics are not certified enclosures.
