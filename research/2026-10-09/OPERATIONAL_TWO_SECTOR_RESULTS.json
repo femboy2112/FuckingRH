@@ -1,0 +1,51 @@
+{
+  "status": "PASS",
+  "operator_U2_U3_equals_U6": true,
+  "a2_formula": "I*(2*t - 1)",
+  "a3_formula": "I*(1 - 2*t)",
+  "scalar_connected_defect": "-4*t*(t - 1)",
+  "zero_defect_exact_iff": "t in {0,1} for nonnegative diagonal-mixture weights",
+  "pure_full_vector_mixed_observable_restriction": true,
+  "DH_weight": "(1-i*kappa)/2",
+  "DH_connected_defect_formula": "1+kappa**2",
+  "DH_kappa_numerical": "0.284079043840412296",
+  "DH_b6_numerical": "1.08070090314928289",
+  "finite_controls": [
+    {
+      "sector_weight": "0",
+      "observed_a2": "-I",
+      "observed_a3": "I",
+      "observed_a6": "1",
+      "connected_b6": "0"
+    },
+    {
+      "sector_weight": "1/4",
+      "observed_a2": "-I/2",
+      "observed_a3": "I/2",
+      "observed_a6": "1",
+      "connected_b6": "3/4"
+    },
+    {
+      "sector_weight": "1/2",
+      "observed_a2": "0",
+      "observed_a3": "0",
+      "observed_a6": "1",
+      "connected_b6": "1"
+    },
+    {
+      "sector_weight": "3/4",
+      "observed_a2": "I/2",
+      "observed_a3": "-I/2",
+      "observed_a6": "1",
+      "connected_b6": "3/4"
+    },
+    {
+      "sector_weight": "1",
+      "observed_a2": "I",
+      "observed_a3": "-I",
+      "observed_a6": "1",
+      "connected_b6": "0"
+    }
+  ],
+  "interpretation": "source multiplicativity needs an algebra-character state, not generic positive state"
+}
