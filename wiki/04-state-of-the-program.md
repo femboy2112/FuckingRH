@@ -70,6 +70,19 @@ boundaries of [page 5](05-methodology-and-discipline.md)):
    **positivity's sign tracks zero-location exactly** — which is Weil's criterion, made
    visible.
 
+   The **matched-partner positive control** completes this experiment. Take `L(s, χ)` for the
+   character `χ mod 5` with `χ(2) = i` — the *same* conductor 5, the *same* archimedean factor
+   `Γ((s+1)/2)`, the *same* functional-equation shape as Davenport–Heilbronn, differing in
+   **one** thing only: it carries an Euler product. Under the identical calibrated instrument
+   it stays **PSD across the whole tested range** (`L = 0.4 … 9`), collapsing-but-positive just
+   like `ζ`, at every setting where its non-multiplicative twin goes indefinite. One variable
+   toggled, opposite outcome: **multiplicativity is the operative separator** between a positive
+   form and an indefinite one, measured, with everything else held fixed. The caveat is exact
+   and was pre-registered: `L(s, χ)` staying PSD is *itself* equivalent to GRH for that
+   `L`-function — so this measures the **separator**, not a mechanism, and not a brick. Together
+   with item 4's mutation controls (destroy `ζ`'s multiplicativity locally and the form cracks),
+   multiplicativity is now pinned as load-bearing for the sign from **both** sides.
+
 ## 4.3 What all five say together
 
 Every feature the frame predicted is **true and measured**: positive at small support,
@@ -104,10 +117,11 @@ The program ran as several independent agent lineages that converged on one obst
   family contractive on all of `H_{1/2}` and converging to `Cayley[ξ′/ξ]` only on the safe
   Euler region `Re s > 1` forces RH. (`research/claude_round_004..006/`.)
 
-The current session (Rounds 029–049, `CRUCIFIXION_LEDGER.md`) added the ground-up successor
+The current session (Rounds 029–051, `CRUCIFIXION_LEDGER.md`) added the ground-up successor
 frame, the archimedean Γ-from-succ construction, the Diophantine reframe, the finite-window
-semigroup of [page 3](03-the-diophantine-semigroup-frame.md), and the calibrated
-coupled-form measurements of §4.2.
+semigroup of [page 3](03-the-diophantine-semigroup-frame.md), the calibrated coupled-form
+measurements of §4.2, and the matched-partner positive control that isolates multiplicativity
+as the crossover's separator.
 
 ## 4.5 The open seams
 
@@ -116,10 +130,12 @@ known to work; both are RH-hard and are kept precisely because they are *not* ob
 circular.
 
 - **The joint coercivity (§4.1).** Prove `P − K ⪰ 0` unconditionally, using the semigroup's
-  positive SOS energy and a boundary-flux bound against the measured-indefinite `P`. The clean
-  open control is the **matched multiplicative partner** `L(s, χ)` — same archimedean
-  Γ-factor as Davenport–Heilbronn but *with* an Euler product — to isolate whether it is
-  multiplicativity or zero-location that carries the sign in the crossover.
+  positive SOS energy and a boundary-flux bound against the measured-indefinite `P`. The matched
+  multiplicative partner `L(s, χ)` (§4.2, item 5) has now been run and isolates multiplicativity
+  as the operative separator — but that only *names* the open lever; it does not supply an
+  unconditional coercivity margin, because `L(s, χ)`'s own positivity is GRH-equivalent. The
+  theorem still owed is a reason `P − K ⪰ 0` that reads multiplicativity and does **not** read
+  the zeros.
 
 - **The unit-basepoint place-coupling (UBRPCT, Round 006).** The critical half-density weight
   `p^{-k/2} log p` is the *first jet* at `z = 0` of the ½-twisted adelic character

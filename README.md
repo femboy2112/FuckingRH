@@ -78,10 +78,15 @@ On the finite-window test space the completed Weil form splits as `Q = P − K` 
   `[1−1.8e-13, 1+1.8e-15]`; and **every** mutation of the arithmetic (fake impulse at `n=6`,
   `|α_2|≠1`, scaled weights, shifted `log 2`) drives it negative. Multiplicativity holds the
   sign — *at zero*. A knife-edge poised at zero **is** RH-equivalence.
-- **The off-line zero is the negative direction.** On the non-multiplicative control
-  Davenport–Heilbronn, the form first goes indefinite at support `L* ≈ 4`, and the entire
-  negative eigenvalue is its off-line zero at height `85.699`; move only that zero on-line and
-  the form is positive again. Positivity's sign tracks zero-location exactly.
+- **The off-line zero is the negative direction, and multiplicativity is the separator.** On
+  the non-multiplicative control Davenport–Heilbronn, the form first goes indefinite at support
+  `L* ≈ 4`, and the entire negative eigenvalue is its off-line zero at height `85.699`; move
+  only that zero on-line and the form is positive again. The matched multiplicative partner
+  `L(s,χ)` — same conductor, Γ-factor, and functional-equation shape, differing *only* by
+  carrying an Euler product — stays positive across the whole range where the twin cracks. One
+  variable toggled, opposite outcome: positivity's sign tracks zero-location exactly, and
+  multiplicativity is the thing that holds it. (That partner's positivity is itself
+  GRH-equivalent — this measures the separator, not a brick.)
 
 Every feature the frame predicted is true and measured — and all of it is RH-equivalent.
 There is **no unconditional brick**. Full numbers, the research arc, and the two open seams
@@ -93,7 +98,7 @@ There is **no unconditional brick**. Full numbers, the research arc, and the two
 
 1. **[wiki/README.md](wiki/README.md)** — the ground-up framing (read in order).
 2. **[CRUCIFIXION_LEDGER.md](CRUCIFIXION_LEDGER.md)** — the live, round-by-round narrative map
-   (currently through Round 049).
+   (currently through Round 051).
 3. **[CLAIM_LEDGER.md](CLAIM_LEDGER.md)** — every claim with status (Rows C01–C111). The spine
    of the repo.
 4. **[CONSOLIDATED_RH_STATE.md](CONSOLIDATED_RH_STATE.md)** — cross-repo consolidation, graded

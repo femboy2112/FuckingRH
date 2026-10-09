@@ -160,7 +160,7 @@ documents as nonexistent.
 
 ---
 
-## 8. This session — the 2026-10-08 live blast (Rounds 001–049, `CRUCIFIXION_LEDGER.md`)
+## 8. This session — the 2026-10-08 live blast (Rounds 001–051, `CRUCIFIXION_LEDGER.md`)
 
 The live blast extended the frame through archimedean/finite-place geometry (`Γ_ℝ` built from succ/● with no
 zeta, R29), the shadow-succ / Zeno "never-cross-0" picture, the Diophantine reframe (prime frequencies
@@ -187,17 +187,25 @@ The one genuine sharpening — the missing object of §5 now has a crisp operato
 - Crossover control: a non-multiplicative `L`-function (Davenport–Heilbronn) first goes indefinite at
   `L*≈4`, and the negative direction is **entirely** its single off-line zero (height 85.699) — moving only
   that zero on-line restores positivity. ⟹ in-instrument, positivity's sign **tracks zero-location
-  exactly**. `Observed[daniel §2]`. (Matched multiplicative partner `L(s,χ)` not yet built — the clean
-  open control.)
+  exactly**. `Observed[daniel §2]`.
+- **Matched-partner positive control** (R51): the clean twin `L(s,χ)`, `χ mod 5`, `χ(2)=i` — the *same*
+  conductor 5, `Γ((s+1)/2)` and functional-equation shape as Davenport–Heilbronn, differing **only** in
+  carrying an Euler product — stays **PSD across the whole range** (`L=0.4…9`), collapsing-but-positive like
+  `ζ`, at every setting where D-H cracks. With everything but multiplicativity held fixed, **multiplicativity
+  is the operative separator** (PSD vs indefinite), measured. `Observed[daniel §4]`. Caveat (held): `L(s,χ)`
+  PSD is itself **GRH-equivalent** for that `L`-function — the separator is measured, it is **not** a
+  mechanism and **not** a brick.
 
-Reading (⟹ §5 unchanged): multiplicativity is **load-bearing for the sign** (measured), but it balances the
-form *at zero*, it does not lift it to a margin; a knife-edge poised at zero **is** RH-equivalence. The live
-lever is the **Diophantine well structure of `{t·log p}` × band-limit**, "of the same nature as the zeros."
-`[Inf]`, RH-equivalent, not a theorem.
+Reading (⟹ §5 unchanged): multiplicativity is **load-bearing for the sign** (measured both ways — the R49
+mutation controls crack `ζ`'s form when multiplicativity is destroyed locally, and the R51 matched partner
+stays positive when it is kept, against a non-multiplicative twin at matched everything-else), but it
+balances the form *at zero*, it does not lift it to a margin; a knife-edge poised at zero **is**
+RH-equivalence. The live lever is the **Diophantine well structure of `{t·log p}` × band-limit**, "of the
+same nature as the zeros." `[Inf]`, RH-equivalent, not a theorem.
 
 ---
 
 *Labels: `Verified` = re-derived independently here; `Observed[dig]`/`Observed[daniel]` = measured (sweep or
 the calibrated scratch instrument), not a test of RH itself; `[Inf]` = interpretation; classical results
-cited to their authors. §8 reflects the session state committed to `main` on 2026-10-08; this file changes
-no source logic.*
+cited to their authors. §8 reflects the session state committed to `main` on 2026-10-08 (through Round 051);
+this file changes no source logic.*
