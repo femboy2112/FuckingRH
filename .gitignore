@@ -1,2 +1,4 @@
 __pycache__/
 *.pyc
+# stray scan/scratch outputs (failed-run stderr captures, scratchpad spill)
+*.out
