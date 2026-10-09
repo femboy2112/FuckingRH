@@ -369,6 +369,18 @@ corrected two hopeful guesses.
   error** — that is a power-law (pole) divergence, renormalized by subtraction, whereas a
   Borel/instanton fingerprint is *factorial* (Gevrey-1). A power divergence has no Borel plane. The
   only Gevrey-1 series near `ζ` encode the archimedean place + the functional equation.
+- **Superconductor / prime-circuit reading (R66).** The gloss "the archimedean place is a
+  superconductor carrying the prime current, an idealized continuum closing the finite prime circuit"
+  — audited: **wrong on the spectrum, right on the composites.** The zero *spectrum* is
+  **gapless-critical** (GUE level repulsion, verified on the first 200 zeros: tiny spacings suppressed
+  `~s²`, min `0.32`, no hard gap — §6/R20 fingerprint) — the *opposite* of a superconductor's gap. The
+  "gaps" that matter are the **composites** on the integer line: `−ζ'/ζ` carries **zero current at every
+  composite** (`b(n)=0` off prime powers) — that *is* the Euler product. So "superconducting" `=` empty
+  composite gaps `=` multiplicativity `=` gate 1 (the `n=6` separator, [§6 F1](06-state-of-the-program.md#f--external-sibling-lineage-triangulation-independently-verified));
+  **Davenport–Heilbronn is the lossy circuit** leaking into `n=6` (`b(6)=(1+κ²)\log 6`), and that leakage
+  *is* its off-line zeros. "Closed/completely described" `=` completion to entire `ξ` + the closed Müntz
+  lift — which DH also has. Necessary, sign-blind; **global losslessness (all zeros on the line) is the
+  fourth gate.** `REFORMULATION→WALL`.
 - **Verdict.** `REFORMULATION→WALL`. The QM reading is the most canonical *statement* of the wall
   (self-adjoint extension of the `xp`/braided generator, closed by the archimedean place) and hands
   over a different toolbox (non-perturbative QFT) aimed at the known Connes–Consani wall — but it adds

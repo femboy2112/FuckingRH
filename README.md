@@ -114,7 +114,7 @@ There is **no unconditional brick**. Full numbers, the research arc, and the two
 
 1. **[wiki/README.md](wiki/README.md)** — the ground-up framing (read in order).
 2. **[CRUCIFIXION_LEDGER.md](CRUCIFIXION_LEDGER.md)** — the live, round-by-round narrative map
-   (currently through Round 065).
+   (currently through Round 066).
 3. **[CLAIM_LEDGER.md](CLAIM_LEDGER.md)** — every claim with status (Rows C01–C111). The spine
    of the repo.
 4. **[CONSOLIDATED_RH_STATE.md](CONSOLIDATED_RH_STATE.md)** — cross-repo consolidation, graded
