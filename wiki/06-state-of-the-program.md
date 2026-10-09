@@ -82,17 +82,21 @@ group E and graduates upward when it clears the gate.**
 
 ### F — External sibling-lineage triangulation (independently verified)
 
-A second research lineage (branch `research/2026-10-09/hecke-tate-connected-connection`, two
-zero-free packages archived under [`docs/external/`](../docs/external/)) reached this same wall from
-its own direction. Every load-bearing claim was **re-derived here on an independent instrument**
-(the authors' own code was not executed); all of it is RH-equivalent or RH-inert — no brick.
+A second research lineage (the aletheia 2026-10-09 branches — `hecke-tate-connected-connection` and
+`arithmetic-poisson-connection`; three zero-free packages archived under
+[`docs/external/`](../docs/external/)) reached this same wall from its own direction. Every
+load-bearing claim was **re-derived here on an independent instrument** (the authors' own code was not
+executed); all of it is RH-equivalent or RH-inert — no brick. The third package additionally **audited
+this map and caught three overclaims of ours** (all confirmed here and eaten; see F6).
 
 | # | Result | Status | Source |
 |---|---|---|---|
 | F1 | **The separator is localized at $n=6$.** For Davenport–Heilbronn the log-derivative coefficient $b(6)=(a(6)-a(2)a(3))\log 6=(1+\kappa^2)\log 6$ with $\kappa=\sqrt{1+\varphi^2}-\varphi$, vs $b(6)=0$ for $\zeta$ and $L(s,\chi)$ — the first mixed composite coprime to the conductor is the minimal, checkable witness of C3. Confirmed by three independent recurrences. | **[derived]** / **Observed** | R60–61 |
-| F2 | **Mixed-prime "boundary curvature" is a real object but a *proved* dead end.** The compressed-translation commutator $[T_a^*,T_b]$ on a window is exactly nonzero (shared boundary couples distinct primes; full-line $[S_a^*,S_b]=0$), norm $1$. **Pulse-lemma no-go (proved, verified):** any positive-step curvature $[B^*,B]$ is *indefinite* ($+\varepsilon\sum|c_j|^2$ at the left end, $-\varepsilon\sum|c_j|^2$ at the right) — so it **cannot** be a positive Weil certificate. The most natural new gate-3 candidate, shut with a proof. | **[derived]** | R61 |
+| F2 | **Mixed-prime "boundary curvature" is a real object but a *proved* dead end.** The compressed-translation commutator $[T_a^*,T_b]$ on a window is exactly nonzero (shared boundary couples distinct primes; full-line $[S_a^*,S_b]=0$), norm $1$; it is present even in the two-prime window $\log 3<L<\log 4$ where a composite impulse at $6$ is causally invisible ($T_{\log 6}=0$) — so the $2$–$3$ *interaction* is not the $n=6$ *impulse*. **No-go (proved, verified two ways):** the R61 pulse-lemma (end-point witnesses $\pm\varepsilon\sum|c_j|^2$), now *upgraded* (R62) to a **symmetry proof** — an antiunitary chiral reversal $\mathcal J$ gives $\mathcal J[C^*,C]\mathcal J=-[C^*,C]$, forcing the spectrum mirror-symmetric about $0$ for **every** coefficient set and **every** shift set, hence PSD iff zero. The most natural new gate-3 candidate, shut with a proof that admits no tuning. | **[derived]** | R61–62 |
 | F3 | **The whole $\Lambda$ prime source is one commutator.** With $X$ = position and $[X,T_a]=aT_a$, the finite Euler log gives $[X,\log\mathfrak F_{\chi,L}]=\sum_{p^k}\tfrac{\overline{\chi(p)^k}\log p}{p^{k/2}}T_{k\log p}$ (prime-power support, $\log p$ charge, $n^{-1/2}$ density) with no zeros. Elegant zero-free source realization; RH-**inert** for positivity (killed by F2). The DLEWC "chronology field" $\Omega=[[P_p,S],[P_q,S]]$ ($\|\Omega_{2,3}\|^2=2/3$) is the immature form — nonvanishing is generic to any two SUCC-transported masks (survives fake arithmetic), hence inert. | **[derived]** | R60–61 |
 | F4 | **Independent landing on $Q=P-K$, gate 3 named precisely.** The same decomposition $Q=(P-A_L I)+\sum_n w_n[(I-R_n)^*(I-R_n)+(I-R_n^*R_n)]$ with $P-A_L I$ indefinite (= "no archimedean floor"); the open theorem stated as a *source-derived positive Schur-complement parent* for $Q$, with the anti-circularity constraint ("do not define the parent as a square root of $Q$") pre-stated. Confirms the convergence thesis. | **[Inf]** | R60–61 |
+| F5 | **The separator, in one number, three ways.** For the conjugate-character mixture $D=aL(s,\chi)+bL(s,\bar\chi)$ with $a+b=1$ ($\chi$ quartic mod $5$), the composite defect is exactly $d(6)-d(2)d(3)=[\log D](6)=4ab$, and for the normalized Davenport–Heilbronn combination $c=(1-i\kappa)/2$ this is $4\lvert c\rvert^2=1+\kappa^2$ — the R60 $\kappa$-toy, the mixture framing, and the nested-radical $\kappa$ are **one value** $1.0807009\ldots$ (agree to $10^{-16}$). A closed zero-free **moment-retaining Müntz lift** $\mathcal A$ ($=$ mult. by $\zeta(\tfrac12+it)$) and connection $\nabla$ ($=-\zeta'/\zeta$) are built unconditionally on an explicit core — real operators, no zeros read. | **[derived]** | R62 |
+| F6 | **The external audit of this map (three overclaims eaten).** The arithmetic-Poisson checkpoint caught and we confirmed/corrected: **(a)** wiki/02's unconditional $\sum\lvert\hat g(\gamma_\rho)\rvert^2$ must be the *reflected* pairing $\hat g(z)\overline{\hat g(\bar z)}$ (equal to $\lvert\cdot\rvert^2$ only for real ordinates; for $g(u)=u$ on $[-1,1]$ the signs are $-4/e^2$ vs $+4/e^2$); **(b)** wiki/08's "commutative-multiplicative $\Rightarrow$ factorized" is *false* ($B=V_2+V_3$ gives a positive nonseparable Gram, eigenvalues $1,2,2,3$) — factorized $\Rightarrow$ inert survives, the converse does not; **(c)** R59's "clearing the three gates **is** the proof" over-reached — the three arithmetic gates are *necessary, not sufficient*; a proof needs a **fourth gate**: an exact identity/inequality with the full completed Weil form, an independently proved sign, and domain/limit control. | **[derived]** | R62 |
 
 ## 6.3 The research arc
 
@@ -106,8 +110,10 @@ The program ran as several independent agent lineages that converged on one obst
   kernel's strict positive-definiteness (the knife-edge as an asymptotically shrinking window), and
   the **unit-basepoint place-character seam** ([§6.4](#64-the-open-seams)).
   (`research/aletheia_2026-10-05/`, `_2026-10-06/`.)
-- **claude** — the operator-algebra / passivity attack. The meta-theorem (commutative-
-  multiplicative ⇒ factorized ⇒ RH-inert); exact local operator squares; the self-sieving carry
+- **claude** — the operator-algebra / passivity attack. The meta-theorem (a **factorized** positivity
+  is RH-inert — corrected R62: commutative-multiplicative does *not* itself force factorization, but a
+  bare commuting-prime Gram is still inert because it survives fake arithmetic); exact local operator
+  squares; the self-sieving carry
   machine (von Mangoldt as the carré-du-champ of carry curvature); and Round 006's clean positive
   theorem, the **Schur–Vitali limit** (`C104`): a non-circular reduction of RH to one hypothesis —
   a finite family contractive on all of $H_{1/2}$ and converging to $\mathrm{Cayley}[\xi'/\xi]$
@@ -121,13 +127,17 @@ construction, the Diophantine reframe, the finite-window semigroup of
 geometry** vantage of [page 4](04-the-symbol-and-the-wells.md) — including the identification of
 the wells as the low-passed zero comb and the mapping of *why* no unconditional tool reaches them.
 
-A fourth, **external** lineage (branch `research/2026-10-09/hecke-tate-connected-connection`) then
-arrived at the identical obstruction from a zero-free, source-faithful direction — independently
-reconstructing $Q=P-K$ with the corrected archimedean normalization, localizing the multiplicativity
-separator at $n=6$, realizing the von Mangoldt source as a single commutator $[X,\log\mathfrak F]$,
-and **proving** that mixed-prime boundary curvature is always indefinite (group F above). Its two
-packages are archived under [`docs/external/`](../docs/external/) with a repo-side provenance and the
-independent verification verdict. It adds triangulation and one proved tombstone; it adds no brick.
+A fourth, **external** lineage (the aletheia 2026-10-09 branches `hecke-tate-connected-connection` and
+`arithmetic-poisson-connection`) then arrived at the identical obstruction from a zero-free,
+source-faithful direction — independently reconstructing $Q=P-K$ with the corrected archimedean
+normalization, localizing the multiplicativity separator at $n=6$ ($=1+\kappa^2=4ab$), realizing the
+von Mangoldt source as a single commutator $[X,\log\mathfrak F]$, building a closed moment-retaining
+Müntz lift, and **proving** (two ways — pulse-lemma, then an antiunitary symmetry) that mixed-prime
+boundary curvature is always indefinite (group F above). Its three packages are archived under
+[`docs/external/`](../docs/external/) with repo-side provenance and the independent verification
+verdict. It adds triangulation, one proved tombstone, **three corrections to this map** (F6), and the
+precise naming of the **fourth gate** (exact identification with the full Weil form + an independent
+sign) — but no brick.
 
 ## 6.4 The open seams
 

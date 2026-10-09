@@ -47,21 +47,28 @@ It is the exact bridge between the dynamics (primes) and the spectrum (zeros).
 
 ## 2.3 Weil positivity ⟺ RH
 
-Apply the explicit formula to a self-correlation $f = g \star \tilde g$. Define the **Weil
-functional**
+Apply the explicit formula to a self-correlation $f = g \star \tilde g$, whose transform is the
+**reflected autocorrelation** $\hat f(z) = \hat g(z)\,\overline{\hat g(\bar z)}$. Define the **Weil
+functional** as its zero side
 
-$$W(g) = \sum_\rho \lvert \hat g(\gamma_\rho)\rvert^2 \qquad (\text{the zero side of }
-f = g \star \tilde g).$$
+$$W(g) = \sum_\rho \hat g(\gamma_\rho)\,\overline{\hat g(\overline{\gamma_\rho})}
+\qquad (\text{the zero side of } f = g \star \tilde g).$$
 
-Then:
+This is **real**, and it equals $\sum_\rho \lvert \hat g(\gamma_\rho)\rvert^2$ **exactly when every
+$\gamma_\rho$ is real** — i.e. under RH. Off the line the two differ *in sign*: writing
+$\lvert\hat g(\gamma_\rho)\rvert^2$ unconditionally would silently insert the positivity one is
+trying to prove. (Concretely, for the admissible seed $g(u)=u$ on $[-1,1]$,
+$\hat g(i)\,\overline{\hat g(-i)} = -4/e^2 < 0$ while $\lvert \hat g(i)\rvert^2 = +4/e^2$ — opposite
+signs. Verified R62; the correction follows Lagarias' reflected Weil pairing.) Then:
 
 > **Weil's criterion.** $W(g) \ge 0$ for all admissible $g$ $\iff$ RH.
 
-The direction that matters: if all zeros are on the line, every $\gamma_\rho$ is real and the sum
-of $\lvert \hat g(\gamma_\rho)\rvert^2$ is manifestly $\ge 0$; conversely a single off-line zero
-produces an admissible $g$ making $W(g) < 0$. So **RH is exactly a positivity statement** — and
-because the zero side equals the arithmetic side (prime + archimedean), proving RH means proving
-that the *arithmetic* side is non-negative *without ever looking at the zeros*.
+The direction that matters: if all zeros are on the line, every $\gamma_\rho$ is real, $W(g)$ reduces
+to $\sum_\rho \lvert \hat g(\gamma_\rho)\rvert^2$ and is manifestly $\ge 0$; conversely a single
+off-line zero makes the reflected pairing negative for an admissible $g$, so $W(g) < 0$. So **RH is
+exactly a positivity statement** — and because the zero side equals the arithmetic side (prime +
+archimedean), proving RH means proving that the *arithmetic* side is non-negative *without ever
+looking at the zeros*.
 
 This is the whole game. The program's target is: **an independent, non-circular reason the
 prime-plus-archimedean form is positive.**

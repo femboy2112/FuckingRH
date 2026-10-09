@@ -53,7 +53,9 @@ The full account of how this program thinks about the problem lives in the
 
 Weil's explicit formula makes the zeros and the primes two sides of one identity. Applied to
 a self-correlation it yields the **Weil functional**
-$W(g) = \sum_\rho \lvert \hat g(\gamma_\rho)\rvert^2$, and
+$W(g) = \sum_\rho \hat g(\gamma_\rho)\,\overline{\hat g(\overline{\gamma_\rho})}$ (the reflected
+autocorrelation; $= \sum_\rho \lvert \hat g(\gamma_\rho)\rvert^2$ exactly when every $\gamma_\rho$ is
+real), and
 
 $$W(g) \ge 0 \ \text{for all admissible } g \iff \mathrm{RH}.$$
 
@@ -112,7 +114,7 @@ There is **no unconditional brick**. Full numbers, the research arc, and the two
 
 1. **[wiki/README.md](wiki/README.md)** — the ground-up framing (read in order).
 2. **[CRUCIFIXION_LEDGER.md](CRUCIFIXION_LEDGER.md)** — the live, round-by-round narrative map
-   (currently through Round 061).
+   (currently through Round 062).
 3. **[CLAIM_LEDGER.md](CLAIM_LEDGER.md)** — every claim with status (Rows C01–C111). The spine
    of the repo.
 4. **[CONSOLIDATED_RH_STATE.md](CONSOLIDATED_RH_STATE.md)** — cross-repo consolidation, graded

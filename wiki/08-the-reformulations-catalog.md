@@ -23,12 +23,20 @@ same wall" is **common-mode** — it is one bearing seen from many angles, and i
 *one*, not as dozens of confirmations. (The repo says this itself:
 `docs/RH_LINEAGE_SOURCE_INDEPENDENCE`.)
 
-**(2) The factorization meta-theorem.** A construction that is **commutative-multiplicative**
-collapses to a **factorized** (per-prime, tensor) object, and a factorized positivity is
-**RH-inert** — it holds whether or not the arithmetic is real (proved four ways in the Round-004
-notes: uniform Pascal / binomial Fock isometry / Koszul–Hodge / GCD kernel). This is *why* almost
-every "I found a positive object" below is inert: the positivity is per-prime, and RH lives in the
-*cross-prime, global, Archimedean-coupled* part that none of these constructions build.
+**(2) The factorization meta-theorem (corrected, R62).** A **factorized** (per-prime, tensor, or
+direct-sum) positivity is **RH-inert** — it holds whether or not the arithmetic is real (proved four
+ways in the Round-004 notes: uniform Pascal / binomial Fock isometry / Koszul–Hodge / GCD kernel).
+That direction stands. The *converse* over-reached and is **false**: being commutative-multiplicative
+does **not** force a factorized object. The commuting-prime Gram $B^*B = 2I + V_2^*V_3 + V_3^*V_2$
+(with $B=V_2+V_3$, $V_m e_n = e_{mn}$) is positive, has eigenvalues $1,2,2,3$, and is **not** a tensor
+across the two prime coordinates — equivalently $\lvert z_2+z_3\rvert^2$ on the torus is nonseparable
+(its value grid at $z_j\in\{1,-1\}$ is $4,0,0,4$: rank $2$). The Round-004 Koszul
+vanishing is specific to its own independent-mode construction, not a universal necessity (flagged and
+independently verified in the external arithmetic-Poisson checkpoint, R62). So the *reason* almost
+every "I found a positive object" below is inert is **not** that it must factorize — it is that it
+**survives fake arithmetic** (the mutation controls / gate 3): the positivity never reads whether the
+primes or the coefficients are the real ones. RH still lives in the *cross-prime, global,
+Archimedean-coupled* part that none of these constructions build.
 
 > **The verdict, stated once.** Across every framing below, **zero** carry genuine non-circular
 > content toward RH. The one entry with a genuinely new conservation law (the fresh-digit isometry,
@@ -251,14 +259,30 @@ RH-inert; they are listed because they are genuinely different *pictures*.
   the other), so it cannot be a positive Weil certificate. The same lineage realizes the entire `Λ`
   source as one commutator `[X,\log\mathfrak F]` — elegant, zero-free, still RH-inert for positivity.
   `NO-GO (proved)`; see [§6.2 group F](06-state-of-the-program.md#f--external-sibling-lineage-triangulation-independently-verified).
+- **Arithmetic / Poisson connection** *(external lineage, `docs/external/`, R62).* "RH looks like this
+  if you build the degree-one source and its archimedean completion from zero-free arithmetic alone."
+  A closed, zero-free **moment-retaining Müntz lift** `𝒜=\overline{𝒜_0}` (Mellin-identified with
+  multiplication by `ζ(½+it)`) and its connection `∇` (`=−ζ'/ζ`) are constructed unconditionally on an
+  explicit core — genuinely closed operators, no zeros read. The multiplicativity separator gets its
+  cleanest form: for the conjugate-character mixture `D=aL(s,χ)+bL(s,χ̄)` (`a+b=1`), the composite
+  defect is `d(6)−d(2)d(3)=4ab=1+κ²` — unifying the R60 `κ` and the mixture framing into one number.
+  And the boundary-curvature no-go of §F2 is upgraded from a two-point witness to a **symmetry proof**:
+  an antiunitary chiral reversal `𝒥` gives `𝒥[C^*,C]𝒥=−[C^*,C]`, so the spectrum is mirror-symmetric
+  about `0` for *every* coefficient choice and *every* shift set — PSD iff zero. **But the same
+  checkpoint corrects us** (all verified R62): it names the missing **fourth gate** — passing the three
+  arithmetic gates is *necessary, not sufficient*; a proof additionally needs an exact identity (or
+  inequality) with the **full completed Weil form plus an independently proved sign and domain/limit
+  control**. `STAGE` + unbuilt target (the fourth gate is the live edge, [§6.2 group F](06-state-of-the-program.md#f--external-sibling-lineage-triangulation-independently-verified)).
 
 ## 8.7 The graveyard (proved or measured dead — do not re-dig)
 
 Collected from the branches' own hostile controls and audits, so no one re-walks them:
 
 - The product formula cancelling `ΣM_p` (it is a modulus identity; measured quadratic divergence).
-- Any commutative-multiplicative / factorized / direct-sum positivity (meta-theorem; also the convolution
-  transfer `Σ p^{-s} T_{\log p}`).
+- Any **factorized / per-prime / direct-sum** positivity (RH-inert; survives fake arithmetic). *Caveat
+  (R62):* a commuting-prime object need **not** factorize (`B^*B=2I+V_2^*V_3+V_3^*V_2`, eigenvalues
+  `1,2,2,3`, nonseparable) — but a bare such Gram is still inert for the same reason; the convolution
+  transfer `Σ p^{-s} T_{\log p}` is the model case.
 - Impedance/Laplace one-port and fixed-`κ` Krein escape (`inf\,Re\,F_P → −∞`).
 - Single-space de Branges `H(E)` positivity (Conrey–Li, for ζ and `L(s,χ_{-4})`).
 - Superprimes in place of primes (bulk still diverges).
