@@ -80,6 +80,20 @@ group E and graduates upward when it clears the gate.**
 | E1 | Well census + eigenvector anatomy + diggability-law calibration (calibrated well instrument). | ✓ **landed R58** → graduated to D6–D8 |
 | — | *(no experiment currently in flight)* | — |
 
+### F — External sibling-lineage triangulation (independently verified)
+
+A second research lineage (branch `research/2026-10-09/hecke-tate-connected-connection`, two
+zero-free packages archived under [`docs/external/`](../docs/external/)) reached this same wall from
+its own direction. Every load-bearing claim was **re-derived here on an independent instrument**
+(the authors' own code was not executed); all of it is RH-equivalent or RH-inert — no brick.
+
+| # | Result | Status | Source |
+|---|---|---|---|
+| F1 | **The separator is localized at $n=6$.** For Davenport–Heilbronn the log-derivative coefficient $b(6)=(a(6)-a(2)a(3))\log 6=(1+\kappa^2)\log 6$ with $\kappa=\sqrt{1+\varphi^2}-\varphi$, vs $b(6)=0$ for $\zeta$ and $L(s,\chi)$ — the first mixed composite coprime to the conductor is the minimal, checkable witness of C3. Confirmed by three independent recurrences. | **[derived]** / **Observed** | R60–61 |
+| F2 | **Mixed-prime "boundary curvature" is a real object but a *proved* dead end.** The compressed-translation commutator $[T_a^*,T_b]$ on a window is exactly nonzero (shared boundary couples distinct primes; full-line $[S_a^*,S_b]=0$), norm $1$. **Pulse-lemma no-go (proved, verified):** any positive-step curvature $[B^*,B]$ is *indefinite* ($+\varepsilon\sum|c_j|^2$ at the left end, $-\varepsilon\sum|c_j|^2$ at the right) — so it **cannot** be a positive Weil certificate. The most natural new gate-3 candidate, shut with a proof. | **[derived]** | R61 |
+| F3 | **The whole $\Lambda$ prime source is one commutator.** With $X$ = position and $[X,T_a]=aT_a$, the finite Euler log gives $[X,\log\mathfrak F_{\chi,L}]=\sum_{p^k}\tfrac{\overline{\chi(p)^k}\log p}{p^{k/2}}T_{k\log p}$ (prime-power support, $\log p$ charge, $n^{-1/2}$ density) with no zeros. Elegant zero-free source realization; RH-**inert** for positivity (killed by F2). The DLEWC "chronology field" $\Omega=[[P_p,S],[P_q,S]]$ ($\|\Omega_{2,3}\|^2=2/3$) is the immature form — nonvanishing is generic to any two SUCC-transported masks (survives fake arithmetic), hence inert. | **[derived]** | R60–61 |
+| F4 | **Independent landing on $Q=P-K$, gate 3 named precisely.** The same decomposition $Q=(P-A_L I)+\sum_n w_n[(I-R_n)^*(I-R_n)+(I-R_n^*R_n)]$ with $P-A_L I$ indefinite (= "no archimedean floor"); the open theorem stated as a *source-derived positive Schur-complement parent* for $Q$, with the anti-circularity constraint ("do not define the parent as a square root of $Q$") pre-stated. Confirms the convergence thesis. | **[Inf]** | R60–61 |
+
 ## 6.3 The research arc
 
 The program ran as several independent agent lineages that converged on one obstruction.
@@ -106,6 +120,14 @@ construction, the Diophantine reframe, the finite-window semigroup of
 [§6.2](#62-the-results-board), the matched-partner positive control, and the **symbol / well-
 geometry** vantage of [page 4](04-the-symbol-and-the-wells.md) — including the identification of
 the wells as the low-passed zero comb and the mapping of *why* no unconditional tool reaches them.
+
+A fourth, **external** lineage (branch `research/2026-10-09/hecke-tate-connected-connection`) then
+arrived at the identical obstruction from a zero-free, source-faithful direction — independently
+reconstructing $Q=P-K$ with the corrected archimedean normalization, localizing the multiplicativity
+separator at $n=6$, realizing the von Mangoldt source as a single commutator $[X,\log\mathfrak F]$,
+and **proving** that mixed-prime boundary curvature is always indefinite (group F above). Its two
+packages are archived under [`docs/external/`](../docs/external/) with a repo-side provenance and the
+independent verification verdict. It adds triangulation and one proved tombstone; it adds no brick.
 
 ## 6.4 The open seams
 

@@ -241,6 +241,16 @@ RH-inert; they are listed because they are genuinely different *pictures*.
 - **Prime-index / Wold-defect.** A second successor axis `𝒫|n⟩ = |p_n⟩`, superprimes as nested ranges.
   RH-inert: superprimes do not carry the prime-zeta singularity, and the critical-half-density bulk still
   diverges. *(prime-index-succ, prime-index-lift.)*
+- **Mixed-prime boundary curvature** *(external lineage, `docs/external/`, R60–61).* Compress each
+  prime's translation `T_{\log p}=P_L S_{\log p} P_L` to a finite window; distinct primes then fail to
+  commute **through their shared window boundary** (`[T_a^*,T_b]≠0` while the full-line `[S_a^*,S_b]=0`).
+  "RH looks like this if you consider the mixed-prime coupling that a common archimedean boundary forces"
+  — and it is a *real, exact, zero-free* object (the mature form of the DLEWC "chronology field"
+  `Ω=[[P_p,S],[P_q,S]]`, `‖Ω_{2,3}‖²=⅔`). **The wall is proved, not just measured:** a pulse-lemma shows
+  any positive-step curvature `[B^*,B]` is *indefinite* (`+ε Σ|c_j|²` at one window end, `−ε Σ|c_j|²` at
+  the other), so it cannot be a positive Weil certificate. The same lineage realizes the entire `Λ`
+  source as one commutator `[X,\log\mathfrak F]` — elegant, zero-free, still RH-inert for positivity.
+  `NO-GO (proved)`; see [§6.2 group F](06-state-of-the-program.md#f--external-sibling-lineage-triangulation-independently-verified).
 
 ## 8.7 The graveyard (proved or measured dead — do not re-dig)
 
@@ -259,6 +269,7 @@ Collected from the branches' own hostile controls and audits, so no one re-walks
 - `Re\{ξ(s)/ξ(s+1)\} ≥ 0` as an equivalence (false; [§8.2](#82-operator--passivity-lens)).
 - Heat flow as a proof route (`Λ ≥ 0` is the wrong direction).
 - Pinned-tail transport constructor (refuted past `10^{10}`).
+- Mixed-prime window **boundary curvature** `[B^*,B]` as a positive certificate (*proved* indefinite by the pulse-lemma, external lineage R61; [§8.6](#86-genuinely-new-sub-lenses-outside-the-six)).
 
 ## 8.8 The convergent lesson
 

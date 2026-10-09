@@ -150,13 +150,13 @@ The six lenses are **not** six problems. They are one function under six transfo
 completion, explicit-formula pairing, Cayley/Herglotz, Fourier/Kronecker, band-limiting), and the
 dictionary between their "missing theorems" is exact:
 
-$$\begin{array}{ll}
-\phantom{\equiv}\ \ \text{complete local}\to\text{global with positivity} & \text{(dynamical / adelic)}\\
-\equiv\ \ \text{arithmetic side } \ge 0 \text{ without the zeros} & \text{(Weil)}\\
-\equiv\ \ \xi'/\xi \text{ positive-real on } \mathrm{Re}\, s > \tfrac12 & \text{(operator / passivity)}\\
-\equiv\ \ \text{prime frequencies never beat the envelope} & \text{(Diophantine)}\\
-\equiv\ \ \text{no band-limited } f \text{ digs a well net-negative} & \text{(symbol / well)}\\
-\equiv\ \ \text{the joint coercivity } P - K \succeq 0 & \text{(operator model, page 6)}
+$$\begin{array}{rll}
+ & \text{complete local}\to\text{global with positivity} & \text{(dynamical / adelic)}\\
+\equiv & \text{arithmetic side } \ge 0 \text{ without the zeros} & \text{(Weil)}\\
+\equiv & \xi'/\xi \text{ positive-real on } \mathrm{Re}\, s > \tfrac12 & \text{(operator / passivity)}\\
+\equiv & \text{prime frequencies never beat the envelope} & \text{(Diophantine)}\\
+\equiv & \text{no band-limited } f \text{ digs a well net-negative} & \text{(symbol / well)}\\
+\equiv & \text{the joint coercivity } P - K \succeq 0 & \text{(operator model, page 6)}
 \end{array}$$
 
 Each equivalence is a *theorem* (each pair of reformulations is proved); none is *progress* —
