@@ -2,7 +2,7 @@
 import unittest
 import mpmath as mp
 from scripts.gamma_arch_continuum import (
-    arch_symbol, compensated_symbol, levy_density, fake_source_control,
+    arch_symbol, arch_symbol_character, compensated_symbol, levy_density, fake_source_control,
 )
 
 
@@ -16,6 +16,12 @@ class GammaContinuousHistoryTests(unittest.TestCase):
         for t in (0, mp.mpf('.25'), 1, 3, 10):
             self.assertLess(abs(compensated_symbol(t)-(arch_symbol(t)-a0)),
                             mp.mpf('1e-16'))
+
+    def test_odd_character_conductor_five_gamma(self):
+        a0=arch_symbol_character(0,5,1)
+        for t in (mp.mpf('.25'), 1, 3, 10):
+            self.assertLess(abs(compensated_symbol(t,1)-
+                                (arch_symbol_character(t,5,1)-a0)),mp.mpf('1e-16'))
 
     def test_positive_density_singular_but_integrable_after_compensation(self):
         for u in (mp.mpf('1e-6'),mp.mpf('.01'),1,10):
