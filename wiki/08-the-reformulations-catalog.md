@@ -235,7 +235,15 @@ RH-inert; they are listed because they are genuinely different *pictures*.
   the Dirac superconnection `𝒟 = ∇ + ∇^*` with `𝒟² ⪰ 0` and Schur-shorting of hidden faces. Walked back
   by the forbidden-composite-atom selection rule (`\log 6`, `\log(2/3)` atoms Γ cannot cancel). The
   function-field model (where this *is* a theorem, via Hodge index on `C×C`) is the stated analogy — but
-  Spec ℤ has no verified square host. `STAGE` + unbuilt target.
+  Spec ℤ has no verified square host. `STAGE` + unbuilt target. **(R64, concrete.)** At genus `1` the whole
+  mechanism is one `2×2` positivity, verified (calibrated, all `p≤97`): Hasse `|a_p|≤2√p` ⟺ the Rosati/degree
+  Gram `[[2,a_p],[a_p,2p]]⪰0` ⟺ `deg(m+nπ)=m²+a_p mn+p n²≥0` — a *theorem* only because Riemann–Roch on the
+  **existing** surface `C×C` manufactures `deg≥0`; forging `|a|>2√p` makes the Gram indefinite (positivity is
+  exactly what rejects an off-line Frobenius). *Caveat (eats an R63 overstatement):* Arakelov **does** carry a
+  Hodge index theorem — Faltings–Hriljac — for arithmetic surfaces (models of curves), yielding
+  Mordell/Bogomolov/height-positivity, **not** `ζ`'s RH. So the lack is not an archimedean *term* but the
+  **host surface** itself (`Spec ℤ ×_{𝔽₁} Spec ℤ`, a second geometric dimension that is absent/conjectural);
+  the archimedean place is one visible ingredient of it, not the whole lack.
 - **Curvature / holonomy (GR-shaped).** The divisibility lattice as a causal set, support-time lag
   `ΔA(n) = ½\log(n/h(n)) ≥ 0` (equality iff prime power), and a conjectured identity "plaquette holonomy
   curvature = Levi-Civita curvature of the det₃ Hessian." UNVERIFIED; the branch states it may be
