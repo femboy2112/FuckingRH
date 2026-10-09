@@ -30,5 +30,4 @@ def run():
         print(f'T={T:3d} Gamma energy/norm2={energy:.9f} predicted={expected:.9f} residual={energy-expected:+.6e}')
     print('OBSERVATION ONLY: gamma multiplier is unbounded above; proof in research note')
 
-
 if __name__=='__main__':run()
