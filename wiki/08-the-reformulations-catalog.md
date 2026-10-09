@@ -273,6 +273,22 @@ RH-inert; they are listed because they are genuinely different *pictures*.
   arithmetic gates is *necessary, not sufficient*; a proof additionally needs an exact identity (or
   inequality) with the **full completed Weil form plus an independently proved sign and domain/limit
   control**. `STAGE` + unbuilt target (the fourth gate is the live edge, [§6.2 group F](06-state-of-the-program.md#f--external-sibling-lineage-triangulation-independently-verified)).
+- **Reversibility / time reversal** *(external, ChatGPT-relayed, R63; `docs/external/teacup-time-reversal_2026-10-09/`).*
+  "RH looks like this if you ask *when the completed arithmetic evolution is reversible* (unitary)."
+  A thermodynamic re-reading (the shattered teacup reassembles only if you reverse the *whole*
+  correlated history, not the visible pieces) that resolves three walls as one rather than opening a
+  new route. Its "canonical Mellin reversal" `R f(x)=x^{-1}\overline{f(1/x)}` is — verified on our own
+  instrument — *exactly* the §F2 antiunitary `𝒥` in Mellin coordinates (`R U_n R=U_n^{-1}`,
+  `R X R=−X`, `R^2=I`), and on `Re(s)=½` it acts as `M(Rf)(½+it)=\overline{Mf(½+it)}` = the
+  functional-equation reflection `s↔1−s`. So the tombstone is coordinate-free and *is* the functional
+  equation — and `R Θ_a R=Θ_a^*` holds identically for genuine `χ` **and** Davenport–Heilbronn, so
+  reversal symmetry is **sign-blind** (its own falsifier, confirmed). The "shadow-return defect"
+  `Ω_P(A,B)=PA(I−P)BP` is the Feshbach/Schur off-diagonal = "no archimedean floor"; the leakage
+  identity `A^*A+E^*E=I` would give `Q⪰0` as a norm `‖Ef‖²` *iff* the completed evolution is unitary =
+  Hilbert–Pólya = RH. As a bare object `Ω_P=PABP−(PAP)(PBP)` is a universal identity (holds for any
+  `A,B,P`), hence **RH-inert**. Net: RH ⟺ the prime-window irreversibility is only apparent (premature
+  projection); the sign must come from the source through the completion = the **fourth gate**, not
+  from `R`. `REFORMULATION→WALL` (three walls unified as one reversibility wall); no new content.
 
 ## 8.7 The graveyard (proved or measured dead — do not re-dig)
 
