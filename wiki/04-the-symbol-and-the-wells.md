@@ -40,17 +40,23 @@ the zero-free face and understand why it is nonetheless pinned to the zeros.**
 
 Write the symbol as
 
-$$\Psi_L(t) = W_\infty(t) - P_L(t),$$
+$$\Psi_L(t) = \mathrm{Re}\,\psi(\tfrac14 + it/2) - \log\pi - P_L(t),$$
 
-where
+paired against the spectral measure $\mu_f(t) = |\hat f(t)|^2/(2\pi)$ (plus a rank-2 pole term
+for $\zeta$), so the completed form is $Q(f) = \mathrm{pole}(f) + \int \mu_f(t)\,\Psi_L(t)\,dt$.
+This is the normalization in which the calibrated instrument reproduces the measured form to
+$10^{-14}$ (the balancing archimedean constant is $-\log\pi$, not $-\tfrac12\log\pi$ — a slip
+in an earlier draft of this page, caught by the gate). Here
 
-- $W_\infty(t) = \frac{1}{2\pi} \mathrm{Re}\,\psi(\tfrac14 + it/2) - \tfrac12 \log\pi$ (plus the
-  pole contribution) is the **archimedean background** — a smooth, slowly *growing* positive
-  density, $W_\infty(t) \sim \frac{1}{2\pi}\log(t/2\pi)$; and
-- $P_L(t) = \sum_{n \le e^{2L}} \Lambda(n)\, n^{-1/2} \cdot 2\cos(t\log n)$ is the **finite prime
-  comb** — a trigonometric polynomial whose frequencies are the prime-power logs $\log n$ of
+- the **archimedean background** $\mathrm{Re}\,\psi(\tfrac14 + it/2) - \log\pi$ is smooth and
+  slowly *growing*, like $\log(t/2\pi)$; and
+- $P_L(t) = \sum_{n \le e^{2L}} 2\Lambda(n)\, n^{-1/2}\cos(t\log n)$ is the **finite prime comb** —
+  a trigonometric polynomial whose frequencies are the prime-power logs $\log n$ of
   [§1.3](01-the-successor-frame.md), each weighted by the ray-incidence charge
-  $\Lambda(n)\, n^{-1/2}$.
+  $\Lambda(n)\, n^{-1/2}$. *(Support convention: the cutoff is written $e^{2L}$ for a test
+  function on $[-L,L]$; the calibrated instrument's own support parameter puts it near $e^{L}$ —
+  a pure factor-of-2 convention, which is why measured values like $L^*\approx4.4$ are quoted in
+  the instrument's normalization.)*
 
 Finite support $L$ makes the comb finite: only prime powers with $\log n \le 2L$ (i.e.
 $n \le e^{2L}$) contribute, which is the operator-level statement that a support-$L$ test function
@@ -127,14 +133,19 @@ Two honesties about this model:
 The model is calibrated and sharpened by a two-sided control, both measured on the same instrument
 ([page 6](06-state-of-the-program.md)):
 
-- **The off-line zero *is* the negative direction (Davenport–Heilbronn).** The non-multiplicative
-  control is positive at small support, then first goes **indefinite at support $L^* \approx 4$**.
-  The entire negative eigenvalue is supplied by its single **off-line zero** at height $85.699$ —
-  an **uncompensated well**, one whose shoulders do not close by exactly the amount an on-line zero
-  would have supplied. Move only that zero onto the line and the form is positive again; the other
-  off-line zeros contribute $\le 1.6\times10^{-6}$; a band with no off-line zero stays positive.
-  Feeding this well's measured $(d, w, b)$ into the model fixes $c$ and reproduces
-  $L^* \approx 4$.
+- **The off-line zero *is* the negative direction (Davenport–Heilbronn) — and it is a *barrier*,
+  not a well.** The non-multiplicative control is positive at small support, then first goes
+  **indefinite at $L^* = 4.4184$** (bisected). The census turned up the real picture: at $L^*$ the
+  symbol *at the zero height* $85.699$ is $\Psi_L = +20.72$ — a **positive peak** — flanked by two
+  wells at $84.5$ ($\Psi = -4.16$) and $86.75$ ($\Psi = -11.71$). The off-line zero sits on a
+  barrier, and the near-null direction digs the **shoulders** of that barrier. The zero-side split
+  is exact: at $L^*$ the on-line zeros contribute $+0.7699$ and the single off-line quartet at
+  $85.699$ contributes $-0.76986$, the other four quartets $\le 3.7\times10^{-9}$ — **the entire
+  negative eigenvalue is that one off-line quartet.** Move only it onto the line and the form is
+  positive again. Fed the measured flanking wells, the model of
+  [§4.4](#44-diggability-when-can-a-band-limited-function-reach-a-well) predicts $L^* \approx 3.1$–$3.7$
+  against the true $4.4$ — it **over-predicts danger by ~20%**, exactly because it ignores the
+  compensating shoulders.
 
 - **The matched multiplicative partner stays positive ($L(s,\chi)$, $\chi \bmod 5$,
   $\chi(2) = i$).** Same conductor, same archimedean factor, same functional-equation shape as

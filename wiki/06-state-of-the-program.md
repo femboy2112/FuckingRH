@@ -69,12 +69,16 @@ group E and graduates upward when it clears the gate.**
 | D3 | Well depth is a **large-deviation** question, not a Diophantine-gap one; Baker/linear-forms is the wrong tool (phase-forms are logs of rationals; the elementary bound beats Baker). | **[derived]** + cited | R54 |
 | D4 | The wells sit in the **Vinogradov–Korobov blind spot** ($\log N \sim \log\log t$); no unconditional exponential-sum tool reaches them — a structural coverage gap, not a weak method. | **[derived]** + cited | R54 |
 | D5 | The sharp Carneiro–Chandee–Milinovich extremal-majorant bounds are **RH-conditional** (RH needed for *validity*, not just sharpness). Sharp *unconditional* bounds are the weaker $O(\log T)$ shape. | cited (primary) | R53 |
+| D6 | **Well census (symbol gate passes, $M_{\mathrm{sym}} \equiv M_{\mathrm{full}}$ to $10^{-14}$).** Wells are **narrow** (FWHM$\cdot L \approx 2.1$ for all systems) and **deep** (the $t\!\approx\!0$ well tracks $A_L \approx 4e^{L/2}$); the near-null direction $f^*$ digs the best depth/background/resolution-tradeoff wells at **moderate** $t$ ($\sim$17–39), not the deepest. | **Observed** | R58 |
+| D7 | **The off-line zero is a *barrier*, not a well.** For Davenport–Heilbronn at $L^*=4.4184$, $\Psi_L(85.699)=+20.72$ (a peak) flanked by wells at $84.5$ and $86.75$; the zero-side split is exact — the **entire** negative eigenvalue is the single off-line quartet ($-0.76986$; the other four $\le 3.7\times10^{-9}$). | **Observed** | R58 |
+| D8 | **Shoulder-compensation confirmed.** $\zeta$'s well-part and shoulder-part cancel to $10^{-9}$ (L=7); the flat-well diggability model over-predicts danger by $\sim$20% (predicts $L^*\approx3.1$–$3.7$ vs measured $4.42$); the SOS/Weyl lower bound $\lambda_{\min}(P)-\lambda_{\max}(K)$ is positive only for $L\lesssim3.6$ (band $x_0{=}85.7$), loose beyond by the measured overlap deficit. No reliable $\zeta$ negative (the one negative row was an ill-conditioning artifact, cond $5\times10^{15}$, excluded). | **Observed** / **[derived]** | R58 |
 
 ### E — Pending (lands here, then graduates)
 
 | # | Work in flight | Expected landing |
 |---|---|---|
-| E1 | Well census + eigenvector anatomy + diggability-law calibration on D–H's $85.699$ well; $\zeta$ margin-to-threshold vs support (calibrated well instrument). | groups C/D when it clears the gate |
+| E1 | Well census + eigenvector anatomy + diggability-law calibration (calibrated well instrument). | ✓ **landed R58** → graduated to D6–D8 |
+| — | *(no experiment currently in flight)* | — |
 
 ## 6.3 The research arc
 

@@ -130,8 +130,10 @@ every "I found a positive object" below is inert: the positivity is per-prime, a
   intersect-before-squaring diverges `∼ π(N)²`); cancellation needs the signed Weil cross-terms, i.e.
   Connes' adelic positivity. `REFORMULATION→WALL` — Connes–Tate re-derived. This is **open seam #2**
   on [page 6](06-state-of-the-program.md). *(unit-place-transport, stratified-diagonal, cross-pollination.)*
-- **Affine `ax+b` / KMS`_{3/2}` / Bost–Connes.** *RH as* the arithmetic of the `ℕ⋊ℕ^×` monoid with
-  `V_aS = S^aV_a`; the unique KMS`_{3/2}` state restricts to Bost–Connes at `β = ½`; `Λ(q)/√q` and
+- **Affine `ax+b` / Bost–Connes.** *RH as* the arithmetic of the `ℕ⋊ℕ^×` monoid with
+  `V_aS = S^aV_a` (this is exactly Cuntz's `Q_ℕ`: `s_n v = v^n s_n`, with a **unique KMS state at
+  `β = 1`** in the standard normalization — the branch's half-density-shifted convention relabels it
+  `3/2`/`β=½`, which should not be quoted as standard); the KMS state restricts to Bost–Connes; `Λ(q)/√q` and
   `P(t)` are its expectations, with a gcd/lcm CND metric. *The wall:* only the **finite-place half** is
   represented; the missing object is a vector `η_t` with `‖Proj_{pp}η_t‖² = P(t)` and `‖η_t‖² = A_∞(t)`
   (Bessel would then give `Ψ ≥ 0`) — not constructed. `STAGE-RECONSTRUCTION` (= BC + Cuntz + Connes/Tate;
@@ -267,6 +269,51 @@ has built it.** The catalogue's value is not a route; it is a *fence*. It marks,
 proofs, where the walls are, so the search can spend itself on the one object that is actually open
 ([the joint coercivity](06-state-of-the-program.md)) instead of re-deriving Bost–Connes for the
 twentieth time.
+
+## 8.9 Postscript: the QM / path-integral reading (the canonical illustration of §8.8)
+
+A natural and genuinely beautiful lens, and the cleanest demonstration of §8.8's lesson: read the
+sum over arithmetic paths `1 → n` as a Feynman path integral, with `●`-log-length as the action and
+`succ`-count as the time. It unifies the dynamical and operator lenses, and every piece has a name —
+but a targeted literature map (read-only) found it is RH-equivalent or inert at every turn, and it
+corrected two hopeful guesses.
+
+- **The landmarks.** The weighted path sum is the dynamical zeta `−ζ'/ζ` (Berry–Keating); primes =
+  periodic orbits, `log p` = action, the explicit formula = the Gutzwiller/Selberg **trace formula**;
+  the zeros = the spectrum; RH ⟺ the path integral is unitary / the Hamiltonian self-adjoint
+  (**Hilbert–Pólya**, a *program*, not a theorem). `ζ`-as-gas = the **primon/Riemann gas** (Julia;
+  Bost–Connes QSM) with its phase transition at `β = 1` — **the pole, not the zeros**. `C×C` where RH
+  *is* proved = Weil's function-field surface (positivity from the Hodge index — and it needs **no**
+  instanton; the classical path simply realizes). `ℕ` = Spec ℤ with no such surface = Connes–Consani.
+- **Crisp inertness (quotable).** The primon Hamiltonian `H = log n` **is** self-adjoint, real
+  spectrum — the framing's wish granted for free — yet the zeros live in the **analytic
+  continuation** of the partition function, *not* in the spectrum of `H`. So "RH ⟺ `H` self-adjoint"
+  misidentifies where the zeros are. The operator whose spectrum *would* be the zeros is
+  Berry–Keating's `H = xp`, and it has **no self-adjoint realization** on the natural space
+  ("closing the phase space is the central unsolved problem," in the authors' own words). That
+  unsolved self-adjoint **extension**, closed by the archimedean place, is the wall in its most
+  canonical operator form — the same object as the missing archimedean partner of the affine lens
+  ([§8.3](#83-adelic--tate-lens)).
+- **The braid is kinematics, not an interaction.** `V_m S = S^m V_m` is realized exactly as Cuntz's
+  `Q_ℕ`, but it is the `ax+b` covariance (the discrete skeleton of `xp`), the dynamics
+  `λ_t(s_n) = n^{it}s_n` acts freely, and the state is the unique KMS one — RH-inert. No source treats
+  it as the non-free "interaction vertex" a tunneling event would need. `NO-GO` for "the braid is where
+  the instanton hides," as stated.
+- **Resurgence (the one checked crack): real, but inert, and the sign is backwards.** There *are*
+  resurgent structures near `ζ` — Berry's Riemann–Siegel resummation, Voros's exponential asymptotics
+  of the Li/Keiper coefficients, the Stirling/Bernoulli series. But (i) the one published "instanton"
+  (Berry–Keating's `e^{-\pi t}`, period `iπ`) is the **archimedean Γ-factor's** Stirling singularity,
+  known exactly — not a new zero mechanism; (ii) in Voros's rigorous saddle picture the
+  non-perturbative sector is the **off-line** zeros, i.e. RH being *false* — so a tunneling event is
+  the **counterexample**, not the proof (RH = that sector is **empty**); and (iii) the hoped-for
+  "the divergent prime sum `Σ Λ(n)/√n ~ 2√X` is the Borel fingerprint of the zeros" is a **category
+  error** — that is a power-law (pole) divergence, renormalized by subtraction, whereas a
+  Borel/instanton fingerprint is *factorial* (Gevrey-1). A power divergence has no Borel plane. The
+  only Gevrey-1 series near `ζ` encode the archimedean place + the functional equation.
+- **Verdict.** `REFORMULATION→WALL`. The QM reading is the most canonical *statement* of the wall
+  (self-adjoint extension of the `xp`/braided generator, closed by the archimedean place) and hands
+  over a different toolbox (non-perturbative QFT) aimed at the known Connes–Consani wall — but it adds
+  no crack, and it clarifies that the non-perturbative sector is the *obstruction*, not the mechanism.
 
 ---
 
