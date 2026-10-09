@@ -143,6 +143,66 @@ target, **not an independent third witness**. Correlation matrices can,
 however, be much stronger *finite falsifiers* than individual
 coefficient checks for proposed surrogate constructions.
 
+### The exact radial defect: why an automatically positive norm is not the Li / Weil sign (DISCLOSED)
+
+We can isolate the obstruction as an **exact sum of squares** in the
+spectral Riemann-sphere coordinate, without claiming a new arithmetic
+positivity theorem. Put \(w_\rho=(\rho-1)/\rho\), and for fixed \(n\ge1\)
+define the always-positive (zero-side) quantity
+
+\[
+H_n=\sum_\rho |1-w_\rho^n|^2\ge0.
+\]
+
+The sum converges absolutely: \(|1-w_\rho^n|=O_n(|\rho|^{-1})\),
+and the nontrivial zeros satisfy \(\sum_\rho |\rho|^{-2}<\infty\).
+Using conjugation symmetry, the standard symmetrically summed
+Li coefficients obey the exact identity
+
+\[
+\boxed{
+H_n=2\lambda_n+\mathcal D_n,\qquad
+\mathcal D_n=\sum_\rho(|w_\rho|^{2n}-1).
+}
+\]
+
+For fixed \(n\), the radial-defect series also converges absolutely:
+\(|w_\rho|^2-1=(1-2\Re\rho)/|\rho|^2\), and
+\(|w_\rho|^{2n}-1=O_n(|\rho|^{-2})\) as \(|\rho|\to\infty\).
+The functional equation pairs each \(w\) with \(w^{-1}\); their combined
+radial contribution is
+
+\[
+(|w|^{2n}-1)+(|w|^{-2n}-1)
+=(|w|^n-|w|^{-n})^2\ge0.
+\]
+
+Consequently \(\mathcal D_n\ge0\) always, and
+\(\mathcal D_1=0\iff |w_\rho|=1\ \forall\rho\iff\mathrm{RH}\).
+The sum-of-squares equality is **conditional only on the ordinary
+known analytic properties of \(\xi\)**, not on RH.
+
+**Crucifixion:** an automatically positive Gram
+\(\langle 1-w_\rho^i,1-w_\rho^j\rangle_{\ell^2(\rho)}\)
+exists even when zeros are off-line. Under RH the radial defect vanishes
+and the corresponding angular construction represents
+the Li conditional-negative-type kernel; off-line it does **not**.
+Thus *a positive norm is not enough*: an independent arithmetic source
+construction must reproduce the **correct polarized completed form**
+with no residual radial defect. This makes the fourth-gate 'dagger'
+issue concrete.
+
+**Critical source restriction:** \(H_n\) and \(\mathcal D_n\) here were
+*defined through the zeros*. Their nonnegativity and equality
+conditions are a **spectral re-expression** of RH, not a non-circular
+method for determining \(\mathcal D_n\) from the primes.
+One does not prove RH by renaming the defect as energy.
+
+**Exact control:** the dedicated rational probe computes both \(H_n\)
+and \(2\lambda_n\) for on-line and off-line synthetic quartets; the
+identity and \(\mathcal D_1=0\) on-line, \(\mathcal D_n>0\) off-line,
+were checked with exact fractions (test suite now six focused tests).
+
 ## 4. Crucifixion #1 — finite Li positivity is blind (DISCLOSED)
 
 Consider the synthetic symmetric quartet
@@ -366,7 +426,7 @@ Run:
 - python -m pytest -q tests/test_riemann_sphere_atlas.py
 
 The new synthetic controls were executed locally with SymPy + exact
-fractions: all five dedicated tests passed. No existing full suite
+fractions: all six dedicated tests passed. No existing full suite
 or remote CI has been claimed to pass.
 
 Primary/checkable references:
