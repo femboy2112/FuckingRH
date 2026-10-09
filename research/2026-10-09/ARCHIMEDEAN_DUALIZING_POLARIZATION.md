@@ -108,3 +108,21 @@ Further primary sources:
 - Connes–Consani Weil positivity, archimedean: https://arxiv.org/abs/2006.13771
 - Connes–Consani–Moscovici semilocal: https://arxiv.org/abs/2310.18423
 - Kedlaya's function-field Hodge index: https://kskedlaya.org/weil-cohom/chapter-5.html
+
+
+## 7. Another exact trap: unitary environmental dilation is FREE
+
+Every contraction T has a Halmos/Julia block-unitary completion on H⊕H:
+$$
+U_T=
+\begin{pmatrix}
+T&(I-TT^\ast)^{1/2}\\
+(I-T^\ast T)^{1/2}&-T^\ast
+\end{pmatrix},
+\qquad U_T^\ast U_T=I.
+$$
+The off-diagonal blocks act as information leakage and coherent return. In particular this *automatically works for the compressed true arithmetic shift* V_2 and also the fake source channel 0.02 V_6. A unitary “complete teacup” exists for any contraction, independently of multiplicativity or RH. It therefore supplies NO Hodge-index sign and cannot be the fourth gate. Finite tests on N=2,3,4 verified U_T^\ast U_T=I and exact recovery of T under compression for both controls.
+
+The positive-metric no-go from §4 is not contradicted: a dilation enlarges and changes the ambient dynamical operator, whereas the no-go concerns attempting to turn the original nonzero nilpotent D into a centered unitary flow by changing its positive inner product alone.
+
+The remaining genuinely hard requirement is **arithmetic uniqueness of the global dualizing/polarizing completion** (source, Γ, conductor, poles, geometry) AND an independently proved Hodge-index sign whose pushforward is the full Weil form. Formal reversibility is available for fake arithmetic and therefore cannot, by itself, discriminate RH.
