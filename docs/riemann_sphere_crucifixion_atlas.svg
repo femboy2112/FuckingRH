@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 740" role="img" aria-label="Riemann sphere of RH with the critical equator and annotated research obstructions">
+  <defs>
+    <radialGradient id="sph" cx="36%" cy="23%" r="78%">
+      <stop offset="0%" stop-color="#d6e9ff"/>
+      <stop offset="20%" stop-color="#98ace0"/>
+      <stop offset="54%" stop-color="#5368a9"/>
+      <stop offset="100%" stop-color="#1e295a"/>
+    </radialGradient>
+    <linearGradient id="south" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#33d7b3" stop-opacity=".03"/>
+      <stop offset="100%" stop-color="#43d4c4" stop-opacity=".34"/>
+    </linearGradient>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#11182c"/>
+      <stop offset="100%" stop-color="#151e3c"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+    <clipPath id="sphere"><circle cx="355" cy="366" r="248"/></clipPath>
+    <style>
+      text{font-family:Inter,DejaVu Sans,Arial,sans-serif}
+      .title{font-size:28px;fill:#eef5ff;font-weight:700}
+      .sub{font-size:16px;fill:#9faeca}
+      .caption{font-size:15px;fill:#d8e8ff}
+      .tiny{font-size:13px;fill:#98aacb}
+      .callout{font-size:19px;fill:#e5eeff;font-weight:650}
+      .line{stroke:#7586bd;stroke-width:1.6;fill:none;stroke-dasharray:4 5}
+    </style>
+  </defs>
+  <rect width="1280" height="740" rx="20" fill="url(#sky)"/>
+  <text x="44" y="57" class="title">The RH equator · a sphere of crucifixions</text>
+  <text x="46" y="86" class="sub">Exact spectral geometry, annotated with proof obstructions (the annotations are not intrinsic geometric points)</text>
+  <circle cx="355" cy="366" r="251" fill="#0c142d" stroke="#90a4e4" stroke-width="1.5"/>
+  <circle cx="355" cy="366" r="248" fill="url(#sph)"/>
+  <g clip-path="url(#sphere)">
+    <rect x="103" y="366" width="504" height="257" fill="url(#south)"/>
+    <path d="M355 120 C288 220 288 511 355 612" stroke="#d3dfff" opacity=".26" fill="none" stroke-width="2"/>
+    <path d="M355 120 C423 220 423 511 355 612" stroke="#d3dfff" opacity=".26" fill="none" stroke-width="2"/>
+    <ellipse cx="355" cy="366" rx="247" ry="74" fill="none" stroke="#a7dbe4" opacity=".18" stroke-width="11" filter="url(#glow)"/>
+    <ellipse cx="355" cy="366" rx="247" ry="74" fill="none" stroke="#e5de91" opacity=".8" stroke-width="2" stroke-dasharray="7 6"/>
+    <path d="M108 366 A247 74 0 0 0 602 366" fill="none" stroke="#ffe193" stroke-width="6"/>
+    <path d="M108 366 A247 74 0 0 0 602 366" fill="none" stroke="#fff4cc" stroke-width="2"/>
+    <circle cx="280" cy="343" r="5" fill="#fef3c7"/><circle cx="442" cy="405" r="5" fill="#fef3c7"/>
+    <circle cx="355" cy="119" r="8" fill="#cee6ff"/>
+    <circle cx="355" cy="613" r="8" fill="#69ead3"/>
+    <circle cx="245" cy="242" r="9" fill="#ff7288" stroke="#ffb8bd" stroke-width="2"/>
+    <circle cx="245" cy="489" r="9" fill="#ff7288" stroke="#ffb8bd" stroke-width="2"/>
+  </g>
+  <circle cx="355" cy="366" r="248" fill="none" stroke="#aab9ef" stroke-width="2"/>
+  <circle cx="108" cy="366" r="7" fill="#fff2af"/>
+  <circle cx="602" cy="366" r="7" fill="#fff2af"/>
+  <text x="355" y="107" text-anchor="middle" class="caption">s=0 → w=∞</text>
+  <text x="355" y="645" text-anchor="middle" class="caption">s=1 → w=0</text>
+  <text x="42" y="347" class="caption">s=½</text>
+  <text x="42" y="369" class="tiny">w=−1</text>
+  <text x="613" y="351" class="caption">s→∞</text>
+  <text x="613" y="371" class="tiny">w→1</text>
+  <text x="355" y="299" text-anchor="middle" class="caption">|w| &gt; 1 · Re(s) &lt; ½</text>
+  <text x="355" y="471" text-anchor="middle" class="caption">|w| &lt; 1 · Re(s) &gt; ½</text>
+  <rect x="223" y="351" rx="11" width="263" height="34" fill="#111a31" stroke="#f8dfa0" stroke-width="1"/>
+  <text x="355" y="373" text-anchor="middle" font-size="17" font-weight="700" fill="#ffe6a3">RH : all mapped zeros |w| = 1</text>
+  <path d="M263 241 L115 200" class="line"/>
+  <text x="47" y="183" class="tiny">Red points: synthetic off-line</text>
+  <text x="47" y="200" class="tiny">reflection pair (not ζ zeros)</text>
+  <g transform="translate(740 133)">
+    <text x="0" y="0" class="callout">01  Functional equation</text>
+    <text x="0" y="24" class="sub">Reflection pairs off-equator zeros; no sign.</text>
+    <line x1="0" y1="42" x2="475" y2="42" stroke="#405479"/>
+    <text x="0" y="78" class="callout">02  Euler integrity</text>
+    <text x="0" y="102" class="sub">Prime powers only; fake n=6 is detectable.</text>
+    <line x1="0" y1="120" x2="475" y2="120" stroke="#405479"/>
+    <text x="0" y="156" class="callout">03  Positive local squares</text>
+    <text x="0" y="180" class="sub">Prime-by-prime positivity cannot sign P−K.</text>
+    <line x1="0" y1="198" x2="475" y2="198" stroke="#405479"/>
+    <text x="0" y="234" class="callout">04  Finite evidence</text>
+    <text x="0" y="258" class="sub">40 scalar Li tests passed by an off-line fake.</text>
+    <text x="0" y="278" class="sub">The 3×3 angular Gram rejects that fake.</text>
+    <line x1="0" y1="297" x2="475" y2="297" stroke="#405479"/>
+    <text x="0" y="333" class="callout">05  Reversal / affine flow</text>
+    <text x="0" y="357" class="sub">Correct dynamics remain sign-blind.</text>
+    <line x1="0" y1="376" x2="475" y2="376" stroke="#405479"/>
+    <text x="0" y="412" class="callout">06  Arithmetic polarization</text>
+    <text x="0" y="436" class="sub">Missing independent full Weil-form positivity.</text>
+  </g>
+  <rect x="41" y="672" width="1197" height="44" rx="12" fill="#202b4b"/>
+  <text x="640" y="700" text-anchor="middle" font-size="17" font-weight="650" fill="#f5deb0">The analytic sphere is built. The proof-bearing arithmetic Hodge / Weil bridge is not.</text>
+</svg>
