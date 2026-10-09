@@ -85,11 +85,12 @@ This file contains only sources re-checked during the 2026-10-05 consolidation. 
 - Verified claim: exact dictionary between finite Galerkin vectors and band-limited Guinand-Weil tests; omitted Archimedean tail is a totally positive Cauchy-Stieltjes increment; gives certified two-sided finite-cutoff rules.
 - Use here: exact finite dictionary, tail-order control, and a guardrail against pretending a tiny finite eigenvalue is automatically decisive.
 
-### Marcus Chuk — Weil positivity in compact windows: certified two-sided bounds and a Landau-Widom decay law
-- arXiv:2608.24827
+### Xuefeng Zhu — Weil positivity in compact windows: a finite reduction, certified two-sided bounds, and a Landau-Widom decay law
+- arXiv:2608.24827 (author/title corrected 2026-10-09 R53 vs arXiv primary; repo previously mis-attributed to "Marcus Chuk")
 - https://arxiv.org/abs/2608.24827
-- Verified claim: compact-window positivity reduces to finite PSD; unconditional positive certificate at \(L=0.8\); extremely small upper bounds at larger \(L\); identifies \(T^*=2\pi e^{2L}\) and a Landau-Widom plunge law; naive envelope certification faces a doubly exponential barrier.
-- Use here: exact arithmetic/spectral wavefront and proof that the positivity margin collapses brutally with window size.
+- Verified claim: compact-window positivity reduces to finite PSD; unconditional positive certificate at \(L=0.8\) (\(2L=1.6\), primes 2 and 3 only, \(Q\ge 8.9\times10^{-18}\|f\|^2\), Thm 1.2, complex-\(f\) form Cor 6.3); extremely small upper bounds at larger \(L\); identifies \(T^*=2\pi e^{2L}\) and a Landau-Widom plunge law; naive envelope (one-stroke \(A_L\)) certification faces a doubly exponential barrier \(T_1=2\pi e^{A_L}\) (Thm 1.4).
+- STATUS: single-author, **unrefereed** preprint; the v1 claim at support 2.38 is **self-retracted** in v2 (substituted \(A_\mathrm{eff}\) for \(A_L\) in the wrong direction); the surviving certified window is \(2L=1.6\). Euler-blind (reduction uses only the archimedean envelope + the pointwise comb bound \(A_L\); the Euler product enters only via the three coefficients \(2,3,4\)).
+- Use here: exact arithmetic/spectral wavefront and proof that the positivity margin collapses brutally with window size — but as an UNREFEREED certificate, not a refereed frontier (the refereed frontier is still the prime-free window \(2L=\log 2\), Yoshida / Connes-Consani Thm 1).
 
 ## Probability / infinite-divisibility line
 
