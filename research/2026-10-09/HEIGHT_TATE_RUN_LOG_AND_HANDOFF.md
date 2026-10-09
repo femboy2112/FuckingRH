@@ -104,3 +104,70 @@ UNRUN: existing tests outside new nine; GitHub Actions CI; any interval-certifie
 A genuinely new instrument would be an unbounded, source-derived adelic Poisson/dualizing transfer on a declared common smooth core. It must explicitly retain finite prime histories and archimedean scaling, have an adjoint fixed by Haar/Serre data, and produce an intersection/trace with the full Weil contact, conductor/Gamma/pole terms. Probe a first mixed two-prime window and check (A) no extra primitive n=6 or log(p/q) impulses, (B) the genuine character vs DH mismatch, (C) unbounded Gamma frequency growth, and (D) a separately proved Hodge-index sign. A future implementation must compare raw and path-adjusted forms without using zeros as inputs; no version of J_tau*J_tau alone can pass.
 
 No main merge requested or performed.
+
+
+## Continuation R-D/R-E — changed object, tests, falsification (same 2026-10-09 session)
+
+### R-D / H4: can the actual Gamma operator act INTERNAL to rational-height histories?
+
+PREDICTION before probe: if the archimedean Gamma generator A_inf preserves ran J_tau and has a source operator B with A_inf J_tau e_1=J_tau B e_1, then dividing by the nowhere-zero Tate Fourier transform yields the Fourier transform of an **absolutely finite** discrete rational measure. Such transforms are bounded. FALSIFIER: A_inf(t) unbounded. The Γ digamma asymptotic A_inf(t)~log(|t|/(2pi)) proves the falsifier, and g_T belongs to Dom A_inf. Hence A_inf g_T is OUTSIDE ran J_tau, even for source basis e_1. This is HTR-12 **PROVED in the model**, independently of any zeros. Spot test at 0,10,50,100,1000,10000,1e6 corroborated growth; no Γ internal lift exists on that source topology. Pullback J* A_inf J is nevertheless bounded and thus can never reproduce full unbounded Weil Q.
+
+REVISED: change the object, not merely a metric: use a continuum of real-place shifts with a singular Gamma-defined measure on a new quadratic-form domain.
+
+### R-E / H5: exact compensated Gamma continuum, even and odd sources
+
+PREDICTED: the candidate Levy density \(\nu_{\infty,\epsilon}(u)=e^{-(1/2+\epsilon)u}/(1-e^{-2u})\) should yield
+\(\Re\psi((1/2+\epsilon+it)/2)-\psi((1/2+\epsilon)/2)
+=2\int_0^\infty\nu(u)(1-\cos(tu))du\), for epsilon=0 and 1.
+FALSIFIER: wrong digamma normalization in either parity, nonsummable origin, or failure on unseen frequencies.
+
+RESULT: **PROVED analytically** from classical psi integral with v=2u, Plancherel and positive shift-difference norm. Numerical calibrated even t=.25,1,3,10 absolute errors 1.72e-19,1.66e-19,1.08e-19,1.20e-19; odd conductor5 t=.25,1,3,10 outputs .04040896491705772,.4764595239318235,1.486853755915267,2.694881392500945 agree with direct digamma. SciPy x-shift versus Fourier Γ quadratic energy 1.888225660762 on each route, |diff|=4.44e-16. Source term fake n=6 w=.02: exact change -0.01792648010569991 from direct and compensated square. Gamma continuum is real and zero-free, but source-inert in isolation; no Hodge sign.
+
+### R-F / H6–H7: does individual coercivity pay bulk? is the ultraviolet continuum optional?
+
+PREDICTION: if the compensated Gamma and independent prime-shift Poincare bounds force the sign, the symbol lower bound (without pole) should stay ≥0 through known positivity test windows; if small-u jumps are optional, cutting them at ε>0 should preserve the unbounded Γ symbol.
+
+RESULT: Both shortcuts **REFUTED in scope**.
+- The independent shift bound a0+gamma_inf(L)−2Σw_n cos(pi/(ceil(2L/a_n)+1)) yields +.7023 at L=.04, +.0093 at .078, then −.0174 at .08 (prime-free!), −1.6300 at .34, −2.1894 at .36, −4.4078 at .8 and −8.1232 at 1.2. These are just conservative lower-bound values, NOT negative full Weil eigenvalues, and OMIT pole. This method does not certify the target positivity.
+- For fixed ε>0, truncated jump symbol is bounded by 4∫_ε∞ν, while real Γ symbol is ∼log|t|. Cannot reproduce Γ at high frequency. The infinitely fine archimedean environment is necessary in this model.
+
+REVISED: Build an unbounded *global* source-derived adelic/dualizing trace, retaining discrete prime impulses, continuous singular Γ energy, scalar/contact/pole terms, and a self-product polarizing intersection. A positive generic Lévy form or a summed SOS of independent shifts is not sufficient.
+
+### RUN 4 (actually executed locally after source changes)
+
+Exact Gamma script output:
+\`\`\`
+ARCHIMEDEAN GAMMA: compensated continuous-shift energy, no zero input
+A_inf(0)= -5.37218341922566558
+t=0 integral=0.0 Gamma diff=0.0 err=0.0
+t=0.25 integral=0.8102885757073178 Gamma diff=0.8102885757073178 err=1.722e-19
+t=1 integral=3.347037226122198 Gamma diff=3.347037226122198 err=1.657e-19
+t=3 integral=4.627939359485268 Gamma diff=4.627939359485268 err=1.082e-19
+t=10 integral=5.836474046090596 Gamma diff=5.836474046090596 err=1.202e-19
+ODD gamma / conductor-5 matched source (chi mod5/DH):
+odd t=0.25 gamma diff=0.04040896491705772 integral=0.04040896491705772
+odd t=1 gamma diff=0.4764595239318235 integral=0.4764595239318235
+odd t=3 gamma diff=1.486853755915267 integral=1.486853755915267
+odd t=10 gamma diff=2.694881392500945 integral=2.694881392500945
+fake n=6 delta=0.0 source change=0.0 SOS-minus-debit=0.0
+fake n=6 delta=0.02 source change=-0.01792648010569991 SOS-minus-debit=-0.01792648010569991
+ALL FINITE CHECKS PASSED; no positivity inference toward RH
+\`\`\`
+
+Actual combined command from locally materialized copies of new files:
+\`python -m unittest discover -s tests -p 'test_*.py' -v\`
+**14 tests passed in 1.626s** (9 rational-height/Tate tests, 5 Γ continuum tests). Copies of all four test/probe files were individually checked against committed contents; superfluous extra blank line in GitHub main Γ script was normalized to exactly tested bytes. Legacy repo tests and GitHub CI **NOT RUN** due clone DNS/tool environment; no claims of certified interval arithmetic, infinite spectral checks, or zero-spectrum proof.
+
+### Final frontier ledger additions
+
+| ID | Status | Claim |
+|---|---|---|
+| HTR-12 | PROVED (model scope) | Arch Γ multiplier exits weighted rational-history range even on e_1; cannot be lifted internally into existing source topology |
+| HTR-13 | PROVED (classical) | Actual Γ even digamma is a positive compensated continuum of two-sided shifts with 1/u density |
+| HTR-14 | PROVED (classical) | Odd parity/q5 Γ factor has analogous density e^{-3u/2}/(1-e^{-2u}) |
+| HTR-15 | PROVED | Excluding shifts below ε>0 makes symbol bounded; therefore cannot realize high-frequency Γ |
+| HTR-16 | REFUTED (certificate only) | Summing individual Poincare lower bounds does not certify known Weil positivity intervals; full Weil positivity is not refuted |
+| HTR-17 | PROVED (identity) | Full zeta Weil form = compensated Γ continuum + discrete prime energies + signed bulk + correct separate pole |
+| HTR-18 | UNVERIFIED | Distinguished surface-level dualizing trace and Hodge-index polarization equal complete Q and prove sign |
+
+**Stopping rule:** Further generic positive CND/Lévy/height kernels repeat proved source-blindness; another numerical scan of the same lower bound does not move RH. Needed technology is a genuine source-derived **unbounded** adelic correspondence/dualizing complex with a trace/intersection law and independent Hodge sign. The first discriminating implementation must compare the complete polarized Weil trace in the two-prime interval while enforcing zero connected log6, true χ vs DH and full Γ/pole/negative bulk, before asserting a new theorem.
