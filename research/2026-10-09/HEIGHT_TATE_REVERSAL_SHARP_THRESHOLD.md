@@ -156,3 +156,39 @@ This is the exact failed implication: **positive invertible/symmetric archimedea
 **Claim labels:** HTR-01 (sharp threshold), HTR-02 (Tate Gamma/overlap), HTR-03 (dense injective compact bridge), HTR-04 (bounded cocycle covariance), HTR-05 (no strong-continuous discrete-regular identification), HTR-06 (critical HS-normalized strong-zero), all PROVED under their precise hypotheses. HTR-07 (finite controls), OBSERVED (specific logs in probe output). HTR-08 (bridge equals completed Weil or gives independent Hodge sign), UNVERIFIED: in fact the displayed simple Gram candidate is REFUTED as a fourth-gate certificate by fake-source invariance.
 
 **Next verdict-changing probe:** Replace the source-blind height damping with an independently specified global adelic/Poisson dualizing transfer whose *induced trace*, NOT chosen Gram, equals the full Weil form, including two prime interactions and the archimedean/pole subtraction. Test whether it can be bounded/renormalized on an appropriate distributional adelic space while retaining exact p=2, p=3, chi and fake-6 source discrimination. Failing equality is a terminal falsifier for that transfer. No inference from finite spectral agreement to all L.
+
+
+## 8. Changed invariant: high-frequency Gamma energy kills every bounded-Gram identification
+
+The source-invariant height/Tate construction is coherent and injective, but it is a bounded map (for tau>1). To test the *actual Weil target* rather than the easy source identities, compare its bounded Gram with the high-frequency behavior of the independently fixed Gamma term.
+
+**THEOREM 4 (fixed-window ultraviolet obstruction).** For every L>0 and nonzero smooth compactly supported phi in (-L,L), let f_T(u)=exp(i T u)phi(u). With the repo's completed Weil form Q_L=P_L-K_L (Gamma+conductor/pole and finitely many prime-power shifts),
+
+$$
+Q_L(f_T,f_T)= (\log T)\|\phi\|_2^2+O_{\phi,L}(1)
+\quad (T\to+\infty).
+$$
+
+Hence there is NO bounded operator B_L on ordinary L²([-L,L]) with Q_L(f,g)=<B_L f,g> on all smooth compactly supported tests. In particular a bounded positive Gram J_L*J_L, or a bounded Schur complement of such operators, cannot equal the **full** Weil form.
+
+**Proof.** The authentic archimedean symbol is
+$$
+A_\infty(t)=\Re\psi(1/4+it/2)-\log\pi
+=\log(|t|/(2\pi))+o(1),\quad |t|\to\infty.
+$$
+Because hat f_T(t)=hat phi(t-T) and hat phi is Schwartz, Plancherel plus dominated splitting into |t-T|<T/2 and its rapidly decreasing complement gives the Gamma expectation log(T/(2pi))||phi||²+o(1). The fixed conductor is a bounded scalar. Only finitely many prime shifts act at support L and have operator norm <=1, so their total contribution is O_L(||phi||²), uniformly in T. The pole/contact finite-rank terms involve smooth compactly supported oscillatory integrals and tend to zero superpolynomially in T. Therefore Q_L(f_T)=log(T)||phi||²+O(1). The norm of every f_T equals ||phi||; hence no bounded operator can represent Q_L.
+
+This is an UNCONDITIONAL domain/signature obstruction for a CLASS of candidate identifications, **not** a positive or negative result for RH. It is consistent with the project's existing unbounded-Archimedean/compact-resolvent diagnostics (R64/PR11). The useful strengthened conclusion is specific: even the analytically coherent Tate/height J_tau CANNOT directly be the fourth-gate Weil Gram as a bounded operator on the natural finite-window L² domain.
+
+**Calibration (optional SciPy script, separately run; high-frequency normalized arch value versus log(T/(2pi))):**
+- T=20: 1.153764467 versus 1.157855207 (residual -4.09e-3)
+- T=50: 2.073510100 versus 2.074145939 (-6.36e-4)
+- T=100: 2.767134860 versus 2.767293120 (-1.58e-4)
+- T=200: 3.460400775 versus 3.460440300 (-3.95e-5)
+- T=400: 4.153577602 versus 4.153587481 (-9.88e-6)
+
+The optional executable is scripts/height_tate_uv_control.py (requires SciPy, not listed in the base requirements). Its numerical result supports the asymptotic probe but is not the proof.
+
+**Revision:** Replace the hypothesis “the positive complete-history embedding supplies Weil polarity” with: **any viable dualizing trace must be defined on an appropriate unbounded quadratic-form/graph-norm or distributional domain**, must incorporate all archimedean and pole terms, and must derive the primitive Hodge sign independently. Adding a fixed Gaussian wavepacket or a positive height kernel cannot pay this debt.
+
+**Status:** HTR-09 PROVED as a domain obstruction; HTR-10 “unbounded adelic source-derived transfer with exact Weil equality and independent sign” UNVERIFIED.
