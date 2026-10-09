@@ -1,0 +1,64 @@
+{
+  "research_date": "2026-10-09",
+  "scope": "local complex-point signed/unsigned twistor real structures; zero-free source controls",
+  "execution": {
+    "location": "local Python container (not a GitHub Actions run)",
+    "python": "3.13.5",
+    "seed": 20261009,
+    "standard_library_local_script_sha256": "eb0a4779c615e0fb363a60e7ac6312e65597c8dad6c3efc8bea830e546b3dd29",
+    "sympy_local_script_sha256": "abca3aacf89d7bd20eeaeec69e644e9f21d8fad48e16cf66067568c59781da0c",
+    "standard_library_committed_script_equivalent_but_not_byte_identical": true,
+    "committed_files_exactly_executed_in_github_actions": false,
+    "full_repo_suite_executed": false,
+    "positive_RH_sign_test": "not executed or claimed"
+  },
+  "predeclared_outcomes": {
+    "single_signed_even_frobenius": "FAIL expected",
+    "two_sector_equivariance": "PASS expected",
+    "spin_jacobian_scalar_descent_at_even_n": "FAIL expected",
+    "spin_intertwiner_minus_to_plus": "ONLY ZERO expected",
+    "coarse_history_even_n": "NOT INJECTIVE expected",
+    "hecke_phase_as_point_map": "FAIL at (2,3) expected",
+    "actual_source_vs_DH_and_fake6": "DISTINGUISH expected"
+  },
+  "observed": {
+    "train_degrees": [1,2,3,4,5,6],
+    "fresh_holdout_degrees": [7,8,9,10,11,12,15,21,22,25,30],
+    "complex_point_trials_per_degree_per_sector": 20,
+    "max_relative_covariance_residual": 6.812322634982011e-15,
+    "odd_signed_same_sector_passes": 180,
+    "even_signed_same_sector_failures_as_expected": 160,
+    "coarse_even_history_collapse": true,
+    "tagged_one_step_injectivity": true,
+    "spin_antiunitary_minus_square": "-I",
+    "spin_antiunitary_plus_square": "+I",
+    "strict_spin_intertwiner_linear_system_rank": 8,
+    "strict_spin_intertwiner_real_unknowns": 8,
+    "strict_spin_intertwiner_kernel_dim": 0,
+    "quartic_mod5_chi2": "i",
+    "quartic_mod5_chi3": "-i",
+    "quartic_mod5_chi6": "1",
+    "wrong_monomial_phase_g3_after_g2": "-1",
+    "wrong_monomial_phase_g2_after_g3": "-i",
+    "correct_tensor_phase": "1",
+    "davenport_heilbronn_kappa": 0.28407904384041216,
+    "davenport_heilbronn_convolution_log_b4": -1.0403504515746413,
+    "davenport_heilbronn_convolution_log_b6": 1.080700903149283,
+    "genuine_character_convolution_log_b6": 0.0,
+    "mutated_fake6_connected_coefficient": 0.03
+  },
+  "falsified_exploratory_expectation": {
+    "error": "First scratch harness expected b4=-1/2 for the 50/50 conjugate-character mixture.",
+    "correction": "For the 50/50 mixture, b4=-1; b4=-1/2 belongs to the genuine quartic character.",
+    "disposition": "Corrected before recording passing results; not a new mathematical counterexample."
+  },
+  "verdict": {
+    "local_correspondence_proved": true,
+    "even_degree_twistor_in_single_signed_sector_refuted": true,
+    "character_as_monomial_phase_refuted": true,
+    "arithmetic_self_product_constructed": false,
+    "full_weil_pairing_identified": false,
+    "independent_hodge_polarization_proved": false,
+    "RH_proved": false
+  }
+}
