@@ -1,157 +1,138 @@
 # FuckingRH
 
 A proof-first research program attacking the **Riemann Hypothesis** through one concrete,
-RH-equivalent positivity target, pursued across several independent agent lineages (astra, aletheia,
-claude) and consolidated here on `main`.
+RH-equivalent positivity target, pursued across several independent agent lineages (astra,
+aletheia, claude) and consolidated here on `main`.
 
-**Status: RH remains open.** Nothing in this repository claims otherwise. The repository is organized to
-keep honest the distinction between what is *proved*, *computed*, *conjectured*, and *refuted*, and to
-name — precisely — the single load-bearing theorem a genuine proof still owes.
+**Status: RH remains open.** Nothing in this repository claims otherwise. The repository is
+organized to keep honest the distinction between what is *proved*, *computed*, *conjectured*,
+and *refuted*, and to name — precisely — the single load-bearing theorem a genuine proof
+still owes.
 
 ---
 
-## The RH-equivalent target
+## Read the framing from the ground up
 
-Masatoshi Suzuki (JLMS 2023) gives an explicit even function `Ψ(t)`, built directly from prime powers
-plus the Archimedean completion, with
+The full account of how this program thinks about the problem lives in the
+**[wiki](wiki/README.md)**, written to be read in order:
+
+1. **[The successor frame](wiki/01-the-successor-frame.md)** — the generative idea from first
+   principles: successor (`SUCC`), multiplication as rescaling the successor step (the `●`
+   operator), prime powers as ray–worldline intersections, the finite vs. archimedean places,
+   and the archimedean Γ-factor built from the frame with no zeta.
+2. **[The RH-equivalent target](wiki/02-the-rh-equivalent-target.md)** — the completed zeta,
+   Weil's explicit formula, Weil positivity ⟺ RH, the Suzuki and `ξ′/ξ` reformulations, the
+   free half above `Re s = 1`, and the prime-free positivity window.
+3. **[The Diophantine & semigroup frame](wiki/03-the-diophantine-semigroup-frame.md)** — why
+   the prime frequencies `{log p}` are the real content, phase alignment and the negative
+   "wells," the band-limit, and the finite-window multiplicative semigroup with its
+   nonalignment theorem.
+4. **[State of the program](wiki/04-state-of-the-program.md)** — what the calibrated
+   instrument measured: the joint-coercivity target, the dead brick, the nonalignment bound,
+   the razor-thin balance held by multiplicativity, the Davenport–Heilbronn crossover, the
+   research arc, and the open seams.
+5. **[Methodology & discipline](wiki/05-methodology-and-discipline.md)** — the crucifixion
+   method, epistemic labels, hostile controls, the no-zero-input rule, and calibrated
+   instruments.
+
+---
+
+## The target, in one screen
+
+Weil's explicit formula makes the zeros and the primes two sides of one identity. Applied to
+a self-correlation it yields the **Weil functional** `W(g) = Σ_ρ |ĝ(γ_ρ)|²`, and
 
 ```
-RH  ⟺  Ψ(t) ≥ 0 for all t  ⟺  the Kreĭn screw kernel K_Ψ(t,u)=Ψ(t)+Ψ(u)−Ψ(t−u) ⪰ 0
+W(g) ≥ 0 for all admissible g   ⟺   RH.
 ```
 
-and, by Nakamura–Suzuki, `⟺ e^{−Ψ}` is an infinitely divisible characteristic function. Equivalently
-(Lagarias 1999 (1.5)/(1.19); the bare equivalence due to Hinkkanen):
+So RH is exactly the statement that the **prime-plus-archimedean** (arithmetic) side of the
+formula is non-negative — and the program's job is an *independent, non-circular* reason for
+that positivity, one that never reads the zeros. Equivalent repackagings used here (all exact,
+none a proof): Suzuki `Ψ(t) ≥ 0 ∀t`; the screw kernel `K_Ψ ⪰ 0`; `ξ′/ξ` positive-real on
+`Re s > ½`; and `Re{ξ(s)/ξ(s+1)} ≥ 0` on `Re s > ½`. Full detail:
+[wiki/02](wiki/02-the-rh-equivalent-target.md).
 
-```
-RH  ⟺  ξ'/ξ is positive-real (Pick/Herglotz) on H_{1/2} = {Re s > 1/2}
-```
-
-where `ξ(s)=½ s(s−1) π^{−s/2} Γ(s/2) ζ(s)`. The unconditional half `Re ξ'/ξ > 0 on Re s > 1` is free;
-all RH content is pushing positivity from `Re s>1` down to `Re s>1/2`.
-
-These are **exact reformulations, not a proof.** The whole program is the search for an *independent,
-non-circular, mutation-sensitive* structural theorem that discharges one of them.
+The free part is sharp: positivity for `Re s > 1` is unconditional (the Euler product), and
+Connes–Consani (**Theorem 1**, arXiv:2006.13771) give it unconditionally for test functions
+supported in the prime-free window `(½, 2)`. All RH content is pushing positivity from there
+down to `Re s > ½`.
 
 ---
 
 ## Where the program stands (the one wall)
 
-Every lineage, from different directions, has converged on the **same** obstruction:
+On the finite-window test space the completed Weil form splits as `Q = P − K` — archimedean
++ pole part `P`, prime semigroup `K` — and the missing theorem is the **joint coercivity
+`Q = P − K ⪰ 0`**. A calibrated instrument (explicit formula balanced to 60 digits,
+`M_full ≡ M_zeros`) measured each piece:
 
-> The local, per-prime objects can be made exactly positive (the repaired Euler prime tower
-> `D_p(t)=M_p|t|−h_p(t)` is CND with an explicit positive Lévy measure; the local source filter `B_p` is
-> an exact carry-response resolvent). **But the required local corrections diverge when summed**
-> (`Σ_p M_p = ∞`), and the only thing that renormalizes them is the Archimedean completion. No current
-> theorem performs that **global prime–Archimedean cancellation while preserving positivity**. That — not
-> prime density, not a continuum limit, not Gaussian behaviour — is the RH gap.
+- **The "archimedean floor" does not exist.** `P` alone, with no primes, is *indefinite* at
+  every support (`λ_min(P)` from `−0.08` to `−16.1`). The clean inequality `arch + pole ≥ ‖K‖`
+  that would be an unconditional proof **fails wide** — positivity is a cancellation, never a
+  floor.
+- **The band-limit is a theorem.** The prime term's norm obeys `λ_max(K) ≤ C_L < A_L`
+  (≈ ⅓ of the worst-case comb mass) — a real, unconditional buy-back of positivity.
+- **The balance is razor-thin and held by multiplicativity.** `λ_min(Q)` is positive but
+  collapses toward `0` with resolution; the PSD window of the prime weight pinches to
+  `[1−1.8e-13, 1+1.8e-15]`; and **every** mutation of the arithmetic (fake impulse at `n=6`,
+  `|α_2|≠1`, scaled weights, shifted `log 2`) drives it negative. Multiplicativity holds the
+  sign — *at zero*. A knife-edge poised at zero **is** RH-equivalence.
+- **The off-line zero is the negative direction.** On the non-multiplicative control
+  Davenport–Heilbronn, the form first goes indefinite at support `L* ≈ 4`, and the entire
+  negative eigenvalue is its off-line zero at height `85.699`; move only that zero on-line and
+  the form is positive again. Positivity's sign tracks zero-location exactly.
 
-In Round-006 passivity coordinates the same wall reads:
-
-```
-RH  ⟺  ∃ a positive-definite ARITHMETIC state metric with Euler-region limit Cayley[ξ'/ξ]
-     ⟺  Re{ξ(s)/ξ(s+1)} ≥ 0 on H_{1/2}.
-```
-
-Rounds 004–006 proved this is the *whole* content (see the Schur–Vitali reduction below) and then closed
-every natural route to it: the one-port/direct-sum class, the impedance/Laplace completion (an
-unconditional obstruction theorem), the fixed-index Krein escape, and — via a parent-independence lemma —
-the colligation and history-before-quotient escapes. What survives is a single, named, open door.
-
----
-
-## The seam (where a real proof would enter)
-
-The surviving open class, pointed to independently by the Round-006 analysis and the
-`unit-place-transport` thread, is the **unit-basepoint place-character jet Gram**:
-
-- The critical half-density weight `p^{−k/2} log p` is exactly the **first jet** at `z=0` of the
-  1/2-twisted adelic character `χ^{(1/2)}_{v,z}(x)=|x|_v^{1/2+z}`.
-- The product formula `∏_v |x|_v^{1/2}=1` makes the half-density **globally balanced**, so the critical
-  line is the *global unit deformation direction* — this is the adelic "why 1/2."
-- The **cross-prime coupling** that primewise-independent constructions discard lives in the **second
-  jets**: `0=(Σ_v log|x|_v)² = Σ_v (log|x|_v)² + 2 Σ_{v<w} log|x|_v log|x|_w`.
-
-The seam is to build the global coupled object from this 1/2-twisted family **at the unit basepoint**, so
-that the divergent first-jet corrections cancel **by the product-formula identity before** positivity is
-formed (not local positive blocks minus a divergent counterterm, which is proven to fail), yielding a
-second-jet Gram whose kernel is exactly `K_Ψ`. This is the **UBRPCT** (Unit-Basepoint Renormalized
-Place-Coupling Theorem) — a **proposed architecture, UNVERIFIED**, equivalent in difficulty to RH but
-orthogonal to the single-space de Branges positivity that Conrey–Li/Sarnak proved fails for ζ.
-
-Full statement and the honest gap: `research/aletheia_2026-10-05/CURRENT_MISSING_THEOREM.md`,
-`PLACE_CHARACTER_UNIT_BASEPOINT.md`, `CND_PROOF_SEAM.md`, and `research/claude_round_006/PROOF_ATTEMPT_006.md`.
+Every feature the frame predicted is true and measured — and all of it is RH-equivalent.
+There is **no unconditional brick**. Full numbers, the research arc, and the two open seams
+(the joint coercivity, and the Round-006 unit-basepoint place-coupling / UBRPCT): [wiki/04](wiki/04-state-of-the-program.md).
 
 ---
 
 ## Start here
 
-1. **[CLAIM_LEDGER.md](CLAIM_LEDGER.md)** — every claim with status (DISCLOSED / CORROBORATED / OBSERVED /
-   CONJECTURED / UNVERIFIED / REFUTED). Rows C01–C111. The spine of the repo.
-2. **[CURRENT_STATE.md](CURRENT_STATE.md)** — governing frame.
-3. **[docs/SCREW_SINC_LEVY_UNIFICATION.md](docs/SCREW_SINC_LEVY_UNIFICATION.md)** — the Suzuki
-   screw-kernel / sinc / Lévy attack surface.
-4. **[docs/NEGATIVE_CONTROLS.md](docs/NEGATIVE_CONTROLS.md)** — attractive dead ends already failed.
-5. **[research/claude_round_006/ROUND_RESULT.md](research/claude_round_006/ROUND_RESULT.md)** — the
-   current frontier (source port / passivity) and the living CURRENT WALL.
-
----
-
-## The research arc (by lineage)
-
-**astra** — the CND / infinite-divisibility / transport attack.
-`research/astra_round_001..003/`: finite-event rigidity; the geometric-prime Gaussian residual is not a
-characteristic function; prime-transport martingale and complexity-crest controls. Verdict each round: RH
-open, with the wall localized to global renormalized coupling.
-
-**aletheia** — the adelic / affine / place-character structure.
-`research/aletheia_2026-10-05/` and `_2026-10-06/`: the SUCC/FUCC affine-braid and KMS structure
-(`SUCC_FUCC_AFFINE_KMS_THEOREM.md`), the repaired prime tower and adelic radical
-(`ADELIC_RADICAL_TOWER_REPAIR.md`), the **unit-basepoint place-character frame** (the seam, above),
-`FUCC_IS_PASCAL.md` (FUCC = Pascal translation; `B` factors into binomial propagation), the
-`PSD_BOUNDARY_CONTINUITY_AUDIT.md` (the C84 correction: the finite reduced kernel is strictly PD; the
-knife-edge is an asymptotic shrinking window), and the Round-006 source-wiring handoff.
-
-**claude** — the operator-algebra / passivity attack.
-- `research/claude_round_004/` — meta-theorem (commutative-multiplicative ⇒ factorized ⇒ RH-inert),
-  exact local operator squares, four no-gos; the irreducible core is SUCC's irregular log-steps.
-- `research/claude_round_005/` — the self-sieving carry machine: `B_p` as a literal carry filter, von
-  Mangoldt as the carré-du-champ of carry curvature, carry = Cuntz/affine braid; shared-DC telescoping
-  refuted.
-- `research/claude_round_006/` — **the source port / passivity round.** Highlights:
-  - `SCHUR_VITALI_LIMIT.md` (C104) — the round's clean positive theorem: a *non-circular* reduction of RH
-    to one hypothesis (P) — a finite family contractive on all of `H_{1/2}` converging to `Cayley[ξ'/ξ]`
-    only on the safe Euler region `Re s>1` forces RH, via normal-family compactness ("take the limit").
-  - `ARCHIMEDEAN_SOURCE_PORT.md` (C105) — the port = a passive Γ-channel (resolvent of `2N`, poles at the
-    trivial zeros) + a single `κ=1` pole at `s=1`.
-  - `FINITE_COMPLETION.md` + `PROOF_ATTEMPT_006.md` — the **obstruction theorem**: the impedance/
-    Laplace-source completion is not passive (`inf Re F_P → −∞`; Pontryagin index unbounded), killing that
-    class unconditionally and closing the fixed-index Krein escape.
-  - `PASSIVE_COLLIGATION.md` + `HISTORY_SPACE_SOURCE_PORT.md` (C107–C108) — the parent-independence lemma:
-    the obstruction is a property of the function `ξ` (`Re{ξ(s)/ξ(s+1)}<0` in the strip; Conrey–Li/Sarnak),
-    so no coupling order or history lift dodges it.
+1. **[wiki/README.md](wiki/README.md)** — the ground-up framing (read in order).
+2. **[CRUCIFIXION_LEDGER.md](CRUCIFIXION_LEDGER.md)** — the live, round-by-round narrative map
+   (currently through Round 049).
+3. **[CLAIM_LEDGER.md](CLAIM_LEDGER.md)** — every claim with status (Rows C01–C111). The spine
+   of the repo.
+4. **[CONSOLIDATED_RH_STATE.md](CONSOLIDATED_RH_STATE.md)** — cross-repo consolidation, graded
+   by epistemic status; `§8` is the current-session summary.
+5. **[docs/NEGATIVE_CONTROLS.md](docs/NEGATIVE_CONTROLS.md)** — attractive dead ends already
+   failed (do not re-walk).
 
 ---
 
 ## Discipline (non-negotiable)
 
-- **RH is open.** No file asserts otherwise without a complete proof that survives hostile audit.
-- Every claim lands in `CLAIM_LEDGER.md` with an explicit status and a reproduction pointer.
-- Every candidate construction faces **hostile controls** (delete/insert a prime, wrong `log p` charge,
-  wrong half-density `p^{−1/2}`, remove/perturb the Archimedean boundary, random periods). A construction
-  that survives fake arithmetic is RH-inert. See `research/claude_round_006/HOSTILE_CONTROLS.md`.
-- **No zeta-zero ordinates are ever used as construction input** — only as after-the-fact diagnostics.
-- Scripts under `scripts/` reproduce the exact identities and the measured no-gos (`numpy`, `mpmath`,
-  `sympy`, `scipy`; see `requirements.txt`).
+- **RH is open.** No file asserts otherwise without a complete proof that survives hostile
+  audit.
+- Every claim lands in a ledger with an explicit status (Verified / Demonstrated / Observed /
+  Conjectured / UNVERIFIED / Refuted) and a reproduction pointer. Labels never silently
+  upgrade; numerics never become proofs by accumulation.
+- Every candidate faces **hostile controls** (delete/insert a prime, wrong `log p`, wrong
+  half-density `p^{−1/2}`, perturb the archimedean boundary, fake arithmetic). A construction
+  that survives fake arithmetic is RH-inert.
+- **No zeta-zero ordinates are ever used as construction input** — only as after-the-fact
+  diagnostics.
+- Numerical code is a **calibrated instrument**: it must recover a known answer before its
+  novel readings count, and load-bearing values are cross-checked by a second implementation.
+- Scripts under `scripts/` reproduce the exact identities and the measured no-gos (`numpy`,
+  `mpmath`, `sympy`, `scipy`; see `requirements.txt`).
 
 ---
 
 ## One-paragraph conceptual summary
 
-Primality, von Mangoldt, `ζ'/ζ`, and the completion to `ξ'/ξ` all arise cleanly and exactly from an
-arithmetic "source": `SUCC` boots a multiplicative source `|1⟩`, prewired prime rays `|1⟩→|p⟩→|p²⟩→…`
-intersect the additive worldline exactly at prime powers, and the completed response is `ξ'/ξ`, whose
-positive-realness on `Re s>1/2` is RH. The local pieces are exactly positive; the limit mechanism
-(Schur–Vitali) is proved and non-circular; the Archimedean port is realized. The one thing missing — and
-the thing every lineage here has independently cornered — is the **exact global renormalization that
-couples the finite prime places to the Archimedean place and stays positive**, which the unit-basepoint
-1/2-twisted place-character second-jet Gram is the leading, still-unproved, candidate to supply.
+Primality, von Mangoldt, `ζ′/ζ`, and the completion to `ξ′/ξ` arise cleanly from an arithmetic
+*process*: `SUCC` boots the additive worldline, `●` rescales the successor step into
+multiplication, prewired prime rays `|1⟩→|p⟩→|p²⟩→…` meet that worldline exactly at prime
+powers, and the archimedean place completes the picture with a self-dual Gaussian atom whose
+scaling-Mellin transform is `Γ_ℝ`. RH is the positivity of the completed Weil form built from
+this data. The local pieces are exactly positive and the finite-window multiplicative
+semigroup supplies a genuine, unconditional buy-back of positivity (`C_L < A_L`) — but the
+archimedean part is itself indefinite, the surviving balance is razor-thin and held exactly at
+the arithmetically-correct point, and that balance is provably RH-equivalent. The one thing
+missing — and the thing every lineage here has independently cornered — is the **exact global
+coercivity that couples the finite prime places to the archimedean place and stays positive**.
+It has a precise name and measured pieces; it does not yet have a proof.
