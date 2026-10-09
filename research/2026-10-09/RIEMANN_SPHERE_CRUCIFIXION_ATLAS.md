@@ -5,6 +5,8 @@
 2026-10-09 PRs #8–#11. This is a new *coordinate-level synthesis and exact synthetic test suite*,
 NOT a new zero-free theorem or a proof-bearing arithmetic positivity result.
 
+![Schematic RH equator and the research obstructions](../../docs/riemann_sphere_crucifixion_atlas.svg)
+
 The user's image is retained in its strongest coherent form: we can describe a geometric
 surface on which the RH zero condition lives, classify where our attempted methods fail,
 and test which barriers are genuine logical no-gos versus absences of a source-derived
