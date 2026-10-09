@@ -63,5 +63,4 @@ def run():
         print(f'fake n=6 delta={delta} source change={mp.nstr(direct,16)} SOS-minus-debit={mp.nstr(sos,16)}')
     print('ALL FINITE CHECKS PASSED; no positivity inference toward RH')
 
-
 if __name__=='__main__':run()
