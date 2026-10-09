@@ -175,6 +175,13 @@ Exact, zero-free-input controls:
   has a **negative exact determinant**. The \(a=0\) on-line
   Gram is positive semidefinite, as all its principal minors confirm.
 
+**Hostile-regime caveat:** at (a=0) this synthetic Gram has rank two,
+so its (3\times3) determinant is *exactly zero*; a small off-line perturbation
+can make a previously null direction negative. For the actual zeta zero
+ensemble, low-dimensional angular Grams need not have such a near-null
+direction. The striking 40-versus-3 contrast is specific to this calibrated
+family and does **not** establish uniform finite-detection superiority.
+
 This establishes a **finite diagnostic separation**: the Gram probe
 detects these off-line synthetic configurations earlier than their
 scalar Li sign checks. No theorem says it does so uniformly or that
