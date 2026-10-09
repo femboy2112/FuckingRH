@@ -20,8 +20,6 @@ For each N>=1 put L_N=lcm(1,2,...,N), and define:
 
 If M|M', reduction G_(M')→G_M induces an isometric pullback J_(M,M'):H_M→H_(M'). Its Hilbert adjoint is conditional expectation along fibers:
 
-  E_(M,M') f(r) = (M/M')?  NO: for M'=pM, E f(r)=(1/p)sum_(x mod M':x≡r mod M) f(x).
-
 Precisely, writing M' = dM,
 
   E_(M,M')f(r) = (1/d) sum_(x∈G_M': x mod M=r)f(x).
@@ -48,7 +46,8 @@ and the innovation rank is L_N-L_(N-1).
 
 The conductor d first becomes *structurally* online at
 
-  b_structure(d)=min{N: d|L_N}=max_(p^k||d) p^k.
+  b_structure(d)=min{N: d|L_N}=max_(p^k||d) p^k  for d>1;
+  b_structure(1)=1.
 
 Proof: L_N contains the complete maximal p-power p^{floor(log_p N)} and d divides L_N iff every p^k||d obeys p^k≤N. At non-prime-power wavefronts L_N=L_(N-1), so no new conductor Hilbert modes are born. At event N=p^k, L_N=pL_(N-1); innovation rank (p-1)L_(N-1).
 
