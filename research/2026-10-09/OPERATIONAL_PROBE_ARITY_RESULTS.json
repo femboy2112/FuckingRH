@@ -1,0 +1,181 @@
+{
+  "status": "PASS",
+  "no_zeta_zeros_used": true,
+  "finite_probes": [
+    {
+      "primes": [
+        2,
+        3
+      ],
+      "d": 6,
+      "birth": 3,
+      "direct_event": 6,
+      "arity": 2,
+      "norm_squared": "1/18",
+      "conditional_checks": 6,
+      "rival_joint_expectations": [
+        "-1/18",
+        "1/18"
+      ]
+    },
+    {
+      "primes": [
+        2,
+        3,
+        5
+      ],
+      "d": 30,
+      "birth": 5,
+      "direct_event": 30,
+      "arity": 3,
+      "norm_squared": "2/225",
+      "conditional_checks": 42,
+      "rival_joint_expectations": [
+        "-2/225",
+        "2/225"
+      ]
+    },
+    {
+      "primes": [
+        2,
+        3,
+        5,
+        7
+      ],
+      "d": 210,
+      "birth": 7,
+      "direct_event": 210,
+      "arity": 4,
+      "norm_squared": "4/3675",
+      "conditional_checks": 366,
+      "rival_joint_expectations": [
+        "-4/3675",
+        "4/3675"
+      ]
+    }
+  ],
+  "mellin_factorization": [
+    {
+      "S": [
+        2,
+        3
+      ],
+      "order_at_s_1": 1,
+      "leading_coefficient": "0.12691666840313483107152",
+      "numeric_jet_lead": "0.12691666840313483107152",
+      "hurwitz_residual": "4.3181e-78"
+    },
+    {
+      "S": [
+        2,
+        3,
+        5
+      ],
+      "order_at_s_1": 2,
+      "leading_coefficient": "-0.0408528995695664540142204",
+      "numeric_jet_lead": "-0.0408528995695664540142203",
+      "hurwitz_residual": "4.451e-78"
+    },
+    {
+      "S": [
+        2,
+        3,
+        5,
+        7
+      ],
+      "order_at_s_1": 3,
+      "leading_coefficient": "0.0113565816986795433277918",
+      "numeric_jet_lead": "0.0113565816986795433277918",
+      "hurwitz_residual": "2.8847e-78"
+    }
+  ],
+  "additive_exact_conductor_6_jet0": [
+    "8.546177315016633144607e-78",
+    "1.047197551196597746154"
+  ],
+  "hecke_and_DH": {
+    "Lchi_at_1": [
+      "0.8648062659772099672312",
+      "0.204153066138385146194"
+    ],
+    "haar_probe_at_1": [
+      "0.2882687553257366557437",
+      "0.06805102204612838206467"
+    ],
+    "hecke_centered_order": 2,
+    "hecke_centered_jet_lead": [
+      "0.1097583300919827809217",
+      "0.02591042699856868148607"
+    ],
+    "hecke_centered_observed": [
+      "0.1097583300919827809217",
+      "0.02591042699856868148607"
+    ],
+    "davenport_heilbronn_adapted_probe_at_1": [
+      "0.3076006246009636240607",
+      "0.01384009033587264690555"
+    ],
+    "DH_nonzero": true
+  },
+  "mutations": {
+    "fake6_delta_a6": "0.14285714285714285714",
+    "fake6_F_at_1": "0.00793650793650793650793651",
+    "alpha2_1_03_F_at_1": "-0.0056629499415881942855425",
+    "shift_log2_delta_0_01_F_at_1": "0.00180394625443656873269741",
+    "balanced_composite_mutations": {
+      "a6_delta": "0.1428571428571428571429",
+      "a30_delta": "-0.7142857142857142857143",
+      "F_at_1": "0",
+      "connected_log_star_at_6": "0.1428571428571428571429"
+    }
+  },
+  "finite_jet_spoof": [
+    {
+      "jet_count": 1,
+      "mutated_composites": [
+        6,
+        30
+      ],
+      "largest_abs_coeff_mutation": "0.001",
+      "first_connected_innovation": "-0.0002",
+      "max_jet_residual": "0.0"
+    },
+    {
+      "jet_count": 2,
+      "mutated_composites": [
+        6,
+        30,
+        42
+      ],
+      "largest_abs_coeff_mutation": "0.001",
+      "first_connected_innovation": "0.000029865993588881079538",
+      "max_jet_residual": "8.4338e-81"
+    },
+    {
+      "jet_count": 3,
+      "mutated_composites": [
+        6,
+        30,
+        42,
+        66
+      ],
+      "largest_abs_coeff_mutation": "0.001",
+      "first_connected_innovation": "-5.629513916271373679e-6",
+      "max_jet_residual": "3.3735e-80"
+    },
+    {
+      "jet_count": 4,
+      "mutated_composites": [
+        6,
+        30,
+        42,
+        66,
+        78
+      ],
+      "largest_abs_coeff_mutation": "0.001",
+      "first_connected_innovation": "6.7373787317854127941e-7",
+      "max_jet_residual": "1.3494e-79"
+    }
+  ],
+  "not_proven": "Weil sign, arithmetic self-product, global positive polarization"
+}
