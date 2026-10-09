@@ -13,18 +13,17 @@ and no unconditional brick has been found. New results land in [§6.2](#62-the-r
 All the reformulations of [page 2](02-the-rh-equivalent-target.md), the semigroup of
 [page 3](03-the-diophantine-semigroup-frame.md), and the symbol of
 [page 4](04-the-symbol-and-the-wells.md) converge on one object. On the finite-window test space
-(support `L`), the completed Weil form splits as
+(support $L$), the completed Weil form splits as
 
-```
-Q  =  P  −  K
-```
+$$Q = P - K$$
 
-where `P` is the **archimedean + pole** part (`pole + arch + (−log π)·I`) and `K` is the **prime
-semigroup** `K = Σ_n c_n (T_{log n} + T_{log n}†)/2` of
+where $P$ is the **archimedean + pole** part ($\text{pole} + \text{arch} + (-\log\pi)\, I$) and $K$
+is the **prime semigroup** $K = \sum_n c_n\, \tfrac12\big(T_{\log n} + T_{\log n}^\dagger\big)$ of
 [§3.4](03-the-diophantine-semigroup-frame.md).
 
-> **The missing theorem, as a coercivity.** `Q = P − K ⪰ 0` for all admissible finite-window test
-> functions — and it must be proved reading the primes (multiplicativity) and **not** the zeros.
+> **The missing theorem, as a coercivity.** $Q = P - K \succeq 0$ for all admissible finite-window
+> test functions — and it must be proved reading the primes (multiplicativity) and **not** the
+> zeros.
 
 This is not a new equivalence; it is RH wearing operator clothes ([§5.7](05-what-is-zeta-here.md)).
 Its value is that each piece is now something we can *measure* — and did.
@@ -39,43 +38,43 @@ group E and graduates upward when it clears the gate.**
 
 | # | Result | Status | Source |
 |---|---|---|---|
-| A1 | Positivity holds unconditionally for `Re s > 1` (Euler product, `log ζ = Σ c_n n^{-s}`, `c_n ≥ 0`). | **Demonstrated** (classical) | [§2.5](02-the-rh-equivalent-target.md) |
-| A2 | Weil form positive for self-correlations supported in the prime-free window `(½, 2)`. | **Demonstrated** (Yoshida; Connes–Consani Thm 1) | [§2.5](02-the-rh-equivalent-target.md) |
-| A3 | An unrefereed preprint certifies a wider window `2L = 1.6` (primes 2, 3 only) — but Euler-blind, with a self-retracted `2.38` claim. | **Observed** (cited, unrefereed) | R53 |
+| A1 | Positivity holds unconditionally for $\mathrm{Re}\, s > 1$ (Euler product, $\log\zeta = \sum c_n n^{-s}$, $c_n \ge 0$). | **Demonstrated** (classical) | [§2.5](02-the-rh-equivalent-target.md) |
+| A2 | Weil form positive for self-correlations supported in the prime-free window $(\tfrac12, 2)$. | **Demonstrated** (Yoshida; Connes–Consani Thm 1) | [§2.5](02-the-rh-equivalent-target.md) |
+| A3 | An unrefereed preprint certifies a wider window $2L = 1.6$ (primes 2, 3 only) — but Euler-blind, with a self-retracted $2.38$ claim. | **Observed** (cited, unrefereed) | R53 |
 
-### B — The coupled form `P − K` (calibrated instrument)
+### B — The coupled form $P - K$ (calibrated instrument)
 
 | # | Result | Status | Source |
 |---|---|---|---|
-| B1 | The instrument is calibrated: the explicit formula balances at matrix level, `M_full ≡ M_zeros`, to 60 digits. *(This licenses every reading below; it is **not** a test of RH.)* | **Observed** | R44 |
-| B2 | **The "arch dominates primes" brick is dead.** `P` with no primes is *indefinite*: `λ_min(P) = −0.08 … −16.1` for `L_t = 0.4 … 3.0`. No positive archimedean floor exists. | **Observed** | R49 |
-| B3 | **Nonalignment over-delivers.** `λ_max(K) ≤ C_L < A_L`, in fact `≈ ⅓` of the worst-case comb mass. The band-limit genuinely suppresses the prime term. | **Observed** | R49 |
-| B4 | **The full form is positive but razor-thin.** `λ_min(Q) > 0`, collapsing `≈ 1e-11 → 1e-22` with resolution; the PSD band of prime-weight pinches to `[1−1.8e-13, 1+1.8e-15]`. A knife-edge, not a margin. | **Observed** | R49 |
-| B5 | **Multiplicativity holds the knife-edge.** Every arithmetic mutation (fake impulse at `n=6`, `\|α_2\|≠1`, scaled weights, nudged `log 2`) drives `λ_min(Q)` clearly negative, ≈linearly. | **Observed** | R49 |
+| B1 | The instrument is calibrated: the explicit formula balances at matrix level, $M_{\mathrm{full}} \equiv M_{\mathrm{zeros}}$, to 60 digits. *(This licenses every reading below; it is **not** a test of RH.)* | **Observed** | R44 |
+| B2 | **The "arch dominates primes" brick is dead.** $P$ with no primes is *indefinite*: $\lambda_{\min}(P) = -0.08 \ldots -16.1$ for $L_t = 0.4 \ldots 3.0$. No positive archimedean floor exists. | **Observed** | R49 |
+| B3 | **Nonalignment over-delivers.** $\lambda_{\max}(K) \le C_L < A_L$, in fact $\approx \tfrac13$ of the worst-case comb mass. The band-limit genuinely suppresses the prime term. | **Observed** | R49 |
+| B4 | **The full form is positive but razor-thin.** $\lambda_{\min}(Q) > 0$, collapsing $\approx 10^{-11} \to 10^{-22}$ with resolution; the PSD band of prime-weight pinches to $[1-1.8\times10^{-13},\, 1+1.8\times10^{-15}]$. A knife-edge, not a margin. | **Observed** | R49 |
+| B5 | **Multiplicativity holds the knife-edge.** Every arithmetic mutation (fake impulse at $n=6$, $\lvert\alpha_2\rvert \ne 1$, scaled weights, nudged $\log 2$) drives $\lambda_{\min}(Q)$ clearly negative, $\approx$ linearly. | **Observed** | R49 |
 
 ### C — The crossover and the separator (two-sided control)
 
 | # | Result | Status | Source |
 |---|---|---|---|
-| C1 | **The off-line zero is the negative direction.** Davenport–Heilbronn first goes indefinite at `L* ≈ 4`; the whole negative eigenvalue is its single off-line zero at height `85.699`; moving only it on-line restores positivity. | **Observed** | R49 |
-| C2 | **The matched multiplicative partner stays positive.** `L(s, χ)` (same conductor/Γ-factor/FE as D–H, differing only by an Euler product) is PSD across `L = 0.4 … 9`, where its twin cracks. | **Observed** | R51 |
-| C3 | ⟹ **Multiplicativity is the operative separator** (PSD vs indefinite) with everything else matched. Necessary, two-sided (B5 + C2). *Caveat:* `L(s,χ)` PSD is itself GRH-equivalent — a separator, not a brick. | **Observed** / **[Inf]** | R51 |
+| C1 | **The off-line zero is the negative direction.** Davenport–Heilbronn first goes indefinite at $L^* \approx 4$; the whole negative eigenvalue is its single off-line zero at height $85.699$; moving only it on-line restores positivity. | **Observed** | R49 |
+| C2 | **The matched multiplicative partner stays positive.** $L(s,\chi)$ (same conductor, $\Gamma$-factor and FE as D–H, differing only by an Euler product) is PSD across $L = 0.4 \ldots 9$, where its twin cracks. | **Observed** | R51 |
+| C3 | $\implies$ **Multiplicativity is the operative separator** (PSD vs indefinite) with everything else matched. Necessary, two-sided (B5 + C2). *Caveat:* $L(s,\chi)$ PSD is itself GRH-equivalent — a separator, not a brick. | **Observed** / **[Inf]** | R51 |
 
 ### D — The symbol face (the zero-free vantage)
 
 | # | Result | Status | Source |
 |---|---|---|---|
-| D1 | On the positive band-limited cone, `Ψ_L` **is** the sinc-low-passed zero comb; its wells are Gibbs side-lobes. Their non-diggability `=` positivity of the zero measure `=` RH; the functional equation buys only evenness. | **[derived]** | R53 |
-| D2 | For `ζ`/real characters the symbol is even and the extremal direction is real; the **complex** near-degeneracy is a *complex-character* feature (`L(s,χ)`) only. | **[derived]** | R53 |
+| D1 | On the positive band-limited cone, $\Psi_L$ **is** the sinc-low-passed zero comb; its wells are Gibbs side-lobes. Their non-diggability $=$ positivity of the zero measure $=$ RH; the functional equation buys only evenness. | **[derived]** | R53 |
+| D2 | For $\zeta$/real characters the symbol is even and the extremal direction is real; the **complex** near-degeneracy is a *complex-character* feature ($L(s,\chi)$) only. | **[derived]** | R53 |
 | D3 | Well depth is a **large-deviation** question, not a Diophantine-gap one; Baker/linear-forms is the wrong tool (phase-forms are logs of rationals; the elementary bound beats Baker). | **[derived]** + cited | R54 |
-| D4 | The wells sit in the **Vinogradov–Korobov blind spot** (`log N ∼ log log t`); no unconditional exponential-sum tool reaches them — a structural coverage gap, not a weak method. | **[derived]** + cited | R54 |
-| D5 | The sharp Carneiro–Chandee–Milinovich extremal-majorant bounds are **RH-conditional** (RH needed for *validity*, not just sharpness). Sharp *unconditional* bounds are the weaker `O(log T)` shape. | cited (primary) | R53 |
+| D4 | The wells sit in the **Vinogradov–Korobov blind spot** ($\log N \sim \log\log t$); no unconditional exponential-sum tool reaches them — a structural coverage gap, not a weak method. | **[derived]** + cited | R54 |
+| D5 | The sharp Carneiro–Chandee–Milinovich extremal-majorant bounds are **RH-conditional** (RH needed for *validity*, not just sharpness). Sharp *unconditional* bounds are the weaker $O(\log T)$ shape. | cited (primary) | R53 |
 
 ### E — Pending (lands here, then graduates)
 
 | # | Work in flight | Expected landing |
 |---|---|---|
-| E1 | Well census + eigenvector anatomy + diggability-law calibration on D–H's `85.699` well; `ζ` margin-to-threshold vs support (calibrated well instrument). | groups C/D when it clears the gate |
+| E1 | Well census + eigenvector anatomy + diggability-law calibration on D–H's $85.699$ well; $\zeta$ margin-to-threshold vs support (calibrated well instrument). | groups C/D when it clears the gate |
 
 ## 6.3 The research arc
 
@@ -84,20 +83,21 @@ The program ran as several independent agent lineages that converged on one obst
 - **astra** — the CND / infinite-divisibility / transport attack. Finite-event rigidity; the
   geometric-prime Gaussian residual is not a characteristic function; prime-transport martingale
   and complexity-crest controls. (`research/astra_round_001..003/`.)
-- **aletheia** — the adelic / affine / place-character structure. The successor/`●` affine-braid
-  and KMS structure, the repaired prime tower and adelic radical, the finite reduced kernel's
-  strict positive-definiteness (the knife-edge as an asymptotically shrinking window), and the
-  **unit-basepoint place-character seam** ([§6.4](#64-the-open-seams)).
+- **aletheia** — the adelic / affine / place-character structure. The successor/$\bullet$
+  affine-braid and KMS structure, the repaired prime tower and adelic radical, the finite reduced
+  kernel's strict positive-definiteness (the knife-edge as an asymptotically shrinking window), and
+  the **unit-basepoint place-character seam** ([§6.4](#64-the-open-seams)).
   (`research/aletheia_2026-10-05/`, `_2026-10-06/`.)
 - **claude** — the operator-algebra / passivity attack. The meta-theorem (commutative-
   multiplicative ⇒ factorized ⇒ RH-inert); exact local operator squares; the self-sieving carry
   machine (von Mangoldt as the carré-du-champ of carry curvature); and Round 006's clean positive
   theorem, the **Schur–Vitali limit** (`C104`): a non-circular reduction of RH to one hypothesis —
-  a finite family contractive on all of `H_{1/2}` and converging to `Cayley[ξ′/ξ]` only on the safe
-  Euler region `Re s > 1` forces RH. (`research/claude_round_004..006/`.)
+  a finite family contractive on all of $H_{1/2}$ and converging to $\mathrm{Cayley}[\xi'/\xi]$
+  only on the safe Euler region $\mathrm{Re}\, s > 1$ forces RH.
+  (`research/claude_round_004..006/`.)
 
-The current session added the ground-up successor frame, the archimedean Γ-from-succ construction,
-the Diophantine reframe, the finite-window semigroup of
+The current session added the ground-up successor frame, the archimedean $\Gamma$-from-succ
+construction, the Diophantine reframe, the finite-window semigroup of
 [page 3](03-the-diophantine-semigroup-frame.md), the calibrated coupled-form measurements of
 [§6.2](#62-the-results-board), the matched-partner positive control, and the **symbol / well-
 geometry** vantage of [page 4](04-the-symbol-and-the-wells.md) — including the identification of
@@ -108,24 +108,25 @@ the wells as the low-passed zero comb and the mapping of *why* no unconditional 
 Two concrete, still-unproven candidate architectures for the one missing theorem. Neither is known
 to work; both are RH-hard and are kept precisely because they are *not* obviously circular.
 
-- **The joint coercivity ([§6.1](#61-the-target-named-precisely)).** Prove `P − K ⪰ 0`
+- **The joint coercivity ([§6.1](#61-the-target-named-precisely)).** Prove $P - K \succeq 0$
   unconditionally, using the semigroup's positive SOS energy and a boundary-flux bound against the
-  measured-indefinite `P`. The matched partner `L(s, χ)` (C2) isolates multiplicativity as the
+  measured-indefinite $P$. The matched partner $L(s,\chi)$ (C2) isolates multiplicativity as the
   operative separator — but that only *names* the open lever; it does not supply an unconditional
-  margin, because `L(s, χ)`'s own positivity is GRH-equivalent. The theorem still owed is a reason
-  `P − K ⪰ 0` that reads multiplicativity and does **not** read the zeros.
+  margin, because $L(s,\chi)$'s own positivity is GRH-equivalent. The theorem still owed is a reason
+  $P - K \succeq 0$ that reads multiplicativity and does **not** read the zeros.
 
 - **The unit-basepoint place-coupling (UBRPCT, Round 006).** The critical half-density weight
-  `p^{-k/2} log p` is the *first jet* at `z = 0` of the ½-twisted adelic character
-  `χ^{(1/2)}_{v,z}(x) = |x|_v^{1/2+z}`; the product formula `∏_v |x|_v^{1/2} = 1` makes the
-  half-density globally balanced (the adelic "why ½"); the cross-prime coupling that
-  primewise-independent constructions discard lives in the *second jets*. The seam is to build the
-  global object at the unit basepoint so the divergent first-jet corrections cancel **by the
-  product-formula identity before** positivity is formed, yielding a second-jet Gram with kernel
-  `K_Ψ`. **Proposed architecture, UNVERIFIED**; orthogonal to the single-space de Branges
-  positivity that Conrey–Li/Sarnak proved fails for `ζ`. Full statement and honest gap:
-  `research/aletheia_2026-10-05/CURRENT_MISSING_THEOREM.md`, `PLACE_CHARACTER_UNIT_BASEPOINT.md`,
-  `CND_PROOF_SEAM.md`, `research/claude_round_006/PROOF_ATTEMPT_006.md`.
+  $p^{-k/2}\log p$ is the *first jet* at $z = 0$ of the $\tfrac12$-twisted adelic character
+  $\chi^{(1/2)}_{v,z}(x) = \lvert x\rvert_v^{1/2+z}$; the product formula
+  $\prod_v \lvert x\rvert_v^{1/2} = 1$ makes the half-density globally balanced (the adelic "why
+  $\tfrac12$"); the cross-prime coupling that primewise-independent constructions discard lives in
+  the *second jets*. The seam is to build the global object at the unit basepoint so the divergent
+  first-jet corrections cancel **by the product-formula identity before** positivity is formed,
+  yielding a second-jet Gram with kernel $K_\Psi$. **Proposed architecture, UNVERIFIED**; orthogonal
+  to the single-space de Branges positivity that Conrey–Li/Sarnak proved fails for $\zeta$. Full
+  statement and honest gap: `research/aletheia_2026-10-05/CURRENT_MISSING_THEOREM.md`,
+  `PLACE_CHARACTER_UNIT_BASEPOINT.md`, `CND_PROOF_SEAM.md`,
+  `research/claude_round_006/PROOF_ATTEMPT_006.md`.
 
 ## 6.5 The discriminator (what would count as progress)
 

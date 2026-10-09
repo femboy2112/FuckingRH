@@ -17,14 +17,15 @@ The full account of how this program thinks about the problem lives in the
 **[wiki](wiki/README.md)**, written to be read in order:
 
 1. **[The successor frame](wiki/01-the-successor-frame.md)** — the generative idea from first
-   principles: successor (`SUCC`), multiplication as rescaling the successor step (the `●`
-   operator), prime powers as ray–worldline intersections, the finite vs. archimedean places,
-   and the archimedean Γ-factor built from the frame with no zeta.
+   principles: successor ($\mathrm{SUCC}$), multiplication as rescaling the successor step (the
+   $\bullet$ operator), prime powers as ray–worldline intersections, the finite vs. archimedean
+   places, and the archimedean $\Gamma$-factor built from the frame with no zeta.
 2. **[The RH-equivalent target](wiki/02-the-rh-equivalent-target.md)** — the completed zeta,
-   Weil's explicit formula, Weil positivity ⟺ RH, the Suzuki / `ξ′/ξ` / passivity / de Branges
-   reformulations, the free half above `Re s = 1`, and the prime-free positivity window.
+   Weil's explicit formula, Weil positivity $\iff$ RH, the Suzuki / $\xi'/\xi$ / passivity / de
+   Branges reformulations, the free half above $\mathrm{Re}\, s = 1$, and the prime-free
+   positivity window.
 3. **[The Diophantine & semigroup frame](wiki/03-the-diophantine-semigroup-frame.md)** — why
-   the prime frequencies `{log p}` are the real content, phase alignment and the negative
+   the prime frequencies $\{\log p\}$ are the real content, phase alignment and the negative
    "wells," the band-limit, and the finite-window multiplicative semigroup with its
    nonalignment theorem.
 4. **[The symbol face and the wells](wiki/04-the-symbol-and-the-wells.md)** — the band-limited
@@ -47,50 +48,52 @@ The full account of how this program thinks about the problem lives in the
 ## The target, in one screen
 
 Weil's explicit formula makes the zeros and the primes two sides of one identity. Applied to
-a self-correlation it yields the **Weil functional** `W(g) = Σ_ρ |ĝ(γ_ρ)|²`, and
+a self-correlation it yields the **Weil functional**
+$W(g) = \sum_\rho \lvert \hat g(\gamma_\rho)\rvert^2$, and
 
-```
-W(g) ≥ 0 for all admissible g   ⟺   RH.
-```
+$$W(g) \ge 0 \ \text{for all admissible } g \iff \mathrm{RH}.$$
 
 So RH is exactly the statement that the **prime-plus-archimedean** (arithmetic) side of the
 formula is non-negative — and the program's job is an *independent, non-circular* reason for
 that positivity, one that never reads the zeros. Equivalent repackagings used here (all exact,
-none a proof): Suzuki `Ψ(t) ≥ 0 ∀t`; the screw kernel `K_Ψ ⪰ 0`; `ξ′/ξ` positive-real on
-`Re s > ½`; and `Re{ξ(s)/ξ(s+1)} ≥ 0` on `Re s > ½`. Full detail:
+none a proof): Suzuki $\Psi(t) \ge 0\ \forall t$; the screw kernel $K_\Psi \succeq 0$; and
+$\xi'/\xi$ positive-real on $\mathrm{Re}\, s > \tfrac12$. (The companion coordinate
+$\mathrm{Re}\{\xi(s)/\xi(s+1)\} \ge 0$ is *not* an equivalence — a de Branges–type sufficient
+condition that is itself false in the strip; see wiki/02.) Full detail:
 [wiki/02](wiki/02-the-rh-equivalent-target.md).
 
-The free part is sharp: positivity for `Re s > 1` is unconditional (the Euler product), and
-Connes–Consani (**Theorem 1**, arXiv:2006.13771) give it unconditionally for test functions
-supported in the prime-free window `(½, 2)`. All RH content is pushing positivity from there
-down to `Re s > ½`.
+The free part is sharp: positivity for $\mathrm{Re}\, s > 1$ is unconditional (the Euler
+product), and Connes–Consani (**Theorem 1**, arXiv:2006.13771) give it unconditionally for test
+functions supported in the prime-free window $(\tfrac12, 2)$. All RH content is pushing
+positivity from there down to $\mathrm{Re}\, s > \tfrac12$.
 
 ---
 
 ## Where the program stands (the one wall)
 
-On the finite-window test space the completed Weil form splits as `Q = P − K` — archimedean
-+ pole part `P`, prime semigroup `K` — and the missing theorem is the **joint coercivity
-`Q = P − K ⪰ 0`**. A calibrated instrument (explicit formula balanced to 60 digits,
-`M_full ≡ M_zeros`) measured each piece:
+On the finite-window test space the completed Weil form splits as $Q = P - K$ — archimedean
++ pole part $P$, prime semigroup $K$ — and the missing theorem is the **joint coercivity
+$Q = P - K \succeq 0$**. A calibrated instrument (explicit formula balanced to 60 digits,
+$M_{\mathrm{full}} \equiv M_{\mathrm{zeros}}$) measured each piece:
 
-- **The "archimedean floor" does not exist.** `P` alone, with no primes, is *indefinite* at
-  every support (`λ_min(P)` from `−0.08` to `−16.1`). The clean inequality `arch + pole ≥ ‖K‖`
-  that would be an unconditional proof **fails wide** — positivity is a cancellation, never a
-  floor.
-- **The band-limit is a theorem.** The prime term's norm obeys `λ_max(K) ≤ C_L < A_L`
-  (≈ ⅓ of the worst-case comb mass) — a real, unconditional buy-back of positivity.
-- **The balance is razor-thin and held by multiplicativity.** `λ_min(Q)` is positive but
-  collapses toward `0` with resolution; the PSD window of the prime weight pinches to
-  `[1−1.8e-13, 1+1.8e-15]`; and **every** mutation of the arithmetic (fake impulse at `n=6`,
-  `|α_2|≠1`, scaled weights, shifted `log 2`) drives it negative. Multiplicativity holds the
-  sign — *at zero*. A knife-edge poised at zero **is** RH-equivalence.
+- **The "archimedean floor" does not exist.** $P$ alone, with no primes, is *indefinite* at
+  every support ($\lambda_{\min}(P)$ from $-0.08$ to $-16.1$). The clean inequality
+  $\text{arch} + \text{pole} \ge \lVert K\rVert$ that would be an unconditional proof **fails
+  wide** — positivity is a cancellation, never a floor.
+- **The band-limit is a theorem.** The prime term's norm obeys $\lambda_{\max}(K) \le C_L < A_L$
+  ($\approx \tfrac13$ of the worst-case comb mass) — a real, unconditional buy-back of positivity.
+- **The balance is razor-thin and held by multiplicativity.** $\lambda_{\min}(Q)$ is positive but
+  collapses toward $0$ with resolution; the PSD window of the prime weight pinches to
+  $[1-1.8\times10^{-13},\, 1+1.8\times10^{-15}]$; and **every** mutation of the arithmetic (fake
+  impulse at $n=6$, $\lvert\alpha_2\rvert \ne 1$, scaled weights, shifted $\log 2$) drives it
+  negative. Multiplicativity holds the sign — *at zero*. A knife-edge poised at zero **is**
+  RH-equivalence.
 - **The off-line zero is the negative direction, and multiplicativity is the separator.** On
   the non-multiplicative control Davenport–Heilbronn, the form first goes indefinite at support
-  `L* ≈ 4`, and the entire negative eigenvalue is its off-line zero at height `85.699`; move
-  only that zero on-line and the form is positive again. The matched multiplicative partner
-  `L(s,χ)` — same conductor, Γ-factor, and functional-equation shape, differing *only* by
-  carrying an Euler product — stays positive across the whole range where the twin cracks. One
+  $L^* \approx 4$, and the entire negative eigenvalue is its off-line zero at height $85.699$;
+  move only that zero on-line and the form is positive again. The matched multiplicative partner
+  $L(s,\chi)$ — same conductor, $\Gamma$-factor, and functional-equation shape, differing *only*
+  by carrying an Euler product — stays positive across the whole range where the twin cracks. One
   variable toggled, opposite outcome: positivity's sign tracks zero-location exactly, and
   multiplicativity is the thing that holds it. (That partner's positivity is itself
   GRH-equivalent — this measures the separator, not a brick.)
@@ -105,7 +108,7 @@ There is **no unconditional brick**. Full numbers, the research arc, and the two
 
 1. **[wiki/README.md](wiki/README.md)** — the ground-up framing (read in order).
 2. **[CRUCIFIXION_LEDGER.md](CRUCIFIXION_LEDGER.md)** — the live, round-by-round narrative map
-   (currently through Round 051).
+   (currently through Round 054).
 3. **[CLAIM_LEDGER.md](CLAIM_LEDGER.md)** — every claim with status (Rows C01–C111). The spine
    of the repo.
 4. **[CONSOLIDATED_RH_STATE.md](CONSOLIDATED_RH_STATE.md)** — cross-repo consolidation, graded
@@ -122,8 +125,8 @@ There is **no unconditional brick**. Full numbers, the research arc, and the two
 - Every claim lands in a ledger with an explicit status (Verified / Demonstrated / Observed /
   Conjectured / UNVERIFIED / Refuted) and a reproduction pointer. Labels never silently
   upgrade; numerics never become proofs by accumulation.
-- Every candidate faces **hostile controls** (delete/insert a prime, wrong `log p`, wrong
-  half-density `p^{−1/2}`, perturb the archimedean boundary, fake arithmetic). A construction
+- Every candidate faces **hostile controls** (delete/insert a prime, wrong $\log p$, wrong
+  half-density $p^{-1/2}$, perturb the archimedean boundary, fake arithmetic). A construction
   that survives fake arithmetic is RH-inert.
 - **No zeta-zero ordinates are ever used as construction input** — only as after-the-fact
   diagnostics.
@@ -136,15 +139,17 @@ There is **no unconditional brick**. Full numbers, the research arc, and the two
 
 ## One-paragraph conceptual summary
 
-Primality, von Mangoldt, `ζ′/ζ`, and the completion to `ξ′/ξ` arise cleanly from an arithmetic
-*process*: `SUCC` boots the additive worldline, `●` rescales the successor step into
-multiplication, prewired prime rays `|1⟩→|p⟩→|p²⟩→…` meet that worldline exactly at prime
-powers, and the archimedean place completes the picture with a self-dual Gaussian atom whose
-scaling-Mellin transform is `Γ_ℝ`. RH is the positivity of the completed Weil form built from
-this data. The local pieces are exactly positive and the finite-window multiplicative
-semigroup supplies a genuine, unconditional buy-back of positivity (`C_L < A_L`) — but the
-archimedean part is itself indefinite, the surviving balance is razor-thin and held exactly at
-the arithmetically-correct point, and that balance is provably RH-equivalent. The one thing
-missing — and the thing every lineage here has independently cornered — is the **exact global
-coercivity that couples the finite prime places to the archimedean place and stays positive**.
-It has a precise name and measured pieces; it does not yet have a proof.
+Primality, von Mangoldt, $\zeta'/\zeta$, and the completion to $\xi'/\xi$ arise cleanly from an
+arithmetic *process*: $\mathrm{SUCC}$ boots the additive worldline, $\bullet$ rescales the
+successor step into multiplication, prewired prime rays
+$\lvert 1\rangle \to \lvert p\rangle \to \lvert p^2\rangle \to \cdots$ meet that worldline
+exactly at prime powers, and the archimedean place completes the picture with a self-dual
+Gaussian atom whose scaling-Mellin transform is $\Gamma_{\mathbb{R}}$. RH is the positivity of
+the completed Weil form built from this data. The local pieces are exactly positive and the
+finite-window multiplicative semigroup supplies a genuine, unconditional buy-back of positivity
+($C_L < A_L$) — but the archimedean part is itself indefinite, the surviving balance is
+razor-thin and held exactly at the arithmetically-correct point, and that balance is provably
+RH-equivalent. The one thing missing — and the thing every lineage here has independently
+cornered — is the **exact global coercivity that couples the finite prime places to the
+archimedean place and stays positive**. It has a precise name and measured pieces; it does not
+yet have a proof.

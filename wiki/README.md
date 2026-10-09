@@ -11,11 +11,11 @@ Read in order for the full arc, or jump to what you need.
 ### The frame
 
 1. **[The successor frame](01-the-successor-frame.md)** — the generative idea from first
-   principles: successor (`SUCC`), multiplication as rescaling the successor step (the `●`
-   operator), prime powers as ray–worldline intersections, the finite and archimedean places,
-   and how the archimedean Γ-factor is built from the frame with no zeta.
+   principles: successor ($\mathrm{SUCC}$), multiplication as rescaling the successor step (the
+   $\bullet$ operator), prime powers as ray–worldline intersections, the finite and archimedean
+   places, and how the archimedean $\Gamma$-factor is built from the frame with no zeta.
 2. **[The RH-equivalent target](02-the-rh-equivalent-target.md)** — the completed zeta, Weil's
-   explicit formula, Weil positivity ⟺ RH, the Suzuki / `ξ′/ξ` / passivity / de Branges
+   explicit formula, Weil positivity ⟺ RH, the Suzuki / $\xi'/\xi$ / passivity / de Branges
    reformulations, the free half above `Re s = 1`, and the prime-free positivity window.
 3. **[The Diophantine & semigroup frame](03-the-diophantine-semigroup-frame.md)** — why the
    prime frequencies `{log p}` are the real content, phase alignment and the "wells," the

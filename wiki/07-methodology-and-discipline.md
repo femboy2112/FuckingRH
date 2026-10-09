@@ -25,7 +25,7 @@ to manufacture a verdict. Errors (citation slips, over-claims, mis-named mechani
 publicly in the ledger. Three from recent rounds, kept visible as tombstones:
 
 - a Connes–Consani mislabel ("Theorem 7.1 / archimedean place" → actually **Theorem 1 /
-  prime-free window `(½,2)`**), caught and corrected against the paper;
+  prime-free window $(\tfrac12,2)$**), caught and corrected against the paper;
 - a literature author error in the repo (an arXiv preprint credited to the wrong name), verified
   against the arXiv page and fixed;
 - a mis-named mechanism (the symbol's well-compensation called "the functional equation" — it is
@@ -55,8 +55,8 @@ A construction only has RH content if it **depends on the real arithmetic**. So 
 run against deliberately corrupted inputs:
 
 - delete or insert a prime;
-- use the wrong charge `log p` (or a random period in its place);
-- use the wrong half-density `p^{-1/2}`;
+- use the wrong charge $\log p$ (or a random period in its place);
+- use the wrong half-density $p^{-1/2}$;
 - remove or perturb the archimedean boundary term;
 - replace the primes with a fake, non-multiplicative set.
 
@@ -72,21 +72,21 @@ Known attractive dead ends that failed these controls are preserved, not hidden
 ## 7.4 The no-zero-input rule
 
 **Zeta-zero ordinates are never used as construction input** — only as after-the-fact
-diagnostics. A construction that reads the zeros to build its positivity has proved nothing (it
-has assumed the answer). This is why, in the calibrated instrument, the zero side is used *only* to
-confirm the explicit formula balances (`M_full ≡ M_zeros`, B1); the arithmetic side — primes plus
-archimedean, no zeros — is the object under study. The symbol face of
-[page 4](04-the-symbol-and-the-wells.md) is this rule taken to its limit: the symbol `Ψ_L` is
+diagnostics. A construction that reads the zeros to build its positivity has proved nothing (it has
+assumed the answer). This is why, in the calibrated instrument, the zero side is used *only* to
+confirm the explicit formula balances ($M_{\mathrm{full}} \equiv M_{\mathrm{zeros}}$, B1); the
+arithmetic side — primes plus archimedean, no zeros — is the object under study. The symbol face of
+[page 4](04-the-symbol-and-the-wells.md) is this rule taken to its limit: the symbol $\Psi_L$ is
 built with no zeros at all, and the content of [§4.3](04-the-symbol-and-the-wells.md) is precisely
 the proof that it *nonetheless* equals the (zero-defined) low-passed comb.
 
 ## 7.5 Calibrated instruments (the Instrument rule)
 
-Code that measures mathematics is a scientific instrument, and an instrument is believed only
-after it recovers a **known** answer:
+Code that measures mathematics is a scientific instrument, and an instrument is believed only after
+it recovers a **known** answer:
 
-- A summation / quadrature routine must reproduce a known value (e.g. `ζ(2) = π²/6`, or a known
-  explicit-formula balance) before its novel outputs are trusted.
+- A summation / quadrature routine must reproduce a known value (e.g. $\zeta(2) = \pi^2/6$, or a
+  known explicit-formula balance) before its novel outputs are trusted.
 - Load-bearing values are recomputed by a **second independent implementation** (different library,
   algorithm, or precision).
 - One variable changes at a time; seeds, working precision, and exact outputs are quoted, not
@@ -100,16 +100,16 @@ rule strictly. Two gates worth naming as examples:
   explicit formula balances to 60 digits — which is what licenses reading the eigenvalues as
   evidence about the *form* (while never making the zero-side check a test of RH itself).
 - The matched-partner and symbol work (groups C, D) is gated on the exposed object reproducing the
-  already-calibrated `M_full` eigenvalue before any new reading counts — and the diggability model
-  is calibrated on a *known* off-line zero (Davenport–Heilbronn's `85.699`) before it is pointed at
-  `ζ`. An instrument is calibrated on the known answer first, always.
+  already-calibrated $M_{\mathrm{full}}$ eigenvalue before any new reading counts — and the
+  diggability model is calibrated on a *known* off-line zero (Davenport–Heilbronn's $85.699$) before
+  it is pointed at $\zeta$. An instrument is calibrated on the known answer first, always.
 
 ## 7.6 Reproduction
 
-Scripts under `scripts/` reproduce the exact identities and the measured no-gos (`numpy`,
-`mpmath`, `sympy`, `scipy`; see `requirements.txt`). The claim spine is `CLAIM_LEDGER.md` (rows
-with status + reproduction pointer); the live narrative map is `CRUCIFIXION_LEDGER.md`; the
-cross-repo consolidation is `CONSOLIDATED_RH_STATE.md`.
+Scripts under `scripts/` reproduce the exact identities and the measured no-gos (`numpy`, `mpmath`,
+`sympy`, `scipy`; see `requirements.txt`). The claim spine is `CLAIM_LEDGER.md` (rows with status +
+reproduction pointer); the live narrative map is `CRUCIFIXION_LEDGER.md`; the cross-repo
+consolidation is `CONSOLIDATED_RH_STATE.md`.
 
 ---
 
