@@ -48,10 +48,15 @@ Read in order for the full arc, or jump to what you need.
    X → what you get → the wall," de-duplicated and grouped by the six lenses, with the provenance
    caveat (one lineage, not independent bearings) and the verdict (zero genuine non-circular content).
 
+9. **[Riemann sphere of crucifixions](../research/2026-10-09/RIEMANN_SPHERE_CRUCIFIXION_ATLAS.md)** —
+   a literal critical-line equator via \(w=1-1/s\), Li angular correlation / CND Grams,
+   exact synthetic finite-information no-gos, and a provenance-tagged obstruction atlas.
+   **This is a new map and test suite, not an RH proof.**
+
 ---
 
 > **One-line status.** Every piece of the frame that could be measured has been measured, and ζ
-> has been cornered from six independent sides; all of it is *RH-equivalent*; there is no
+> has been mapped through six overlapping lenses (not independent witnesses); all of it is *RH-equivalent*; there is no
 > unconditional, non-circular brick. The value of the program is a precisely-shaped target — now
 > seen from every vantage — and a well-mapped graveyard of what does not work, not a proof.
 >
