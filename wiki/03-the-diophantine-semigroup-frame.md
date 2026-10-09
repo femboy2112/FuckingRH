@@ -59,7 +59,14 @@ band-limit**, "positive for free, primes erode it, never crossing" becomes "posi
 up to support `L` because the wells are too narrow for any support-`L` function to resolve —
 until `L` grows enough to resolve one." For `ζ` that never happens iff RH; for a
 non-multiplicative control it happens exactly when its off-line zero comes into resolution
-(see the crossover on [page 4](04-state-of-the-program.md)).
+(see the crossover on [page 4](04-the-symbol-and-the-wells.md)).
+
+How deep the wells actually get — and therefore how large `L` must be to resolve one — turns out
+to be a **large-deviation** question about the comb, not a question about how tightly the prime
+phases can align. Partial alignment of a constant fraction of the comb's weight is enough to make
+a deep well, and the first height at which that happens is set by *measure*, not by Diophantine
+gaps. This is developed, with its consequences for what is unconditionally provable, in
+[§4.6](04-the-symbol-and-the-wells.md).
 
 ## 3.4 The finite-window multiplicative semigroup
 
@@ -114,11 +121,11 @@ the prime term that is strictly smaller than the worst-case pointwise comb mass 
   The `C_L` reduction is a crude operator-norm bound, not the tight cancellation RH needs. The
   missing object, now sharply named, is a **joint coercivity** coupling the prime semigroup's
   positive energy to the archimedean term with the correct boundary flux — and, as the
-  measurements on [page 4](04-state-of-the-program.md) show, that coercivity is exactly
+  measurements on [page 6](06-state-of-the-program.md) show, that coercivity is exactly
   RH-equivalent.
 
 ---
 
-**Next:** [State of the program →](04-state-of-the-program.md) — what the calibrated
-numerical instrument actually measured, and why it confirms the geometry while leaving the
-theorem untouched.
+**Next:** [The symbol face and the wells →](04-the-symbol-and-the-wells.md) — the band-limited
+symbol as an explicit, zero-free function, the exact sense in which it is the low-passed zero
+comb, and the diggability of its wells.

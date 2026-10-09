@@ -27,7 +27,9 @@ not imply RH.** The Davenport–Heilbronn function has a functional equation of 
 and a Dirichlet series, yet has zeros *off* the line. What `ξ` has and Davenport–Heilbronn
 lacks is the **Euler product** (multiplicativity). Any route to RH must use multiplicativity
 somewhere; symmetry is not enough. (This is made quantitative on
-[page 4](04-state-of-the-program.md).)
+[page 4, §4.5](04-the-symbol-and-the-wells.md): a matched pair — Davenport–Heilbronn and a
+genuine `L(s, χ)` sharing conductor, Γ-factor and functional equation, differing *only* by the
+Euler product — measurably separates into an indefinite form and a positive one.)
 
 ## 2.2 Weil's explicit formula: zeros ↔ primes
 
@@ -90,8 +92,18 @@ Several exact restatements are used interchangeably; each repackages the same po
   RH  ⟺  Re{ ξ(s) / ξ(s+1) } ≥ 0 on H_{1/2}.
   ```
 
+- **de Branges spaces (Lagarias; Suzuki).** Under RH the Weil-form Hilbert space is a de Branges
+  space, and `E_h(z) = ξ(½ + h − iz)` is a de Branges structure function for every `h ≠ 0` iff
+  RH. This is the natural "canonical system / string" home for the positivity — but the single-
+  space version of the de Branges route is **known to fail** for `ζ` and for `L(s, χ₋₄)`
+  (Conrey–Li), which is exactly why this program's live operator seam is a *second-jet, cross-
+  place* coupling rather than a single-space contraction ([§5.4](05-what-is-zeta-here.md),
+  [§6.4](06-state-of-the-program.md)).
+
 These are **exact reformulations, not progress.** Moving between them reshapes the target; it
-never reaches it.
+never reaches it. The variational form of the same object (Bombieri's Problems A/B — minimize
+`Q(v)/‖v‖²` over a test space) is in the same boat: a minimizer exists, but bounding it below zero
+*is* RH.
 
 ## 2.5 The free half, and the prime-free window
 
@@ -114,7 +126,7 @@ Two unconditional facts fix exactly how much is "for free" and how much is RH.
   > 2026-10-08 against the paper: it is **Theorem 1**, and it is the **prime-free support
   > window `(½,2)`**, not an "archimedean place" statement. The error and its correction are
   > logged (this is the kind of citation slip the methodology is built to catch — see
-  > [page 5](05-methodology-and-discipline.md)).
+  > [page 7](07-methodology-and-discipline.md)).
 
 The gap between "free above `Re s > 1`" and "known on `(½, 2)`" and "RH" is where every
 construction in this repo lives and dies.

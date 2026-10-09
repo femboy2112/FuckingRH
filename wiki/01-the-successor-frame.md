@@ -100,7 +100,8 @@ bookkeeping**: you walk the finite places generating real local data, and the ar
 place is the limit you reach by letting the steps become infinitesimal and the atoms
 arbitrarily large — the frame where "I can see everything but I can't zoom in." Making that
 transition *coherent while preserving positivity* is, it turns out, exactly the RH-hard step
-(see [page 4](04-state-of-the-program.md)).
+(see [page 6](06-state-of-the-program.md), and the dynamical reading of ζ in
+[§5.1](05-what-is-zeta-here.md)).
 
 ## 1.5 The archimedean factor, built from the frame (no zeta)
 
@@ -125,6 +126,14 @@ atom.** The trivial zeros of `ζ` are precisely the poles of this Γ-bulk; they 
 the completion and carry no RH content (see
 [page 2](02-the-rh-equivalent-target.md)).
 
+The *self-duality* is not decoration. `e^{-πx²}` is the unique fixed point of the Fourier
+transform, so it is the archimedean analogue of the "unramified" local vector at a finite place
+(the indicator `1_{ℤ_p}`, also its own Fourier transform). Both are the natural neutral element
+of their place, and the product formula ([§1.4](#14-two-kinds-of-place-the-grain-and-the-whole))
+is what binds the neutral choices across all places into one object. This is why the archimedean
+factor is *forced*, not fitted — and why the program treats the archimedean place as a genuine
+partner of the primes rather than a normalization nuisance ([§5.2](05-what-is-zeta-here.md)).
+
 ## 1.6 "Stage" versus the thing we must prove
 
 A piece of vocabulary used throughout the ledger. Call *the stage* everything you can
@@ -139,7 +148,7 @@ hitting an event." Concretely, this cashes out as the demand that a construction
 primes, the real `log p`, the real half-density) and *break* when you feed it fake
 arithmetic. A construction that is happy on the stage alone — that survives fake primes — is,
 by definition, RH-inert. This is the origin of the [hostile-control
-discipline](05-methodology-and-discipline.md).
+discipline](07-methodology-and-discipline.md).
 
 ---
 

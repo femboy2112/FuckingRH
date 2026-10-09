@@ -21,17 +21,24 @@ The full account of how this program thinks about the problem lives in the
    operator), prime powers as ray–worldline intersections, the finite vs. archimedean places,
    and the archimedean Γ-factor built from the frame with no zeta.
 2. **[The RH-equivalent target](wiki/02-the-rh-equivalent-target.md)** — the completed zeta,
-   Weil's explicit formula, Weil positivity ⟺ RH, the Suzuki and `ξ′/ξ` reformulations, the
-   free half above `Re s = 1`, and the prime-free positivity window.
+   Weil's explicit formula, Weil positivity ⟺ RH, the Suzuki / `ξ′/ξ` / passivity / de Branges
+   reformulations, the free half above `Re s = 1`, and the prime-free positivity window.
 3. **[The Diophantine & semigroup frame](wiki/03-the-diophantine-semigroup-frame.md)** — why
    the prime frequencies `{log p}` are the real content, phase alignment and the negative
    "wells," the band-limit, and the finite-window multiplicative semigroup with its
    nonalignment theorem.
-4. **[State of the program](wiki/04-state-of-the-program.md)** — what the calibrated
-   instrument measured: the joint-coercivity target, the dead brick, the nonalignment bound,
-   the razor-thin balance held by multiplicativity, the Davenport–Heilbronn crossover, the
-   research arc, and the open seams.
-5. **[Methodology & discipline](wiki/05-methodology-and-discipline.md)** — the crucifixion
+4. **[The symbol face and the wells](wiki/04-the-symbol-and-the-wells.md)** — the band-limited
+   Weil symbol as an explicit, zero-free function; the exact sense in which it *is* the
+   low-passed zero comb; diggability of the wells; the Davenport–Heilbronn crossover and the
+   matched multiplicative partner; and why no unconditional tool reaches the well regime.
+5. **[What ζ is, from every side](wiki/05-what-is-zeta-here.md)** — the same object read through
+   all six lenses at once, the dictionary between their "missing theorems," and why they are one
+   object and one wall.
+6. **[State of the program](wiki/06-state-of-the-program.md)** — the living results board: what
+   the calibrated instrument measured (dead brick, nonalignment, razor-thin balance held by
+   multiplicativity), the Davenport–Heilbronn crossover and matched partner, the symbol-face
+   map, the research arc, and the open seams.
+7. **[Methodology & discipline](wiki/07-methodology-and-discipline.md)** — the crucifixion
    method, epistemic labels, hostile controls, the no-zero-input rule, and calibrated
    instruments.
 
@@ -90,7 +97,7 @@ On the finite-window test space the completed Weil form splits as `Q = P − K` 
 
 Every feature the frame predicted is true and measured — and all of it is RH-equivalent.
 There is **no unconditional brick**. Full numbers, the research arc, and the two open seams
-(the joint coercivity, and the Round-006 unit-basepoint place-coupling / UBRPCT): [wiki/04](wiki/04-state-of-the-program.md).
+(the joint coercivity, and the Round-006 unit-basepoint place-coupling / UBRPCT): [wiki/06](wiki/06-state-of-the-program.md).
 
 ---
 
