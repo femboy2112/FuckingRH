@@ -6,6 +6,15 @@ what that word buys); structural identities are **[derived]**; nothing here is a
 headline is a confirmed **null**: the target is exactly RH-equivalent, measured from every side,
 and no unconditional brick has been found. New results land in [§6.2](#62-the-results-board).*
 
+**2026-10-09 update:** the
+[arithmetic connection and Poisson completion](../research/aletheia_2026-10-09/arithmetic_poisson/README.md)
+now gives exact source and mutation identities, a proved finite $L^2$ completion, and closed
+arithmetic operators retaining the logarithmic moments. Its runnable checks pass; the full Weil sign remains open.
+The older Round 049/051/058 numerical entries below are repository-reported scratch-only runs,
+not measurements rerun for this update. The
+[frontier corrections](../research/aletheia_2026-10-09/arithmetic_poisson/FRONTIER_CORRECTIONS.md)
+qualify the claims about multiplicativity, factorization and the real zero comb.
+
 ---
 
 ## 6.1 The target, named precisely
@@ -50,22 +59,22 @@ group E and graduates upward when it clears the gate.**
 | B2 | **The "arch dominates primes" brick is dead.** $P$ with no primes is *indefinite*: $\lambda_{\min}(P) = -0.08 \ldots -16.1$ for $L_t = 0.4 \ldots 3.0$. No positive archimedean floor exists. | **Observed** | R49 |
 | B3 | **Nonalignment over-delivers.** $\lambda_{\max}(K) \le C_L < A_L$, in fact $\approx \tfrac13$ of the worst-case comb mass. The band-limit genuinely suppresses the prime term. | **Observed** | R49 |
 | B4 | **The full form is positive but razor-thin.** $\lambda_{\min}(Q) > 0$, collapsing $\approx 10^{-11} \to 10^{-22}$ with resolution; the PSD band of prime-weight pinches to $[1-1.8\times10^{-13},\, 1+1.8\times10^{-15}]$. A knife-edge, not a margin. | **Observed** | R49 |
-| B5 | **Multiplicativity holds the knife-edge.** Every arithmetic mutation (fake impulse at $n=6$, $\lvert\alpha_2\rvert \ne 1$, scaled weights, nudged $\log 2$) drives $\lambda_{\min}(Q)$ clearly negative, $\approx$ linearly. | **Observed** | R49 |
+| B5 | The tested arithmetic mutations drive $\lambda_{\min}(Q)$ negative in the reported instrument. They test different compatibilities; nonunit local amplitudes can preserve complete multiplicativity. Finite observations do not prove a unique positive parameter point. | **Observed**, interpretation corrected | R49; 2026-10-09 audit |
 
 ### C — The crossover and the separator (two-sided control)
 
 | # | Result | Status | Source |
 |---|---|---|---|
 | C1 | **The off-line zero is the negative direction.** Davenport–Heilbronn first goes indefinite at $L^* \approx 4$; the whole negative eigenvalue is its single off-line zero at height $85.699$; moving only it on-line restores positivity. | **Observed** | R49 |
-| C2 | **The matched multiplicative partner stays positive.** $L(s,\chi)$ (same conductor, $\Gamma$-factor and FE as D–H, differing only by an Euler product) is PSD across $L = 0.4 \ldots 9$, where its twin cracks. | **Observed** | R51 |
-| C3 | $\implies$ **Multiplicativity is the operative separator** (PSD vs indefinite) with everything else matched. Necessary, two-sided (B5 + C2). *Caveat:* $L(s,\chi)$ PSD is itself GRH-equivalent — a separator, not a brick. | **Observed** / **[Inf]** | R51 |
+| C2 | **The matched multiplicative partner stays positive.** $L(s,\chi)$ has matched conductor and $\Gamma$-factor with D–H and a different, multiplicative coefficient sequence. It is reported PSD across $L = 0.4 \ldots 9$, where D–H cracks. | **Observed** | R51 |
+| C3 | The comparison motivates an arithmetic compatibility mechanism. It does not prove multiplicativity sufficient for the sign. Positivity of the character form on every admissible test would be GRH-equivalent. | **Inference**, narrowed | R51; 2026-10-09 audit |
 
 ### D — The symbol face (the zero-free vantage)
 
 | # | Result | Status | Source |
 |---|---|---|---|
-| D1 | On the positive band-limited cone, $\Psi_L$ **is** the sinc-low-passed zero comb; its wells are Gibbs side-lobes. Their non-diggability $=$ positivity of the zero measure $=$ RH; the functional equation buys only evenness. | **[derived]** | R53 |
-| D2 | For $\zeta$/real characters the symbol is even and the extremal direction is real; the **complex** near-degeneracy is a *complex-character* feature ($L(s,\chi)$) only. | **[derived]** | R53 |
+| D1 | The full arithmetic form equals the zero evaluation functional on entire autocorrelation tests. A positive real zero measure requires RH; a literal sinc representation also needs a projection prescription. | **Derived**, earlier pointwise claim corrected | R53; wiki/04 §4.3 |
+| D2 | For $\zeta$/real characters the form splits into real/imaginary and even/odd sectors. Evenness does not justify omitting odd tests. Complex characters require the full complex test space. | **Derived**, parity claim corrected | wiki/04 §4.4 |
 | D3 | Well depth is a **large-deviation** question, not a Diophantine-gap one; Baker/linear-forms is the wrong tool (phase-forms are logs of rationals; the elementary bound beats Baker). | **[derived]** + cited | R54 |
 | D4 | The wells sit in the **Vinogradov–Korobov blind spot** ($\log N \sim \log\log t$); no unconditional exponential-sum tool reaches them — a structural coverage gap, not a weak method. | **[derived]** + cited | R54 |
 | D5 | The sharp Carneiro–Chandee–Milinovich extremal-majorant bounds are **RH-conditional** (RH needed for *validity*, not just sharpness). Sharp *unconditional* bounds are the weaker $O(\log T)$ shape. | cited (primary) | R53 |
@@ -82,7 +91,7 @@ group E and graduates upward when it clears the gate.**
 
 ## 6.3 The research arc
 
-The program ran as several independent agent lineages that converged on one obstruction.
+The program ran as several related agent lineages that reached the same obstruction.
 
 - **astra** — the CND / infinite-divisibility / transport attack. Finite-event rigidity; the
   geometric-prime Gaussian residual is not a characteristic function; prime-transport martingale
@@ -92,8 +101,9 @@ The program ran as several independent agent lineages that converged on one obst
   kernel's strict positive-definiteness (the knife-edge as an asymptotically shrinking window), and
   the **unit-basepoint place-character seam** ([§6.4](#64-the-open-seams)).
   (`research/aletheia_2026-10-05/`, `_2026-10-06/`.)
-- **claude** — the operator-algebra / passivity attack. The meta-theorem (commutative-
-  multiplicative ⇒ factorized ⇒ RH-inert); exact local operator squares; the self-sieving carry
+- **claude** — the operator-algebra / passivity attack. Independent-prime factorizations
+  (the universal commutative-to-factorized extrapolation is refuted in the new checkpoint);
+  exact local operator squares; the self-sieving carry
   machine (von Mangoldt as the carré-du-champ of carry curvature); and Round 006's clean positive
   theorem, the **Schur–Vitali limit** (`C104`): a non-circular reduction of RH to one hypothesis —
   a finite family contractive on all of $H_{1/2}$ and converging to $\mathrm{Cayley}[\xi'/\xi]$
@@ -105,7 +115,7 @@ construction, the Diophantine reframe, the finite-window semigroup of
 [page 3](03-the-diophantine-semigroup-frame.md), the calibrated coupled-form measurements of
 [§6.2](#62-the-results-board), the matched-partner positive control, and the **symbol / well-
 geometry** vantage of [page 4](04-the-symbol-and-the-wells.md) — including the identification of
-the wells as the low-passed zero comb and the mapping of *why* no unconditional tool reaches them.
+the corrected test-functional interpretation and a map of the limitations of the methods tested.
 
 ## 6.4 The open seams
 
@@ -139,8 +149,9 @@ to work; both are RH-hard and are kept precisely because they are *not* obviousl
 > assume zero locations or Weil positivity. Any result with a load-bearing "if … then RH" is a
 > relocated wall.
 
-**Score to date: zero constructions pass.** The honest state is a precisely-shaped target, mapped
-from six sides, and a well-mapped graveyard — not a theorem.
+**No construction proves full Weil positivity.** The new source and finite-completion theorems
+are unconditional construction results, with their exact scope recorded separately. They do
+not establish the global sign or turn the earlier compatibility gates into a proof of RH.
 
 ---
 

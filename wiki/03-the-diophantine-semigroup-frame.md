@@ -7,7 +7,7 @@ RH-equivalent target without yet discharging it.*
 
 ---
 
-## 3.1 The real content of multiplicativity: independent frequencies
+## 3.1 Prime-frequency independence and coefficient multiplicativity
 
 Take logarithms of the prime powers. The explicit formula's arithmetic side is a sum of
 oscillations at the **prime frequencies** $\{\log p\}$. The decisive structural fact:
@@ -17,9 +17,15 @@ oscillations at the **prime frequencies** $\{\log p\}$. The decisive structural 
 
 This is just unique factorization written in the language of frequencies: a rational relation
 $\sum a_p \log p = 0$ would say $\prod p^{a_p} = 1$ with not-all-zero integer exponents, which
-unique factorization forbids. So *multiplicativity $=$ $\mathbb{Q}$-independence of the prime
-frequencies.* This is the frequency-domain form of the Euler product, and it is exactly what
-Davenport–Heilbronn lacks.
+unique factorization forbids. This is a fact about the integer frequencies. It is not equivalent
+to multiplicativity of an arbitrary Dirichlet coefficient sequence: Davenport–Heilbronn uses
+the same integer logarithms as a character $L$-function.
+
+The coefficient discriminator is the connected source $b_a=(a\log)*a^{-1}$. Prime-power
+support of $b_a$ is equivalent to ordinary coefficient multiplicativity. For a character,
+$b_\chi=\chi\Lambda$; the normalized Davenport–Heilbronn sequence instead has
+$b_D(6)=(1+\kappa^2)\log6\ne0$. These are exact identities from the
+[integer incidence connection](../research/aletheia_2026-10-09/arithmetic_poisson/CONSTRUCTION.md#2-the-integer-incidence-connection).
 
 ## 3.2 The phases align — this is a theorem, not a hope
 
@@ -35,16 +41,22 @@ align; that is forced. The Weil "symbol"
 
 $$\Psi_L(t) = [\text{archimedean background}] - [\text{prime comb}](t)$$
 
-therefore has genuine **negative wells** wherever the phases line up. The wells are real, and
-multiplicativity (via $\mathbb{Q}$-independence) sets their positions and density.
+has a large prime-comb contribution where the phases line up. A negative well occurs only
+where that contribution also exceeds the archimedean background. For a fixed finite comb the
+background grows like $\log|t|$, whereas the comb is bounded; alignment alone cannot force
+negative wells at arbitrarily large height.
 
 ## 3.3 Why the wells are not (obviously) exploitable: the band-limit
 
 A negative *pointwise* value of the symbol $\Psi_L(t)$ is **not** the same as a negative
 *direction* of the quadratic form. The Weil form is
 
-$$Q(f) = \int \lvert \hat f(t)\rvert^2\, \Psi_L(t)\, dt, \qquad \text{with } f \text{ supported in }
+$$Q(f) = P_{\mathrm{pole}}(f)+\frac1{2\pi}\int \lvert \hat f(t)\rvert^2\, \Psi_L(t)\, dt,
+\qquad \text{with } f \text{ supported in }
 [-L, L].$$
+
+The pole term is present for $\zeta$ and absent for primitive nontrivial characters. It is part
+of the full sign problem and cannot be dropped in a general well comparison.
 
 If $f$ is supported in a finite window of length $2L$, then $\hat f$ is **band-limited**: by the
 uncertainty principle it cannot be concentrated inside a narrow well. It must average the well
@@ -122,5 +134,5 @@ $\approx 45\%$ across the tested range). This is a genuine, unconditional buy-ba
 ---
 
 **Next:** [The symbol face and the wells →](04-the-symbol-and-the-wells.md) — the band-limited
-symbol as an explicit, zero-free function, the exact sense in which it is the low-passed zero
-comb, and the diggability of its wells.
+symbol as an explicit, zero-free function, its exact action on entire tests and the qualified
+real-zero-measure interpretation, and the diggability of its wells.

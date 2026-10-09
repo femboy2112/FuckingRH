@@ -1,5 +1,13 @@
 # CONSOLIDATED RH STATE — cross-repo, 2026-10-07
 
+> **2026-10-09 construction and audit update:** the
+> [arithmetic connection / Poisson checkpoint](research/aletheia_2026-10-09/arithmetic_poisson/README.md)
+> proves source identities and a finite $L^2$ completion without zero data. It leaves full
+> Weil positivity open. Its [frontier corrections](research/aletheia_2026-10-09/arithmetic_poisson/FRONTIER_CORRECTIONS.md)
+> supersede the universal commutativity-to-factorization claim and the interpretation that
+> every listed mutation destroys multiplicativity. This consolidation remains a historical
+> source report; it is not a theorem excluding all future recombinations or approximation proofs.
+
 **What this is.** A read-only consolidation of *every* RH-relevant fact across all math repos on this
 machine, graded by epistemic status, deduped by provenance. It answers one question: **what do we
 actually HAVE toward a proof of the Riemann Hypothesis, and what is missing?** It supersedes

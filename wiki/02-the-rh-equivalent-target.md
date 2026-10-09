@@ -27,8 +27,9 @@ a Dirichlet series, yet has zeros *off* the line. What $\xi$ has and Davenport�
 the **Euler product** (multiplicativity). Any route to RH must use multiplicativity somewhere;
 symmetry is not enough. (This is made quantitative on
 [page 4, §4.5](04-the-symbol-and-the-wells.md): a matched pair — Davenport–Heilbronn and a
-genuine $L(s,\chi)$ sharing conductor, $\Gamma$-factor and functional equation, differing *only*
-by the Euler product — measurably separates into an indefinite form and a positive one.)
+genuine $L(s,\chi)$ with matched conductor and $\Gamma$-factor — measurably separates into an
+indefinite form and a positive finite form. This compares different coefficient systems;
+it does not prove a sufficient sign theorem from multiplicativity.)
 
 ## 2.2 Weil's explicit formula: zeros ↔ primes
 
@@ -47,11 +48,16 @@ It is the exact bridge between the dynamics (primes) and the spectrum (zeros).
 
 ## 2.3 Weil positivity ⟺ RH
 
-Apply the explicit formula to a self-correlation $f = g \star \tilde g$. Define the **Weil
-functional**
+Apply the explicit formula to a self-correlation $f = g \star \tilde g$, where
+$\tilde g(u)=\overline{g(-u)}$. With $F_g(z)=\int g(u)e^{izu}\,du$, its entire transform is
+$F_g(z)\overline{F_g(\bar z)}$. The **Weil functional** is therefore
 
-$$W(g) = \sum_\rho \lvert \hat g(\gamma_\rho)\rvert^2 \qquad (\text{the zero side of }
-f = g \star \tilde g).$$
+$$W(g) = \sum_\rho F_g(\gamma_\rho)\overline{F_g(\bar\gamma_\rho)},
+\qquad \gamma_\rho=(\rho-1/2)/i.$$
+
+For nonreal ordinates this is not a sum of modulus squares. The reflected pairing is
+essential: see Lagarias, [*Li coefficients for automorphic L-functions*, §3 and Appendix A](https://www.numdam.org/item/10.5802/aif.2311.pdf),
+and the [exact synthetic sign control](../research/aletheia_2026-10-09/arithmetic_poisson/FRONTIER_CORRECTIONS.md#5-complex-ordinates-require-the-reflected-autocorrelation).
 
 Then:
 

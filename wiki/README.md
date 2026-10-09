@@ -8,6 +8,11 @@ refuted.
 
 Read in order for the full arc, or jump to what you need.
 
+**Latest construction:** [arithmetic connection and Poisson completion](../research/aletheia_2026-10-09/arithmetic_poisson/README.md)
+(2026-10-09). Exact arithmetic discrimination and finite $L^2$ completion are proved;
+the global Weil sign remains open. The linked audit corrects the inherited universal
+factorization no-go and the unconditional modulus-square / real-zero-comb formulas.
+
 ### The frame
 
 1. **[The successor frame](01-the-successor-frame.md)** — the generative idea from first
@@ -18,11 +23,11 @@ Read in order for the full arc, or jump to what you need.
    explicit formula, Weil positivity ⟺ RH, the Suzuki / $\xi'/\xi$ / passivity / de Branges
    reformulations, the free half above `Re s = 1`, and the prime-free positivity window.
 3. **[The Diophantine & semigroup frame](03-the-diophantine-semigroup-frame.md)** — why the
-   prime frequencies `{log p}` are the real content, phase alignment and the "wells," the
+   prime-frequency independence and coefficient multiplicativity, phase alignment and the "wells," the
    band-limit, and the finite-window multiplicative semigroup with its nonalignment theorem.
 4. **[The symbol face and the wells](04-the-symbol-and-the-wells.md)** — the band-limited Weil
-   symbol as an explicit, zero-free function; the exact sense in which it *is* the low-passed
-   zero comb; diggability of the wells; the Davenport–Heilbronn crossover and the matched
+   symbol as an explicit, zero-free function; its exact action on entire tests and the qualified
+   real-zero-measure interpretation; diggability of the wells; the Davenport–Heilbronn crossover and the matched
    multiplicative partner; and why no unconditional tool reaches the well regime.
 
 ### The synthesis
@@ -50,10 +55,9 @@ Read in order for the full arc, or jump to what you need.
 
 ---
 
-> **One-line status.** Every piece of the frame that could be measured has been measured, and ζ
-> has been cornered from six independent sides; all of it is *RH-equivalent*; there is no
-> unconditional, non-circular brick. The value of the program is a precisely-shaped target — now
-> seen from every vantage — and a well-mapped graveyard of what does not work, not a proof.
+> **Status.** The related research lineages supply classical equivalences, exact local and
+> construction results, finite observations, and failed candidates. The new compatible
+> arithmetic source and theta completion still lack an independently positive full Weil pairing.
 >
 > *Results land on [page 6](06-state-of-the-program.md); the round-by-round narrative is
 > `CRUCIFIXION_LEDGER.md`.*

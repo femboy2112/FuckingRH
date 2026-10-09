@@ -1,0 +1,385 @@
+{
+  "generated_at_utc": "2026-10-09T06:31:27.802164+00:00",
+  "base_commit": "265bf38dfd6af7d5820396f7e80244122a4aa235",
+  "script_sha256": "d3d4ecc16f8aa272a2ae63adc26e78c29d6e32d0485435ef73ca30a8825d2005",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "mpmath": "1.3.0",
+    "sympy": "1.14.0"
+  },
+  "construction_inputs": [
+    "integers",
+    "divisibility",
+    "logarithm",
+    "Lebesgue measure",
+    "primitive character mod 5",
+    "additive Fourier transform",
+    "Gaussian"
+  ],
+  "zero_data_used": false,
+  "claim": "Arithmetic/Poisson compatibility, a convergent finite completion, and a closed moment-retaining lattice lift; no Weil positivity proof.",
+  "exact_algebra": {
+    "coefficient_horizon": 36,
+    "zeta_connection_matches_Lambda_exactly": true,
+    "chi5_connection_matches_chi_Lambda_exactly": true,
+    "arbitrary_input_matrix_identity_exact": true,
+    "independent_finite_matrix_log_identity_exact": true,
+    "dh_b6_identity_exact": true,
+    "dh_b6_symbolic": "(1 + kappa**2) * log(6)",
+    "chi_b6_exact": "0",
+    "commuting_dilation_gram_exact": true,
+    "commuting_dilation_gram": [
+      [
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        2,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        2
+      ]
+    ],
+    "commuting_dilation_gram_eigenvalues": [
+      1,
+      2,
+      2,
+      3
+    ],
+    "synthetic_off_real_pairing": "-4*exp(-2)",
+    "incorrect_modulus_square": "4*exp(-2)",
+    "conjugation_mutation_rejected": true
+  },
+  "character_module": {
+    "working_decimal_digits": 70,
+    "kappa": "0.28407904384041229602829183239312616909108808844573758275916266616",
+    "gauss_root_phase": [
+      "0.85065080835203993218154049706301107224040140376482",
+      "0.52573111211913360602566908484787660728549793224334"
+    ],
+    "kappa_radical_vs_gauss_error": "0.0",
+    "chi_fourier_error": "7.3009219e-71",
+    "dh_fourier_error": "6.7280709e-71",
+    "chi_multiplicative_eigenline_error": "0.0",
+    "dh_multiplicative_defect_squared": "2.3358288841353514396302457564140443",
+    "dh_defect_formula_error": "0.0",
+    "dh_b6": "1.9363560766210387863359527887821654694206813870018",
+    "dh_halfdensity_b6": "0.79051405800985203300581096037705644269615067503901",
+    "theta_inversion": [
+      {
+        "region": "design",
+        "t": "0.2",
+        "chi_inversion_abs_error": "5.1226657e-71",
+        "dh_inversion_abs_error": "0.0"
+      },
+      {
+        "region": "design",
+        "t": "0.7",
+        "chi_inversion_abs_error": "4.0498228e-71",
+        "dh_inversion_abs_error": "0.0"
+      },
+      {
+        "region": "design",
+        "t": "2",
+        "chi_inversion_abs_error": "1.9243318e-71",
+        "dh_inversion_abs_error": "1.8111358e-71"
+      },
+      {
+        "region": "holdout",
+        "t": "0.37",
+        "chi_inversion_abs_error": "5.7273143e-71",
+        "dh_inversion_abs_error": "1.8111358e-71"
+      },
+      {
+        "region": "holdout",
+        "t": "1.3",
+        "chi_inversion_abs_error": "1.449616e-71",
+        "dh_inversion_abs_error": "1.8111358e-71"
+      },
+      {
+        "region": "holdout",
+        "t": "3.7",
+        "chi_inversion_abs_error": "6.8086939e-72",
+        "dh_inversion_abs_error": "9.0556791e-72"
+      }
+    ],
+    "chi_passes_compatibility": true,
+    "dh_passes_poisson_but_fails_eigenline": true,
+    "all_theta_residuals_below_1e_minus_60": true
+  },
+  "mutations": {
+    "alpha2_mutation_still_completely_multiplicative": true,
+    "alpha2_value": "1.01",
+    "alpha2_unitary_eigenvalue_norm_defect": "0.01",
+    "alpha2_fixed_completion_reflection_error_at_1p7_plus_0p31i": "0.02770242015911872836664977",
+    "clock_mutation": "ell_2 = 1.01 * log(2), entire tower",
+    "clock_still_additive_on_prime_exponents": true,
+    "clock_affine_translation_defect_exp_ell_minus_2": "0.01391110011343761766539643",
+    "half_density_mutation": "R_n f(x)=n^(-0.51) f(x/n)",
+    "half_density_squared_norm_ratio_at_2": "0.9862327044933591729073805",
+    "fake_b6_charge": "0.01",
+    "fake_b6_formal_source_defect": "b(6)=0.01 but chi(6)*Lambda(6)=0",
+    "fake_b6_multiplier": "exp((0.01/log(6))*6**(-s))",
+    "fake_b6_preserves_all_baseline_zeros_exactly": true,
+    "fake_b6_reflection_log_derivative_residual": "0.03526506834274048221350543",
+    "all_listed_mutations_detected": true,
+    "interpretation": "Compatibility defects, not a computed Weil sign or an RH proof."
+  },
+  "theta_completion": {
+    "primitive_derivative_exact": true,
+    "pole_annihilating_differential_identity_exact": true,
+    "raw_divergence_slope_exact": "3/(128*sqrt(2)*pi**4)",
+    "raw_divergence_slope_decimal": 0.0001701362265897201,
+    "fresh_large_cutoff": {
+      "N": 1024,
+      "raw_norm_squared_over_N": 0.00017041969003911238
+    },
+    "renormalized_error_limit_exact": "33/(2048*sqrt(2)*pi**4)",
+    "renormalized_error_limit_decimal": 0.00011696865578043256,
+    "mixed_prime_gram_entries": [
+      {
+        "m": 2,
+        "n": 3,
+        "formula": 8.276835201184868e-05,
+        "quadrature": 8.276835201184894e-05,
+        "absolute_error": 2.574980159653073e-19,
+        "quad_error_estimate": 5.967570259647118e-17
+      },
+      {
+        "m": 2,
+        "n": 5,
+        "formula": -3.9065220920335864e-05,
+        "quadrature": -3.906522092033585e-05,
+        "absolute_error": 1.3552527156068805e-20,
+        "quad_error_estimate": 9.610778840345469e-17
+      },
+      {
+        "m": 5,
+        "n": 11,
+        "formula": -1.1677405206229695e-05,
+        "quadrature": -1.167740520622969e-05,
+        "absolute_error": 5.082197683525802e-21,
+        "quad_error_estimate": 6.138891317231203e-17
+      }
+    ],
+    "mixed_prime_entries_have_both_signs": true,
+    "gram_formula_matches_independent_quadrature": true,
+    "cutoff_rows": [
+      {
+        "region": "design",
+        "N": 8,
+        "raw_norm_squared": 0.0016559268494425587,
+        "raw_norm_squared_over_N": 0.00020699085618031983,
+        "renormalized_error_squared": 1.4368672084285296e-05,
+        "N_times_renormalized_error_squared": 0.00011494937667428237,
+        "endpoint_corrected_error_squared": 5.829081389249879e-08,
+        "N_cubed_times_endpoint_error_squared": 2.984489671295938e-05,
+        "quadrature_error_estimates": [
+          4.905886559744722e-16,
+          2.2972056826885284e-21
+        ]
+      },
+      {
+        "region": "design",
+        "N": 32,
+        "raw_norm_squared": 0.005735787829448148,
+        "raw_norm_squared_over_N": 0.00017924336967025463,
+        "renormalized_error_squared": 3.6371131672086423e-06,
+        "N_times_renormalized_error_squared": 0.00011638762135067655,
+        "endpoint_corrected_error_squared": 9.041135977060971e-10,
+        "N_cubed_times_endpoint_error_squared": 2.962599436963339e-05,
+        "quadrature_error_estimates": [
+          3.742860837523659e-17,
+          7.486160909953569e-18
+        ]
+      },
+      {
+        "region": "design",
+        "N": 128,
+        "raw_norm_squared": 0.02206796894536498,
+        "raw_norm_squared_over_N": 0.00017240600738566391,
+        "renormalized_error_squared": 9.126417848095091e-07,
+        "N_times_renormalized_error_squared": 0.00011681814845561716,
+        "endpoint_corrected_error_squared": 1.4120243277186146e-11,
+        "N_cubed_times_endpoint_error_squared": 2.961229642923748e-05,
+        "quadrature_error_estimates": [
+          5.853331134412036e-18,
+          1.1743207986843076e-19
+        ]
+      },
+      {
+        "region": "holdout",
+        "N": 37,
+        "raw_norm_squared": 0.0065863088708677485,
+        "raw_norm_squared_over_N": 0.0001780083478612905,
+        "renormalized_error_squared": 3.1476464856961447e-06,
+        "N_times_renormalized_error_squared": 0.00011646291997075735,
+        "endpoint_corrected_error_squared": 5.848086464045316e-10,
+        "N_cubed_times_endpoint_error_squared": 2.962231236632874e-05,
+        "quadrature_error_estimates": [
+          3.001979835137269e-17,
+          4.8481814375299885e-18
+        ]
+      },
+      {
+        "region": "holdout",
+        "N": 101,
+        "raw_norm_squared": 0.01747437154673255,
+        "raw_norm_squared_over_N": 0.0001730135796706193,
+        "renormalized_error_squared": 1.156222942145265e-06,
+        "N_times_renormalized_error_squared": 0.00011677851715667176,
+        "endpoint_corrected_error_squared": 2.874194042156493e-11,
+        "N_cubed_times_endpoint_error_squared": 2.9612849958278768e-05,
+        "quadrature_error_estimates": [
+          7.780520902438145e-18,
+          2.3898868962789767e-19
+        ]
+      },
+      {
+        "region": "holdout",
+        "N": 257,
+        "raw_norm_squared": 0.044015390165081554,
+        "raw_norm_squared_over_N": 0.00017126610959175703,
+        "renormalized_error_squared": 4.5483753888625436e-07,
+        "N_times_renormalized_error_squared": 0.00011689324749376738,
+        "endpoint_corrected_error_squared": 1.744466552136562e-12,
+        "N_cubed_times_endpoint_error_squared": 2.9611609724631422e-05,
+        "quadrature_error_estimates": [
+          2.6558936597212568e-18,
+          1.8603608877772873e-18
+        ]
+      }
+    ],
+    "counterterm_coefficient_mutation_exact_asymptotic": "||Theta_N-lambda*F(Nx)/x||^2/N -> |1-lambda|^2*C",
+    "finite_boundary": "Floating point observations verify the formulas, not their universal quantifiers; proofs are in CONSTRUCTION.md."
+  },
+  "muntz_lift": {
+    "gaussian_primitive_identity_exact": true,
+    "log_phi_moment_exact": "-1/(8*pi**2)",
+    "log_phi_moment_identity_exact": true,
+    "log_phi_moment_quadrature": -0.012665147955292222,
+    "log_phi_moment_quadrature_error_estimate": 1.8561541192951836e-16,
+    "log_phi_moment_matches_quadrature": true,
+    "gaussian_integral": "1/2 (nonzero)",
+    "gaussian_cutoff_rows": [
+      {
+        "region": "design",
+        "N": 8,
+        "renormalized_error_squared": 0.010821915039137237,
+        "endpoint_corrected_error_squared": 3.594172043955098e-06,
+        "quadrature_error_estimates": [
+          1.1408985742728772e-15,
+          9.187269871976517e-16
+        ]
+      },
+      {
+        "region": "design",
+        "N": 32,
+        "renormalized_error_squared": 0.0027478057577035057,
+        "endpoint_corrected_error_squared": 5.6193510327178615e-08,
+        "quadrature_error_estimates": [
+          4.624433178027517e-16,
+          1.5341658436836288e-17
+        ]
+      },
+      {
+        "region": "holdout",
+        "N": 101,
+        "renormalized_error_squared": 0.0008736898279581103,
+        "endpoint_corrected_error_squared": 1.7872606039470446e-09,
+        "quadrature_error_estimates": [
+          1.629838987455899e-16,
+          4.953200668377812e-19
+        ]
+      }
+    ],
+    "mellin_rows": [
+      {
+        "region": "design",
+        "s": "(0.5 + 0.7j)",
+        "muntz_gaussian_mellin": "(-0.6642191823845726649994740061217451686627 + 0.0j)",
+        "euler_maclaurin_times_gaussian_mellin": "(-0.6642191823845726649994740061217451686627 + 1.430108248979326862605816795054194650814e-56j)",
+        "absolute_error": "7.278922822e-56"
+      },
+      {
+        "region": "holdout",
+        "s": "(0.37 + 1.3j)",
+        "muntz_gaussian_mellin": "(-0.2408938126855558975406629885098456112565 + 0.04428633326896444497422225262603185108237j)",
+        "euler_maclaurin_times_gaussian_mellin": "(-0.2408938126855558975406629885098456112565 + 0.04428633326896444497422225262603185108237j)",
+        "absolute_error": "3.794101488e-56"
+      },
+      {
+        "region": "holdout",
+        "s": "(0.73 + 2.1j)",
+        "muntz_gaussian_mellin": "(-0.09296487359462229020654207813158307080716 - 0.02168482570923125288743953690731584051095j)",
+        "euler_maclaurin_times_gaussian_mellin": "(-0.09296487359462229020654207813158307080716 - 0.02168482570923125288743953690731584051095j)",
+        "absolute_error": "2.568783521e-57"
+      }
+    ],
+    "euler_maclaurin_parameters": {
+      "cutoff": 48,
+      "order": 28,
+      "dps": 55
+    },
+    "mellin_errors_below_1e_minus_40": true,
+    "scope": "Finite checks of the moment-retaining lift; closed-domain and graph-core statements are proved in CONSTRUCTION.md, not inferred from these samples."
+  },
+  "canonical_box_bridge": {
+    "normalization": "unnormalized indicator g=1[-T/2,T/2], Q(g)=2*Psi(T)",
+    "rows": [
+      {
+        "T": "0.3",
+        "geometric_box_form": "0.094731157709561865694103273085599769",
+        "twice_Suzuki_Psi": "0.094731157709561865694103273085599769",
+        "absolute_error": "7.0064923e-46"
+      },
+      {
+        "T": "1.1",
+        "geometric_box_form": "0.13350950121975008970677723197612357",
+        "twice_Suzuki_Psi": "0.13350950121975008970677723197612357",
+        "absolute_error": "5.2548692e-46"
+      },
+      {
+        "T": "2.3",
+        "geometric_box_form": "0.076346464005778929242435535317279248",
+        "twice_Suzuki_Psi": "0.076346464005778929242435535317279248",
+        "absolute_error": "2.8025969e-45"
+      },
+      {
+        "T": "4.1",
+        "geometric_box_form": "0.10164910582150866976288078695728713",
+        "twice_Suzuki_Psi": "0.10164910582150866976288078695728713",
+        "absolute_error": "0.0"
+      }
+    ],
+    "all_errors_below_1e_minus_35": true,
+    "scope": "Arithmetic identity on four box tests; not all-test positivity."
+  },
+  "checks": {
+    "exact_connection": true,
+    "dh_exact_defect": true,
+    "character_poisson": true,
+    "mutation_instrument": true,
+    "nonfactorization_counterexample": true,
+    "theta_completion_formulas": true,
+    "canonical_arithmetic_bridge": true,
+    "moment_retaining_muntz_lift": true
+  },
+  "all_checks_pass": true
+}

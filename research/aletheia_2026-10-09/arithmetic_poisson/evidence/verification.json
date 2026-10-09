@@ -1,0 +1,11 @@
+{
+  "baseline_command": "python -m unittest discover -s tests -p test_suzuki_psi.py -v",
+  "baseline_exit_code": 0,
+  "baseline_output": "test_formula_regression_values (test_suzuki_psi.SuzukiPsiBaselineTests.test_formula_regression_values) ... ok\ntest_origin_and_evenness (test_suzuki_psi.SuzukiPsiBaselineTests.test_origin_and_evenness) ... ok\ntest_screw_precision_is_preserved (test_suzuki_psi.SuzukiPsiBaselineTests.test_screw_precision_is_preserved) ... ok\ntest_unsorted_event_input (test_suzuki_psi.SuzukiPsiBaselineTests.test_unsorted_event_input) ... ok\ntest_wavefront (test_suzuki_psi.SuzukiPsiBaselineTests.test_wavefront) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.885s\n\nOK\n",
+  "baseline_tests_passed": 5,
+  "probe_command": "python scripts/arithmetic_poisson_connection.py --output research/aletheia_2026-10-09/arithmetic_poisson/evidence/probe_results.json",
+  "probe_exit_code": 0,
+  "probe_groups_passed": 8,
+  "proof_scope": "Universal construction, graph-core and convergence statements are proved in CONSTRUCTION.md. Finite numerical checks are not interval certificates or a proof of Weil positivity.",
+  "old_scratch_experiments_rerun": false
+}

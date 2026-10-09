@@ -1,13 +1,29 @@
 # FuckingRH
 
 A proof-first research program attacking the **Riemann Hypothesis** through one concrete,
-RH-equivalent positivity target, pursued across several independent agent lineages (astra,
+RH-equivalent positivity target, pursued across several related agent lineages (astra,
 aletheia, claude) and consolidated here on `main`.
 
 **Status: RH remains open.** Nothing in this repository claims otherwise. The repository is
 organized to keep honest the distinction between what is *proved*, *computed*, *conjectured*,
 and *refuted*, and to name — precisely — the single load-bearing theorem a genuine proof
 still owes.
+
+## New construction checkpoint — 2026-10-09
+
+**[Arithmetic connection and Poisson completion](research/aletheia_2026-10-09/arithmetic_poisson/README.md)**
+builds a compatible source from integer divisibility, the additive character module, and
+ordinary lattice dilations. It extracts the actual $\chi\Lambda$, distinguishes
+Davenport–Heilbronn at $n=6$, and detects the amplitude, clock and half-density mutations
+without zero data. An explicit finite theta completion converges in $L^2$ with proved norm
+error $O(N^{-3/2})$ after its endpoint correction. Retaining the moment terms also gives
+a closed lattice lift and a closed, renormalized logarithmic connection on specified domains.
+
+**The Weil sign remains open.** These compatibility gates do not themselves imply RH.
+The checkpoint proves and repairs a logarithmic-domain obstruction, then identifies the
+additional pairing and sign theorem still owed. It also corrects the inherited universal factorization no-go,
+the interpretation of the mutations, and the complex-ordinate Weil formula; see
+**[frontier corrections](research/aletheia_2026-10-09/arithmetic_poisson/FRONTIER_CORRECTIONS.md)**.
 
 ---
 
@@ -25,12 +41,12 @@ The full account of how this program thinks about the problem lives in the
    Branges reformulations, the free half above $\mathrm{Re}\, s = 1$, and the prime-free
    positivity window.
 3. **[The Diophantine & semigroup frame](wiki/03-the-diophantine-semigroup-frame.md)** — why
-   the prime frequencies $\{\log p\}$ are the real content, phase alignment and the negative
+   prime-frequency independence and coefficient multiplicativity, phase alignment and the negative
    "wells," the band-limit, and the finite-window multiplicative semigroup with its
    nonalignment theorem.
 4. **[The symbol face and the wells](wiki/04-the-symbol-and-the-wells.md)** — the band-limited
-   Weil symbol as an explicit, zero-free function; the exact sense in which it *is* the
-   low-passed zero comb; diggability of the wells; the Davenport–Heilbronn crossover and the
+   Weil symbol as an explicit, zero-free function; its exact action on entire tests and the
+   conditional real-zero-measure interpretation; diggability of the wells; the Davenport–Heilbronn crossover and the
    matched multiplicative partner; and why no unconditional tool reaches the well regime.
 5. **[What ζ is, from every side](wiki/05-what-is-zeta-here.md)** — the same object read through
    all six lenses at once, the dictionary between their "missing theorems," and why they are one
@@ -51,11 +67,15 @@ The full account of how this program thinks about the problem lives in the
 
 ## The target, in one screen
 
-Weil's explicit formula makes the zeros and the primes two sides of one identity. Applied to
-a self-correlation it yields the **Weil functional**
-$W(g) = \sum_\rho \lvert \hat g(\gamma_\rho)\rvert^2$, and
+Weil's explicit formula makes the zeros and the primes two sides of one identity. With
+$F_g(z)=\int g(u)e^{izu}\,du$, the self-correlation gives the **Weil functional**
+$W(g) = \sum_\rho F_g(\gamma_\rho)\overline{F_g(\bar\gamma_\rho)}$, where
+$\gamma_\rho=(\rho-1/2)/i$, and
 
 $$W(g) \ge 0 \ \text{for all admissible } g \iff \mathrm{RH}.$$
+
+The summand is a modulus square only when $\gamma_\rho$ is real. Writing an
+unconditional modulus square would insert the sign the program is trying to prove.
 
 So RH is exactly the statement that the **prime-plus-archimedean** (arithmetic) side of the
 formula is non-negative — and the program's job is an *independent, non-circular* reason for
@@ -86,24 +106,27 @@ $M_{\mathrm{full}} \equiv M_{\mathrm{zeros}}$) measured each piece:
   wide** — positivity is a cancellation, never a floor.
 - **The band-limit is a theorem.** The prime term's norm obeys $\lambda_{\max}(K) \le C_L < A_L$
   ($\approx \tfrac13$ of the worst-case comb mass) — a real, unconditional buy-back of positivity.
-- **The balance is razor-thin and held by multiplicativity.** $\lambda_{\min}(Q)$ is positive but
+- **The reported finite balance is sensitive to arithmetic mutations.** $\lambda_{\min}(Q)$ is positive but
   collapses toward $0$ with resolution; the PSD window of the prime weight pinches to
-  $[1-1.8\times10^{-13},\, 1+1.8\times10^{-15}]$; and **every** mutation of the arithmetic (fake
+  $[1-1.8\times10^{-13},\, 1+1.8\times10^{-15}]$; and the tested mutations (fake
   impulse at $n=6$, $\lvert\alpha_2\rvert \ne 1$, scaled weights, shifted $\log 2$) drives it
-  negative. Multiplicativity holds the sign — *at zero*. A knife-edge poised at zero **is**
-  RH-equivalence.
+  negative. These are finite observations. A nonunit local amplitude can preserve complete
+  multiplicativity, and a fake source impulse can preserve every original zero while breaking
+  the completion. The controls test several arithmetic compatibilities; they do not prove a
+  unique positive parameter point or isolate multiplicativity as a sufficient sign mechanism.
 - **The off-line zero is the negative direction, and multiplicativity is the separator.** On
   the non-multiplicative control Davenport–Heilbronn, the form first goes indefinite at support
   $L^* \approx 4$, and the entire negative eigenvalue is its off-line zero at height $85.699$;
   move only that zero on-line and the form is positive again. The matched multiplicative partner
-  $L(s,\chi)$ — same conductor, $\Gamma$-factor, and functional-equation shape, differing *only*
-  by carrying an Euler product — stays positive across the whole range where the twin cracks. One
-  variable toggled, opposite outcome: positivity's sign tracks zero-location exactly, and
-  multiplicativity is the thing that holds it. (That partner's positivity is itself
-  GRH-equivalent — this measures the separator, not a brick.)
+  $L(s,\chi)$ — matched conductor and $\Gamma$-factor, with a multiplicative coefficient
+  sequence — stays positive across the reported range where the twin cracks. This is a useful
+  comparison of two coefficient systems, not a proof that a single causally isolated variable
+  determines the sign. Positivity on every admissible test for the character would itself be
+  GRH-equivalent.
 
-Every feature the frame predicted is true and measured — and all of it is RH-equivalent.
-There is **no unconditional brick**. Full numbers, the research arc, and the two open seams
+The Round 049/051/058 large-matrix experiments above are repository-reported, scratch-only runs;
+they were not rerun for the new checkpoint. No independent theorem proving the global sign
+has been obtained. Full numbers, the research arc, and the two open seams
 (the joint coercivity, and the Round-006 unit-basepoint place-coupling / UBRPCT): [wiki/06](wiki/06-state-of-the-program.md).
 
 ---
@@ -131,7 +154,8 @@ There is **no unconditional brick**. Full numbers, the research arc, and the two
   upgrade; numerics never become proofs by accumulation.
 - Every candidate faces **hostile controls** (delete/insert a prime, wrong $\log p$, wrong
   half-density $p^{-1/2}$, perturb the archimedean boundary, fake arithmetic). A construction
-  that survives fake arithmetic is RH-inert.
+  must explain what identity each control tests. Passing these controls still requires an exact
+  bridge to the full Weil form and an independent sign theorem.
 - **No zeta-zero ordinates are ever used as construction input** — only as after-the-fact
   diagnostics.
 - Numerical code is a **calibrated instrument**: it must recover a known answer before its

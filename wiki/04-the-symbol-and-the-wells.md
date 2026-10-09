@@ -2,10 +2,12 @@
 
 *This page develops the program's sharpest current vantage: the **band-limited symbol**. It is
 where the prime side becomes an explicit, zero-free function you can plot — and where the exact
-sense in which that function "secretly knows the zeros" becomes visible. The structural identity
-of [§4.3](#43-the-wells-are-the-low-passed-zero-comb) is **[derived]** (from the Guinand–Weil
-formula and the band-limited reduction, cross-checked against the calibrated instrument of
-[page 6](06-state-of-the-program.md)); the quantitative well law of
+sense in which that function pairs with the zero functional becomes visible. The identity in
+[§4.3](#43-the-wells-are-the-low-passed-zero-comb) is an equality on entire test functions;
+the positive real zero-measure interpretation is conditional on RH. This qualification repairs
+the earlier unconditional low-pass claim; see the
+[frontier audit](../research/aletheia_2026-10-09/arithmetic_poisson/FRONTIER_CORRECTIONS.md).
+The quantitative well law of
 [§4.4](#44-diggability-when-can-a-band-limited-function-reach-a-well) is a **model**, calibrated
 on a known off-line zero.*
 
@@ -14,8 +16,9 @@ on a known off-line zero.*
 ## 4.1 One form, two faces
 
 Weil's explicit formula ([§2.2](02-the-rh-equivalent-target.md)) is an *identity*. Fed a
-self-correlation $f = g \star \tilde g$ with $h = \lvert \hat g\rvert^2 \ge 0$, it reads the same
-number two ways:
+self-correlation $f = g \star \tilde g$, let $F(z)=\int g(u)e^{izu}\,du$ and
+$h(z)=F(z)\overline{F(\bar z)}$. On the real axis $h(t)=|F(t)|^2\ge0$; at complex
+arguments the reflected product is essential. The formula reads the same number two ways:
 
 $$\underbrace{\sum_\rho h(\gamma_\rho)}_{\text{zero face}}
 = \text{pole} + \underbrace{\frac{1}{2\pi} \int \lvert \hat g(t)\rvert^2\, \Psi_L(t)\,
@@ -72,32 +75,28 @@ $\lvert \hat g\rvert^2$ can *integrate* against it to something negative.
 
 ## 4.3 The wells are the low-passed zero comb
 
-Here is the identity that explains why the zero-free symbol is nonetheless RH-pinned. For $g$
-supported in $[-L, L]$, $h = \lvert \hat g\rvert^2$ is a non-negative Paley–Wiener function of
-exponential type $2L$; by Fejér–Riesz every such $h$ is exactly a $\lvert \hat g\rvert^2$. The
-explicit formula, read on this cone, says — **unconditionally** —
+**Qualification of the earlier heading.** For $g\in C_c^\infty([-L,L])$ and the entire
+$h$ defined in §4.1, the unconditional statement is
 
-$$\frac{1}{2\pi}\Psi_L \;=\; \text{the } \mathrm{sinc}_{2L} \text{ low-pass of the zero measure }
-\sum_\rho \delta_{\gamma_\rho} \quad (\text{minus the pole}).$$
+$$\mathcal Z(h):=\sum_\rho h(\gamma_\rho)
+=P_{\mathrm{pole}}(g)+\frac1{2\pi}\int_\mathbb R h(t)\Psi_L(t)\,dt.$$
 
-That is: **$\Psi_L$ is not a separate "prime" object at all. It is the zero comb itself, viewed
-through a band-limited window of resolution $1/2L$.** Its negative wells are the **Gibbs
-side-lobes** of that low-passed comb — the ringing you always get when you low-pass a sum of
-spikes.
+If an ordinate is nonreal, evaluation at it is a functional on entire tests, not a Dirac mass
+on the real line. Thus $\mathcal Z$ cannot unconditionally be treated as a positive real
+zero measure. Under RH it is represented by the positive locally finite real measure
+$\sum_\rho\delta_{\gamma_\rho}$, and its action on these tests is nonnegative.
+Conversely, nonnegativity for every admissible test and every support is Weil's criterion.
 
-The consequence is decisive:
+Even under RH, a literal pointwise sinc identity needs a specified projection and a
+distributional prescription. The displayed symbol has an unfiltered digamma term, so it is
+not automatically equal to its own low-pass projection. The exact equality above concerns
+its action on the declared test class, including the pole term.
 
-> A positive band-limited $h$ pairs with the comb as $\langle h, \text{comb}\rangle =
-> \sum_\rho h(\gamma_\rho) \ge 0$ **if and only if the zero measure is a positive measure on the
-> real line** — i.e. **iff the zeros are real, iff RH.** The side-lobes are invisible to every
-> positive band-limited $h$ *exactly when* RH holds.
-
-So the compensation that keeps the wells from ever being "dug" is **not** the functional equation.
-The functional equation buys only the evenness and the $\rho \leftrightarrow 1-\rho$ pairing of the
-comb; an off-line quadruple is symmetric but *signed*. The thing that makes the dig always cancel
-is **the positivity of the zero measure, which is RH itself.** (This corrects an earlier internal
-framing that named the compensator as "symmetry"; the conclusion *symmetry $\ne$ positivity*
-stands, but the mechanism is low-passed-comb positivity — logged 2026-10-09.)
+The functional equation supplies reflection symmetry, not the missing positivity.
+An off-line quartet gives complex evaluation arguments and can produce a negative Weil
+pairing. Describing all observed wells as Gibbs side-lobes of an unconditionally positive real
+zero measure would already assume the desired zero location. The measured plots survive;
+that proposed unconditional explanation does not.
 
 ## 4.4 Diggability: when can a band-limited function reach a well?
 
@@ -117,16 +116,13 @@ known — Davenport–Heilbronn's off-line zero ([§4.5](#45-the-crossover-and-t
 
 Two honesties about this model:
 
-- It is **optimistic**. It treats the well as isolated and ignores the compensating shoulders that
-  [§4.3](#43-the-wells-are-the-low-passed-zero-comb) guarantees. The gap between the model's $L^*$
-  and the *true* $\lambda_{\min}$ measured on the instrument **is** the compensation — i.e. it is
-  the zero-measure positivity made quantitative.
+- It is **optimistic**. It treats the well as isolated and ignores the rest of the symbol and
+  the pole term. The measured threshold difference records the limitation of this model;
+  §4.3 does not supply an unconditional theorem guaranteeing sufficient positive shoulders.
 - For $\zeta$ and real-character controls the symbol is **even**, so $Q(f) = Q(\mathrm{Re}\, f) +
-  Q(\mathrm{Im}\, f)$ and the extremal direction is real/even (prolate-like — consistent with
-  Suzuki's "one box test function per width already encodes RH,"
-  [§2.4](02-the-rh-equivalent-target.md)). The **complex** near-degeneracy only appears for a
-  **complex character** $L(s,\chi)$, whose symbol is not even; there the knife-edge lives in
-  complex test-function space.
+  Q(\mathrm{Im}\, f)$. Reflection also splits the real test space into even and odd sectors;
+  either can contain the lowest direction, so both must be tested. For a complex character
+  the form need not have these symmetries and the full complex test space is required.
 
 ## 4.5 The crossover, and the separator
 
@@ -149,17 +145,17 @@ The model is calibrated and sharpened by a two-sided control, both measured on t
 
 - **The matched multiplicative partner stays positive ($L(s,\chi)$, $\chi \bmod 5$,
   $\chi(2) = i$).** Same conductor, same archimedean factor, same functional-equation shape as
-  Davenport–Heilbronn, differing in **one** thing only — it carries an Euler product. Under the
+  Davenport–Heilbronn, but with a different, multiplicative coefficient sequence. Under the
   identical instrument it stays positive-semidefinite across the whole tested range
   ($L = 0.4 \ldots 9$), collapsing-but-positive like $\zeta$, at every setting where its
-  non-multiplicative twin cracks. **One variable toggled, opposite outcome: multiplicativity is the
-  operative separator** between a positive form and an indefinite one. (Caveat, pre-registered:
-  $L(s,\chi)$ staying positive is *itself* GRH-equivalent — this measures the separator, not a
-  mechanism, and not a brick.)
+  non-multiplicative twin cracks. This is a matched finite comparison, not a theorem of causal
+  sufficiency for multiplicativity. Positivity on every admissible test, beyond the computed
+  range, would itself be GRH-equivalent.
 
-Together with the mutation controls of [§6.2](06-state-of-the-program.md), multiplicativity is
-pinned as load-bearing for the sign **from both sides**: destroy it and the form cracks; keep it
-against a matched twin and the form holds.
+The mutation controls of [§6.2](06-state-of-the-program.md) test several distinct compatibilities.
+For example, a nonunit local Euler amplitude can remain completely multiplicative. The
+[arithmetic connection checkpoint](../research/aletheia_2026-10-09/arithmetic_poisson/README.md)
+separates coefficient multiplicativity, local unitarity, the integer clock and completion.
 
 ## 4.6 Why the symbol face has no unconditional handle (yet)
 

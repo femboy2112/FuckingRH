@@ -23,12 +23,18 @@ same wall" is **common-mode** — it is one bearing seen from many angles, and i
 *one*, not as dozens of confirmations. (The repo says this itself:
 `docs/RH_LINEAGE_SOURCE_INDEPENDENCE`.)
 
-**(2) The factorization meta-theorem.** A construction that is **commutative-multiplicative**
-collapses to a **factorized** (per-prime, tensor) object, and a factorized positivity is
-**RH-inert** — it holds whether or not the arithmetic is real (proved four ways in the Round-004
-notes: uniform Pascal / binomial Fock isometry / Koszul–Hodge / GCD kernel). This is *why* almost
-every "I found a positive object" below is inert: the positivity is per-prime, and RH lives in the
-*cross-prime, global, Archimedean-coupled* part that none of these constructions build.
+**(2) Scope of the factorization no-go, corrected 2026-10-09.** The Round-004 independent-mode
+Koszul cross commutators vanish, and the explicit product constructions have separability
+limitations. These calculations do **not** imply that every commutative-multiplicative object
+factorizes. With commuting integer dilations $V_me_n=e_{mn}$,
+
+$$B=V_2+V_3,\qquad B^*B=2I+V_2^*V_3+V_3^*V_2$$
+
+is a positive Gram with mixed-prime terms. Even commuting normal unitaries give the
+nonseparable positive function $|z_2+z_3|^2$. The universal version of the old
+"meta-theorem" is therefore refuted; references to it below apply only to the particular
+factorized constructions discussed. Neither counterexample supplies the full Weil pairing.
+See the [proof and controls](../research/aletheia_2026-10-09/arithmetic_poisson/CONSTRUCTION.md#6-there-really-are-mixed-prime-terms).
 
 > **The verdict, stated once.** Across every framing below, **zero** carry genuine non-circular
 > content toward RH. The one entry with a genuinely new conservation law (the fresh-digit isometry,
@@ -247,8 +253,8 @@ RH-inert; they are listed because they are genuinely different *pictures*.
 Collected from the branches' own hostile controls and audits, so no one re-walks them:
 
 - The product formula cancelling `ΣM_p` (it is a modulus identity; measured quadratic divergence).
-- Any commutative-multiplicative / factorized / direct-sum positivity (meta-theorem; also the convolution
-  transfer `Σ p^{-s} T_{\log p}`).
+- The specific independent-prime factorizations and direct-sum constructions tested in the
+  historical branches. There is no universal no-go for commuting multiplicative operators (§8.0).
 - Impedance/Laplace one-port and fixed-`κ` Krein escape (`inf\,Re\,F_P → −∞`).
 - Single-space de Branges `H(E)` positivity (Conrey–Li, for ζ and `L(s,χ_{-4})`).
 - Superprimes in place of primes (bulk still diverges).
