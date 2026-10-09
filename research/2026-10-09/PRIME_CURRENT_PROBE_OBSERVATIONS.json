@@ -1,0 +1,122 @@
+{
+  "research_date": "2026-10-09",
+  "source": "local Python, independently coded finite computations, no zeros",
+  "parent": "344facc9b9eccadcf7fe98af9361b6e7fd3ea737",
+  "commitments": {
+    "committed_script_run_in_github_actions": false,
+    "committed_script_byte_identical_to_independent_local_probe": false,
+    "full_repo_suite_run": false,
+    "analytic_proof_in_note_independent_of_numerics": true
+  },
+  "arithmetic_probe": {
+    "cutoff": 2000000,
+    "rows": [
+      {
+        "x": 1000,
+        "J_over_sqrt_x": 1.9134233,
+        "D": -0.737797,
+        "bohr_rms_over_logx": 0.6859485,
+        "fake_all_integer_D": 0.555456
+      },
+      {
+        "x": 10000,
+        "J_over_sqrt_x": 1.9746605,
+        "D": -0.533947,
+        "bohr_rms_over_logx": 0.6945695,
+        "fake_all_integer_D": 0.544645
+      },
+      {
+        "x": 100000,
+        "J_over_sqrt_x": 1.9920495,
+        "D": -0.514178,
+        "bohr_rms_over_logx": 0.6988271,
+        "fake_all_integer_D": 0.541227
+      },
+      {
+        "x": 1000000,
+        "J_over_sqrt_x": 1.9969068,
+        "D": -1.093191,
+        "bohr_rms_over_logx": 0.7012657,
+        "fake_all_integer_D": 0.540145
+      },
+      {
+        "x": 2000000,
+        "J_over_sqrt_x": 1.9981557,
+        "D": -0.608267,
+        "bohr_rms_over_logx": 0.7018263,
+        "fake_all_integer_D": 0.539999
+      }
+    ],
+    "exact_source_controls": {
+      "Lambda(6)": 0,
+      "Lambda(4)": "log 2",
+      "Lambda(8)": "log 2",
+      "Lambda(9)": "log 3"
+    },
+    "two_parameter_window_examples": [
+      {
+        "x": 1000,
+        "ratio": 1.5,
+        "measured": 0.459977,
+        "pnt_limit": 0.44949
+      },
+      {
+        "x": 100000,
+        "ratio": 1.5,
+        "measured": 0.449339,
+        "pnt_limit": 0.44949
+      },
+      {
+        "x": 100000,
+        "ratio": 2,
+        "measured": 0.828079,
+        "pnt_limit": 0.828427
+      }
+    ]
+  },
+  "completed_probe": {
+    "mpmath_decimal_precision": 55,
+    "b_plus_2": -0.6860917096128328,
+    "bound_C_over_4": 4.299332288626778,
+    "observations": [
+      {
+        "t": 0.5,
+        "Psi_true": 0.04016258,
+        "Psi_smooth": -0.09593909
+      },
+      {
+        "t": 1,
+        "Psi_true": 0.04400731,
+        "Psi_smooth": -0.40048029
+      },
+      {
+        "t": 2,
+        "Psi_true": 0.05334112,
+        "Psi_smooth": -1.07393535
+      },
+      {
+        "t": 3,
+        "Psi_true": 0.03970929,
+        "Psi_smooth": -1.7590314
+      },
+      {
+        "t": 4,
+        "Psi_true": 0.03514093,
+        "Psi_smooth": -2.44504181
+      },
+      {
+        "t": 6,
+        "Psi_true": 0.04812322,
+        "Psi_smooth": -3.81721802
+      },
+      {
+        "t": 8,
+        "Psi_true": 0.03094869,
+        "Psi_smooth": -5.18940139
+      }
+    ],
+    "proved_in_note": "Psi_smooth(t)<0 for all t>=3, via G(t)<=C/4 and monotone negative upper bound",
+    "not_proved": "Psi_true(t)>=0 for all t; that is RH-equivalent"
+  },
+  "verdict": "PNT homogenization disclosed; macro current source-blind; naive completed continuum substitution refuted; no independent Weil positivity"
+}
