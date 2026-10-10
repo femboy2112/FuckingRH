@@ -83,4 +83,4 @@ from .observer_reflection import (
     exact_quartic_screw, exact_quadratic_screw, bounded_gram_search,
 )
 
-__version__ = "0.4.0"
+__version__ = "0.3.0"
