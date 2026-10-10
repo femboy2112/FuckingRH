@@ -230,6 +230,29 @@ jobs:
         run: python -m unittest discover -s tests/actualization -p 'test_observer_logic.py' -v
       - name: Test ordinal finite-proof compactness and certified Gram witness protocol
         run: python -m unittest discover -s tests/actualization -p 'test_observer_reflection.py' -v
+      - name: Record bounded Gödel, Turing, omega and certified Gram evidence
+        run: |
+          python scripts/observer_foundations_probe.py --output "$RUNNER_TEMP/observer-foundations.json"
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          p=Path(os.environ["RUNNER_TEMP"])/"observer-foundations.json"
+          j=json.loads(p.read_text())
+          assert j["status"]=="OBSERVATIONAL_SUCC_FORMAL_FOUNDATIONS"
+          assert j["godel_fixed_point_syntax"]["verified_substitution_code"]
+          assert not j["godel_fixed_point_syntax"]["SubstGraph_representability_in_PA_proved"]
+          assert not j["godel_fixed_point_syntax"]["object_level_PA_equivalence_proved"]
+          assert j["finitary_omega_proof_support"]["finite_proof_verified"]
+          assert not j["finitary_omega_proof_support"]["omega_rule_used"]
+          assert j["turing_observations"]["delayed_prefix_17"]=="unresolved"
+          assert j["turing_observations"]["first_observed_counterexample"]==19
+          assert j["rational_gram_certificates"]["negative_exact_quartic_upper"]=="-24"
+          assert not j["rational_gram_certificates"]["Suzuki_interval_oracle_built"]
+          assert j["arithmetic_causal_history"]["fake_connected_b6"]=="1"
+          assert j["arithmetic_causal_history"]["both_semantic_Hessians_PSD"]
+          assert not j["RH_proved"] and not j["PA_formalization_completed"]
+          print("Observer logic, finitary omega and counterfeit-source gates PASS")
+          PY
       - name: Run seven isolated regression lanes
         run: python scripts/audit_actualization.py --output "$RUNNER_TEMP/actualization-audit"
       - name: Run fifteen hostile mutations
@@ -270,5 +293,6 @@ jobs:
             ${{ runner.temp }}/hasse-theta-seam.json
             ${{ runner.temp }}/balanced-theta-li.json
             ${{ runner.temp }}/ordinal-succ-report.json
+            ${{ runner.temp }}/observer-foundations.json
           if-no-files-found: warn
           retention-days: 14
