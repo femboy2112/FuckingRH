@@ -489,3 +489,85 @@ def finite_mutation_parity_error(s,*,n=6,delta=1,dps=75):
         s=mp.mpc(s)
         return +((_mprat(mp,d)*mp.power(n,-s))
                   *(-2+mp.power(2,1-s)))
+
+
+
+def symmetric_offline_quartet_counterexample():
+    """Exact real-even polynomial positive on critical line yet with off-line zeros.
+
+    With x=s-1/2, choose off-line quartet x=±(1/4±i/2), so
+      P(x)=x^4+(3/8)x^2+25/256.
+    On critical line x=it:
+      P(it)=(t^2-3/16)^2+1/16 >=1/16>0.
+    Real symmetry, s->1-s, outer zero-freeness and positivity ON line
+    are ALL insufficient to force every zero onto that line.
+    This deliberately synthetic polynomial is NOT zeta.
+    """
+    return {
+        "coefficients_even_quartic": (Q(1),Q(3,8),Q(25,256)),
+        "line_square_center":Q(3,16),
+        "critical_line_positive_lower_bound":Q(1,16),
+        "constructed_offline_zero_real_parts":(Q(1,4),Q(3,4)),
+        "constructed_offline_zero_imag_magnitude":Q(1,2),
+        "actual_zeta_zeros_used":False,
+        "scope":"exact symmetry and on-line positivity countermodel; not an L-function",
+    }
+
+
+def riemann_siegel_leading(t,*,source: SUCCDifferenceSource | None=None,
+                          dps=75):
+    """Asymptotic Hardy Z main sum, directly reading integer SUCC BULK.
+
+    DLMF 25.10.3:
+      Z(t)=2Σ_(n<=floor(sqrt(t/(2π))))
+              cos(theta(t)-t*log n)/sqrt(n) + R(t).
+    theta(t)=Im logGamma(1/4+it/2)-t/2 log(pi).
+    NO remainder is bounded here; do not certify zeros or RH with
+    the leading main sum. If source!=None, the changed coefficients
+    are a controlled PROBE ONLY, not an approximate functional equation
+    for the arbitrary mutant source.
+
+    The load-bearing cutoff is the factor-square horizon
+      n<=sqrt(t/(2π)); a source mutation at n=6 is invisible below
+      t<2π*36 and becomes visible after crossing that threshold.
+    """
+    mp=_mp()
+    with mp.workdps(dps):
+        t=mp.mpf(t)
+        if not mp.isfinite(t) or t<10:
+            raise SeamError("Riemann-Siegel asymptotic probe requires finite t>=10")
+        m=int(mp.floor(mp.sqrt(t/(2*mp.pi))))
+        if m<1 or m>256:
+            raise SeamError("Riemann-Siegel source window exceeds 256 stage budget")
+        if source is not None:
+            if not isinstance(source,SUCCDifferenceSource) or source.horizon<m:
+                raise SeamError(f"Need integrated source coefficients through window {m}")
+        theta=(mp.im(mp.loggamma(mp.mpf(1)/4+mp.j*t/2))
+               -t*mp.log(mp.pi)/2)
+        total=mp.fsum(
+            (_mprat(mp,source.coefficients[n]) if source is not None
+             else mp.mpf(1))
+            *mp.cos(theta-t*mp.log(n))/mp.sqrt(n)
+            for n in range(1,m+1)
+        )
+        return {
+            "window":m,
+            "phase":+theta,
+            "main_sum":+(2*total),
+            "source_faithful_zeta_prefix":(
+                source is None or source.genuine_zeta_prefix),
+            "scope":"Riemann-Siegel main sum only; its nonzero remainder is not bounded",
+            "nontrivial_zero_input":False,
+        }
+
+
+def hardy_z_calibration(t,*,dps=75):
+    """Independent analytic HOLDOUT for main sum; does not read zero lists."""
+    mp=_mp()
+    with mp.workdps(dps):
+        t=mp.mpf(t)
+        if t<10:
+            raise SeamError("Riemann-Siegel calibration requires t>=10")
+        theta=(mp.im(mp.loggamma(mp.mpf(1)/4+mp.j*t/2))
+               -t*mp.log(mp.pi)/2)
+        return +mp.re(mp.exp(mp.j*theta)*mp.zeta(mp.mpf(1)/2+mp.j*t))
