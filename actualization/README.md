@@ -567,3 +567,31 @@ quantified cases. And a positive physical-semantic covariance
 does not automatically coincide with the RH-equivalent Weil
 distribution; source identification and a noncircular sign
 remain missing.
+
+
+### Certified finite source-prime intervals, WITHOUT Gamma (new)
+
+We now have an actual proof-bearing arithmetic component of the
+Suzuki/Weil interface in
+[source_prime_certificates.py](source_prime_certificates.py).
+It uses only exact rational arithmetic: logarithms are enclosed
+via finite positive atanh series with proved remainders; the
+inverse sqrt is enclosed via exact integer square-root bounds.
+The resulting source wavefront is an interval enclosure for
+\(-\sum_{n<=e^{|t|}}b(n)\log(n)n^{-1/2}(|t|-\log n)\).
+The genuine Dirichlet logarithm recovers the exact von Mangoldt
+prime impulse coefficients, and a fake connected coefficient at
+6 is strictly detected.
+
+Unlike naive point numerics, even the PRIME-ONLY Gram is
+an actual verified rational enclosure (conditional on the
+source being fully actualized). Its provenance is explicitly
+NOT the full Weil form: the Gamma plus pole interval is still
+missing. A negative prime-only Gram is NOT an RH refutation.
+See the [certified prime source research memo]
+(../research/2026-10-10/CERTIFIED_FINITE_PRIME_TRANSPORT.md).
+
+~~~bash
+python scripts/prime_source_certificates_probe.py
+python -m unittest discover -s tests/actualization -p 'test_source_prime_certificates.py' -v
+~~~
