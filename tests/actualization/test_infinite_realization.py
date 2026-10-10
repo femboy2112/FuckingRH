@@ -9,7 +9,7 @@ import mpmath as mp
 
 from actualization.infinite_realization import (
     LCMIndRealization, RationalEnclosure, e_enclosure, pi_enclosure,
-    zeta_euler_enclosure, escaping_defect_form, escaping_defect_limit,
+    zeta_euler_enclosure, escaping_defect_form, escaping_defect_limit, pinned_negative_form,
 )
 from actualization.arithmetic import factorization
 from actualization.core import BudgetExceeded, DomainError
@@ -152,6 +152,36 @@ class InfiniteRealizationTests(unittest.TestCase):
                        *mp.log(mp.mpf(m+1)/m))
                 self.assertLess(abs(observed-exact),mp.mpf("1e-66"))
                 self.assertLess(mutant.at_event(m+1,dps=75)["psi"],0)
+
+
+    def test_persistent_vs_escaping_negative_mode_distinguishes_limits(self):
+        # Both source families have a negative eigenvalue at EVERY N, but
+        # only the escaping family becomes PSD on each fixed finite support.
+        for n in (1,2,3,4,8,30):
+            basis={n:Q(1)}
+            self.assertEqual(escaping_defect_form(n,basis),-1)
+            self.assertEqual(pinned_negative_form(n,{1:Q(1)}),-1)
+        self.assertEqual(escaping_defect_limit({1:Q(1)}),(Q(1),2))
+        self.assertEqual(escaping_defect_form(30,{1:Q(1)}),1)
+        self.assertEqual(pinned_negative_form(30,{1:Q(1)}),-1)
+        self.assertEqual(pinned_negative_form(30,{30:Q(1)}),1)
+
+    def test_actual_suzuki_response_eventually_stabilizes_pointwise(self):
+        # Not just approximate: after an event has entered the source
+        # window, future *zeta* events make zero contribution at that time.
+        # This does NOT yield global sign certification.
+        with mp.workdps(65):
+            source={n:1 for n in range(1,50)}
+            global_fixed=GammaInterferometer.from_prefix(source,49)
+            for event in (2,3,4,6,8,13,16):
+                prefix=GammaInterferometer.from_prefix(source,event)
+                a=prefix.at_event(event,dps=65)
+                b=global_fixed.at_event(event,dps=65)
+                self.assertEqual(a["psi"],b["psi"])
+                self.assertEqual(a["finite"],b["finite"])
+                self.assertEqual(a["active_channels"],b["active_channels"])
+                with self.assertRaises(Exception):
+                    prefix.at_event(event+1)
 
     def test_negative_inputs_rejected(self):
         with self.assertRaises(DomainError):
