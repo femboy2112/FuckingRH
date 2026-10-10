@@ -291,3 +291,94 @@ def bounded_gram_search(oracle, *, points=(-1, 0, 1), budget=256,
                         "universal_positivity_proved":False}
     return {"status":"UNRESOLVED", "inspected":inspected,
             "universal_positivity_proved":False}
+
+
+
+@dataclass(frozen=True)
+class UnnamedElementOmegaCountermodel:
+    """A FIRST-ORDER semantic model separating all named finite instances
+    from their universal closure WITHOUT appealing to incompleteness.
+
+    Language: exactly ONE unary predicate P (no equality or arithmetic),
+    plus numeral-like constant names 0,1,... and bound variables.
+    Domain: N disjoint union {UNNAMED}. All numerals denote their
+    distinct standard n. P(n) holds for EVERY named natural number,
+    P(UNNAMED) is FALSE.
+
+    The full infinite theory {P(0),P(1),...} is TRUE in this model, but
+    forall x P(x) is false. This is a genuine semantic non-entailment
+    theorem for this weak unary language; it is NOT a model of PA or
+    a proof of Gödel incompleteness. First-order induction and a
+    standard-domain assumption would change the situation.
+
+    Because this language has no equality or arithmetic, every
+    ordinary natural has the same atomic P-type, so all quantifiers
+    can be evaluated by testing two representative types NAT/UNNAMED.
+    """
+    predicate: str = "Observed"
+
+    def __post_init__(self):
+        if type(self.predicate) is not str or not self.predicate.isidentifier():
+            raise ReflectionBoundaryError("A well-formed unary predicate name is required")
+
+    def named_instance(self, n: int) -> bool:
+        if type(n) is not int or n < 0:
+            raise ReflectionBoundaryError("Instance index must be an exact natural")
+        return True
+
+    def universal_claim(self) -> Formula:
+        return Forall("x", Pred(self.predicate, Var("x")))
+
+    def evaluate(self, formula: Formula) -> bool:
+        """Decide the equality-free unary language by finite types."""
+        if not isinstance(formula, Formula):
+            raise ReflectionBoundaryError("Only typed formulas can be interpreted")
+        if free_variables(formula):
+            raise ReflectionBoundaryError("A semantic claim must be a closed sentence")
+
+        def interpret_term(t, env):
+            # Every arithmetic numeral names its own natural, but in
+            # the equality-free P-only language all share atomic type NAT.
+            if t.kind == "numeral" or t.kind == "zero":
+                return "NAT"
+            if t.kind == "var":
+                return env[t.args[0]]
+            raise ReflectionBoundaryError(
+                "This model has NO arithmetic operations or equality symbols")
+
+        def rec(f,env):
+            if f.kind == "predicate":
+                name, ts = f.args
+                if name != self.predicate or len(ts) != 1:
+                    raise ReflectionBoundaryError("Only the named unary predicate is modeled")
+                return interpret_term(ts[0],env) == "NAT"
+            if f.kind == "false":
+                return False
+            if f.kind == "not":
+                return not rec(f.args[0],env)
+            if f.kind == "and":
+                return rec(f.args[0],env) and rec(f.args[1],env)
+            if f.kind == "implies":
+                return (not rec(f.args[0],env)) or rec(f.args[1],env)
+            if f.kind == "forall":
+                var,body=f.args
+                return all(rec(body,{**env,var:z}) for z in ("NAT","UNNAMED"))
+            if f.kind == "exists":
+                var,body=f.args
+                return any(rec(body,{**env,var:z}) for z in ("NAT","UNNAMED"))
+            raise ReflectionBoundaryError(
+                "This is an equality-free unary countermodel, not a PA model")
+        return rec(formula,{})
+
+    def structural_report(self):
+        global_claim=self.universal_claim()
+        return {
+            "language":"equality-free monadic first-order predicate + named numerals",
+            "domain":"standard naturals with one extra unnamed element",
+            "all_named_ground_instances_true":True,
+            "global_universal_claim":global_claim,
+            "global_universal_claim_true":self.evaluate(global_claim),
+            "uses_omega_rule":False,
+            "applies_to_PA":False,
+            "RH_independence_inferred":False,
+        }
