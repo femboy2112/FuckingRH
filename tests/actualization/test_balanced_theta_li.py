@@ -67,18 +67,18 @@ class BalancedThetaTests(unittest.TestCase):
             bad=SUCCDifferenceSource.from_prefix(fake,64)
             self.assertEqual(one_prime_fake_defect(0,6,1,dps=95),0)
             for u in (mp.mpf("1.6"),mp.mpf(2),mp.mpf("2.4")):
-                good=theta_defect(u,48,source=source,dps=95)
-                mutant=theta_defect(u,48,source=bad,dps=95)
+                good=theta_defect(u,64,source=source,dps=95)
+                mutant=theta_defect(u,64,source=bad,dps=95)
                 exact_anomaly=one_prime_fake_defect(u,6,1,dps=95)
                 self.assertLess(abs((mutant-good)-exact_anomaly),
                                 mp.mpf("1e-85"))
                 self.assertGreater(abs(exact_anomaly),mp.mpf("0.0001"))
-            self.assertLess(abs(theta_defect(2,48,source=source,dps=95)),
+            self.assertLess(abs(theta_defect(2,64,source=source,dps=95)),
                             mp.mpf("1e-80"))
-            self.assertGreater(abs(theta_defect(2,48,source=bad,dps=95)),
+            self.assertGreater(abs(theta_defect(2,64,source=bad,dps=95)),
                                mp.mpf("0.05"))
             # The entirely symmetric probe u=0 CANNOT detect this fake.
-            self.assertEqual(theta_defect(0,48,source=bad,dps=95),0)
+            self.assertEqual(theta_defect(0,64,source=bad,dps=95),0)
             with self.assertRaises(BalancedWindowError):
                 theta_finite(2,65,source=bad)
 
