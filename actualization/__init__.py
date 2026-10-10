@@ -49,4 +49,14 @@ from .dirichlet_lambert import (
     star_lambert_w, star_log_unit, star_exp,
 )
 
+from .hasse_theta_seam import (
+    SeamError, SUCCDifferenceSource, eta_prime_trivial,
+    eta_jet_trivial, gamma_pole_prime_bridge,
+    gamma_subtracted_prime_current, prime_current_tail_enclosure,
+    theta_xi_partial, theta_xi_tail_bound,
+    raw_completed_finite_mutation, finite_mutation_parity_error,
+    symmetric_offline_quartet_counterexample,
+    riemann_siegel_leading, hardy_z_calibration,
+)
+
 __version__ = "0.3.0"
