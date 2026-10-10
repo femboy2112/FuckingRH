@@ -89,7 +89,7 @@ class CertifiedSourceTests(unittest.TestCase):
                 K=s.prime_screw(t,u)
                 target=(-s.snapshot.at_time(mpr(t),dps=105)["finite"]
                         -s.snapshot.at_time(mpr(u),dps=105)["finite"]
-                        +s.snapshot.at_time(mpr(t-u),dps=105)["finite"])
+                        +s.snapshot.at_time(mpr(abs(t-u)),dps=105)["finite"])
                 self.assertLessEqual(mpr(K.lower),target)
                 self.assertGreaterEqual(mpr(K.upper),target)
                 self.assertTrue(s.prime_screw(t,u).intersects(s.prime_screw(u,t)))
