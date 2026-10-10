@@ -38,7 +38,7 @@ jobs:
           python-version: ${{ matrix.python }}
       - name: Run six isolated regression lanes
         run: python scripts/audit_actualization.py --output "$RUNNER_TEMP/actualization-audit"
-      - name: Run thirteen hostile mutations
+      - name: Run fourteen hostile mutations
         run: python scripts/mutate_actualization.py --output "$RUNNER_TEMP/actualization-mutations"
       - name: Check complete history demo and replay
         shell: bash
