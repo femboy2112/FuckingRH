@@ -341,3 +341,105 @@ class CompanionBridge:
         if a != b:
             raise DomainError("The source/target bridge actions fail to commute")
         return True
+
+
+
+def co_yoneda_companion(bridge: CompanionBridge, a, d, *, max_pairs=30000,
+                       max_relations=150000):
+    """Construct the finite coend Hom_C(a,-) tensor_C B(-,d).
+
+    Quotient pairs (f:a->c, h:F(c)->d) by
+      (k∘f, h) ~ (f, h∘F(k)).
+    The induced map [f,h] -> h∘F(f) must be a bijection onto B(a,d).
+    This is a constructive finite co-Yoneda calculation, not an RH trace.
+    """
+    F=bridge.functor
+    C,D=F.source,F.target
+    if a not in C.objects or d not in D.objects:
+        raise DomainError("co-Yoneda target is outside the declared categories")
+    pairs=[]
+    for c in C.objects:
+        for f in C.hom(a,c):
+            for h in bridge.fiber(c,d):
+                pairs.append((c,f,h))
+                if len(pairs)>max_pairs:
+                    raise BudgetExceeded("co-Yoneda witness budget exceeded")
+    ids={pair:i for i,pair in enumerate(pairs)}
+    parent=list(range(len(pairs)))
+
+    def find(i):
+        while parent[i]!=i:
+            parent[i]=parent[parent[i]]
+            i=parent[i]
+        return i
+
+    def union(i,j):
+        p,q=find(i),find(j)
+        if p!=q:parent[p]=q
+
+    relations=0
+    for c in C.objects:
+        for c2 in C.objects:
+            for k in C.hom(c,c2):
+                for f in C.hom(a,c):
+                    for h in bridge.fiber(c2,d):
+                        relations+=1
+                        if relations>max_relations:
+                            raise BudgetExceeded("co-Yoneda relation budget exceeded")
+                        right=(c2,C.compose(k,f),h)
+                        left=(c,f,bridge.left_action(k,h))
+                        if right not in ids or left not in ids:
+                            raise DomainError("co-Yoneda relation has missing typed witness")
+                        union(ids[right],ids[left])
+
+    classes={}
+    for i,pair in enumerate(pairs):
+        mapped=bridge.left_action(pair[1],pair[2])
+        root=find(i)
+        classes.setdefault(root,set()).add(mapped)
+    if any(len(image)!=1 for image in classes.values()):
+        raise DomainError("Bridge quotient identified distinct target observations")
+    image=set(next(iter(values)) for values in classes.values())
+    expected=set(bridge.fiber(a,d))
+    if image != expected or len(classes)!=len(expected):
+        raise DomainError("Co-Yoneda transport failed to reconstruct the target fiber")
+    return {"status":"verified_finite_co_yoneda", "raw_witness_pairs":len(pairs),
+            "coend_relations":relations, "equivalence_classes":len(classes),
+            "target_hom_count":len(expected),
+            "forgotten_history_classes":len(pairs)-len(classes),
+            "warning":"An automatically coherent companion profunctor is not a source-derived Weil polarization"}
+
+
+def verify_companion_actions(bridge: CompanionBridge, *, max_checks=250000):
+    """Exhaustively check identities, contravariance, covariance, interchange.
+
+    These equations are automatic for an honest functor. Their purpose here
+    is to catch a fabricated or mistyped bridge implementation.
+    """
+    F=bridge.functor
+    C,D=F.source,F.target
+    ops=0
+    for c in C.objects:
+        for d in D.objects:
+            for h in bridge.fiber(c,d):
+                if bridge.left_action(C.identity(c),h)!=h:
+                    raise DomainError("Companion fails source identity")
+                if bridge.right_action(D.identity(d),h)!=h:
+                    raise DomainError("Companion fails target identity")
+                for x in C.objects:
+                    for f in C.hom(x,c):
+                        for e in D.objects:
+                            for g in D.hom(d,e):
+                                ops+=1
+                                if ops>max_checks:
+                                    raise BudgetExceeded("Companion action audit budget exceeded")
+                                bridge.verify_interchange(f,h,g)
+                                for y in C.objects:
+                                    for f2 in C.hom(y,x):
+                                        if bridge.left_action(C.compose(f,f2),h) != bridge.left_action(f2,bridge.left_action(f,h)):
+                                            raise DomainError("Companion source composition failed")
+                                for z in D.objects:
+                                    for g2 in D.hom(e,z):
+                                        if bridge.right_action(D.compose(g2,g),h) != bridge.right_action(g2,bridge.right_action(g,h)):
+                                            raise DomainError("Companion target composition failed")
+    return {"status":"verified_finite_companion_actions","interchange_checks":ops}
