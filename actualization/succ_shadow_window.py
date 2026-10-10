@@ -148,6 +148,27 @@ def sine_gauge_witness(epsilon, frequency=1, *, max_stage=1_000_000):
     return certificate
 
 
+def certified_window_penalty_lower_bound(certificate: ShadowWindowCertificate, weight):
+    """Strict rational lower bound on a weighted negative-curvature penalty.
+
+    For any full-support atomic probe measure mu with this witness window
+    assigned positive weight w, action A(F) = sum_j w_j
+      * min(1, max(0,-W_j(F))**2)
+    obeys A(F) >= this quantity > 0 for the certified nonzero sine
+    gauge. Gamma has zero action. Values and weighting are separate.
+    """
+    if not isinstance(certificate, ShadowWindowCertificate):
+        raise WindowError("Use an explicitly constructed certificate")
+    w=_rational(weight,"positive atomic probe weight")
+    if not 0 < w <= 1:
+        raise WindowError("Probe weight must lie in (0,1]")
+    margin=-(certificate.gamma_curvature_upper_bound+
+             certificate.periodic_curvature)
+    if not margin > 0:
+        raise WindowError("This window has no rigorously negative margin")
+    return w*min(Fraction(1),margin*margin)
+
+
 def observed_window(certificate: ShadowWindowCertificate, *, dps=60):
     """Non-certified numerical readout, independent of the rational sign proof."""
     if not isinstance(certificate, ShadowWindowCertificate):
