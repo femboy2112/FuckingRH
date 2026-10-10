@@ -12,13 +12,14 @@ import unittest
 from fractions import Fraction as Q
 
 from actualization.observer_logic import (
-    Num, Var, Pred, Forall, Implies,
+    Num, Var, Pred, Forall, Implies, Not, Exists, And, Add,
     Theory, ProofStep, FiniteProof, check_finite_proof,
 )
 from actualization.observer_reflection import (
     ReflectionBoundaryError, IncreasingTheoryChain,
     external_consistency_step, RationalInterval,
     rational_gram_certificate, exact_quartic_screw,
+    UnnamedElementOmegaCountermodel,
     exact_quadratic_screw, bounded_gram_search,
 )
 from actualization.godel_succ import machine_prefix, delayed_halt, two_counter_loop
@@ -101,6 +102,45 @@ class FinitaryOmegaTests(unittest.TestCase):
             self.chain.successor(Pred("P",Var("x")),label="invalid free variable")
         with self.assertRaises(ReflectionBoundaryError):
             self.chain.successor(self.a,label="")
+
+
+class MonadicLimitSemanticTests(unittest.TestCase):
+    def test_all_individual_named_observations_hold_but_universal_fails(self):
+        # This is a mathematically explicit FIRST-ORDER model, not a
+        # computation that has waited infinitely many SUCC steps.
+        m=UnnamedElementOmegaCountermodel("Observed")
+        for n in (0,1,2,3,19,1000,10**40):
+            self.assertTrue(m.named_instance(n))
+            self.assertTrue(m.evaluate(Pred("Observed",Num(n))))
+        formula=Forall("x",Pred("Observed",Var("x")))
+        self.assertFalse(m.evaluate(formula))
+        self.assertTrue(m.evaluate(
+            Exists("x",Not(Pred("Observed",Var("x"))))))
+        self.assertTrue(m.evaluate(
+            Forall("x",Implies(Pred("Observed",Var("x")),
+                               Pred("Observed",Var("x"))))))
+        self.assertFalse(m.evaluate(
+            Forall("x",And(Pred("Observed",Var("x")),
+                            Pred("Observed",Num(3))))))
+        report=m.structural_report()
+        self.assertTrue(report["all_named_ground_instances_true"])
+        self.assertFalse(report["global_universal_claim_true"])
+        self.assertFalse(report["applies_to_PA"])
+        self.assertFalse(report["RH_independence_inferred"])
+
+    def test_countermodel_cannot_launder_arithmetic_or_free_variable_claims(self):
+        m=UnnamedElementOmegaCountermodel("P")
+        with self.assertRaises(ReflectionBoundaryError):
+            m.evaluate(Pred("Q",Num(0)))
+        with self.assertRaises(ReflectionBoundaryError):
+            m.evaluate(Pred("P",Var("x")))
+        with self.assertRaises(ReflectionBoundaryError):
+            m.evaluate(Forall("x",Pred("P",Add(Var("x"),Num(1)))))
+        self.assertTrue(m.evaluate(Forall("x",Pred("P",Num(2)))))
+        with self.assertRaises(ReflectionBoundaryError):
+            UnnamedElementOmegaCountermodel("")
+        with self.assertRaises(ReflectionBoundaryError):
+            m.named_instance(-1)
 
 
 class CertifiedGramTests(unittest.TestCase):
