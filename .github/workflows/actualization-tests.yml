@@ -1,0 +1,72 @@
+name: Field-relative actualization verification
+
+on:
+  push:
+    branches:
+      - 'build/2026-10-09/field-relative-actualization-a1'
+    paths:
+      - 'actualization/**'
+      - 'tests/actualization/**'
+      - 'scripts/audit_actualization.py'
+      - 'scripts/mutate_actualization.py'
+      - '.github/workflows/actualization-tests.yml'
+  pull_request:
+    paths:
+      - 'actualization/**'
+      - 'tests/actualization/**'
+      - 'scripts/audit_actualization.py'
+      - 'scripts/mutate_actualization.py'
+      - '.github/workflows/actualization-tests.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  finite-system:
+    name: Python ${{ matrix.python }} finite mechanics
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.10', '3.13']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Run three isolated regression lanes
+        run: python scripts/audit_actualization.py --output "$RUNNER_TEMP/actualization-audit"
+      - name: Run eight hostile mutations
+        run: python scripts/mutate_actualization.py --output "$RUNNER_TEMP/actualization-mutations"
+      - name: Check complete history demo and replay
+        shell: bash
+        run: |
+          python -m actualization demo --output "$RUNNER_TEMP/demo.json" --trace "$RUNNER_TEMP/trace.json"
+          python -m actualization replay "$RUNNER_TEMP/trace.json" --output "$RUNNER_TEMP/replayed.json"
+          python -m actualization reverse "$RUNNER_TEMP/trace.json" --output "$RUNNER_TEMP/reversed.json"
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          root=Path(os.environ['RUNNER_TEMP'])
+          assert json.loads((root/'replayed.json').read_text())['verified']
+          trace=json.loads((root/'trace.json').read_text())
+          reversed_trace=json.loads((root/'reversed.json').read_text())
+          assert len(reversed_trace['records'])==2*len(trace['records'])
+          print('CLI history replay and non-erasing reversal PASS')
+          PY
+      - name: Retain raw lane outputs and execution manifest
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: actualization-${{ matrix.python }}
+          path: |
+            ${{ runner.temp }}/actualization-audit/
+            ${{ runner.temp }}/actualization-mutations/
+            ${{ runner.temp }}/demo.json
+            ${{ runner.temp }}/trace.json
+            ${{ runner.temp }}/replayed.json
+            ${{ runner.temp }}/reversed.json
+          if-no-files-found: warn
+          retention-days: 14
