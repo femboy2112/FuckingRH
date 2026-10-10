@@ -22,6 +22,7 @@ from actualization.ordinal_succ_report import (
     OrdinalFiniteStage,exact_bounded_time_horizon,
     quartic_observer_report,exact_polynomial_rectangle,
     oscillator_observer_report,synthetic_ordinal_semantics,
+    harmonic_half_density_observer,harmonic_dyadic_divergence_certificate,
 )
 from actualization.gamma_interferometer import individual_impulse_determinant
 
@@ -56,6 +57,8 @@ def run(*,dps=72,horizon=28):
         ordinal=synthetic_ordinal_semantics(horizon)
         semantic_true=a.restrict(6).semantic_log_partition_hessian(2,3)
         semantic_fake=fake.restrict(6).semantic_log_partition_hessian(2,3)
+        half_density=harmonic_half_density_observer(256,3)
+        diverges=harmonic_dyadic_divergence_certificate(8)
         answer={
             "status":"FINITE_ORDINAL_SUCC_SECOND_ORDER_WEIL_PROBE",
             "no_actual_infinite_ordinal_computed":True,
@@ -107,6 +110,20 @@ def run(*,dps=72,horizon=28):
                 "mixed_covariance_increment":mp.nstr(mixed,30),
                 "distributional_limit":"Psi''(t-u) = Weil distribution",
                 "positive_definiteness_proved":False,
+            },
+            "hilbert_critical_line_observer_escape":{
+                "stage":256,
+                "finite_norm_squared":"1",
+                "fixed_local_projector":"P_3",
+                "local_projector_expectation":str(
+                    half_density["finite_projector_expectation"]),
+                "identity_expectation":str(
+                    half_density["identity_expectation"]),
+                "harmonic_H_256":str(diverges["exact_H_N"]),
+                "H_256_lower_bound":str(diverges["provable_lower_bound"]),
+                "weak_limit_zero_not_strong":True,
+                "normalizable_omega_vector_exists":False,
+                "source_inert_and_not_RH":True,
             },
             "positive_observations_are_not_positive_correlations":{
                 "quartic_psi_nonnegative":True,
