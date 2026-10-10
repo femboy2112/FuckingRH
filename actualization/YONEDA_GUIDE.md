@@ -307,3 +307,28 @@ Detailed theorem and controls:
 [SUCC/Gamma prime-path germs](../research/2026-10-10/SUCC_GAMMA_PRIME_PATH_GERMS.md).
 This is a scalar analytic-germ bridge inside Re(u)>1/2, **not**
 a functor into the complete Weil form domain and not an RH proof.
+
+
+## Complete SUCC-shadow probes select, incomplete windows can remain blind
+
+The new [shadow-window theorem](../research/2026-10-10/SUCC_SHADOW_WINDOW_CANONICAL_SELECTION.md)
+realizes the canonical Gamma solution via the infinite family of
+finite curvature probes W_(n,θ,h). A finite integer orbit by itself
+cannot distinguish periodic gauge deformations, but fractional
+window measurements can. Their SUCC limit leaves only the periodic
+defect as the Gamma curvature vanishes.
+
+**Hostile example:** a continuous periodic function with strictly
+positive curvature inside each integer cell can have downward
+derivative jumps at every integer boundary. No number of
+inside-cell-only probes detects the failure of global convexity;
+boundary-crossing shadow probes do. Thus probe-category completeness
+is essential, and no claim that "infinity automatically solves
+normalization" survives the control.
+
+Multivalued complex log is distinct: the obstruction is winding
+monodromy around 0, not a 1-periodic positive Gamma gauge.
+Gluing- and reversal-preserving scalar weights on integer winding
+classes cannot suppress nonzero winding while remaining positive,
+symmetric, and multiplicative. None of this proves the completed
+Weil-form sign required for RH.
