@@ -675,6 +675,9 @@ provability in PA/ZFC.
 | OBS-18 | Joint Gamma/Weil positive-type distribution identified with observer covariance | UNVERIFIED; RH-equivalent gate |
 | OBS-19 | RH unprovable / independent of PA or ZFC | UNKNOWN |
 | OBS-20 | Human semantic functor physically realized by quantum mechanics | Proposed research program, NOT empirically established |
+| OBS-21 | Every named numeral satisfies P yet forall x P(x) fails in a unary outsider model | Exact first-order model, NOT PA |
+| OBS-22 | Finite prime/FUCC Suzuki source admits zero-free rigorous rational enclosures | Proved elementary bounds, tested; Gamma missing |
+| OBS-23 | Fake a(6)=2 yields a strictly negative certified local source-jet delta | Exact interval sign, NOT a negative Weil/RH witness |
 
 Mandatory hostile cases: delayed halting versus loop; one fake
 composite event at 6 and delayed at 15; changed |alpha_2| or log2;
@@ -699,6 +702,12 @@ Hecke vs non-Euler Davenport–Heilbronn matched completion.
 - tests/actualization/test_observer_reflection.py — finitary omega
   support, Turing prefix controls, strict Gram negative witness
   and uncertified-numeric rejection.
+- actualization/source_prime_certificates.py — pure rational
+  source-derived Suzuki PRIME wavefront interval arithmetic.
+- tests/actualization/test_source_prime_certificates.py — bounded
+  source and independent gamma-interferometer numerical holdouts.
+- scripts/prime_source_certificates_probe.py — rational proof envelope
+  and counterfeit interaction JSON report.
 - scripts/observer_foundations_probe.py — deterministic evidence
   manifest showing every epistemic scope and withheld claim.
 
@@ -743,6 +752,40 @@ zero-independent positive-distribution/gluing identity
 whose limit equals the FULL Suzuki/Weil distribution.
 The exact identification and its independent sign
 are both necessary. At present they are NOT established.
+
+## 12A. New exact source-side Suzuki certificate (this branch)
+
+The program no longer stops at an abstract rational Gram interval
+protocol. The new source_prime_certificates.py rigorously encloses the
+FINITE PRIME component of Suzuki Psi for rational observation times,
+using the full actualized Dirichlet-connected coefficient prefix.
+This is a substantive, zero-independent arithmetic part of the
+observer/source-to-Weil diagram.
+
+For integer n, reduce log(n)=k log2+log(n/2^k) and use the positive
+atanh series with a proved exact rational remainder. Bound 1/sqrt(n)
+by integer isqrt under a fixed decimal scaling; take the positive part
+of t-log(n) in interval arithmetic without guessing prime activation
+at near-boundary times. Exact fractions enclose the entire causal
+prime-wavefront and its two-time mixed report.
+
+The counterfeit a(6)=2 creates an explicit strictly negative SOURCE
+difference inside log6<t<log12:
+
+\[
+\delta\Psi_{\rm prime}(t)=
+-\frac{\log6}{\sqrt6}(t-\log6)<0.
+\]
+
+This inequality is now certified by pure rational bounds with NO
+floating point, fitted zero or undeclared future observation.
+It does not claim a negative full Weil form: the archimedean
+Gamma-plus-poles component is still absent. The exact scope,
+proof and reproduction procedure are in
+[CERTIFIED_FINITE_PRIME_TRANSPORT.md](CERTIFIED_FINITE_PRIME_TRANSPORT.md).
+The next analytic engineering gate is a similarly rigorous
+archimedean enclosure and safe composition on admissible
+Suzuki/Weil test domains.
 
 ## 13. Bibliography (primary / authoritative)
 
