@@ -185,6 +185,29 @@ class SuccGammaProvenanceTests(unittest.TestCase):
                 mp.mpf("100.75"),-eps,dps=65),0)
             self.assertGreater(mp.polygamma(1,mp.mpf("100.25")),0)
 
+
+    def test_real_actualization_source_and_journal_provenance(self):
+        from actualization import Engine, Limits, source_at
+        from actualization.core import Scalar
+        engine=Engine(arithmetic=True,limits=Limits(max_target=24))
+        for k in range(1,7):
+            engine.advance(source_at(k),context="zeta",probe="coefficient")
+        moment=PrimeMomentPath.from_engine(engine)
+        self.assertEqual(moment.horizon,6)
+        self.assertEqual(moment.paths()["source_journal_head"],engine.head)
+        self.assertEqual(tuple(c.base for c in moment.channels),(2,3,5))
+        self.assertTrue(moment.is_genuine_prefix())
+        engine.predict(7,Scalar(1),"not an observation")
+        engine.step(Scalar(2),context="mutant",probe="coefficient")
+        pending=PrimeMomentPath.from_engine(engine)
+        self.assertEqual(pending.horizon,6)
+        self.assertNotEqual(pending.source_head,moment.source_head)
+        engine.propagate()
+        with self.assertRaises(PathDomainError):
+            PrimeMomentPath.from_engine(engine)
+        with self.assertRaises(PathDomainError):
+            PrimeMomentPath.from_engine(engine,horizon=8)
+
     def test_source_and_domain_mismatch_controls(self):
         P=PrimeMomentPath.genuine(7)
         with self.assertRaises(PathDomainError):
