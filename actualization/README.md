@@ -524,3 +524,60 @@ which increases the source cutoff to \(O(k)\).
 This proves **accuracy**, NOT the positivity of lambda_k. A
 uniform source-derived lower bound on the Li coefficients
 would still be required for RH.
+
+
+## Ordinal SUCC observer, correlated second differences and Weil report
+
+[ordinal_succ_report.py](ordinal_succ_report.py) makes the user's
+"send the finite SUCC observation team on an infinite journey;
+after omega it returns with the Weil report" mathematically precise
+WITHOUT pretending to have executed an infinite-time computation:
+
+- Each source stage n is a complete, causally actualized prefix.
+  SUCC appends exactly one new coefficient and checks the replayable
+  observation journal. A stage-omega colimit is a MATHEMATICAL
+  construction of the compatible infinite history; omega+1 is the
+  retrospective REPORT operation, not physical time after infinity.
+- For every finite rational query set, the prime-side Suzuki
+  correlation kernel becomes EXACT after a conservative finite
+  arithmetic stage N=3^ceil(max time displacement), chosen without
+  floating prime-event thresholds. The Gamma/pole completion is a
+  SEPARATELY DECLARED analytic model: the current method does not
+  hallucinate a finite physical observer having completed Gamma.
+- The truly load-bearing "second derivative of observations" is
+  \`∂_t∂_u K(t,u)=Psi''(t-u)=W_Weil(t-u)\` as a DISTRIBUTION
+  (Suzuki JLMS 2023). It has a finite exact mixed-SUCC
+  rectangle difference which cancels all one-observer-only terms.
+  A fake a(6)=2 registers as the connected pair
+  interaction \`b(6)=a(6)-a(2)a(3)=1\`, which becomes a delta
+  in the report's second derivative, while its point value at
+  activation is unchanged.
+- Psi(t)=t^4 has nonnegative values and nonnegative ordinary
+  curvature, but an INDEFINITE Gram with exact determinant -192.
+  Conversely Psi=1-cos(t) has a PSD Hilbert Gram while
+  pointwise Psi'' changes sign. Ordinary positivity is not
+  positive definiteness of the Weil correlation distribution.
+- An independently constructed semantic log-partition Hessian
+  \`∂_p∂_q log Σ a(n)exp(theta_p v_p(n)+theta_q v_q(n))\` is
+  an EXACT observer-feature covariance, PSD for both true zeta
+  and fake composite 6. The observer's own Hilbert/semantic
+  positivity therefore DOES NOT automatically prove Weil's sign.
+- Finally the elementary Hilbert vector
+  \`Σ n^(-s)|n>\` is norm-summable iff Re(s)>1/2.
+  At exactly Re(s)=1/2 each finite normalized vector
+  \`Ω_N(t)=H_N^(-1/2) Σ_(n<=N)n^(-1/2-it)|n>\`
+  has norm 1 but converges WEAKLY to ZERO, not strongly, as its
+  probability escapes every fixed local projector P_M:
+  \`<Ω_N|P_M|Ω_N>=H_M/H_N->0\`. The identity expectation stays 1.
+  These are exact rational finite measurements plus a classical
+  harmonic divergence proof; they are NOT a physical model of a
+  particular human brain, nor evidence for RH.
+
+~~~bash
+python scripts/ordinal_succ_report_probe.py
+python -m unittest discover -s tests/actualization -p 'test_ordinal_succ_report.py' -v
+~~~
+
+[Proofs, ordinal semantics, source tests, physical caveats, and remaining
+Weil-positive distribution gate]
+(../research/2026-10-10/OMEGA_SUCC_SECOND_ORDER_WEIL_REPORT.md).
