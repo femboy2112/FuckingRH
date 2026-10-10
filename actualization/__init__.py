@@ -6,5 +6,11 @@ from .arithmetic import (Limits, ShadowIndex, clock_contract, conditional_mean,
                          conductor_growth, connected_audit, factorization,
                          mixed_probe, source_at, structure_birth)
 from .engine import Engine, LossyHistoryError, run_arithmetic
+from .yoneda import (Arrow, DivisibilityCategory, PathCategory, ValuationCategory,
+                     FiniteFunctor, CompanionBridge, valuation_bridge,
+                     forget_path_bridge, restricted_yoneda, validate_yoneda)
+from .resource_probe import (ValuationWord, ProbeBudget, compare_observers,
+                             execute_probe, lcm_word, budget_demo)
+from .phenomenology import Phenomenology
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
