@@ -29,7 +29,7 @@ class ValuationWord:
 
     def __post_init__(self):
         factors = tuple(self.factors)
-        if len(factors) > 256:
+        if len(factors) > 2048:
             raise BudgetExceeded("Too many formal prime generators")
         if tuple(sorted(factors)) != factors or len(set(p for p, _ in factors)) != len(factors):
             raise DomainError("Prime valuation coordinates must be strictly ordered")
