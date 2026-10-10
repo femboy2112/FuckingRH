@@ -297,6 +297,29 @@ RH-inert; they are listed because they are genuinely different *pictures*.
   `A,B,P`), hence **RH-inert**. Net: RH ⟺ the prime-window irreversibility is only apparent (premature
   projection); the sign must come from the source through the completion = the **fourth gate**, not
   from `R`. `REFORMULATION→WALL` (three walls unified as one reversibility wall); no new content.
+- **Flow-regularity (Navier–Stokes-shaped)** *(external, ChatGPT-relayed, R69; verified on our own instruments).*
+  "RH looks like this if you ask whether an impulse-driven arithmetic *flow* stays regular — no
+  singularity — at critical scaling." Literal, not metaphor: under the backward heat flow `ξ` carries the
+  De Bruijn–Newman constant `Λ` with RH ⟺ `Λ≤0`, and Rodgers–Tao (2018) proved `Λ≥0`, so RH ⟺ **`Λ=0`** —
+  the zeros sit at the *exact critical instant* of a heat flow on a log-gas of zeros [literature]. Suzuki's
+  `Ψ(t)≥0 ⟺ RH` reads as an impulse-driven position (`v⁺−v⁻=−\log p/p^{k/2}` at each prime power; `r(t)=Ψ`
+  never goes negative). The honest transfer is the **supercriticality / unclosed-closure barrier**: the
+  only coercive quantity is positive but at the wrong scaling (the Weil form is *indefinite*), and
+  **Davenport–Heilbronn is the RH-world "averaged equation that blows up"** (cf. Tao 2016) — it shares the
+  whole abstract shape, lacks only the Euler product, and *does* develop off-line zeros ⟹ any proof must
+  use multiplicativity, not the abstract shape. Two probes closed the hopeful sub-paths (verified here):
+  (i) the proposed "arithmetic information-flux tensor" `τ=ω(U₂U₃)−ω(U₂)ω(U₃)=4t(1−t)` is a **quantum
+  variance** `ω(A^†A)−|ω(A)|²≥0` (Cauchy–Schwarz) — PSD *by construction*, hence can never equal the
+  indefinite Weil form that must go negative off-line; (ii) the higher-conductor "Reynolds cascade" has
+  **no irreducible structure** — by CRT the prime coordinates are independent, so the `n=30` triple
+  correlation factorizes (`κ₃=0`, connected energy `0`); arithmetic is **CRT-laminar**, so the cascade
+  machinery that makes NS hard does not transfer. The companion "Field-Relative Actualization System /
+  shadow coefficient" architecture (R69) is scaffolding: its one concrete object, the shadow `σ_N(n)`, is
+  the **truncated convolution-logarithm** of `ζ` (verified; limit `b(n)=Λ(n)/\log n` supported only on
+  prime powers, `b(6)=b(12)=b(30)=0`) = multiplicativity = gate 1, RH-inert. *Net:* the fluid toolbox gives
+  a precise **name** for the obstruction (unclosed closure = supercriticality = the fourth gate) but its
+  signature machinery (the cascade) finds nothing to climb, and the positive variance / shadow norm is
+  provably *not* the sign. `REFORMULATION→WALL`; no brick.
 
 ## 8.7 The graveyard (proved or measured dead — do not re-dig)
 
