@@ -176,7 +176,7 @@ class RootedTreeSuccTests(unittest.TestCase):
             self.assertGreater(full,leaf)
 
     def test_tree_ratio_growth_and_analytic_w_branch(self):
-        ratios=[rooted_tree_succ_ratio(n) for n in range(1,80)]
+        ratios=[rooted_tree_succ_ratio(n) for n in range(1,120)]
         self.assertEqual(ratios[0],1)
         self.assertTrue(all(a<b for a,b in zip(ratios,ratios[1:])))
         with mp.workdps(70):
