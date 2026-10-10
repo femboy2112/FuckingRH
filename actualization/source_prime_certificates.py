@@ -210,8 +210,11 @@ def prime_delta_at_fake_six(*,t=Fraction(9,5),log_terms=30,
     tq=_q(t)
     if type(horizon) is not int or not 12<=horizon<=81:
         raise SourceCertificateError("Need 12<=horizon<=81 for this controlled example")
-    if tq<=Fraction(179,100) or tq>=Fraction(248,100):
-        raise SourceCertificateError("Use an interior rational time in (log6,log12)")
+    log6=rational_log_integer(6,terms=log_terms)
+    log12=rational_log_integer(12,terms=log_terms)
+    if tq<=log6.upper or tq>=log12.lower:
+        raise SourceCertificateError(
+            "Require a CERTIFIED interior rational time log6<t<log12")
     true=CertifiedPrimeSource.genuine(
         horizon,log_terms=log_terms,sqrt_places=sqrt_places)
     s={n:1 for n in range(1,horizon+1)}
