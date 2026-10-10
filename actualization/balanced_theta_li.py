@@ -213,8 +213,7 @@ def truncated_xi(s,N,T,*,dps=75):
         T=mp.mpf(T)
         if not mp.isfinite(T) or not 0<=T<=5:
             raise BalancedWindowError("Finite xi log window requires 0<=T<=5")
-        from .hasse_theta_seam import theta_xi_partial
-        return +theta_xi_partial(s,max_integer=N,dps=dps,mutations=None) if T == mp.inf else +_xi_cut(s,N,T,dps)
+        return +_xi_cut(s,N,T,dps)
 
 
 def _xi_cut(s,N,T,dps):
@@ -331,13 +330,13 @@ def finite_double_zero(N=4,*,dps=48,init_t="11.210",init_T="0.32478"):
     _nat(N,lo=1,hi=8,name="finite collision integer cutoff")
     mp=_mp()
     with mp.workdps(dps):
-        fn=lambda t,T:mp.re(_xi_cut(mp.mpf("0.5")+mp.j*t,N,T,dps))
+        fn=lambda t,T:mp.re(_xi_cut(mp.mpf("0.5")+mp.j*t,N,T,mp.mp.dps))
         slope=lambda t,T:mp.diff(lambda v:fn(v,T),t)
         t,T=mp.findroot((fn,slope),(mp.mpf(init_t),mp.mpf(init_T)),
                         tol=mp.power(10,-(dps-12)),maxsteps=20)
         s=mp.mpf("0.5")+mp.j*t
-        a=mp.diff(lambda u:_xi_cut(s,N,u,dps),T)
-        b=mp.diff(lambda x:_xi_cut(x,N,T,dps),s,2)/2
+        a=mp.diff(lambda u:_xi_cut(s,N,u,mp.mp.dps),T)
+        b=mp.diff(lambda x:_xi_cut(x,N,T,mp.mp.dps),s,2)/2
         if abs(mp.im(a))>mp.power(10,-(dps//2)) or abs(mp.im(b))>mp.power(10,-(dps//2)):
             raise ArithmeticError("Expected real symmetry at the finite double zero")
         return {"N":N,"t_star":+t,"T_star":+T,"linear_T":+mp.re(a),
