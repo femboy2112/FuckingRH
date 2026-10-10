@@ -13,6 +13,7 @@ on:
       - 'aletheia/dirichlet-star-lambert-source-2026-10-10'
       - 'aletheia/finite-succ-hasse-theta-seam-2026-10-10'
       - 'aletheia/balanced-theta-li-window-2026-10-10'
+      - 'aletheia/omega-succ-second-order-report-2026-10-10'
     paths:
       - 'actualization/**'
       - 'tests/actualization/**'
@@ -24,12 +25,14 @@ on:
       - 'research/2026-10-10/DIRICHLET_LAMBERT_SOURCE_LIFT.md'
       - 'research/2026-10-10/FINITE_SUCC_HASSE_THETA_SEAM.md'
       - 'research/2026-10-10/BALANCED_THETA_LI_WINDOW.md'
+      - 'research/2026-10-10/OMEGA_SUCC_SECOND_ORDER_WEIL_REPORT.md'
       - 'scripts/infinite_realization_demo.py'
       - 'scripts/gamma_succ_path_probe.py'
       - 'scripts/lambert_succ_probe.py'
       - 'scripts/dirichlet_lambert_probe.py'
       - 'scripts/hasse_theta_seam_probe.py'
       - 'scripts/balanced_theta_li_probe.py'
+      - 'scripts/ordinal_succ_report_probe.py'
       - 'scripts/audit_actualization.py'
       - 'scripts/mutate_actualization.py'
       - '.github/workflows/actualization-tests.yml'
@@ -45,12 +48,14 @@ on:
       - 'research/2026-10-10/DIRICHLET_LAMBERT_SOURCE_LIFT.md'
       - 'research/2026-10-10/FINITE_SUCC_HASSE_THETA_SEAM.md'
       - 'research/2026-10-10/BALANCED_THETA_LI_WINDOW.md'
+      - 'research/2026-10-10/OMEGA_SUCC_SECOND_ORDER_WEIL_REPORT.md'
       - 'scripts/infinite_realization_demo.py'
       - 'scripts/gamma_succ_path_probe.py'
       - 'scripts/lambert_succ_probe.py'
       - 'scripts/dirichlet_lambert_probe.py'
       - 'scripts/hasse_theta_seam_probe.py'
       - 'scripts/balanced_theta_li_probe.py'
+      - 'scripts/ordinal_succ_report_probe.py'
       - 'scripts/audit_actualization.py'
       - 'scripts/mutate_actualization.py'
       - '.github/workflows/actualization-tests.yml'
@@ -186,6 +191,32 @@ jobs:
           assert j["nontrivial_zeta_zeros_used_as_source"] is False
           print("Balanced theta / Li source and negative controls reproduced")
           PY
+      - name: Test ordinal SUCC observation reports and mixed-second Weil correlation
+        run: python -m unittest discover -s tests/actualization -p 'test_ordinal_succ_report.py' -v
+      - name: Reproduce ordinal omega+1 semantic, Weil and Hilbert escape evidence
+        run: |
+          python scripts/ordinal_succ_report_probe.py --output "$RUNNER_TEMP/ordinal-succ-report.json"
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          j=json.loads((Path(os.environ["RUNNER_TEMP"])/"ordinal-succ-report.json").read_text())
+          assert j["status"]=="FINITE_ORDINAL_SUCC_SECOND_ORDER_WEIL_PROBE"
+          assert j["formal_ordinals"]["global_PSD_predicate_proved"] is False
+          assert j["connected_source_second_order"]["fake_connected_curvature"]=="1"
+          assert j["connected_source_second_order"]["true_connected_curvature"]=="0"
+          assert j["positive_observations_are_not_positive_correlations"]["quartic_determinant"]=="-192"
+          assert j["positive_observations_are_not_positive_correlations"]["quartic_quadratic_vector_ones"]=="-24"
+          assert j["semantic_second_derivative_information_geometry"]["both_information_geometries_PSD"]
+          assert j["semantic_second_derivative_information_geometry"]["Weil_identification_established"] is False
+          assert j["finite_quantum_phase_omega_topology"]["pointwise_formal_limit_at_t_0"]==1
+          assert j["finite_quantum_phase_omega_topology"]["pointwise_formal_limit_at_t_1"]==0
+          assert j["finite_quantum_phase_omega_topology"]["limit_continuous_at_zero"] is False
+          assert j["hilbert_critical_line_observer_escape"]["weak_limit_zero_not_strong"]
+          assert j["hilbert_critical_line_observer_escape"]["normalizable_omega_vector_exists"] is False
+          assert j["no_actual_infinite_ordinal_computed"]
+          assert j["no_RH_or_Weil_positive_sign_assumed"]
+          print("Finite ordinal SUCC, semantic Hessian and Hilbert weak escape controls PASS")
+          PY
       - name: Run seven isolated regression lanes
         run: python scripts/audit_actualization.py --output "$RUNNER_TEMP/actualization-audit"
       - name: Run fifteen hostile mutations
@@ -225,5 +256,6 @@ jobs:
             ${{ runner.temp }}/dirichlet-lambert.json
             ${{ runner.temp }}/hasse-theta-seam.json
             ${{ runner.temp }}/balanced-theta-li.json
+            ${{ runner.temp }}/ordinal-succ-report.json
           if-no-files-found: warn
           retention-days: 14

@@ -448,3 +448,51 @@ for coefficient approximation alone. This quantifier-correct
 diagonal realizes infinitely many finite measurements, but
 does not prove the coefficients' sign. See §8 of
 [BALANCED_THETA_LI_WINDOW.md](../research/2026-10-10/BALANCED_THETA_LI_WINDOW.md).
+
+
+## Ordinal omega observer reports and cross-observation second order
+
+The [omega SUCC/Weil observer report]
+(../research/2026-10-10/OMEGA_SUCC_SECOND_ORDER_WEIL_REPORT.md)
+gives the finite observation chain a formal *limit ordinal*
+omega, followed by a distinct omega+1 correlation-report
+operation. It is NOT a physically executed infinity; any
+fixed finite support of prime-side Suzuki measurements
+is exactly reconstructible from finitely many source events.
+
+The load-bearing observer cross-difference is
+\`Δ_tΔ_u K(t,u)\`, converging distributionally to
+\`Psi''(t-u)=W_Weil(t-u)\`. This is Suzuki's existing
+exact identity, not a new RH theorem. Arithmetic connected
+pair residuals like \`b(6)=a(6)-a(2)a(3)\` can be observed
+as an extra report slope jump / delta-curvature source,
+illustrating mathematically how second-order comparison
+detects previously unexplained interactions.
+
+Simple observer Hilbert Gram kernels are positive
+(oscillator Psi=1-cos), but positive scalar Psi and
+positive pointwise curvature can still yield indefinite
+Grams (quartic Psi=t^4). Even authentic quantum-semantic
+log-partition Hessians are PSD for FAKE arithmetic. The
+arithmetic-to-positive-Weil identification remains absent.
+
+A further, physically motivated boundary appears in the
+naive half-density Hilbert amplitudes \`n^(-s)\`:
+\`||Phi_s||²=ζ(2 Re s)\` for Re s>1/2, while at
+Re s=1/2 harmonic normalization sends unit finite
+observers weakly to zero, with no normalized strong
+omega-vector. The report may need a different observable
+completion rather than direct limiting vectors;
+this is a representation issue, NOT a zero theorem.
+
+
+The critical half-density observer has an even stronger
+topological obstruction: the normalized finite phase
+correlator \`phi_N(t)=H_N^-1 sum(n^(-1+it))\` is PD at every
+finite stage yet has pointwise limit 1 at t=0 and 0 at
+every t!=0. That limit is discontinuous in ordinary
+logarithmic time. Thus the \`omega+1\` report needs not
+only a source-correct positive covariance, but a topology
+under which physical/semantic covariance transport
+remains regular. This phenomenon is exactly proved in
+§10 of \`OMEGA_SUCC_SECOND_ORDER_WEIL_REPORT.md\`.
