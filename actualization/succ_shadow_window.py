@@ -189,6 +189,54 @@ def observed_window(certificate: ShadowWindowCertificate, *, dps=60):
         }
 
 
+
+
+def seam_gauge_witness(epsilon, *, max_stage=1_000_000):
+    """Cross-integer SUCC seam for a deceptive cellwise-convex periodic gauge.
+
+    q(x)=eps*({x}^2-{x}), eps>0, is continuous and 1-periodic.
+    Inside each open cell, q''=2eps>0; EVERY same-cell convexity
+    window passes. But at integers the derivative jumps down by
+    2eps. For h=1/4 at integer n>=2:
+        Delta_h^2 q(n)=-2eps*h*(1-h)=-3eps/8 < 0.
+    Gamma's contribution <= h^2[1/(n-1)+1/(n-1)^2].
+    Taking n-1>1/(3eps) certifies a finite violation.
+    """
+    e=_rational(epsilon,"periodic seam gauge strength")
+    if e<=0:
+        raise WindowError("This seam control requires positive gauge strength")
+    if type(max_stage) is not int or not 2 <= max_stage <= 1_000_000:
+        raise WindowResourceExhausted("Seam horizon must be in 2..1000000")
+    h=Fraction(1,4)
+    cutoff=Fraction(1,3*e)
+    n=max(2,cutoff.numerator//cutoff.denominator+2)
+    if n>max_stage:
+        raise WindowResourceExhausted(
+            "Seam witness lies beyond declared budget; no global impossibility follows"
+        )
+    upper=h*h*(Fraction(1,n-1)+Fraction(1,(n-1)**2))
+    actual=-2*e*h*(1-h)
+    witness=ShadowWindowCertificate(
+        epsilon=e,frequency=1,successor_stage=n,fractional_center=Fraction(0),
+        half_width=h,gamma_curvature_upper_bound=upper,periodic_curvature=actual
+    )
+    if not witness.total_curvature_strictly_negative:
+        raise ArithmeticError("Internal seam certificate did not establish negativity")
+    return witness
+
+
+def same_cell_quadratic_gauge_curvature(epsilon,half_width):
+    """Exact gauge-only curvature of q(x)=eps*(x^2-x) inside ONE unit cell.
+
+    For eps>0 this is always positive. Same-cell-only probes fail to
+    select Gamma, no matter how many integer SUCC stages they visit.
+    """
+    e=_rational(epsilon)
+    h=_rational(half_width)
+    if not e>0 or not 0<h<Fraction(1,2):
+        raise WindowError("Positive gauge and 0<h<1/2 are required")
+    return 2*e*h*h
+
 def unseen_within_prefix(epsilon, horizon, frequency=1):
     """A conservative analytical *positive* lower bound for ALL matched windows
     at n in [1,horizon]. A nontrivial gauge may evade that finite probe class.
