@@ -410,3 +410,27 @@ despite on-critical-line strict positivity.
 The next proof-bearing object is a source-derived polarization
 on the completed Weil test-function domain, or equivalently a
 uniform Jensen-hyperbolicity mechanism. Both are open.
+
+
+## Coupled arithmetic–archimedean exhaustion and Li coefficients
+
+In the [balanced theta / Li proof memo]
+(../research/2026-10-10/BALANCED_THETA_LI_WINDOW.md),
+the two infinite limits \`N->infinity\` and \`|u|->infinity\` are
+shown to be NON-INTERCHANGEABLE at fixed N. A zero-blind
+\`N(u,epsilon)\` from Gaussian erfc tails lets the finite
+arithmetic window track archimedean displacement with a
+rigorous absolute reflection-defect budget. The half-density
+1/2 is the unique exponent supporting the full Poisson
+reflection, and fake a(6)=2 survives as a measurable duality
+seam in an appropriately displaced window.
+
+The same theta integrals produce finite Li coefficients
+through formal logarithmic SUCC reexpansion in
+\`w=(s-1)/s\`. A uniform Gaussian bound gives a genuine
+zero-free disk near s=1 and a Cauchy error estimate for
+every **fixed Li index**. The bound scales like \`r^(-index)\`,
+so it offers NO theorem of positivity for all indices.
+Finite off-line theta zero collisions coexist with positive
+low-order Li-like coefficients; tracking zero motion cannot
+replace an independent source-derived Weil/Li sign argument.
