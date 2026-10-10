@@ -45,7 +45,8 @@ The full account of how this program thinks about the problem lives in the
 8. **[The reformulations catalog](wiki/08-the-reformulations-catalog.md)** — a map of all ~47
    experimental branches: every lens tried, each as "RH looks like this if you consider X → what
    you get → the wall," with the provenance caveat and the verdict (zero genuine non-circular
-   content; every per-prime positivity is RH-inert).9. **[Observational SUCC as a general theory of observation and proof](wiki/09-observational-succ-and-computability.md)** —
+   content; every per-prime positivity is RH-inert).
+9. **[Observational SUCC as a general theory of observation and proof](wiki/09-observational-succ-and-computability.md)** —
    physical Hilbert carrier versus observer-made mathematical spaces;
    preservation of causal history, mixed second-order correlations,
    finite/omega/omega+1 semantics; Gödel diagonal coding, Turing
