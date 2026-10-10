@@ -357,3 +357,26 @@ species combinatorics, NOT a proof that prime-power source dynamics
 select the global Weil-positive form. A fake primitive coefficient
 at n=6 is not detected by the factorial-W seed, so the construction
 does not pass the RH source-mutation criterion.
+
+
+## Lambert W inside the multiplicative source algebra
+
+Using W on scalar factorial mass was blind to a fake composite impulse,
+but the blindness occurs during scalar compression, NOT in W's inverse
+formula. The [Dirichlet-star lift](../research/2026-10-10/DIRICHLET_LAMBERT_SOURCE_LIFT.md)
+uses the entire labelled multiplicative path space: a normalized
+arithmetic source h belongs to the convolution augmentation ideal,
+and W_*(h) is the coefficientwise finite solution of
+\`w*exp_*(w)=h\`. Its ordered factor-path witnesses recover the
+contribution from (2,3) and (3,2) at integer 6.
+
+Under sufficiently strong absolute Dirichlet convergence, the
+arithmetic Mellin transform intertwines W_* with scalar W_0.
+**This is a genuine finite-to-analytic source-preserving coordinate
+transport**, but NOT a preserved Euler product or a Weil positivity
+theorem: W_*(zeta-1)(6)=-1, while a fake a(6)=2 makes W_*(h)(6)=0.
+The prior connected logarithm b=log_*a must still be used to test
+primitive multiplicativity.
+
+This is a positive existence example for source-enriched paths, but
+does not close the Gamma/Weil source-to-sign gate required for RH.

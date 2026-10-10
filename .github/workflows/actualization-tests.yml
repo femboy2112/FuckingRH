@@ -10,6 +10,7 @@ on:
       - 'aletheia/gamma-succ-prime-transport-2026-10-10'
       - 'aletheia/succ-shadow-gamma-selection-2026-10-10'
       - 'aletheia/lambert-w-succ-inverse-tree-2026-10-10'
+      - 'aletheia/dirichlet-star-lambert-source-2026-10-10'
     paths:
       - 'actualization/**'
       - 'tests/actualization/**'
@@ -18,9 +19,11 @@ on:
       - 'research/2026-10-10/SUCC_GAMMA_PRIME_PATH_GERMS.md'
       - 'research/2026-10-10/SUCC_SHADOW_WINDOW_CANONICAL_SELECTION.md'
       - 'research/2026-10-10/LAMBERT_SUCC_INVERSE_TREE.md'
+      - 'research/2026-10-10/DIRICHLET_LAMBERT_SOURCE_LIFT.md'
       - 'scripts/infinite_realization_demo.py'
       - 'scripts/gamma_succ_path_probe.py'
       - 'scripts/lambert_succ_probe.py'
+      - 'scripts/dirichlet_lambert_probe.py'
       - 'scripts/audit_actualization.py'
       - 'scripts/mutate_actualization.py'
       - '.github/workflows/actualization-tests.yml'
@@ -33,9 +36,11 @@ on:
       - 'research/2026-10-10/SUCC_GAMMA_PRIME_PATH_GERMS.md'
       - 'research/2026-10-10/SUCC_SHADOW_WINDOW_CANONICAL_SELECTION.md'
       - 'research/2026-10-10/LAMBERT_SUCC_INVERSE_TREE.md'
+      - 'research/2026-10-10/DIRICHLET_LAMBERT_SOURCE_LIFT.md'
       - 'scripts/infinite_realization_demo.py'
       - 'scripts/gamma_succ_path_probe.py'
       - 'scripts/lambert_succ_probe.py'
+      - 'scripts/dirichlet_lambert_probe.py'
       - 'scripts/audit_actualization.py'
       - 'scripts/mutate_actualization.py'
       - '.github/workflows/actualization-tests.yml'
@@ -113,6 +118,25 @@ jobs:
           assert j["arithmetic_mutation_negative_control"]["W_factorial_inverse_unchanged"]
           print("Lambert SUCC exact source/branch evidence verified; no RH theorem")
           PY
+      - name: Test source-faithful Dirichlet-convolution Lambert W and fake arithmetic
+        run: python -m unittest discover -s tests/actualization -p 'test_dirichlet_lambert.py' -v
+      - name: Save arithmetic Lambert-W exact prime-path and safe Mellin evidence
+        run: |
+          python scripts/dirichlet_lambert_probe.py --horizon 64 --sigma 4 --output "$RUNNER_TEMP/dirichlet-lambert.json"
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          p=Path(os.environ['RUNNER_TEMP'])/'dirichlet-lambert.json'
+          j=json.loads(p.read_text())
+          assert j['status']=='EXACT_ARITHMETIC_LAMBERT_PREFIX'
+          assert j['true_source']['w6']=='-1'
+          assert j['true_source']['connected_b6']=='0'
+          assert j['fake_source']['w6']=='0'
+          assert j['fake_source']['connected_b6']=='1'
+          assert j['true_inverse_identity'] and j['fake_inverse_identity']
+          assert j['zeros_read'] is False
+          print('Arithmetic Lambert-W source and Euler-shadow controls passed')
+          PY
       - name: Run seven isolated regression lanes
         run: python scripts/audit_actualization.py --output "$RUNNER_TEMP/actualization-audit"
       - name: Run fifteen hostile mutations
@@ -149,5 +173,6 @@ jobs:
             ${{ runner.temp }}/infinite-realization.json
             ${{ runner.temp }}/gamma-succ-prime-path.json
             ${{ runner.temp }}/lambert-succ.json
+            ${{ runner.temp }}/dirichlet-lambert.json
           if-no-files-found: warn
           retention-days: 14
