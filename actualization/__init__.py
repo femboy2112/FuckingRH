@@ -8,7 +8,8 @@ from .arithmetic import (Limits, ShadowIndex, clock_contract, conditional_mean,
 from .engine import Engine, LossyHistoryError, run_arithmetic
 from .yoneda import (Arrow, DivisibilityCategory, PathCategory, ValuationCategory,
                      FiniteFunctor, CompanionBridge, valuation_bridge,
-                     forget_path_bridge, restricted_yoneda, validate_yoneda)
+                     forget_path_bridge, restricted_yoneda, validate_yoneda,
+                     co_yoneda_companion, verify_companion_actions)
 from .resource_probe import (ValuationWord, ProbeBudget, compare_observers,
                              execute_probe, lcm_word, budget_demo)
 from .phenomenology import Phenomenology
