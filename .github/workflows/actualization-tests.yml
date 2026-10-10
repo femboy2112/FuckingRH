@@ -97,6 +97,22 @@ jobs:
         run: python -m unittest discover -s tests/actualization -p 'test_succ_shadow_window.py' -v
       - name: Test Lambert-W SUCC inverse rank and rooted-tree analytic branch
         run: python -m unittest discover -s tests/actualization -p 'test_lambert_succ.py' -v
+      - name: Reproduce exact factorial rank, tree coefficients and W branch evidence
+        run: |
+          python scripts/lambert_succ_probe.py --factorial-stage 32 --tree-stage 40 --output "$RUNNER_TEMP/lambert-succ.json"
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          j=json.loads((Path(os.environ['RUNNER_TEMP'])/'lambert-succ.json').read_text())
+          assert j["status"]=="FINITE_ZERO_FREE_LAMBERT_SUCC_PROBE"
+          assert j["factorial_inverse_exact_witness"]["rank"]==32
+          assert j["tree_succ"]["tree_functional_residual_at_true_stage"]=="0"
+          assert j["tree_succ"]["tree_mutation_at_six"]=="1/10"
+          assert j["arithmetic_mutation_negative_control"]["connected_true_at_6"]=="0"
+          assert j["arithmetic_mutation_negative_control"]["connected_fake_at_6"]=="1"
+          assert j["arithmetic_mutation_negative_control"]["W_factorial_inverse_unchanged"]
+          print("Lambert SUCC exact source/branch evidence verified; no RH theorem")
+          PY
       - name: Run seven isolated regression lanes
         run: python scripts/audit_actualization.py --output "$RUNNER_TEMP/actualization-audit"
       - name: Run fifteen hostile mutations
@@ -132,5 +148,6 @@ jobs:
             ${{ runner.temp }}/reversed.json
             ${{ runner.temp }}/infinite-realization.json
             ${{ runner.temp }}/gamma-succ-prime-path.json
+            ${{ runner.temp }}/lambert-succ.json
           if-no-files-found: warn
           retention-days: 14
