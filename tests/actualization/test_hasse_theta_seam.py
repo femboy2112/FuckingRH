@@ -146,7 +146,7 @@ class FiniteSUCCHasseTests(unittest.TestCase):
         with self.assertRaises(SeamError):
             src.zeta_negative_certified(6)
         with self.assertRaises(SeamError):
-            src.eta_euler_negative(-1)
+            src.euler_eta_negative(-1)
         with self.assertRaises(SeamError):
             src.zeta_from_eta_analytic(2,terms=6)
         with self.assertRaises(SeamError):
