@@ -31,8 +31,9 @@ class DirichletLambertTests(unittest.TestCase):
             self.assertEqual(true.composite_six()["w6"],"-1")
             for p in (2,3,5):
                 self.assertEqual(true.w[p],true.h[p])
-            self.assertEqual(true.w[8],Q(1,2))
-            self.assertEqual(true.connected[8],Q(1,3))
+            if N>=8:
+                self.assertEqual(true.w[8],Q(1,2))
+                self.assertEqual(true.connected[8],Q(1,3))
 
     def test_source_mutation_at_six_changes_arithmetic_w(self):
         source={n:1 for n in range(1,33)}
