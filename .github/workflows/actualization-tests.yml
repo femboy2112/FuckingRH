@@ -15,6 +15,7 @@ on:
       - 'aletheia/balanced-theta-li-window-2026-10-10'
       - 'aletheia/omega-succ-second-order-report-2026-10-10'
       - 'aletheia/observational-succ-godel-2026-10-10'
+      - 'aletheia/observational-succ-logic-foundations-2026-10-10'
     paths:
       - 'actualization/**'
       - 'tests/actualization/**'
@@ -27,6 +28,8 @@ on:
       - 'research/2026-10-10/FINITE_SUCC_HASSE_THETA_SEAM.md'
       - 'research/2026-10-10/BALANCED_THETA_LI_WINDOW.md'
       - 'research/2026-10-10/OMEGA_SUCC_SECOND_ORDER_WEIL_REPORT.md'
+      - 'research/2026-10-10/OBSERVATIONAL_SUCC_FOUNDATIONS.md'
+      - 'research/2026-10-10/OBSERVATIONAL_SUCC_CLAIM_LEDGER.md'
       - 'scripts/infinite_realization_demo.py'
       - 'scripts/gamma_succ_path_probe.py'
       - 'scripts/lambert_succ_probe.py'
@@ -34,6 +37,7 @@ on:
       - 'scripts/hasse_theta_seam_probe.py'
       - 'scripts/balanced_theta_li_probe.py'
       - 'scripts/ordinal_succ_report_probe.py'
+      - 'scripts/observer_foundations_probe.py'
       - 'scripts/audit_actualization.py'
       - 'scripts/mutate_actualization.py'
       - '.github/workflows/actualization-tests.yml'
@@ -50,6 +54,8 @@ on:
       - 'research/2026-10-10/FINITE_SUCC_HASSE_THETA_SEAM.md'
       - 'research/2026-10-10/BALANCED_THETA_LI_WINDOW.md'
       - 'research/2026-10-10/OMEGA_SUCC_SECOND_ORDER_WEIL_REPORT.md'
+      - 'research/2026-10-10/OBSERVATIONAL_SUCC_FOUNDATIONS.md'
+      - 'research/2026-10-10/OBSERVATIONAL_SUCC_CLAIM_LEDGER.md'
       - 'scripts/infinite_realization_demo.py'
       - 'scripts/gamma_succ_path_probe.py'
       - 'scripts/lambert_succ_probe.py'
@@ -57,6 +63,7 @@ on:
       - 'scripts/hasse_theta_seam_probe.py'
       - 'scripts/balanced_theta_li_probe.py'
       - 'scripts/ordinal_succ_report_probe.py'
+      - 'scripts/observer_foundations_probe.py'
       - 'scripts/audit_actualization.py'
       - 'scripts/mutate_actualization.py'
       - '.github/workflows/actualization-tests.yml'
@@ -219,6 +226,10 @@ jobs:
           assert j["no_RH_or_Weil_positive_sign_assumed"]
           print("Finite ordinal SUCC, semantic Hessian and Hilbert weak escape controls PASS")
           PY
+      - name: Test Gödel syntax, self-referential substitution and finite proof checker
+        run: python -m unittest discover -s tests/actualization -p 'test_observer_logic.py' -v
+      - name: Test ordinal finite-proof compactness and certified Gram witness protocol
+        run: python -m unittest discover -s tests/actualization -p 'test_observer_reflection.py' -v
       - name: Run seven isolated regression lanes
         run: python scripts/audit_actualization.py --output "$RUNNER_TEMP/actualization-audit"
       - name: Run fifteen hostile mutations
