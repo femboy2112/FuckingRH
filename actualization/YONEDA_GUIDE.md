@@ -212,3 +212,49 @@ choose its fibers or metrics to make the Weil form positive.
 All code and tests use the Python standard library. GitHub Actions tests
 the committed bytes on two Python versions; see the run/manifest in the
 research handoff. External proof of RH remains OPEN.
+
+
+## A genuine finite/real-circle interface: contravariant clocks
+
+The module actualization/circle_transport.py gives an independent, exact
+example of the kind of finite/Archimedean comparison this program needs.
+
+The finite state is Z/mZ with its additive successor. Its dual character
+indexed by j has circle phase angle j*k/m modulo 1 for state k. Thus the
+finite dual character group embeds as the m-torsion subgroup of the genuine
+real Lie circle R/Z, with no floating-point roots of unity.
+
+For m dividing n, define finite projection and dual inclusion
+
+    pi_(n,m)(k mod n) = k mod m
+    iota_(m,n)(j mod m) = (n/m) j mod n.
+
+Then the character-pairing identity holds exactly:
+
+    j*pi(k)/m mod 1 = iota(j)*k/n mod 1.
+
+The primal groupoid functor points from the n-clock to the m-clock; the
+dual functor points in the OPPOSITE direction. Direct/inverse refinement
+towers and the pairing are checked with rational arithmetic. This is an
+actual source-defined bridge, not an artificially chosen comparison of
+numbers.
+
+At the 2 -> 6 LCM refinement, old dual indices {0,3} embed into
+Z/6; the newly accessible indices are {1,2,4,5}, with exact conductor
+3 modes {2,4} and conductor 6 modes {1,5}. Their total new dimension 4
+agrees with the Haar-conductor innovation rank from the original system.
+
+    python -m actualization circle-demo
+
+In the directed limit this is the classical Pontryagin dual picture:
+the dual of profinite Z-hat is discrete Q/Z, realized as torsion points
+of the circle. Finite Haar state refinement and dual-character refinement
+have reversed arrow directions. The literal continuous circle contains
+many more nontorsion points, and the full Archimedean field R has additional
+analytic structure. This module supplies neither the real Gamma local
+factor nor a canonical positive arithmetic Hodge class. The character
+pairing is automatically valid for fake Euler coefficients too, so the
+source-connected mutation gate remains separate.
+
+Primary reference: Jordan Bell, The Pontryagin duals of Q/Z and Q and
+the adeles, https://jordanbell.info/LaTeX/mathematics/Qdual/Qdual.pdf .
