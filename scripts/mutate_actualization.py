@@ -32,6 +32,7 @@ MUTATIONS=[
  ('erase_prime_factor_horizon','phenomenology.py','self.multipliers = tuple(sorted(n for n in known if 2 <= n <= self.max_shadow_target))','self.multipliers = (2,)','resource_probe'),
  ('future_shadow_source_leak','local_global.py','if n > horizon:\n            break','if n > horizon:\n            pass','local_global'),
  ('erase_coend_identifications','yoneda.py','union(ids[right],ids[left])','pass','category'),
+ ('wrong_dual_clock_inclusion','circle_transport.py','(self.n//self.m)*FiniteClock(self.m).mod(j)','1*FiniteClock(self.m).mod(j)','circle_transport'),
 ]
 
 
