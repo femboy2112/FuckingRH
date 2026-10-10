@@ -12,5 +12,6 @@ from .yoneda import (Arrow, DivisibilityCategory, PathCategory, ValuationCategor
 from .resource_probe import (ValuationWord, ProbeBudget, compare_observers,
                              execute_probe, lcm_word, budget_demo)
 from .phenomenology import Phenomenology
+from .local_global import compare_local_global, prefix_demo
 
 __version__ = "0.2.0"
