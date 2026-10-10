@@ -11,6 +11,7 @@ on:
       - 'aletheia/succ-shadow-gamma-selection-2026-10-10'
       - 'aletheia/lambert-w-succ-inverse-tree-2026-10-10'
       - 'aletheia/dirichlet-star-lambert-source-2026-10-10'
+      - 'aletheia/finite-succ-hasse-theta-seam-2026-10-10'
     paths:
       - 'actualization/**'
       - 'tests/actualization/**'
@@ -20,10 +21,12 @@ on:
       - 'research/2026-10-10/SUCC_SHADOW_WINDOW_CANONICAL_SELECTION.md'
       - 'research/2026-10-10/LAMBERT_SUCC_INVERSE_TREE.md'
       - 'research/2026-10-10/DIRICHLET_LAMBERT_SOURCE_LIFT.md'
+      - 'research/2026-10-10/FINITE_SUCC_HASSE_THETA_SEAM.md'
       - 'scripts/infinite_realization_demo.py'
       - 'scripts/gamma_succ_path_probe.py'
       - 'scripts/lambert_succ_probe.py'
       - 'scripts/dirichlet_lambert_probe.py'
+      - 'scripts/hasse_theta_seam_probe.py'
       - 'scripts/audit_actualization.py'
       - 'scripts/mutate_actualization.py'
       - '.github/workflows/actualization-tests.yml'
@@ -37,10 +40,12 @@ on:
       - 'research/2026-10-10/SUCC_SHADOW_WINDOW_CANONICAL_SELECTION.md'
       - 'research/2026-10-10/LAMBERT_SUCC_INVERSE_TREE.md'
       - 'research/2026-10-10/DIRICHLET_LAMBERT_SOURCE_LIFT.md'
+      - 'research/2026-10-10/FINITE_SUCC_HASSE_THETA_SEAM.md'
       - 'scripts/infinite_realization_demo.py'
       - 'scripts/gamma_succ_path_probe.py'
       - 'scripts/lambert_succ_probe.py'
       - 'scripts/dirichlet_lambert_probe.py'
+      - 'scripts/hasse_theta_seam_probe.py'
       - 'scripts/audit_actualization.py'
       - 'scripts/mutate_actualization.py'
       - '.github/workflows/actualization-tests.yml'
@@ -137,6 +142,8 @@ jobs:
           assert j['zeros_read'] is False
           print('Arithmetic Lambert-W source and Euler-shadow controls passed')
           PY
+      - name: Test finite SUCC-Hasse continuation and source-faithful theta/Gamma seam
+        run: python -m unittest discover -s tests/actualization -p 'test_hasse_theta_seam.py' -v
       - name: Run seven isolated regression lanes
         run: python scripts/audit_actualization.py --output "$RUNNER_TEMP/actualization-audit"
       - name: Run fifteen hostile mutations
