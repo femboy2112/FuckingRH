@@ -1,6 +1,9 @@
 """Exact finite-to-Archimedean-circle torsion duality tests, zero free."""
 from fractions import Fraction as Q
 import unittest
+import json
+import subprocess
+import sys
 
 from actualization.core import BudgetExceeded, DomainError
 from actualization.arithmetic import conductor_growth
@@ -76,6 +79,16 @@ class CircleTransportTests(unittest.TestCase):
             FiniteClock(6).mod(Q(1,2))
         with self.assertRaises(DomainError):
             CyclicOneObjectCategory(6).hom('false','*')
+
+    def test_public_cli_circle_transport(self):
+        result=subprocess.run([sys.executable,'-m','actualization','circle-demo'],
+                              text=True,capture_output=True,timeout=45)
+        self.assertEqual(result.returncode,0,result.stderr)
+        data=json.loads(result.stdout)
+        self.assertEqual(data['conductor_birth']['new_dimension'],4)
+        self.assertEqual(data['dual_tower']['status'],'verified_dual_tower')
+        with self.assertRaises(BudgetExceeded):
+            FiniteDualRefinement(2,1000).functors()
 
     def test_circle_angle_is_not_unrestricted_real_place(self):
         c=FiniteClock(6)
