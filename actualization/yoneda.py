@@ -29,7 +29,7 @@ def _bounded_objects(objects, limit=128):
 
 
 class DivisibilityCategory:
-    """Thin category: a -> b iff a divides b, one morphism per pair."""
+    """Thin category: a -> b iff a divides b, one morphism per pair, WITHOUT exposing the codomain ratio."""
     def __init__(self, objects):
         self.objects = _bounded_objects(tuple(objects))
         if any(type(n) is not int or not 1 <= n <= 1_000_000 for n in self.objects):
@@ -48,7 +48,7 @@ class DivisibilityCategory:
         self._check(b)
         if b % a:
             return ()
-        return (Arrow(a, b, () if a == b else (b // a,)),)
+        return (Arrow(a, b, ()),)  # thin hom is a singleton; ratio is not a permitted local reading
 
     def compose(self, left, right):
         if right.target != left.source or right not in self.hom(right.source, right.target) or left not in self.hom(left.source, left.target):
