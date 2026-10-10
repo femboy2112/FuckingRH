@@ -286,3 +286,24 @@ certified rational intervals for pi, e and the Euler-region zeta function.
 Neither the ind-object nor finite restricted Yoneda yet constructs an
 arithmetic-to-Gamma/Weil polarization. A valid RH transfer needs that
 additional source-sensitive, form-topological theorem.
+
+
+## The scalar quotient is not a path functor
+
+The positive-half-plane finite Euler paths Z_P(2u) and Z_P(2)^u
+have equal evaluated values at u=1, but their analytic first jets
+differ. Identifying them after point-evaluation is a deliberately
+NONFAITHFUL observation: it erases a source- and displacement-sensitive
+piece of data. This is NOT a claim that ordinary scalar cancellation
+is invalid or that prime multiplication itself is noncommutative.
+
+The finite Gamma successor approximants G_N(z) obey
+G_N(z+1)/G_N(z)=Nz/(N+z+1), not z, at each finite horizon,
+although the canonical Gamma recurrence is recovered in the limit.
+The exact factorial SUCC word, prime valuation ledger, and boundary
+defect are retained separately.
+
+Detailed theorem and controls:
+[SUCC/Gamma prime-path germs](../research/2026-10-10/SUCC_GAMMA_PRIME_PATH_GERMS.md).
+This is a scalar analytic-germ bridge inside Re(u)>1/2, **not**
+a functor into the complete Weil form domain and not an RH proof.
