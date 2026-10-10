@@ -10,7 +10,8 @@ import mpmath as mp
 
 from actualization.succ_shadow_window import (
     ShadowWindowCertificate, WindingHistory, WindowError,
-    certified_window_penalty_lower_bound,
+    certified_window_penalty_lower_bound, seam_gauge_witness,
+    same_cell_quadratic_gauge_curvature,
     WindowResourceExhausted, observed_window, periodic_quarter_probe,
     quadratic_weight_gluing_defect, sine_gauge_witness,
     symmetric_positive_multiplicative_winding_weight_is_trivial,
@@ -80,6 +81,28 @@ class SuccShadowSelectionTests(unittest.TestCase):
         # Failure to open a finite window is a budget state, not falsity.
         with self.assertRaisesRegex(WindowResourceExhausted,"No CERTIFICATE"):
             sine_gauge_witness(Q(1,10**12),1,max_stage=100000)
+
+    def test_cellwise_convexity_is_insufficient_but_cross_seam_detects(self):
+        # Stronger hostile control: a periodic continuous gauge can be
+        # convex on EVERY open SUCC cell, at every integer horizon,
+        # yet fail global log convexity exactly at integer boundaries.
+        for e in (Q(1,2),Q(1,100),Q(1,10000)):
+            for halfwidth in (Q(1,8),Q(1,4),Q(3,8)):
+                self.assertGreater(same_cell_quadratic_gauge_curvature(e,halfwidth),0)
+            witness=seam_gauge_witness(e)
+            self.assertEqual(witness.fractional_center,0)
+            self.assertEqual(witness.half_width,Q(1,4))
+            self.assertEqual(witness.periodic_curvature,-Q(3,8)*e)
+            self.assertTrue(witness.total_curvature_strictly_negative)
+            with mp.workdps(75):
+                numerical=observed_window(witness,dps=75)
+                self.assertTrue(numerical["negative"],(e,numerical))
+            self.assertGreater(certified_window_penalty_lower_bound(
+                witness,Q(1,128)),0)
+        with self.assertRaises(WindowResourceExhausted):
+            seam_gauge_witness(Q(1,10**9),max_stage=10000)
+        with self.assertRaises(WindowError):
+            same_cell_quadratic_gauge_curvature(Q(1),Q(1,2))
 
     def test_no_invented_canonical_weight_on_logarithm_winding(self):
         a=WindingHistory((1,))
