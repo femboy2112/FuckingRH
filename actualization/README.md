@@ -1,5 +1,30 @@
 # Field-Relative Actualization System
 
+## v0.3 research layer: categorical phenomenology and finite-to-circle duality
+
+The new [categorical/Yoneda guide](YONEDA_GUIDE.md) documents an executable
+source-history observer, full and restricted Yoneda, bounded prime-power
+probeability certificates, finite co-Yoneda witness transport, and the exact
+finite-clock / real-circle torsion pairing. These constructions are mathematically
+meaningful independently of the RH program; they do not supply the Weil sign.
+
+Quick demonstration commands:
+
+```sh
+python -m actualization yoneda-demo
+python -m actualization local-global-demo
+python -m actualization probe-budget --a 6 --b 12 --budget 3
+python -m actualization probe-budget --lcm-horizon 10000 --budget 10000
+python -m actualization circle-demo
+```
+
+The mathematical results, counterexamples and next actual RH interface are
+recorded in [the categorical research frontier](../research/2026-10-10/CATEGORICAL_YONEDA_RESOURCE_FRONTIER.md),
+with [reproducible CI evidence](../research/2026-10-10/CATEGORICAL_YONEDA_EVIDENCE.json).
+The observer's agreement with a global description is always relative to its
+declared probes, source context and resource budget; it is not a proof of
+unobservable global truth.
+
 A **working, bounded Python research engine** for how field-relative steps,
 unrealized combinatorial data, contextual observations, and model integration
 interact. Python 3.10+, standard library only. No zeta zeros, numerical fitting,
