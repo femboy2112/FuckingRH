@@ -17,7 +17,7 @@ from actualization.balanced_theta_li import (
     finite_double_zero,
 )
 from actualization.hasse_theta_seam import (
-    SUCCDifferenceSource, theta_xi_partial,
+    SUCCDifferenceSource, theta_xi_partial, theta_xi_tail_bound,
 )
 
 
@@ -123,10 +123,10 @@ class BalancedThetaTests(unittest.TestCase):
                     self.assertLess(abs(f-truncated_xi(1-s,N,T,dps=100)),
                                     mp.mpf("1e-90"))
                     self.assertGreaterEqual(err,0)
-            self.assertLess(abs(truncated_xi(mp.mpc(".5","5"),4,"2.5",dps=100)
-                                -theta_xi_partial(mp.mpc(".5","5"),
-                                                  max_integer=8,dps=100)),
-                            mp.mpf("1e-35"))
+            sample=mp.mpc(".5","5")
+            self.assertLess(abs(truncated_xi(sample,4,"2.5",dps=100)
+                                -theta_xi_partial(sample,max_integer=8,dps=100)),
+                            theta_xi_tail_bound(sample,max_integer=4,dps=100))
 
 
 class ThetaLiTests(unittest.TestCase):
