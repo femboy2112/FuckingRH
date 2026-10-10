@@ -7,12 +7,15 @@ on:
       - 'research/2026-10-10/yoneda-resource-actualization-v1'
       - 'aletheia/gamma-actualization-interferometer-2026-10-10'
       - 'aletheia/infinite-realization-ind-yoneda-2026-10-10'
+      - 'aletheia/gamma-succ-prime-transport-2026-10-10'
     paths:
       - 'actualization/**'
       - 'tests/actualization/**'
       - 'research/2026-10-10/GAMMA_ACTUALIZATION_INTERFEROMETER.md'
       - 'research/2026-10-10/INFINITE_REALIZATION_LIMITS.md'
+      - 'research/2026-10-10/SUCC_GAMMA_PRIME_PATH_GERMS.md'
       - 'scripts/infinite_realization_demo.py'
+      - 'scripts/gamma_succ_path_probe.py'
       - 'scripts/audit_actualization.py'
       - 'scripts/mutate_actualization.py'
       - '.github/workflows/actualization-tests.yml'
@@ -22,7 +25,9 @@ on:
       - 'tests/actualization/**'
       - 'research/2026-10-10/GAMMA_ACTUALIZATION_INTERFEROMETER.md'
       - 'research/2026-10-10/INFINITE_REALIZATION_LIMITS.md'
+      - 'research/2026-10-10/SUCC_GAMMA_PRIME_PATH_GERMS.md'
       - 'scripts/infinite_realization_demo.py'
+      - 'scripts/gamma_succ_path_probe.py'
       - 'scripts/audit_actualization.py'
       - 'scripts/mutate_actualization.py'
       - '.github/workflows/actualization-tests.yml'
@@ -64,6 +69,22 @@ jobs:
           assert evidence['ind_limit']['represented_by_finite_integer'] is False
           print('Finite Ind-Yoneda evidence verified; no infinity/RH claim')
           PY
+      - name: Test SUCC/Gamma finite factorial and prime-path germs
+        run: python -m unittest discover -s tests/actualization -p 'test_gamma_succ_path.py' -v
+      - name: Save independent prime/gamma transport readouts
+        run: |
+          python scripts/gamma_succ_path_probe.py --prime-bound 53 --gamma-steps 64 --output "$RUNNER_TEMP/gamma-succ-prime-path.json"
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          j=json.loads((Path(os.environ['RUNNER_TEMP'])/'gamma-succ-prime-path.json').read_text())
+          assert j['status']=='FINITE_PATH_PROBE'
+          assert j['m_equals_one_scalar_ratio']=='1'
+          assert j['counterfeit_composite_6_scalar_ratio']=='1'
+          assert j['counterfeit_composite_6_is_true_zeta_source'] is False
+          assert j['gamma_factorial_exact_prime_bridge']
+          print('Prime/Gamma finite transport evidence recorded; no RH claim')
+          PY
       - name: Run seven isolated regression lanes
         run: python scripts/audit_actualization.py --output "$RUNNER_TEMP/actualization-audit"
       - name: Run fifteen hostile mutations
@@ -98,5 +119,6 @@ jobs:
             ${{ runner.temp }}/replayed.json
             ${{ runner.temp }}/reversed.json
             ${{ runner.temp }}/infinite-realization.json
+            ${{ runner.temp }}/gamma-succ-prime-path.json
           if-no-files-found: warn
           retention-days: 14
