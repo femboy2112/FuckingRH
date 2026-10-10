@@ -320,6 +320,28 @@ RH-inert; they are listed because they are genuinely different *pictures*.
   a precise **name** for the obstruction (unclosed closure = supercriticality = the fourth gate) but its
   signature machinery (the cascade) finds nothing to climb, and the positive variance / shadow norm is
   provably *not* the sign. `REFORMULATION→WALL`; no brick.
+- **Field-relative actualization / the Hasse–theta moment cone** *(external, ChatGPT-built succ corpus,
+  R70; the two flagship objects verified on our own instrument).* The R69 "actualization" program, built
+  out into nine sibling heads (Lambert–W/Dirichlet, Hasse–theta seam, γ-prime transport, ind-Yoneda,
+  shadow-γ selection) over one shared spine — a non-circular, fake-arithmetic-hardened executable model of
+  the `SUCC`/shadow semantics. *You get* (i) a crisp **off-line-positive tombstone**: `P(x)=x⁴+⅜x²+25/256`
+  (`x=s−½`) is even and real (reflection- and conjugation-symmetric) yet its roots sit at `Re s = ¼, ¾`
+  while `P(it)=(t²−3/16)²+1/16 > 0` — reflection symmetry **plus** strict on-line positivity does **not**
+  imply RH (verified, sympy-exact; the de Branges/Pólya "positive on the line is not enough" in four
+  terms); and (ii) a genuinely new **prime-power Hausdorff moment cone**: the trivial-zero jet
+  `J_m = Σ_{n≥2} Λ(n)/n^{2m+1} = −ζ'(2m+1)/ζ(2m+1) = ζ''(−2m)/(2ζ'(−2m))+ψ(2m+1)−\log 2π` are the moments
+  `J_m = ∫_0^{1/4} x^{m-1}\,dμ` of `μ = Σ Λ(n)/n³ δ_{n^{-2}}` on `[0,¼]`, so every Hankel matrix `J_{i+j+1}`
+  is PSD and the sequence is completely monotone (verified; three independent routes to `J_m` agree to ~40
+  digits). *The wall:* a **fake positive composite atom** `c·\log 6/6³·δ_{1/36}` leaves *every* PSD /
+  complete-monotonicity inequality intact — the cone is **sign-blind to fake arithmetic** = gate 1,
+  RH-inert, exactly as the corpus's own "absolutely decisive" control states. Every head self-declares
+  identically: no zeta zeros, no completed-Weil Gram, each terminating at **gate 4** (an independent,
+  non-circular positivity theorem identified with the full Weil form — UNVERIFIED/OPEN by its own ledger).
+  The γ-heads use the archimedean factor only as **classical** identities (Poisson `ξ` with a rigorous
+  Gaussian tail; the Riemann–Siegel `θ`-phase `√(t/2π)` window) and explicitly disclaim Weil positivity —
+  the spec's "Γ-transport unbuilt" boundary holds. *Net:* a disciplined non-circular formalization and two
+  new verified faces (both positive, both sign-blind), no new content past the fourth gate.
+  `REFORMULATION→WALL`; no brick.
 
 ## 8.7 The graveyard (proved or measured dead — do not re-dig)
 
