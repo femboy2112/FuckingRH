@@ -118,6 +118,8 @@ class FiniteDualRefinement:
 
     def functors(self):
         """The two opposite-direction maps are honest cyclic-group functors."""
+        if self.n > 64:
+            raise BudgetExceeded("Exhaustive cyclic functor verification is bounded to n<=64")
         source= CyclicOneObjectCategory(self.n)
         target= CyclicOneObjectCategory(self.m)
         primal=FiniteFunctor(source,target,lambda _: "*",
