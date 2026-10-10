@@ -153,6 +153,38 @@ class OrdinalFiniteStage:
             raise OrdinalObservationError("Finite observation histories are not compatible")
         return True
 
+    def connected_pair_curvature(self,p,q):
+        """Exact SECOND-ORDER arithmetic interaction between two prime probes.
+
+        For distinct primes p,q, Dirichlet-log at n=pq gives
+           b(pq)=a(pq)-a(p)a(q).
+        This measures what the composite observation contributes BEYOND
+        the two already observed primitive channels. It is NOT a
+        covariance sign theorem, and it uses only data through pq.
+        A fake a(6)=2 yields b(6)=1; genuine ζ yields 0.
+        """
+        from .arithmetic import factorization
+        if type(p) is not int or type(q) is not int or p==q or min(p,q)<2:
+            raise OrdinalObservationError("Require two distinct genuine prime labels")
+        if factorization(p)!=((p,1),) or factorization(q)!=((q,1),):
+            raise OrdinalObservationError("An independent probe requires primitive primes")
+        if p*q>self.n:
+            raise OrdinalObservationError("Composite correlation needs an actualized product event")
+        observed=self.source[p*q]
+        factorized=self.source[p]*self.source[q]
+        residual=observed-factorized
+        if self._gamma_snapshot().connected[p*q]!=residual:
+            raise ArithmeticError("Local interaction differs from exact Dirichlet-log coefficient")
+        return {
+            "primes":(p,q),
+            "composite_index":p*q,
+            "observed":observed,
+            "independent_prediction":factorized,
+            "connected_second_order_residual":residual,
+            "source_head":self.head,
+            "scope":"arithmetic connected interaction; NOT full Weil covariance"
+        }
+
     def _gamma_snapshot(self):
         from .gamma_interferometer import GammaInterferometer
         return GammaInterferometer.from_prefix(
