@@ -13,6 +13,7 @@ import mpmath as mp
 from actualization.hasse_theta_seam import (
     SeamError, SUCCDifferenceSource, finite_mutation_parity_error,
     eta_prime_trivial, gamma_pole_prime_bridge,
+    eta_jet_trivial, gamma_subtracted_prime_current, prime_current_tail_enclosure,
     raw_completed_finite_mutation, theta_xi_partial, theta_xi_tail_bound,
 )
 from actualization import Engine, Limits, Scalar, source_at
@@ -165,6 +166,44 @@ class FiniteSUCCHasseTests(unittest.TestCase):
                 lam_left=mp.power(mp.pi,m)*two["gamma_pole_times_zero_finite_value"]
                 lam_right=mp.power(mp.pi,-(2*m+1)/2)*mp.gamma(mp.mpf(2*m+1)/2)*mp.zeta(2*m+1)
                 self.assertLess(abs(lam_left-lam_right),mp.mpf("1e-32"))
+
+    def test_gamma_subtracted_second_jet_yields_positive_prime_current(self):
+        with mp.workdps(115):
+            for m in (1,2,3):
+                result=gamma_subtracted_prime_current(m,terms=130,dps=115)
+                self.assertFalse(result["nontrivial_zero_input"])
+                self.assertTrue(result["positive_safe_prime_current"]>0)
+                self.assertTrue(result["gamma_corrected_negative_side"]>0)
+                self.assertLess(result["error"],mp.mpf("1e-34"))
+                self.assertLess(
+                    abs(result["source_eta_first_jet"]-eta_jet_trivial(
+                        m,1,terms=130,dps=115)),mp.mpf("1e-108"))
+                self.assertLess(
+                    abs(result["source_eta_second_jet"]-eta_jet_trivial(
+                        m,2,terms=130,dps=115)),mp.mpf("1e-108"))
+                # Direct independent special-function check; not used
+                # by the arithmetic jet construction.
+                ratio=mp.diff(mp.zeta,-2*m,2)/(2*mp.diff(mp.zeta,-2*m))
+                ratio+=mp.digamma(2*m+1)-mp.log(2*mp.pi)
+                self.assertLess(abs(ratio-result["positive_safe_prime_current"]),
+                                mp.mpf("1e-100"))
+
+    def test_finite_prime_current_tail_bounds_all_omitted_primes(self):
+        with mp.workdps(110):
+            for m in (1,2,3):
+                target=-mp.diff(mp.zeta,2*m+1)/mp.zeta(2*m+1)
+                for P in (2,3,7,23,97,257,509):
+                    bound=prime_current_tail_enclosure(m,P,dps=110)
+                    self.assertTrue(bound["positive"])
+                    self.assertLess(bound["lower"],target)
+                    self.assertGreater(bound["upper"],target)
+                    self.assertLess(
+                        target-bound["lower"],bound["tail_upper_bound"]
+                    )
+                self.assertLess(
+                    prime_current_tail_enclosure(m,509,dps=110)["tail_upper_bound"],
+                    prime_current_tail_enclosure(m,7,dps=110)["tail_upper_bound"]
+                )
 
     def test_insufficient_prefix_and_wrong_source_refused(self):
         src=SUCCDifferenceSource.zeta(6)
