@@ -380,3 +380,33 @@ primitive multiplicativity.
 
 This is a positive existence example for source-enriched paths, but
 does not close the Gamma/Weil source-to-sign gate required for RH.
+
+
+## Finite Euler-to-archimedean completion has two distinct seams
+
+The [Hasse/SUCC vs Poisson/Gamma memo]
+(../research/2026-10-10/FINITE_SUCC_HASSE_THETA_SEAM.md)
+isolates two analytically valid continuations of the true integer
+source. One route uses finite integer forward differences to build
+eta and zeta; the other uses Gaussian heat sampling, Poisson duality,
+and the archimedean Gamma factor to build xi. They match for zeta,
+but fake source coefficients need not respect EITHER induced
+source-to-target identification. Mirror symmetry alone can be
+manufactured for incorrect sources.
+
+At each negative-even trivial zero, the SCALAR SUCC-difference
+realization terminates and equals zero, but its first/second
+spectral derivatives do not terminate. Gamma's pole extracts the
+first jet, and the Gamma-subtracted second-to-first jet quotient
+equals a strictly positive Euler prime-power current. This is an
+exact *classical* transport, not an RH or Weil sign proof.
+
+The genuine Riemann–Siegel formula already has a square-root
+integer observation window and archimedean phase; the essential
+remainder and source-identity gate are not optional. New
+real-even/reflective polynomial controls have off-line zeros
+despite on-critical-line strict positivity.
+
+The next proof-bearing object is a source-derived polarization
+on the completed Weil test-function domain, or equivalently a
+uniform Jensen-hyperbolicity mechanism. Both are open.
