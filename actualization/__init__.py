@@ -83,4 +83,10 @@ from .observer_reflection import (
     exact_quartic_screw, exact_quadratic_screw, bounded_gram_search,
 )
 
+from .source_prime_certificates import (
+    SourceCertificateError, rational_log_ratio,
+    rational_log_integer, rational_inverse_sqrt,
+    finite_prime_horizon, CertifiedPrimeSource, prime_delta_at_fake_six,
+)
+
 __version__ = "0.3.0"
