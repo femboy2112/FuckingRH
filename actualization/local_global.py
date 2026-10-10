@@ -50,9 +50,12 @@ def _integrated_prefix(engine, horizon):
         if pending is None:
             raise DomainError("Malformed integration record")
         n = int(pending["coordinate"][0])
-        if n <= horizon:
-            prefix.append(Observation(n, pending["frame"], pending["context"],
-                                      pending["probe"], Scalar.from_data(pending["value"])))
+        # A natural-SUCC forward journal is ordered. Do not inspect a value
+        # from the first event beyond the observer's declared wavefront.
+        if n > horizon:
+            break
+        prefix.append(Observation(n, pending["frame"], pending["context"],
+                                  pending["probe"], Scalar.from_data(pending["value"])))
     return tuple(prefix)
 
 
