@@ -26,6 +26,10 @@ MUTATIONS=[
  ('skip_semantic_replay','engine.py','if canonical(actual.data()) != canonical(supplied):','if False:','engine'),
  ('erase_conjugation','engine.py','return Scalar.from_data(obj).conjugate().data()','return Scalar.from_data(obj).data()','engine'),
  ('wrong_reverse_order','engine.py','original = self._records[self._active[-1]-1]','original = self._records[self._active[0]-1]','engine'),
+ ('collapse_path_yoneda','yoneda.py','tuple(f.word for f in category.hom(p, target))','(len(category.hom(p, target)),)','category'),
+ ('wrong_separation_boundary','resource_probe.py','if first <= budget.max_probe_label:','if first < budget.max_probe_label:','resource_probe'),
+ ('lose_source_audit','phenomenology.py','"source_audit":shadow.get("source"),','"source_audit":None,','resource_probe'),
+ ('erase_prime_factor_horizon','phenomenology.py','self.multipliers = tuple(sorted(n for n in known if 2 <= n <= self.max_shadow_target))','self.multipliers = (2,)','resource_probe'),
 ]
 
 
@@ -51,7 +55,7 @@ def main():
    (out/(name+'.txt')).write_text(raw)
    return {'mutation':name,'module':file,'lane':lane,'detected':proc.returncode!=0 and 'FAILED' in raw,
            'exit_code':proc.returncode,'output_sha256':sha256(raw.encode()).hexdigest()}
- with ThreadPoolExecutor(max_workers=3) as pool:rows=list(pool.map(run,MUTATIONS))
+ with ThreadPoolExecutor(max_workers=4) as pool:rows=list(pool.map(run,MUTATIONS))
  report={'status':'PASS' if all(r['detected'] for r in rows) else 'FAIL',
          'mutations':rows,'tested':len(rows),'detected':sum(r['detected'] for r in rows),
          'scope':'eight specific semantic mutations; not exhaustive proof'}
