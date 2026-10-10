@@ -121,7 +121,7 @@ class FactorialSuccPath:
     def gamma_euler(self,z,*,dps=60):
         mp=_mp()
         with mp.workdps(dps):
-            z=mp.mpc(z) if isinstance(z,complex) else mp.mpf(z)
+            z=mp.mpc(z)
             if mp.re(z)<=0:
                 raise PathDomainError("Euler gamma limit only used in Re(z)>0")
             n=self.cutoff
@@ -145,8 +145,8 @@ class MomentChannel:
     def __post_init__(self):
         _integer(self.base,lower=2,upper=1024,name="Euler base")
         a=_rational(self.alpha)
-        if not 0<=a<self.base**2:
-            raise PathDomainError("The positive chart requires 0<=alpha<base**2")
+        if not 0<=a<self.base:
+            raise PathDomainError("Re(u)>1/2 analytic chart requires 0<=alpha<base")
         object.__setattr__(self,"alpha",a)
 
 
@@ -234,7 +234,7 @@ class PrimeMomentPath:
     def ratio(self,u,*,dps=60):
         mp=_mp()
         with mp.workdps(dps):
-            u=mp.mpc(u) if isinstance(u,complex) else mp.mpf(u)
+            u=mp.mpc(u)
             if mp.re(u)<=mp.mpf("0.5"):
                 raise PathDomainError("Finite transport is used on Re(u)>1/2")
             logR=mp.mpc(0)
@@ -258,7 +258,7 @@ class PrimeMomentPath:
             raise PathDomainError("An explicit finite SUCC gamma path is required")
         mp=_mp()
         with mp.workdps(dps):
-            u=mp.mpc(u) if isinstance(u,complex) else mp.mpf(u)
+            u=mp.mpc(u)
             if mp.re(u)<=mp.mpf("0.5"):
                 raise PathDomainError("Reflect only from Euler-safe Re(2u)>1")
             piP=mp.sqrt(6*_mprat(mp,self.zeta_two_rational()))
