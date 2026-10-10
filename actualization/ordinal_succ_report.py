@@ -185,6 +185,57 @@ class OrdinalFiniteStage:
             "scope":"arithmetic connected interaction; NOT full Weil covariance"
         }
 
+    def semantic_log_partition_hessian(self,p,q):
+        """Exact FINITE observer information geometry in prime-valuation features.
+
+        Declare a model of observer belief, NOT an empirical brain theory:
+          Z(theta_p,theta_q)=Σ_(n<=N) a(n)
+               exp(theta_p v_p(n)+theta_q v_q(n)).
+        At theta=0:
+           Hessian(log Z)=Cov_pi(v_p,v_q), pi(n)=a(n)/Σa.
+        Every nonnegative source therefore generates a PSD covariance,
+        INCLUDING invalid fake a(6)=2. The geometry reads source
+        changes but does NOT select Weil-positive arithmetic.
+        """
+        from .arithmetic import factorization
+        if type(p) is not int or type(q) is not int or p==q or min(p,q)<2:
+            raise OrdinalObservationError("Two distinct prime-valued semantic features required")
+        if factorization(p)!=((p,1),) or factorization(q)!=((q,1),):
+            raise OrdinalObservationError("Semantic valuation features must be prime generators")
+        weights=self.source[1:]
+        if any(v<0 for v in weights) or not sum(weights)>0:
+            raise OrdinalObservationError(
+                "A positive observer probability model cannot have negative weights")
+        Z=sum(weights)
+        def valuation(n,prime):
+            k=0
+            while n%prime==0:
+                n//=prime
+                k+=1
+            return Fraction(k)
+        labels=tuple(range(1,self.n+1))
+        f=tuple(valuation(n,p) for n in labels)
+        g=tuple(valuation(n,q) for n in labels)
+        mean_f=sum((w*x for w,x in zip(weights,f)),Fraction())/Z
+        mean_g=sum((w*y for w,y in zip(weights,g)),Fraction())/Z
+        vff=sum((w*(x-mean_f)**2 for w,x in zip(weights,f)),Fraction())/Z
+        vgg=sum((w*(y-mean_g)**2 for w,y in zip(weights,g)),Fraction())/Z
+        vfg=sum((w*(x-mean_f)*(y-mean_g)
+                 for w,x,y in zip(weights,f,g)),Fraction())/Z
+        det=vff*vgg-vfg*vfg
+        if min(vff,vgg,det)<0:
+            raise ArithmeticError("A positive finite semantic measure lost its covariance PSD")
+        return {
+            "primes":(p,q),
+            "partition_Z_at_zero":Z,
+            "mean_prime_valuations":(mean_f,mean_g),
+            "Hessian_log_Z":((vff,vfg),(vfg,vgg)),
+            "determinant":det,
+            "is_positive_semidefinite":True,
+            "source_matches_zeta_prefix":all(v==1 for v in weights),
+            "scope":"positive semantic observer information geometry, NOT identified with Weil"
+        }
+
     def _gamma_snapshot(self):
         from .gamma_interferometer import GammaInterferometer
         return GammaInterferometer.from_prefix(
