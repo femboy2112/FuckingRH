@@ -66,7 +66,7 @@ from .balanced_theta_li import (
     one_prime_fake_defect, wrong_half_density_limit,
     finite_gamma_window, finite_gamma_succ_defect,
     truncated_xi, finite_li_coefficients, li_all_degree_bound,
-    finite_double_zero,
+    finite_double_zero, li_coevolving_diagonal,
 )
 
 __version__ = "0.3.0"
