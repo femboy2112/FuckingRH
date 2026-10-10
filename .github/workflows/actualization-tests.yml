@@ -120,6 +120,23 @@ jobs:
           PY
       - name: Test source-faithful Dirichlet-convolution Lambert W and fake arithmetic
         run: python -m unittest discover -s tests/actualization -p 'test_dirichlet_lambert.py' -v
+      - name: Save arithmetic Lambert-W exact prime-path and safe Mellin evidence
+        run: |
+          python scripts/dirichlet_lambert_probe.py --horizon 64 --sigma 4 --output "$RUNNER_TEMP/dirichlet-lambert.json"
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          p=Path(os.environ['RUNNER_TEMP'])/'dirichlet-lambert.json'
+          j=json.loads(p.read_text())
+          assert j['status']=='EXACT_ARITHMETIC_LAMBERT_PREFIX'
+          assert j['true_source']['w6']=='-1'
+          assert j['true_source']['connected_b6']=='0'
+          assert j['fake_source']['w6']=='0'
+          assert j['fake_source']['connected_b6']=='1'
+          assert j['true_inverse_identity'] and j['fake_inverse_identity']
+          assert j['zeros_read'] is False
+          print('Arithmetic Lambert-W source and Euler-shadow controls passed')
+          PY
       - name: Run seven isolated regression lanes
         run: python scripts/audit_actualization.py --output "$RUNNER_TEMP/actualization-audit"
       - name: Run fifteen hostile mutations
@@ -156,5 +173,6 @@ jobs:
             ${{ runner.temp }}/infinite-realization.json
             ${{ runner.temp }}/gamma-succ-prime-path.json
             ${{ runner.temp }}/lambert-succ.json
+            ${{ runner.temp }}/dirichlet-lambert.json
           if-no-files-found: warn
           retention-days: 14
