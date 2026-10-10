@@ -17,4 +17,9 @@ from .local_global import compare_local_global, prefix_demo
 from .circle_transport import (FiniteClock, FiniteDualRefinement, CyclicOneObjectCategory,
                                conductor_birth_2_to_6, verify_refinement_tower)
 
+from .infinite_realization import (LCMIndRealization, RationalEnclosure,
+                                   e_enclosure, pi_enclosure, zeta_euler_enclosure,
+                                   escaping_defect_form, escaping_defect_limit,
+                                   pinned_negative_form)
+
 __version__ = "0.3.0"

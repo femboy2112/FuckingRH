@@ -6,10 +6,13 @@ on:
       - 'build/2026-10-09/field-relative-actualization-a1'
       - 'research/2026-10-10/yoneda-resource-actualization-v1'
       - 'aletheia/gamma-actualization-interferometer-2026-10-10'
+      - 'aletheia/infinite-realization-ind-yoneda-2026-10-10'
     paths:
       - 'actualization/**'
       - 'tests/actualization/**'
       - 'research/2026-10-10/GAMMA_ACTUALIZATION_INTERFEROMETER.md'
+      - 'research/2026-10-10/INFINITE_REALIZATION_LIMITS.md'
+      - 'scripts/infinite_realization_demo.py'
       - 'scripts/audit_actualization.py'
       - 'scripts/mutate_actualization.py'
       - '.github/workflows/actualization-tests.yml'
@@ -18,6 +21,8 @@ on:
       - 'actualization/**'
       - 'tests/actualization/**'
       - 'research/2026-10-10/GAMMA_ACTUALIZATION_INTERFEROMETER.md'
+      - 'research/2026-10-10/INFINITE_REALIZATION_LIMITS.md'
+      - 'scripts/infinite_realization_demo.py'
       - 'scripts/audit_actualization.py'
       - 'scripts/mutate_actualization.py'
       - '.github/workflows/actualization-tests.yml'
@@ -43,6 +48,22 @@ jobs:
         run: python -m pip install mpmath
       - name: Run Gamma/finite-place correlated response tests
         run: python -m unittest discover -s tests/actualization -p 'test_gamma_interferometer.py' -v
+      - name: Run infinite-realization, pi/e and delayed-source controls
+        run: python -m unittest discover -s tests/actualization -p 'test_infinite_realization.py' -v
+      - name: Reproduce exact infinite Ind-object finite evidence
+        run: |
+          python scripts/infinite_realization_demo.py --stage 12 --terms 12 --output "$RUNNER_TEMP/infinite-realization.json"
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          evidence=json.loads((Path(os.environ['RUNNER_TEMP'])/'infinite-realization.json').read_text())
+          assert evidence['status']=='FINITE_EXACT_DEMONSTRATION'
+          assert evidence['finite_negative_Q_stage_e_stage']=='-1'
+          assert evidence['finite_negative_Q_stage_plus_one_e_stage']=='1'
+          assert evidence['persistent_negative_control']=='-1'
+          assert evidence['ind_limit']['represented_by_finite_integer'] is False
+          print('Finite Ind-Yoneda evidence verified; no infinity/RH claim')
+          PY
       - name: Run seven isolated regression lanes
         run: python scripts/audit_actualization.py --output "$RUNNER_TEMP/actualization-audit"
       - name: Run fifteen hostile mutations
@@ -76,5 +97,6 @@ jobs:
             ${{ runner.temp }}/trace.json
             ${{ runner.temp }}/replayed.json
             ${{ runner.temp }}/reversed.json
+            ${{ runner.temp }}/infinite-realization.json
           if-no-files-found: warn
           retention-days: 14

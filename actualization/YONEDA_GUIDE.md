@@ -258,3 +258,31 @@ source-connected mutation gate remains separate.
 
 Primary reference: Jordan Bell, The Pontryagin duals of Q/Z and Q and
 the adeles, https://jordanbell.info/LaTeX/mathematics/Qdual/Qdual.pdf .
+
+
+## Endless finite realization and a non-finite representable
+
+The distinction between infinitely many *finite observations* and a mere
+large finite aggregate is formalized in
+[the Ind-Yoneda construction](../research/2026-10-10/INFINITE_REALIZATION_LIMITS.md).
+For C the positive-integer divisibility category, the diagram
+L_N=lcm(1,...,N) has each term inside C, but the filtered colimit of
+its Yoneda representables is the terminal presheaf, which is NOT h_m for
+any finite m (query m+1 is an immediate counterexample).
+This is the first exact prototype in which the infinite realization
+is meaningful and no finite stage is the global object.
+
+**A direction correction:** Yoneda restrictions across finite observer
+categories form an inverse compatibility problem for fixed X,Y.
+The L_N objects themselves form a *directed diagram*, so their limit
+in the ind-completion is a filtered COLIMIT of representables, not an
+inverse limit of the changing objects.
+
+Executable bounded witness:
+python scripts/infinite_realization_demo.py --stage 12 --terms 12
+
+The bridge into real-valued analysis is demonstrated separately by
+certified rational intervals for pi, e and the Euler-region zeta function.
+Neither the ind-object nor finite restricted Yoneda yet constructs an
+arithmetic-to-Gamma/Weil polarization. A valid RH transfer needs that
+additional source-sensitive, form-topological theorem.
