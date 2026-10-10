@@ -1,0 +1,329 @@
+"""Finite SUCC differences vs theta/Gamma completion: a source-sensitive seam.
+
+Two CLASSICAL continuation routes from integer data:
+  (1) Euler transform of the alternating Dirichlet series (Hasse/Sondow).
+      At s=-m, finitely many exact differences reproduce zeta(-m).
+  (2) Poisson/theta heat kernel, a globally entire, reflection-symmetric
+      representation of completed xi.
+
+The two paths agree for the TRUE zeta source. Their agreement is NOT a
+Weil-positive theorem and is not automatic for an arbitrary arithmetic
+source. A single counterfeit coefficient at 6 exposes the gap.
+
+The Hasse series with 1/(n+1) is source FRAGILE: inserting a single
+impulse does not generally preserve convergence. Never advertise a
+generic finite-mutant Hasse transform as analytic continuation.
+"""
+from __future__ import annotations
+
+from dataclasses import dataclass
+from fractions import Fraction
+from typing import Mapping
+
+
+class SeamError(ValueError):
+    """Finite window, source, analytic chart or causal contract violated."""
+
+
+def _index(n, *, minimum=0, maximum=256, name="index"):
+    if type(n) is not int or not minimum <= n <= maximum:
+        raise SeamError(f"{name} must be an exact integer in {minimum}..{maximum}")
+    return n
+
+
+def _rational(x):
+    if type(x) is int or isinstance(x, Fraction):
+        return Fraction(x)
+    raise SeamError("Only exact rational/integer source coefficients permitted")
+
+
+def _mp():
+    try:
+        import mpmath
+    except ImportError as exc:
+        raise SeamError("mpmath is required for non-rational analytic readouts") from exc
+    return mpmath
+
+
+def _mprat(mp, q):
+    f=Fraction(q)
+    return mp.mpf(f.numerator)/f.denominator
+
+
+@dataclass(frozen=True)
+class SUCCDifferenceSource:
+    """Only integrated, complete coefficients a(1)..a(horizon) are read.
+
+    No future-tail model is inferred from finite agreement with zeta.
+    Negative-integer finite-difference values of a MUTANT are diagnostics,
+    not the analytic continuation of an arbitrary Dirichlet series.
+    """
+    horizon: int
+    coefficients: tuple[Fraction, ...]
+    trace_head: str | None = None
+
+    @classmethod
+    def from_prefix(cls, source: Mapping[int,object], horizon: int, *, trace_head=None):
+        _index(horizon, minimum=2, name="actualized coefficient horizon")
+        if not isinstance(source, Mapping):
+            raise SeamError("Source must be a mapping of integrated events")
+        values=[Fraction(0)]
+        for k in range(1,horizon+1):
+            if k not in source:
+                raise SeamError(f"Event {k} has not been integrated")
+            values.append(_rational(source[k]))
+        if values[1]!=1:
+            raise SeamError("Normalized Dirichlet source requires a(1)=1")
+        return cls(horizon,tuple(values),trace_head)
+
+    @classmethod
+    def zeta(cls,horizon):
+        return cls.from_prefix({n:1 for n in range(1,horizon+1)},horizon)
+
+    @classmethod
+    def from_engine(cls,engine,horizon=None):
+        from .gamma_interferometer import GammaInterferometer,InterferometerError
+        try:
+            snap=GammaInterferometer.from_engine(engine,horizon)
+        except (InterferometerError,ValueError) as exc:
+            raise SeamError("Source must be fully integrated, never predicted") from exc
+        return cls(snap.horizon,snap.coefficients,snap.trace_head)
+
+    @property
+    def genuine_zeta_prefix(self):
+        return all(c==1 for c in self.coefficients[1:])
+
+    def _difference_row_exact(self,power,terms):
+        """Full signed forward-difference row at nonnegative integer power."""
+        _index(power,maximum=100,name="polynomial degree")
+        _index(terms,maximum=self.horizon-1,name="last SUCC difference index")
+        return [self.coefficients[k]*k**power for k in range(1,terms+2)]
+
+    def _successive_differences(self,row):
+        """Uses sign convention Δ_- f(k)=f(k)-f(k+1)."""
+        while row:
+            yield row[0]
+            row=[row[j]-row[j+1] for j in range(len(row)-1)]
+
+    def euler_eta_negative(self,m,*,terms=None):
+        """Finite Euler transform, evaluated EXACTLY at s=-m.
+
+        E_N(-m)=Σ_(n=0)^N 2^(-n-1) (Δ_-^n [a(k)k^m])|_(k=1).
+        With genuine zeta and N>=m this equals eta(-m) EXACTLY.
+        For fake source it is a finite diagnostic, NOT necessarily
+        the infinite Euler-transformed continuation at finite N.
+        """
+        _index(m,maximum=64,name="negative integer order")
+        if terms is None:
+            terms=min(m,self.horizon-1)
+        _index(terms,maximum=self.horizon-1,name="Euler window")
+        row=self._difference_row_exact(m,terms)
+        return sum((Fraction(q,2**(n+1))
+                    for n,q in enumerate(self._successive_differences(row))),
+                   Fraction())
+
+    def hasse_pole_negative(self,m,*,terms=None):
+        """Second, local-prime-2-free Hasse construction, exactly rational.
+
+        H_N(-m) = 1/(-m-1) Σ_(n<=N)
+                     (Δ_-^n [a(k)k^(m+1)])_1/(n+1).
+        For genuine zeta and N>=m+1, this equals zeta(-m).
+        A finite source impulse can make H_N diverge as N increases.
+        """
+        _index(m,maximum=64,name="negative integer order")
+        if terms is None:
+            terms=min(m+1,self.horizon-1)
+        _index(terms,maximum=self.horizon-1,name="Hasse window")
+        row=self._difference_row_exact(m+1,terms)
+        return sum((Fraction(q,n+1)
+                    for n,q in enumerate(self._successive_differences(row))),
+                   Fraction()) /(-m-1)
+
+    def zeta_negative_certified(self,m):
+        """Classical Hasse theorem + EXACT terminating finite SUCC differences.
+
+        Requires complete *true zeta prefix* through max(m+1,m+2) and
+        equality of two independent rational formulas. The labels
+        'certified' here refer to exact algebra conditional on Hasse's
+        already-established analytic identity, not a newly proved theorem.
+        """
+        _index(m,maximum=64,name="negative integer order")
+        if not self.genuine_zeta_prefix:
+            raise SeamError("Exact zeta continuation requires the real zeta source")
+        if self.horizon < m+2:
+            raise SeamError("Need all coefficients through m+2 for Hasse")
+        eta=self.euler_eta_negative(m,terms=m)
+        z_from_eta=eta/Fraction(1-2**(1+m))
+        z_hasse=self.hasse_pole_negative(m,terms=m+1)
+        if z_from_eta!=z_hasse:
+            raise ArithmeticError("Independent finite SUCC continuation formulas differ")
+        return {
+            "m":m,
+            "eta":eta,
+            "zeta":z_from_eta,
+            "hasse":z_hasse,
+            "euler_nonzero_differences_at_most":m+1,
+            "hasse_nonzero_differences_at_most":m+2,
+            "source_zeta_verified_through":self.horizon,
+            "status":"exact terminating rational values via classical Hasse identities",
+        }
+
+    def negative_difference_rows(self,m,*,terms=None):
+        """Provenance: retain every SUCC-difference contribution unquotiented."""
+        _index(m,maximum=64,name="negative integer order")
+        if terms is None:
+            terms=min(self.horizon-1,m+6)
+        _index(terms,maximum=self.horizon-1,name="SUCC window")
+        left=list(self._successive_differences(self._difference_row_exact(m,terms)))
+        right=list(self._successive_differences(self._difference_row_exact(m+1,terms)))
+        return {
+            "eta":tuple(Fraction(q,2**(j+1)) for j,q in enumerate(left)),
+            "hasse_numerator":tuple(Fraction(q,j+1) for j,q in enumerate(right)),
+            "source_genuine_prefix":self.genuine_zeta_prefix,
+        }
+
+    def parity_source_defects(self, *, primitive_only=False):
+        """Exact local-prime-2 source seam d(m)=a(2m)-a(2)a(m).
+
+        On coprime (odd) m this is multiplicativity at the new prime
+        2; for ALL m it asserts stronger complete multiplicativity
+        along the 2-ray, which general Hecke L-functions may not obey.
+        """
+        defect={}
+        for m in range(1,self.horizon//2+1):
+            if primitive_only and m%2==0:
+                continue
+            d=self.coefficients[2*m]-self.coefficients[2]*self.coefficients[m]
+            if d:
+                defect[m]=d
+        return defect
+
+    def source_prefix_compatible(self,longer):
+        if not isinstance(longer,SUCCDifferenceSource) or longer.horizon<self.horizon:
+            raise SeamError("Comparison requires a later complete source")
+        if self.coefficients!=longer.coefficients[:self.horizon+1]:
+            raise SeamError("Earlier source coefficients have been revised")
+        return True
+
+    def eta_euler_analytic(self,s,*,terms=72,dps=90):
+        """Euler-accelerated eta for arbitrary complex s; numeric readout.
+
+        This transform of the altered finite data does NOT generally
+        yield (1-2^(1-s))*the altered Dirichlet series. The parity
+        compatibility law must separately be checked. No formal
+        truncation-error certificate is inferred from mpmath digits.
+        """
+        _index(terms,maximum=self.horizon-1,name="analytic Euler window")
+        mp=_mp()
+        with mp.workdps(dps):
+            s=mp.mpc(s)
+            row=[_mprat(mp,self.coefficients[k])*mp.power(k,-s)
+                 for k in range(1,terms+2)]
+            total=mp.mpc(0)
+            for n in range(terms+1):
+                total+=row[0]/mp.power(2,n+1)
+                row=[row[j]-row[j+1] for j in range(len(row)-1)]
+            return +total
+
+    def zeta_from_eta_analytic(self,s,*,terms=72,dps=90):
+        if not self.genuine_zeta_prefix:
+            raise SeamError("No zeta claim from mutated Euler-transformed source")
+        mp=_mp()
+        with mp.workdps(dps):
+            s=mp.mpc(s)
+            denom=1-mp.power(2,1-s)
+            if abs(denom)<mp.mpf("1e-12"):
+                raise SeamError("2-Euler normalization is zero/ill-conditioned; use Hasse pole chart")
+            eta=self.eta_euler_analytic(s,terms=terms,dps=dps)
+            return +(eta/denom)
+
+
+def theta_xi_partial(s,*,max_integer=4,dps=75,mutations: Mapping[int,object] | None=None):
+    """Poisson/self-dual completed-xi HEAT representation, finite integer terms.
+
+    xi_M(s)=1/2 + s(s-1)/2 Σ_(n<=M) [ (πn²)^(-s/2)Γ(s/2,πn²)
+                                    +(πn²)^(-(1-s)/2)Γ((1-s)/2,πn²) ].
+    A mutation to the Gaussian weights leaves the reflection symmetry
+    MANIFEST by construction; it need not represent the completion of
+    the mutated arithmetic Dirichlet series!
+    """
+    _index(max_integer,minimum=1,maximum=40,name="heat integer cutoff")
+    if mutations is None:
+        mutations={}
+    if not isinstance(mutations,Mapping):
+        raise SeamError("Heat weights need an explicit sparse mutation map")
+    checked={}
+    for n,v in mutations.items():
+        _index(n,minimum=1,maximum=max_integer,name="mutated heat integer")
+        checked[n]=_rational(v)
+    mp=_mp()
+    with mp.workdps(dps):
+        s=mp.mpc(s)
+        total=mp.mpc(0)
+        for n in range(1,max_integer+1):
+            alpha=mp.pi*n*n
+            a=_mprat(mp,checked.get(n,Fraction(1)))
+            total+=a*(mp.power(alpha,-s/2)*mp.gammainc(s/2,alpha,mp.inf)
+                      +mp.power(alpha,-(1-s)/2)
+                         *mp.gammainc((1-s)/2,alpha,mp.inf))
+        return +(mp.mpf("0.5")+s*(s-1)*total/2)
+
+
+def theta_xi_tail_bound(s,*,max_integer=4,dps=75):
+    """THEORETICAL absolute truncation bound in 0<=Re(s)<=1.
+
+    Bound = |s(s-1)|/π * exp[-π(M+1)^2] /
+       [(M+1)^2 (1-exp[-π(2M+3)])].
+    Because x^(Re(s)/2-1), x^((1-Re(s))/2-1) <=1 for x>=1.
+    Derived from the theta/Poisson exact formula, not numerically fitted.
+    Floating mpmath evaluation is not a directed-rounding proof.
+    """
+    _index(max_integer,minimum=1,maximum=40,name="heat cutoff")
+    mp=_mp()
+    with mp.workdps(dps):
+        s=mp.mpc(s)
+        if not 0<=mp.re(s)<=1:
+            raise SeamError("Tail envelope presently proved only in closed critical strip")
+        m=max_integer
+        return +(abs(s*(s-1))/mp.pi
+                  *mp.exp(-mp.pi*(m+1)**2)
+                  /((m+1)**2*(1-mp.exp(-mp.pi*(2*m+3)))))
+
+
+def raw_completed_finite_mutation(s, *, n=6, delta=1, dps=75):
+    """EXPLICIT COUNTERMODEL ζ(s)+delta*n^-s, not a discovered future event.
+
+    The source is defined FOR ALL n in this adversarial thought-experiment:
+    a(m)=1+delta if m=n and a(m)=1 otherwise.
+    Gamma-complete this actual meromorphic Dirichlet series, not a
+    forced reflection-symmetric fictitious theta construction.
+    """
+    _index(n,minimum=2,maximum=256,name="mutated source index")
+    d=_rational(delta)
+    mp=_mp()
+    with mp.workdps(dps):
+        s=mp.mpc(s)
+        if s in (0,1,-2,-4,-6,-8):
+            raise SeamError("Use a regular chart for this raw gamma/pole product")
+        zeta_part=mp.zeta(s)+_mprat(mp,d)*mp.power(n,-s)
+        return +(s*(s-1)*mp.power(mp.pi,-s/2)*mp.gamma(s/2)*zeta_part/2)
+
+
+def finite_mutation_parity_error(s,*,n=6,delta=1,dps=75):
+    """Exact 2-Euler transport defect for a single declared source mutation.
+
+    a(m)=1+delta*[m=n] globally, with n even and n>=6.
+    E_a-(1-2^(1-s)) D_a = -(2-2^(1-s))*delta*n^-s
+    since n is even, and the alternating sign at n is minus.
+    This is algebra on absolutely convergent Dirichlet series, then
+    meromorphically continued as a finite elementary correction.
+    """
+    _index(n,minimum=6,maximum=256,name="even mutation")
+    if n%2:
+        raise SeamError("This parity formula was derived for even event n")
+    d=_rational(delta)
+    mp=_mp()
+    with mp.workdps(dps):
+        s=mp.mpc(s)
+        return +((_mprat(mp,d)*mp.power(n,-s))
+                  *(-2+mp.power(2,1-s)))
