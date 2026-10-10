@@ -208,6 +208,9 @@ jobs:
           assert j["positive_observations_are_not_positive_correlations"]["quartic_quadratic_vector_ones"]=="-24"
           assert j["semantic_second_derivative_information_geometry"]["both_information_geometries_PSD"]
           assert j["semantic_second_derivative_information_geometry"]["Weil_identification_established"] is False
+          assert j["finite_quantum_phase_omega_topology"]["pointwise_formal_limit_at_t_0"]==1
+          assert j["finite_quantum_phase_omega_topology"]["pointwise_formal_limit_at_t_1"]==0
+          assert j["finite_quantum_phase_omega_topology"]["limit_continuous_at_zero"] is False
           assert j["hilbert_critical_line_observer_escape"]["weak_limit_zero_not_strong"]
           assert j["hilbert_critical_line_observer_escape"]["normalizable_omega_vector_exists"] is False
           assert j["no_actual_infinite_ordinal_computed"]
