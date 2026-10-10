@@ -69,4 +69,13 @@ from .balanced_theta_li import (
     finite_double_zero, li_coevolving_diagonal,
 )
 
+from .ordinal_succ_report import (
+    OrdinalObservationError,OrdinalFiniteStage,
+    exact_bounded_time_horizon,quartic_observer_report,
+    exact_polynomial_rectangle,oscillator_observer_report,
+    synthetic_ordinal_semantics,harmonic_number,
+    harmonic_half_density_observer,harmonic_dyadic_divergence_certificate,
+    mellin_hilbert_threshold,
+)
+
 __version__ = "0.3.0"
