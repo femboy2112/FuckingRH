@@ -170,6 +170,20 @@ jobs:
           PY
       - name: Test coupled theta source horizons and zero-free finite Li jets
         run: python -m unittest discover -s tests/actualization -p 'test_balanced_theta_li.py' -v
+      - name: Reproduce joint theta horizon and fixed-degree Li source evidence
+        run: |
+          python scripts/balanced_theta_li_probe.py --output "$RUNNER_TEMP/balanced-theta-li.json"
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          j=json.loads((Path(os.environ["RUNNER_TEMP"])/"balanced-theta-li.json").read_text())
+          assert j["status"]=="ZERO_BLIND_BALANCED_THETA_AND_LI_PROBE"
+          assert j["matched_horizon"]["fake_at_mirror_fixed_u_0"]=="0.0"
+          assert j["finite_collision"]["finite_N_4_T_0_325_positive_Li_first_degree_count"]==12
+          assert j["finite_Li"]["all_degree_uniform_positivity"] is False
+          assert j["nontrivial_zeta_zeros_used_as_source"] is False
+          print("Balanced theta / Li source and negative controls reproduced")
+          PY
       - name: Run seven isolated regression lanes
         run: python scripts/audit_actualization.py --output "$RUNNER_TEMP/actualization-audit"
       - name: Run fifteen hostile mutations
@@ -208,5 +222,6 @@ jobs:
             ${{ runner.temp }}/lambert-succ.json
             ${{ runner.temp }}/dirichlet-lambert.json
             ${{ runner.temp }}/hasse-theta-seam.json
+            ${{ runner.temp }}/balanced-theta-li.json
           if-no-files-found: warn
           retention-days: 14
