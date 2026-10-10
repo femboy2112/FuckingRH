@@ -434,3 +434,17 @@ so it offers NO theorem of positivity for all indices.
 Finite off-line theta zero collisions coexist with positive
 low-order Li-like coefficients; tracking zero motion cannot
 replace an independent source-derived Weil/Li sign argument.
+
+
+### Li-indexed double-limit diagonal: accuracy is not positivity
+
+A constructive \`N(k),T(k)\` finite arithmetic–archimedean
+observation schedule now gives **both** an exponentially shrinking
+analytic error for the kth true Li coefficient and an
+exponentially shrinking Poisson theta reflection error at
+the moving window endpoint. The source horizon is linear in k
+for simultaneous modular accuracy; it can be square-root in k
+for coefficient approximation alone. This quantifier-correct
+diagonal realizes infinitely many finite measurements, but
+does not prove the coefficients' sign. See §8 of
+[BALANCED_THETA_LI_WINDOW.md](../research/2026-10-10/BALANCED_THETA_LI_WINDOW.md).
