@@ -256,3 +256,36 @@ cannot see a fake n=6 coefficient; zeta's analytic continuation uniquely
 determines its zeros, but the universal Weil-positive sign remains open.
 Full proofs, provenance, boundaries, and the proposed enriched analytic
 transport experiment: [Infinite realization research](../research/2026-10-10/INFINITE_REALIZATION_LIMITS.md).
+
+
+## Prime-path Gamma successor germs
+
+[gamma_succ_path.py](gamma_succ_path.py) makes a previously missing
+distinction executable: scalar evaluation at the reflected point m=1
+identifies the finite Euler ratio Z_P(2m)/Z_P(2)^m with 1, but does NOT
+identify the two analytic construction paths or their derivatives.
+The first displacement jet contains explicit finite prime logarithmic
+moments and converges with a proved O(log(P)/P) tail bound.
+
+An independent finite factorial SUCC path has Euler gamma approximation
+G_N(z)=N! N^z/(z(z+1)...(z+N)), whose recurrence has finite defect
+z(z+1)/(N+z+1), vanishing only in the infinite N limit.
+The two-cutoff reflected transport replaces pi using the finite Euler
+product and gamma using the finite factorial path; it tends to
+zeta(1-2m) from the SAFE Euler half-plane Re(m)>1/2, including m=1.
+
+A deliberately deformed Gamma sharing every factorial integer value and
+the SUCC recurrence shows why extra analytic log-convexity constraints
+are necessary to determine a unique archimedean continuation. Fake
+composite Euler slots preserve scalar cancellation but change the jets:
+provenance-sensitive does not mean RH-positive.
+
+~~~bash
+python scripts/gamma_succ_path_probe.py --prime-bound 53 --gamma-steps 64
+python -m unittest discover -s tests/actualization -p 'test_gamma_succ_path.py' -v
+~~~
+
+The [derivation and proof boundary](../research/2026-10-10/SUCC_GAMMA_PRIME_PATH_GERMS.md)
+explicitly distinguish classical identities, tested finite readouts,
+and the still-open arithmetic-to-Weil fourth gate. No divergent Euler
+product at -1 is assigned an ordinary sum or product value.
