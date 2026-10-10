@@ -26,7 +26,10 @@ class LocalGlobalTests(unittest.TestCase):
         self.assertEqual(c['status'],'distinguished')
         self.assertEqual(c['first_difference_at_observation'],6)
         self.assertTrue(c['shadow_comparisons'][0]['local_shadow']['integrated'])
-        self.assertFalse(c['shadow_comparisons'][0]['equal'] if False else False)
+        self.assertTrue(c['shadow_comparisons'][0]['equal'])
+        self.assertFalse(c['shadow_comparisons'][0]['source_agrees'])
+        self.assertEqual(c['shadow_comparisons'][0]['global_connected_source_restricted']['connected'],
+                         Scalar("1/7").data())
         # Both history combinatorics agree; the actualized source differs.
         self.assertEqual(c['shadow_comparisons'][0]['local_shadow']['occurrences'],
                          c['shadow_comparisons'][0]['global_shadow_restricted']['occurrences'])
@@ -77,7 +80,7 @@ class LocalGlobalTests(unittest.TestCase):
         a,b=run_arithmetic(3),run_arithmetic(3)
         self.assertEqual(compare_local_global(a,b,0,shadow_targets=())['status'],
                          'equivalent_on_declared_observations')
-        with self.assertRaises(Exception):
+        with self.assertRaises(DomainError):
             compare_local_global(a,b,3,shadow_targets=(100,))
 
     def test_demonstration(self):
