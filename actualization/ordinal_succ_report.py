@@ -474,3 +474,74 @@ def mellin_hilbert_threshold(sigma):
         "critical_line_normalization":"sum(n^-1) diverges",
         "scope":"elementary Hilbert p-series threshold, RH-INERT"
     }
+
+
+
+def critical_phase_characteristic(n,t,*,dps=75):
+    """Finite positive-type Hilbert phase correlation at critical exponent.
+
+       phi_N(t) = <Omega_N, exp(it H) Omega_N>
+                = H_N^-1 sum_(k<=N) k^(-1+it),
+       H|k>=(log k)|k>.
+    For each finite N, phi_N is a continuous POSITIVE-DEFINITE
+    function of t (characteristic function of a discrete probability).
+
+    Yet pointwise as N->infinity:
+       phi_N(0)=1, phi_N(t)->0 for every fixed real t!=0.
+    The limit is DISCONTINUOUS at 0, so it cannot arise from a
+    regular finite Borel probability law on real logarithmic energy.
+    Physical/Hilbert positivity alone does not enforce the required
+    regularity on the omega-stage retrospective report.
+    """
+    if type(n) is not int or not 2<=n<=1024:
+        raise OrdinalObservationError("Phase-correlation finite horizon must be 2..1024")
+    mp=_mp()
+    with mp.workdps(dps):
+        t=mp.mpf(t)
+        if not mp.isfinite(t) or abs(t)>100:
+            raise OrdinalObservationError("Finite spectral phase time |t|<=100 required")
+        if t==0:
+            return mp.mpf(1)
+        hn=harmonic_number(n)
+        z=mp.fsum(mp.exp(mp.j*t*mp.log(k))/k for k in range(1,n+1))
+        return +(z/_mpq(mp,hn))
+
+
+def critical_phase_decay_bound(n,t,*,dps=75):
+    """Proved nonzero-t envelope for normalized finite quantum phase:
+
+    f(x)=x^(-1+it).
+      |Σ_(k<=N) f(k)-∫_1^N f(x)dx|
+           <= |f(N)|+∫_1^N |f'(x)|dx
+           <= 1/N+sqrt(1+t²).
+    The integral is (N^(it)-1)/(it), absolute value <=2/|t|.
+    Dividing by H_N gives
+      |phi_N(t)| <= (2/|t|+sqrt(1+t²)+1/N)/H_N ->0
+    at each FIXED t!=0, by harmonic divergence.
+    """
+    if type(n) is not int or not 2<=n<=1024:
+        raise OrdinalObservationError("Phase bound horizon must be 2..1024")
+    mp=_mp()
+    with mp.workdps(dps):
+        t=mp.mpf(t)
+        if not mp.isfinite(t) or abs(t)>100 or t==0:
+            raise OrdinalObservationError("Phase decay envelope requires 0<|t|<=100")
+        return +((2/abs(t)+mp.sqrt(1+t*t)+mp.mpf(1)/n)
+                 /_mpq(mp,harmonic_number(n)))
+
+
+def formal_critical_phase_limit(t):
+    """Only the theorem's FORMAL pointwise limit; never execute omega.
+
+    The function 1_(t=0) is PD on the DISCRETE additive group R,
+    but discontinuous in the standard real topology; it cannot be
+    a continuous characteristic function of a Borel probability.
+    """
+    z=_q(t)
+    return {
+        "t":z,"pointwise_limit":int(z==0),
+        "zero_elsewhere":True,
+        "limit_continuous_at_zero":False,
+        "omega_executed":False,
+        "scope":"pointwise limit of finite positive-type phase correlations; not Weil"
+    }
