@@ -72,6 +72,8 @@ def bulk_branches(y, *, dps=60):
         y=mp.mpf(y)
         if not mp.isfinite(y) or not (-1<=y<0):
             raise LambertPathError("Two real branches require -1<=y<0")
+        if y == -1:
+            return (mp.mpf(1),mp.mpf(1))  # exact fold; avoid branch-roundoff
         result=[]
         for k in (0,-1):
             w=mp.lambertw(y/mp.e,k)
