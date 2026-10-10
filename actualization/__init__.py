@@ -60,4 +60,13 @@ from .hasse_theta_seam import (
     prime_source_moment_energy, prime_current_finite_differences,
 )
 
+from .balanced_theta_li import (
+    BalancedWindowError, theta_finite, theta_defect,
+    theta_defect_tail_envelope, matched_theta_cutoff,
+    one_prime_fake_defect, wrong_half_density_limit,
+    finite_gamma_window, finite_gamma_succ_defect,
+    truncated_xi, finite_li_coefficients, li_all_degree_bound,
+    finite_double_zero, li_coevolving_diagonal,
+)
+
 __version__ = "0.3.0"

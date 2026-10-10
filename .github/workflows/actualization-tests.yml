@@ -12,6 +12,7 @@ on:
       - 'aletheia/lambert-w-succ-inverse-tree-2026-10-10'
       - 'aletheia/dirichlet-star-lambert-source-2026-10-10'
       - 'aletheia/finite-succ-hasse-theta-seam-2026-10-10'
+      - 'aletheia/balanced-theta-li-window-2026-10-10'
     paths:
       - 'actualization/**'
       - 'tests/actualization/**'
@@ -22,11 +23,13 @@ on:
       - 'research/2026-10-10/LAMBERT_SUCC_INVERSE_TREE.md'
       - 'research/2026-10-10/DIRICHLET_LAMBERT_SOURCE_LIFT.md'
       - 'research/2026-10-10/FINITE_SUCC_HASSE_THETA_SEAM.md'
+      - 'research/2026-10-10/BALANCED_THETA_LI_WINDOW.md'
       - 'scripts/infinite_realization_demo.py'
       - 'scripts/gamma_succ_path_probe.py'
       - 'scripts/lambert_succ_probe.py'
       - 'scripts/dirichlet_lambert_probe.py'
       - 'scripts/hasse_theta_seam_probe.py'
+      - 'scripts/balanced_theta_li_probe.py'
       - 'scripts/audit_actualization.py'
       - 'scripts/mutate_actualization.py'
       - '.github/workflows/actualization-tests.yml'
@@ -41,11 +44,13 @@ on:
       - 'research/2026-10-10/LAMBERT_SUCC_INVERSE_TREE.md'
       - 'research/2026-10-10/DIRICHLET_LAMBERT_SOURCE_LIFT.md'
       - 'research/2026-10-10/FINITE_SUCC_HASSE_THETA_SEAM.md'
+      - 'research/2026-10-10/BALANCED_THETA_LI_WINDOW.md'
       - 'scripts/infinite_realization_demo.py'
       - 'scripts/gamma_succ_path_probe.py'
       - 'scripts/lambert_succ_probe.py'
       - 'scripts/dirichlet_lambert_probe.py'
       - 'scripts/hasse_theta_seam_probe.py'
+      - 'scripts/balanced_theta_li_probe.py'
       - 'scripts/audit_actualization.py'
       - 'scripts/mutate_actualization.py'
       - '.github/workflows/actualization-tests.yml'
@@ -163,6 +168,24 @@ jobs:
           assert j['nontrivial_zero_locations_or_ordinates_used'] is False
           print('Finite SUCC/archimedean seam controls PASS; RH remains open')
           PY
+      - name: Test coupled theta source horizons and zero-free finite Li jets
+        run: python -m unittest discover -s tests/actualization -p 'test_balanced_theta_li.py' -v
+      - name: Reproduce joint theta horizon and fixed-degree Li source evidence
+        run: |
+          python scripts/balanced_theta_li_probe.py --output "$RUNNER_TEMP/balanced-theta-li.json"
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          j=json.loads((Path(os.environ["RUNNER_TEMP"])/"balanced-theta-li.json").read_text())
+          assert j["status"]=="ZERO_BLIND_BALANCED_THETA_AND_LI_PROBE"
+          assert j["matched_horizon"]["fake_at_mirror_fixed_u_0"]=="0.0"
+          assert j["finite_collision"]["finite_N_4_T_0_325_positive_Li_first_degree_count"]==12
+          assert j["finite_Li"]["all_degree_uniform_positivity"] is False
+          assert j["degree_coevolution"]["both_errors_below_2_to_minus_index"] is True
+          assert j["degree_coevolution"]["RH_sign_proved"] is False
+          assert j["nontrivial_zeta_zeros_used_as_source"] is False
+          print("Balanced theta / Li source and negative controls reproduced")
+          PY
       - name: Run seven isolated regression lanes
         run: python scripts/audit_actualization.py --output "$RUNNER_TEMP/actualization-audit"
       - name: Run fifteen hostile mutations
@@ -201,5 +224,6 @@ jobs:
             ${{ runner.temp }}/lambert-succ.json
             ${{ runner.temp }}/dirichlet-lambert.json
             ${{ runner.temp }}/hasse-theta-seam.json
+            ${{ runner.temp }}/balanced-theta-li.json
           if-no-files-found: warn
           retention-days: 14
