@@ -44,4 +44,9 @@ from .lambert_succ import (
     tree_series_vs_lambert,
 )
 
+from .dirichlet_lambert import (
+    ArithmeticWError, DirichletLambertSnapshot, convolve, identity,
+    star_lambert_w, star_log_unit, star_exp,
+)
+
 __version__ = "0.3.0"
