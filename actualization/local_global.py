@@ -14,7 +14,7 @@ import json
 
 from .core import DomainError, BudgetExceeded, Scalar, ONE
 from .engine import Engine, run_arithmetic
-from .arithmetic import ShadowIndex
+from .arithmetic import ShadowIndex, connected_audit
 from .resource_probe import ValuationWord, ProbeBudget, compare_observers
 
 
@@ -87,15 +87,21 @@ def compare_local_global(local: Engine, global_model: Engine, horizon: int,
                   if (x != y if require_same_protocol else (x.n != y.n or x.value != y.value))),None)
     prefix_a={o.n:o.value for o in here}
     prefix_b={o.n:o.value for o in above}
+    index_a=ShadowIndex(prefix_a,local.limits)
+    index_b=ShadowIndex(prefix_b,global_model.limits)
     report=[]
     for target in shadow_targets:
         if type(target) is not int or not 2 <= target <= min(local.limits.max_target,global_model.limits.max_target):
             raise BudgetExceeded("Shadow target exceeds shared available semantic domain")
-        x = ShadowIndex(prefix_a,local.limits).entry(target)
-        y = ShadowIndex(prefix_b,global_model.limits).entry(target)
+        x,y = index_a.entry(target),index_b.entry(target)
+        audit_a=connected_audit(index_a,target,local.conductor) if target in prefix_a else None
+        audit_b=connected_audit(index_b,target,global_model.conductor) if target in prefix_b else None
         report.append({"target":target, "local_shadow":x.data(),
                        "global_shadow_restricted":y.data(),
                        "equal":x.weight==y.weight and x.counts==y.counts and x.products==y.products,
+                       "local_connected_source":audit_a,
+                       "global_connected_source_restricted":audit_b,
+                       "source_agrees":audit_a==audit_b,
                        "globally_actualized_here": target<=horizon})
     return {
         "status": "equivalent_on_declared_observations" if same else "distinguished",
