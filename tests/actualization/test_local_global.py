@@ -4,7 +4,7 @@ import subprocess
 import sys
 import json
 
-from actualization import Engine, Frame, ONE, Scalar, run_arithmetic, DomainError
+from actualization import Engine, Frame, ONE, Scalar, run_arithmetic, DomainError, BudgetExceeded
 from actualization.local_global import compare_local_global, prefix_demo
 
 
@@ -83,7 +83,7 @@ class LocalGlobalTests(unittest.TestCase):
         a,b=run_arithmetic(3),run_arithmetic(3)
         self.assertEqual(compare_local_global(a,b,0,shadow_targets=())['status'],
                          'equivalent_on_declared_observations')
-        with self.assertRaises(DomainError):
+        with self.assertRaises(BudgetExceeded):
             compare_local_global(a,b,3,shadow_targets=(100,))
 
     def test_cli_new_observation_modes(self):
