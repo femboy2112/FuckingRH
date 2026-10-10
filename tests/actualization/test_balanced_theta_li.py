@@ -14,7 +14,7 @@ from actualization.balanced_theta_li import (
     one_prime_fake_defect, wrong_half_density_limit,
     finite_gamma_window, finite_gamma_succ_defect,
     truncated_xi, finite_li_coefficients, li_all_degree_bound,
-    finite_double_zero,
+    finite_double_zero, li_coevolving_diagonal,
 )
 from actualization.hasse_theta_seam import (
     SUCCDifferenceSource, theta_xi_partial, theta_xi_tail_bound,
@@ -187,6 +187,57 @@ class ThetaLiTests(unittest.TestCase):
             self.assertLess(abs(data["off_line_splitting_coefficient"]
                                 -mp.mpf("9.754505080937")),mp.mpf("1e-9"))
             self.assertLess(data["residual"],mp.mpf("1e-30"))
+
+    def test_li_degree_diagonal_coevolves_source_and_reflection(self):
+        # Full indexed theorem: no input zeros, and two independent
+        # mathematically derived source/arch windows shrink with k.
+        with mp.workdps(105):
+            lastT=0
+            for k in (1,2,4,8,16,32,64,128):
+                only=li_coevolving_diagonal(
+                    k,match_reflection=False,dps=105)
+                both=li_coevolving_diagonal(
+                    k,match_reflection=True,dps=105)
+                eps=mp.power(2,-k)
+                self.assertLess(
+                    only["Li_fixed_degree_error_bound"],eps)
+                self.assertLess(
+                    both["Li_fixed_degree_error_bound"],eps)
+                self.assertLess(
+                    both["reflection"]["theta_reflection_error_bound"],eps)
+                self.assertTrue(
+                    both["reflection"]["reflection_certified_at_u_equal_T"])
+                self.assertFalse(both["Li_all_index_uniform_positivity_proved"])
+                self.assertGreaterEqual(both["arithmetic_horizon"],
+                                        only["arithmetic_horizon"])
+                self.assertGreater(both["archimedean_window_T"],lastT)
+                lastT=both["archimedean_window_T"]
+                true=theta_defect(
+                    both["archimedean_window_T"],
+                    both["arithmetic_horizon"],dps=105)
+                self.assertLess(abs(true),
+                                both["reflection"]["theta_reflection_error_bound"]
+                                +mp.mpf("1e-90"))
+                self.assertLess(
+                    only["arithmetic_horizon"],
+                    8*mp.sqrt(k)+4)
+
+    def test_diagonal_true_theta_vs_false_six_at_same_horizon(self):
+        with mp.workdps(105):
+            path=li_coevolving_diagonal(64,dps=105)
+            u=path["archimedean_window_T"]
+            N=path["arithmetic_horizon"]
+            self.assertGreaterEqual(N,6)
+            good=SUCCDifferenceSource.zeta(max(N,64))
+            mutated={n:1 for n in range(1,max(N,64)+1)}
+            mutated[6]=2
+            bad=SUCCDifferenceSource.from_prefix(mutated,max(N,64))
+            true=theta_defect(u,N,source=good,dps=105)
+            fake=theta_defect(u,N,source=bad,dps=105)
+            self.assertLess(abs(true),mp.power(2,-64))
+            self.assertGreater(abs(fake),mp.mpf("1e-4"))
+            self.assertLess(abs((fake-true)-one_prime_fake_defect(
+                u,6,1,dps=105)),mp.mpf("1e-90"))
 
     def test_invalid_radius_and_numeric_budget_rejected(self):
         with self.assertRaises(BalancedWindowError):
