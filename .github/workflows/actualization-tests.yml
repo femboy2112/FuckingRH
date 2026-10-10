@@ -5,9 +5,11 @@ on:
     branches:
       - 'build/2026-10-09/field-relative-actualization-a1'
       - 'research/2026-10-10/yoneda-resource-actualization-v1'
+      - 'aletheia/gamma-actualization-interferometer-2026-10-10'
     paths:
       - 'actualization/**'
       - 'tests/actualization/**'
+      - 'research/2026-10-10/GAMMA_ACTUALIZATION_INTERFEROMETER.md'
       - 'scripts/audit_actualization.py'
       - 'scripts/mutate_actualization.py'
       - '.github/workflows/actualization-tests.yml'
@@ -15,6 +17,7 @@ on:
     paths:
       - 'actualization/**'
       - 'tests/actualization/**'
+      - 'research/2026-10-10/GAMMA_ACTUALIZATION_INTERFEROMETER.md'
       - 'scripts/audit_actualization.py'
       - 'scripts/mutate_actualization.py'
       - '.github/workflows/actualization-tests.yml'
@@ -36,6 +39,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python }}
+      - name: Install numerical dependency for Gamma/Suzuki check
+        run: python -m pip install mpmath
+      - name: Run finite-Gamma bridge calibrated controls
+        run: python -m unittest discover -s tests/actualization -p 'test_gamma_interferometer.py' -v
       - name: Run six isolated regression lanes
         run: python scripts/audit_actualization.py --output "$RUNNER_TEMP/actualization-audit"
       - name: Run fourteen hostile mutations
