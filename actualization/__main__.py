@@ -1,4 +1,4 @@
-"""Run with: python -m actualization demo | yoneda-demo | local-global-demo | probe-budget | run | shadow | replay | reverse."""
+"""Run with: python -m actualization demo | yoneda-demo | local-global-demo | circle-demo | probe-budget | run | shadow | replay | reverse."""
 from __future__ import annotations
 
 import argparse
@@ -10,6 +10,7 @@ from . import (ActualizationError, BasisLift, Engine, Frame, I, Limits,
                ONE, Scalar, conductor_growth, run_arithmetic, source_at)
 from .phenomenology import example as yoneda_example
 from .local_global import prefix_demo
+from .circle_transport import conductor_birth_2_to_6, verify_refinement_tower
 from .resource_probe import ProbeBudget, ValuationWord, compare_observers, lcm_word
 
 
@@ -82,6 +83,8 @@ def main(argv=None):
     p.add_argument("--output")
     p = sub.add_parser("local-global-demo", help="Restrict a global arithmetic history to local SUCC observations")
     p.add_argument("--output")
+    p = sub.add_parser("circle-demo", help="Check exact Z/2->Z/6 dual circle torsion and conductor birth")
+    p.add_argument("--output")
     p = sub.add_parser("probe-budget", help="Certify bounded observational equivalence without materializing huge target values")
     p.add_argument("--budget", type=int, default=3)
     p.add_argument("--a", type=int, default=6)
@@ -122,6 +125,9 @@ def main(argv=None):
             emit(yoneda_example(), args.output)
         elif args.command == "local-global-demo":
             emit(prefix_demo(), args.output)
+        elif args.command == "circle-demo":
+            emit({"conductor_birth":conductor_birth_2_to_6(),
+                  "dual_tower":verify_refinement_tower(2,6,30)}, args.output)
         elif args.command == "probe-budget":
             if args.lcm_horizon is not None:
                 a = lcm_word(args.lcm_horizon)
