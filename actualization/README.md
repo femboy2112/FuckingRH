@@ -452,3 +452,49 @@ python -m unittest discover -s tests/actualization -p 'test_hasse_theta_seam.py'
 
 Full [derivations, sources, controls and the open Weil gate]
 (../research/2026-10-10/FINITE_SUCC_HASSE_THETA_SEAM.md).
+
+
+## Coevolving theta windows and a zero-free finite Li hierarchy
+
+The [balanced theta / Li module](balanced_theta_li.py) makes the
+arithmetic–Archimedean observation horizon **coevolve**. The finite
+lattice theta \`Theta_N(u)\` has a defect under Poisson reflection:
+for fixed finite N, \`D_N(u)/exp(u/2)->1\` as u->+infinity.
+For fixed u and N->infinity, the defect vanishes. So the two
+independent limits DO NOT commute.
+
+An exact erfc tail estimate yields a zero-blind, concrete
+horizon prescription:
+\`N(u,eps)>=exp(|u|)*sqrt((|u|/2+log(2/eps))/pi)\`.
+The resulting Gamma/Poisson duality is controlled in *absolute*
+error, not merely pointwise at fixed u. A wrong half-density
+and a fake a(6)=2 Gaussian channel remain detectably wrong,
+while the fixed-point probe u=0 is blind to fake weights.
+
+The finite incomplete-Gamma SUCC recursion retains its explicit
+boundary term. A direct finite rotating-Gaussian integral
+independently confirms the user's reported finite double-zero
+collision at T=0.3247799809425738... and its square-root
+off-line splitting. These are NOT nontrivial zeta zeros.
+
+Crucially, the finite theta kernels themselves define Li-like
+coefficients **without reading any zeros**. A Cauchy estimate on a
+provably zero-free disk about s=1 gives, for each degree k, a
+closed-form source-derived error bound on the true Li coefficient:
+\`|lambda_k(xi)-lambda_k(X_NT)| <=2k E_NT/((1-delta_r)r^k)\`,
+\`0<r<=1/2\`. It is valid at ALL FIXED degrees but grows
+exponentially in k; this is precisely why the construction
+does not establish Li's globally quantified positive criterion.
+
+Hostile calibration: at T=0.325 the finite theta model has a
+verified numerical off-line pair while its first twelve Li-like
+coefficients are still positive. Small-index positivity is
+insensitive to this finite-model obstruction.
+
+~~~bash
+python scripts/balanced_theta_li_probe.py
+python -m unittest discover -s tests/actualization -p 'test_balanced_theta_li.py' -v
+~~~
+
+[Detailed proofs, source bounds and remaining RH-sign wall]
+(../research/2026-10-10/BALANCED_THETA_LI_WINDOW.md).
