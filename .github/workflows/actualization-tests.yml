@@ -181,6 +181,8 @@ jobs:
           assert j["matched_horizon"]["fake_at_mirror_fixed_u_0"]=="0.0"
           assert j["finite_collision"]["finite_N_4_T_0_325_positive_Li_first_degree_count"]==12
           assert j["finite_Li"]["all_degree_uniform_positivity"] is False
+          assert j["degree_coevolution"]["both_errors_below_2_to_minus_index"] is True
+          assert j["degree_coevolution"]["RH_sign_proved"] is False
           assert j["nontrivial_zeta_zeros_used_as_source"] is False
           print("Balanced theta / Li source and negative controls reproduced")
           PY
