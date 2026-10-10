@@ -12,6 +12,7 @@ import mpmath as mp
 
 from actualization.hasse_theta_seam import (
     SeamError, SUCCDifferenceSource, finite_mutation_parity_error,
+    eta_prime_trivial, gamma_pole_prime_bridge,
     raw_completed_finite_mutation, theta_xi_partial, theta_xi_tail_bound,
 )
 from actualization import Engine, Limits, Scalar, source_at
@@ -140,6 +141,30 @@ class FiniteSUCCHasseTests(unittest.TestCase):
                 rhs=finite_mutation_parity_error(s,n=6,delta=1,dps=90)
                 self.assertLess(abs(lhs-rhs),mp.mpf("1e-82"))
                 self.assertGreater(abs(rhs),0)
+
+    def test_gamma_pole_trivial_zero_retains_nonterminating_SUCC_jet(self):
+        # The VALUE eta(-2m)=0 ends after <=2m SUCC differences.
+        # The DERIVATIVE eta'(-2m) includes infinitely many nonzero
+        # finite-difference contributions of n^(2m) log n.
+        # An independent safe Euler product value is the holdout.
+        with mp.workdps(105):
+            src=SUCCDifferenceSource.zeta(64)
+            for m in (1,2,3):
+                exact=src.zeta_negative_certified(2*m)
+                self.assertEqual(exact["zeta"],0)
+                self.assertEqual(exact["eta"],0)
+                two=gamma_pole_prime_bridge(m,terms=120,dps=105)
+                self.assertFalse(two["nontrivial_zeros_used"])
+                self.assertLess(two["derivative_discrepancy"],mp.mpf("1e-32"))
+                self.assertGreater(abs(two["zeta_derivative_from_finite_differences"]),
+                                   mp.mpf("1e-6"))
+                self.assertEqual(two["derivative_SUCC_terms"],121)
+                deriv=eta_prime_trivial(m,terms=120,dps=105)
+                self.assertLess(abs(deriv-two["eta_derivative"]),mp.mpf("1e-98"))
+                # Completed Xi / Gamma pole cancellation via reflection:
+                lam_left=mp.power(mp.pi,m)*two["gamma_pole_times_zero_finite_value"]
+                lam_right=mp.power(mp.pi,-(2*m+1)/2)*mp.gamma(mp.mpf(2*m+1)/2)*mp.zeta(2*m+1)
+                self.assertLess(abs(lam_left-lam_right),mp.mpf("1e-32"))
 
     def test_insufficient_prefix_and_wrong_source_refused(self):
         src=SUCCDifferenceSource.zeta(6)
