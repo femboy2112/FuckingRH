@@ -294,6 +294,103 @@ def gamma_pole_prime_bridge(m, *, terms=120, dps=100):
         }
 
 
+
+
+def eta_jet_trivial(m,order,*,terms=120,dps=110):
+    """High-precision SUCC-difference jets at the known trivial point -2m.
+
+    eta^(r)(-2m)=Σ_(n>=0)2^(-n-1)
+      Δ_-^n [ (-log k)^r*k^(2m) ]_(k=1).
+    Order 0 terminates. Orders 1 and 2 do NOT terminate. The finite
+    n cutoff is a numerical approximation; these figures are NOT
+    certified interval bounds.
+    """
+    _index(m,minimum=1,maximum=8,name="Gamma-trivial index")
+    _index(order,minimum=1,maximum=2,name="spectral derivative order")
+    _index(terms,minimum=2*m+3,maximum=256,name="SUCC jet horizon")
+    mp=_mp()
+    with mp.workdps(dps):
+        row=[mp.power(k,2*m)*mp.power(-mp.log(k),order)
+             for k in range(1,terms+2)]
+        total=mp.mpf(0)
+        for n in range(terms+1):
+            total+=row[0]/mp.power(2,n+1)
+            row=[row[k]-row[k+1] for k in range(len(row)-1)]
+        return +total
+
+
+def gamma_subtracted_prime_current(m,*,terms=120,dps=110):
+    """Gamma-corrected NEGATIVE-half-plane jets equal POSITIVE Euler current.
+
+    For s0=-2m, with C(s)=1-2^(1-s) and eta=C*zeta,
+       ζ''(s0)/(2ζ'(s0))
+         = eta''(s0)/(2 eta'(s0)) - C'(s0)/C(s0).
+    By the functional equation,
+       ζ''(-2m)/(2ζ'(-2m)) + ψ(2m+1) - log(2π)
+         = -ζ'(2m+1)/ζ(2m+1)
+         = sum_(p,k) (log p)/p^(k(2m+1)) > 0.
+
+    Uses only the canonical trivial-zero INDICES, not any nontrivial
+    zeros, nor the Weil sign. Both eta jets have INFINITE finite-difference
+    expansions (the scalar eta(-2m)=0 terminates).
+    """
+    _index(m,minimum=1,maximum=8,name="Gamma-trivial index")
+    mp=_mp()
+    with mp.workdps(dps):
+        first=eta_jet_trivial(m,1,terms=terms,dps=dps)
+        second=eta_jet_trivial(m,2,terms=terms,dps=dps)
+        c0=1-mp.power(2,1+2*m)
+        dc=mp.power(2,1+2*m)*mp.log(2)
+        current=(second/(2*first)-dc/c0
+                 +mp.digamma(2*m+1)-mp.log(2*mp.pi))
+        right=-mp.diff(mp.zeta,2*m+1)/mp.zeta(2*m+1)
+        return {
+            "source_eta_first_jet":+first,
+            "source_eta_second_jet":+second,
+            "gamma_corrected_negative_side":+current,
+            "positive_safe_prime_current":+right,
+            "error":+abs(current-right),
+            "source_SUCC_order":terms+1,
+            "nontrivial_zero_input":False,
+            "status":"classical reflection/Dirichlet-Euler identity with finite-SUCC numerical jets",
+        }
+
+
+def prime_current_tail_enclosure(m,prime_cutoff,*,dps=90):
+    """Analytic finite-prime lower bound plus tail upper envelope.
+
+    Let σ=2m+1 >=3. Then
+      J=sum_p log(p)/(p^σ-1).
+    Bound the omitted PRIME sum by all integers n>P, using
+      1/(n^σ-1) <= n^-σ/(1-2^-σ),
+      sum_(n>P) log(n)n^-σ <= integral_P^∞ log(x)x^-σ dx.
+    Thus J_P <= J <= J_P + P^(1-σ)
+      [log(P)/(σ-1)+1/(σ-1)^2]/(1-2^-σ).
+    Unlike a bare numerical observation, the bound is analytically
+    justified; its printed mp evaluation is not directed-rounding.
+    """
+    _index(m,minimum=1,maximum=8,name="Euler prime current order")
+    _index(prime_cutoff,minimum=2,maximum=1024,name="finite prime cutoff")
+    from .gamma_succ_path import primes_upto
+    mp=_mp()
+    with mp.workdps(dps):
+        sigma=2*m+1
+        partial=mp.fsum(mp.log(p)/(mp.power(p,sigma)-1)
+                        for p in primes_upto(prime_cutoff))
+        p=mp.mpf(prime_cutoff)
+        missing=(mp.power(p,1-sigma)
+                 *(mp.log(p)/(sigma-1)+mp.mpf(1)/(sigma-1)**2)
+                 /(1-mp.power(2,-sigma)))
+        return {
+            "prime_cutoff":prime_cutoff,
+            "sigma":sigma,
+            "lower":+partial,
+            "tail_upper_bound":+missing,
+            "upper":+(partial+missing),
+            "positive":bool(partial>0),
+            "scope":"analytically bounded omitted prime channels in Euler-safe region",
+        }
+
 def prime_two_parity_error_from_exact_finite_model(s, *,
                                                   n=6,delta=1,dps=75):
     """Alias for finite_mutation_parity_error, requiring explicit countermodel.
