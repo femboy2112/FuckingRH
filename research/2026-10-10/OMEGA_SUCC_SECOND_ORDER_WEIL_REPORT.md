@@ -513,3 +513,120 @@ sources with proper complex phase, conductor and Gamma factors.
 The current positive-weight rational model does not yet admit
 character phases or signed source weights, and it makes NO
 claim of an automatic physical realization for such L-functions.
+
+
+## 9. A critical-line Hilbert observer with NO normalized omega-vector limit
+
+**An exact new representation-theoretic obstruction, NOT an RH claim.**
+
+The user's central correction is that the mathematical observer is
+already a physically instantiated quantum system modeled in Hilbert
+space, *prior to constructing semantic mathematical knowledge*.
+An actual finite Hilbert state does not by itself give a
+**normalized vector state after an infinite observational limit**.
+
+Let \(\mathcal H_n=\operatorname{span}\{|1\rangle,\dots,|n\rangle\}\),
+with inclusions into \(\mathcal H=\ell^2(\mathbb N)\). For the
+arithmetic Mellin eigenbasis define
+
+\[
+|\Phi_s\rangle=\sum_{n=1}^\infty n^{-s}|n\rangle,\qquad
+\|\Phi_s\|^2=\sum_{n=1}^\infty n^{-2\Re(s)}.
+\]
+
+The elementary p-series theorem yields
+
+\[
+\boxed{
+|\Phi_s\rangle\in\ell^2(\mathbb N)
+\iff\Re(s)>\frac12.
+}
+\]
+
+**The half-density \(1/2\) is the precise norm convergence
+threshold for this PARTICULAR arithmetic Hilbert representation.**
+It is not a statement that zeta zeros must lie on that boundary,
+nor that this \(\Phi_s\) is the physical state of a human brain.
+Note the absolutely convergent Euler product requires the stricter
+condition Re(s)>1, so the thresholds are mathematically distinct.
+
+On the boundary take \(s=\tfrac12+it\),
+\(H_N=\sum_{n=1}^N1/n\), and the normalized finite vectors
+
+\[
+\boxed{
+|\Omega_N(t)\rangle=H_N^{-1/2}
+  \sum_{n=1}^N n^{-1/2-it}|n\rangle.
+}
+\]
+
+Their Hilbert norms are identically 1. For the projector onto
+the first M observed integers, \(P_M=\sum_{n\le M}|n\rangle
+\langle n|\), and every N≥M:
+
+\[
+\boxed{
+\langle\Omega_N|P_M|\Omega_N\rangle=\frac{H_M}{H_N}.
+}
+\]
+
+Because \(H_N\to\infty\), this tends to 0 for any fixed M.
+The sequence converges **weakly to 0**: first show its pairing
+with every finitely supported vector tends to zero; since the
+vectors are uniformly bounded in norm, density of finitely
+supported vectors extends weak convergence to all ℓ².
+It cannot have a strong limit vector of norm 1.
+
+**Exact elementary divergence proof:** for integer k≥0,
+
+\[
+H_{2^k}=1+\sum_{j=1}^k
+  \sum_{n=2^{j-1}+1}^{2^j}\frac1n
+\ge1+\frac{k}{2}\longrightarrow\infty.
+\]
+
+The source code certifies this stage-by-stage with exact
+Fractions, not floating harmonic approximations.
+
+Two limits of the same observable family fail to commute:
+
+\[
+\boxed{
+\lim_{M\to\infty}\lim_{N\to\infty}
+\langle\Omega_N|P_M|\Omega_N\rangle=0,
+\qquad
+\lim_{N\to\infty}\lim_{M\to\infty}
+\langle\Omega_N|P_M|\Omega_N\rangle=1.
+}
+\]
+
+For fixed N, increasing M exhausts the finite support
+and recovers 1; for fixed M, increasing N disperses the
+norm out to infinity and recovers 0. This is a **literal
+Hilbert-space version** of finite-observer vs formal-omega
+disagreement. Source: standard weak versus strong convergence
+and escape of norm in infinite-dimensional Hilbert spaces,
+e.g. John Hunter, *Bounded Linear Operators on a Hilbert Space*,
+§8, [UC Davis lecture notes](https://www.math.ucdavis.edu/~hunter/book/ch8.pdf).
+
+A more abstract operator-algebraic completion could produce
+a positive *state functional* on an algebra of bounded
+observables even without a normal vector state on ℓ², through
+weak-* compactness and subsequences/subnets; any such limit
+annihilates every fixed finite-rank projection while assigning
+1 to the identity. It is not automatically unique and, if
+considered on B(ℓ²), cannot be represented by a usual trace-class
+density operator. We DO NOT construct or identify such a state
+with the Weil functional in this branch.
+
+**Critical distinction:** every \(\Omega_N\) lies in a genuine
+positive Hilbert space, but that fact establishes neither a
+normal ω-stage observer vector nor a Weil-positive correlation
+report at ω+1. A separately justified transformation on
+observable correlations is required. The positive physical
+state could still be totally insensitive to fake Euler
+coefficients. The RH sign remains open.
+
+The finite code demonstrates the exact rational probabilities,
+the dyadic divergence lower bound, and the \(\Re(s)=1/2\)
+normalizability threshold, without reading zeta zero data.
