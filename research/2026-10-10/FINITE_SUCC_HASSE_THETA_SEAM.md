@@ -370,3 +370,95 @@ python scripts/hasse_theta_seam_probe.py
 All implementation choices preserve the distinction between (i) exact
 symbolic proof, (ii) known external theorem, (iii) numerical
 calibration, and (iv) new conjectural research target.
+
+
+## 11. A fully positive SUCC moment space from negative-side Gamma jets—and its fatal blindness
+
+A new distinction emerges by sampling the Gamma-subtracted trivial-zero
+curvature at successive negative EVEN arguments. Define
+
+\[
+J_m=\frac{\zeta''(-2m)}{2\zeta'(-2m)}
++\psi(2m+1)-\log(2\pi)
+=-\frac{\zeta'(2m+1)}{\zeta(2m+1)}
+=\sum_{n\ge2}\frac{\Lambda(n)}{n^{2m+1}},\quad m\ge1.
+\]
+
+Introduce the **finite positive Hausdorff measure**
+
+\[
+\boxed{
+\mu=\sum_{n\ge2}\frac{\Lambda(n)}{n^3}\,
+\delta_{n^{-2}},\qquad
+\mathrm{supp}(\mu)\subseteq[0,1/4].
+}
+\]
+
+Its mass is finite because \(\sum_{n\ge2}\Lambda(n)n^{-3}\)
+converges absolutely. Then
+
+\[
+\boxed{J_m=\int_{0}^{1/4}x^{m-1}\,d\mu(x).}
+\]
+
+Two immediate and **rigorous** forms of positivity follow:
+
+1. Full Hankel moment matrices \(H_{ij}=J_{i+j+1}\) are PSD:
+   for a polynomial \(P(x)=\sum_jc_jx^j\),
+   \(\sum_{ij}c_ic_j H_{ij}=\int P(x)^2 d\mu(x)\ge0\).
+   The shifted matrices \(H'_{ij}=J_{i+j+2}\) are also PSD,
+   as is \((1/4)H-H'\) by support constraints.
+2. The sequence is *completely monotone under the integer spectral
+   SUCC shift* \(m\to m+1\):
+
+\[
+\boxed{
+(-1)^r \Delta^r J_m
+=\sum_{n\ge2}\frac{\Lambda(n)}{n^{2m+1}}
+(1-n^{-2})^r\ge0,\qquad r\ge0.
+}
+\]
+
+This is a mathematically sharp **positive signal architecture**
+constructed from exactly the original negative-side Gamma-corrected
+jet and infinitely many finite arithmetic prime events. Given
+*all* moments J_m, the measure is uniquely determined by the
+classical determinacy of the Hausdorff moment problem on compact
+[0,1/4]: finite polynomials are dense in continuous functions there.
+It is a rigorous version of Yoneda-flavored infinite realization:
+a complete family of finite moment probes identifies a global source.
+
+**But the hostile control is absolutely decisive:** append an
+artificial **positive** composite source \(c\log6\) at n=6, giving
+\(\mu_{\rm fake}=\mu+c\log6/6^3\,\delta_{1/36}\) with c>0.
+Every Hankel PSD inequality, all complete-monotonicity signs, and
+every positive polynomial-energy test remain valid! Yet the
+modified source is NOT the true Euler prime-power logarithmic
+derivative, and a fake a(6)=2 already violated the connected
+arithmetic condition.
+
+So these positive signs, despite being source-constructive and
+recovering a unique measure from their FULL values, remain
+**entirely insufficient for RH**. Information completeness,
+positivity in a chosen representation, and a source-exclusive
+Weil-sign theorem are three logically different properties.
+
+This locates the missing power source quite precisely:
+an RH proof must construct a sign or geometric invariant
+that distinguishes **primitive Euler multiplicative source
+structure** from arbitrary positive signed/unsigned event
+injections AND identifies it with the complete Weil form on its
+genuine infinite test-function domain.
+
+The code implements the finite Hankel polynomial energy (with a
+positive composite-6 countermodel) and independent finite
+\((-1)^r\Delta^rJ_m\) / positive-integral calculations. Every
+assertion above follows from ordinary moment-problem algebra,
+not numerical positivity and not a new zeta-zero proof.
+
+**Final verdict:** SUCC + Gamma do produce genuine, source-based,
+globally coherent positive signals in a mathematically exact way.
+But the **same generic positivity is compatible with an invalid
+positive composite source**. The RH-bearing sign must contain
+additional cross-channel arithmetic polarization and spectral
+phase information not present in this Hausdorff moment cone.
