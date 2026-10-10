@@ -328,25 +328,56 @@ def li_all_degree_bound(N,T,degree,*,radius=Fraction(1,2),dps=85):
 
 
 def finite_double_zero(N=4,*,dps=48,init_t="11.210",init_T="0.32478"):
-    """Hostile finite-zero collision calibration, not a zero input to RH.
+    """Hostile finite-zero collision calculated ONLY from rotating-Gaussian
+    integrals; no complex gamma derivative or actual zeta-zero input.
 
-    Solve X(1/2+i*t,T)=d/dt X(1/2+i*t,T)=0 in the
-    *FINITE* Poisson theta model. Never fit actual zeta zero ordinates.
+    On s=1/2+it put H_j(t,T) = Σ_(n<=N) ∫_0^T
+      exp(-πn²e^(2u)) e^(u/2) u^j * phi_j(tu)du
+    with phi_0=cos, phi_1=sin, phi_2=cos.
+    Then F(t,T)=X(1/2+it,T)=1/2-2(t²+1/4)H_0,
+      F_t=-4t H_0+2(t²+1/4)H_1,
+      F_tt=-4H_0+8t H_1+2(t²+1/4)H_2.
+    Hence b in X≈a ΔT+b(s-s*)² is b=-F_tt/2.
     """
     _nat(N,lo=1,hi=8,name="finite collision integer cutoff")
     mp=_mp()
     with mp.workdps(dps):
-        fn=lambda t,T:mp.re(_xi_cut(mp.mpf("0.5")+mp.j*t,N,T,mp.mp.dps))
-        slope=lambda t,T:mp.diff(lambda v:fn(v,T),t)
-        t,T=mp.findroot((fn,slope),(mp.mpf(init_t),mp.mpf(init_T)),
-                        tol=mp.power(10,-(dps-12)),maxsteps=20)
-        s=mp.mpf("0.5")+mp.j*t
-        a=mp.diff(lambda u:_xi_cut(s,N,u,mp.mp.dps),T)
-        b=mp.diff(lambda x:_xi_cut(x,N,T,mp.mp.dps),s,2)/2
-        if abs(mp.im(a))>mp.power(10,-(dps//2)) or abs(mp.im(b))>mp.power(10,-(dps//2)):
-            raise ArithmeticError("Expected real symmetry at the finite double zero")
-        return {"N":N,"t_star":+t,"T_star":+T,"linear_T":+mp.re(a),
-                "quadratic_s":+mp.re(b),
-                "off_line_splitting_coefficient":+mp.sqrt(-mp.re(a)/mp.re(b)),
-                "residual":+abs(fn(t,T)),"slope_residual":+abs(slope(t,T)),
-                "scope":"finite reflected theta approximant, NOT xi spectral zeros"}
+        def moment(t,T,j):
+            phase=(mp.cos if j!=1 else mp.sin)
+            return mp.fsum(
+                mp.quad(
+                    lambda u,n=n: (
+                        mp.exp(-mp.pi*n*n*mp.exp(2*u)+u/2)
+                        *mp.power(u,j)*phase(t*u)),
+                    [0,T])
+                for n in range(1,N+1)
+            )
+        def functions(t,T):
+            h0=moment(t,T,0)
+            h1=moment(t,T,1)
+            q=t*t+mp.mpf(1)/4
+            return mp.mpf(1)/2-2*q*h0, -4*t*h0+2*q*h1
+        t,T=mp.findroot(
+            (lambda t,T:functions(t,T)[0],
+             lambda t,T:functions(t,T)[1]),
+            (mp.mpf(init_t),mp.mpf(init_T)),
+            tol=mp.power(10,-(dps-13)),
+            maxsteps=24
+        )
+        h0=moment(t,T,0)
+        h1=moment(t,T,1)
+        h2=moment(t,T,2)
+        q=t*t+mp.mpf(1)/4
+        ftt=-4*h0+8*t*h1+2*q*h2
+        b=-ftt/2
+        a=-2*q*mp.exp(T/2)*mp.fsum(
+            mp.exp(-mp.pi*n*n*mp.exp(2*T))*mp.cos(t*T)
+            for n in range(1,N+1))
+        if not a>0 or not b<0:
+            raise ArithmeticError("Unexpected sign of finite bifurcation coefficients")
+        F,Ft=functions(t,T)
+        return {"N":N,"t_star":+t,"T_star":+T,"linear_T":+a,
+                "quadratic_s":+b,
+                "off_line_splitting_coefficient":+mp.sqrt(-a/b),
+                "residual":+abs(F),"slope_residual":+abs(Ft),
+                "scope":"finite rotating-Gaussian collision ONLY, no zeta zeros"}
