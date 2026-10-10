@@ -161,6 +161,9 @@ def one_prime_fake_defect(u,n,delta,*,dps=75):
 def wrong_half_density_limit(u,alpha,*,dps=75):
     """Full theta obstruction when half density alpha != 1/2.
 
+    Full theta is numerically evaluated with 64 positive-side lattice
+    terms and reflected analytically; not an interval certificate.
+
     D_alpha(u)=Theta(u)(exp(alpha*u)-exp((1-alpha)*u));
     by modularity this is zero for ALL u iff alpha=1/2.
     """
@@ -168,7 +171,10 @@ def wrong_half_density_limit(u,alpha,*,dps=75):
     mp=_mp()
     with mp.workdps(dps):
         v=mp.mpf(u)
-        full=theta_finite(v,64,dps=dps)
+        # Evaluate the actual theta function through the rapidly
+        # convergent positive-|u| side and exact Poisson reflection.
+        positive=theta_finite(abs(v),64,dps=dps)
+        full=positive if v>=0 else mp.exp(-v)*positive
         return +(full*(mp.exp(_mpq(mp,a)*v)-
                        mp.exp((1-_mpq(mp,a))*v)))
 
