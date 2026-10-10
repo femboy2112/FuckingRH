@@ -8,12 +8,14 @@ on:
       - 'aletheia/gamma-actualization-interferometer-2026-10-10'
       - 'aletheia/infinite-realization-ind-yoneda-2026-10-10'
       - 'aletheia/gamma-succ-prime-transport-2026-10-10'
+      - 'aletheia/succ-shadow-gamma-selection-2026-10-10'
     paths:
       - 'actualization/**'
       - 'tests/actualization/**'
       - 'research/2026-10-10/GAMMA_ACTUALIZATION_INTERFEROMETER.md'
       - 'research/2026-10-10/INFINITE_REALIZATION_LIMITS.md'
       - 'research/2026-10-10/SUCC_GAMMA_PRIME_PATH_GERMS.md'
+      - 'research/2026-10-10/SUCC_SHADOW_WINDOW_CANONICAL_SELECTION.md'
       - 'scripts/infinite_realization_demo.py'
       - 'scripts/gamma_succ_path_probe.py'
       - 'scripts/audit_actualization.py'
@@ -26,6 +28,7 @@ on:
       - 'research/2026-10-10/GAMMA_ACTUALIZATION_INTERFEROMETER.md'
       - 'research/2026-10-10/INFINITE_REALIZATION_LIMITS.md'
       - 'research/2026-10-10/SUCC_GAMMA_PRIME_PATH_GERMS.md'
+      - 'research/2026-10-10/SUCC_SHADOW_WINDOW_CANONICAL_SELECTION.md'
       - 'scripts/infinite_realization_demo.py'
       - 'scripts/gamma_succ_path_probe.py'
       - 'scripts/audit_actualization.py'
@@ -85,6 +88,8 @@ jobs:
           assert j['gamma_factorial_exact_prime_bridge']
           print('Prime/Gamma finite transport evidence recorded; no RH claim')
           PY
+      - name: Test SUCC-shadow Gamma uniqueness windows and winding gluing
+        run: python -m unittest discover -s tests/actualization -p 'test_succ_shadow_window.py' -v
       - name: Run seven isolated regression lanes
         run: python scripts/audit_actualization.py --output "$RUNNER_TEMP/actualization-audit"
       - name: Run fifteen hostile mutations
