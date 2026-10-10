@@ -9,6 +9,7 @@ on:
       - 'aletheia/infinite-realization-ind-yoneda-2026-10-10'
       - 'aletheia/gamma-succ-prime-transport-2026-10-10'
       - 'aletheia/succ-shadow-gamma-selection-2026-10-10'
+      - 'aletheia/lambert-w-succ-inverse-tree-2026-10-10'
     paths:
       - 'actualization/**'
       - 'tests/actualization/**'
@@ -16,8 +17,10 @@ on:
       - 'research/2026-10-10/INFINITE_REALIZATION_LIMITS.md'
       - 'research/2026-10-10/SUCC_GAMMA_PRIME_PATH_GERMS.md'
       - 'research/2026-10-10/SUCC_SHADOW_WINDOW_CANONICAL_SELECTION.md'
+      - 'research/2026-10-10/LAMBERT_SUCC_INVERSE_TREE.md'
       - 'scripts/infinite_realization_demo.py'
       - 'scripts/gamma_succ_path_probe.py'
+      - 'scripts/lambert_succ_probe.py'
       - 'scripts/audit_actualization.py'
       - 'scripts/mutate_actualization.py'
       - '.github/workflows/actualization-tests.yml'
@@ -29,8 +32,10 @@ on:
       - 'research/2026-10-10/INFINITE_REALIZATION_LIMITS.md'
       - 'research/2026-10-10/SUCC_GAMMA_PRIME_PATH_GERMS.md'
       - 'research/2026-10-10/SUCC_SHADOW_WINDOW_CANONICAL_SELECTION.md'
+      - 'research/2026-10-10/LAMBERT_SUCC_INVERSE_TREE.md'
       - 'scripts/infinite_realization_demo.py'
       - 'scripts/gamma_succ_path_probe.py'
+      - 'scripts/lambert_succ_probe.py'
       - 'scripts/audit_actualization.py'
       - 'scripts/mutate_actualization.py'
       - '.github/workflows/actualization-tests.yml'
@@ -90,6 +95,24 @@ jobs:
           PY
       - name: Test SUCC-shadow Gamma uniqueness windows and winding gluing
         run: python -m unittest discover -s tests/actualization -p 'test_succ_shadow_window.py' -v
+      - name: Test Lambert-W SUCC inverse rank and rooted-tree analytic branch
+        run: python -m unittest discover -s tests/actualization -p 'test_lambert_succ.py' -v
+      - name: Reproduce exact factorial rank, tree coefficients and W branch evidence
+        run: |
+          python scripts/lambert_succ_probe.py --factorial-stage 32 --tree-stage 40 --output "$RUNNER_TEMP/lambert-succ.json"
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          j=json.loads((Path(os.environ['RUNNER_TEMP'])/'lambert-succ.json').read_text())
+          assert j["status"]=="FINITE_ZERO_FREE_LAMBERT_SUCC_PROBE"
+          assert j["factorial_inverse_exact_witness"]["rank"]==32
+          assert j["tree_succ"]["tree_functional_residual_at_true_stage"]=="0"
+          assert j["tree_succ"]["tree_mutation_at_six"]=="1/10"
+          assert j["arithmetic_mutation_negative_control"]["connected_true_at_6"]=="0"
+          assert j["arithmetic_mutation_negative_control"]["connected_fake_at_6"]=="1"
+          assert j["arithmetic_mutation_negative_control"]["W_factorial_inverse_unchanged"]
+          print("Lambert SUCC exact source/branch evidence verified; no RH theorem")
+          PY
       - name: Run seven isolated regression lanes
         run: python scripts/audit_actualization.py --output "$RUNNER_TEMP/actualization-audit"
       - name: Run fifteen hostile mutations
@@ -125,5 +148,6 @@ jobs:
             ${{ runner.temp }}/reversed.json
             ${{ runner.temp }}/infinite-realization.json
             ${{ runner.temp }}/gamma-succ-prime-path.json
+            ${{ runner.temp }}/lambert-succ.json
           if-no-files-found: warn
           retention-days: 14

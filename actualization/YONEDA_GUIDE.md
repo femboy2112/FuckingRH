@@ -332,3 +332,28 @@ Gluing- and reversal-preserving scalar weights on integer winding
 classes cannot suppress nonzero winding while remaining positive,
 symmetric, and multiplicative. None of this proves the completed
 Weil-form sign required for RH.
+
+
+## Lambert-W inverse charts versus categorical shadow paths
+
+The [Lambert-SUCC construction](../research/2026-10-10/LAMBERT_SUCC_INVERSE_TREE.md)
+exhibits two different ways SUCC, Gamma, and an infinite analytic
+completion meet. Inverting x(log x-1) with W recovers a useful
+**continuous rank guess**; independent exact factorial SUCC replay
+supplies the integer certificate and its prime valuation provenance.
+Neither W's value nor the scalar mass contains all possible ordered
+multiplication histories.
+
+In a separate FULL path category, rooted labeled trees are
+\`X * SET(T)\`, so finite combinatorial coefficients
+\`t_n=n^(n-1)/n!\` reconstruct the analytic series
+\`T=-W_0(-z)\`. The alternative W_-1 branch solves the same
+implicit scalar equation but cannot arise from the power series
+at z=0. An incomplete "new vertex is always a leaf" successor
+functor misses genuine trees at every stage.
+
+This genuine SUCC/shadow branch-selection principle is classical
+species combinatorics, NOT a proof that prime-power source dynamics
+select the global Weil-positive form. A fake primitive coefficient
+at n=6 is not detected by the factorial-W seed, so the construction
+does not pass the RH source-mutation criterion.
