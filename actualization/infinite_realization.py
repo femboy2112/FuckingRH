@@ -12,7 +12,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from fractions import Fraction
-from math import factorial, isqrt
+from math import factorial
 from typing import Mapping
 
 from .arithmetic import factorization
@@ -21,8 +21,10 @@ from .resource_probe import ValuationWord, lcm_word
 
 
 def _index(n: int, *, lower: int = 1, upper: int = 10000, name: str = "index") -> int:
-    if type(n) is not int or not lower <= n <= upper:
-        raise BudgetExceeded(f"{name} must be an integer in {lower}..{upper}")
+    if type(n) is not int:
+        raise DomainError(f"{name} must be an exact integer, not a float or boolean")
+    if not lower <= n <= upper:
+        raise BudgetExceeded(f"{name} must be in {lower}..{upper}")
     return n
 
 
@@ -224,3 +226,16 @@ def escaping_defect_limit(vector: Mapping[int, object]) -> tuple[Fraction, int]:
         if a:
             final_support = max(final_support, k)
     return norm, final_support + 1
+
+
+def pinned_negative_form(horizon: int, vector: Mapping[int, object]) -> Fraction:
+    """Adversarial control: same finite indefiniteness but a NEGATIVE limit.
+
+    R_N(x)=||x||^2-2|x_1|^2 is indefinite for all N, and the negative
+    direction e_1 NEVER escapes. Finite indefinite signatures alone do not
+    tell us whether the limiting form will be positive.
+    """
+    _index(horizon, upper=1_000_000, name="form stage")
+    norm, _ = escaping_defect_limit(vector)
+    anchor = _rational(vector.get(1, 0))
+    return norm - 2*anchor*anchor
