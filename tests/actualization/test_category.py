@@ -6,7 +6,8 @@ from actualization.yoneda import (
     Arrow, DivisibilityCategory, PathCategory, FiniteFunctor, CompanionBridge,
     ValuationCategory, valuation_bridge, forget_path_bridge,
     restricted_yoneda, representable_natural_transform,
-    enumerate_natural_transforms, validate_yoneda)
+    enumerate_natural_transforms, validate_yoneda,
+    co_yoneda_companion, verify_companion_actions)
 
 
 class YonedaTests(unittest.TestCase):
@@ -118,6 +119,29 @@ class YonedaTests(unittest.TestCase):
         self.assertTrue(bridge.verify_interchange(x,middle,y))
         self.assertEqual(bridge.left_action(x,middle), f.target.hom(1,6)[0])
         self.assertEqual(bridge.right_action(y,middle), f.target.hom(2,12)[0])
+
+    def test_co_yoneda_reconstructs_bridge_from_history_witnesses(self):
+        source=PathCategory(range(1,7),(2,3))
+        bridge=CompanionBridge(forget_path_bridge(source))
+        result=co_yoneda_companion(bridge,1,6)
+        self.assertEqual(result['raw_witness_pairs'],5)
+        self.assertEqual(result['equivalence_classes'],1)
+        self.assertEqual(result['target_hom_count'],1)
+        self.assertEqual(result['forgotten_history_classes'],4)
+        self.assertEqual(verify_companion_actions(bridge)['status'],
+                         'verified_finite_companion_actions')
+
+    def test_co_yoneda_valuation_target_and_resource_budget(self):
+        c=DivisibilityCategory((1,2,3,6))
+        bridge=CompanionBridge(valuation_bridge(c))
+        target=bridge.functor.object_image(6)
+        self.assertEqual(co_yoneda_companion(bridge,1,target)['equivalence_classes'],1)
+        with self.assertRaises(BudgetExceeded):
+            co_yoneda_companion(bridge,1,target,max_pairs=1)
+        with self.assertRaises(BudgetExceeded):
+            co_yoneda_companion(bridge,1,target,max_relations=1)
+        with self.assertRaises(BudgetExceeded):
+            verify_companion_actions(bridge,max_checks=1)
 
     def test_representable_transform_commutes_with_context_composition(self):
         c=PathCategory(range(1,7),(2,3))
