@@ -239,6 +239,26 @@ the matched Euler/non-Euler L-function
 controls. Gödel, Turing and the physical
 Hilbert carrier do not supply that equality.
 
+### Certified finite source transport (implemented)
+
+The prime/FUCC component of the Suzuki kernel now has an
+**exact rational interval oracle** for bounded rational
+observation times. Logarithms use the proved remainder of
+the atanh series with base-two argument reduction;
+inverse square roots use integer isqrt. All future
+Dirichlet-connected source coefficients beyond the
+active finite horizon are excluded. The fake a(6)=2
+second-order source anomaly can be proven strictly
+negative inside its first active logarithmic window
+without floating arithmetic.
+
+This is a rigorous PRIME-SIDE construction only.
+The Gamma+pole term has not yet been enclosed,
+and a negative prime-only Gram is NOT a
+counterexample to RH. Full proof and tests:
+[CERTIFIED_FINITE_PRIME_TRANSPORT]
+(../research/2026-10-10/CERTIFIED_FINITE_PRIME_TRANSPORT.md).
+
 ## 9.8 Evidence and next steps
 
 **Executable:**
