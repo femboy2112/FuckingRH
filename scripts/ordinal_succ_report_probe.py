@@ -23,6 +23,7 @@ from actualization.ordinal_succ_report import (
     quartic_observer_report,exact_polynomial_rectangle,
     oscillator_observer_report,synthetic_ordinal_semantics,
     harmonic_half_density_observer,harmonic_dyadic_divergence_certificate,
+    critical_phase_characteristic,critical_phase_decay_bound,formal_critical_phase_limit,
 )
 from actualization.gamma_interferometer import individual_impulse_determinant
 
@@ -59,6 +60,10 @@ def run(*,dps=72,horizon=28):
         semantic_fake=fake.restrict(6).semantic_log_partition_hessian(2,3)
         half_density=harmonic_half_density_observer(256,3)
         diverges=harmonic_dyadic_divergence_certificate(8)
+        phase=critical_phase_characteristic(256,1,dps=dps)
+        phase_bound=critical_phase_decay_bound(256,1,dps=dps)
+        omega_phase0=formal_critical_phase_limit(Q(0))
+        omega_phase1=formal_critical_phase_limit(Q(1))
         answer={
             "status":"FINITE_ORDINAL_SUCC_SECOND_ORDER_WEIL_PROBE",
             "no_actual_infinite_ordinal_computed":True,
@@ -110,6 +115,16 @@ def run(*,dps=72,horizon=28):
                 "mixed_covariance_increment":mp.nstr(mixed,30),
                 "distributional_limit":"Psi''(t-u) = Weil distribution",
                 "positive_definiteness_proved":False,
+            },
+            "finite_quantum_phase_omega_topology":{
+                "finite_stage":256,
+                "phase_t_1":mp.nstr(phase,25),
+                "proved_abs_phase_bound_t_1":mp.nstr(phase_bound,25),
+                "pointwise_formal_limit_at_t_0":omega_phase0["pointwise_limit"],
+                "pointwise_formal_limit_at_t_1":omega_phase1["pointwise_limit"],
+                "limit_continuous_at_zero":False,
+                "every_finite_characteristic_positive_definite":True,
+                "regular_omega_state_from_phase_limit":False,
             },
             "hilbert_critical_line_observer_escape":{
                 "stage":256,
