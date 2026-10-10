@@ -238,6 +238,71 @@ class SUCCDifferenceSource:
             return +(eta/denom)
 
 
+
+
+def eta_prime_trivial(m, *, terms=120, dps=100):
+    """Eta derivative from NEVER-TERMINATING finite SUCC windows at s=-2m.
+
+    For the GENUINE zeta source,
+    eta(s)=(1-2^(1-s))*zeta(s).
+    At s=-2m, eta(-2m)=zeta(-2m)=0, but
+    eta'(-2m) = (1-2^(1+2m))*zeta'(-2m) != 0.
+    The differentiated Euler-transform terms are
+      -2^(-n-1) Δ_-^n[k^(2m) log(k)]|_(k=1).
+    These do NOT terminate at n=2m, unlike the value terms.
+    This is a high-precision numerical finite prefix; no rigorous
+    derivative remainder bound is claimed by the caller.
+    """
+    _index(m,minimum=1,maximum=8,name="trivial-zero index")
+    _index(terms,minimum=2*m+3,maximum=256,name="derivative SUCC horizon")
+    mp=_mp()
+    with mp.workdps(dps):
+        row=[-mp.power(k,2*m)*mp.log(k) for k in range(1,terms+2)]
+        result=mp.mpf(0)
+        for n in range(terms+1):
+            result+=row[0]/mp.power(2,n+1)
+            row=[row[k]-row[k+1] for k in range(len(row)-1)]
+        return +result
+
+
+def gamma_pole_prime_bridge(m, *, terms=120, dps=100):
+    """Two independent analytic readouts of the cancelled Gamma-zeta jet.
+
+    Source side: differentiated Euler/eta finite differences at -2m.
+    Euler-safe reflection side:
+      ζ'(-2m)=(-1)^m (2m)! ζ(2m+1)/(2(2π)^(2m)).
+    This is CLASSICAL and not a proof of RH; -2m is a known trivial
+    zero index, NOT a fitted nontrivial zero or spectral input.
+    """
+    _index(m,minimum=1,maximum=8,name="trivial-zero index")
+    mp=_mp()
+    with mp.workdps(dps):
+        eta_prime=eta_prime_trivial(m,terms=terms,dps=dps)
+        zprime=eta_prime/(1-2**(1+2*m))
+        euler_safe=((-1)**m*mp.factorial(2*m)/
+                    (2*mp.power(2*mp.pi,2*m))*mp.zeta(2*m+1))
+        completed_pole=2*((-1)**m)/mp.factorial(m)*zprime
+        return {
+            "eta_derivative":+eta_prime,
+            "zeta_derivative_from_finite_differences":+zprime,
+            "zeta_derivative_from_safe_euler":+euler_safe,
+            "derivative_discrepancy":+abs(zprime-euler_safe),
+            "gamma_pole_times_zero_finite_value":+completed_pole,
+            "derivative_SUCC_terms":terms+1,
+            "status":"numerical calibration of classical Gamma-pole/trivial-zero identity",
+            "nontrivial_zeros_used":False,
+        }
+
+
+def prime_two_parity_error_from_exact_finite_model(s, *,
+                                                  n=6,delta=1,dps=75):
+    """Alias for finite_mutation_parity_error, requiring explicit countermodel.
+
+    There is NO analytic source-identity claim for an arbitrary finite
+    observer's UNDECLARED infinite future.
+    """
+    return finite_mutation_parity_error(s,n=n,delta=delta,dps=dps)
+
 def theta_xi_partial(s,*,max_integer=4,dps=75,mutations: Mapping[int,object] | None=None):
     """Poisson/self-dual completed-xi HEAT representation, finite integer terms.
 
