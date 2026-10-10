@@ -178,7 +178,7 @@ class SuccGammaProvenanceTests(unittest.TestCase):
             for z in (mp.mpf("1.2"),mp.mpf("2.7"),mp.mpf("20.2")):
                 lhs=gamma_periodic_gauge(z+1,eps,dps=65)
                 rhs=z*gamma_periodic_gauge(z,eps,dps=65)
-                self.assertLess(abs(lhs-rhs),mp.mpf("1e-57"))
+                self.assertLess(abs(lhs-rhs)/abs(rhs),mp.mpf("1e-57"))
             self.assertLess(gamma_periodic_log_curvature(
                 mp.mpf("100.25"),eps,dps=65),0)
             self.assertLess(gamma_periodic_log_curvature(
