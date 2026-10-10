@@ -10,6 +10,7 @@ import mpmath as mp
 
 from actualization.succ_shadow_window import (
     ShadowWindowCertificate, WindingHistory, WindowError,
+    certified_window_penalty_lower_bound,
     WindowResourceExhausted, observed_window, periodic_quarter_probe,
     quadratic_weight_gluing_defect, sine_gauge_witness,
     symmetric_positive_multiplicative_winding_weight_is_trivial,
@@ -98,6 +99,27 @@ class SuccShadowSelectionTests(unittest.TestCase):
         self.assertEqual(quadratic_weight_gluing_defect(3,2,Q(1,2)),-6)
         self.assertEqual(quadratic_weight_gluing_defect(2,-3,Q(0)),0)
         self.assertTrue(symmetric_positive_multiplicative_winding_weight_is_trivial())
+
+    def test_weighted_shadow_selection_has_strict_rational_lower_bound(self):
+        for freq in (1,2,7):
+            for eps in (Q(1,100),Q(-1,10000)):
+                witness=sine_gauge_witness(eps,freq)
+                for weight in (Q(1,2),Q(1,1000)):
+                    lower=certified_window_penalty_lower_bound(witness,weight)
+                    self.assertGreater(lower,0)
+                    self.assertLessEqual(lower,weight)
+                    with mp.workdps(70):
+                        obs=observed_window(witness,dps=70)
+                        z=-obs["total"]
+                        exact_nonnegative_contribution=(
+                            mp.mpf(weight.numerator)/weight.denominator
+                            *min(mp.mpf(1),z*z)
+                        )
+                        lower_m=mp.mpf(lower.numerator)/lower.denominator
+                        self.assertLess(lower_m,exact_nonnegative_contribution)
+        with self.assertRaises(WindowError):
+            certified_window_penalty_lower_bound(
+                sine_gauge_witness(Q(1,100)),Q(0))
 
     def test_invalid_frequency_and_numeric_sources_are_rejected(self):
         with self.assertRaises(WindowError):
