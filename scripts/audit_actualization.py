@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run six isolated test workers concurrently and preserve raw outputs.
+"""Run seven isolated test workers concurrently and preserve raw outputs.
 
 These are separate subprocess instruments, NOT independent AI agents.
 Construction and tests share an author; arithmetic enumeration is a distinct
@@ -18,7 +18,7 @@ import subprocess
 import sys
 
 ROOT=Path(__file__).resolve().parents[1]
-LANES=('fields','shadow','engine','category','resource_probe','local_global')
+LANES=('fields','shadow','engine','category','resource_probe','local_global','circle_transport')
 
 
 def main():
@@ -36,7 +36,7 @@ def main():
         return {'lane':lane,'command':cmd,'exit_code':run.returncode,
                 'tests':int(found.group(1)) if found else None,
                 'output_sha256':sha256(raw.encode()).hexdigest()}
-    with ThreadPoolExecutor(max_workers=6) as pool: results=list(pool.map(worker,LANES))
+    with ThreadPoolExecutor(max_workers=7) as pool: results=list(pool.map(worker,LANES))
     files=sorted((ROOT/'actualization').glob('*.py'))+sorted((ROOT/'tests/actualization').glob('test_*.py'))+[Path(__file__)]
     hashes={str(path.relative_to(ROOT)):{'sha256':sha256(path.read_bytes()).hexdigest(),
             'git_blob':sha256(path.read_bytes()).hexdigest()} for path in files}

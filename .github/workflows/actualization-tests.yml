@@ -39,13 +39,13 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python }}
-      - name: Install numerical dependency for Gamma/Suzuki check
+      - name: Install mpmath for Suzuki comparison
         run: python -m pip install mpmath
-      - name: Run finite-Gamma bridge calibrated controls
+      - name: Run Gamma/finite-place correlated response tests
         run: python -m unittest discover -s tests/actualization -p 'test_gamma_interferometer.py' -v
-      - name: Run six isolated regression lanes
+      - name: Run seven isolated regression lanes
         run: python scripts/audit_actualization.py --output "$RUNNER_TEMP/actualization-audit"
-      - name: Run fourteen hostile mutations
+      - name: Run fifteen hostile mutations
         run: python scripts/mutate_actualization.py --output "$RUNNER_TEMP/actualization-mutations"
       - name: Check complete history demo and replay
         shell: bash
