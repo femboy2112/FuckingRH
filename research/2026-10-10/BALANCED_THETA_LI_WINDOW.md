@@ -326,3 +326,107 @@ non-circular lower bound for the true completed Li coefficient
 or an equivalent closed Weil pairing. Any such theorem MUST read
 Euler multiplicativity (and survive mutation controls) rather than
 merely reflect modular self-duality of the Gaussian.
+
+
+## 8. An explicit diagonal infinity of FINITE SUCC windows for ALL Li indices
+
+The source-derived estimate in §5 has an exponential \(r^{-k}\) cost,
+but its Gaussian tails decay *faster* in the two source cutoffs.
+This lets us explicitly build a jointly expanding observation schedule
+that makes **every Li index k have arbitrarily small absolute
+approximation error on its own, at a finite stage**.
+
+Put \(r=1/2\), so \(B_r=2\), \(\delta_r<1/2\). For every integer
+\(k\ge1\) choose
+
+\[
+\boxed{
+L_k=(2k+12)\log 2+4\log(k+1),\quad
+T_k=\frac12\log\frac{L_k}{\pi},\quad
+N_k^{\rm Li}=\left\lceil\sqrt{\frac{L_k}{\pi}}\right\rceil+1.
+}
+\]
+
+Here \(T_k>0\) for all k≥1. These choices guarantee both Gaussian
+tails in §5 are \(O(e^{-L_k})\). In particular
+each of the two geometric denominators is >1/2, and
+\[
+E_{N_k,T_k}(1/2)<\frac8\pi e^{-L_k}<3e^{-L_k}.
+\]
+Since \(1/(1-\delta_r)<2\),
+
+\[
+\boxed{
+|\lambda_k(\xi)-\lambda_k(X_{N_k^{\rm Li},T_k})|
+<
+12 k\,2^k e^{-L_k}
+=
+\frac{12k}{4096(k+1)^4}2^{-k}
+<2^{-k}.
+}
+\]
+
+This is an unconditional, zero-blind and **degree-indexed** analytic
+approximation theorem. Its asymptotic arithmetic and archimedean
+budgets satisfy
+
+\[
+\boxed{
+N_k^{\rm Li}=\Theta(\sqrt k),\qquad
+e^{T_k}=\Theta(\sqrt k),\qquad
+T_k=\tfrac12\log k+O(1).
+}
+\]
+
+The appearance of a square-root finite-integer window alongside a
+logarithmic Gamma window is structurally reminiscent of the
+Riemann–Siegel factor-square cutoff, but \(k\) is a **Li index, not
+spectral height t**; identifying them would be an unjustified leap.
+
+**A SECOND independent budget may be required:** the Li-indexed
+approximation theorem controls the *integrated* theta completion,
+but it does not automatically ensure pointwise finite-lattice
+Poisson self-duality at the moving endpoint \(u=T_k\). To demand
+both errors below \(2^{-k}\), set
+
+\[
+\boxed{
+N_k=\max\!\left(
+N_k^{\rm Li},\
+\left\lceil
+e^{T_k}\sqrt{\frac{T_k/2+(k+1)\log2}{\pi}}
+\right\rceil+1
+\right).
+}
+\]
+
+Then \(N_k=O(k)\), and simultaneously
+
+\[
+\boxed{
+|\lambda_k(\xi)-\lambda_k(X_{N_k,T_k})|<2^{-k},
+\qquad
+|D_{N_k}(T_k)|<2^{-k}.
+}
+\]
+
+The code implements \`li_coevolving_diagonal\` with optional
+simultaneous self-duality, rejects horizons that exceed the bounded
+execution budget, and independently checks the sharper erfc bound.
+
+**DO NOT MISREAD THIS.** We have constructed a uniform **accuracy
+schedule**, *not a uniform positivity certificate*. Showing that
+\(\lambda_k(X_{N_k,T_k})\) always exceeds this error bound by a
+source-derived strict positive margin would imply the RH-equivalent
+sign condition. No such positive margin is known or claimed here.
+The fake a(6)=2 theta source still violates duality at the same
+carefully matched \(u=T_k\), so increasing budgets cannot launder
+that particular counterfeit.
+
+This diagonal theorem is a concrete expression of the user's
+"infinite realization of finitely accessible observations":
+no finite stage must contain all Li coefficients, while a single
+explicit rule prescribes a finite arithmetic/Gamma window for
+EVERY coefficient. It establishes representation and controlled
+measurement; the missing global arithmetic sign is the real
+fourth-gate problem.
