@@ -75,7 +75,8 @@ from .ordinal_succ_report import (
     exact_polynomial_rectangle,oscillator_observer_report,
     synthetic_ordinal_semantics,harmonic_number,
     harmonic_half_density_observer,harmonic_dyadic_divergence_certificate,
-    mellin_hilbert_threshold,
+    mellin_hilbert_threshold,critical_phase_characteristic,
+    critical_phase_decay_bound,formal_critical_phase_limit,
 )
 
 __version__ = "0.3.0"
