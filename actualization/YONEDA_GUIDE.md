@@ -1,0 +1,214 @@
+# Finite categorical phenomenology — operational Yoneda prototype
+
+The SUCC actualization engine now contains a **bounded category-theoretic observer**.
+This is an implementable, source-auditable interpretation of *what a finite
+mathematical observer can distinguish*, not a claim that mathematical truths
+come into existence when observed or that RH has been decided.
+
+## CLI
+
+From the repository root (Python 3.10+, standard library only):
+
+\`\`\`bash
+python -m actualization yoneda-demo
+python -m actualization local-global-demo
+python -m actualization probe-budget --a 6 --b 12 --budget 3
+python -m actualization probe-budget --a 6 --b 12 --budget 4
+python -m actualization probe-budget --lcm-horizon 10000 --budget 10000
+python scripts/audit_actualization.py --output /tmp/yoneda-audit
+python scripts/mutate_actualization.py --output /tmp/yoneda-mutations
+\`\`\`
+
+The demos never read zeta-zero data and never produce RH certificates.
+
+## Two genuinely different finite probe categories
+
+**Thin/extensional category:** objects are selected positive integer labels;
+there is one arrow \`a -> b\` precisely when \`a | b\`. A thin arrow's
+observable content is only existence, **not** a leaked codomain ratio. This
+restriction was enforced after the first CI run discovered an accidental
+information leak. At wavefront 3 the observer contexts are \`{1,2,3}\`.
+The restricted representables of targets 6 and 12 agree at those contexts.
+Their first dividing probe that separates them is 4.
+
+**Free path/intensional category:** the observer may construct paths by
+multiplying by *integrated* source labels, retaining the entire ordered word.
+At wavefront 3, \`2\` and \`3\` are integrated. Then
+
+- \`Hom_path(1,6)\` contains (2,3) and (3,2);
+- \`Hom_path(1,12)\` contains (2,2,3), (2,3,2), (3,2,2).
+
+These targets remain **shadows** until direct SUCC reaches their labels.
+Their path structures, however, can already be probed. The path category is
+finite because all intermediate labels are within a declared bound and every
+generator increases the label. Exceeding the expansion or depth budget raises,
+rather than silently certifying absence.
+
+The functor \`forget_path_bridge\` sends every path to its unique divisibility
+arrow. It preserves composition and identities but is **not faithful**.
+In particular, the two arrows \`1 -> 6\` are collapsed.
+
+## Full Yoneda versus restricted Yoneda
+
+For a category C, the full covariant Yoneda embedding is
+
+\`a -> Hom_C(-,a)\`, with
+\`Hom_C(a,b) ~= Nat(Hom_C(-,a), Hom_C(-,b))\`.
+
+We implement explicit finite natural-transformation enumeration and verify
+the identity, not just the number of matches.
+
+But if the observer has only contexts J, the restricted representables
+\`Hom_C(J(-),a)\` need not distinguish objects or morphisms.
+
+**False-arrow test:** in the divisibility category \`{1,2,3,6}\`,
+\`Hom(2,3)=empty\`, but when the only observer context is \`J={1}\`, both
+restricted representables are singleton and there is ONE natural
+transformation between them. That is an *apparent observer morphism*, not a
+true global arrow. The full Yoneda test correctly yields ZERO.
+
+The full Yoneda statement is classical; the restricted counterexample is an
+explicit demonstration of why probe-budget claims require a declared context.
+
+## Source-derived categorical transport — and its limits
+
+Unique factorization builds a finite checked functor from the divisibility
+poset to the formal logarithmic valuation category:
+
+\`n -> ((p, v_p(n)))\`.
+
+An arrow \`a -> b\` carries the prime-exponent difference
+\`v_p(b)-v_p(a)\`, satisfying the additive degree law under composition.
+The functor is FULL AND FAITHFUL on its finite image. Replacing the formal
+\`log(2)\` label by an unrelated prime label fails the graded-arrow check.
+
+This is a source-defined transport from multiplicative coordinates to formal
+additive \`sum v_p(n) log p\` coordinates. **It is NOT an equivalence of Q_p
+and R**, does not build Gamma, and does not supply Weil positivity.
+
+A bridge is not free data. Given an actual checked functor F:C->D, we build
+the companion profunctor
+
+\`B(c,d)=Hom_D(F(c),d)\`.
+
+Its source and target actions are checked for identities, composition and
+interchange. The finite co-Yoneda calculation
+
+\`int^c Hom_C(a,c) x B(c,d) ~= B(a,d)\`
+
+is implemented as an explicit **quotient of composable witness pairs**.
+The quotient identifies \`(k∘f,h)\` with \`(f,h∘F(k))\`.
+For the two-prime path-category/forgetful bridge from object 1 to 6, five
+raw witness pairs reduce to one target arrow. The four lost distinctions
+are *measured information loss*, not spurious primality or global geometry.
+
+A bridge that has the wrong naturality or discards the quotient identifications
+fails the finite tests. A bridge may satisfy all these axioms and remain
+arithmetically/RH-inert; companion coherence is automatic from an honest F.
+
+## Budget certificates, not unbounded oracles
+
+\`ValuationWord\` stores genuine finite prime exponents without computing the
+possibly enormous integer they denote. A \`ProbeBudget(B)\` declares that the
+observer may ask the typed divisibility queries \`j|n\` for \`1<=j<=B\`.
+
+**Sharp theorem:**
+
+\`first_sep(a,b) = min_{p:v_p(a)!=v_p(b)} p^(min(v_p(a),v_p(b))+1)\`.
+
+Thus an exact proof can certify that ALL permitted probes fail to distinguish
+two targets without literally executing B queries. This is a **deductive
+finite proof**, not a claim that all physical observers could execute it.
+
+Examples:
+
+- 6 and 12 are indistinguishable at B=3, distinguished by 4 at B=4.
+- 6 and 30 are first distinguished by 5.
+- \`a=LCM(1..10000)\`, \`b=2a\` are distinct symbolic targets but share
+  every divisibility probe at B=10000. Their first witness is 16384.
+- \`a=2^2048\`, \`b=2^2047\` have the first distinguishing divisor 2^2048,
+  although the descriptions and the proof of non-detection at smaller B are
+  compact. Neither integer must be constructed as a fully realized worldline.
+
+The operator returns **indistinguishable WITHIN B**, not "equal", "RH true",
+"unprovable", or "physically impossible". A resource bound is a declared
+operational model, not a universal bound on future mathematics.
+
+## Local observer versus looking-down global model
+
+\`compare_local_global(local,global_model,horizon=N)\` compares only
+integrated source events at labels <=N. It stops before reading any future
+source value from the global journal, reconstructs both shadow histories from
+the truncated prefix, and reports observation agreement.
+
+Example: local genuine zeta at N=3 and a global source with a future fake
+coefficient at n=6 are identical on the declared observation class at N=3.
+At N=6 the first differing coefficient becomes observable, while earlier
+combinatorial shadow paths can remain unchanged.
+
+This does **not** assert the internal prediction models are equal. The same
+observations can coexist with different untested predictions, and the
+comparator explicitly reports \`internal_model_equality_claimed=False\`.
+Contexts and probe labels are part of a strict observation unless the caller
+explicitly chooses value-only comparison. Arbitrary reversed journals or
+mismatched conductor laws are rejected rather than guessed.
+
+## API
+
+\`\`\`python
+from actualization import (run_arithmetic, Phenomenology,
+                           ValuationWord, ProbeBudget, compare_observers,
+                           DivisibilityCategory, PathCategory,
+                           forget_path_bridge, CompanionBridge,
+                           co_yoneda_companion)
+
+observer = Phenomenology(run_arithmetic(3), max_shadow_target=36)
+report = observer.compare(6, 12)
+assert report["thin_indistinguishable"]
+assert not report["path_indistinguishable"]
+
+cat = PathCategory(range(1, 7), (2, 3))
+bridge = CompanionBridge(forget_path_bridge(cat))
+transport = co_yoneda_companion(bridge, 1, 6)
+assert transport["equivalence_classes"] == 1
+
+a, b = ValuationWord.from_integer(6), ValuationWord.from_integer(12)
+assert compare_observers(a, b, ProbeBudget(3)).verdict == "indistinguishable_within_budget"
+\`\`\`
+
+## Mathematical and RH boundary
+
+The RH-bearing target remains the **full completed** Weil pairing
+\`Q_L=P_L-K_L\`. None of these categorical observer constructions has supplied
+an arithmetic-to-Archimedean functor into its logarithmic *form domain*, an
+exact equality with the Gamma/pole/prime trace, or an independently proved
+positive Hodge polarization.
+
+The path and thin probes ignore the true source coefficients: both accept a
+fake primitive impulse at 6 unless the separate connected-Euler source audit
+is invoked. The characters mod 5 and the Davenport-Heilbronn mixture likewise
+require the actual Hecke/source test. A *finite source-faithful Yoneda bridge*
+would have to carry this extra data through a genuinely completed pairing,
+including forbidden log(6) and log(3/2) mutation controls.
+
+Recommended further experiment: construct a typed, source-derived profunctor
+linking a finite Hecke/CRT probe category and an explicitly declared
+Archimedean Schwartz/Mellin test category. Prove naturality, preservation of
+historical information, and **continuity in the log-Weil form norm**. Falsify
+its primitive composite support before testing the completed sign. Do not
+choose its fibers or metrics to make the Weil form positive.
+
+## Literature / mathematical provenance
+
+- Tom Leinster, *Basic Category Theory*, §4.3, Yoneda and full faithfulness:
+  https://arxiv.org/abs/1612.09375
+- Suzuki, *Aspects of the screw function corresponding to the Riemann
+  zeta-function*, JLMS 2023, DOI 10.1112/jlms.12785, Theorem 1.7:
+  https://londmathsoc.onlinelibrary.wiley.com/doi/10.1112/jlms.12785
+- Current project's \`wiki/07-methodology-and-discipline.md\`,
+  \`FINITE_ACTUALIZATION_AND_PROBEABILITY.md\` and
+  \`OPERATIONAL_PROBE_MELLIN_FORM_INTERFACE.md\`.
+
+All code and tests use the Python standard library. GitHub Actions tests
+the committed bytes on two Python versions; see the run/manifest in the
+research handoff. External proof of RH remains OPEN.
