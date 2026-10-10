@@ -14,6 +14,8 @@ from actualization.hasse_theta_seam import (
     SeamError, SUCCDifferenceSource, finite_mutation_parity_error,
     eta_prime_trivial, gamma_pole_prime_bridge,
     eta_jet_trivial, gamma_subtracted_prime_current, prime_current_tail_enclosure,
+    riemann_siegel_leading, hardy_z_calibration,
+    symmetric_offline_quartet_counterexample,
     raw_completed_finite_mutation, theta_xi_partial, theta_xi_tail_bound,
 )
 from actualization import Engine, Limits, Scalar, source_at
@@ -278,6 +280,60 @@ class ThetaGammaSeamTests(unittest.TestCase):
             self.assertGreater(abs(fake_actual-fake_symmetric),mp.mpf("0.008"))
             # Both continuations are entire in this completion chart;
             # reflection symmetry ALONE did not enforce source identity.
+
+    def test_offline_quartet_defeats_reflection_plus_on_line_positivity(self):
+        c=symmetric_offline_quartet_counterexample()
+        self.assertEqual(c["critical_line_positive_lower_bound"],Q(1,16))
+        self.assertEqual(c["constructed_offline_zero_real_parts"],(Q(1,4),Q(3,4)))
+        self.assertFalse(c["actual_zeta_zeros_used"])
+        # Exact positivity on critical line: P(it)=(t²-3/16)²+1/16.
+        for t in (Q(0),Q(1,4),Q(1,2),Q(3,4),Q(2)):
+            p=(t*t-Q(3,16))**2+Q(1,16)
+            self.assertGreaterEqual(p,Q(1,16))
+        with mp.workdps(75):
+            for u in (mp.mpc("0.25","0.5"),mp.mpc("0.25","-0.5"),
+                      mp.mpc("0.75","0.5"),mp.mpc("0.75","-0.5")):
+                x=u-mp.mpf("0.5")
+                poly=x**4+mp.mpf(3)/8*x**2+mp.mpf(25)/256
+                self.assertLess(abs(poly),mp.mpf("1e-72"))
+
+    def test_riemann_siegel_square_root_activation_is_real_source_wavefront(self):
+        # Main-sum finite integer cutoff sqrt(t/(2π)) IS a standard
+        # source-to-Gamma representation at the critical line.
+        true=SUCCDifferenceSource.zeta(20)
+        mutable={n:1 for n in range(1,21)}
+        mutable[6]=2
+        fake=SUCCDifferenceSource.from_prefix(mutable,20)
+        with mp.workdps(100):
+            for t in (40,100,200):
+                main=riemann_siegel_leading(t,source=true,dps=100)
+                changed=riemann_siegel_leading(t,source=fake,dps=100)
+                self.assertLess(main["window"],6)
+                self.assertEqual(main["main_sum"],changed["main_sum"])
+            for t in (250,300,1000):
+                main=riemann_siegel_leading(t,source=true,dps=100)
+                changed=riemann_siegel_leading(t,source=fake,dps=100)
+                self.assertGreaterEqual(main["window"],6)
+                theta=main["phase"]
+                predicted=2*mp.cos(theta-mp.mpf(t)*mp.log(6))/mp.sqrt(6)
+                self.assertLess(abs((changed["main_sum"]-main["main_sum"])
+                                    -predicted),mp.mpf("1e-92"))
+                self.assertFalse(changed["source_faithful_zeta_prefix"])
+                self.assertTrue(main["source_faithful_zeta_prefix"])
+
+    def test_riemann_siegel_main_sum_honestly_keeps_remainder(self):
+        with mp.workdps(85):
+            for t in (40,60,100,250,300,1000):
+                source=riemann_siegel_leading(t,dps=85)
+                actual=hardy_z_calibration(t,dps=85)
+                # This is a numerical sanity window, NOT a verified
+                # global remainder bound. The residual need not vanish.
+                self.assertLess(abs(actual-source["main_sum"]),mp.mpf("1"))
+                self.assertGreater(abs(actual-source["main_sum"]),mp.mpf("0.01"))
+            with self.assertRaises(SeamError):
+                riemann_siegel_leading(250,source=SUCCDifferenceSource.zeta(5))
+            with self.assertRaises(SeamError):
+                riemann_siegel_leading(2)
 
     def test_theta_numeric_charts_and_bounds_refuse_overclaim(self):
         with self.assertRaises(SeamError):
