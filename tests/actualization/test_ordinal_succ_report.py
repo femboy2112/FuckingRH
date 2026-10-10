@@ -25,6 +25,8 @@ from actualization.ordinal_succ_report import (
     synthetic_ordinal_semantics,
     harmonic_number,harmonic_half_density_observer,
     harmonic_dyadic_divergence_certificate,mellin_hilbert_threshold,
+    critical_phase_characteristic,critical_phase_decay_bound,
+    formal_critical_phase_limit,
 )
 from actualization.gamma_interferometer import individual_impulse_determinant
 
@@ -66,6 +68,37 @@ class OrdinalObservationTests(unittest.TestCase):
             self.assertFalse(r["physical_infinite_time_executed"])
         with self.assertRaises(OrdinalObservationError):
             harmonic_dyadic_divergence_certificate(13)
+
+    def test_critical_quantum_phase_positive_at_every_stage_but_omega_discontinuous(self):
+        # The finite characteristic function phi_N(t) is PD because
+        # it is an actual Hilbert expectation <Omega|e^(itH)|Omega>.
+        # But its pointwise omega-limit is 1_(t=0), DISCONTINUOUS,
+        # and cannot be a regular probability characteristic function.
+        with mp.workdps(92):
+            self.assertEqual(formal_critical_phase_limit(Q(0))["pointwise_limit"],1)
+            for tiny in (Q(1),Q(1,100),Q(1,1000000)):
+                r=formal_critical_phase_limit(tiny)
+                self.assertEqual(r["pointwise_limit"],0)
+                self.assertFalse(r["limit_continuous_at_zero"])
+                self.assertFalse(r["omega_executed"])
+            for N in (8,16,32,64,128,256):
+                self.assertEqual(critical_phase_characteristic(N,0,dps=92),1)
+                for t in (Q(1),Q(2),Q(7,2)):
+                    phi=critical_phase_characteristic(
+                        N,mp.mpf(t.numerator)/t.denominator,dps=92)
+                    bound=critical_phase_decay_bound(
+                        N,mp.mpf(t.numerator)/t.denominator,dps=92)
+                    self.assertLess(abs(phi),bound+mp.mpf("1e-85"))
+                ts=(0,1,2,3)
+                gram=[[critical_phase_characteristic(N,ts[i]-ts[j],dps=92)
+                       for j in range(4)] for i in range(4)]
+                for c in ((1,1,1,1),(1,-2,1,3),(3,1,-4,2)):
+                    quadratic=mp.fsum(c[i]*c[j]*gram[i][j]
+                                      for i in range(4) for j in range(4))
+                    self.assertLess(abs(mp.im(quadratic)),mp.mpf("1e-85"))
+                    self.assertGreater(mp.re(quadratic),-mp.mpf("1e-80"))
+            with self.assertRaises(OrdinalObservationError):
+                critical_phase_decay_bound(10,0)
 
     def test_exact_arithmetic_horizon_from_rational_probe_clock(self):
         self.assertEqual(
