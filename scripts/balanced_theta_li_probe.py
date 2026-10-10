@@ -24,7 +24,7 @@ if str(ROOT) not in sys.path:
 from actualization.balanced_theta_li import (
     theta_defect, matched_theta_cutoff, one_prime_fake_defect,
     finite_gamma_succ_defect, finite_li_coefficients,
-    li_all_degree_bound, finite_double_zero,
+    li_all_degree_bound, finite_double_zero, li_coevolving_diagonal,
 )
 from actualization.hasse_theta_seam import SUCCDifferenceSource
 
@@ -59,6 +59,9 @@ def run(*, dps=85, u="2", tolerance="1e-10", degree=12):
             raise ArithmeticError("Li fixed-degree analytic error envelope violated")
         spurious=finite_li_coefficients(4,"0.325",degree,dps=dps)
         collision=finite_double_zero(4,dps=45)
+        diagonal=li_coevolving_diagonal(
+            degree,match_reflection=True,dps=dps)
+        target=mp.power(2,-degree)
         gamma=finite_gamma_succ_defect(mp.mpc("1.1","0.7"),"-2.5","0.5",dps=dps)
         return {
             "status":"ZERO_BLIND_BALANCED_THETA_AND_LI_PROBE",
@@ -85,6 +88,21 @@ def run(*, dps=85, u="2", tolerance="1e-10", degree=12):
                     li_bound["li_coefficient_error_bound"],20),
                 "zero_free_disk_radius":"1/2",
                 "all_degree_uniform_positivity":False,
+            },
+            "degree_coevolution":{
+                "Li_index":degree,
+                "arithmetic_horizon":diagonal["arithmetic_horizon"],
+                "archimedean_T":mp.nstr(
+                    diagonal["archimedean_window_T"],25),
+                "Li_index_absolute_accuracy_goal":mp.nstr(target,20),
+                "Li_index_accuracy_bound":mp.nstr(
+                    diagonal["Li_fixed_degree_error_bound"],20),
+                "simultaneous_poisson_accuracy_bound":mp.nstr(
+                    diagonal["reflection"]["theta_reflection_error_bound"],20),
+                "both_errors_below_2_to_minus_index":bool(
+                    diagonal["Li_fixed_degree_error_bound"]<target and
+                    diagonal["reflection"]["theta_reflection_error_bound"]<target),
+                "RH_sign_proved":False,
             },
             "finite_collision":{
                 "N":4,
