@@ -35,4 +35,13 @@ from .succ_shadow_window import (
     quadratic_weight_gluing_defect,
 )
 
+from .lambert_succ import (
+    LambertPathError, FactorialInverseCertificate,
+    principal_bulk_inverse, bulk_branches, invert_factorial_mass,
+    gamma_bulk_defect, gamma_defect_succ,
+    rooted_tree_coefficients, rooted_tree_succ_ratio,
+    tree_functional_residual, rooted_tree_count, leaf_only_extension_count,
+    tree_series_vs_lambert,
+)
+
 __version__ = "0.3.0"
