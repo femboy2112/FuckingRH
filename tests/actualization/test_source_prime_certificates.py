@@ -16,6 +16,7 @@ from actualization.source_prime_certificates import (
     prime_delta_at_fake_six,
 )
 from actualization.gamma_interferometer import GammaInterferometer
+from actualization import Engine, Limits, Scalar, source_at
 from actualization.observer_reflection import rational_gram_certificate
 
 
@@ -25,6 +26,26 @@ def mpr(q):
 
 
 class CertifiedSourceTests(unittest.TestCase):
+    def test_certified_prime_journal_does_not_integrate_predictions(self):
+        e=Engine(arithmetic=True,limits=Limits(max_target=24))
+        for n in range(1,6):
+            e.advance(source_at(n),context="zeta",probe="coefficient")
+        e.predict(6,Scalar(2),"counterfeit future guess")
+        e.step(Scalar(2),context="fake",probe="coefficient")
+        snapshot=CertifiedPrimeSource.from_engine(e,horizon=5)
+        self.assertEqual(snapshot.snapshot.horizon,5)
+        self.assertEqual(snapshot.provenance()["trace_head"],e.head)
+        self.assertTrue(snapshot.provenance()["source_matches_zeta"])
+        with self.assertRaises(SourceCertificateError):
+            CertifiedPrimeSource.from_engine(e,horizon=6)
+        e.propagate()
+        later=CertifiedPrimeSource.from_engine(e,horizon=6)
+        self.assertEqual(later.snapshot.connected[6],1)
+        self.assertFalse(later.provenance()["source_matches_zeta"])
+        self.assertNotEqual(later.provenance()["trace_head"],
+                            snapshot.provenance()["trace_head"])
+
+
     def test_exact_rational_log_enclosures_against_independent_mpmath(self):
         with mp.workdps(110):
             for n in (1,2,3,4,6,8,9,15,31,53,81,251):
