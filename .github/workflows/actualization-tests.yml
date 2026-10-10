@@ -9,6 +9,7 @@ on:
       - 'aletheia/infinite-realization-ind-yoneda-2026-10-10'
       - 'aletheia/gamma-succ-prime-transport-2026-10-10'
       - 'aletheia/succ-shadow-gamma-selection-2026-10-10'
+      - 'aletheia/lambert-w-succ-inverse-tree-2026-10-10'
     paths:
       - 'actualization/**'
       - 'tests/actualization/**'
@@ -16,8 +17,10 @@ on:
       - 'research/2026-10-10/INFINITE_REALIZATION_LIMITS.md'
       - 'research/2026-10-10/SUCC_GAMMA_PRIME_PATH_GERMS.md'
       - 'research/2026-10-10/SUCC_SHADOW_WINDOW_CANONICAL_SELECTION.md'
+      - 'research/2026-10-10/LAMBERT_SUCC_INVERSE_TREE.md'
       - 'scripts/infinite_realization_demo.py'
       - 'scripts/gamma_succ_path_probe.py'
+      - 'scripts/lambert_succ_probe.py'
       - 'scripts/audit_actualization.py'
       - 'scripts/mutate_actualization.py'
       - '.github/workflows/actualization-tests.yml'
@@ -29,8 +32,10 @@ on:
       - 'research/2026-10-10/INFINITE_REALIZATION_LIMITS.md'
       - 'research/2026-10-10/SUCC_GAMMA_PRIME_PATH_GERMS.md'
       - 'research/2026-10-10/SUCC_SHADOW_WINDOW_CANONICAL_SELECTION.md'
+      - 'research/2026-10-10/LAMBERT_SUCC_INVERSE_TREE.md'
       - 'scripts/infinite_realization_demo.py'
       - 'scripts/gamma_succ_path_probe.py'
+      - 'scripts/lambert_succ_probe.py'
       - 'scripts/audit_actualization.py'
       - 'scripts/mutate_actualization.py'
       - '.github/workflows/actualization-tests.yml'
@@ -90,6 +95,8 @@ jobs:
           PY
       - name: Test SUCC-shadow Gamma uniqueness windows and winding gluing
         run: python -m unittest discover -s tests/actualization -p 'test_succ_shadow_window.py' -v
+      - name: Test Lambert-W SUCC inverse rank and rooted-tree analytic branch
+        run: python -m unittest discover -s tests/actualization -p 'test_lambert_succ.py' -v
       - name: Run seven isolated regression lanes
         run: python scripts/audit_actualization.py --output "$RUNNER_TEMP/actualization-audit"
       - name: Run fifteen hostile mutations
