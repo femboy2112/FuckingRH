@@ -144,6 +144,25 @@ jobs:
           PY
       - name: Test finite SUCC-Hasse continuation and source-faithful theta/Gamma seam
         run: python -m unittest discover -s tests/actualization -p 'test_hasse_theta_seam.py' -v
+      - name: Replay SUCC-Hasse and theta prime-Gamma cancellation evidence
+        run: |
+          python scripts/hasse_theta_seam_probe.py --output "$RUNNER_TEMP/hasse-theta-seam.json"
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          f=Path(os.environ['RUNNER_TEMP'])/'hasse-theta-seam.json'
+          j=json.loads(f.read_text())
+          assert j['status']=='FINITE_SUCC_HASSE_THETA_SEAM_REPLAY'
+          assert j['exact_negative_zeta_values']['-1']['zeta']=='-1/12'
+          assert j['exact_negative_zeta_values']['-2']['zeta']=='0'
+          assert j['trivial_zero_gamma_pole_jets']['-2']['positive_current_from_gamma_subtracted_jets']
+          assert j['sources']['fake_primitive_2_seam']['3']=='1'
+          assert j['riemann_siegel_square_root_window']['spectral_t_200_fake_visibility'] is False
+          assert j['riemann_siegel_square_root_window']['spectral_t_250_fake_visibility'] is True
+          assert j['source_seam_negative_control_at_s_2']['forced_symmetry_is_NOT_source_completion']
+          assert j['nontrivial_zero_locations_or_ordinates_used'] is False
+          print('Finite SUCC/archimedean seam controls PASS; RH remains open')
+          PY
       - name: Run seven isolated regression lanes
         run: python scripts/audit_actualization.py --output "$RUNNER_TEMP/actualization-audit"
       - name: Run fifteen hostile mutations
@@ -181,5 +200,6 @@ jobs:
             ${{ runner.temp }}/gamma-succ-prime-path.json
             ${{ runner.temp }}/lambert-succ.json
             ${{ runner.temp }}/dirichlet-lambert.json
+            ${{ runner.temp }}/hasse-theta-seam.json
           if-no-files-found: warn
           retention-days: 14
