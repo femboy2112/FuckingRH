@@ -448,3 +448,33 @@ for coefficient approximation alone. This quantifier-correct
 diagonal realizes infinitely many finite measurements, but
 does not prove the coefficients' sign. See §8 of
 [BALANCED_THETA_LI_WINDOW.md](../research/2026-10-10/BALANCED_THETA_LI_WINDOW.md).
+
+
+## General observational SUCC, formal proof-checking and Gödel/Turing
+
+The work has expanded beyond the specific RH source. The
+[master dossier](../research/2026-10-10/OBSERVATIONAL_SUCC_FOUNDATIONS.md)
+and [wiki 9](../wiki/09-observational-succ-and-computability.md)
+give an explicit typed account of the physical Hilbert observer,
+the causal history of actual field events, the semantic maps,
+finite mathematical proof authority, ordinal omega completion,
+and an omega+1 correlation REPORT.
+
+The new observer_logic.py provides a genuine validated and
+reversible Gödel syntax codec, alpha-avoiding substitution,
+a mathematically correct syntactic diagonal construction and
+a fail-closed finite proof checker. It does NOT yet represent the
+Gödel substitution graph inside PA. The new observer_reflection.py
+makes a substantive ordinal distinction concrete: all finitary
+proofs of the omega-union have a computable earliest finite
+axiom-support stage. External consistency/reflection is
+explicitly typed as an assumption, NEVER inferred from
+the mere accumulation of observations.
+
+An exact first-order unary outsider model separates truth
+of ALL named finite instances from the universal formula
+(no arithmetic/PA structure claimed). A rational-interval
+Gram witness API provides negative certificates conditional
+on a sound oracle; the certified Suzuki Gamma interval
+oracle remains unbuilt. This is genuinely useful
+foundational work even if RH stays open.
