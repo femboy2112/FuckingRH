@@ -69,4 +69,18 @@ from .balanced_theta_li import (
     finite_double_zero, li_coevolving_diagonal,
 )
 
-__version__ = "0.3.0"
+from .observer_logic import (
+    LogicBoundaryError, Term as LogicTerm, Formula as LogicFormula,
+    Var as LogicVar, Num as LogicNumeral, Pred as LogicPredicate,
+    godel_code, decode_godel, diagonal_syntax,
+    Theory as LogicTheory, ProofStep, FiniteProof,
+    check_finite_proof, encode_proof, verifies_proof_code,
+)
+from .observer_reflection import (
+    ReflectionBoundaryError, IncreasingTheoryChain,
+    external_consistency_step, UnnamedElementOmegaCountermodel,
+    RationalInterval, GramCertificate, rational_gram_certificate,
+    exact_quartic_screw, exact_quadratic_screw, bounded_gram_search,
+)
+
+__version__ = "0.4.0"
