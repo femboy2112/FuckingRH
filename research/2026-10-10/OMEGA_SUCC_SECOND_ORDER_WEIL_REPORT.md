@@ -515,6 +515,46 @@ character phases or signed source weights, and it makes NO
 claim of an automatic physical realization for such L-functions.
 
 
+### Square-root semantic belief vectors: a LITERAL finite Hilbert geometry
+
+The positive finite evidence distribution
+\(\pi_{\theta,\eta}(n)=
+a(n)e^{\theta v_p(n)+\eta v_q(n)}/Z_N(\theta,\eta)\)
+has a canonical square-root Hilbert embedding
+
+\[
+\boxed{
+|\Omega_N(\theta,\eta)\rangle
+=\sum_{n=1}^N\sqrt{\pi_{\theta,\eta}(n)}\,|n\rangle,
+\qquad \|\Omega_N\|=1.
+}
+\]
+
+Differentiating at any finite parameter vector gives
+
+\[
+\boxed{
+4\langle\partial_i\Omega_N,\partial_j\Omega_N\rangle
+=\operatorname{Cov}_{\pi_{\theta,\eta}}(v_i,v_j)
+=\partial_i\partial_j\log Z_N.
+}
+\]
+
+Thus the **second derivative of the observer's source-based
+semantic normalization really IS a positive Hilbert-space
+metric**, without requiring an imagined external Hilbert
+embedding. This is ordinary exponential-family/Fisher
+information geometry, not an empirically demonstrated
+model of a real person's cognition.
+
+The exact fake-six counterexample above remains essential:
+a source-changing model can have a perfectly legitimate
+positive semantic/Hilbert metric while violating the Euler
+composite condition. A physically embedded observer's
+Hilbert metric must be distinguished from the particular
+signed arithmetic Weil distribution until their identity
+is PROVED on a complete test-function domain.
+
 ## 9. A critical-line Hilbert observer with NO normalized omega-vector limit
 
 **An exact new representation-theoretic obstruction, NOT an RH claim.**
