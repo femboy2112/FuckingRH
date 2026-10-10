@@ -225,3 +225,34 @@ Next extension: an explicit arithmetic-to-Archimedean probe transport whose
 source trace, form-domain continuity and completed Weil comparison can be tested
 against this recorded event history. Do not add a generic positive norm and call
 it the RH solution.
+
+
+## Infinite realization of finite observations (Ind/Yoneda)
+
+The exact, bounded extension in [infinite_realization.py](infinite_realization.py)
+is the mathematically precise meaning of an endless coherent arithmetic path:
+finite stages L_N=lcm(1,...,N) define a **filtered colimit of Yoneda
+representables** that is not representable by any finite integer. Each
+finite test j eventually succeeds, but no finite L_N satisfies all j at once.
+This is a theorem about an infinite directed diagram, NOT a computation
+that executes infinitely many steps.
+
+Try the reproducible standard-library demo:
+
+~~~bash
+python scripts/infinite_realization_demo.py --stage 12 --terms 12
+python -m unittest discover -s tests/actualization -p test_infinite_realization.py -v
+~~~
+
+The same module constructs **certified rational intervals** converging to
+pi and e, plus safe-half-plane zeta(s) intervals. It separately exhibits
+a positive Hilbert-form limit whose *every finite stage is indefinite*,
+and a negative-limit control with the same stagewise signature.
+The Gamma bridge tests show that genuine Suzuki wavefront readings
+stabilize *exactly* at each fixed event after enough observations.
+
+**Do not infer RH from these mechanisms.** The divisibility-only Ind-object
+cannot see a fake n=6 coefficient; zeta's analytic continuation uniquely
+determines its zeros, but the universal Weil-positive sign remains open.
+Full proofs, provenance, boundaries, and the proposed enriched analytic
+transport experiment: [Infinite realization research](../research/2026-10-10/INFINITE_REALIZATION_LIMITS.md).
