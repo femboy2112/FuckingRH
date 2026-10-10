@@ -66,6 +66,31 @@ class OrdinalObservationTests(unittest.TestCase):
         with self.assertRaises(OrdinalObservationError):
             mutant.connected_pair_curvature(2,2)
 
+    def test_exact_semantic_Hessian_correlation_is_PSD_even_for_fake(self):
+        # A physically interpretable finite log-partition has a positive
+        # Hessian, including for the WRONG arithmetic source a(6)=2.
+        true=OrdinalFiniteStage.genuine(6)
+        src={n:1 for n in range(1,7)};src[6]=2
+        fake=OrdinalFiniteStage.from_prefix(src,6)
+        x=true.semantic_log_partition_hessian(2,3)
+        y=fake.semantic_log_partition_hessian(2,3)
+        self.assertEqual(x["Hessian_log_Z"],
+                         ((Q(5,9),Q(-1,18)),(Q(-1,18),Q(2,9))))
+        self.assertEqual(x["determinant"],Q(13,108))
+        self.assertEqual(y["Hessian_log_Z"],
+                         ((Q(24,49),Q(-1,49)),(Q(-1,49),Q(12,49))))
+        self.assertEqual(y["determinant"],Q(287,2401))
+        self.assertTrue(x["is_positive_semidefinite"])
+        self.assertTrue(y["is_positive_semidefinite"])
+        self.assertTrue(x["source_matches_zeta_prefix"])
+        self.assertFalse(y["source_matches_zeta_prefix"])
+        self.assertNotEqual(x["Hessian_log_Z"],y["Hessian_log_Z"])
+        with self.assertRaises(OrdinalObservationError):
+            fake.semantic_log_partition_hessian(2,4)
+        bad={n:1 for n in range(1,7)};bad[6]=-1
+        with self.assertRaises(OrdinalObservationError):
+            OrdinalFiniteStage.from_prefix(bad,6).semantic_log_partition_hessian(2,3)
+
     def test_omega_plus_one_report_is_formal_and_has_finite_restrictions(self):
         semantics=synthetic_ordinal_semantics(20)
         self.assertTrue(semantics["report_property_is_RH_equivalent"])
