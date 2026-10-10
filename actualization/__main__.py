@@ -1,4 +1,4 @@
-"""Run with: python -m actualization demo | run | shadow | replay | reverse."""
+"""Run with: python -m actualization demo | yoneda-demo | probe-budget | run | shadow | replay | reverse."""
 from __future__ import annotations
 
 import argparse
@@ -8,6 +8,8 @@ import sys
 
 from . import (ActualizationError, BasisLift, Engine, Frame, I, Limits,
                ONE, Scalar, conductor_growth, run_arithmetic, source_at)
+from .phenomenology import example as yoneda_example
+from .resource_probe import ProbeBudget, ValuationWord, compare_observers, lcm_word
 
 
 def emit(data, destination=None):
@@ -75,6 +77,14 @@ def main(argv=None):
     p.add_argument("--max-depth", type=int, default=8)
     p.add_argument("--source", choices=["zeta", "chi5", "chi5_bar", "mixture5"], default="zeta")
     p.add_argument("--output")
+    p = sub.add_parser("yoneda-demo", help="Compare thin versus full-path probes at wavefront 3")
+    p.add_argument("--output")
+    p = sub.add_parser("probe-budget", help="Certify bounded observational equivalence without materializing huge target values")
+    p.add_argument("--budget", type=int, default=3)
+    p.add_argument("--a", type=int, default=6)
+    p.add_argument("--b", type=int, default=12)
+    p.add_argument("--lcm-horizon", type=int, help="Use symbolic LCM(N) versus 2*LCM(N)")
+    p.add_argument("--output")
     for command in ("replay", "reverse"):
         p = sub.add_parser(command)
         p.add_argument("trace")
@@ -105,6 +115,17 @@ def main(argv=None):
             limits = Limits(max_target=max(64, args.horizon, args.target), max_depth=args.max_depth)
             e = run_arithmetic(args.horizon, kind=args.source, limits=limits)
             emit(e.shadow(args.target, witnesses=True), args.output)
+        elif args.command == "yoneda-demo":
+            emit(yoneda_example(), args.output)
+        elif args.command == "probe-budget":
+            if args.lcm_horizon is not None:
+                a = lcm_word(args.lcm_horizon)
+                b = a.multiply_prime(2)
+            else:
+                a, b = ValuationWord.from_integer(args.a), ValuationWord.from_integer(args.b)
+            emit({"a": a.label(), "b": b.label(),
+                  "certificate": compare_observers(a, b, ProbeBudget(args.budget)).data()},
+                 args.output)
         else:
             path = Path(args.trace)
             if path.stat().st_size > 32_000_000:
