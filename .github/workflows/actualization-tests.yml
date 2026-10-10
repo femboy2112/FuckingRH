@@ -14,6 +14,7 @@ on:
       - 'aletheia/finite-succ-hasse-theta-seam-2026-10-10'
       - 'aletheia/balanced-theta-li-window-2026-10-10'
       - 'aletheia/omega-succ-second-order-report-2026-10-10'
+      - 'aletheia/observational-succ-godel-2026-10-10'
     paths:
       - 'actualization/**'
       - 'tests/actualization/**'
@@ -193,6 +194,10 @@ jobs:
           PY
       - name: Test ordinal SUCC observation reports and mixed-second Weil correlation
         run: python -m unittest discover -s tests/actualization -p 'test_ordinal_succ_report.py' -v
+      - name: Test Godel Pi1 finite witness and adversarial delay semantics
+        run: python -m unittest discover -s tests/actualization -p 'test_godel_succ.py' -v
+      - name: Emit bounded Godel observational-SUCC demo
+        run: python -m actualization.godel_succ
       - name: Reproduce ordinal omega+1 semantic, Weil and Hilbert escape evidence
         run: |
           python scripts/ordinal_succ_report_probe.py --output "$RUNNER_TEMP/ordinal-succ-report.json"
