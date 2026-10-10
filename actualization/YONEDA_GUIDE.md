@@ -484,3 +484,15 @@ observers weakly to zero, with no normalized strong
 omega-vector. The report may need a different observable
 completion rather than direct limiting vectors;
 this is a representation issue, NOT a zero theorem.
+
+
+The critical half-density observer has an even stronger
+topological obstruction: the normalized finite phase
+correlator \`phi_N(t)=H_N^-1 sum(n^(-1+it))\` is PD at every
+finite stage yet has pointwise limit 1 at t=0 and 0 at
+every t!=0. That limit is discontinuous in ordinary
+logarithmic time. Thus the \`omega+1\` report needs not
+only a source-correct positive covariance, but a topology
+under which physical/semantic covariance transport
+remains regular. This phenomenon is exactly proved in
+§10 of \`OMEGA_SUCC_SECOND_ORDER_WEIL_REPORT.md\`.
