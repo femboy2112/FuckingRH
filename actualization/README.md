@@ -359,3 +359,38 @@ python -m unittest discover -s tests/actualization -p 'test_lambert_succ.py' -v
 
 [Proofs, branch selection, reproducibility, and the missing Weil gate]
 (../research/2026-10-10/LAMBERT_SUCC_INVERSE_TREE.md).
+
+
+## Arithmetic Lambert W inside Dirichlet convolution
+
+The [source-sensitive Dirichlet Lambert extension](dirichlet_lambert.py)
+responds to a limitation of the scalar factorial-rank \`lambert_succ\`
+model: feeding W the scalar \`log(n!)\` had *already erased* the Euler
+coefficient at n=6. W itself was not the source of that blindness.
+
+In the completed arithmetic algebra, define \`h=a-delta_1\` and
+\`W_*(h)=sum (-k)^(k-1)/k! h^(*k)\` with Dirichlet convolution.
+At each integer n this is a FINITE sum over ordered multiplicative
+factorizations, so every coefficient comes with a complete source
+history. The inverse equation \`W_*(h)*exp_*(W_*(h))=h\` is verified
+coefficientwise with exact Fractions. The transform is reversible.
+
+**Crucial hostile control:** true zeta \`a(n)=1\` gives W(6)=-1 and
+connected Euler b(6)=0. A fake \`a(6)=2\` gives W(6)=0 and b(6)=1.
+Therefore W(6) *vanishing* is not an Euler authenticity criterion.
+Correct source recovery requires b(6)=W(6)+a(2)a(3).
+
+There is a proper analytic transport in a declared safe domain:
+if \`H_sigma=sum |h(n)|/n^sigma < 1/e\`, then
+\`D_s(W_*(h))=W_0(D_s(h))\` follows by absolute Dirichlet convolution
+and the scalar Lambert-series Taylor radius. The bounded implementation
+also computes a numerical truncation-error envelope from positive
+rooted-tree coefficients. No zero ordinates, critical strip continuation,
+or positive Weil form are introduced.
+
+~~~bash
+python scripts/dirichlet_lambert_probe.py --horizon 64 --sigma 4
+python -m unittest discover -s tests/actualization -p test_dirichlet_lambert.py -v
+~~~
+
+[Derivations and proof debt](../research/2026-10-10/DIRICHLET_LAMBERT_SOURCE_LIFT.md).
