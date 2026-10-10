@@ -22,4 +22,9 @@ from .infinite_realization import (LCMIndRealization, RationalEnclosure,
                                    escaping_defect_form, escaping_defect_limit,
                                    pinned_negative_form)
 
+from .gamma_succ_path import (
+    FactorialSuccPath, MomentChannel, PrimeMomentPath, PathDomainError,
+    gamma_periodic_gauge, gamma_periodic_log_curvature,
+)
+
 __version__ = "0.3.0"
