@@ -581,3 +581,20 @@ python -m unittest discover -s tests/actualization -p 'test_ordinal_succ_report.
 [Proofs, ordinal semantics, source tests, physical caveats, and remaining
 Weil-positive distribution gate]
 (../research/2026-10-10/OMEGA_SUCC_SECOND_ORDER_WEIL_REPORT.md).
+
+
+### The hidden omega-topology obstruction in positive quantum correlations
+
+For the normalized critical half-density Hilbert observer,
+the phase characteristic function
+\`phi_N(t)=H_N^-1 sum_(n<=N)n^(-1+it)\`
+is continuous and positive definite at EVERY finite stage,
+but converges pointwise to \`1_(t=0)\`. An exact integral
+comparison proves
+\`|phi_N(t)|<=(2/|t|+sqrt(1+t*t)+1/N)/H_N\`
+for each t!=0. The limiting positive-type function is
+DISCONTINUOUS at zero and hence not a characteristic function
+of an ordinary Borel probability on the real energy axis.
+This is an exact illustration that positive finite Hilbert
+observation reports can lack a REGULAR physical omega
+completion, and is NOT a claim about zeta zeros.
