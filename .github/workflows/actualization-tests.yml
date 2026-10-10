@@ -29,6 +29,7 @@ on:
       - 'research/2026-10-10/BALANCED_THETA_LI_WINDOW.md'
       - 'research/2026-10-10/OMEGA_SUCC_SECOND_ORDER_WEIL_REPORT.md'
       - 'research/2026-10-10/OBSERVATIONAL_SUCC_FOUNDATIONS.md'
+      - 'research/2026-10-10/CERTIFIED_FINITE_PRIME_TRANSPORT.md'
       - 'research/2026-10-10/OBSERVATIONAL_SUCC_CLAIM_LEDGER.md'
       - 'scripts/infinite_realization_demo.py'
       - 'scripts/gamma_succ_path_probe.py'
@@ -38,6 +39,7 @@ on:
       - 'scripts/balanced_theta_li_probe.py'
       - 'scripts/ordinal_succ_report_probe.py'
       - 'scripts/observer_foundations_probe.py'
+      - 'scripts/prime_source_certificates_probe.py'
       - 'scripts/audit_actualization.py'
       - 'scripts/mutate_actualization.py'
       - '.github/workflows/actualization-tests.yml'
@@ -55,6 +57,7 @@ on:
       - 'research/2026-10-10/BALANCED_THETA_LI_WINDOW.md'
       - 'research/2026-10-10/OMEGA_SUCC_SECOND_ORDER_WEIL_REPORT.md'
       - 'research/2026-10-10/OBSERVATIONAL_SUCC_FOUNDATIONS.md'
+      - 'research/2026-10-10/CERTIFIED_FINITE_PRIME_TRANSPORT.md'
       - 'research/2026-10-10/OBSERVATIONAL_SUCC_CLAIM_LEDGER.md'
       - 'scripts/infinite_realization_demo.py'
       - 'scripts/gamma_succ_path_probe.py'
@@ -64,6 +67,7 @@ on:
       - 'scripts/balanced_theta_li_probe.py'
       - 'scripts/ordinal_succ_report_probe.py'
       - 'scripts/observer_foundations_probe.py'
+      - 'scripts/prime_source_certificates_probe.py'
       - 'scripts/audit_actualization.py'
       - 'scripts/mutate_actualization.py'
       - '.github/workflows/actualization-tests.yml'
@@ -253,6 +257,27 @@ jobs:
           assert not j["RH_proved"] and not j["PA_formalization_completed"]
           print("Observer logic, finitary omega and counterfeit-source gates PASS")
           PY
+      - name: Test exact rational Suzuki prime/FUCC source intervals
+        run: python -m unittest discover -s tests/actualization -p 'test_source_prime_certificates.py' -v
+      - name: Replay proven prime-side bounds and fake-six anomaly
+        run: |
+          python scripts/prime_source_certificates_probe.py --output "$RUNNER_TEMP/prime-source-certificates.json"
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          p=Path(os.environ["RUNNER_TEMP"])/"prime-source-certificates.json"
+          j=json.loads(p.read_text())
+          assert j["status"]=="CERTIFIED_FINITE_SOURCE_PRIME_TRANSPORT"
+          assert j["exact_rational_enclosures"]
+          assert j["no_zeta_zero_input"]
+          assert j["certified_strict_fake6_anomaly"]["strictly_negative"]
+          assert j["prime_fake_minus_true"]["strictly_negative"]
+          assert j["prime_only_gram"]["RH_counterexample_proved"] is False
+          assert j["Gamma_pole_interval_completed"] is False
+          assert j["full_Weil_PSD_proved"] is False
+          assert j["RH_proved"] is False
+          print("Exact bounded prime-source enclosures PASS; Gamma/Weil gate still open")
+          PY
       - name: Run seven isolated regression lanes
         run: python scripts/audit_actualization.py --output "$RUNNER_TEMP/actualization-audit"
       - name: Run fifteen hostile mutations
@@ -294,5 +319,6 @@ jobs:
             ${{ runner.temp }}/balanced-theta-li.json
             ${{ runner.temp }}/ordinal-succ-report.json
             ${{ runner.temp }}/observer-foundations.json
+            ${{ runner.temp }}/prime-source-certificates.json
           if-no-files-found: warn
           retention-days: 14
