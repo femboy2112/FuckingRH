@@ -126,3 +126,58 @@ A finite category must be enriched to represent *arithmetic source coefficients 
 | CY-7 | full completed Weil sign and RH | OPEN |
 
 New code files: actualization/yoneda.py, resource_probe.py, phenomenology.py, local_global.py; CLI commands yoneda-demo, local-global-demo, probe-budget; tests/actualization/test_category.py, test_resource_probe.py, test_local_global.py; documentation actualization/YONEDA_GUIDE.md. Existing CI script and isolated mutation harness extended. Read the GitHub workflow artifacts for exact environment-specific counts/output; no claim is made that the historical full repository test suite has run.
+
+
+## 8. Theorem Y6 — a real circle-character bridge with reversed arrows
+
+This is separate from the formal-log valuation category in Y4. Take the
+additive finite state clock G_m=Z/mZ and its character group Hom(G_m,R/Z).
+A character j is given exactly by k |-> (jk/m) mod Z, and its value at the
+cyclic generator 1 is the m-torsion angle j/m of the REAL circle R/Z.
+
+For m|n, define
+
+    pi_(n,m): G_n -> G_m,       k |-> k mod m,
+    iota_(m,n): G_m^ -> G_n^,   j |-> (n/m)j mod n.
+
+Both are group homomorphisms and honest one-object group-category functors.
+Their directions reverse (surjective state reduction versus injective dual
+character transport). The evaluation square commutes:
+
+    <pi_(n,m)(k),j>_m = <k,iota_(m,n)(j)>_n in R/Z.
+
+**Proof:** The two rational phases differ by an integer because
+(j*(k mod m))/m - (n/m*j*k)/n = -j*floor(k/m).
+No complex exponential or floating approximation is needed. For m|n|r,
+state projections and dual inclusions both satisfy the appropriate tower
+composition laws. This is a completely explicit finite–continuous
+(Pontryagin) coupling, though ONLY to circle torsion.
+
+At the real case m=2,n=6, old dual characters {0,3} embed in the n-clock,
+while indices {1,5} have exact order 6 and {2,4} order 3. New dual modes
+4 = L_3 - L_2. The rank is exactly the early conductor innovation, not
+an invented extra Euler primitive at integer 6.
+
+Hostile correction: mapping the dual character j to the numerically same
+index j (rather than (n/m)j) FAILS the evaluation square even at k=j=1.
+A code mutation replacing the inclusion multiplier is required to be
+caught by the test suite. A finite cycle can map into R/Z while the
+full continuous real analytic structure, Gaussian/Gamma local factor and
+non-torsion states remain OUTSIDE this model.
+
+In the directed limit, the familiar duality (Z-hat)^vee = Q/Z accounts
+for all finite-order circle characters. This is classical harmonic
+analysis, not an independent RH proof. See Jordan Bell,
+https://jordanbell.info/LaTeX/mathematics/Qdual/Qdual.pdf .
+
+**New next gate:** Can we lift the exact finite torsion duality, alongside
+Hecke source coefficients and shadow path data, to the actual
+Archimedean Schwartz/Mellin test core in a way that preserves the complete
+Weil distribution and logarithmic form norm? In particular, a false
+scalar impulse at n=6 must remain excluded even though an exact-conductor-6
+character is perfectly legitimate. An exact lift must keep these distinct.
+The remaining independent Hodge/Weil SIGN is unchanged and unproved.
+
+**Y6 status:** DEMONSTRATED classical finite duality; zero-free,
+rational-exact regressions/mutation tests. The proposed Schwartz/Gamma
+and Weil-polarization lift is UNVERIFIED.
