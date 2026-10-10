@@ -498,3 +498,29 @@ python -m unittest discover -s tests/actualization -p 'test_balanced_theta_li.py
 
 [Detailed proofs, source bounds and remaining RH-sign wall]
 (../research/2026-10-10/BALANCED_THETA_LI_WINDOW.md).
+
+
+### One finite SUCC/Gamma horizon rule for every Li index
+
+The full [Li-indexed diagonal theorem]
+(../research/2026-10-10/BALANCED_THETA_LI_WINDOW.md#8-an-explicit-diagonal-infinity-of-finite-succ-windows-for-all-li-indices)
+sets \(L_k=(2k+12)\log2+4\log(k+1)\),
+\(T_k=\tfrac12\log(L_k/\pi)\), and
+\(N_k^{Li}=\lceil\sqrt{L_k/\pi}\rceil+1\).
+The **exact analytic estimates** ensure
+\`|lambda_k(xi)-lambda_k(X_Nk,Tk)|<2^-k\`
+for EVERY positive integer k, without reading zeros. Thus each
+Li index has an explicitly prescribed finite Gaussian/SUCC
+window with a certified ideal-integral error inequality.
+
+The Li-only source cutoff \(N_k\) and \(e^{T_k}\) both scale
+like \(\sqrt{k}\)—structurally reminiscent of the known
+Riemann–Siegel factor-square, with Li index **not** to be
+confused with spectral height. To ALSO enforce the *pointwise*
+finite theta reflection error \(|D_{N_k}(T_k)|<2^{-k}\),
+use \`li_coevolving_diagonal(k, match_reflection=True)\`,
+which increases the source cutoff to \(O(k)\).
+
+This proves **accuracy**, NOT the positivity of lambda_k. A
+uniform source-derived lower bound on the Li coefficients
+would still be required for RH.
