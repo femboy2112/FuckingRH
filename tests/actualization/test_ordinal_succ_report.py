@@ -165,6 +165,34 @@ class OrdinalObservationTests(unittest.TestCase):
             self.assertLess(abs((rp["kernel"][1][1]-rg["kernel"][1][1])/2
                                 -expect),mp.mpf("1e-80"))
 
+    def test_delayed_composite_anomaly_is_unseen_on_every_prior_window(self):
+        # Both sources are known through N=64; finite observer queries
+        # up to log(e^2)=2 cannot detect the fake a(15)=2. A later
+        # SUCC query t=3 can, through a source-derived psi kink.
+        N=64
+        good={n:1 for n in range(1,N+1)}
+        bad=dict(good);bad[15]=2
+        a=OrdinalFiniteStage.from_prefix(good,N)
+        b=OrdinalFiniteStage.from_prefix(bad,N)
+        self.assertEqual(b.connected_pair_curvature(3,5)[
+                         "connected_second_order_residual"],1)
+        with mp.workdps(82):
+            for times in (
+                (Q(0),Q(1)),(Q(0),Q(1),Q(2)),
+                (Q(1,4),Q(3,4),Q(3,2))
+            ):
+                x=a.report(times,dps=82)["kernel"]
+                y=b.report(times,dps=82)["kernel"]
+                for i in range(len(times)):
+                    for j in range(len(times)):
+                        self.assertLess(abs(x[i][j]-y[i][j]),
+                                        mp.mpf("1e-77"))
+            x=a.report((Q(0),Q(3)),dps=82)["kernel"][1][1]
+            y=b.report((Q(0),Q(3)),dps=82)["kernel"][1][1]
+            pred=-2*mp.log(15)/mp.sqrt(15)*(3-mp.log(15))
+            self.assertLess(abs((y-x)-pred),mp.mpf("1e-75"))
+            self.assertLess(y,x)
+
     def test_mixed_second_difference_of_two_observation_times_is_exact(self):
         with mp.workdps(85):
             a=OrdinalFiniteStage.genuine(27)
