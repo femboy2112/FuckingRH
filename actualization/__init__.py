@@ -17,4 +17,4 @@ from .local_global import compare_local_global, prefix_demo
 from .circle_transport import (FiniteClock, FiniteDualRefinement, CyclicOneObjectCategory,
                                conductor_birth_2_to_6, verify_refinement_tower)
 
-__version__ = "0.2.0"
+__version__ = "0.3.0"
