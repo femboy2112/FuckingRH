@@ -289,3 +289,36 @@ The [derivation and proof boundary](../research/2026-10-10/SUCC_GAMMA_PRIME_PATH
 explicitly distinguish classical identities, tested finite readouts,
 and the still-open arithmetic-to-Weil fourth gate. No divergent Euler
 product at -1 is assigned an ordinary sum or product value.
+
+
+## Canonical selection by SUCC-shadow windows
+
+The [SUCC-shadow selector](succ_shadow_window.py) probes *fractional,
+boundary-crossing* curvature windows translated by integer successor
+steps. For any continuous positive recurrence solution
+F(x+1)=xF(x), F(1)=1, its ratio to Gamma is 1-periodic. The gamma
+curvature decays as SUCC advances the window; a nonconstant periodic
+gauge necessarily produces a negative convexity window eventually.
+Thus exhaustive shadow probes with log-convexity select Gamma:
+a concrete reading of Bohr–Mollerup, NOT a new RH theorem.
+
+Exact rational witnesses reject sin(2π r x) periodic gauges (including
+tiny deformations whose first witness lies beyond any chosen finite
+horizon). A stronger hostile example is a continuous periodic
+piecewise-quadratic gauge that is convex inside EVERY integer SUCC
+cell but fails precisely at each cell boundary. Infinite scans
+restricted to cell interiors **never** see its bad sign; crossing
+the seam is indispensable.
+
+A positive weighted measure on a complete countable family of windows
+can select Gamma via a zero-violation functional; the weights do not
+themselves prove uniqueness, and no canonical physical Feynman measure
+has been constructed. Separately, loop winding for the multivalued
+complex logarithm is retained as path history; symmetric Gaussian-like
+winding damping fails strict inverse-path gluing.
+
+~~~bash
+python -m unittest discover -s tests/actualization -p test_succ_shadow_window.py -v
+~~~
+
+[Proofs, controls, and RH limitations](../research/2026-10-10/SUCC_SHADOW_WINDOW_CANONICAL_SELECTION.md).
