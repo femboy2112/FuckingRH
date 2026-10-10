@@ -503,6 +503,7 @@ def symmetric_offline_quartet_counterexample():
     are ALL insufficient to force every zero onto that line.
     This deliberately synthetic polynomial is NOT zeta.
     """
+    Q=Fraction
     return {
         "coefficients_even_quartic": (Q(1),Q(3,8),Q(25,256)),
         "line_square_center":Q(3,16),
