@@ -1,5 +1,8 @@
 """Source-sensitive local/global equivalence: tested without global leakage."""
 import unittest
+import subprocess
+import sys
+import json
 
 from actualization import Engine, Frame, ONE, Scalar, run_arithmetic, DomainError
 from actualization.local_global import compare_local_global, prefix_demo
@@ -82,6 +85,25 @@ class LocalGlobalTests(unittest.TestCase):
                          'equivalent_on_declared_observations')
         with self.assertRaises(DomainError):
             compare_local_global(a,b,3,shadow_targets=(100,))
+
+    def test_cli_new_observation_modes(self):
+        cmds=[
+            ['yoneda-demo'],
+            ['local-global-demo'],
+            ['probe-budget','--budget','3','--a','6','--b','12'],
+            ['probe-budget','--budget','10000','--lcm-horizon','10000'],
+        ]
+        out=[]
+        for args in cmds:
+            result=subprocess.run([sys.executable,'-m','actualization']+args,
+                                  capture_output=True,text=True,timeout=90)
+            self.assertEqual(result.returncode,0,result.stderr)
+            out.append(json.loads(result.stdout))
+        self.assertTrue(out[0]['comparison']['thin_indistinguishable'])
+        self.assertFalse(out[0]['comparison']['path_indistinguishable'])
+        self.assertEqual(out[1]['local_at_6_vs_realized_mutant']['first_difference_at_observation'],6)
+        self.assertEqual(out[2]['certificate']['verdict'],'indistinguishable_within_budget')
+        self.assertEqual(out[3]['certificate']['first_discriminating_value'],'16384')
 
     def test_demonstration(self):
         r=prefix_demo()
