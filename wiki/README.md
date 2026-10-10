@@ -41,6 +41,14 @@ Read in order for the full arc, or jump to what you need.
 7. **[Methodology & discipline](07-methodology-and-discipline.md)** — the crucifixion method, the
    epistemic labels, hostile controls, the no-zero-input rule, and calibrated instruments.
 
+### The observer and the foundations of mathematical knowledge
+
+9. **[Observational SUCC, Gödel and Turing](09-observational-succ-and-computability.md)** —
+   the physically embedded observer, finite causal records, semantic updates,
+   second-order correlation as the Weil distribution, ordinal omega vs omega+1,
+   Gödel self-reference, finite-proof support, computability and the correct
+   separation of operational indistinguishability from mathematical truth.
+
 ### The branches
 
 8. **[The reformulations catalog](08-the-reformulations-catalog.md)** — a map of all ~47
