@@ -327,6 +327,66 @@ def li_all_degree_bound(N,T,degree,*,radius=Fraction(1,2),dps=85):
                 "uniform_all_degrees":False}
 
 
+
+
+def li_coevolving_diagonal(degree,*,match_reflection=True,cap=256,dps=90):
+    """Explicit all-index ZERO-BLIND source/archimedean cutoff schedule.
+
+    For k=degree set
+      L=(2k+12)log(2)+4log(k+1);
+      T=(1/2)log(L/pi); N_Li=ceil(sqrt(L/pi)).
+    The Cauchy-Li bound at radius r=1/2 is then <2^-k for EVERY k.
+    Proof: δ<1/2, each Gaussian tail denominator >1/2,
+    E<3e^-L, hence |Δλ_k|<12k2^k e^-L<2^-k.
+    N_Li and e^T are O(sqrt(k)).
+
+    If match_reflection, further demand |D_N(T)|<2^-k
+    by replacing N with the matched theta horizon N_theta(T,2^-k).
+    Then N is O(k) due to the additional e^(T/2) dual-flux cost.
+    All are theorems about IDEAL integrals, not numerically rounded
+    interval certificates. This schedule assures APPROXIMATION
+    simultaneously for all indices k, **NOT positivity** of λ_k.
+    """
+    _nat(degree,lo=1,hi=1000,name="Li index")
+    _nat(cap,lo=2,hi=4096,name="diagonal arithmetic cutoff budget")
+    mp=_mp()
+    with mp.workdps(dps):
+        k=degree
+        L=(2*k+12)*mp.log(2)+4*mp.log(k+1)
+        T=max(mp.mpf(0),mp.log(L/mp.pi)/2)
+        N0=max(1,int(mp.ceil(mp.sqrt(L/mp.pi)))+1)
+        eps=mp.power(2,-k)
+        N=N0
+        reflection={}
+        if match_reflection:
+            match=matched_theta_cutoff(T,eps,cap=cap,dps=dps)
+            N=max(N0,match["horizon"])
+        if N>cap or N>256:
+            raise BalancedWindowError(
+                "Required simultaneous Li/Poisson horizon exceeds finite model budget")
+        li=li_all_degree_bound(N,T,k,radius=Fraction(1,2),dps=dps)
+        if not li["li_coefficient_error_bound"]<eps:
+            raise ArithmeticError("The predicted diagonal Li error inequality failed")
+        if match_reflection:
+            b=theta_defect_tail_envelope(T,N,dps=dps)
+            if not b<eps:
+                raise ArithmeticError("The matched Poisson error inequality failed")
+            reflection={"theta_reflection_error_bound":+b,
+                        "reflection_certified_at_u_equal_T":True}
+        return {
+            "degree":k,"arithmetic_horizon":N,"Li_only_horizon":N0,
+            "archimedean_window_T":+T,
+            "archimedean_exp_T":+mp.exp(T),
+            "target_absolute_error":+eps,
+            "Li_fixed_degree_error_bound":+li["li_coefficient_error_bound"],
+            "Poisson_tied_to_Li_window":bool(match_reflection),
+            "reflection":reflection,
+            "Li_all_index_uniform_positivity_proved":False,
+            "source_used":"true Gaussian lattice, not generic L-functions",
+            "scope":"explicit indexed simultaneous approximation schedule, not RH"
+        }
+
+
 def finite_double_zero(N=4,*,dps=48,init_t="11.210",init_T="0.32478"):
     """Hostile finite-zero collision calculated ONLY from rotating-Gaussian
     integrals; no complex gamma derivative or actual zeta-zero input.
