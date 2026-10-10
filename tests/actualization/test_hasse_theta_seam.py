@@ -225,7 +225,7 @@ class ThetaGammaSeamTests(unittest.TestCase):
         with self.assertRaises(SeamError):
             theta_xi_partial(1,max_integer=4,mutations={1:2.2})
         with self.assertRaises(SeamError):
-            raw_completed_finite_mutation(2,n=5)
+            raw_completed_finite_mutation(2,n=1)
         with self.assertRaises(SeamError):
             raw_completed_finite_mutation(0,n=6)
 
