@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - 'build/2026-10-09/field-relative-actualization-a1'
+      - 'research/2026-10-10/yoneda-resource-actualization-v1'
     paths:
       - 'actualization/**'
       - 'tests/actualization/**'
@@ -35,9 +36,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python }}
-      - name: Run three isolated regression lanes
+      - name: Run five isolated regression lanes
         run: python scripts/audit_actualization.py --output "$RUNNER_TEMP/actualization-audit"
-      - name: Run eight hostile mutations
+      - name: Run twelve hostile mutations
         run: python scripts/mutate_actualization.py --output "$RUNNER_TEMP/actualization-mutations"
       - name: Check complete history demo and replay
         shell: bash
