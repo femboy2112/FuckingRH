@@ -168,8 +168,8 @@ class ThetaGammaSeamTests(unittest.TestCase):
                 mp.mpc(2),mp.mpc("-1.4","0.7")
             ]
             for s in cases:
-                t=theta_xi_partial(s,max_integer=5,dps=100)
-                r=theta_xi_partial(1-s,max_integer=5,dps=100)
+                t=theta_xi_partial(s,max_integer=7,dps=100)
+                r=theta_xi_partial(1-s,max_integer=7,dps=100)
                 self.assertLess(abs(t-r),mp.mpf("1e-91"))
                 exact=(s*(s-1)/2*mp.power(mp.pi,-s/2)
                        *mp.gamma(s/2)*mp.zeta(s))
