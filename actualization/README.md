@@ -526,7 +526,7 @@ uniform source-derived lower bound on the Li coefficients
 would still be required for RH.
 
 
-## v0.4 experimental observational-logic foundations (independent of RH)
+## Experimental observational-logic foundations (independent of RH)
 
 The entire observer architecture is now consolidated in
 [OBSERVATIONAL_SUCC_FOUNDATIONS.md]
