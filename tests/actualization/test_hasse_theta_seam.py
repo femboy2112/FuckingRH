@@ -16,6 +16,7 @@ from actualization.hasse_theta_seam import (
     eta_jet_trivial, gamma_subtracted_prime_current, prime_current_tail_enclosure,
     riemann_siegel_leading, hardy_z_calibration,
     symmetric_offline_quartet_counterexample,
+    prime_source_moment_energy, prime_current_finite_differences,
     raw_completed_finite_mutation, theta_xi_partial, theta_xi_tail_bound,
 )
 from actualization import Engine, Limits, Scalar, source_at
@@ -206,6 +207,44 @@ class FiniteSUCCHasseTests(unittest.TestCase):
                     prime_current_tail_enclosure(m,509,dps=110)["tail_upper_bound"],
                     prime_current_tail_enclosure(m,7,dps=110)["tail_upper_bound"]
                 )
+
+    def test_prime_current_is_completely_monotone_under_spectral_SUCC(self):
+        with mp.workdps(100):
+            for m in (1,2,3,4):
+                for order in (0,1,2,3,4,6):
+                    x=prime_current_finite_differences(
+                        m,order,source_horizon=128,dps=100)
+                    self.assertGreater(x["positive_moment_formula"],0)
+                    self.assertGreater(x["alternating_SUCC_difference"],0)
+                    self.assertLess(x["agreement_error"],mp.mpf("1e-85"))
+                # The finite-source current is below the true complete
+                # Euler value (new prime powers remain beyond N).
+                sample=prime_current_finite_differences(
+                    m,0,source_horizon=128,dps=100)
+                target=-mp.diff(mp.zeta,2*m+1)/mp.zeta(2*m+1)
+                self.assertLess(sample["positive_moment_formula"],target)
+
+    def test_positive_Hausdorff_moment_signature_passes_fake_composite(self):
+        # PSD alone is source-INERT. The artificial composite n=6
+        # contributes positive mass to the same Hausdorff measure,
+        # therefore passes ALL finite positive Hankel-form energies.
+        with mp.workdps(100):
+            for vector in (
+                    (Q(1),), (Q(0),Q(1)),
+                    (Q(1),Q(-1)), (Q(1),Q(-3),Q(2)),
+                    (Q(2),Q(0),Q(-5),Q(1))):
+                true=prime_source_moment_energy(
+                    vector,source_horizon=128,dps=100)
+                fake=prime_source_moment_energy(
+                    vector,source_horizon=128,fake_composite_six=Q(1),dps=100)
+                self.assertTrue(true["nonnegative"])
+                self.assertTrue(fake["nonnegative"])
+                self.assertGreater(true["energy"],0)
+                self.assertGreaterEqual(fake["energy"],true["energy"])
+                self.assertFalse(fake["genuine_source"])
+                self.assertGreater(fake["fake_composite_six_weight"],0)
+        with self.assertRaises(SeamError):
+            prime_source_moment_energy((1,),fake_composite_six=Q(-1))
 
     def test_insufficient_prefix_and_wrong_source_refused(self):
         src=SUCCDifferenceSource.zeta(6)
