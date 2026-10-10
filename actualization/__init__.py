@@ -27,4 +27,12 @@ from .gamma_succ_path import (
     gamma_periodic_gauge, gamma_periodic_log_curvature,
 )
 
+from .succ_shadow_window import (
+    ShadowWindowCertificate, WindingHistory, WindowError,
+    WindowResourceExhausted, sine_gauge_witness, seam_gauge_witness,
+    periodic_quarter_probe, same_cell_quadratic_gauge_curvature,
+    observed_window, unseen_within_prefix, certified_window_penalty_lower_bound,
+    quadratic_weight_gluing_defect,
+)
+
 __version__ = "0.3.0"
