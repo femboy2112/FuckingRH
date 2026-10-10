@@ -25,6 +25,7 @@ from actualization.hasse_theta_seam import (
     theta_xi_partial,theta_xi_tail_bound,
     raw_completed_finite_mutation, riemann_siegel_leading,
     symmetric_offline_quartet_counterexample,
+    prime_source_moment_energy, prime_current_finite_differences,
 )
 
 
@@ -80,6 +81,12 @@ def run(*, dps=90, prime_cutoff=101):
         early=riemann_siegel_leading(200,source=fake,dps=dps)
         later=riemann_siegel_leading(250,source=fake,dps=dps)
         off=symmetric_offline_quartet_counterexample()
+        moment_true=prime_source_moment_energy(
+            (1,-3,2),source_horizon=128,dps=dps)
+        moment_fake=prime_source_moment_energy(
+            (1,-3,2),source_horizon=128,fake_composite_six=1,dps=dps)
+        moment_succ=prime_current_finite_differences(
+            1,4,source_horizon=128,dps=dps)
         return {
             "status":"FINITE_SUCC_HASSE_THETA_SEAM_REPLAY",
             "provenance":"preexisting classical identities, exact arithmetic and numerical calibrations",
@@ -113,6 +120,15 @@ def run(*, dps=90, prime_cutoff=101):
                 "spectral_t_250_window":later["window"],
                 "new_source_activation_height":"t=72*pi, asymptotic main-sum only",
                 "nonzero_remainder_is_required":True,
+            },
+            "positive_moment_source_control":{
+                "true_Hankel_energy":mp.nstr(moment_true["energy"],25),
+                "fake_composite_6_Hankel_energy":mp.nstr(moment_fake["energy"],25),
+                "both_moment_energies_positive":bool(
+                    moment_true["energy"]>0 and moment_fake["energy"]>0),
+                "complete_SUCC_difference_fourth_order":mp.nstr(
+                    moment_succ["positive_moment_formula"],25),
+                "inertness":"generic positive composite event passes; NOT Weil",
             },
             "symmetric_fake_offline_zeros":{
                 "critical_line_minimum":str(off["critical_line_positive_lower_bound"]),
