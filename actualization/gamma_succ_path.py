@@ -332,6 +332,10 @@ def gamma_periodic_gauge(z,epsilon,*,dps=60):
         if z<=0:
             raise PathDomainError("Positive real gamma chart only")
         eps=mp.mpf(epsilon)
+        if z == mp.floor(z):
+            # Sin(2*pi*n) is algebraically zero; do not turn its
+            # finite-precision approximation into an enormous factorial error.
+            return mp.gamma(z)
         return mp.gamma(z)*mp.exp(eps*mp.sin(2*mp.pi*z))
 
 
