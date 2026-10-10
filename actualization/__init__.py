@@ -69,4 +69,24 @@ from .balanced_theta_li import (
     finite_double_zero, li_coevolving_diagonal,
 )
 
+from .observer_logic import (
+    LogicBoundaryError, Term as LogicTerm, Formula as LogicFormula,
+    Var as LogicVar, Num as LogicNumeral, Pred as LogicPredicate,
+    godel_code, decode_godel, diagonal_syntax,
+    Theory as LogicTheory, ProofStep, FiniteProof,
+    check_finite_proof, encode_proof, verifies_proof_code,
+)
+from .observer_reflection import (
+    ReflectionBoundaryError, IncreasingTheoryChain,
+    external_consistency_step, UnnamedElementOmegaCountermodel,
+    RationalInterval, GramCertificate, rational_gram_certificate,
+    exact_quartic_screw, exact_quadratic_screw, bounded_gram_search,
+)
+
+from .source_prime_certificates import (
+    SourceCertificateError, rational_log_ratio,
+    rational_log_integer, rational_inverse_sqrt,
+    finite_prime_horizon, CertifiedPrimeSource, prime_delta_at_fake_six,
+)
+
 __version__ = "0.3.0"

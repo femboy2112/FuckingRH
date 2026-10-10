@@ -48,6 +48,15 @@ Read in order for the full arc, or jump to what you need.
    X → what you get → the wall," de-duplicated and grouped by the six lenses, with the provenance
    caveat (one lineage, not independent bearings) and the verdict (zero genuine non-circular content).
 
+### The observer and the foundations of mathematical knowledge
+
+9. **[Observational SUCC, Gödel and Turing](09-observational-succ-and-computability.md)** —
+   the physically embedded observer, finite causal records, semantic updates,
+   second-order correlation as the Weil distribution, ordinal omega vs omega+1,
+   Gödel self-reference, finite-proof support, computability and the correct
+   separation of operational indistinguishability from mathematical truth.
+
+
 ---
 
 > **One-line status.** Every piece of the frame that could be measured has been measured, and ζ

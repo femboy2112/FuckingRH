@@ -15,6 +15,7 @@ on:
       - 'aletheia/balanced-theta-li-window-2026-10-10'
       - 'aletheia/omega-succ-second-order-report-2026-10-10'
       - 'aletheia/observational-succ-godel-2026-10-10'
+      - 'aletheia/observational-succ-logic-foundations-2026-10-10'
     paths:
       - 'actualization/**'
       - 'tests/actualization/**'
@@ -27,6 +28,9 @@ on:
       - 'research/2026-10-10/FINITE_SUCC_HASSE_THETA_SEAM.md'
       - 'research/2026-10-10/BALANCED_THETA_LI_WINDOW.md'
       - 'research/2026-10-10/OMEGA_SUCC_SECOND_ORDER_WEIL_REPORT.md'
+      - 'research/2026-10-10/OBSERVATIONAL_SUCC_FOUNDATIONS.md'
+      - 'research/2026-10-10/CERTIFIED_FINITE_PRIME_TRANSPORT.md'
+      - 'research/2026-10-10/OBSERVATIONAL_SUCC_CLAIM_LEDGER.md'
       - 'scripts/infinite_realization_demo.py'
       - 'scripts/gamma_succ_path_probe.py'
       - 'scripts/lambert_succ_probe.py'
@@ -34,6 +38,8 @@ on:
       - 'scripts/hasse_theta_seam_probe.py'
       - 'scripts/balanced_theta_li_probe.py'
       - 'scripts/ordinal_succ_report_probe.py'
+      - 'scripts/observer_foundations_probe.py'
+      - 'scripts/prime_source_certificates_probe.py'
       - 'scripts/audit_actualization.py'
       - 'scripts/mutate_actualization.py'
       - '.github/workflows/actualization-tests.yml'
@@ -50,6 +56,9 @@ on:
       - 'research/2026-10-10/FINITE_SUCC_HASSE_THETA_SEAM.md'
       - 'research/2026-10-10/BALANCED_THETA_LI_WINDOW.md'
       - 'research/2026-10-10/OMEGA_SUCC_SECOND_ORDER_WEIL_REPORT.md'
+      - 'research/2026-10-10/OBSERVATIONAL_SUCC_FOUNDATIONS.md'
+      - 'research/2026-10-10/CERTIFIED_FINITE_PRIME_TRANSPORT.md'
+      - 'research/2026-10-10/OBSERVATIONAL_SUCC_CLAIM_LEDGER.md'
       - 'scripts/infinite_realization_demo.py'
       - 'scripts/gamma_succ_path_probe.py'
       - 'scripts/lambert_succ_probe.py'
@@ -57,6 +66,8 @@ on:
       - 'scripts/hasse_theta_seam_probe.py'
       - 'scripts/balanced_theta_li_probe.py'
       - 'scripts/ordinal_succ_report_probe.py'
+      - 'scripts/observer_foundations_probe.py'
+      - 'scripts/prime_source_certificates_probe.py'
       - 'scripts/audit_actualization.py'
       - 'scripts/mutate_actualization.py'
       - '.github/workflows/actualization-tests.yml'
@@ -219,6 +230,54 @@ jobs:
           assert j["no_RH_or_Weil_positive_sign_assumed"]
           print("Finite ordinal SUCC, semantic Hessian and Hilbert weak escape controls PASS")
           PY
+      - name: Test Gödel syntax, self-referential substitution and finite proof checker
+        run: python -m unittest discover -s tests/actualization -p 'test_observer_logic.py' -v
+      - name: Test ordinal finite-proof compactness and certified Gram witness protocol
+        run: python -m unittest discover -s tests/actualization -p 'test_observer_reflection.py' -v
+      - name: Record bounded Gödel, Turing, omega and certified Gram evidence
+        run: |
+          python scripts/observer_foundations_probe.py --output "$RUNNER_TEMP/observer-foundations.json"
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          p=Path(os.environ["RUNNER_TEMP"])/"observer-foundations.json"
+          j=json.loads(p.read_text())
+          assert j["status"]=="OBSERVATIONAL_SUCC_FORMAL_FOUNDATIONS"
+          assert j["godel_fixed_point_syntax"]["verified_substitution_code"]
+          assert not j["godel_fixed_point_syntax"]["SubstGraph_representability_in_PA_proved"]
+          assert not j["godel_fixed_point_syntax"]["object_level_PA_equivalence_proved"]
+          assert j["finitary_omega_proof_support"]["finite_proof_verified"]
+          assert not j["finitary_omega_proof_support"]["omega_rule_used"]
+          assert j["turing_observations"]["delayed_prefix_17"]=="unresolved"
+          assert j["turing_observations"]["first_observed_counterexample"]==19
+          assert j["rational_gram_certificates"]["negative_exact_quartic_upper"]=="-24"
+          assert not j["rational_gram_certificates"]["Suzuki_interval_oracle_built"]
+          assert j["arithmetic_causal_history"]["fake_connected_b6"]=="1"
+          assert j["arithmetic_causal_history"]["both_semantic_Hessians_PSD"]
+          assert not j["RH_proved"] and not j["PA_formalization_completed"]
+          print("Observer logic, finitary omega and counterfeit-source gates PASS")
+          PY
+      - name: Test exact rational Suzuki prime/FUCC source intervals
+        run: python -m unittest discover -s tests/actualization -p 'test_source_prime_certificates.py' -v
+      - name: Replay proven prime-side bounds and fake-six anomaly
+        run: |
+          python scripts/prime_source_certificates_probe.py --output "$RUNNER_TEMP/prime-source-certificates.json"
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          p=Path(os.environ["RUNNER_TEMP"])/"prime-source-certificates.json"
+          j=json.loads(p.read_text())
+          assert j["status"]=="CERTIFIED_FINITE_SOURCE_PRIME_TRANSPORT"
+          assert j["exact_rational_enclosures"]
+          assert j["no_zeta_zero_input"]
+          assert j["certified_strict_fake6_anomaly"]["strictly_negative"]
+          assert j["prime_fake_minus_true"]["strictly_negative"]
+          assert j["prime_only_gram"]["RH_counterexample_proved"] is False
+          assert j["Gamma_pole_interval_completed"] is False
+          assert j["full_Weil_PSD_proved"] is False
+          assert j["RH_proved"] is False
+          print("Exact bounded prime-source enclosures PASS; Gamma/Weil gate still open")
+          PY
       - name: Run seven isolated regression lanes
         run: python scripts/audit_actualization.py --output "$RUNNER_TEMP/actualization-audit"
       - name: Run fifteen hostile mutations
@@ -259,5 +318,7 @@ jobs:
             ${{ runner.temp }}/hasse-theta-seam.json
             ${{ runner.temp }}/balanced-theta-li.json
             ${{ runner.temp }}/ordinal-succ-report.json
+            ${{ runner.temp }}/observer-foundations.json
+            ${{ runner.temp }}/prime-source-certificates.json
           if-no-files-found: warn
           retention-days: 14

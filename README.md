@@ -46,6 +46,38 @@ The full account of how this program thinks about the problem lives in the
    experimental branches: every lens tried, each as "RH looks like this if you consider X → what
    you get → the wall," with the provenance caveat and the verdict (zero genuine non-circular
    content; every per-prime positivity is RH-inert).
+9. **[Observational SUCC as a general theory of observation and proof](wiki/09-observational-succ-and-computability.md)** —
+   physical Hilbert carrier versus observer-made mathematical spaces;
+   preservation of causal history, mixed second-order correlations,
+   finite/omega/omega+1 semantics; Gödel diagonal coding, Turing
+   computations, reflection versus proof, exact Gram witness protocols;
+   RH is one probe of the general theory, not its definition.
+
+
+---
+
+## Observational SUCC: a second, more general research program
+
+The original arithmetic RH program now has a separate foundation for
+physically embedded observers constructing mathematics from finite causal
+histories. It is **not** a proposal that Hilbert space proves RH.
+The mathematically rigorous new layer distinguishes finite observations,
+finite proof-checking, semantic truth, ordinal limit objects and explicitly
+assumed reflection principles.
+
+The foundational result implemented here: for increasing theories
+T_0⊆T_1⊆⋯, **any finitary proof from their omega-union already has
+finite-stage support**. The new code also performs actual Gödel
+syntax substitution/diagonalization, rejects unauthorized omega rules,
+and checks strict negative Gram witnesses using exact rational interval
+arithmetic. None of that proves Gödel's incompleteness theorem in PA,
+settles RH, or models a human brain.
+
+Start at [wiki chapter 9](wiki/09-observational-succ-and-computability.md)
+and the [consolidated source-by-source dossier]
+(research/2026-10-10/OBSERVATIONAL_SUCC_FOUNDATIONS.md).
+The new [observer foundations probe](scripts/observer_foundations_probe.py)
+records causal counterexamples and proof boundaries.
 
 ---
 
