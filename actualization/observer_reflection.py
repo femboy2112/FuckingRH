@@ -28,7 +28,7 @@ from fractions import Fraction
 from itertools import combinations, product
 
 from .observer_logic import (
-    Formula, Pred, Num, Forall, Theory, FiniteProof,
+    Formula, Pred, Num, Var, Forall, Theory, FiniteProof,
     LogicBoundaryError, check_finite_proof, free_variables,
 )
 
@@ -120,7 +120,7 @@ class IncreasingTheoryChain:
             raise ReflectionBoundaryError("Predicate name required")
         return {
             "observed_through": horizon,
-            "intended_global_formula": Forall("n", Pred(predicate, Num(0))).kind,
+            "intended_global_formula": Forall("n", Pred(predicate, Var("n"))),
             "proof_status": "UNRESOLVED",
             "omega_not_executed": True,
             "finite_proof_manufactured": False,
@@ -146,7 +146,7 @@ def external_consistency_step(
     return newer, {
         "new_axiom": candidate,
         "axiom_status": "EXTERNAL_ASSUMPTION_ONLY",
-        "claimed_truth_of_axiom": False,
+        "claimed_truth_of_axiom": None,
         "verified_in_predecessor": False,
         "reflective_successor_is_ordinary_observation": False,
         "metatheoretic_basis": evidence_label,
