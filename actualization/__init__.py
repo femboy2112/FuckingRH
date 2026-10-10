@@ -57,6 +57,7 @@ from .hasse_theta_seam import (
     raw_completed_finite_mutation, finite_mutation_parity_error,
     symmetric_offline_quartet_counterexample,
     riemann_siegel_leading, hardy_z_calibration,
+    prime_source_moment_energy, prime_current_finite_differences,
 )
 
 __version__ = "0.3.0"
