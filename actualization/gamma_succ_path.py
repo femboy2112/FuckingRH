@@ -165,6 +165,7 @@ class PrimeMomentPath:
     """
     horizon: int
     channels: tuple[MomentChannel,...]
+    source_head: str | None = None
 
     def __post_init__(self):
         _integer(self.horizon,lower=2,upper=1024,name="prime cutoff")
@@ -177,9 +178,26 @@ class PrimeMomentPath:
         object.__setattr__(self,"channels",ch)
 
     @classmethod
-    def genuine(cls,horizon):
+    def genuine(cls,horizon,*,source_head=None):
         ps=primes_upto(horizon)
-        return cls(horizon,tuple(MomentChannel(p) for p in ps))
+        return cls(horizon,tuple(MomentChannel(p) for p in ps),source_head)
+
+    @classmethod
+    def from_engine(cls,engine,horizon=None):
+        """Requires COMPLETE integrated zeta coefficients through the horizon.
+
+        The engine may contain unobserved predictions or a pending event;
+        they do not enter the source prefix. Mutations are rejected rather
+        than silently converted into a prime-perfect Euler product.
+        """
+        from .gamma_interferometer import GammaInterferometer
+        try:
+            observed=GammaInterferometer.from_engine(engine,horizon)
+        except (ValueError,KeyError) as exc:
+            raise PathDomainError("Complete integrated arithmetic source needed") from exc
+        if not observed.matches_zeta_prefix:
+            raise PathDomainError("Integrated source is not the actual zeta Euler prefix")
+        return cls.genuine(observed.horizon,source_head=observed.trace_head)
 
     def is_genuine_prefix(self):
         return (tuple(x.base for x in self.channels)==primes_upto(self.horizon)
@@ -195,6 +213,7 @@ class PrimeMomentPath:
             "evaluated_ratio_at_u_1": "1",
             "scalar_evaluation_is_not_an_injective_path_map": True,
             "source_faithful_zeta_prefix":self.is_genuine_prefix(),
+            "source_journal_head":self.source_head,
         }
 
     def zeta_two_rational(self):
