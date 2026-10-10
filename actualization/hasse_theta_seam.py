@@ -572,3 +572,103 @@ def hardy_z_calibration(t,*,dps=75):
         theta=(mp.im(mp.loggamma(mp.mpf(1)/4+mp.j*t/2))
                -t*mp.log(mp.pi)/2)
         return +mp.re(mp.exp(mp.j*theta)*mp.zeta(mp.mpf(1)/2+mp.j*t))
+
+
+
+def _source_prime_power(n):
+    """Return p for n=p^k (k>=1), else None. No zero inputs."""
+    _index(n,minimum=2,maximum=2048,name="moment source event")
+    from .arithmetic import factorization
+    decomposition=factorization(n)
+    return decomposition[0][0] if len(decomposition)==1 else None
+
+
+def prime_source_moment_energy(vector,*,source_horizon=128,
+                               fake_composite_six=Fraction(0),dps=80):
+    """Positive finite Hankel/Householder moment Gram from positive prime jets.
+
+    For true Λ(n), define µ=Σ_(n>=2)Λ(n)/n³ δ_(1/n²).
+    The gamma-subtracted trivial-zero currents satisfy
+      J_m=Σ_(n>=2) Λ(n)/n^(2m+1)
+         =∫ x^(m-1) dµ(x), m>=1.
+    For rational polynomial P(x)=Σ_i c_i x^i,
+      ∫ P(x)^2 dµ(x) >=0.
+    We evaluate a finite cutoff plus an *artificial* composite n=6
+    weight c*log6. This fake also retains positivity! Therefore
+    the moment PSD is not an Euler authenticity/Weil criterion.
+
+    The FULL moment sequence is uniquely determining for finite positive
+    measures on [0,1/4] (Hausdorff moment problem), but *PSD alone*
+    selects many other measures. Code only evaluates finite partials;
+    it does not infer a full measure from samples.
+    """
+    _index(source_horizon,minimum=6,maximum=1024,name="prime moment source horizon")
+    if not isinstance(vector,(tuple,list)) or not 1<=len(vector)<=32:
+        raise SeamError("Nonempty polynomial vector of length <=32 required")
+    coeff=tuple(_rational(x) for x in vector)
+    extra=_rational(fake_composite_six)
+    if extra<0:
+        raise SeamError("Only nonnegative composite injection in this PSD control")
+    mp=_mp()
+    with mp.workdps(dps):
+        energy=mp.mpf(0)
+        fake_piece=mp.mpf(0)
+        for n in range(2,source_horizon+1):
+            p=_source_prime_power(n)
+            weight=mp.log(p) if p is not None else mp.mpf(0)
+            if n==6 and extra:
+                fake_piece+=_mprat(mp,extra)*mp.log(6)
+                weight+=_mprat(mp,extra)*mp.log(6)
+            if weight==0:
+                continue
+            poly=mp.fsum(_mprat(mp,c)*mp.power(n,-2*j)
+                         for j,c in enumerate(coeff))
+            energy+=weight*poly*poly/mp.power(n,3)
+        return {
+            "energy":+energy,
+            "nonnegative":bool(energy>=0),
+            "fake_composite_six_weight":+fake_piece,
+            "genuine_source":bool(extra==0),
+            "limitation":"generic positive fake channels pass; not Weil sign",
+        }
+
+
+def prime_current_finite_differences(m,order,*,source_horizon=128,dps=85):
+    """Classical complete monotonicity of the SPECIAL prime-current moments.
+
+    J_m=Σ Λ(n)/n^(2m+1). Then for ΔJ_m=J_(m+1)-J_m,
+      (-1)^r Δ^r J_m
+       =Σ Λ(n)/n^(2m+1) (1-n^-2)^r >=0.
+
+    This is exact algebra and a positive-measure moment representation,
+    not RH/Weil positivity. Numeric approximation is finite-source only.
+    """
+    _index(m,minimum=1,maximum=32,name="moment index")
+    _index(order,minimum=0,maximum=20,name="finite difference order")
+    _index(source_horizon,minimum=6,maximum=1024,name="arithmetic source horizon")
+    mp=_mp()
+    with mp.workdps(dps):
+        moments=[]
+        for j in range(order+1):
+            moments.append(mp.fsum(
+                mp.log(p)*mp.power(n,-(2*(m+j)+1))
+                for n in range(2,source_horizon+1)
+                for p in [_source_prime_power(n)] if p is not None
+            ))
+        difference=mp.fsum(
+            ((-1)**j)*__import__("math").comb(order,j)*moments[j]
+            for j in range(order+1)
+        )
+        positive_integral=mp.fsum(
+            mp.log(p)*mp.power(n,-(2*m+1))
+            *mp.power(1-mp.power(n,-2),order)
+            for n in range(2,source_horizon+1)
+            for p in [_source_prime_power(n)] if p is not None
+        )
+        return {
+            "alternating_SUCC_difference":+difference,
+            "positive_moment_formula":+positive_integral,
+            "agreement_error":+abs(difference-positive_integral),
+            "source_horizon":source_horizon,
+            "status":"positive finite-moment hierarchy, RH-inert",
+        }
