@@ -138,6 +138,20 @@ class CertifiedPrimeSource:
             raise SourceCertificateError("Supported finite source horizon is 2..256")
 
     @classmethod
+    def from_engine(cls,engine,horizon=None,*,log_terms=24,sqrt_places=20):
+        """Bind a certified prime-only observer to a FULLY INTEGRATED journal.
+
+        The GammaInterferometer adapter refuses pending source events
+        and preserves the observed journal head; future predictions
+        never become source coefficients just because their labels exist.
+        """
+        try:
+            snap=GammaInterferometer.from_engine(engine,horizon)
+        except (ValueError,TypeError) as exc:
+            raise SourceCertificateError("Source not causally actualized") from exc
+        return cls(snap,log_terms,sqrt_places)
+
+    @classmethod
     def genuine(cls,horizon,*,log_terms=24,sqrt_places=20):
         if type(horizon) is not int or not 2<=horizon<=256:
             raise SourceCertificateError("Genuine source horizon must be 2..256")
