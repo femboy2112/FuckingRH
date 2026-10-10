@@ -394,3 +394,61 @@ python -m unittest discover -s tests/actualization -p test_dirichlet_lambert.py 
 ~~~
 
 [Derivations and proof debt](../research/2026-10-10/DIRICHLET_LAMBERT_SOURCE_LIFT.md).
+
+
+## Two finite-SUCC-to-analytic continuation seams
+
+[hasse_theta_seam.py](hasse_theta_seam.py) compares two rigorous,
+independently defined routes to zeta's **global** analytic description,
+with explicit source-integrity and positivity countermodels.
+
+The Hasse/Sondow path builds the alternating eta function from
+successive *integer SUCC differences*, never from zeta zeros.
+At s=-m, polynomial finite differences TERMINATE and exactly recover
+the rational values zeta(-m), including zeta(-1)=-1/12 and all
+negative-even trivial zeros. A separate Hasse series with weights
+1/(n+1) yields the same exact negative values without introducing
+the local prime-2 denominator. Both are classical identities.
+
+Gamma/Poisson instead builds **the entire xi function** from integer
+Gaussian heat samples, including a rigorous exponentially small
+truncation tail in 0<=Re(s)<=1. The two routes agree on the real
+zeta source. Fake source a(6)=2 breaks the prime-2 parity
+transport identity, makes a naive source-mutated Hasse expansion
+diverge, and demonstrates why a *forced reflection-symmetric theta*
+expression is NOT the completed Dirichlet function of that fake
+source.
+
+**Critical new observation in this round:** even though a trivial
+zero zeta(-2m)=0 is exactly computable from finitely many SUCC
+differences, its first and second spectral derivatives require
+nonterminating SUCC-difference realizations. After Gamma/digamma
+subtraction, the derivative ratio is the positive Euler current
+
+~~~text
+zeta''(-2m)/(2*zeta'(-2m)) + digamma(2m+1) - log(2*pi)
+    = -zeta'(2m+1)/zeta(2m+1)
+    = sum_p log(p)/(p^(2m+1)-1) > 0.
+~~~
+
+The code calculates the left via independent SUCC eta derivatives,
+compares the safe Euler expression and gives an explicit upper bound
+for omitted prime factors. This is classical arithmetic in the
+convergent region, **not** the Weil positivity theorem.
+
+Lastly, the [Riemann–Siegel asymptotic finite bulk window]
+(https://dlmf.nist.gov/25.10.E3) uses
+\`n<=floor(sqrt(t/(2*pi)))\` with the Gamma phase. This gives
+the source's half-density/factor-square cone a genuine classical
+comparison; the remainder cannot be dropped. A real-even quartic
+with OFF-line zeros but strictly positive values on the critical
+line is an exact hostility test against accidental "symmetry
+proves RH" arguments.
+
+~~~bash
+python scripts/hasse_theta_seam_probe.py
+python -m unittest discover -s tests/actualization -p 'test_hasse_theta_seam.py' -v
+~~~
+
+Full [derivations, sources, controls and the open Weil gate]
+(../research/2026-10-10/FINITE_SUCC_HASSE_THETA_SEAM.md).
