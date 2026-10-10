@@ -1,4 +1,4 @@
-"""Run with: python -m actualization demo | yoneda-demo | probe-budget | run | shadow | replay | reverse."""
+"""Run with: python -m actualization demo | yoneda-demo | local-global-demo | probe-budget | run | shadow | replay | reverse."""
 from __future__ import annotations
 
 import argparse
@@ -9,6 +9,7 @@ import sys
 from . import (ActualizationError, BasisLift, Engine, Frame, I, Limits,
                ONE, Scalar, conductor_growth, run_arithmetic, source_at)
 from .phenomenology import example as yoneda_example
+from .local_global import prefix_demo
 from .resource_probe import ProbeBudget, ValuationWord, compare_observers, lcm_word
 
 
@@ -79,6 +80,8 @@ def main(argv=None):
     p.add_argument("--output")
     p = sub.add_parser("yoneda-demo", help="Compare thin versus full-path probes at wavefront 3")
     p.add_argument("--output")
+    p = sub.add_parser("local-global-demo", help="Restrict a global arithmetic history to local SUCC observations")
+    p.add_argument("--output")
     p = sub.add_parser("probe-budget", help="Certify bounded observational equivalence without materializing huge target values")
     p.add_argument("--budget", type=int, default=3)
     p.add_argument("--a", type=int, default=6)
@@ -117,6 +120,8 @@ def main(argv=None):
             emit(e.shadow(args.target, witnesses=True), args.output)
         elif args.command == "yoneda-demo":
             emit(yoneda_example(), args.output)
+        elif args.command == "local-global-demo":
+            emit(prefix_demo(), args.output)
         elif args.command == "probe-budget":
             if args.lcm_horizon is not None:
                 a = lcm_word(args.lcm_horizon)
