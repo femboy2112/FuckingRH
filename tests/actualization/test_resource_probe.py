@@ -62,7 +62,6 @@ class ResourceProbeTests(unittest.TestCase):
         a=ValuationWord(((2,2048),))
         b=a.multiply_prime(3)
         cert=compare_observers(a,b,ProbeBudget(1000))
-        self.assertEqual(cert.verdict,"indistinguishable_within_budget") if False else None
         # The added factor of 3 is immediately visible; the large exponent is not.
         self.assertEqual(cert.verdict,"distinguished")
         self.assertEqual(cert.first_discriminating_value,3)
@@ -132,8 +131,7 @@ class ResourceProbeTests(unittest.TestCase):
         mixture=Phenomenology(run_arithmetic(6,kind='mixture5'),max_shadow_target=36)
         self.assertEqual(chi.witness(6)['source_audit']['status'],'consistent')
         self.assertEqual(mixture.witness(6)['source_audit']['status'],'mixed_composite_defect')
-        self.assertEqual(chi.witness(6)['path_signature_a'] if False else
-                         chi.witness(6)['path_representable_hom_sizes'],
+        self.assertEqual(chi.witness(6)['path_representable_hom_sizes'],
                          mixture.witness(6)['path_representable_hom_sizes'])
 
     def test_undeclared_global_object_rejected(self):
