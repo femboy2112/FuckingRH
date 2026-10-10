@@ -23,11 +23,49 @@ from actualization.ordinal_succ_report import (
     exact_bounded_time_horizon, quartic_observer_report,
     exact_polynomial_rectangle, oscillator_observer_report,
     synthetic_ordinal_semantics,
+    harmonic_number,harmonic_half_density_observer,
+    harmonic_dyadic_divergence_certificate,mellin_hilbert_threshold,
 )
 from actualization.gamma_interferometer import individual_impulse_determinant
 
 
 class OrdinalObservationTests(unittest.TestCase):
+
+    def test_normalized_hilbert_half_density_escapes_at_omega(self):
+        # Each finite Hilbert state has norm one. At Re(s)=1/2,
+        # for a fixed local projector P_M, its expectation decays
+        # exactly as H_M/H_N, even though <I>=1 at every stage.
+        fixed_m=3
+        mass=[harmonic_half_density_observer(N,fixed_m)
+              for N in (3,6,12,24,48,96,192,384)]
+        self.assertTrue(all(x["finite_vector_norm_squared"]==1 for x in mass))
+        self.assertTrue(all(x["identity_expectation"]==1 for x in mass))
+        self.assertTrue(all(x["Weil_identification_proved"] is False for x in mass))
+        fractions=[x["finite_projector_expectation"] for x in mass]
+        self.assertEqual(fractions[0],Q(1))
+        self.assertTrue(all(a>b for a,b in zip(fractions,fractions[1:])))
+        self.assertEqual(fractions[-1],
+                         harmonic_number(fixed_m)/harmonic_number(384))
+        self.assertTrue(all(x["phase_independent_local_expectations"] for x in mass))
+        self.assertFalse(mass[-1]["infinite_vector_summable"])
+        for sigma,finite in ((Q(0),False),(Q(1,3),False),
+                             (Q(1,2),False),(Q(3,5),True),(Q(1),True)):
+            self.assertEqual(mellin_hilbert_threshold(sigma)[
+                             "sum_of_squared_amplitudes_finite"],finite)
+        self.assertTrue(mellin_hilbert_threshold(Q(1,2))[
+                        "is_critical_harmonic_boundary"])
+        with self.assertRaises(OrdinalObservationError):
+            mellin_hilbert_threshold(0.5)
+
+    def test_exact_dyadic_lower_bound_proves_harmonic_escape(self):
+        for k in range(0,9):
+            r=harmonic_dyadic_divergence_certificate(k)
+            self.assertEqual(r["stage_N"],2**k)
+            self.assertGreaterEqual(r["exact_H_N"],r["provable_lower_bound"])
+            self.assertEqual(r["provable_lower_bound"],Q(1)+Q(k,2))
+            self.assertFalse(r["physical_infinite_time_executed"])
+        with self.assertRaises(OrdinalObservationError):
+            harmonic_dyadic_divergence_certificate(13)
 
     def test_exact_arithmetic_horizon_from_rational_probe_clock(self):
         self.assertEqual(
