@@ -524,3 +524,46 @@ which increases the source cutoff to \(O(k)\).
 This proves **accuracy**, NOT the positivity of lambda_k. A
 uniform source-derived lower bound on the Li coefficients
 would still be required for RH.
+
+
+## v0.4 experimental observational-logic foundations (independent of RH)
+
+The entire observer architecture is now consolidated in
+[OBSERVATIONAL_SUCC_FOUNDATIONS.md]
+(../research/2026-10-10/OBSERVATIONAL_SUCC_FOUNDATIONS.md)
+and the shorter [general theory wiki]
+(../wiki/09-observational-succ-and-computability.md).
+The physical observer-as-Hilbert-carrier is the author's hypothesis;
+the verified mathematical software is typed syntax, causal history and
+proof-boundary discipline, NOT a prediction about real nervous systems.
+
+New standard-library-only modules:
+
+- observer_logic.py implements terms/formulas, capture-avoiding
+  substitution, canonical finite Gödel numbers, diagonal syntax
+  and a FINITE proof checker for a declared first-order rule subset.
+  The diagonal certificate checks codes but does NOT establish
+  PA representability or second incompleteness.
+- observer_reflection.py proves finite-stage support for each
+  finitary proof drawn from an increasing omega-union of theories,
+  separately tags external consistency/reflection as ASSUMPTIONS,
+  constructs a unary first-order model in which every named
+  ground instance is true but the universal formula is false,
+  and requires exact rational enclosures for negative Gram
+  certificates. Floating approximations are not sound certificates.
+- The earlier godel_succ.py and ordinal_succ_report.py supply
+  finite Turing machine prefix observations, real arithmetic
+  causal histories, and second-order mixed Suzuki/Weil probes.
+
+~~~bash
+python scripts/observer_foundations_probe.py
+python -m unittest discover -s tests/actualization -p 'test_observer_logic.py' -v
+python -m unittest discover -s tests/actualization -p 'test_observer_reflection.py' -v
+~~~
+
+Even a perfect finite observation record does not entitle an observer
+to an omega-rule, an unchecked reflection axiom or a proof of all
+quantified cases. And a positive physical-semantic covariance
+does not automatically coincide with the RH-equivalent Weil
+distribution; source identification and a noncircular sign
+remain missing.
