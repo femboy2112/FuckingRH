@@ -54,6 +54,8 @@ def run(*,dps=72,horizon=28):
         oscillator=oscillator_observer_report((Q(0),Q(1),Q(2),Q(3)),dps=dps)
         quartic=quartic_observer_report()
         ordinal=synthetic_ordinal_semantics(horizon)
+        semantic_true=a.restrict(6).semantic_log_partition_hessian(2,3)
+        semantic_fake=fake.restrict(6).semantic_log_partition_hessian(2,3)
         answer={
             "status":"FINITE_ORDINAL_SUCC_SECOND_ORDER_WEIL_PROBE",
             "no_actual_infinite_ordinal_computed":True,
@@ -86,6 +88,19 @@ def run(*,dps=72,horizon=28):
                 "finite_observation_time":"9/5",
                 "two_time_Weil_diagonal_fake_minus_true":mp.nstr(
                     fake_report["kernel"][1][1]-true_report["kernel"][1][1],30),
+            },
+            "semantic_second_derivative_information_geometry":{
+                "source":"Hessian log finite positive evidence partition function",
+                "genuine_Hessian":[[str(x) for x in row]
+                                   for row in semantic_true["Hessian_log_Z"]],
+                "fake_six_Hessian":[[str(x) for x in row]
+                                    for row in semantic_fake["Hessian_log_Z"]],
+                "genuine_covariance_determinant":str(
+                    semantic_true["determinant"]),
+                "fake_covariance_determinant":str(
+                    semantic_fake["determinant"]),
+                "both_information_geometries_PSD":True,
+                "Weil_identification_established":False,
             },
             "two_observer_mixed_finite_difference":{
                 "t":"3/5","u":"1/5","h":"1/20","k":"1/30",
