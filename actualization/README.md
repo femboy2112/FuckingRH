@@ -322,3 +322,40 @@ python -m unittest discover -s tests/actualization -p test_succ_shadow_window.py
 ~~~
 
 [Proofs, controls, and RH limitations](../research/2026-10-10/SUCC_SHADOW_WINDOW_CANONICAL_SELECTION.md).
+
+
+## Lambert W as a SUCC inverse and tree-path closure
+
+[lambert_succ.py](lambert_succ.py) adds two complementary, explicitly
+bounded uses of Lambert W, with separate negative controls:
+
+1. **Factorial/Gamma SUCC inversion.** From a positive integer mass M,
+   the principal W branch inverts only Stirling's BULK equation
+   y=x(log x-1), where y=log M. The model then walks SUCC using exact
+   factorial comparisons until it independently certifies
+   n!<=M<(n+1)! and returns the prime valuations of n!. W never
+   serves as the certificate, and its estimate cannot restore a
+   lost multiplication history.
+2. **Rooted-tree SUCC.** Finite exact rational coefficients are
+   generated recursively from the labeled species T=X·SET(T),
+   with \`T(z)=z exp(T(z))\`. The resulting tree generating
+   function is \`T(z)=-W_0(-z)\`; its coefficients are
+   \`n^(n-1)/Gamma(n+1)\` and their exact SUCC growth ratio
+   \`(1+1/n)^(n-1) -> e\`. This selects an analytic principal
+   branch from finite combinatorial history, not by a default
+   numerical branch label.
+
+A leaf-only SUCC construction provably misses labeled rooted trees
+whose newest vertex is a root/internal point; the full shadow
+decomposition matters. Fake tree coefficients first violate the
+formal T=z exp(T) identity at their mutation degree. But fake
+Euler-connected coefficients at integer 6 leave the factorial W
+seed unchanged: this is a **deliberate RH-inertness control**.
+
+~~~bash
+python scripts/lambert_succ_probe.py --factorial-stage 32 --tree-stage 40
+python -m unittest discover -s tests/actualization -p 'test_lambert_succ.py' -v
+~~~
+
+[Proofs, branch selection, reproducibility, and the missing Weil gate]
+(../research/2026-10-10/LAMBERT_SUCC_INVERSE_TREE.md).
