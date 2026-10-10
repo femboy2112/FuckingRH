@@ -193,6 +193,27 @@ jobs:
           PY
       - name: Test ordinal SUCC observation reports and mixed-second Weil correlation
         run: python -m unittest discover -s tests/actualization -p 'test_ordinal_succ_report.py' -v
+      - name: Reproduce ordinal omega+1 semantic, Weil and Hilbert escape evidence
+        run: |
+          python scripts/ordinal_succ_report_probe.py --output "$RUNNER_TEMP/ordinal-succ-report.json"
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          j=json.loads((Path(os.environ["RUNNER_TEMP"])/"ordinal-succ-report.json").read_text())
+          assert j["status"]=="FINITE_ORDINAL_SUCC_SECOND_ORDER_WEIL_PROBE"
+          assert j["formal_ordinals"]["global_PSD_predicate_proved"] is False
+          assert j["connected_source_second_order"]["fake_connected_curvature"]=="1"
+          assert j["connected_source_second_order"]["true_connected_curvature"]=="0"
+          assert j["positive_observations_are_not_positive_correlations"]["quartic_determinant"]=="-192"
+          assert j["positive_observations_are_not_positive_correlations"]["quartic_quadratic_vector_ones"]=="-24"
+          assert j["semantic_second_derivative_information_geometry"]["both_information_geometries_PSD"]
+          assert j["semantic_second_derivative_information_geometry"]["Weil_identification_established"] is False
+          assert j["hilbert_critical_line_observer_escape"]["weak_limit_zero_not_strong"]
+          assert j["hilbert_critical_line_observer_escape"]["normalizable_omega_vector_exists"] is False
+          assert j["no_actual_infinite_ordinal_computed"]
+          assert j["no_RH_or_Weil_positive_sign_assumed"]
+          print("Finite ordinal SUCC, semantic Hessian and Hilbert weak escape controls PASS")
+          PY
       - name: Run seven isolated regression lanes
         run: python scripts/audit_actualization.py --output "$RUNNER_TEMP/actualization-audit"
       - name: Run fifteen hostile mutations
@@ -232,5 +253,6 @@ jobs:
             ${{ runner.temp }}/dirichlet-lambert.json
             ${{ runner.temp }}/hasse-theta-seam.json
             ${{ runner.temp }}/balanced-theta-li.json
+            ${{ runner.temp }}/ordinal-succ-report.json
           if-no-files-found: warn
           retention-days: 14
