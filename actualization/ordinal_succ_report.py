@@ -388,3 +388,89 @@ def synthetic_ordinal_semantics(horizon):
         "report_property_proved":False,
         "omega_computation_executed":False,
     }
+
+
+
+def harmonic_number(n):
+    """Exact finite sum H_N=Σ_(k=1)^N 1/k, a rational SUCC history."""
+    if type(n) is not int or not 1<=n<=4096:
+        raise OrdinalObservationError("Harmonic observational horizon must be 1..4096")
+    return sum((Fraction(1,k) for k in range(1,n+1)),Fraction())
+
+
+def harmonic_half_density_observer(n,local_horizon):
+    """A concrete quantum-Hilbert OBSERVER whose normal state has no ω-vector limit.
+
+    Let s=1/2+it and H_N=Σ_(k<=N)1/k. In H_N=span(e_1,...,e_N):
+      |Omega_N(s)> = H_N^(-1/2) Σ_(k<=N) k^(-s)|k>.
+    Its norm is exactly 1, independent of t.
+    For fixed M<=N, <Omega_N|P_M|Omega_N> = H_M/H_N -> 0
+    because H_N diverges. Each finite state is valid but there is no
+    normalized STRONG limit vector in ℓ²: it converges WEAKLY to 0.
+    The expectation of I remains 1. (Limits DO NOT commute.)
+
+    This exact model is NOT a factual theory of a human brain and is
+    completely source-inert: it proves no Weil sign or RH assertion.
+    """
+    if type(n) is not int or not 2<=n<=4096:
+        raise OrdinalObservationError("Finite Hilbert observer stage must be 2..4096")
+    if type(local_horizon) is not int or not 1<=local_horizon<=n:
+        raise OrdinalObservationError("Fixed finite local projector horizon must be <= stage")
+    hn=harmonic_number(n)
+    hm=harmonic_number(local_horizon)
+    return {
+        "stage":n,"local_probe_M":local_horizon,
+        "harmonic_source_normalization":hn,
+        "local_harmonic_mass":hm,
+        "finite_projector_expectation":hm/hn,
+        "identity_expectation":Fraction(1),
+        "finite_vector_norm_squared":Fraction(1),
+        "phase_independent_local_expectations":True,
+        "infinite_vector_summable":False,
+        "theorem":"weak limit zero; no nonzero normalized strong omega-limit vector",
+        "Weil_identification_proved":False,
+    }
+
+
+def harmonic_dyadic_divergence_certificate(k):
+    """Exact dyadic proof H_(2^k)>=1+k/2 -> infinity.
+
+    Group integers into (2^(j-1),2^j] for 1<=j<=k.
+    Each block contains 2^(j-1) numbers, all <=2^j,
+    so its reciprocal sum >=1/2. The statement applies
+    to all k; this implementation checks one exact finite stage.
+    """
+    if type(k) is not int or not 0<=k<=12:
+        raise OrdinalObservationError("Dyadic witness index must be 0..12")
+    n=2**k
+    mass=harmonic_number(n)
+    lower=Fraction(1)+Fraction(k,2)
+    assert mass>=lower
+    return {
+        "k":k,"stage_N":n,
+        "exact_H_N":mass,
+        "provable_lower_bound":lower,
+        "bound_diverges_as_k_grows":True,
+        "physical_infinite_time_executed":False,
+    }
+
+
+def mellin_hilbert_threshold(sigma):
+    """Norm convergence criterion for naive arithmetic Hilbert amplitude.
+
+    |Phi_s> = Σ_(n>=1) n^(-s)|n>, with s=sigma+i*t.
+    Norm²=Σ n^(-2sigma)=ζ(2sigma), converging EXACTLY when
+    sigma>1/2; at sigma=1/2 logarithmic harmonic divergence.
+
+    This normalizability line coincides with RH's symmetry line
+    but it is an elementary p-series statement and NEVER
+    establishes a Weil-positive form or zero locations.
+    """
+    q=_q(sigma)
+    return {
+        "real_part":q,
+        "sum_of_squared_amplitudes_finite":q>Fraction(1,2),
+        "is_critical_harmonic_boundary":q==Fraction(1,2),
+        "critical_line_normalization":"sum(n^-1) diverges",
+        "scope":"elementary Hilbert p-series threshold, RH-INERT"
+    }
