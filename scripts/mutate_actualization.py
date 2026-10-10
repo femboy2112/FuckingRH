@@ -31,6 +31,7 @@ MUTATIONS=[
  ('lose_source_audit','phenomenology.py','"source_audit":shadow.get("source"),','"source_audit":None,','resource_probe'),
  ('erase_prime_factor_horizon','phenomenology.py','self.multipliers = tuple(sorted(n for n in known if 2 <= n <= self.max_shadow_target))','self.multipliers = (2,)','resource_probe'),
  ('future_shadow_source_leak','local_global.py','if n > horizon:\n            break','if n > horizon:\n            pass','local_global'),
+ ('erase_coend_identifications','yoneda.py','union(ids[right],ids[left])','pass','category'),
 ]
 
 
