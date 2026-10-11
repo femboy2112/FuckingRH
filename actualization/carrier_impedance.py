@@ -125,6 +125,23 @@ def best_possible_posterior_error(n: int) -> Fraction:
     return Fraction(1, 1 + 2**n)
 
 
+def quantum_helstrom_error_bounds(n: int) -> tuple[Fraction, Fraction]:
+    """Exact rational enclosure for a Hilbert carrier's minimum error.
+
+    Equal-prior discrimination of n independent copies of |0> vs |+>
+    has squared inner-product 2^(-n). The Holevo-Helstrom theorem gives
+
+        error_n = (1 - sqrt(1 - 2^(-n))) / 2.
+
+    For n>=1, rationalize to
+        error_n = 2^(-n-1) / (1 + sqrt(1 - 2^(-n)))
+    and enclose it strictly between 2^(-n-2) and 2^(-n-1).
+    No floating-point zero can accidentally certify distinguishability.
+    """
+    _int(n, "n", 1, 2048)
+    return Fraction(1, 2**(n+2)), Fraction(1, 2**(n+1))
+
+
 if __name__ == "__main__":
     import json
 
