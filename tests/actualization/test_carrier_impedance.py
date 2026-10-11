@@ -10,6 +10,7 @@ from actualization.carrier_impedance import (
     CarrierImpedanceError,
     bernoulli_posterior_plus,
     best_possible_posterior_error,
+    quantum_helstrom_error_bounds,
     delayed_kernel, delayed_psi,
     finite_all_zero_prefix,
     late_witness,
@@ -93,6 +94,25 @@ class CarrierImpedanceTests(unittest.TestCase):
                 late_witness(invalid)
         with self.assertRaises(CarrierImpedanceError):
             finite_all_zero_prefix([0, 0, 2])
+
+
+    def test_quantum_hilbert_carrier_no_perfect_finite_discrimination(self):
+        import math
+        for n in range(1, 41):
+            lower, upper = quantum_helstrom_error_bounds(n)
+            overlap_squared = Fraction(1, 2**n)
+            self.assertGreater(overlap_squared, 0)
+            self.assertLess(overlap_squared, 1)
+            self.assertGreater(lower, 0)
+            self.assertLess(lower, upper)
+            # Numerical check is only calibration; positivity is exact
+            # from the rational bounds for every supported n.
+            error = (2.0**(-n-1)) / (1 + math.sqrt(1 - 2.0**(-n)))
+            self.assertLess(float(lower), error)
+            self.assertLess(error, float(upper))
+        for invalid in (0, -1, 4.1, True):
+            with self.assertRaises(CarrierImpedanceError):
+                quantum_helstrom_error_bounds(invalid)
 
 
 if __name__ == "__main__":
