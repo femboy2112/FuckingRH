@@ -95,6 +95,28 @@ almost surely. Thus the infinite sequence identifies the hidden model almost sur
 
 For a random hidden G, observation Y and subsequent model/decision V satisfying the Markov chain \(G\to Y\to V\), the data-processing inequality \(I(G;V)\le I(G;Y)\) formalizes that **processing the observations cannot recreate unknown signal information lost by that channel**, unless external information is introduced. This result concerns a specified probabilistic ensemble, not a nonprobabilistic cosmic truth measure. See Polyanskiy–Wu, MIT 6.441 *Information Theory*, Chapters 2-3, https://ocw.mit.edu/courses/6-441-information-theory-spring-2016/pages/lecture-notes/ .
 
+## 3a. A literal *quantum Hilbert carrier* has the same finite-to-infinite resistance
+
+The user's physically embedded observer premise deserves an explicit quantum positive control, not just a classical coin analogy. Suppose the carrier must discriminate two **known** nonorthogonal pure-state preparations, \(|0\rangle\) and \(|+\rangle=(|0\rangle+|1\rangle)/\sqrt 2\), with equal priors. After n independent supplied copies, the alternative joint vectors are \(|0\rangle^{\otimes n}\) and \(|+\rangle^{\otimes n}\). Their Gram matrix is
+\[
+G_n=\begin{pmatrix}1&2^{-n/2}\\2^{-n/2}&1\end{pmatrix}
+\]
+and their squared overlap is exactly \(2^{-n}\).
+
+By the Holevo–Helstrom state-discrimination theorem, even the *optimal global quantum measurement on all n copies* has minimum average error
+\[
+e_n = \tfrac12\bigl(1-\sqrt{1-2^{-n}}\bigr)>0
+\]
+for every finite n, while \(e_n\to0\). Rationalizing yields exact arithmetic bounds for n>=1:
+\[
+2^{-n-2}<e_n<2^{-n-1}.
+\]
+The carrier's globally optimal finite quantum apparatus cannot achieve perfect deterministic discrimination between these two hypotheses, even though the Gram overlap converges to zero, and asymptotically the alternatives can be distinguished with vanishing error.
+
+This is a **genuine physical-Hilbert information-access theorem** with rigorously finite per-copy progress; it does **not** establish a thermodynamic law of dissipative resistance, a theorem about human proof ability, or anything about the Weil source. It is a calibrated model of why Hilbert-space embedding by itself doesn't make a global label finitely available.
+
+Reference: John Watrous, *The Theory of Quantum Information* (2018), Chapter 3, Holevo–Helstrom theorem, https://cs.uwaterloo.ca/~watrous/TQI/ . The local module returns the **rational intervals**, not floating-point false-zero error values.
+
 ## 4. RH-facing translation and a discriminating next probe
 
 Suzuki (2023), Theorem 1.2, establishes RH iff the *specific* completed arithmetic kernel \(K_{\Psi_\zeta}\) is globally PSD. A false RH would yield a strictly negative **finite** Gram witness. A true RH may or may not have a finite mathematical proof. The two facts do not tell us what the finite carrier can deduce from its accessible observations; this must be specified.
