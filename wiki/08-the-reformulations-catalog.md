@@ -341,7 +341,7 @@ RH-inert; they are listed because they are genuinely different *pictures*.
   Gaussian tail; the Riemann–Siegel `θ`-phase `√(t/2π)` window) and explicitly disclaim Weil positivity —
   the spec's "Γ-transport unbuilt" boundary holds. *Net:* a disciplined non-circular formalization and two
   new verified faces (both positive, both sign-blind), no new content past the fourth gate.
-  `REFORMULATION→WALL`; no brick.
+  `REFORMULATION→WALL`; no brick. **Full account:** [wiki/09 — the succ-actualization corpus](09-the-succ-actualization-corpus.md).
 
 ## 8.7 The graveyard (proved or measured dead — do not re-dig)
 

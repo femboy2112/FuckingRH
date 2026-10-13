@@ -46,6 +46,11 @@ The full account of how this program thinks about the problem lives in the
    experimental branches: every lens tried, each as "RH looks like this if you consider X → what
    you get → the wall," with the provenance caveat and the verdict (zero genuine non-circular
    content; every per-prime positivity is RH-inert).
+9. **[The succ-actualization corpus](wiki/09-the-succ-actualization-corpus.md)** — the coherent,
+   cold-readable account of the large external (ChatGPT-assisted) succ-frame development internalized in
+   Rounds 69–70: the Field-Relative Actualization ontology, the shadow coefficient as multiplicativity,
+   the two new *verified* exclusion faces (off-line-positive quartic; prime-power Hausdorff moment cone),
+   the nine heads all landing on the fourth gate, and the coupling insight (the search is the loop).
 
 ---
 
@@ -114,7 +119,7 @@ There is **no unconditional brick**. Full numbers, the research arc, and the two
 
 1. **[wiki/README.md](wiki/README.md)** — the ground-up framing (read in order).
 2. **[CRUCIFIXION_LEDGER.md](CRUCIFIXION_LEDGER.md)** — the live, round-by-round narrative map
-   (currently through Round 070).
+   (currently through Round 071).
 3. **[CLAIM_LEDGER.md](CLAIM_LEDGER.md)** — every claim with status (Rows C01–C111). The spine
    of the repo.
 4. **[CONSOLIDATED_RH_STATE.md](CONSOLIDATED_RH_STATE.md)** — cross-repo consolidation, graded

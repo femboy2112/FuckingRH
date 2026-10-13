@@ -47,6 +47,12 @@ Read in order for the full arc, or jump to what you need.
    experimental branches: every lens the program tried, each as "RH looks like this if you consider
    X → what you get → the wall," de-duplicated and grouped by the six lenses, with the provenance
    caveat (one lineage, not independent bearings) and the verdict (zero genuine non-circular content).
+9. **[The succ-actualization corpus](09-the-succ-actualization-corpus.md)** — the coherent account of
+   the large external (ChatGPT-assisted) development of the successor frame absorbed in Rounds 69–70:
+   the Field-Relative Actualization ontology, the shadow coefficient `=` truncated convolution-log `=`
+   multiplicativity, the two new *verified* exclusion faces (the off-line-positive quartic; the
+   prime-power Hausdorff moment cone), and why nine honest heads all land on the fourth gate — with the
+   coupling insight that the search is the loop, not the branch.
 
 ---
 
